@@ -51,25 +51,23 @@
     return this.$e.insertBefore(otherBar.$e);
   };
 
-
-  Menu.prototype.flip = function($topMenu, $bottomMenu) {
+  Menu.prototype.flip = function(topBar, bottomBar) {
     var self = this;
-    self.hide().done(function () {
-      $topMenu.moveToOriginalPosition();
-      $topMenu.bringToFront();
-      $bottomMenu.sendToBack();
-
-      return $topMenu.getOver($bottomMenu);
+    self.moveOutOfView().done(function () {
+      topBar.moveToOriginalPosition();
+      topBar.bringToFront();
+      bottomBar.sendToBack();
+      return topBar.getOver(bottomBar);
     }).done(function () {
-      return $bottomMenu.hide();
+      return bottomBar.hide();
     }).done(function () {
-      self.show();
+      self.bringInView();
     });
     self.$menuContainer.off();
     self.$menuContainer.hover(function () {
-      $bottomMenu.moveToOriginalPosition();
+      bottomBar.moveToOriginalPosition();
     }, function () {
-      $bottomMenu.hide();
+      bottomBar.hide();
     });
   }
 
@@ -82,11 +80,11 @@
   };
 
 
-  Menu.prototype.show = function () {
+  Menu.prototype.bringInView = function () {
     return moveToY(this.$menuContainer, 0);
   };
 
-  Menu.prototype.hide = function () {
+  Menu.prototype.moveOutOfView = function () {
     return moveToY(this.$menuContainer, -this.containerHeight);
   };
 
