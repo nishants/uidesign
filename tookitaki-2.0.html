@@ -8,7 +8,7 @@
 body {
   margin: 0;
 }
-/* library */
+/* theme */
 .centered-text {
   text-align: center;
 }
@@ -20,7 +20,16 @@ body {
   background-color: #a1adb7;
   color: #434A54;
 }
+
+.full-width{
+  width: 100%;
+}
 /* Styling */
+
+#title-bar{
+  position: absolute;
+}
+
 #app-menu {
   padding: 20px 0 0 0;
   height: 40px;
@@ -28,6 +37,13 @@ body {
 #context-menu {
   padding: 5px 0 0 0;
   height: 40px;
+}
+#content-window{
+  height: 3000px;
+  /* = top-title-height + 5px */
+  padding: 110px 0 0 0;
+}
+body{
 }
 </style>
 
@@ -62,20 +78,22 @@ body {
     window.menu = new Menu($appMenu(), $contextMenu());
   </script>
 </head>
-<body>
-<div id="title-bar">
+<body class="centered-text">
+<div id="title-bar"
+     class="full-width">
   <div id="app-menu"
-       class="dark-bg centered-text">
+       class="dark-bg">
     <span>building the context navigation..</span>
   </div>
   <div id="context-menu"
-       class="light-bg centered-text">
+       class="light-bg">
     <span>building the intra-context navigation...</span>
   </div>
 </div>
-
-<button onclick="menu.appNavigation()">App Menu</button>
-<button onclick="menu.contextNavigation()">Context Menu</button>
+<div id="content-window">
+  <button onclick="menu.appNavigation()">App Menu</button>
+  <button onclick="menu.contextNavigation()">Context Menu</button>
+</div>
 
 </body>
 </html>
