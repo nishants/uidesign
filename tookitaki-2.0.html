@@ -23,12 +23,26 @@
         <div id="app-menu"
              shutter-menu-bar
              class="light-txt dark-bg">
-            <span>building the context navigation..</span>
+            <span menu="menu1" class="navigation-link">dashboard |</span>
+            <span menu="menu2" class="navigation-link">reports |</span>
+            <span menu="menu3" class="navigation-link">campaign management |</span>
         </div>
         <div id="context-menu"
              shutter-menu-bar
              class="light-bg dark-txt">
-            <span>building the intra-context navigation...</span>
+            <span sub-menu-of="menu1">
+                <span>empty for dashboard |</span>
+            </span>
+            <span sub-menu-of="menu2">
+                <span>audience reports |</span>
+                <span>campaign reports |</span>
+                <span>ad reports |</span>
+            </span>
+            <span sub-menu-of="menu3">
+                <span>audiences |</span>
+                <span>campaigns |</span>
+                <span>ads |</span>
+            </span>
         </div>
     </div>
 
