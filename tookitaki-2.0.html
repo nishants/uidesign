@@ -2,48 +2,33 @@
 <html>
 
 <head>
-
-  <link rel="stylesheet" type="text/css" href="style.css">
-
-  <!-- js libraries -->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-  <!-- menue widget -->
-  <script src="menu.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="menu.js"></script>
 </head>
 <body class="centered-text">
-<div id="title-bar"
-     class="full-width">
-  <div id="app-menu"
-       class="dark-bg">
-    <span>building the context navigation..</span>
-  </div>
-  <div id="context-menu"
-       class="light-bg">
-    <span>building the intra-context navigation...</span>
-  </div>
-</div>
-<div id="content-window">
-  <button onclick="menu.show()">Show Menu</button>
-  <button onclick="menu.hide()">Hide Menu</button>
-  <button onclick="menu.topNavigation()">App Menu</button>
-  <button onclick="menu.contextNavigation()">Context Menu</button>
-</div>
+    <div id="title-bar"
+         class="full-width">
+        <div id="app-menu"
+             class="dark-bg">
+            <span>building the context navigation..</span>
+        </div>
+        <div id="context-menu"
+             class="light-bg">
+            <span>building the intra-context navigation...</span>
+        </div>
+    </div>
+    <div id="content-window">
+        <button onclick="menu.show()">Show Menu</button>
+        <button onclick="menu.hide()">Hide Menu</button>
+        <button onclick="menu.topNavigation()">App Menu</button>
+        <button onclick="menu.contextNavigation()">Context Menu</button>
+    </div>
 
-<script>
-  var $titleBar = function () {
-        return $("#title-bar");
-      },
-      $appMenu = function () {
-        return $("#app-menu");
-      },
-      $contextMenu = function () {
-        return $("#context-menu");
-      };
-
-  $(window).load(function(){
-    window.menu = new Menu($titleBar(), $appMenu(), $contextMenu())
-  });
-</script>
+    <script>
+        $(window).load(function () {
+            window.menu = new Menu($("#title-bar"), $("#app-menu"), $("#context-menu"))
+        });
+    </script>
 </body>
 </html>
