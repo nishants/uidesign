@@ -16,14 +16,20 @@ h1{
   text-align: center;
 }
 
+.dark-txt {
+  color: #434A54;
+}
+
+.light-txt{
+  color: #CECECE;
+}
+
 .dark-bg {
   background-color: #434A54;
-  color: #CECECE;
 }
 
 .light-bg {
   background-color: #a1adb7;
-  color: #434A54;
 }
 
 .very-light-bg{
