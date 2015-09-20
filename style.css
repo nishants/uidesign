@@ -30,7 +30,7 @@ body, div {
 
 #title-bar {
   /*total height : 105 pixels*/
-  position: absolute;
+  position: fixed;
   top: -105px;
 }
 
