@@ -7,6 +7,7 @@
     <script src="menu.js"></script>
 </head>
 <body class="centered-text">
+    <div id="loader-bar"></div>
     <div id="title-bar"
          class="full-width">
         <div id="app-menu"
@@ -23,11 +24,53 @@
         <button onclick="menu.hide()">Hide Menu</button>
         <button onclick="menu.topNavigation()">App Menu</button>
         <button onclick="menu.contextNavigation()">Context Menu</button>
+
+        <input type="number" id="myInput" oninput="loaderBar.waitFor(parseInt(this.value))">
+        <button onclick="loaderBar.stop()">Stop Loader</button>
+
+
     </div>
 
     <script>
+        var
+                $bar = function(){return $("#loader-bar")};
+                LoaderBar = function($bar){
+                                this.$bar = $bar;
+                                this.updateTime = 500;
+                            };
+        LoaderBar.prototype.waitFor = function(expectedTime){
+            this.expectedTime = expectedTime;
+            this.timeLeft     = expectedTime;
+            var self = this;
+            if (this.timer) {
+                clearInterval(this.timer);
+            }
+            this.timer = setInterval(
+                    function () {
+                        self.update();
+                    }, this.updateTime);
+
+            setTimeout(function(){
+                self.$bar.show();
+            }, this.updateTime);
+        };
+
+
+        LoaderBar.prototype.update = function(){
+            this.timeLeft -=  this.updateTime
+            var maxWidth = $(window).width(),
+                percentageTimepassed = (this.timeLeft * 1.0)/this.expectedTime,
+                currentWidth  = maxWidth - (maxWidth * percentageTimepassed);
+            console.log(currentWidth);
+            this.$bar.width(currentWidth);
+        };
+
+        LoaderBar.prototype.stop = function(){
+            clearInterval(this.timer);
+        };
         $(window).load(function () {
             window.menu = new Menu($("#title-bar"), $("#app-menu"), $("#context-menu"))
+            window.loaderBar = new LoaderBar($bar());
         });
     </script>
 </body>
