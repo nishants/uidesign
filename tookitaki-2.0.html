@@ -5,8 +5,11 @@
 
 <style>
 /* Defaults and resets*/
-body {
+body, div {
   margin: 0;
+  padding: 0;
+  maring-left: auto;
+  maring-right  : auto;
 }
 /* theme */
 .centered-text {
@@ -27,14 +30,18 @@ body {
 /* Styling */
 
 #title-bar{
+  /*total height : 105 pixels*/
   position: absolute;
+  top: -105px;
 }
 
 #app-menu {
+  /*total height : 60 pixels*/
   padding: 20px 0 0 0;
   height: 40px;
 }
 #context-menu {
+  /*total height : 45 pixels*/
   padding: 5px 0 0 0;
   height: 40px;
 }
@@ -53,29 +60,48 @@ body{
   <!-- menue widget -->
   <script type="text/javascript">
     var
-        $appMenu        = function(){return $("#title-bar");},
-        $contextMenu    = function(){return $("#title-bar");},
-        Menu =            function ($appMenu, $contextMenu) {
-                            this.$topMenu     = $appMenu;
-                            this.$bottomMenu  = $contextMenu
+        $titleBar        = function(){return $("#title-bar");},
+        $appMenu         = function(){return $("#app-menu");},
+        $contextMenu     = function(){return $("#context-menu");},
+        topPositionOf    = function($e){ return parseInt($e.css("top"));};
+        resetTop         = function($e){
+                              $e.animate({
+                                left: 0,
+                                top: 0,
+                              });
+                          },
+        moveY            = function($e, byPixels){
+                              var top = byPixels + parseInt($e.css("top"));
+                              $e.animate({
+                                left: 0,
+                                top: top,
+                              });
+                          },
+
+        Menu =            function ($titleBar, $appMenu, $contextMenu) {
+                            this.$menuContainer = $titleBar;
+                            this.$topMenu       = $appMenu;
+                            this.$bottomMenu    = $contextMenu
                           };
     Menu.prototype.appNavigation = function(){
-      var $topMenu      = this.$topMenu;
-      this.$topMenu     = this.$bottomMenu
-      this.$bottomMenu  = $topMenu
-      console.log("show app navigation");
     };
 
     Menu.prototype.contextNavigation = function(){
       console.log("show context navigation")
     };
 
-    titleBar  = $("#title-bar");
-    appBar     = $("#app-menu");
-    contextBar = $("#context-menu");
+    Menu.prototype.show = function(){
+      moveY(this.$menuContainer, this.$menuContainer.height());
+    };
 
+    Menu.prototype.hide = function(){
+      moveY(this.$menuContainer, 0 - this.$menuContainer.height());
+    };
 
-    window.menu = new Menu($appMenu(), $contextMenu());
+    $(window).load(function(){
+      window.menu = new Menu($titleBar(), $appMenu(), $contextMenu())
+    });
+
   </script>
 </head>
 <body class="centered-text">
@@ -91,6 +117,8 @@ body{
   </div>
 </div>
 <div id="content-window">
+  <button onclick="menu.show()">Show Menu</button>
+  <button onclick="menu.hide()">Hide Menu</button>
   <button onclick="menu.appNavigation()">App Menu</button>
   <button onclick="menu.contextNavigation()">Context Menu</button>
 </div>
