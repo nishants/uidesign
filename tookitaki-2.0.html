@@ -14,8 +14,10 @@
     <div id="loader-bar"
          class="layer-3"></div>
 
-    <div shutter-menu-bar id="title-bar"
-         ng-controller="MenuController"
+    <div shutter-menu-bar
+         id="title-bar"
+         bottom-bar-class="layer-1"
+         top-bar-class="layer-2"
          class="layer-1 full-width">
         <div id="app-menu"
              class="dark-bg">
@@ -27,29 +29,28 @@
         </div>
     </div>
 
-    <div id="content-window">
-        <button onclick="menu.show()">Show Menu</button>
-        <button onclick="menu.hide()">Hide Menu</button>
-        <button onclick="menu.topNavigation()">App Menu</button>
-        <button onclick="menu.contextNavigation()">Context Menu</button>
+    <div id="content-window" ng-controller="MenuController">
+        <button ng-click="menu.show()">Show Menu</button>
+        <button ng-click="menu.hide()">Hide Menu</button>
+        <button ng-click="menu.showAppMenu()">App Menu</button>
+        <button ng-click="menu.showSubMenu()">Context Menu</button>
 
         <input name="expectedTime" type="number" id="myInput" oninput="loaderBar.waitFor(parseInt(this.value))" value="5000">
         <button onclick="loaderBar.waitFor(5000)">Start Loader</button>
         <button onclick="loaderBar.stop()">Stop Loader</button>
-
-
     </div>
 
     <script>
         var app = angular.module("test-shutter", ["shutter-menu"]);
-        app.controller("MenuController", ["$scope", function($scope){
-                $scope.sayLoud = "yeaahh";
+        app.controller("MenuController", ["$scope","shutterMenu", function($scope, shutterMenu){
+            $scope.menu = shutterMenu;
+
         }]);
 
         var tobBarClass     = "layer-2",
             bottomBarClass  = "layer-1";
+
         $(window).load(function () {
-            window.menu = new Menu($("#title-bar"), $("#app-menu"), $("#context-menu"), tobBarClass, bottomBarClass)
             window.loaderBar = new DataLoader($("#loader-bar"));
         });
     </script>
