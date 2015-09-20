@@ -4,13 +4,18 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+
     <script src="menu.js"></script>
     <script src="loader.js"></script>
+    <script src="shutter-menu.js"></script>
 </head>
-<body class="centered-text">
+<body class="centered-text" ng-app="test-shutter">
     <div id="loader-bar"
          class="layer-3"></div>
-    <div id="title-bar"
+
+    <div shutter-menu-bar id="title-bar"
+         ng-controller="MenuController"
          class="layer-1 full-width">
         <div id="app-menu"
              class="dark-bg">
@@ -21,6 +26,7 @@
             <span>building the intra-context navigation...</span>
         </div>
     </div>
+
     <div id="content-window">
         <button onclick="menu.show()">Show Menu</button>
         <button onclick="menu.hide()">Hide Menu</button>
@@ -35,9 +41,13 @@
     </div>
 
     <script>
+        var app = angular.module("test-shutter", ["shutter-menu"]);
+        app.controller("MenuController", ["$scope", function($scope){
+                $scope.sayLoud = "yeaahh";
+        }]);
+
         var tobBarClass     = "layer-2",
             bottomBarClass  = "layer-1";
-
         $(window).load(function () {
             window.menu = new Menu($("#title-bar"), $("#app-menu"), $("#context-menu"), tobBarClass, bottomBarClass)
             window.loaderBar = new DataLoader($("#loader-bar"));
