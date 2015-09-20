@@ -28,7 +28,7 @@
       showSubMenu: showSubMenu,
     };
   }]);
-  module.directive("shutterMenuBar", ["shutterMenu", function (shutterMenu) {
+  module.directive("shutterMenu", ["shutterMenu", function (shutterMenu) {
     return {
       restrict: 'A',
       transclude: false,
