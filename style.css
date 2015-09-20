@@ -1,0 +1,55 @@
+
+/* Defaults and resets*/
+body, div {
+  margin: 0;
+  padding: 0;
+  maring-left: auto;
+  maring-right: auto;
+}
+
+/* theme */
+.centered-text {
+  text-align: center;
+}
+
+.dark-bg {
+  background-color: #434A54;
+  color: #CECECE;
+}
+
+.light-bg {
+  background-color: #a1adb7;
+  color: #434A54;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Styling */
+
+#title-bar {
+  /*total height : 105 pixels*/
+  position: absolute;
+  top: -105px;
+}
+
+#app-menu {
+  /*total height : 60 pixels*/
+  padding: 20px 0 0 0;
+  height: 40px;
+}
+
+#context-menu {
+  /*total height : 45 pixels*/
+  padding: 5px 0 0 0;
+  height: 40px;
+}
+
+#content-window {
+  height: 3000px;
+  padding: 110px 0 0 0; /* = top-title-height + 5px */
+}
+
+body {
+}
