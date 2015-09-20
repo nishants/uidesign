@@ -64,38 +64,54 @@ body{
         $appMenu         = function(){return $("#app-menu");},
         $contextMenu     = function(){return $("#context-menu");},
         topPositionOf    = function($e){ return parseInt($e.css("top"));};
+        totalHeightOf    = function($e){return $e.height();}
+        animationDuration= 500,
+        afterAnimation   = function(callback){setTimeout(callback, animationDuration)};
         resetTop         = function($e){
                               $e.animate({
                                 left: 0,
                                 top: 0,
                               });
                           },
-        moveY            = function($e, byPixels){
-                              var top = byPixels + parseInt($e.css("top"));
-                              $e.animate({
+        moveToY            = function($e, yPosition){
+                              return $e.animate({
                                 left: 0,
-                                top: top,
-                              });
+                                top: yPosition,
+                              }, animationDuration).promise();
                           },
 
         Menu =            function ($titleBar, $appMenu, $contextMenu) {
-                            this.$menuContainer = $titleBar;
-                            this.$topMenu       = $appMenu;
-                            this.$bottomMenu    = $contextMenu
+                            this.$menuContainer  = $titleBar;
+                            this.$topMenu        = $appMenu;
+                            this.$bottomMenu     = $contextMenu;
+                            this.containerHeight = $titleBar.height();
                           };
-    Menu.prototype.appNavigation = function(){
+
+    Menu.prototype.topNavigation = function(){
+      var self = this;
+      self.hide().done(function(){
+        return self.$topMenu.insertBefore(self.$bottomMenu);
+      }).done(function(){
+        self.show();
+      });
     };
 
     Menu.prototype.contextNavigation = function(){
-      console.log("show context navigation")
+      var self = this;
+      self.hide().done(function(){
+        return self.$bottomMenu.insertBefore(self.$topMenu);
+      }).done(function(){
+        self.show();
+      });
     };
 
+
     Menu.prototype.show = function(){
-      moveY(this.$menuContainer, this.$menuContainer.height());
+      return moveToY(this.$menuContainer, 0);
     };
 
     Menu.prototype.hide = function(){
-      moveY(this.$menuContainer, 0 - this.$menuContainer.height());
+      return moveToY(this.$menuContainer, -this.containerHeight);
     };
 
     $(window).load(function(){
@@ -119,7 +135,7 @@ body{
 <div id="content-window">
   <button onclick="menu.show()">Show Menu</button>
   <button onclick="menu.hide()">Hide Menu</button>
-  <button onclick="menu.appNavigation()">App Menu</button>
+  <button onclick="menu.topNavigation()">App Menu</button>
   <button onclick="menu.contextNavigation()">Context Menu</button>
 </div>
 
