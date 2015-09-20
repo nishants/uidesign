@@ -16,15 +16,13 @@
         this.topClass = topClass;
         this.backClass = backClass;
       },
+      MenuContainer = function($container){
+        this.$e = $container;
+      },
       Menu = function ($titleBar, $appMenu, $contextMenu, topBarClass, bottomBarClass) {
-        this.$menuContainer = $titleBar;
-
+        this.$menuContainer = new MenuContainer($titleBar);
         this.$topMenu = new MenuBar($appMenu, topBarClass, bottomBarClass);
         this.$bottomMenu = new MenuBar($contextMenu, topBarClass, bottomBarClass);
-
-        this.topBarClass    = topBarClass;
-        this.bottomBarClass = bottomBarClass;
-
         this.containerHeight = $titleBar.height();
       };
 
@@ -46,6 +44,22 @@
     return moveToY(this.$e, -totalHeightOf(this.$e));
   };
 
+  MenuContainer.prototype.hide = function() {
+    return moveToY(this.$e, -totalHeightOf(this.$e));
+  };
+
+  MenuContainer.prototype.show = function() {
+    return moveToY(this.$e, 0);
+  };
+
+  MenuContainer.prototype.showOnHover = function(bar) {
+    this.$e.off();
+    this.$e.hover(function () {
+      bar.moveToOriginalPosition();
+    }, function () {
+      bar.hide();
+    });
+  };
 
   MenuBar.prototype.getOver = function(otherBar) {
     return this.$e.insertBefore(otherBar.$e);
@@ -63,12 +77,7 @@
     }).done(function () {
       self.bringInView();
     });
-    self.$menuContainer.off();
-    self.$menuContainer.hover(function () {
-      bottomBar.moveToOriginalPosition();
-    }, function () {
-      bottomBar.hide();
-    });
+    self.$menuContainer.showOnHover(bottomBar);
   }
 
   Menu.prototype.topNavigation = function () {
@@ -79,13 +88,12 @@
     this.flip(this.$bottomMenu, this.$topMenu);
   };
 
-
   Menu.prototype.bringInView = function () {
-    return moveToY(this.$menuContainer, 0);
+    return this.$menuContainer.show();
   };
 
   Menu.prototype.moveOutOfView = function () {
-    return moveToY(this.$menuContainer, -this.containerHeight);
+    return this.$menuContainer.hide();
   };
 
   window.Menu = Menu;
