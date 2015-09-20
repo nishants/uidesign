@@ -41,7 +41,7 @@ h1{
 }
 
 .fixed-positioned{
-  position: absolute;
+  position: fixed;
 }
 
 .absolute-positioned{
