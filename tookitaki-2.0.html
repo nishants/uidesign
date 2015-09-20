@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="menu.js"></script>
+    <script src="loader.js"></script>
 </head>
 <body class="centered-text">
     <div id="loader-bar"
@@ -34,63 +35,9 @@
     </div>
 
     <script>
-        var
-                $bar = function(){return $("#loader-bar")},
-                setWidth = function ($e, width, duration) {
-                    return $e.animate({
-                        width: width,
-                    }, duration).promise();
-                },
-                LoaderBar = function($bar){
-                                this.$bar = $bar;
-                                this.updateTime = 450;
-                            };
-        LoaderBar.prototype.waitFor = function(expectedTime){
-            this.expectedTime = expectedTime;
-            this.timeLeft     = expectedTime;
-            var self = this;
-            if (this.timer) {
-                clearInterval(this.timer);
-            }
-            self.$bar.width(0);
-            this.timer = setInterval(
-                    function () {
-                        self.update();
-                    }, this.updateTime);
-
-            setTimeout(function(){
-                self.$bar.show();
-            }, this.updateTime);
-        };
-
-
-        LoaderBar.prototype.update = function(){
-            this.timeLeft -=  this.updateTime;
-            if(this.timeLeft < 0){
-                this.timeLeft = (this.expectedTime/1.1);
-            }
-            var maxWidth = $(window).width(),
-                percentageTimepassed = (this.timeLeft * 1.0)/this.expectedTime,
-                currentWidth  = maxWidth - (maxWidth * percentageTimepassed);
-            setWidth(this.$bar, currentWidth, this.updateTime);
-        };
-
-        LoaderBar.prototype.stop = function(){
-            clearInterval(this.timer);
-            setWidth(
-                    this.$bar,
-                    $(window).width(),
-                    this.updateTime);
-            var self = this;
-            setTimeout(function(){
-                self.$bar.hide();
-                self.$bar.width(0);
-            }, 500);
-
-        };
         $(window).load(function () {
             window.menu = new Menu($("#title-bar"), $("#app-menu"), $("#context-menu"))
-            window.loaderBar = new LoaderBar($bar());
+            window.loaderBar = new DataLoader($("#loader-bar"));
         });
     </script>
 </body>
