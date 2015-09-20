@@ -12,12 +12,14 @@
 </head>
 <body class="centered-text very-light-bg" ng-app="test-shutter">
     <div id="loader-bar"
-         class="absolute-positioned layer-3"></div>
-    <div shutter-menu
-         id="title-bar"
+         class="absolute-positioned layer-3">
+    </div>
+
+    <div id="navigation-bar"
+         shutter-menu
          bottom-bar-class="layer-1"
          top-bar-class="layer-2"
-         class="fixed-positioned layer-1 full-width">
+         class="fixed-positioned layer-1 full-width top-bar-height">
         <div id="app-menu"
              shutter-menu-bar
              class="dark-bg">
@@ -30,10 +32,14 @@
         </div>
     </div>
 
-    <div id="top-bar-padding"
-         class="very-light-bg">
+    <!-- must have same size as top bar, this gets hidden when hovering the bar
+         serves as ideal place to put in section headings,
+         these headings are irrelevant, when trying to browse to some other page.
+    -->
+    <h1 id="section-heading"
+        class="top-bar-padding">
         This is section heading....
-    </div>
+    </h1>
 
     <div id="content-window" ng-controller="MenuController">
         <button ng-click="menu.show()">Show Menu</button>

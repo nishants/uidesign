@@ -7,6 +7,10 @@ body, div {
   maring-right: auto;
 }
 
+h1{
+  font-size: 1.6em;
+}
+
 /* theme */
 .centered-text {
   text-align: center;
@@ -39,14 +43,15 @@ body, div {
 }
 /* Styling */
 
-#title-bar {
+.top-bar-height {
   top: -105px; /*total height : 105 pixels(hidden by offset)*/
 }
 
-#top-bar-padding{
+.top-bar-padding{
   padding-top: 65px;
   height: 45px; /* 5px +  height of title-bar */
 }
+
 #app-menu {
   /*total height : 60 pixels*/
   padding: 20px 0 0 0;
