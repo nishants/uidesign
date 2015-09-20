@@ -48,6 +48,14 @@
     return moveToY(this.$e, -totalHeightOf(this.$e));
   };
 
+  MenuContainer.prototype.flipBars = function(topBar, bottomBar) {
+    topBar.moveToOriginalPosition();
+    topBar.bringToFront();
+    bottomBar.sendToBack();
+    bottomBar.hide();
+    return topBar.getOver(bottomBar);
+  };
+
   MenuContainer.prototype.show = function() {
     return moveToY(this.$e, 0);
   };
@@ -66,19 +74,14 @@
   };
 
   Menu.prototype.flip = function(topBar, bottomBar) {
-    var self = this;
-    self.moveOutOfView().done(function () {
-      topBar.moveToOriginalPosition();
-      topBar.bringToFront();
-      bottomBar.sendToBack();
-      return topBar.getOver(bottomBar);
-    }).done(function () {
-      return bottomBar.hide();
-    }).done(function () {
-      self.bringInView();
+    var menu = this.$menuContainer;
+    menu.hide().done(function(){
+      return menu.flipBars(topBar, bottomBar);
+    }).done(function(){
+      menu.show();
+      menu.showOnHover(bottomBar)
     });
-    self.$menuContainer.showOnHover(bottomBar);
-  }
+  };
 
   Menu.prototype.topNavigation = function () {
     this.flip(this.$topMenu, this.$bottomMenu);
