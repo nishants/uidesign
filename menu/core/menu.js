@@ -1,35 +1,35 @@
 (function () {
   "use strict"
-  var Menu = function ($titleBar, $appMenu, $contextMenu, topBarClass, bottomBarClass) {
-    this.$menuContainer = new MenuContainer($titleBar);
-    this.$topMenu = new MenuBar($appMenu, topBarClass, bottomBarClass);
-    this.$bottomMenu = new MenuBar($contextMenu, topBarClass, bottomBarClass);
+  var Menu = function (container, topBar, bottomBar) {
+    this.container = container;
+    this.topBar = topBar;
+    this.bottomBar = bottomBar;
   };
 
   Menu.prototype.flip = function (topBar, bottomBar) {
-    var menu = this.$menuContainer;
-    menu.hide().done(function () {
-      return menu.flipBars(topBar, bottomBar);
+    var container = this.container;
+    container.hide().done(function () {
+      return container.flipBars(topBar, bottomBar);
     }).done(function () {
-      menu.show();
-      menu.showOnHover(bottomBar)
+      container.show();
+      container.showOnHover(bottomBar)
     });
   };
 
   Menu.prototype.topNavigation = function () {
-    this.flip(this.$topMenu, this.$bottomMenu);
+    this.flip(this.topBar, this.bottomBar);
   };
 
   Menu.prototype.contextNavigation = function () {
-    this.flip(this.$bottomMenu, this.$topMenu);
+    this.flip(this.bottomBar, this.topBar);
   };
 
   Menu.prototype.show = function () {
-    return this.$menuContainer.show();
+    return this.container.show();
   };
 
   Menu.prototype.hide = function () {
-    return this.$menuContainer.hide();
+    return this.container.hide();
   };
 
   window.Menu = Menu;
