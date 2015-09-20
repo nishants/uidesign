@@ -23,7 +23,6 @@
         this.$menuContainer = new MenuContainer($titleBar);
         this.$topMenu = new MenuBar($appMenu, topBarClass, bottomBarClass);
         this.$bottomMenu = new MenuBar($contextMenu, topBarClass, bottomBarClass);
-        this.containerHeight = $titleBar.height();
       };
 
   MenuBar.prototype.bringToFront = function() {
@@ -36,7 +35,7 @@
     this.$e.addClass(this.backClass);
   };
 
-  MenuBar.prototype.moveToOriginalPosition = function() {
+  MenuBar.prototype.show = function() {
     return moveToY(this.$e, 0);
   };
 
@@ -44,16 +43,20 @@
     return moveToY(this.$e, -totalHeightOf(this.$e));
   };
 
+  MenuBar.prototype.insertBefore = function(otherBar) {
+    return this.$e.insertBefore(otherBar.$e);
+  };
+
   MenuContainer.prototype.hide = function() {
     return moveToY(this.$e, -totalHeightOf(this.$e));
   };
 
   MenuContainer.prototype.flipBars = function(topBar, bottomBar) {
-    topBar.moveToOriginalPosition();
+    topBar.show();
     topBar.bringToFront();
     bottomBar.sendToBack();
     bottomBar.hide();
-    return topBar.getOver(bottomBar);
+    return topBar.insertBefore(bottomBar);
   };
 
   MenuContainer.prototype.show = function() {
@@ -63,14 +66,10 @@
   MenuContainer.prototype.showOnHover = function(bar) {
     this.$e.off();
     this.$e.hover(function () {
-      bar.moveToOriginalPosition();
+      bar.show();
     }, function () {
       bar.hide();
     });
-  };
-
-  MenuBar.prototype.getOver = function(otherBar) {
-    return this.$e.insertBefore(otherBar.$e);
   };
 
   Menu.prototype.flip = function(topBar, bottomBar) {
@@ -91,11 +90,11 @@
     this.flip(this.$bottomMenu, this.$topMenu);
   };
 
-  Menu.prototype.bringInView = function () {
+  Menu.prototype.show = function () {
     return this.$menuContainer.show();
   };
 
-  Menu.prototype.moveOutOfView = function () {
+  Menu.prototype.hide = function () {
     return this.$menuContainer.hide();
   };
 
