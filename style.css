@@ -1,6 +1,6 @@
 
 /* Defaults and resets*/
-body, div {
+body, div, h1{
   margin: 0;
   padding: 0;
   maring-left: auto;
@@ -54,8 +54,9 @@ h1{
 }
 
 .top-bar-padding{
+  /* total height of top-bar + 5px */
   padding-top: 65px;
-  height: 45px; /* 5px +  height of title-bar */
+  height: 45px;
 }
 
 #app-menu {
