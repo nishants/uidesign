@@ -11,10 +11,16 @@
       totalHeightOf = function($e){
         return $e.height() + parseInt($e.css("padding-bottom")) + parseInt($e.css("padding-top"));
       },
+      MenuBar = function($bar, topClass, backClass){
+        this.$e = $bar;
+        this.topClass = topClass;
+        this.backClass = backClass;
+      },
       Menu = function ($titleBar, $appMenu, $contextMenu, topBarClass, bottomBarClass) {
         this.$menuContainer = $titleBar;
-        this.$topMenu = $appMenu;
-        this.$bottomMenu = $contextMenu;
+
+        this.$topMenu = new MenuBar($appMenu, topBarClass, bottomBarClass);
+        this.$bottomMenu = new MenuBar($contextMenu, topBarClass, bottomBarClass);
 
         this.topBarClass    = topBarClass;
         this.bottomBarClass = bottomBarClass;
@@ -22,38 +28,57 @@
         this.containerHeight = $titleBar.height();
       };
 
-  Menu.prototype.topNavigation = function () {
+  MenuBar.prototype.bringToFront = function() {
+    this.$e.removeClass(this.backClass);
+    this.$e.addClass(this.topClass);
+  };
+
+  MenuBar.prototype.sendToBack = function() {
+    this.$e.removeClass(this.topClass);
+    this.$e.addClass(this.backClass);
+  };
+
+  MenuBar.prototype.moveToOriginalPosition = function() {
+    return moveToY(this.$e, 0);
+  };
+
+  MenuBar.prototype.hide = function() {
+    return moveToY(this.$e, -totalHeightOf(this.$e));
+  };
+
+
+  MenuBar.prototype.getOver = function(otherBar) {
+    return this.$e.insertBefore(otherBar.$e);
+  };
+
+
+  Menu.prototype.flip = function($topMenu, $bottomMenu) {
     var self = this;
     self.hide().done(function () {
-      self.$topMenu.removeClass(self.bottomBarClass);
-      self.$topMenu.addClass(self.topBarClass);
+      $topMenu.moveToOriginalPosition();
+      $topMenu.bringToFront();
+      $bottomMenu.sendToBack();
 
-      self.$bottomMenu.removeClass(self.topBarClass);
-      self.$bottomMenu.addClass(self.bottomBarClass);
-      return self.$topMenu.insertBefore(self.$bottomMenu);
+      return $topMenu.getOver($bottomMenu);
     }).done(function () {
-      return moveToY(self.$bottomMenu, -totalHeightOf(self.$bottomMenu));
+      return $bottomMenu.hide();
     }).done(function () {
       self.show();
     });
-
-    self.$bottomMenu.off();
-    self.$topMenu.off();
-
-    this.$menuContainer.hover(function(){
-      moveToY(self.$bottomMenu, 0)
-    }, function(){
-      moveToY(self.$bottomMenu, -totalHeightOf(self.$bottomMenu))
+    self.$menuContainer.off();
+    self.$menuContainer.hover(function () {
+      $bottomMenu.moveToOriginalPosition();
+    }, function () {
+      $bottomMenu.hide();
     });
+  }
+
+  Menu.prototype.topNavigation = function () {
+    this.flip(this.$topMenu, this.$bottomMenu);
   };
 
   Menu.prototype.contextNavigation = function () {
-    var self = this;
-    self.hide().done(function () {
-      return self.$bottomMenu.insertBefore(self.$topMenu);
-    }).done(function () {
-      self.show();
-    });
+    this.flip(this.$bottomMenu, this.$topMenu);
   };
 
 
