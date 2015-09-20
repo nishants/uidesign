@@ -7,9 +7,10 @@
     <script src="menu.js"></script>
 </head>
 <body class="centered-text">
-    <div id="loader-bar"></div>
+    <div id="loader-bar"
+         class="layer-2"></div>
     <div id="title-bar"
-         class="full-width">
+         class="layer-1 full-width">
         <div id="app-menu"
              class="dark-bg">
             <span>building the context navigation..</span>
@@ -71,7 +72,6 @@
             var maxWidth = $(window).width(),
                 percentageTimepassed = (this.timeLeft * 1.0)/this.expectedTime,
                 currentWidth  = maxWidth - (maxWidth * percentageTimepassed);
-            console.log(percentageTimepassed);
             setWidth(this.$bar, currentWidth, this.updateTime);
         };
 
