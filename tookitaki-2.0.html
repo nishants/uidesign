@@ -10,15 +10,14 @@
     <script src="loader.js"></script>
     <script src="shutter-menu.js"></script>
 </head>
-<body class="centered-text" ng-app="test-shutter">
+<body class="centered-text very-light-bg" ng-app="test-shutter">
     <div id="loader-bar"
-         class="layer-3"></div>
-
+         class="absolute-positioned layer-3"></div>
     <div shutter-menu
          id="title-bar"
          bottom-bar-class="layer-1"
          top-bar-class="layer-2"
-         class="layer-1 full-width">
+         class="fixed-positioned layer-1 full-width">
         <div id="app-menu"
              shutter-menu-bar
              class="dark-bg">
@@ -29,6 +28,11 @@
              class="light-bg">
             <span>building the intra-context navigation...</span>
         </div>
+    </div>
+
+    <div id="top-bar-padding"
+         class="very-light-bg">
+        This is section heading....
     </div>
 
     <div id="content-window" ng-controller="MenuController">
