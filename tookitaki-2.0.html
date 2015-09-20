@@ -3,122 +3,68 @@
 
 <head>
 
-<style>
-/* Defaults and resets*/
-body, div {
-  margin: 0;
-  padding: 0;
-  maring-left: auto;
-  maring-right  : auto;
-}
-/* theme */
-.centered-text {
-  text-align: center;
-}
-.dark-bg {
-  background-color: #434A54;
-  color: #CECECE;
-}
-.light-bg {
-  background-color: #a1adb7;
-  color: #434A54;
-}
+  <style>
+    /* Defaults and resets*/
+    body, div {
+      margin: 0;
+      padding: 0;
+      maring-left: auto;
+      maring-right: auto;
+    }
 
-.full-width{
-  width: 100%;
-}
-/* Styling */
+    /* theme */
+    .centered-text {
+      text-align: center;
+    }
 
-#title-bar{
-  /*total height : 105 pixels*/
-  position: absolute;
-  top: -105px;
-}
+    .dark-bg {
+      background-color: #434A54;
+      color: #CECECE;
+    }
 
-#app-menu {
-  /*total height : 60 pixels*/
-  padding: 20px 0 0 0;
-  height: 40px;
-}
-#context-menu {
-  /*total height : 45 pixels*/
-  padding: 5px 0 0 0;
-  height: 40px;
-}
-#content-window{
-  height: 3000px;
-  /* = top-title-height + 5px */
-  padding: 110px 0 0 0;
-}
-body{
-}
-</style>
+    .light-bg {
+      background-color: #a1adb7;
+      color: #434A54;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    /* Styling */
+
+    #title-bar {
+      /*total height : 105 pixels*/
+      position: absolute;
+      top: -105px;
+    }
+
+    #app-menu {
+      /*total height : 60 pixels*/
+      padding: 20px 0 0 0;
+      height: 40px;
+    }
+
+    #context-menu {
+      /*total height : 45 pixels*/
+      padding: 5px 0 0 0;
+      height: 40px;
+    }
+
+    #content-window {
+      height: 3000px;
+      padding: 110px 0 0 0; /* = top-title-height + 5px */
+    }
+
+    body {
+    }
+  </style>
 
   <!-- js libraries -->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
   <!-- menue widget -->
-  <script type="text/javascript">
-    var
-        $titleBar        = function(){return $("#title-bar");},
-        $appMenu         = function(){return $("#app-menu");},
-        $contextMenu     = function(){return $("#context-menu");},
-        topPositionOf    = function($e){ return parseInt($e.css("top"));};
-        totalHeightOf    = function($e){return $e.height();}
-        animationDuration= 250,
-        afterAnimation   = function(callback){setTimeout(callback, animationDuration)};
-        resetTop         = function($e){
-                              $e.animate({
-                                left: 0,
-                                top: 0,
-                              });
-                          },
-        moveToY            = function($e, yPosition){
-                              return $e.animate({
-                                left: 0,
-                                top: yPosition,
-                              }, animationDuration).promise();
-                          },
-
-        Menu =            function ($titleBar, $appMenu, $contextMenu) {
-                            this.$menuContainer  = $titleBar;
-                            this.$topMenu        = $appMenu;
-                            this.$bottomMenu     = $contextMenu;
-                            this.containerHeight = $titleBar.height();
-                          };
-
-    Menu.prototype.topNavigation = function(){
-      var self = this;
-      self.hide().done(function(){
-        return self.$topMenu.insertBefore(self.$bottomMenu);
-      }).done(function(){
-        self.show();
-      });
-    };
-
-    Menu.prototype.contextNavigation = function(){
-      var self = this;
-      self.hide().done(function(){
-        return self.$bottomMenu.insertBefore(self.$topMenu);
-      }).done(function(){
-        self.show();
-      });
-    };
-
-
-    Menu.prototype.show = function(){
-      return moveToY(this.$menuContainer, 0);
-    };
-
-    Menu.prototype.hide = function(){
-      return moveToY(this.$menuContainer, -this.containerHeight);
-    };
-
-    $(window).load(function(){
-      window.menu = new Menu($titleBar(), $appMenu(), $contextMenu())
-    });
-
-  </script>
+  <script src="menu.js"></script>
 </head>
 <body class="centered-text">
 <div id="title-bar"
@@ -139,5 +85,20 @@ body{
   <button onclick="menu.contextNavigation()">Context Menu</button>
 </div>
 
+<script>
+  var $titleBar = function () {
+        return $("#title-bar");
+      },
+      $appMenu = function () {
+        return $("#app-menu");
+      },
+      $contextMenu = function () {
+        return $("#context-menu");
+      };
+
+  $(window).load(function(){
+    window.menu = new Menu($titleBar(), $appMenu(), $contextMenu())
+  });
+</script>
 </body>
 </html>
