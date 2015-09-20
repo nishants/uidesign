@@ -1,22 +1,7 @@
 (function () {
   "use strict"
   var
-      topPositionOf = function ($e) {
-        return parseInt($e.css("top"));
-      },
-      totalHeightOf = function ($e) {
-        return $e.height();
-      },
       animationDuration = 250,
-      afterAnimation = function (callback) {
-        setTimeout(callback, animationDuration)
-      },
-      resetTop = function ($e) {
-        $e.animate({
-          left: 0,
-          top: 0,
-        });
-      },
       moveToY = function ($e, yPosition) {
         return $e.animate({
           left: 0,

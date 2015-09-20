@@ -25,7 +25,8 @@
         <button onclick="menu.topNavigation()">App Menu</button>
         <button onclick="menu.contextNavigation()">Context Menu</button>
 
-        <input type="number" id="myInput" oninput="loaderBar.waitFor(parseInt(this.value))">
+        <input name="expectedTime" type="number" id="myInput" oninput="loaderBar.waitFor(parseInt(this.value))" value="5000">
+        <button onclick="loaderBar.waitFor(5000)">Start Loader</button>
         <button onclick="loaderBar.stop()">Stop Loader</button>
 
 
@@ -33,10 +34,15 @@
 
     <script>
         var
-                $bar = function(){return $("#loader-bar")};
+                $bar = function(){return $("#loader-bar")},
+                setWidth = function ($e, width, duration) {
+                    return $e.animate({
+                        width: width,
+                    }, duration).promise();
+                },
                 LoaderBar = function($bar){
                                 this.$bar = $bar;
-                                this.updateTime = 500;
+                                this.updateTime = 450;
                             };
         LoaderBar.prototype.waitFor = function(expectedTime){
             this.expectedTime = expectedTime;
@@ -45,6 +51,7 @@
             if (this.timer) {
                 clearInterval(this.timer);
             }
+            self.$bar.width(0);
             this.timer = setInterval(
                     function () {
                         self.update();
@@ -57,16 +64,29 @@
 
 
         LoaderBar.prototype.update = function(){
-            this.timeLeft -=  this.updateTime
+            this.timeLeft -=  this.updateTime;
+            if(this.timeLeft < 0){
+                this.timeLeft = (this.expectedTime/1.1);
+            }
             var maxWidth = $(window).width(),
                 percentageTimepassed = (this.timeLeft * 1.0)/this.expectedTime,
                 currentWidth  = maxWidth - (maxWidth * percentageTimepassed);
-            console.log(currentWidth);
-            this.$bar.width(currentWidth);
+            console.log(percentageTimepassed);
+            setWidth(this.$bar, currentWidth, this.updateTime);
         };
 
         LoaderBar.prototype.stop = function(){
             clearInterval(this.timer);
+            setWidth(
+                    this.$bar,
+                    $(window).width(),
+                    this.updateTime);
+            var self = this;
+            setTimeout(function(){
+                self.$bar.hide();
+                self.$bar.width(0);
+            }, 500);
+
         };
         $(window).load(function () {
             window.menu = new Menu($("#title-bar"), $("#app-menu"), $("#context-menu"))
