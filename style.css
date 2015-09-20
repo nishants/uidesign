@@ -29,23 +29,19 @@ body, div {
 /* Styling */
 
 #title-bar {
-  /*total height : 105 pixels*/
-  position: fixed;
-  top: -105px;
+  top: -105px; /*total height : 105 pixels(hidden by offset)*/
 }
 
 #app-menu {
   /*total height : 60 pixels*/
   padding: 20px 0 0 0;
   height: 40px;
-  position: relative;
 }
 
 #context-menu {
   /*total height : 45 pixels*/
   padding: 5px 0 0 0;
   height: 40px;
-  position: relative;
 }
 
 #content-window {
