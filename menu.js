@@ -15,9 +15,11 @@
         this.$e = $bar;
         this.topClass = topClass;
         this.backClass = backClass;
+        this.$e.css("position", "relative")
       },
       MenuContainer = function($container){
         this.$e = $container;
+        this.$e.css("position", "fixed");
       },
       Menu = function ($titleBar, $appMenu, $contextMenu, topBarClass, bottomBarClass) {
         this.$menuContainer = new MenuContainer($titleBar);
