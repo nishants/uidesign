@@ -35,10 +35,12 @@
       scope: false,
       link: function (scope, element, attrs) {
         var bottomBarClass = attrs["bottomBarClass"],
-            topBarClass = attrs["topBarClass"];
+            topBarClass = attrs["topBarClass"],
+            $titleBar = $(element),
+            $appBar = $titleBar.find("#app-menu"),
+            $contextMenu = $titleBar.find("#context-menu");
 
-        var menu = new Menu($("#title-bar"), $("#app-menu"), $("#context-menu"), topBarClass, bottomBarClass);
-        shutterMenu.init(menu);
+        shutterMenu.init(new Menu($titleBar, $appBar, $contextMenu, topBarClass, bottomBarClass));
       }
     };
   }]);
