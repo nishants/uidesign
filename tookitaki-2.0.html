@@ -9,7 +9,7 @@
 </head>
 <body class="centered-text">
     <div id="loader-bar"
-         class="layer-2"></div>
+         class="layer-3"></div>
     <div id="title-bar"
          class="layer-1 full-width">
         <div id="app-menu"
@@ -35,8 +35,11 @@
     </div>
 
     <script>
+        var tobBarClass     = "layer-2",
+            bottomBarClass  = "layer-1";
+
         $(window).load(function () {
-            window.menu = new Menu($("#title-bar"), $("#app-menu"), $("#context-menu"))
+            window.menu = new Menu($("#title-bar"), $("#app-menu"), $("#context-menu"), tobBarClass, bottomBarClass)
             window.loaderBar = new DataLoader($("#loader-bar"));
         });
     </script>
