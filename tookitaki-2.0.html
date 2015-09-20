@@ -65,7 +65,7 @@ body{
         $contextMenu     = function(){return $("#context-menu");},
         topPositionOf    = function($e){ return parseInt($e.css("top"));};
         totalHeightOf    = function($e){return $e.height();}
-        animationDuration= 500,
+        animationDuration= 250,
         afterAnimation   = function(callback){setTimeout(callback, animationDuration)};
         resetTop         = function($e){
                               $e.animate({
