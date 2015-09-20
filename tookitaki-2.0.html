@@ -30,6 +30,37 @@ body {
   height: 40px;
 }
 </style>
+
+  <!-- js libraries -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
+
+  <!-- menue widget -->
+  <script type="text/javascript">
+    var
+        $appMenu        = function(){return $("#title-bar");},
+        $contextMenu    = function(){return $("#title-bar");},
+        Menu =            function ($appMenu, $contextMenu) {
+                            this.$topMenu     = $appMenu;
+                            this.$bottomMenu  = $contextMenu
+                          };
+    Menu.prototype.appNavigation = function(){
+      var $topMenu      = this.$topMenu;
+      this.$topMenu     = this.$bottomMenu
+      this.$bottomMenu  = $topMenu
+      console.log("show app navigation");
+    };
+
+    Menu.prototype.contextNavigation = function(){
+      console.log("show context navigation")
+    };
+
+    titleBar  = $("#title-bar");
+    appBar     = $("#app-menu");
+    contextBar = $("#context-menu");
+
+
+    window.menu = new Menu($appMenu(), $contextMenu());
+  </script>
 </head>
 <body>
 <div id="title-bar">
@@ -43,6 +74,8 @@ body {
   </div>
 </div>
 
+<button onclick="menu.appNavigation()">App Menu</button>
+<button onclick="menu.contextNavigation()">Context Menu</button>
 
 </body>
 </html>
