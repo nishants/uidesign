@@ -36,11 +36,12 @@
       link: function (scope, element, attrs) {
         var bottomBarClass = attrs["bottomBarClass"],
             topBarClass = attrs["topBarClass"],
-            $titleBar = $(element),
-            $appBar = $titleBar.find("#app-menu"),
-            $contextMenu = $titleBar.find("#context-menu");
+            $menu = $(element),
+            bars = $menu.find("[shutter-menu-bar]"),
+            $appBar = $(bars[0]),
+            $contextMenu = $(bars[1]);
 
-        shutterMenu.init(new Menu($titleBar, $appBar, $contextMenu, topBarClass, bottomBarClass));
+        shutterMenu.init(new Menu($menu, $appBar, $contextMenu, topBarClass, bottomBarClass));
       }
     };
   }]);

@@ -20,10 +20,12 @@
          top-bar-class="layer-2"
          class="layer-1 full-width">
         <div id="app-menu"
+             shutter-menu-bar
              class="dark-bg">
             <span>building the context navigation..</span>
         </div>
         <div id="context-menu"
+             shutter-menu-bar
              class="light-bg">
             <span>building the intra-context navigation...</span>
         </div>
@@ -46,10 +48,6 @@
             $scope.menu = shutterMenu;
 
         }]);
-
-        var tobBarClass     = "layer-2",
-            bottomBarClass  = "layer-1";
-
         $(window).load(function () {
             window.loaderBar = new DataLoader($("#loader-bar"));
         });
