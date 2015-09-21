@@ -92,3 +92,10 @@ h1{
   background-color: #6987F5;
   display: none;
 }
+body{
+  font-family: UbuntuTitling;
+}
+@font-face {
+  font-family: UbuntuTitling;
+  src: url("fonts/UbuntuTitling-Bold.ttf") format("opentype");
+}
