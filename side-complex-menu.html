@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="lib/angular.js"></script>
+    <style>
+        .navigation{
+            min-width: 150px;
+        }
+        .navigation-link {
+            background-color: #ffa23e;
+            display: block;
+            padding: 0px;
+            height: 60px;
+        }
+        .navigation-menu{
+            -webkit-transition: height 0.1s;
+            transition: height 0.1s;
+            overflow: hidden;
+            height: 60px;
+        }
+
+        .show-navigation-menu{
+            height: 440px;
+        }
+        .section-link{
+            background-color: #12aaec;
+            display: block;
+            height: 60px;
+        }
+    </style>
+</head>
+<body class="centered-text very-light-bg" ng-app="test-app">
+<div class="navigation"
+     navigation-context
+     ng-controller="NavigationBarController">
+
+    <div class="navigation-menu">
+        <span class="navigation-link">dashboard</span>
+    </div>
+
+    <div class="navigation-menu">
+        <span class="navigation-link section-link">reporting</span>
+        <span class="navigation-link">user reporting</span>
+        <span class="navigation-link">campaign reporting</span>
+        <span class="navigation-link">adset reporting</span>
+    </div>
+
+    <div class="navigation-menu">
+        <span class="navigation-link section-link">campaign execution</span>
+        <span class="navigation-link">campaigns</span>
+        <span class="navigation-link">creatives</span>
+        <span class="navigation-link">asdsets</span>
+        <span class="navigation-link">ads</span>
+        <span class="navigation-link">dynamic products</span>
+
+        <div class="navigation-menu">
+            <span class="navigation-link section-link">audiences</span>
+            <span class="navigation-link">demographic audiences</span>
+            <span class="navigation-link">interest audiences</span>
+            <span class="navigation-link">educational audiences</span>
+            <span class="navigation-link">work audiences</span>
+        </div>
+
+    </div>
+
+    <span class="navigation-link section-link">audeinces</span>
+    <span class="navigation-link section-link">campaign assets</span>
+</div>
+
+<script type="text/javascript">
+    angular.module("test-app", [])
+            .controller("NavigationBarController", ["$scope", function ($scope) {
+                $scope.show = {command: "dashboard"};
+
+                $scope.$watch("show.view", function () {
+                    console.log("hello india");
+                });
+            }])
+            .directive("navigationContext", ["navigationSwitch", function (navigationSwitch) {
+                var parse = function (expression) {
+                    var tokens = expression ? expression.split(".") : [],
+                        result = {},
+                        value = result;
+                    for (var i in tokens) {
+                        value[tokens[i]] = {};
+                        value = value[tokens[i]];
+                    }
+                    return result;
+                };
+
+                return {
+                    restrict: 'A',
+                    transclude: false,
+                    scope: false,
+                    link: function (scope, element, attrs) {
+                        if(!scope.show.command){
+                            console.error("no commad found");
+                        }
+                        scope.$watch("show.command", function (stateExpression) {
+                            scope.show.view = parse(stateExpression);
+                        });
+
+                        navigationSwitch.from(element);
+
+                    }
+                };
+            }])
+            .factory("navigationSwitch", function () {
+                var
+                        totalHeightOf = function ($e) {
+                            return parseInt($e.css("padding-top")) +
+                                parseInt($e.css("padding-bottom")) +
+                                parseInt($e.css("margin-top")) +
+                                parseInt($e.css("margin-bottom")) +
+                                parseInt($e.height());
+                        },
+                        linksIn = function (menu) {
+                            return menu.find(".navigation-link");
+                        },
+                        Menu = function ($menu, $links) {
+                            var heightOfChildren = 0,
+                                collapsedHeight = $($menu.find(".section-link")[0]).height();
+                            for (var i = 0; i < $links.length; i++) {
+                                heightOfChildren += totalHeightOf($($links[i]));
+                            }
+                            $menu.on("click", function () {
+                                collapsedHeight == $menu.height() ? $menu.height(heightOfChildren) : $menu.height(collapsedHeight);;
+                            });
+                        },
+                        navigationMenusFrom = function (element) {
+                            var menus = [], menuElements = $(element).find(".navigation-menu");
+                            for (var i = 0; i < menuElements.length; i++) {
+                                var $menu =$( menuElements[i]);
+                                menus.push(new Menu($menu, linksIn($menu)));
+                            }
+                        };
+
+                return {from: navigationMenusFrom};
+            });
+</script>
+</body>
+</html>
