@@ -70,12 +70,9 @@
     angular.module("test-app", [])
             .controller("NavigationBarController", ["$scope", function ($scope) {
                 $scope.show = {command: "dashboard"};
-
-                $scope.$watch("show.view", function () {
-                    console.log("hello india");
-                });
+                $scope.na
             }])
-            .directive("navigationContext", ["navigationSwitch", function (navigationSwitch) {
+            .directive("navigationContext", ["navigationBar", function (navigationBar) {
                 var parse = function (expression) {
                     var tokens = expression ? expression.split(".") : [],
                         result = {},
@@ -95,7 +92,7 @@
                         if(!scope.show.command){
                             console.error("no commad found");
                         }
-                        var navigation = navigationSwitch.from(element);
+                        var navigation = navigationBar.from(element);
 
                         scope.$watch("show.command", function (stateExpression) {
 //                            scope.show.view = parse(stateExpression);
@@ -104,7 +101,7 @@
                     }
                 };
             }])
-            .factory("navigationSwitch", function () {
+            .factory("navigationBar", function () {
                 var
                         totalHeightOf = function ($e) {
                             return parseInt($e.css("padding-top")) +
@@ -118,11 +115,13 @@
                         },
                         Menu = function ($menu, $links) {
                             var heightOfChildren = 0,
-                                collapsedHeight = $($menu.find(".section-link")[0]).height();
+                                controlButton = $($menu.find(".section-link")[0]),
+                                collapsedHeight = controlButton.height();
+
                             for (var i = 0; i < $links.length; i++) {
                                 heightOfChildren += totalHeightOf($($links[i]));
                             }
-                            $menu.on("click", function () {
+                            controlButton.on("click", function () {
                                 collapsedHeight == $menu.height() ? $menu.height(heightOfChildren) : $menu.height(collapsedHeight);
                             });
                             this.$menu = $menu;
@@ -151,7 +150,10 @@
 
                 Navigation.prototype.expand = function(contextName){
                     this.closeAll();
-                    this.menus[contextName].show();
+                    if (this.menus[contextName]) {
+                        this.menus[contextName].show();
+                        console.log("invalid stat : " + contextName);
+                    }
                 };
 
                 Menu.prototype.close = function(){
