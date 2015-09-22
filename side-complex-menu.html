@@ -36,37 +36,34 @@
      navigation-context
      ng-controller="NavigationBarController">
 
+    <input type="text" ng-model="show.command">
     <div class="navigation-menu">
         <span class="navigation-link">dashboard</span>
     </div>
 
-    <div class="navigation-menu">
+    <div class="navigation-menu" menu-of="reporting">
         <span class="navigation-link section-link">reporting</span>
         <span class="navigation-link">user reporting</span>
         <span class="navigation-link">campaign reporting</span>
         <span class="navigation-link">adset reporting</span>
     </div>
 
-    <div class="navigation-menu">
+    <div class="navigation-menu" menu-of="campaign">
         <span class="navigation-link section-link">campaign execution</span>
         <span class="navigation-link">campaigns</span>
         <span class="navigation-link">creatives</span>
         <span class="navigation-link">asdsets</span>
         <span class="navigation-link">ads</span>
         <span class="navigation-link">dynamic products</span>
-
-        <div class="navigation-menu">
-            <span class="navigation-link section-link">audiences</span>
-            <span class="navigation-link">demographic audiences</span>
-            <span class="navigation-link">interest audiences</span>
-            <span class="navigation-link">educational audiences</span>
-            <span class="navigation-link">work audiences</span>
-        </div>
-
     </div>
-
-    <span class="navigation-link section-link">audeinces</span>
-    <span class="navigation-link section-link">campaign assets</span>
+    <div class="navigation-menu" menu-of="audiences">
+        <span class="navigation-link section-link">audiences</span>
+        <span class="navigation-link" link-of="audiences.demographic">demographic audiences</span>
+        <span class="navigation-link" link-of="audiences.interest">interest audiences</span>
+        <span class="navigation-link" link-of="audiences.educational">educational audiences</span>
+        <span class="navigation-link" link-of="audiences.work">work audiences</span>
+    </div>
+    <span class="navigation-link">campaign assets</span>
 </div>
 
 <script type="text/javascript">
@@ -98,12 +95,12 @@
                         if(!scope.show.command){
                             console.error("no commad found");
                         }
+                        var navigation = navigationSwitch.from(element);
+
                         scope.$watch("show.command", function (stateExpression) {
-                            scope.show.view = parse(stateExpression);
+//                            scope.show.view = parse(stateExpression);
+                            navigation.expand(stateExpression);
                         });
-
-                        navigationSwitch.from(element);
-
                     }
                 };
             }])
@@ -126,16 +123,44 @@
                                 heightOfChildren += totalHeightOf($($links[i]));
                             }
                             $menu.on("click", function () {
-                                collapsedHeight == $menu.height() ? $menu.height(heightOfChildren) : $menu.height(collapsedHeight);;
+                                collapsedHeight == $menu.height() ? $menu.height(heightOfChildren) : $menu.height(collapsedHeight);
                             });
+                            this.$menu = $menu;
+                            this.expandedHeight = heightOfChildren;
+                            this.collapsedHeight = collapsedHeight;
+                        },
+                        Navigation = function(menus){
+                            this.menus = menus;
                         },
                         navigationMenusFrom = function (element) {
-                            var menus = [], menuElements = $(element).find(".navigation-menu");
+                            var menus = [],
+                                menuElements = $(element).find(".navigation-menu");
+
                             for (var i = 0; i < menuElements.length; i++) {
                                 var $menu =$( menuElements[i]);
-                                menus.push(new Menu($menu, linksIn($menu)));
+                                menus[$menu.attr("menu-of")] = new Menu($menu, linksIn($menu));
                             }
+                            return new Navigation(menus);
                         };
+
+                Navigation.prototype.closeAll = function(){
+                    for(var context in this.menus){
+                        this.menus[context].close();
+                    }
+                };
+
+                Navigation.prototype.expand = function(contextName){
+                    this.closeAll();
+                    this.menus[contextName].show();
+                };
+
+                Menu.prototype.close = function(){
+                    this.$menu.height(this.collapsedHeight)
+                };
+
+                Menu.prototype.show = function(){
+                    this.$menu.height(this.expandedHeight)
+                };
 
                 return {from: navigationMenusFrom};
             });
