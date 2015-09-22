@@ -36,7 +36,12 @@
      navigation-context
      ng-controller="NavigationBarController">
 
-    <input type="text" ng-model="show.command">
+    <select ng-model="show.command">
+        <option value="dashboard">dashboard</option>
+        <option value="campaign">campaign</option>
+        <option value="audiences">audiences</option>
+        <option value="reporting">reporting</option>
+    </select>
     <div class="navigation-menu">
         <span class="navigation-link">dashboard</span>
     </div>
@@ -58,10 +63,10 @@
     </div>
     <div class="navigation-menu" menu-of="audiences">
         <span class="navigation-link section-link">audiences</span>
-        <span class="navigation-link" link-of="audiences.demographic">demographic audiences</span>
-        <span class="navigation-link" link-of="audiences.interest">interest audiences</span>
-        <span class="navigation-link" link-of="audiences.educational">educational audiences</span>
-        <span class="navigation-link" link-of="audiences.work">work audiences</span>
+        <span class="navigation-link">demographic audiences</span>
+        <span class="navigation-link">interest audiences</span>
+        <span class="navigation-link">educational audiences</span>
+        <span class="navigation-link">work audiences</span>
     </div>
     <span class="navigation-link">campaign assets</span>
 </div>
@@ -96,6 +101,7 @@
 
                         scope.$watch("show.command", function (stateExpression) {
 //                            scope.show.view = parse(stateExpression);
+                            navigation.closeAll();
                             navigation.expand(stateExpression);
                         });
                     }
@@ -149,11 +155,7 @@
                 };
 
                 Navigation.prototype.expand = function(contextName){
-                    this.closeAll();
-                    if (this.menus[contextName]) {
-                        this.menus[contextName].show();
-                        console.log("invalid stat : " + contextName);
-                    }
+                    this.menus[contextName] ? this.menus[contextName].show() : console.log("invalid state" + contextName);
                 };
 
                 Menu.prototype.close = function(){
