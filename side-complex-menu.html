@@ -15,12 +15,9 @@
             height: 60px;
         }
         .navigation-menu{
-            -webkit-transition: height 0.1s;
-            transition: height 0.1s;
             overflow: hidden;
             height: 60px;
         }
-
         .show-navigation-menu{
             height: 440px;
         }
@@ -116,6 +113,12 @@
                                 parseInt($e.css("margin-bottom")) +
                                 parseInt($e.height());
                         },
+                        animationDuration = 300,
+                        setHeight = function($e, height){
+                            height = parseInt(height) + "px";
+                            $e.animate({height: height}, animationDuration);
+
+                        },
                         linksIn = function (menu) {
                             return menu.find(".navigation-link");
                         },
@@ -128,7 +131,9 @@
                                 heightOfChildren += totalHeightOf($($links[i]));
                             }
                             controlButton.on("click", function () {
-                                collapsedHeight == $menu.height() ? $menu.height(heightOfChildren) : $menu.height(collapsedHeight);
+                                ;
+
+                                collapsedHeight == $menu.height() ? setHeight($menu, heightOfChildren) : setHeight($menu, collapsedHeight);
                             });
                             this.$menu = $menu;
                             this.expandedHeight = heightOfChildren;
@@ -163,7 +168,7 @@
                 };
 
                 Menu.prototype.show = function(){
-                    this.$menu.height(this.expandedHeight)
+                    setHeight(this.$menu, this.expandedHeight);
                 };
 
                 return {from: navigationMenusFrom};
