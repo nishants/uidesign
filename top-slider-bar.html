@@ -4,6 +4,10 @@
 <head>
     <script src="lib/angular.js"></script>
     <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
         .relative-positioned {
             position: relative;
         }
@@ -27,7 +31,8 @@
             padding: 0;
         }
         .top-menu-bar {
-             height: 65px;
+            padding: 15px 0 10px 0;
+            height: 40px;
         }
         .layer-1{
             z-index: 1;
@@ -36,6 +41,9 @@
             z-index: 2;
         }
 
+        .txt-centered{
+            text-align: center;
+        }
         .menu-section {
         }
         .highlight{
@@ -44,34 +52,41 @@
 
         .hidden-submenu{
             top: -65px;
-            transition: padding 0.5s;
-            -webkit-transition: padding 0.5s;
+            transition: margin 0.5s;
+            -webkit-transition: margin 0.5s;
         }
 
         .show-submenu{
-            padding-top: 130px; /*s ame as top navigation bar height*/
+            margin-top: 130px; /*s ame as top navigation bar height*/
+            height: 20px;
+            padding: 10px;
         }
 
         .navigation-link{
             display: inline-block;
         }
-
+        .dark-bg {
+            background-color: #434A54;
+        }
+        .light-bg {
+            background-color: #a1adb7;
+        }
     </style>
 </head>
-<body ng-app="test-app">
+<body ng-app="test-app" class="txt-centered">
 
 <div id="top-menu"
      class="fixed-positioned top-position full-width no-margin no-padding layer-1"
      ng-controller="NavigationBarController">
 
     <!-- top menu container-->
-    <div class="top-menu-bar"
+    <div class="top-menu-bar dark-bg relative-positioned layer-2"
          ng-mouseleave="menu.showMenuByUrl()">
-        <span class="menu-section relative-positioned layer-2 {{'highlight'|classif: menu.highlight('reporting')}}"
+        <span class="menu-section {{'highlight'|classif: menu.highlight('reporting')}}"
               ng-mouseover="menu.showSubMenu('reporting')">reporting
         </span>
         
-        <span class="menu-section relative-positioned layer-2 {{'highlight'|classif:menu.highlight('campaigns')}}"
+        <span class="menu-section {{'highlight'|classif:menu.highlight('campaigns')}}"
               ng-mouseover="menu.showSubMenu('campaigns')">campaigns
         </span>
     </div>
@@ -79,13 +94,13 @@
 
     <!-- bottom submenu container-->
     <div class="">
-        <div class="absolute-positioned top-position hidden-submenu {{'show-submenu'|classif: menu.highlight('reporting')}}">
+        <div class="full-width light-bg absolute-positioned top-position hidden-submenu {{'show-submenu'|classif: menu.highlight('reporting')}}">
             <span class="navigation-link">user reporting</span>
             <span class="navigation-link">campaign reporting</span>
             <span class="navigation-link">adset reporting</span>
         </div>
 
-        <div class="absolute-positioned top-position  hidden-submenu {{'show-submenu'|classif: menu.highlight('campaigns')}}">
+        <div class="full-width light-bg absolute-positioned top-position  hidden-submenu {{'show-submenu'|classif: menu.highlight('campaigns')}}">
             <span class="navigation-link">campaigns</span>
             <span class="navigation-link">ad-sets</span>
             <span class="navigation-link">ads</span>
