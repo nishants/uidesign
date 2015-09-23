@@ -42,11 +42,12 @@
 
     <div class="top-menu-bar"
          ng-mouseleave="menu.showMenuByUrl()">
-        <span class="menu-section {{'highlight'|classif: menu.state.reporting}}"
-              ng-mouseover="menu.showSubMenu('reporting')">reporting
+        <span class="menu-section {{'highlight'|classif: menu.highlight(menu.state.reporting, 'state.reporting')}}"
+              ng-mouseover="menu.showSubMenu('state.reporting')">reporting
         </span>
-        <span class="menu-section {{'highlight'|classif: menu.state.campaigns}}"
-              ng-mouseover="menu.showSubMenu('campaigns')">campaigns
+        
+        <span class="menu-section {{'highlight'|classif:menu.highlight(menu.state.campaigns, 'state.campaigns')}}"
+              ng-mouseover="menu.showSubMenu('state.campaigns')">campaigns
         </span>
     </div>
 
@@ -64,30 +65,20 @@
                 // on route change success change state
                 // watch state from directive, and update view items on state change.
                 $scope.menu = {
-                    stateBackup: null,
+                    hoverMenu: null,
                     state: {
                         dashboard: false,
-                        campaigns: true,
-                        reporting: false,
-                    },
-                    highlight: function(stateValue){
-                        console.log("highlight : "+stateValue);
-                        return stateValue;
-                    },
-                    setTemporaryState: function(stateName){
-                        if(!this.stateBackup) {
-                            this.stateBackup = angular.extend({}, this.state);
-                        }
-                        this.state = {}
-                        this.state[stateName] = true;
+                        campaigns: false,
+                        reporting: true,
                     },
                     showSubMenu: function(stateName){
-                        this.setTemporaryState(stateName);
-                        console.log("show sub menu of "+ stateName);
+                        this.hoverMenu = stateName;
                     },
                     showMenuByUrl: function(){
-                        this.state = this.stateBackup ;
-                        this.stateBackup  = null;
+                        this.hoverMenu = null;
+                    },
+                    highlight: function(state, hoverMenu){
+                        return this.hoverMenu ? (hoverMenu == this.hoverMenu) : state;
                     }
                 };
 
