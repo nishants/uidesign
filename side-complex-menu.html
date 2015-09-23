@@ -14,7 +14,7 @@
             padding: 0px;
             height: 60px;
         }
-        .navigation-menu{
+        .menu-section {
             overflow: hidden;
             height: 60px;
         }
@@ -39,18 +39,18 @@
         <option value="audiences">audiences</option>
         <option value="reporting">reporting</option>
     </select>
-    <div class="navigation-menu">
+    <div class="menu-section">
         <span class="navigation-link">dashboard</span>
     </div>
 
-    <div class="navigation-menu" menu-of="reporting">
+    <div class="menu-section" menu-of="reporting">
         <span class="navigation-link section-link">reporting</span>
         <span class="navigation-link">user reporting</span>
         <span class="navigation-link">campaign reporting</span>
         <span class="navigation-link">adset reporting</span>
     </div>
 
-    <div class="navigation-menu" menu-of="campaign">
+    <div class="menu-section" menu-of="campaign">
         <span class="navigation-link section-link">campaign execution</span>
         <span class="navigation-link">campaigns</span>
         <span class="navigation-link">creatives</span>
@@ -58,7 +58,7 @@
         <span class="navigation-link">ads</span>
         <span class="navigation-link">dynamic products</span>
     </div>
-    <div class="navigation-menu" menu-of="audiences">
+    <div class="menu-section" menu-of="audiences">
         <span class="navigation-link section-link">audiences</span>
         <span class="navigation-link">demographic audiences</span>
         <span class="navigation-link">interest audiences</span>
@@ -144,7 +144,7 @@
                         },
                         navigationMenusFrom = function (element) {
                             var menus = [],
-                                menuElements = $(element).find(".navigation-menu");
+                                menuElements = $(element).find(".menu-section");
 
                             for (var i = 0; i < menuElements.length; i++) {
                                 var $menu =$( menuElements[i]);
