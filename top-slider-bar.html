@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="lib/angular.js"></script>
+    <style>
+        .fixed-positioned {
+            position: fixed;
+        }
+        .top-position {
+            top: 0;
+        }
+        .full-width {
+            width: 100%;
+        }
+        .no-margin {
+            margin: 0;
+        }
+        .no-padding {
+            padding: 0;
+        }
+        .top-menu-bar {
+             height: 65px;
+        }
+        .layer-1{
+            z-index: 1;
+        }
+
+        .menu-section {
+            /* top level menu*/
+        }
+        .highlight{
+            border: thick solid cornflowerblue;
+        }
+    </style>
+</head>
+<body ng-app="test-app">
+
+<div id="top-menu"
+     class="fixed-positioned top-position full-width no-margin no-padding layer-1"
+     ng-controller="NavigationBarController">
+
+    <div class="top-menu-bar"
+         ng-mouseleave="menu.showMenuByUrl()">
+        <span class="menu-section {{'highlight'|classif: menu.state.reporting}}"
+              ng-mouseover="menu.showSubMenu('reporting')">reporting
+        </span>
+    </div>
+
+    <div>
+        <span class="navigation-link">user reporting</span>
+        <span class="navigation-link">campaign reporting</span>
+        <span class="navigation-link">adset reporting</span>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    angular.module("test-app", [])
+            .controller("NavigationBarController", ["$scope", function ($scope) {
+                // on route change success change state
+                // watch state from directive, and update view items on state change.
+                $scope.menu = {
+                    stateBackup: null,
+                    state: {
+                        dashboard: false,
+                        campaigns: false,
+                        reporting: false,
+                    },
+                    highlight: function(stateValue){
+                        console.log("highlight : "+stateValue);
+                        return stateValue;
+                    },
+                    setTemporaryState: function(stateName){
+                        if(!this.stateBackup) {
+                            this.stateBackup = angular.extend({}, this.state);
+                        }
+                        this.state[stateName] = true;
+                    },
+                    showSubMenu: function(stateName){
+                        this.setTemporaryState(stateName);
+                        console.log("show sub menu of "+ stateName);
+                    },
+                    showMenuByUrl: function(){
+                        this.state = this.stateBackup ;
+                        this.stateBackup  = null;
+                    }
+                };
+
+            }])
+            .directive("navigationContext", ["navigationBar", function (navigationBar) {
+
+                return {
+                    restrict: 'A',
+                    transclude: false,
+                    scope: false,
+                    link: function (scope, element, attrs) {
+                        if(!scope.menu.state){
+                            console.error("no state found ");
+                        }
+
+                        // watch menu.state from controller, change menu state from app state
+                        scope.$watch("menu.state", function (newState, oldState) {
+                            //change menu state, based on value of state
+                        });
+                    }
+                };
+            }]).filter("classif", function(){
+                return function(classname, value){
+                    return value ? classname : "";
+                };
+            });
+</script>
+</body>
+</html>
