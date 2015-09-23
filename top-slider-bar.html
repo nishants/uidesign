@@ -32,6 +32,13 @@
         .highlight{
             border: thick solid cornflowerblue;
         }
+        .hidden-submenu{
+            display: none;
+        }
+        .show-submenu{
+            display: block;
+        }
+
     </style>
 </head>
 <body ng-app="test-app">
@@ -40,6 +47,7 @@
      class="fixed-positioned top-position full-width no-margin no-padding layer-1"
      ng-controller="NavigationBarController">
 
+    <!-- top menu container-->
     <div class="top-menu-bar"
          ng-mouseleave="menu.showMenuByUrl()">
         <span class="menu-section {{'highlight'|classif: menu.highlight(menu.state.reporting, 'state.reporting')}}"
@@ -51,11 +59,22 @@
         </span>
     </div>
 
-    <div>
-        <span class="navigation-link">user reporting</span>
-        <span class="navigation-link">campaign reporting</span>
-        <span class="navigation-link">adset reporting</span>
+
+    <!-- bottom submenu container-->
+    <div class="">
+        <div class="hidden-submenu {{'show-submenu'|classif: menu.highlight(menu.state.reporting, 'state.reporting')}}"w>
+            <span class="navigation-link">user reporting</span>
+            <span class="navigation-link">campaign reporting</span>
+            <span class="navigation-link">adset reporting</span>
+        </div>
+
+        <div class="hidden-submenu {{'show-submenu'|classif: menu.highlight(menu.state.campaigns, 'state.campaigns')}}"w>
+            <span class="navigation-link">campaigns</span>
+            <span class="navigation-link">ad-sets</span>
+            <span class="navigation-link">ads</span>
+        </div>
     </div>
+
 </div>
 
 
@@ -68,8 +87,8 @@
                     hoverMenu: null,
                     state: {
                         dashboard: false,
-                        campaigns: false,
-                        reporting: true,
+                        campaigns: true,
+                        reporting: false,
                     },
                     showSubMenu: function(stateName){
                         this.hoverMenu = stateName;
