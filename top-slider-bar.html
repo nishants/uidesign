@@ -45,6 +45,9 @@
         <span class="menu-section {{'highlight'|classif: menu.state.reporting}}"
               ng-mouseover="menu.showSubMenu('reporting')">reporting
         </span>
+        <span class="menu-section {{'highlight'|classif: menu.state.campaigns}}"
+              ng-mouseover="menu.showSubMenu('campaigns')">campaigns
+        </span>
     </div>
 
     <div>
@@ -64,7 +67,7 @@
                     stateBackup: null,
                     state: {
                         dashboard: false,
-                        campaigns: false,
+                        campaigns: true,
                         reporting: false,
                     },
                     highlight: function(stateValue){
@@ -75,6 +78,7 @@
                         if(!this.stateBackup) {
                             this.stateBackup = angular.extend({}, this.state);
                         }
+                        this.state = {}
                         this.state[stateName] = true;
                     },
                     showSubMenu: function(stateName){
