@@ -78,7 +78,9 @@
         .navigation-link{
             display: inline-block;
         }
-
+        .navigation-link{
+            padding: 0 5px 0 5px;
+        }
 
     </style>
 </head>
@@ -86,11 +88,10 @@
 
 <div id="top-menu"
      class="fixed-positioned top-position full-width no-margin no-padding layer-1"
-     ng-controller="NavigationBarController">
+     ng-controller="NavigationBarController" ng-mouseleave="menu.showMenuByUrl()">
 
     <!-- top menu container-->
-    <div class="top-menu-bar dark-bg relative-positioned layer-2"
-         ng-mouseleave="menu.showMenuByUrl()">
+    <div class="top-menu-bar dark-bg relative-positioned layer-2">
         <span class="menu-section txt-light {{'highlight'|classif: menu.highlight('reporting')}}"
               ng-mouseover="menu.showSubMenu('reporting')">reporting
         </span>
@@ -104,15 +105,15 @@
     <!-- bottom submenu container-->
     <div class="">
         <div class="full-width light-bg absolute-positioned top-position hidden-submenu {{'show-submenu'|classif: menu.highlight('reporting')}}">
-            <span class="txt-dark navigation-link">user reporting</span>
-            <span class="txt-dark navigation-link">campaign reporting</span>
-            <span class="txt-dark navigation-link">adset reporting</span>
+            <span class="txt-dark navigation-link">user reporting</span> |
+            <span class="txt-dark navigation-link">campaign reporting</span> |
+            <span class="txt-dark navigation-link">adset reporting</span> |
         </div>
 
         <div class="full-width light-bg absolute-positioned top-position  hidden-submenu {{'show-submenu'|classif: menu.highlight('campaigns')}}">
-            <span class="txt-dark navigation-link">campaigns</span>
-            <span class="txt-dark navigation-link">ad-sets</span>
-            <span class="txt-dark navigation-link">ads</span>
+            <span class="txt-dark navigation-link">campaigns</span> |
+            <span class="txt-dark navigation-link">ad-sets</span> |
+            <span class="txt-dark navigation-link">ads</span> |
         </div>
     </div>
 </div>
