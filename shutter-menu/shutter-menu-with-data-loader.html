@@ -79,6 +79,31 @@
         $(window).load(function () {
             window.loaderBar = new DataLoader($("#loader-bar"));
         });
+
+        var ScrollListener = function(logup, logDown){
+            var lastPosition = 0;
+            var scrolledTo = function(position) {
+                position < lastPosition ? logup()  : logDown();
+                lastPosition = position;
+            };
+
+            $(window).load(function () {
+                $(window).on("scroll", function () {
+                    scrolledTo(window.pageYOffset);
+                });
+
+            });
+        };
+
+        var logDown = function () {
+            console.log("down");
+        };
+        var logup = function () {
+            console.log("up");
+        };
+
+        var scrollListener = new ScrollListener(logup, logDown);
+
     </script>
 </body>
 </html>
