@@ -29,7 +29,8 @@
     };
   }]);
   module.directive("shutterMenu", ["shutterMenu", function (shutterMenu) {
-    var ScrollListener = function(onScrollUp, onScrollDown){
+    // inviewalso if true, scroll event are fired, even when user has not scrolled down below the initial viewport
+    var ScrollListener = function(onScrollUp, onScrollDown, inviewalso){
       var lastPosition = 0,
           lastUp = false,
           onUp = function () {
@@ -51,6 +52,7 @@
 
       $(window).load(function () {
         $(window).on("scroll", function () {
+          if(!inviewalso && window.pageYOffset < 100) return;
           scrolledTo(window.pageYOffset);
         });
 
