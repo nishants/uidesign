@@ -46,11 +46,8 @@
         this.$bar,
         $(window).width(),
         this.updateTime);
-    var self = this;
-    setTimeout(function () {
-      self.$bar.hide();
-      self.$bar.width(0);
-    }, 1000);
+    this.$bar.fadeOut();
+
   };
   window.DataLoader = LoaderBar;
 }).call(this);
