@@ -50,7 +50,7 @@
     setTimeout(function () {
       self.$bar.hide();
       self.$bar.width(0);
-    }, 500);
+    }, 1000);
   };
   window.DataLoader = LoaderBar;
 }).call(this);
