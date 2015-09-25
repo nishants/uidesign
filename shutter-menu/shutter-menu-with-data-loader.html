@@ -79,6 +79,8 @@
 
         }]);
         $(window).load(function () {
+            /* Creates and instanceof data loader,
+            doen't show it, unless #waitFor(expectedTimeToFinish) is invoked            */
             window.loaderBar = new DataLoader($("#loader-bar"));
         });
 

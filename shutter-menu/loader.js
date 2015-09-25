@@ -10,6 +10,10 @@
         this.$bar = $bar;
         this.updateTime = 450;
       };
+
+  // assumes to last after extpectdTime in millis,
+  // if stop is not invoked before that,
+  // projects a new expected time and re adjsuts.
   LoaderBar.prototype.waitFor = function (expectedTime) {
     this.expectedTime = expectedTime;
     this.timeLeft = expectedTime;
@@ -40,6 +44,7 @@
     setWidth(this.$bar, currentWidth, this.updateTime);
   };
 
+  // goes to full width, and fades out
   LoaderBar.prototype.stop = function () {
     clearInterval(this.timer);
     setWidth(
