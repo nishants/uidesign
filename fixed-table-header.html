@@ -30,18 +30,18 @@
     </thead>
     <tbody>
     <tr>
-        <td>info</td>
-        <td>info</td>
-        <td>info</td>
-    </tr>
-    <tr>
-        <td>info</td>
+        <td>infoinfoinfoinfoinfoinfoinfo</td>
         <td>info</td>
         <td>info</td>
     </tr>
     <tr>
         <td>info</td>
         <td>info</td>
+        <td>infoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfo</td>
+    </tr>
+    <tr>
+        <td>info</td>
+        <td>infoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfo</td>
         <td>info</td>
     </tr>
     </tbody>
@@ -53,10 +53,20 @@
     var $header = $("#table-1 > thead").clone();
     var $fixedHeader = $("#header-fixed").append($header);
 
+    var setHeaderSize = function(fromTable, toTable){
+        var fromTheads = fromTable.find("th"),
+            toTheads   = toTable.find("th");
+
+        for(var i = 0; i< fromTheads.length; i++){
+            $(toTheads[i]).width($(fromTheads[i]).width());
+        }
+    };
+
     $(window).bind("scroll", function () {
         var offset = $(this).scrollTop();
 
         if (offset >= tableOffset && $fixedHeader.is(":hidden")) {
+            setHeaderSize($("#table-1"), $fixedHeader);
             $fixedHeader.show();
         }
         else if (offset < tableOffset) {
