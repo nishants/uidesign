@@ -28,6 +28,22 @@
       showSubMenu: showSubMenu,
     };
   }]);
+
+  module.service("loader", [function(){
+    var loader = null,
+        averageReturnTimeOfRequests = 5000;
+    return {
+      init: function($e){
+        loader = new DataLoader($e);
+      },
+      start: function(){
+        loader ? loader.waitFor(averageReturnTimeOfRequests) : console.log("loader element not defined");
+      },
+      stop: function(){
+        loader.stop();
+      }
+    };
+  }]);
   module.directive("shutterMenu", ["shutterMenu", function (shutterMenu) {
     // inviewalso if true, scroll event are fired, even when user has not scrolled down below the initial viewport
     var ScrollListener = function(onScrollUp, onScrollDown, inviewalso){
@@ -99,7 +115,7 @@
     }
   }]);
 
-  module.directive("loaderBar", [function(){
+  module.directive("loaderBar", ["loader", function(loader){
     return {
       restrict: 'A',
       transclude: false,
@@ -107,7 +123,7 @@
       link: function(scope, element, attrs){
         /* Creates and instanceof data loader,
          doen't show it, unless #waitFor(expectedTimeToFinish) is invoked            */
-        new DataLoader($(element));
+        loader.init($(element));
       }
     };
   }]);
