@@ -58,7 +58,9 @@
          class="very-high-to-test-scroll"
          ng-controller="ViewPortController">
         <!-- stick any content here, while in context menu mode-->
-        <div id="context-sticky" class="full-width fixed-positioned position-below-context-menu no-display">
+        <div id="context-sticky"
+             class="full-width fixed-positioned position-below-context-menu no-display"
+             stick-below-context-menu>
             <!-- This gets eclipsed, when showing both context menus -->
             <h1 class="app-menu-height">Section Heading</h1>
             <span>Stick table/forms-section-headings here</span>
@@ -98,10 +100,6 @@
             window.loaderBar = new DataLoader($("#loader-bar"));
         });
 
-        $(window).bind("scroll", function () {
-            var $sticky = $("#context-sticky");
-            this.pageYOffset > 100 ? $sticky.show() : $sticky.hide();
-        })
     </script>
 </body>
 </html>

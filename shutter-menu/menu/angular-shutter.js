@@ -58,8 +58,6 @@
 
       });
     };
-
-;
     return {
       restrict: 'A',
       transclude: false,
@@ -85,5 +83,20 @@
         });
       }
     };
+  }]);
+
+  module.directive("stickBelowContextMenu", [function(){
+    return {
+      restrict: 'A',
+      transclude: false,
+      scope: false,
+      link: function(scope, element, attrs){
+
+        $(window).bind("scroll", function () {
+          var $sticky = $("#context-sticky");
+          this.pageYOffset > 100 ? $sticky.show() : $sticky.hide();
+        });
+      }
+    }
   }]);
 }).call(this);
