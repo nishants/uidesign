@@ -14,20 +14,15 @@ body, div, h1, p, span, img, form, input, button, ul, li, a{
   border-radius: 0;
 }
 
-button{
-  background-color: rgba(66, 127, 237, 0.8);
-  padding: 5px;
-  overflow: hidden;
-
-  cursor: pointer;
-  padding: 6px 12px 6px 12px;
-
-  border: 0 solid #599f3f;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-
-  padding: 6px 12px 6px 12px;
+input, button{
   width: 200px;
+  padding: 6px 12px 6px 12px;
+  margin: 5px;
+  min-width: 300px;
+  height: 1.9em;
+
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 
   -webkit-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -35,16 +30,30 @@ button{
   transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
-.clickable{
-  cursor: pointer;
+input:hover, button:hover{
+  transform: scale(1.05);
+}
+
+input{
+  border: #5E5E5E solid 1px;
 }
 
 button:hover{
+  border: 0 solid #599f3f;
+
   background-color: rgb(103, 152, 240);
   color: rgba(247, 242, 242, 0.81);
-  outline: solid 1px white;
-  transform: scale(1.05);
+}
 
+button{
+  cursor: pointer;
+
+  background-color: rgba(66, 127, 237, 0.8);
+  overflow: hidden;
+}
+
+.clickable{
+  cursor: pointer;
 }
 
 h1{
@@ -77,7 +86,7 @@ h1{
 }
 
 .catchy-bg-color{
-  background-color: #F58369;
+  background-color: #6785F0;
 }
 
 .full-width {
