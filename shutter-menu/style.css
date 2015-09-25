@@ -18,7 +18,7 @@ h1{
   font-size: 1.6em;
 }
 
-/* theme */
+/* library */
 .centered-text {
   text-align: center;
 }
@@ -54,10 +54,36 @@ h1{
 .absolute-positioned{
   position: absolute;
 }
-/* Styling */
+
+.layer-1{
+  z-index: 1;
+}
+
+.layer-2{
+  z-index: 2;
+}
+
+.layer-3{
+  z-index: 3;
+}
+/* Design */
 
 .top-bar-height {
   top: -105px; /*total height : 105 pixels(hidden by offset)*/
+}
+
+.app-menu-height{
+  height: 65px;
+}
+
+.position-below-context-menu{
+  top: 45px;
+}
+
+#loader-bar{
+  padding-top: 5px;
+  background-color: #6987F5;
+  display: none;
 }
 
 #app-menu {
@@ -72,27 +98,10 @@ h1{
   height: 40px;
 }
 
-#content-window {
-  margin: 110px 0 0 0; /* top-title-height + 5px */
+#sub-menu-content {
+  margin: 110px 0 0 0; /* top-height-of-both-top-bars + 5px */
 }
 
-.layer-1{
-  z-index: 1;
-}
-
-.layer-2{
-  z-index: 2;
-}
-
-.layer-3{
-  z-index: 3;
-}
-
-#loader-bar{
-  padding-top: 5px;
-  background-color: #6987F5;
-  display: none;
-}
 body{
   font-family: UbuntuTitling;
 }
@@ -101,20 +110,11 @@ body{
   src: url("fonts/UbuntuTitling-Bold.ttf") format("opentype");
 }
 
-.app-menu-height{
-  height: 65px;
-}
-
-.position-below-context-menu{
-  top: 45px;
-}
-
 .no-display {
   display: none;
 }
-/*TODO*/
-/*#content-window{padding-top: 300px}*/
 
+/*TODO remove*/
 
 .very-high-to-test-scroll{
   height: 3000px;
