@@ -43,6 +43,10 @@ h1{
   background-color: #F3F3F3;
 }
 
+.catchy-bg-color{
+  background-color: #6987F5;
+}
+
 .full-width {
   width: 100%;
 }
@@ -53,6 +57,10 @@ h1{
 
 .absolute-positioned{
   position: absolute;
+}
+
+.top-of-window{
+  top: 0;
 }
 
 .layer-1{
@@ -81,9 +89,7 @@ h1{
 }
 
 #loader-bar{
-  padding-top: 5px;
-  background-color: #6987F5;
-  display: none;
+  padding-top: 2px;
 }
 
 #app-menu {
