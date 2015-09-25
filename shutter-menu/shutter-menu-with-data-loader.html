@@ -14,11 +14,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
     <script src="menu/angular-shutter.js"></script>
 </head>
-<body class="centered-text very-light-bg" ng-app="test-shutter">
+<body class="centered-text" ng-app="test-shutter">
+
+    <!-- at layer 3, above both menu bars.-->
     <div id="loader-bar"
          class="fixed-positioned layer-3 top-of-window catchy-bg-color no-display show-loader-for-demo">
     </div>
 
+    <!-- at layer 2 and 1, top bar at layer 2, bottom at layer 1.-->
     <div id="navigation-bar"
          shutter-menu
          bottom-bar-class="layer-1"
@@ -53,7 +56,7 @@
     <!-- This represents styling of container, while showing view a sub menu screen-->
     <div id="sub-menu-content"
          class="very-high-to-test-scroll"
-         ng-controller="MenuController">
+         ng-controller="ViewPortController">
         <!-- stick any content here, while in context menu mode-->
         <div id="context-sticky" class="full-width fixed-positioned position-below-context-menu no-display">
             <!-- This gets eclipsed, when showing both context menus -->
@@ -83,7 +86,7 @@
 
 
         var app = angular.module("test-shutter", ["shutter-menu"]);
-        app.controller("MenuController", ["$scope","shutterMenu", function($scope, shutterMenu){
+        app.controller("ViewPortController", ["$scope","shutterMenu", function($scope, shutterMenu){
             $scope.menu = shutterMenu;
 
             // TODO remove this
@@ -96,7 +99,8 @@
         });
 
         $(window).bind("scroll", function () {
-            this.pageYOffset > 100? $("#context-sticky").show() : $("#context-sticky").hide();
+            var $sticky = $("#context-sticky");
+            this.pageYOffset > 100 ? $sticky.show() : $sticky.hide();
         })
     </script>
 </body>
