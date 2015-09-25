@@ -60,7 +60,7 @@
         <!-- stick any content here, while in context menu mode-->
         <div id="context-sticky"
              class="full-width fixed-positioned position-below-context-menu no-display"
-             stick-below-context-menu>
+             sticky>
             <!-- This gets eclipsed, when showing both context menus -->
             <h1 class="app-menu-height">Section Heading</h1>
             <span>Stick table/forms-section-headings here</span>
@@ -85,8 +85,6 @@
     </div>
 
     <script>
-
-
         var app = angular.module("test-shutter", ["shutter-menu"]);
         app.controller("ViewPortController", ["$scope","shutterMenu", function($scope, shutterMenu){
             $scope.menu = shutterMenu;
@@ -94,12 +92,6 @@
             // TODO remove this
             $scope.menu.showSubMenu();
         }]);
-        $(window).load(function () {
-            /* Creates and instanceof data loader,
-            doen't show it, unless #waitFor(expectedTimeToFinish) is invoked            */
-            window.loaderBar = new DataLoader($("#loader-bar"));
-        });
-
     </script>
 </body>
 </html>

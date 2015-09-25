@@ -85,18 +85,30 @@
     };
   }]);
 
-  module.directive("stickBelowContextMenu", [function(){
+  // shows when out of initial view port
+  module.directive("sticky", [function(){
     return {
       restrict: 'A',
       transclude: false,
       scope: false,
       link: function(scope, element, attrs){
-
         $(window).bind("scroll", function () {
-          var $sticky = $("#context-sticky");
-          this.pageYOffset > 100 ? $sticky.show() : $sticky.hide();
+          this.pageYOffset > 100 ? element.show() : element.hide();
         });
       }
     }
+  }]);
+
+  module.directive("loaderBar", [function(){
+    return {
+      restrict: 'A',
+      transclude: false,
+      scope: false,
+      link: function(scope, element, attrs){
+        /* Creates and instanceof data loader,
+         doen't show it, unless #waitFor(expectedTimeToFinish) is invoked            */
+        new DataLoader($(element));
+      }
+    };
   }]);
 }).call(this);
