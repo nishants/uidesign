@@ -8,7 +8,7 @@ body, div, h1, p, span, img, form, input, button, ul, li, a{
   outline: none;
   text-align: center;
 
-  color: black;
+  color: #565656;
   background-color: transparent;
   font-size: large;
   border-radius: 0;
