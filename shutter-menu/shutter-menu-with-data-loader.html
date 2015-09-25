@@ -16,7 +16,7 @@
 </head>
 <body class="centered-text very-light-bg" ng-app="test-shutter">
     <div id="loader-bar"
-         class="fixed-positioned layer-3 top-of-window catchy-bg-color no-display">
+         class="fixed-positioned layer-3 top-of-window catchy-bg-color no-display show-loader-for-demo">
     </div>
 
     <div id="navigation-bar"
@@ -84,6 +84,8 @@
         app.controller("MenuController", ["$scope","shutterMenu", function($scope, shutterMenu){
             $scope.menu = shutterMenu;
 
+            // TODO remove this
+            $scope.menu.showSubMenu();
         }]);
         $(window).load(function () {
             /* Creates and instanceof data loader,
@@ -91,7 +93,11 @@
             window.loaderBar = new DataLoader($("#loader-bar"));
         });
 
-
+        $(window).bind("scroll", function () {
+            if(this.pageYOffset > 100){
+                $("#context-sticky").show();
+            }
+        })
     </script>
 </body>
 </html>

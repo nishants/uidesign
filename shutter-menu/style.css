@@ -44,7 +44,7 @@ h1{
 }
 
 .catchy-bg-color{
-  background-color: #6987F5;
+  background-color: #F58369;
 }
 
 .full-width {
@@ -126,3 +126,7 @@ body{
   height: 3000px;
 }
 
+.show-loader-for-demo{
+  width: 70%;
+  display: block;
+}
