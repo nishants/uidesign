@@ -49,25 +49,30 @@
             </span>
         </div>
     </div>
+    <div id="content-window"
+         class="very-high-to-test-scroll"
+         ng-controller="MenuController">
+        <!-- stick any content here, while in context menu mode-->
+        <div id="context-sticky" class="full-width fixed-positioned position-below-context-menu no-display">
+            <!-- This gets eclipsed, when showing both context menus -->
+            <h1 class="app-menu-height">Stick section headings here....</h1>
+            <span>Stick table/forms-section-headings here</span>
+        </div>
 
-    <!-- must have same size as top bar, this gets hidden when hovering the bar
-         serves as ideal place to put in section headings,
-         these headings are irrelevant, when trying to browse to some other page.
-    -->
-    <h1 id="section-heading"
-        class="top-bar-padding">
-        This is section heading....
-    </h1>
+        <!-- Start section from here (this is )-->
+        <h1>the section starts from here</h1>
 
-    <div id="content-window" ng-controller="MenuController">
-        <button ng-click="menu.show()">Show Menu</button>
-        <button ng-click="menu.hide()">Hide Menu</button>
-        <button ng-click="menu.showAppMenu()">App Menu</button>
-        <button ng-click="menu.showSubMenu()">Context Menu</button>
+        <form>
+            <button ng-click="menu.show()">Show Menu</button>
+            <button ng-click="menu.hide()">Hide Menu</button>
+            <button ng-click="menu.showAppMenu()">App Menu</button>
+            <button ng-click="menu.showSubMenu()">Context Menu</button>
 
-        <input name="expectedTime" type="number" id="myInput" oninput="loaderBar.waitFor(parseInt(this.value))" value="5000">
-        <button onclick="loaderBar.waitFor(5000)">Start Loader</button>
-        <button onclick="loaderBar.stop()">Stop Loader</button>
+            <input name="expectedTime" type="number" id="myInput" oninput="loaderBar.waitFor(parseInt(this.value))" value="5000">
+            <button onclick="loaderBar.waitFor(5000)">Start Loader</button>
+            <button onclick="loaderBar.stop()">Stop Loader</button>
+
+        </form>
     </div>
 
     <script>
