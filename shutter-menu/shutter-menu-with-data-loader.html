@@ -57,13 +57,15 @@
         <!-- stick any content here, while in context menu mode-->
         <div id="context-sticky" class="full-width fixed-positioned position-below-context-menu no-display">
             <!-- This gets eclipsed, when showing both context menus -->
-            <h1 class="app-menu-height">Stick section headings here....</h1>
+            <h1 class="app-menu-height">Section Heading</h1>
             <span>Stick table/forms-section-headings here</span>
         </div>
 
         <!-- Start section from here (this is )-->
-        <h1>the section starts from here</h1>
+        <h1>Section Heading</h1>
 
+        <!-- start the section contents here-->
+        <p>contents below here are scrollable</p>
         <form>
             <button ng-click="menu.show()">Show Menu</button>
             <button ng-click="menu.hide()">Hide Menu</button>
@@ -94,9 +96,7 @@
         });
 
         $(window).bind("scroll", function () {
-            if(this.pageYOffset > 100){
-                $("#context-sticky").show();
-            }
+            this.pageYOffset > 100? $("#context-sticky").show() : $("#context-sticky").hide();
         })
     </script>
 </body>
