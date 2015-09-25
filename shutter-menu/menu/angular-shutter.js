@@ -81,7 +81,7 @@
         new ScrollListener(function(){
           menu.show();
         }, function(){
-          menu.hide();
+          //menu.hide();
         });
       }
     };
