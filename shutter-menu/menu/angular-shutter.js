@@ -37,7 +37,7 @@
         loader = new DataLoader($e);
       },
       start: function(){
-        loader ? loader.waitFor(averageReturnTimeOfRequests) : console.log("loader element not defined");
+        loader ? loader.waitFor(averageReturnTimeOfRequests) : console.error("loader-bar element not defined");
       },
       stop: function(){
         loader.stop();
