@@ -1,18 +1,18 @@
 /* start fonts */
 $fontFile       : "../fonts/UbuntuTitling-Bold.ttf";
 $fontFileFile   : "opentype";
-$fontFamily     : UbuntuTitling;
+$boldFontFamily: UbuntuTitlingBold;
 
 // font size for immediate user attention
 $catchyFontSize: 1.3em;
 
 @font-face {
-  font-family: $fontFamily;
+  font-family: $boldFontFamily;
   src: url($fontFile) format($fontFileFile);
 }
 
 body, div, h1, p, span, img, form, input, button, ul, li, a{
-  font-family: $fontFamily;
+  font-family: $boldFontFamily;
 }
 
 h1{
