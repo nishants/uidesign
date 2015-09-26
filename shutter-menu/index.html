@@ -7,8 +7,6 @@
     <script src="menu/core/menu-bar.js"></script>
     <script src="menu/core/menu-container.js"></script>
     <script src="menu/core/menu.js"></script>
-
-    <script src="loader.js"></script>
 </head>
 <body class="centered-text" ng-app="test-shutter">
 
@@ -111,7 +109,11 @@
             // will throw error if loader.init was not invoked by directory 'loader-bar'
             loader.start();
         }]);
+        window.module = app;
 
     </script>
+    <script src="app/loader-bar/data-loader.js"></script>
+    <script src="app/loader-bar/loader-directive.js"></script>
+    <script src="app/loader-bar/loader-service.js"></script>
 </body>
 </html>
