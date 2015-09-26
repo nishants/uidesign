@@ -1,11 +1,14 @@
 /* start fonts */
+$fontFile       : "../fonts/UbuntuTitling-Bold.ttf";
+$fontFileFile   : "opentype";
+$fontFamily     : UbuntuTitling;
 
-body{
-  font-family: UbuntuTitling;
-}
 @font-face {
-  font-family: UbuntuTitling;
-  src: url("../fonts/UbuntuTitling-Bold.ttf") format("opentype");
+  font-family: $fontFamily;
+  src: url($fontFile) format($fontFileFile);
 }
 
+body, div, h1, p, span, img, form, input, button, ul, li, a{
+  font-family: $fontFamily;
+}
 /* end fonts */
