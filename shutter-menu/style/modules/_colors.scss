@@ -1,8 +1,8 @@
 /* start colors */
-$darkText: #434A54;
-$lightText: #CECECE;
-$darkBg: #E1E5E8;
-$lightBg: #F3F3F3;
+$darkText   : #434A54;
+$lightText  : #CECECE;
+$darkBg     : #E1E5E8;
+$lightBg    : #F3F3F3;
 $catchyColor: #6785F0;
 
 .dark-txt {
@@ -27,6 +27,10 @@ $catchyColor: #6785F0;
 
 .catchy-bg-color{
   background-color: $catchyColor;
+}
+
+input, button{
+  color: $darkText;
 }
 
 /* end colors */
