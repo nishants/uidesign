@@ -98,7 +98,7 @@
     <script src="app/data-table/data-table-controller.js"></script>
 
     <script>
-        var app = angular.module("test-shutter", ["shutter-menu", "data-table"]);
+        var app = angular.module("test-shutter", ["shutter-menu", "data-table", "data-loader"]);
         app.controller("ViewPortController", ["$scope","shutterMenu", function($scope, shutterMenu){
             $scope.menu   = shutterMenu;
             $scope.menu.showSubMenu();
@@ -109,9 +109,10 @@
             // will throw error if loader.init was not invoked by directory 'loader-bar'
             loader.start();
         }]);
-        window.module = app;
 
+        window.module = angular.module("data-loader", []);
     </script>
+
     <script src="app/loader-bar/data-loader.js"></script>
     <script src="app/loader-bar/loader-directive.js"></script>
     <script src="app/loader-bar/loader-service.js"></script>
