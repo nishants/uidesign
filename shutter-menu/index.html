@@ -66,9 +66,7 @@
         <h1 id="section-heading">Section Heading</h1>
 
         <!-- start the section contents here-->
-        <div ng-controller="TabularViewController">
-            <div ng-include="'sample-table.html'"></div>
-        </div>
+        <div ng-include="'sample-table.html'"></div>
 
         <form>
             <button ng-click="menu.show()">Show Menu</button>
@@ -98,10 +96,45 @@
 
     <script>
         var app = angular.module("test-shutter", ["shutter-menu", "data-table", "data-loader"]);
-        app.controller("SectionViewController", ["$scope","shutterMenu", "loader", function($scope, shutterMenu, loader){
+        app.controller("SectionViewController", ["$scope","shutterMenu", "loader","DataTable", function($scope, shutterMenu, loader, DataTable){
             $scope.menu   = shutterMenu;
             $scope.loader = loader;
             $scope.menu.showSubMenu();
+            $scope.dataTable = DataTable.new(
+                    [{name: "name"},{name: "salary"},{name: "gender"},{name: "address", colspan:2},{name: "realtionship"},{name: "licenseNo"}, ],
+            [
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag",  },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+                { 	name: "name", 	salary: "212121", 	gender: "male", 	address: "very long text, this should be shown gracefull on the table", 	realtionship: "single", 	licenseNo: "abc-1-123232-1212-fsag", 	 },
+            ]
+
+            );
         }]);
 
         window.module = angular.module("data-loader", []);
@@ -110,7 +143,7 @@
     <script src="app/sticky.js"></script>
     <script src="app/button-effect.js"></script>
 
-    <script src="app/data-table/data-table-controller.js"></script>
+    <script src="app/data-table/data-table.js"></script>
     <script src="app/data-table/sticky-header.js"></script>
 
 
