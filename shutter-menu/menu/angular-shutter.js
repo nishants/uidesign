@@ -46,34 +46,34 @@
   }]);
   module.directive("shutterMenu", ["shutterMenu", function (shutterMenu) {
     // inviewalso if true, scroll event are fired, even when user has not scrolled down below the initial viewport
-    var ScrollListener = function(onScrollUp, onScrollDown, inviewalso){
-      var lastPosition = 0,
-          lastUp = false,
-          onUp = function () {
-            lastUp = true;
-            onScrollUp();
-          },
-          onDown = function () {
-            lastUp = false;
-            onScrollDown();
-          },
-          doNothing = function (){};
-
-      var scrolledTo = function(position) {
-        var goingUp = position < lastPosition
-        lastPosition = position;
-
-        goingUp != lastUp ? (goingUp ? onUp()  : onDown()) : doNothing();
-      };
-
-      $(window).load(function () {
-        $(window).on("scroll", function () {
-          if(!inviewalso && window.pageYOffset < 100) return;
-          scrolledTo(window.pageYOffset);
-        });
-
-      });
-    };
+    //var ScrollListener = function(onScrollUp, onScrollDown, inviewalso){
+    //  var lastPosition = 0,
+    //      lastUp = false,
+    //      onUp = function () {
+    //        lastUp = true;
+    //        onScrollUp();
+    //      },
+    //      onDown = function () {
+    //        lastUp = false;
+    //        onScrollDown();
+    //      },
+    //      doNothing = function (){};
+    //
+    //  var scrolledTo = function(position) {
+    //    var goingUp = position < lastPosition
+    //    lastPosition = position;
+    //
+    //    goingUp != lastUp ? (goingUp ? onUp()  : onDown()) : doNothing();
+    //  };
+    //
+    //  $(window).load(function () {
+    //    $(window).on("scroll", function () {
+    //      if(!inviewalso && window.pageYOffset < 100) return;
+    //      scrolledTo(window.pageYOffset);
+    //    });
+    //
+    //  });
+    //};
     return {
       restrict: 'A',
       transclude: false,
@@ -92,11 +92,11 @@
 
 
         shutterMenu.init(menu);
-        new ScrollListener(function(){
-          menu.show();
-        }, function(){
-          //menu.hide();
-        });
+        //new ScrollListener(function(){
+        //  //menu.show();
+        //}, function(){
+        //  //menu.hide();
+        //});
       }
     };
   }]);
