@@ -13,7 +13,6 @@
     <!-- at layer 3, above both menu bars.-->
     <div id="loader-bar"
          class="fixed-positioned layer-3 top-of-window catchy-bg-color no-display show-loader-for-demo"
-         ng-controller="LoaderController"
          loader-bar>
     </div>
 
@@ -99,15 +98,10 @@
 
     <script>
         var app = angular.module("test-shutter", ["shutter-menu", "data-table", "data-loader"]);
-        app.controller("SectionViewController", ["$scope","shutterMenu", function($scope, shutterMenu){
+        app.controller("SectionViewController", ["$scope","shutterMenu", "loader", function($scope, shutterMenu, loader){
             $scope.menu   = shutterMenu;
-            $scope.menu.showSubMenu();
-        }]);
-
-        app.controller("LoaderController", ["$scope","loader", function($scope, loader){
             $scope.loader = loader;
-            // will throw error if loader.init was not invoked by directory 'loader-bar'
-            loader.start();
+            $scope.menu.showSubMenu();
         }]);
 
         window.module = angular.module("data-loader", []);
