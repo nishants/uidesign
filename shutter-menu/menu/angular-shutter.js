@@ -160,7 +160,8 @@
         $sticker.hide();
 
         console.log("will stick to " + $sticker.attr("id"));
-        $(window).bind("scroll", function () {
+        // TODO remove listener, when element is destroyed.
+        $(window).on("scroll", function () {
           $sticker.html("");
           var offset = $(this).scrollTop(),
               $header = $(element).clone(),
