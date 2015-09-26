@@ -1,0 +1,53 @@
+/* start default styling */
+
+input, button{
+  width: 200px;
+  padding: 6px 12px 6px 12px;
+  margin: 5px;
+  min-width: 300px;
+  height: 1.9em;
+
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+input:hover, button:hover{
+  transform: scale(1.05);
+}
+
+input{
+  border: #5E5E5E solid 1px;
+}
+
+button:hover{
+  border: 0 solid #599f3f;
+
+  background-color: rgb(103, 152, 240);
+  color: rgba(247, 242, 242, 0.81);
+}
+
+button{
+  cursor: pointer;
+
+  background-color: rgba(66, 127, 237, 0.8);
+  overflow: hidden;
+}
+
+h1{
+  font-size: 1.6em;
+}
+
+body{
+  font-family: UbuntuTitling;
+}
+@font-face {
+  font-family: UbuntuTitling;
+  src: url("../fonts/UbuntuTitling-Bold.ttf") format("opentype");
+}
+
+/* end default styling */

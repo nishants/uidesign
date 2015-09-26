@@ -1,0 +1,39 @@
+/* start properties */
+
+.fixed-positioned{
+  position: fixed;
+}
+
+.absolute-positioned{
+  position: absolute;
+}
+
+.top-of-window{
+  top: 0;
+}
+
+.layer-1{
+  z-index: 1;
+}
+
+.layer-2{
+  z-index: 2;
+}
+
+.layer-3{
+  z-index: 3;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.no-display {
+  display: none;
+}
+
+/* start properties */
