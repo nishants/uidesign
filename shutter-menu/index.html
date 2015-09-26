@@ -65,6 +65,15 @@
         <!-- Start section from here (this is )-->
         <h1 id="section-heading">Section Heading</h1>
 
+        <form class="text-right-aligned">
+            <label>analytics for</label>
+            <select ng-model="filter.bySelection">
+                <option value="today">today</option>
+                <option value="last-week">last week</option>
+                <option value="last-month">last month</option>
+                <option value="last-year">last year</option>
+            </select>
+        </form>
         <!-- start the section contents here-->
         <div ng-include="'sample-table.html'"></div>
 
@@ -100,6 +109,7 @@
             $scope.menu   = shutterMenu;
             $scope.loader = loader;
             $scope.menu.showSubMenu();
+            $scope.filter = {bySelection: "last-month"};
             $scope.dataTable = DataTable.new(
                     [{name: "name"},{name: "salary"},{name: "gender"},{name: "address", colspan:2},{name: "realtionship"},{name: "licenseNo"}, ],
             [

@@ -2,11 +2,11 @@
 //TODO should be changed into config, use in other apply css (forms, texts, containers, ...)
 @import 'colors';
 
-input, button{
+input, button, select{
   box-shadow: 4px 3px 3px #ddd;
 }
 
-input{
+input, select{
   border-top: 1px solid;
   border-left: 1px solid;
   border-color: $inputBorderColor;

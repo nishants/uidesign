@@ -25,7 +25,7 @@ $catchyFontSize: 1.3em;
   font-family: $regularFontFamily;
 }
 
-h1, img, form, input, button{
+h1, img, form, input, button, select, option{
   @extend .bold-font;
 }
 
@@ -37,7 +37,7 @@ h1{
   font-size: 1.6em;
 }
 
-input, button{
+input, button, select, option{
   font-size: $catchyFontSize;
 }
 
