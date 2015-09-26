@@ -1,10 +1,12 @@
 /* start colors */
-$darkText   : #434A54;
+$darkText   : #6D7073;
 $lightText  : #CECECE;
 $darkBg     : #E1E5E8;
 $lightBg    : #F3F3F3;
 $catchyColor: #6785F0;
 $buttonColor: #CDDCF7;
+$inputPlaceHolder : rgba(221, 221, 221, 0.63);
+$inputColor       : rgba(221, 221, 221, 0.63);
 
 .dark-txt {
   color: $darkText;
@@ -30,11 +32,27 @@ $buttonColor: #CDDCF7;
   background-color: $catchyColor;
 }
 
-input, button{
+input{
   color: $darkText;
 }
 
 button{
   color: $buttonColor;
+}
+
+::-webkit-input-placeholder {
+  color: $inputPlaceHolder;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $inputPlaceHolder;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: $inputPlaceHolder;
+}
+
+:-ms-input-placeholder {
+  color: $inputPlaceHolder;
 }
 /* end colors */
