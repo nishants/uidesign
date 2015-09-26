@@ -7,6 +7,7 @@ $catchyColor: #6785F0;
 $buttonColor: #CDDCF7;
 $inputPlaceHolder : rgba(221, 221, 221, 0.63);
 $inputColor       : rgba(221, 221, 221, 0.63);
+$inputBorderColor: #ECE9E9;
 
 .dark-txt {
   color: $darkText;
@@ -54,5 +55,9 @@ button{
 
 :-ms-input-placeholder {
   color: $inputPlaceHolder;
+}
+
+input{
+  border-color: $inputBorderColor;
 }
 /* end colors */
