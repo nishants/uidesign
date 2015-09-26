@@ -52,20 +52,18 @@
     <div id="section-view"
          class="very-high-to-test-scroll"
          ng-controller="SectionViewController">
+
         <!-- stick any content here, while in context menu mode-->
         <div id="context-sticky"
              class="full-width fixed-positioned position-below-context-menu white-bg">
-
-            <!-- This gets eclipsed, when showing both context menus -->
-            <!--<h1 class="app-menu-height no-display" sticky>Section Heading</h1>-->
-
+            <div id="context-table-controls"></div>
             <table id="context-table-header-sticker"></table>
         </div>
 
         <!-- Start section from here (this is )-->
         <h1 id="section-heading">Section Heading</h1>
 
-        <form class="text-right-aligned">
+        <form class="text-right-aligned" stick-to="context-table-controls">
             <label>analytics for</label>
             <select ng-model="filter.bySelection">
                 <option value="today">today</option>
@@ -74,6 +72,7 @@
                 <option value="last-year">last year</option>
             </select>
         </form>
+
         <!-- start the section contents here-->
         <div ng-include="'sample-table.html'"></div>
 
@@ -155,6 +154,7 @@
 
     <script src="app/data-table/data-table.js"></script>
     <script src="app/data-table/sticky-header.js"></script>
+    <script src="app/sticky.js"></script>
 
 
     <script src="app/loader-bar/data-loader.js"></script>
