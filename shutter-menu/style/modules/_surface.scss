@@ -1,5 +1,7 @@
 /* start surface design */
 
+@import 'colors';
+
 input, button{
   box-shadow: 4px 3px 3px #ddd;
 }
@@ -7,5 +9,6 @@ input, button{
 input{
   border-top: 1px solid;
   border-left: 1px solid;
+  border-color: $inputBorderColor;
 }
 /* end surface design */

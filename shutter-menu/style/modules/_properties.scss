@@ -1,5 +1,7 @@
 /* start properties */
 
+ @import 'colors';
+
 .fixed-positioned{
   position: fixed;
 }
@@ -34,6 +36,30 @@
 
 .no-display {
   display: none;
+}
+
+.dark-txt {
+  color: $darkText;
+}
+
+.light-txt{
+  color: $lightText;
+}
+
+.dark-bg {
+  background-color: $darkBg;
+}
+
+.light-bg {
+  background-color: $lightBg;
+}
+
+.very-light-bg{
+  background-color: $lightBg;
+}
+
+.catchy-bg-color{
+  background-color: $catchyColor;
 }
 
 /* start properties */

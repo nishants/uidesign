@@ -1,4 +1,5 @@
 /* start colors */
+
 $darkText   : #6D7073;
 $lightText  : #CECECE;
 $darkBg     : #E1E5E8;
@@ -9,55 +10,4 @@ $inputPlaceHolder : rgba(221, 221, 221, 0.63);
 $inputColor       : rgba(221, 221, 221, 0.63);
 $inputBorderColor: #ECE9E9;
 
-.dark-txt {
-  color: $darkText;
-}
-
-.light-txt{
-  color: $lightText;
-}
-
-.dark-bg {
-  background-color: $darkBg;
-}
-
-.light-bg {
-  background-color: $lightBg;
-}
-
-.very-light-bg{
-  background-color: $lightBg;
-}
-
-.catchy-bg-color{
-  background-color: $catchyColor;
-}
-
-input{
-  color: $darkText;
-}
-
-button{
-  color: $buttonColor;
-}
-
-::-webkit-input-placeholder {
-  color: $inputPlaceHolder;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-  color: $inputPlaceHolder;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-  color: $inputPlaceHolder;
-}
-
-:-ms-input-placeholder {
-  color: $inputPlaceHolder;
-}
-
-input{
-  border-color: $inputBorderColor;
-}
 /* end colors */
