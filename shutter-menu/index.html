@@ -64,10 +64,13 @@
         </div>
 
         <!-- Start section from here (this is )-->
-        <h1>Section Heading</h1>
+        <h1 id="section-heading">Section Heading</h1>
 
         <!-- start the section contents here-->
-        <p>contents below here are scrollable</p>
+        <div ng-controller="TabularViewController">
+            <div ng-include="'sample-table.html'"></div>
+        </div>
+
         <form>
             <button ng-click="menu.show()">Show Menu</button>
             <button ng-click="menu.hide()">Hide Menu</button>
@@ -89,9 +92,6 @@
             <input type="datetime">
         </form>
 
-        <div ng-controller="TabularViewController">
-            <div ng-include="'sample-table.html'"></div>
-        </div>
     </div>
     <script src="../lib/jquery.js"></script>
     <script src="../lib/angular.js"></script>
