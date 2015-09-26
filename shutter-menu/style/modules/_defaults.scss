@@ -35,23 +35,23 @@ input{
 }
 
 button{
-  color: $buttonColor;
+  color: $primaryButtonColor;
 }
 
 ::-webkit-input-placeholder {
-  color: $inputPlaceHolder;
+  color: $inputPlaceHolderColor;
 }
 
 :-moz-placeholder {
-  color: $inputPlaceHolder;
+  color: $inputPlaceHolderColor;
 }
 
 ::-moz-placeholder {
-  color: $inputPlaceHolder;
+  color: $inputPlaceHolderColor;
 }
 
 :-ms-input-placeholder {
-  color: $inputPlaceHolder;
+  color: $inputPlaceHolderColor;
 }
 
 /* end default styling */
