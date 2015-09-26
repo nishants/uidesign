@@ -1,10 +1,9 @@
 /* start default styling */
 
 input, button{
-  width: 200px;
   padding: 6px 12px 6px 12px;
   margin: 5px;
-  min-width: 300px;
+  min-width: 250px;
 
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -19,20 +18,13 @@ input:hover, button:hover{
   transform: scale(1.05);
 }
 
-input{
-  border: #5E5E5E solid 1px;
-}
-
 button:hover{
   border: 0 solid #599f3f;
-
-  background-color: rgb(103, 152, 240);
   color: rgba(247, 242, 242, 0.81);
 }
 
 button{
   cursor: pointer;
-
   background-color: rgba(66, 127, 237, 0.8);
   overflow: hidden;
 }

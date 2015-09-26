@@ -4,6 +4,7 @@ $lightText  : #CECECE;
 $darkBg     : #E1E5E8;
 $lightBg    : #F3F3F3;
 $catchyColor: #6785F0;
+$buttonColor: #CDDCF7;
 
 .dark-txt {
   color: $darkText;
@@ -33,4 +34,7 @@ input, button{
   color: $darkText;
 }
 
+button{
+  color: $buttonColor;
+}
 /* end colors */
