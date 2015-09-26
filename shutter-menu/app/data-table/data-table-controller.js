@@ -1,8 +1,7 @@
 (function () {
   "use strict"
-  var module = angular.module("data-table", []);
 
-  module.controller("TabularViewController", ["$scope", function($scope){
+  datatable.controller("TabularViewController", ["$scope", function($scope){
     var columnByName = function(name, columns){
       for(var i =0 ; i < columns.length ; i++){
         if(columns[i].name == name){
