@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th ng-repeat="column in dataTable.columns">
+                {{column.name}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in dataTable.rows">
+        <td>{{row.name}}</td>
+        <td>{{row.salary}}</td>
+        <td>{{row.gender}}</td>
+        <td>{{row.address}}</td>
+        <td>{{row.realtionship}}</td>
+        <td>{{row.licenseNo}}</td>
+    </tr>
+    </tbody>
+</table>
