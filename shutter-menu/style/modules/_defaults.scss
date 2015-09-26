@@ -21,12 +21,11 @@ input:hover, button:hover{
 
 button:hover{
   border: 0 solid #599f3f;
-  color: rgba(247, 242, 242, 0.81);
 }
 
 button{
   cursor: pointer;
-  background-color: rgba(66, 127, 237, 0.8);
+  background-color: $primaryButtonBgColor;
   overflow: hidden;
 }
 
