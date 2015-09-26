@@ -15,29 +15,18 @@
       transclude: false,
       scope: false,
       link: function(scope, element, attrs){
-        var $sticker = $(attrs.stickerSelector),
-            headerOffset = $(element).offset().top;
+        var target = $(attrs.stickerSelector),
+            $header = $(element);
 
-        $sticker.hide();
+        target.hide();
+        target.html("");
 
-        console.log("will stick to " + $sticker.attr("id"));
         // TODO remove listener, when element is destroyed.
-        $(window).on("scroll", function () {
-          $sticker.html("");
-          var offset = $(this).scrollTop(),
-              $header = $(element).clone(),
-              $stickyeader = $($sticker).append($header);
-
-
-          setHeaderSize($(element), $header);
-          if (offset >= headerOffset && $sticker.is(":hidden")) {
-            $sticker.show();
-          }
-          else if (offset < headerOffset) {
-            $stickyeader.hide();
-          }
+        $(window).bind("scroll", function () {
+          if(target.html() == "")target.append($header.clone());
+          setHeaderSize($header, target);
+          this.pageYOffset > 100 ? target.show() : target.hide();
         });
-
       }
     };
   }])

@@ -53,9 +53,9 @@
          class="very-high-to-test-scroll"
          ng-controller="SectionViewController">
 
-        <!-- stick any content here, while in context menu mode-->
+        <!-- stick any content here, while in context menu mode (this blocks top menu, by being in layer 2)-->
         <div id="context-sticky"
-             class="full-width fixed-positioned position-below-context-menu white-bg">
+             class="full-width fixed-positioned position-below-context-menu white-bg layer-2">
             <div id="context-table-controls"></div>
             <table id="context-table-header-sticker"></table>
         </div>
@@ -63,15 +63,21 @@
         <!-- Start section from here (this is )-->
         <h1 id="section-heading">Section Heading</h1>
 
-        <form class="text-right-aligned" stick-to="context-table-controls">
-            <label>analytics for</label>
-            <select ng-model="filter.bySelection">
-                <option value="today">today</option>
-                <option value="last-week">last week</option>
-                <option value="last-month">last month</option>
-                <option value="last-year">last year</option>
-            </select>
-        </form>
+        <div stick-to="context-table-controls">
+            <a class="pull-left">create audience</a>
+
+            <form class="text-right-aligned pull-right display-inline">
+                <div>
+                    <label>analytics for</label>
+                    <select ng-model="filter.bySelection">
+                        <option value="today">today</option>
+                        <option value="last-week">last week</option>
+                        <option value="last-month">last month</option>
+                        <option value="last-year">last year</option>
+                    </select>
+                </div>
+            </form>
+        </div>
 
         <!-- start the section contents here-->
         <div ng-include="'sample-table.html'"></div>
