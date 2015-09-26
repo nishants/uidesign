@@ -1,7 +1,7 @@
 <table>
     <thead sticky-header sticker-selector="#context-table-header-sticker">
         <tr>
-            <th ng-repeat="column in dataTable.columns">
+            <th ng-repeat="column in dataTable.columns" colspan="{{column.colspan}}">
                 {{column.name}}
             </th>
         </tr>
@@ -11,7 +11,7 @@
         <td>{{row.name}}</td>
         <td>{{row.salary}}</td>
         <td>{{row.gender}}</td>
-        <td>{{row.address}}</td>
+        <td colspan="{{dataTable.colsSpanOf('address')}}">{{row.address}}</td>
         <td>{{row.realtionship}}</td>
         <td>{{row.licenseNo}}</td>
     </tr>
