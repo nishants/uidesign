@@ -1,27 +1,32 @@
 /* start colors */
+$darkText: #434A54;
+$lightText: #CECECE;
+$darkBg: #E1E5E8;
+$lightBg: #F3F3F3;
+$catchyColor: #6785F0;
 
 .dark-txt {
-  color: #434A54;
+  color: $darkText;
 }
 
 .light-txt{
-  color: #CECECE;
+  color: $lightText;
 }
 
 .dark-bg {
-  background-color: #E1E5E8;
+  background-color: $darkBg;
 }
 
 .light-bg {
-  background-color: #F3F3F3;
+  background-color: $lightBg;
 }
 
 .very-light-bg{
-  background-color: #F3F3F3;
+  background-color: $lightBg;
 }
 
 .catchy-bg-color{
-  background-color: #6785F0;
+  background-color: $catchyColor;
 }
 
 /* end colors */
