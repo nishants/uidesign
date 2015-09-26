@@ -15,6 +15,7 @@
     <!-- at layer 3, above both menu bars.-->
     <div id="loader-bar"
          class="fixed-positioned layer-3 top-of-window catchy-bg-color no-display show-loader-for-demo"
+         ng-controller="LoaderController"
          loader-bar>
     </div>
 
@@ -99,14 +100,17 @@
 
     <script>
         var app = angular.module("test-shutter", ["shutter-menu"]);
-        app.controller("ViewPortController", ["$scope","shutterMenu","loader", function($scope, shutterMenu, loader){
+        app.controller("ViewPortController", ["$scope","shutterMenu", function($scope, shutterMenu){
             $scope.menu   = shutterMenu;
-            $scope.loader = loader;
-
-            // TODO remove this
             $scope.menu.showSubMenu();
+        }]);
+
+        app.controller("LoaderController", ["$scope","loader", function($scope, loader){
+            $scope.loader = loader;
+            // will throw error if loader.init was not invoked by directory 'loader-bar'
             loader.start();
         }]);
+
         app.controller("TabularViewController", ["$scope", function($scope){
             var columnByName = function(name, columns){
                 for(var i =0 ; i < columns.length ; i++){
