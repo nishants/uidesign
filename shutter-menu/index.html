@@ -50,15 +50,16 @@
     </div>
 
     <!-- This represents styling of container, while showing view a sub menu screen-->
-    <div id="sub-menu-content"
+    <div id="section-view"
          class="very-high-to-test-scroll"
-         ng-controller="ViewPortController">
+         ng-controller="SectionViewController">
         <!-- stick any content here, while in context menu mode-->
         <div id="context-sticky"
-             class="full-width fixed-positioned position-below-context-menu white-bg"
-             >
+             class="full-width fixed-positioned position-below-context-menu white-bg">
+
             <!-- This gets eclipsed, when showing both context menus -->
-            <h1 class="app-menu-height no-display">Section Heading</h1>
+            <!--<h1 class="app-menu-height no-display" sticky>Section Heading</h1>-->
+
             <table id="context-table-header-sticker"></table>
         </div>
 
@@ -95,11 +96,10 @@
     <script src="../lib/jquery.js"></script>
     <script src="../lib/angular.js"></script>
     <script src="menu/angular-shutter.js"></script>
-    <script src="app/data-table/data-table-controller.js"></script>
 
     <script>
         var app = angular.module("test-shutter", ["shutter-menu", "data-table", "data-loader"]);
-        app.controller("ViewPortController", ["$scope","shutterMenu", function($scope, shutterMenu){
+        app.controller("SectionViewController", ["$scope","shutterMenu", function($scope, shutterMenu){
             $scope.menu   = shutterMenu;
             $scope.menu.showSubMenu();
         }]);
@@ -111,7 +111,11 @@
         }]);
 
         window.module = angular.module("data-loader", []);
+        window.datatable = angular.module("data-table", [])
     </script>
+    <script src="app/data-table/data-table-controller.js"></script>
+    <script src="app/data-table/sticky-header.js"></script>
+
 
     <script src="app/loader-bar/data-loader.js"></script>
     <script src="app/loader-bar/loader-directive.js"></script>
