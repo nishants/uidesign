@@ -26,8 +26,10 @@
 
 <!--TODO extract into different partial, make available at runtime, from parent scope-->
 <!-- Control template: what options to show for each row, and action to do (in parent $scope)-->
-<div class="floating-row-options" ng-if="dataTable.selectedRowOption">
-    <ul>
+<div class="floating-row-options"
+     ng-if="dataTable.selectedRowOption"
+     show-at-position="{{dataTable.selectedRowOption.positionFromTop()}}">
+    <ul class="control-option inline">
         <li ng-click="actions.view(dataTable.selectedRowOption.rowItem)"> view</li>
         <li ng-click="actions.edit(dataTable.selectedRowOption.rowItem)"> edit</li>
         <li ng-click="actions.clone(dataTable.selectedRowOption.rowItem)"> clone</li>

@@ -44,3 +44,26 @@ select{
   padding-left: 15px;
   text-align: center;
 }
+
+
+.floating-row-options{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  position: fixed;
+  z-index: 3;
+}
+
+.control-option{
+  margin: 10%;
+  background-color: white;
+}
+
+
+ul.inline{
+  list-style-type: none;
+  li{
+    display: inline-block;
+  }
+}
