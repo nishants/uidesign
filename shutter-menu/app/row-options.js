@@ -1,14 +1,7 @@
 (function () {
   "use strict"
 
-  module.directive("rowOptions", [function(){
-    var RowOption = function(rowItem, $e){
-      this.rowItem = rowItem;
-      this.$e = $e;
-    };
-    RowOption.prototype.positionFromTop = function () {
-      return this.$e.position().top;
-    };
+  module.directive("rowOptions", ["RowOption", function(RowOption){
 
     return {
       restrict: 'A',
@@ -19,7 +12,7 @@
 
         $e.on("click", function(){
           scope.$apply(function(){
-            scope.dataTable.showOptionsFor(new RowOption(scope.$eval(attrs.rowItem), $e));
+            scope.dataTable.showOptionsFor(RowOption.new(scope.$eval(attrs.rowItem), $e));
           });
         });
 
