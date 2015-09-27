@@ -31,6 +31,7 @@ th{
 }
 td {
   padding: 5px;
+  border-bottom: 1px solid #E1E5E8;
 }
 
 #section-heading{
@@ -66,4 +67,12 @@ ul.inline{
   li{
     display: inline-block;
   }
+}
+
+a{
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+  padding-top: 10px;
+  margin-left: 10px;
 }
