@@ -2,7 +2,7 @@
     <thead sticky-header sticker-selector="#context-table-header-sticker">
         <tr>
             <th> <!-- this column is for row options--> {{dataTable.rowControl.current.positionFromTop()}}</th>
-            <th ng-repeat="column in dataTable.columns" colspan="{{column.colspan}}">
+            <th ng-repeat="column in dataTable.columns" colspan="{{dataTable.colsSpanOf(column.name)}}">
                 {{column.name}}
             </th>
         </tr>
@@ -10,12 +10,12 @@
     <tbody>
     <tr ng-repeat="row in dataTable.rows">
         <td row-options-for="row" >options</td>
-        <td>{{row.name}}</td>
-        <td>{{row.salary}}</td>
-        <td>{{row.gender}}</td>
+        <td colspan="{{dataTable.colsSpanOf('name')}}">{{row.name}}</td>
+        <td colspan="{{dataTable.colsSpanOf('salary')}}">{{row.salary}}</td>
+        <td colspan="{{dataTable.colsSpanOf('gender')}}">{{row.gender}}</td>
         <td colspan="{{dataTable.colsSpanOf('address')}}">{{row.address}}</td>
-        <td>{{row.realtionship}}</td>
-        <td>{{row.licenseNo}}</td>
+        <td colspan="{{dataTable.colsSpanOf('realtionship')}}">{{row.realtionship}}</td>
+        <td colspan="{{dataTable.colsSpanOf('licenseNo')}}">{{row.licenseNo}}</td>
     </tr>
     </tbody>
 </table>

@@ -22,7 +22,8 @@
             };
 
     DataTable.prototype.colsSpanOf = function (colName) {
-      return columnByName(colName, this.columns).colspan;
+      var span = columnByName(colName, this.columns).colspan;
+      return span ? span : 1;
     };
 
     DataTable.prototype.showOptionsFor = function (rowOptions) {
