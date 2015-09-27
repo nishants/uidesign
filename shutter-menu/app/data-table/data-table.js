@@ -16,10 +16,17 @@
             function (columns, rows) {
               this.columns = columns;
               this.rows = rows;
+              this.rowControl = {
+                current: null
+              };
             };
 
     DataTable.prototype.colsSpanOf = function (colName) {
       return columnByName(colName, this.columns).colspan;
+    };
+
+    DataTable.prototype.showOptionsFor = function (rowOptions) {
+      this.rowControl.current = rowOptions;
     };
 
     return {
