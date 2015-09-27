@@ -8,6 +8,9 @@
         </tr>
     </thead>
     <tbody>
+
+    <!--TODO extract into different partial, make available at runtime, from parent scope-->
+    <!-- Row template: how to render each item in data table-->
     <tr ng-repeat="row in dataTable.rows">
         <td row-options-for="row" >options</td>
         <td colspan="{{dataTable.colsSpanOf('name')}}">{{row.name}}</td>
@@ -17,8 +20,21 @@
         <td colspan="{{dataTable.colsSpanOf('realtionship')}}">{{row.realtionship}}</td>
         <td colspan="{{dataTable.colsSpanOf('licenseNo')}}">{{row.licenseNo}}</td>
     </tr>
+
     </tbody>
 </table>
+
+<!--TODO extract into different partial, make available at runtime, from parent scope-->
+<!-- Control template: what options to show for each row, and action to do (in parent $scope)-->
+<div class="floating-row-options" ng-if="dataTable.rowControl">
+    <ul>
+        <li ng-click="actions.view(dataTable.rowControl.rowItem)"> view</li>
+        <li ng-click="actions.edit(dataTable.rowControl.rowItem)"> edit</li>
+        <li ng-click="actions.clone(dataTable.rowControl.rowItem)"> clone</li>
+        <li ng-click="actions.delete(dataTable.rowControl.rowItem)"> delete</li>
+    </ul>
+</div>
+
 
 <!-- here trigger the next page  call -->
 <div id="end-of-table"
