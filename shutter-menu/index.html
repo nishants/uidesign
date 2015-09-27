@@ -115,6 +115,20 @@
             $scope.loader = loader;
             $scope.menu.showSubMenu();
             $scope.filter = {bySelection: "last-month"};
+            $scope.actions = {
+                view: function (item) {
+                    alert("view : " + item.name)
+                },
+                edit: function (item) {
+                    alert("edit : " + item.name)
+                },
+                clone: function (item) {
+                    alert("clone : " + item.name)
+                },
+                delete: function (item) {
+                    alert("delete : " + item.name)
+                },
+            }
             $scope.dataTable = DataTable.new(
                     [{name: "name", colspan:5},{name: "salary"},{name: "gender"},{name: "address", colspan:2},{name: "realtionship"},{name: "licenseNo"}, ],
             [

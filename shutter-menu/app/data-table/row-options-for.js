@@ -12,7 +12,7 @@
 
         $e.on("click", function(){
           scope.$apply(function(){
-            scope.dataTable.showOptionsFor(RowOption.new(scope.$eval(attrs.rowItem), $e));
+            scope.dataTable.showOptionsFor(RowOption.new(scope.$eval(attrs.rowOptionsFor), $e));
           });
         });
 

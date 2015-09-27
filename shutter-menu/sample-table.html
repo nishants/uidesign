@@ -26,12 +26,12 @@
 
 <!--TODO extract into different partial, make available at runtime, from parent scope-->
 <!-- Control template: what options to show for each row, and action to do (in parent $scope)-->
-<div class="floating-row-options" ng-if="dataTable.rowControl">
+<div class="floating-row-options" ng-if="dataTable.selectedRowOption">
     <ul>
-        <li ng-click="actions.view(dataTable.rowControl.rowItem)"> view</li>
-        <li ng-click="actions.edit(dataTable.rowControl.rowItem)"> edit</li>
-        <li ng-click="actions.clone(dataTable.rowControl.rowItem)"> clone</li>
-        <li ng-click="actions.delete(dataTable.rowControl.rowItem)"> delete</li>
+        <li ng-click="actions.view(dataTable.selectedRowOption.rowItem)"> view</li>
+        <li ng-click="actions.edit(dataTable.selectedRowOption.rowItem)"> edit</li>
+        <li ng-click="actions.clone(dataTable.selectedRowOption.rowItem)"> clone</li>
+        <li ng-click="actions.delete(dataTable.selectedRowOption.rowItem)"> delete</li>
     </ul>
 </div>
 

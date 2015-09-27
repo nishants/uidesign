@@ -16,9 +16,7 @@
             function (columns, rows) {
               this.columns = columns;
               this.rows = rows;
-              this.rowControl = {
-                current: null
-              };
+              this.selectedRowOption = null;
             };
 
     DataTable.prototype.colsSpanOf = function (colName) {
@@ -27,7 +25,7 @@
     };
 
     DataTable.prototype.showOptionsFor = function (rowOptions) {
-      this.rowControl.current = rowOptions;
+      this.selectedRowOption = rowOptions;
     };
 
     return {
