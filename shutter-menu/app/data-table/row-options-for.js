@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  module.directive("rowOptions", ["RowOption", function(RowOption){
+  module.directive("rowOptionsFor", ["RowOption", function(RowOption){
 
     return {
       restrict: 'A',

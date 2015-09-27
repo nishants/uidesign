@@ -9,7 +9,7 @@
     </thead>
     <tbody>
     <tr ng-repeat="row in dataTable.rows">
-        <td row-options="#template-for-options" row-item="row">options</td>
+        <td row-options-for="row" >options</td>
         <td>{{row.name}}</td>
         <td>{{row.salary}}</td>
         <td>{{row.gender}}</td>
