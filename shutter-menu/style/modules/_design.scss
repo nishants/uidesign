@@ -28,8 +28,10 @@
   height: 40px;
 }
 
-#section-view {
-  margin: 110px 0 0 0; /* top-height-of-both-top-bars + 5px */
+#section-heading {
+  margin: 45px 0 0 0;
+  padding-top: 10px;
+  min-height: 50px;/* app-bar-height =  minimum-height + top-padding  */
 }
 
 /* end design */

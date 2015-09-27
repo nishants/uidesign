@@ -50,7 +50,6 @@
 
     <!-- This represents styling of container, while showing view a sub menu screen-->
     <div id="section-view"
-         class="very-high-to-test-scroll"
          ng-controller="SectionViewController">
 
         <!-- stick any content here, while in context menu mode (this blocks top menu, by being in layer 2)-->
@@ -60,8 +59,13 @@
             <table id="context-table-header-sticker"></table>
         </div>
 
-        <!-- Start section from here (this is )-->
-        <h1 id="section-heading">Section Heading</h1>
+        <!-- comes right after context menu, top(60 pixel) part will be hidden when app bar shutters down-->
+        <div id="section-heading">
+            <!-- Start section from here (this is hidden when app bar shows up)-->
+            <h1 >Section Heading</h1>
+        </div>
+
+        <p>Some informatoins here, dont put though</p>
 
         <div stick-to="context-table-controls">
             <a class="pull-left">create audience</a>
@@ -80,7 +84,7 @@
         </div>
 
         <!-- start the section contents here-->
-        <div ng-include="'sample-table.html'"></div>
+        <div ng-include="'app/data-table/data-table.html'"></div>
 
         <form>
             <button ng-click="menu.show()">Show Menu</button>
@@ -178,6 +182,7 @@
 
     <script src="app/data-table/sticky-header.js"></script>
     <script src="app/sticky.js"></script>
+    <script src="app/multiselect.js"></script>
 
 
     <script src="app/loader-bar/data-loader.js"></script>
