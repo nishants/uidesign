@@ -8,7 +8,7 @@
     <script src="menu/core/menu-container.js"></script>
     <script src="menu/core/menu.js"></script>
 </head>
-<body class="centered-text" ng-app="test-shutter">
+<body class="centered-text top-containers" ng-app="test-shutter">
 
     <!-- at layer 3, above both menu bars.-->
     <div id="loader-bar"
@@ -21,7 +21,7 @@
          shutter-menu
          bottom-bar-class="layer-1"
          top-bar-class="layer-2"
-         class="fixed-positioned layer-1 full-width top-bar-height">
+         class="fixed-positioned layer-1 top-bar-height top-containers">
         <div id="app-menu"
              shutter-menu-bar
              class="light-txt dark-bg">
@@ -54,7 +54,7 @@
 
         <!-- stick any content here, while in context menu mode (this blocks top menu, by being in layer 2)-->
         <div id="context-sticky"
-             class="full-width fixed-positioned position-below-context-menu white-bg layer-2">
+             class="fixed-positioned position-below-context-menu white-bg layer-2">
             <div id="context-table-controls"></div>
             <table id="context-table-header-sticker"></table>
         </div>
