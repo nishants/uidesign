@@ -12,22 +12,22 @@
     <!-- app header space-->
     <section id="header">
 
-        <div id="menu-wrapper" ng-controller="TopMenuController">
+        <div id="menu-wrapper" ng-controller="TopMenuController" ng-mouseover="menu.showHoveredOptions()">
             <div id="app-bar">
                 <ul id="section-links" class="inline-list pull-left">
-                    <li ng-class="menu.selectedSection == 'dashboard'   ? 'selected-link' : '' ">dashboard</li>
-                    <li ng-class="menu.selectedSection == 'campaigns'   ? 'selected-link' : '' ">campaigns</li>
-                    <li ng-class="menu.selectedSection == 'reports'     ? 'selected-link' : '' ">reports</li>
-                    <li ng-class="menu.selectedSection == 'products'    ? 'selected-link' : '' ">products</li>
+                    <li ng-mouseover="menu.showMenuFor(dashboard)" ng-class="menu.section('dashboard')    ? 'selected-link' : '' ">dashboard</li>
+                    <li ng-mouseover="menu.showMenuFor(campaigns)" ng-class="menu.section('campaigns')    ? 'selected-link' : '' ">campaigns</li>
+                    <li ng-mouseover="menu.showMenuFor(reports)"   ng-class="menu.section('reports')      ? 'selected-link' : '' ">reports</li>
+                    <li ng-mouseover="menu.showMenuFor(products)"  ng-class="menu.section('products')     ? 'selected-link' : '' ">products</li>
                 </ul>
             </div>
 
             <div id="section-bar">
-                <ul sub-menu-for="campaigns" class="selected-section inline-list pull-left">
-                    <li ng-class="menu.selectedTab == 'campaigns'   ? 'selected-tab' : '' " >campaigns</li>
-                    <li ng-class="menu.selectedTab == 'adsets'      ? 'selected-tab' : '' " > adsets</li>
-                    <li ng-class="menu.selectedTab == 'ads'         ? 'selected-tab' : '' " >ads</li>
-                    <li ng-class="menu.selectedTab == 'audiences'   ? 'selected-tab' : '' " >audiences</li>
+                <ul ng-show="menu.section('campaigns')" class="selected-section inline-list pull-left">
+                    <li ng-class="menu.tab('campaigns') ? 'selected-tab' : '' " >campaigns</li>
+                    <li ng-class="menu.tab('adsets')    ? 'selected-tab' : '' " > adsets</li>
+                    <li ng-class="menu.tab('ads')       ? 'selected-tab' : '' " >ads</li>
+                    <li ng-class="menu.tab('audiences') ? 'selected-tab' : '' " >audiences</li>
                     <li>more <strong>v</strong></li>
                 </ul>
             </div>
