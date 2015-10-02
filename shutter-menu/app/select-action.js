@@ -7,12 +7,21 @@
         zIndexOf = function($e){
           return parseInt($e.css("z-index"));
         },
-        offsetFromLeft = function ($e) {
-          return $e.offset().left;
 
+        copyHeight = function ($item, $fromItem) {
+          $item.css("height", $fromItem.css("height"));
         },
-        leftOffsetOf = function ($onLeft, $onRight) {
-          return (offsetFromLeft($onRight) - offsetFromLeft($onLeft))
+        copyWidth = function ($item, $fromItem) {
+          $item.css("width", $fromItem.css("width"));
+        },
+        copyPadding = function ($item, $fromItem) {
+          $item.css("padding", $fromItem.css("padding"));
+        },
+        copyMargin = function ($item, $fromItem) {
+          $item.css("margin", $fromItem.css("margin"));
+        },
+        copyBorder = function ($item, $fromItem) {
+          $item.css("border", $fromItem.css("border"));
         };
 
     return {
@@ -26,15 +35,21 @@
 
         //$selectList.css("opacity", "0");
 
-        $selectList.css("color", "transparent");
-        $selectList.css("background-color", "transparent");
-        $selectList.css("border", "none");
-        $selectList.css("box-shadow", "none");
+        //$selectList.css("color", "transparent");
+        //$selectList.css("background-color", "transparent");
+        //$selectList.css("border", "none");
+        //$selectList.css("box-shadow", "none");
 
+        $selectList.css("opacity", "0");
         $selectList.css("position", "absolute");
         $selectList.css("z-index", zIndexOf($actionButton) + 1);
         $selectList.css("top", $actionButton.position().top);
         $selectList.css("left", $actionButton.position().left);
+        copyPadding($selectList, $actionButton);
+        copyMargin($selectList, $actionButton);
+        copyHeight($selectList, $actionButton);
+        copyWidth($selectList, $actionButton);
+        copyBorder($selectList, $actionButton);
       }
     }
   }]);
