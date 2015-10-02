@@ -12,7 +12,7 @@
     <!-- app header space-->
     <section id="header">
 
-        <div id="menu-wrapper" ng-controller="TopMenuController" ng-mouseover="menu.showHoveredOptions()" ng-mouseleave="menu.showByUrl()">
+        <div id="menu-wrapper" ng-controller="TopMenuController" ng-mouseleave="menu.showByUrl()">
             <div id="app-bar">
                 <ul id="section-links" class="inline-list pull-left">
                     <li ng-mouseover="menu.showMenuFor('dashboard')" ng-class="menu.section('dashboard')    ? 'selected-link' : '' ">dashboard</li>

@@ -5,6 +5,7 @@
 
     $scope.menu = {
       sectionByUrl : "campaigns",
+      tabByUrl : "campaigns",
       sectionByHover : null,
 
       section: function (name) {
@@ -16,7 +17,11 @@
       },
 
       tab: function (name) {
-        return !this.sectionByHover && name == "campaigns";
+        var userIsHovering = this.sectionByHover,
+            userIsHoveringCurrentSection = this.sectionByHover == this.sectionByUrl,
+            isSectionByUrl = name == this.tabByUrl;
+
+        return (!userIsHovering || userIsHoveringCurrentSection) && isSectionByUrl;
       },
 
       showByUrl: function () {
