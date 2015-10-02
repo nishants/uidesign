@@ -1,14 +1,15 @@
 $bottomBarColor: #1A212B;
 $topBarColor: #293e4f;
+$bodyBgColor: #EFEFEF;
+
+$bottomBarTextColor: $bodyBgColor;
+$topBarTextColor: $bodyBgColor;
 
 $menuButtonPadding: 10px 20px 10px 10px;
 
-$bottomBarTextColor: white;
-$topBarTextColor: white;
 
 $topBarHeight: 45px;
 $bottomBarHeight: 45px;
-$bodyBgColor: white;
 
 body{
   background-color: $bodyBgColor;
