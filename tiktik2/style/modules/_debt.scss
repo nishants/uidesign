@@ -5,9 +5,9 @@ $bodyBgColor: #EFEFEF;
 $bottomBarTextColor: $bodyBgColor;
 $topBarTextColor: $bodyBgColor;
 
-$menuButtonPadding: 10px 20px 10px 10px;
+$menuButtonPadding: 5px 20px 5px 10px;
 
-
+$menuButtonFontSize: 16x;
 $topBarHeight: 45px;
 $bottomBarHeight: 45px;
 
@@ -24,42 +24,54 @@ body{
 
 #app-bar {
   background-color: $topBarColor;
-  ul li {
-    height: $topBarHeight;
-    color: $topBarTextColor;
-    padding: $menuButtonPadding;
-    font-size: 25px;
+  height: $topBarHeight;
+  ul {
+    height: 100%;
+    li {
+      height: 100%;
+      color: $topBarTextColor;
+      padding: $menuButtonPadding;
+      font-size: $menuButtonFontSize;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      margin-top: 5px;
+    }
+    li:hover{
+      background-color: rgba(26, 33, 43, 0.4);
+    }
+    li.selected-link{
+      background-color: $bottomBarColor;
+    }
   }
 
-  ul li:hover{
-    background-color: $bottomBarTextColor;
-    color: $bottomBarColor;
-  }
-
-  ul li.selected-link{
-    background-color: $bottomBarColor;
-  }
 }
 
 #section-bar {
   background-color: $bottomBarColor;
-  ul li {
-    height: $bottomBarHeight;
-    color: $bottomBarTextColor;
-    padding: $menuButtonPadding;
-    font-size: 25px;
-  }
+  height: $bottomBarHeight;
+  ul {
+    height: 100%;
+    li {
+      height: 100%;
+      color: $bottomBarTextColor;
+      padding: $menuButtonPadding;
+      font-size: $menuButtonFontSize;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      margin-top: 5px;
 
-  ul li:hover{
-    background-color: $bodyBgColor;
-    color: $bottomBarColor;
-  }
+    }
 
-  ul li.selected-tab{
-    background-color: $bodyBgColor;
-    color: $bottomBarColor;
-  }
+    li.selected-tab{
+      background-color: $bodyBgColor;
+      color: $bottomBarColor;
+    }
 
+    li:hover{
+      background-color: $bodyBgColor;
+      color: $bottomBarColor;
+    }
+  }
 }
 
 .inline-list {
