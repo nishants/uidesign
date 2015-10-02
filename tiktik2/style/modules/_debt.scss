@@ -1,0 +1,51 @@
+$bottomBarColor: #1A212B;
+$topBarColor: #293e4f;
+
+$menuButtonPadding: 10px 20px 10px 10px;
+
+$bottomBarTextColor: white;
+$topBarTextColor: white;
+
+$topBarHeight: 45px;
+$bottomBarHeight: 45px;
+
+#app-bar {
+  background-color: $topBarColor;
+}
+
+#app-bar li {
+  color: white;
+}
+
+#section-bar {
+  background-color: $bottomBarColor;
+}
+
+#app-bar ul li {
+  height: $topBarHeight;
+  color: $topBarTextColor;
+  padding: $menuButtonPadding;
+  font-size: 25px;
+
+}
+
+#section-bar ul li {
+  height: $bottomBarHeight;
+  color: $bottomBarTextColor;
+  padding: $menuButtonPadding;
+  font-size: 25px;
+}
+
+.container {
+  padding: 5px;
+  margin: 5px;
+}
+
+.inline-list {
+  display: block;
+}
+
+.inline-list li {
+  display: inline-block;
+}
+

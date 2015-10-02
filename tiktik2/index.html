@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style/app.css">
+</head>
+<body class="centered-text top-containers" ng-app="test-shutter">
+    <section id="header">
+        <div id="app-bar">
+            <ul id="section-links" class="inline-list">
+                <li>dashboard</li>
+                <li link-for="campaigns" class="selected-link">
+                    campaigns
+                </li>
+                <li>reports</li>
+                <li>products</li>
+            </ul>
+        </div>
+
+        <div id="section-bar">
+            <ul sub-menu-for="campaigns" class="selected-section inline-list" >
+                <li class="selected-tab">campaigns</li>
+                <li>adsets</li>
+                <li>ads</li>
+                <li>audiences</li>
+                <li>more <strong>v</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="body">
+        <p>here is the content</p>
+    </section>
+
+    <section id="footer">
+    </section>
+</body>
+</html>
