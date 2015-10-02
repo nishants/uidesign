@@ -8,37 +8,57 @@ $topBarTextColor: white;
 
 $topBarHeight: 45px;
 $bottomBarHeight: 45px;
+$bodyBgColor: white;
+
+body{
+  background-color: $bodyBgColor;
+}
+
+* {
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
 
 #app-bar {
   background-color: $topBarColor;
-}
+  ul li {
+    height: $topBarHeight;
+    color: $topBarTextColor;
+    padding: $menuButtonPadding;
+    font-size: 25px;
+  }
 
-#app-bar li {
-  color: white;
+  ul li:hover{
+    background-color: $bottomBarTextColor;
+    color: $bottomBarColor;
+  }
+
+  ul li.selected-link{
+    background-color: $bottomBarColor;
+  }
 }
 
 #section-bar {
   background-color: $bottomBarColor;
-}
+  ul li {
+    height: $bottomBarHeight;
+    color: $bottomBarTextColor;
+    padding: $menuButtonPadding;
+    font-size: 25px;
+  }
 
-#app-bar ul li {
-  height: $topBarHeight;
-  color: $topBarTextColor;
-  padding: $menuButtonPadding;
-  font-size: 25px;
+  ul li:hover{
+    background-color: $bodyBgColor;
+    color: $bottomBarColor;
+  }
 
-}
+  ul li.selected-tab{
+    background-color: $bodyBgColor;
+    color: $bottomBarColor;
+  }
 
-#section-bar ul li {
-  height: $bottomBarHeight;
-  color: $bottomBarTextColor;
-  padding: $menuButtonPadding;
-  font-size: 25px;
-}
-
-.container {
-  padding: 5px;
-  margin: 5px;
 }
 
 .inline-list {
