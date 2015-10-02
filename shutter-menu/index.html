@@ -87,13 +87,13 @@
         <div ng-include="'app/data-table/data-table.html'"></div>
 
         <form>
-            <button ng-click="menu.show()">Show Menu</button>
-            <button ng-click="menu.hide()">Hide Menu</button>
-            <button ng-click="menu.showAppMenu()">App Menu</button>
-            <button ng-click="menu.showSubMenu()">Context Menu</button>
+            <button ng-click="menu.show()" class="passive">Show Menu</button>
+            <button ng-click="menu.hide()" class="passive">Hide Menu</button>
+            <button ng-click="menu.showAppMenu()" class="passive">App Menu</button>
+            <button ng-click="menu.showSubMenu()" >Context Menu</button>
 
             <button ng-click="loader.start()">Start Loader</button>
-            <button ng-click="loader.stop()">Stop Loader</button>
+            <button ng-click="loader.stop()" class="passive">Stop Loader</button>
 
         </form>
         <form>
