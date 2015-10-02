@@ -4,7 +4,6 @@
       animationDuration = 250,
       moveToY = function ($e, yPosition) {
         return $e.animate({
-          left: 0,
           top: yPosition,
         }, animationDuration).promise();
       },
