@@ -22,7 +22,7 @@
                 </ul>
             </div>
 
-            <div id="section-bar">
+            <div id="section-bar" ng-show="!menu.section('dashboard')">
                 <ul ng-show="menu.section('campaigns')" class="selected-section inline-list pull-left">
                     <li ng-class="menu.tab('campaigns') ? 'selected-tab' : '' " >campaigns</li>
                     <li ng-class="menu.tab('adsets')    ? 'selected-tab' : '' " > adsets</li>
