@@ -23,7 +23,7 @@ tr {
 
 th{
   font-size: 1.2em;
-  padding-bottom: 5px;
+  padding: 5px 0 5px 0;
   border-top: 1px solid #F3F3F3;
   border-bottom: 1px solid #F3F3F3;
   border-right: 1px solid #F3F3F3;
@@ -81,4 +81,8 @@ a{
   background-color: transparent;
   box-shadow: none;
   padding-left: 50px;
+}
+
+.top-sticky-height{
+  height: 50px;
 }
