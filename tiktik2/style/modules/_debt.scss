@@ -28,7 +28,7 @@ body{
   ul {
     height: 100%;
     li {
-      height: 100%;
+      height: calc(100% - 10px);
       color: $topBarTextColor;
       padding: $menuButtonPadding;
       font-size: $menuButtonFontSize;
