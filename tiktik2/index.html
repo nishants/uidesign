@@ -15,10 +15,10 @@
         <div id="menu-wrapper" ng-controller="TopMenuController" ng-mouseleave="menu.showByUrl()">
             <div id="app-bar">
                 <ul id="section-links" class="inline-list pull-left">
-                    <li ng-mouseover="menu.showMenuFor('dashboard')" ng-class="menu.section('dashboard')    ? 'selected-link' : '' ">dashboard</li>
-                    <li ng-mouseover="menu.showMenuFor('campaigns')" ng-class="menu.section('campaigns')    ? 'selected-link' : '' ">campaigns</li>
-                    <li ng-mouseover="menu.showMenuFor('reports')"   ng-class="menu.section('reports')      ? 'selected-link' : '' ">reports</li>
-                    <li ng-mouseover="menu.showMenuFor('products')"  ng-class="menu.section('products')     ? 'selected-link' : '' ">products</li>
+                    <li ng-mouseover="menu.showMenuFor('dashboard')" ng-click="menu.showMenuFor('dashboard')" ng-class="menu.section('dashboard')    ? 'selected-link' : '' ">dashboard</li>
+                    <li ng-mouseover="menu.showMenuFor('campaigns')" ng-click="menu.showMenuFor('campaigns')" ng-class="menu.section('campaigns')    ? 'selected-link' : '' ">campaigns</li>
+                    <li ng-mouseover="menu.showMenuFor('reports')"   ng-click="menu.showMenuFor('reports')"   ng-class="menu.section('reports')      ? 'selected-link' : '' ">reports</li>
+                    <li ng-mouseover="menu.showMenuFor('products')"  ng-click="menu.showMenuFor('products')"  ng-class="menu.section('products')     ? 'selected-link' : '' ">products</li>
                 </ul>
             </div>
 
