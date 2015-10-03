@@ -14,7 +14,7 @@
 
         <div id="menu-wrapper" ng-controller="TopMenuController" ng-mouseleave="menu.showByUrl()">
             <div id="app-bar">
-                <ul id="section-links" class="inline-list pull-left">
+                <ul id="section-links" class="inline-menu inline-list pull-left">
                     <li ng-mouseover="menu.showMenuFor('dashboard')" ng-click="menu.showMenuFor('dashboard')" ng-class="menu.section('dashboard')    ? 'selected-link' : '' ">dashboard</li>
                     <li ng-mouseover="menu.showMenuFor('campaigns')" ng-click="menu.showMenuFor('campaigns')" ng-class="menu.section('campaigns')    ? 'selected-link' : '' ">campaigns</li>
                     <li ng-mouseover="menu.showMenuFor('reports')"   ng-click="menu.showMenuFor('reports')"   ng-class="menu.section('reports')      ? 'selected-link' : '' ">reports</li>
@@ -23,19 +23,21 @@
             </div>
 
             <div id="section-bar" ng-show="!menu.section('dashboard')">
-                <ul ng-show="menu.section('campaigns')" class="selected-section inline-list pull-left">
+                <ul ng-show="menu.section('campaigns')" class="inline-menu inline-list pull-left">
                     <li ng-class="menu.tab('campaigns') ? 'selected-tab' : '' " >campaigns</li>
                     <li ng-class="menu.tab('adsets')    ? 'selected-tab' : '' " > adsets</li>
                     <li ng-class="menu.tab('ads')       ? 'selected-tab' : '' " >ads</li>
                     <li ng-class="menu.tab('audiences') ? 'selected-tab' : '' " >audiences</li>
                     <li>more <strong>v</strong></li>
                 </ul>
-                <ul ng-show="menu.section('reports')" class="selected-section inline-list pull-left">
+
+                <ul ng-show="menu.section('reports')" class="inline-menu inline-list pull-left">
                     <li ng-class="menu.tab('campaigns') ? 'selected-tab' : '' " >campaigns</li>
                     <li ng-class="menu.tab('missed-call-campaigns')    ? 'selected-tab' : '' " >missed call campaign</li>
                     <li ng-class="menu.tab('campaign-assets')       ? 'selected-tab' : '' " >campaigns assets</li>
                 </ul>
-                <ul ng-show="menu.section('products')" class="selected-section inline-list pull-left">
+
+                <ul ng-show="menu.section('products')" class="inline-menu inline-list pull-left">
                     <li ng-class="menu.tab('triggers') ? 'selected-tab' : '' " >triggers</li>
                     <li ng-class="menu.tab('behaviour-intel')    ? 'selected-tab' : '' " >behavior intelligence</li>
                 </ul>
