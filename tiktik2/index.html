@@ -54,13 +54,14 @@
     </section>
 
     <div id="business-account-indicator" ng-controller="BusinessAccountController">
-        <span>{{account.selected.business.name}}</span> -
-        <span>{{account.selected.account.name}}</span> -
-        <span>{{account.selected.subAccount.name}}</span>
-        <div class="input">
-            <input type="text" placeholder="search" ng-model="account.input.business">
+        <span ng-click="account.input.select('business')" ng-class="account.input.subjectIs('business') ? 'subject' : ''">{{account.selected.business.name}}</span> -
+        <span ng-click="account.input.select('account')" ng-class="account.input.subjectIs('account') ? 'subject' : ''">{{account.selected.account.name}}</span> -
+        <span ng-click="account.input.select('subaccount')" ng-class="account.input.subjectIs('subaccount') ? 'subject' : ''">{{account.selected.subaccount.name}}</span>
+
+        <div class="input" ng-show="account.input.subject">
+            <input type="text" placeholder="search" ng-model="account.input.value">
             <ul>
-                <li ng-repeat="option in account.filter(account.options.business, account.input.business)" ng-click="account.set(account.input.business, option)"> {{option.name}} </li>
+                <li ng-repeat="option in account.filter(account.options.of(account.input.subject), account.input.value)" ng-click="account.set(account.input.business, option)"> {{option.name}} </li>
                 <li>&nbsp;</li>
             </ul>
         </div>

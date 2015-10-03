@@ -72,8 +72,12 @@ ul.inline-menu{
   margin: 2px;
   span{
     font-size: 13px;
-    padding: 0 2px 2px 2px;
     color: $secondaryTextColor;
+    padding: 5px;
+  }
+  .subject{
+    color: #EFEFEF;
+    background-color: #629CE4;
   }
   .input{
     position: fixed;
