@@ -4,9 +4,8 @@
   angular.module("tiktik").controller("BusinessAccountController", ["$scope", function ($scope) {
     $scope.account = {
       resets: function(subject, valueChanged){
-        if(!valueChanged){
-          return;
-        }
+        if(!valueChanged){return;}
+
         if(subject == "account"){
           this.selected.subaccount = null;
         }

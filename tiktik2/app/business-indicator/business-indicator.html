@@ -4,14 +4,14 @@
     <span class="clickable" ng-click="account.input.select('subaccount')" ng-class="{'subject' : account.input.subjectIs('subaccount')  , 'error-outline' : !account.selected.subaccount}"> {{account.selected.subaccount.name | else:'select-subaccount'}}</span>
 
     <div class="input" ng-show="account.input.subject">
-        <input type="text" placeholder="search" ng-model="account.input.value">
+        <input type="text" placeholder="search {{account.input.subject}}" ng-model="account.input.value">
         <ul>
             <li class="clickable account-option" ng-repeat="option in account.filter(account.options.of(account.input.subject), account.input.value)" ng-click="account.set(account.input.subject, option)"> {{option.name}} </li>
-            <li>&nbsp;</li>
+            <li class="clickable account-option">settings</li>
         </ul>
     </div>
 
     <!-- protects the menu from being lost, on hovering away-->
-    <div id="account-indicator-pad" ng-show="account.input.subject">
+    <div id="account-indicator-pad" ng-show="account.input.subject" ng-click="account.input.select(null)">
     </div>
 </div>
