@@ -3,7 +3,22 @@
 
   angular.module("tiktik").controller("BusinessAccountController", ["$scope", function ($scope) {
     $scope.account = {
+      resets: function(subject, valueChanged){
+        if(!valueChanged){
+          return;
+        }
+        if(subject == "account"){
+          this.selected.subaccount = null;
+        }
+        if(subject == "business"){
+          this.selected.account = null;
+          this.selected.subaccount = null;
+        }
+      },
+
       set : function(subject, value){
+        var valueChanged = this.selected[subject] != value;
+        this.resets(subject, valueChanged);
         this.selected[subject] = value;
         this.input.select(null);
       },
@@ -23,13 +38,9 @@
       },
 
       selected: {
-        business    : null,
-        account     : null,
-        subaccount  : null,
-
-        //business    : {name: "Tookitako", id: 1},
-        //account     : {name: "Demo", id: 1},
-        //subaccount  : {name: "Demo1", id: 1},
+        business    : {name: "Tookitako", id: 1},
+        account     : {name: "Demo", id: 1},
+        subaccount  : {name: "Demo1", id: 1},
 
       },
       
