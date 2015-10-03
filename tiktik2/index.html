@@ -12,13 +12,14 @@
 
     <!-- app header space-->
     <section id="header">
+        <div id="business-account-indicator-wrapper"
+             ng-include="'app/business-indicator/business-indicator.html'">
+        </div>
+
         <div id="menu-wrapper"
              ng-controller="TopMenuController"
              ng-mouseleave="menu.showByUrl()"
              ng-include="'app/top-menu/top-menu.html'">
-        </div>
-        <div id="business-account-indicator-wrapper"
-             ng-include="'app/business-indicator/business-indicator.html'">
         </div>
     </section>
 

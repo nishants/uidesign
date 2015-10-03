@@ -1,4 +1,4 @@
-<div id="business-account-indicator" ng-controller="BusinessAccountController" ng-mouseleave="account.input.select(null)" >
+<div id="business-account-indicator" ng-controller="BusinessAccountController" ng-mouseleave="account.input.select(null)" class="layer-1">
     <span class="clickable" ng-click="account.input.select('business')"   ng-class="{'subject' : account.input.subjectIs('business')    , 'error-outline' : !account.selected.business}">   {{account.selected.business.name    | else:'select-business'}}</span> -
     <span class="clickable" ng-click="account.input.select('account')"    ng-class="{'subject' : account.input.subjectIs('account')     , 'error-outline' : !account.selected.account}">    {{account.selected.account.name     | else:'select-account'}}</span> -
     <span class="clickable" ng-click="account.input.select('subaccount')" ng-class="{'subject' : account.input.subjectIs('subaccount')  , 'error-outline' : !account.selected.subaccount}"> {{account.selected.subaccount.name | else:'select-subaccount'}}</span>
