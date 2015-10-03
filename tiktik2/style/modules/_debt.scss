@@ -81,6 +81,9 @@ ul.inline-menu{
     color: $secondaryTextColor;
     padding: 5px;
   }
+  span.error-outline{
+    color: red;
+  }
   .subject{
     color: #EFEFEF;
     background-color: $selectionBlueColor;
