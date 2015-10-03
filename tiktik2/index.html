@@ -54,9 +54,9 @@
     </section>
 
     <div id="business-account-indicator" ng-controller="BusinessAccountController" ng-mouseleave="account.input.select(null)">
-        <span ng-click="account.input.select('business')" ng-class="account.input.subjectIs('business') ? 'subject' : ''">{{account.selected.business.name}}</span> -
-        <span ng-click="account.input.select('account')" ng-class="account.input.subjectIs('account') ? 'subject' : ''">{{account.selected.account.name}}</span> -
-        <span ng-click="account.input.select('subaccount')" ng-class="account.input.subjectIs('subaccount') ? 'subject' : ''">{{account.selected.subaccount.name}}</span>
+        <span class="clickable" ng-click="account.input.select('business')"   ng-class="account.input.subjectIs('business') ? 'subject' : ''">{{account.selected.business.name}}</span> -
+        <span class="clickable" ng-click="account.input.select('account')"    ng-class="account.input.subjectIs('account') ? 'subject' : ''">{{account.selected.account.name}}</span> -
+        <span class="clickable" ng-click="account.input.select('subaccount')" ng-class="account.input.subjectIs('subaccount') ? 'subject' : ''">{{account.selected.subaccount.name}}</span>
 
         <div class="input" ng-show="account.input.subject">
             <input type="text" placeholder="search" ng-model="account.input.value">
