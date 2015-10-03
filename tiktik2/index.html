@@ -52,10 +52,19 @@
 
     <section id="footer">
     </section>
+
+    <div id="business-account-indicator" ng-controller="BusinessAccountController">
+        <span>{{account.selected.business.name}}</span> -
+        <span>{{account.selected.account.name}}</span> -
+        <span>{{account.selected.subAccount.name}}</span>
+    </div>
 </div>
+
+
 
 <script src="../lib/angular.js"></script>
 <script src="app/app.js"></script>
 <script src="app/top-menu/menu-controller.js"></script>
+<script src="app/top-menu/business-account-controller.js"></script>
 </body>
 </html>
