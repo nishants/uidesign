@@ -5,9 +5,6 @@ $bodyBgColor: #EFEFEF;
 $bottomBarTextColor: $bodyBgColor;
 $topBarTextColor: $bodyBgColor;
 
-$menuButtonPadding: 5px 20px 5px 10px;
-
-$menuButtonFontSize: 16x;
 $topBarHeight: 45px;
 $bottomBarHeight: 45px;
 
@@ -22,16 +19,21 @@ body{
   transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
+ul.inline-menu{
+  height: 100%;
+  li {
+    padding: 5px 20px 5px 10px;
+    font-size: 16px;
+    height: calc(100% - 10px);
+  }
+}
+
 #app-bar {
   background-color: $topBarColor;
   height: $topBarHeight;
-  ul {
-    height: 100%;
+  .inline-menu {
     li {
-      height: calc(100% - 10px);
       color: $topBarTextColor;
-      padding: $menuButtonPadding;
-      font-size: $menuButtonFontSize;
     }
     li:hover{
       background-color: rgba(26, 33, 43, 0.4);
@@ -40,26 +42,19 @@ body{
       background-color: $bottomBarColor;
     }
   }
-
 }
 
 #section-bar {
   background-color: $bottomBarColor;
   height: $bottomBarHeight;
-  ul {
-    height: 100%;
+  .inline-menu {
     li {
-      height: 100%;
       color: $bottomBarTextColor;
-      padding: $menuButtonPadding;
-      font-size: $menuButtonFontSize;
     }
-
     li.selected-tab{
       background-color: $bodyBgColor;
       color: $bottomBarColor;
     }
-
     li:hover{
       background-color: $bodyBgColor;
       color: $bottomBarColor;
