@@ -57,6 +57,13 @@
         <span>{{account.selected.business.name}}</span> -
         <span>{{account.selected.account.name}}</span> -
         <span>{{account.selected.subAccount.name}}</span>
+        <div class="input">
+            <input type="text" placeholder="search" ng-model="account.input.business">
+            <ul>
+                <li ng-repeat="option in account.filter(account.options.business, account.input.business)" ng-click="account.set(account.input.business, option)"> {{option.name}} </li>
+                <li>&nbsp;</li>
+            </ul>
+        </div>
     </div>
 </div>
 

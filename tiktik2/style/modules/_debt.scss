@@ -75,6 +75,20 @@ ul.inline-menu{
     padding: 0 2px 2px 2px;
     color: $secondaryTextColor;
   }
+  .input{
+    position: fixed;
+    background-color: inherit;
+    border: 1px solid #D2CECE;
+    border-radius: 5px;
+
+    input{
+      background-color: white;
+      height: 30px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  }
+
 }
 
 .inline-list {

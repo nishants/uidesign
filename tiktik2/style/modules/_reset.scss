@@ -13,4 +13,8 @@ body, div, h1, p, span, img, form, input, button, ul, li, a, table, thead, tbody
 a, span{
   display: inline-block;
 }
+
+ul{
+  list-style-type: none;
+}
 /* end reset */
