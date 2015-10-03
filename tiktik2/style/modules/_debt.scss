@@ -109,6 +109,16 @@ ul.inline-menu{
     border: 1px solid #faf5f5;
     font-size: 13px;
   }
+
+  #account-indicator-pad{
+    position: fixed;
+    top: 0;
+    left: 40%;
+    background-color: transparent;
+    height: 500px;
+    width: 500px;
+    z-index: -1;
+  }
 }
 
 .clickable:hover{
