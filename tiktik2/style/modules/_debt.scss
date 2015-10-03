@@ -96,6 +96,7 @@ ul.inline-menu{
 }
 
 .clickable:hover{
+  cursor: pointer;
   background-color: $selectionBlueColor;
 }
 

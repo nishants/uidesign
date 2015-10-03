@@ -9,7 +9,8 @@
         subjectOptions: [],
 
         select: function(subject){
-          this.subject = subject;
+          var userTryingToUnselect = (subject == this.subject);
+          this.subject = userTryingToUnselect ? null : subject;
         },
         subjectIs: function(name){
           return name == this.subject;
