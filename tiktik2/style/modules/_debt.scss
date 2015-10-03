@@ -93,10 +93,21 @@ ul.inline-menu{
 
     input{
       background-color: white;
-      height: 30px;
+      height: 20px;
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
+      padding: 2px;
+      margin: 2px;
+      font-size: 13px;
     }
+  }
+
+  .account-option{
+    margin: 5px;
+    border-radius: 3px;
+    padding: 5px;
+    border: 1px solid #faf5f5;
+    font-size: 13px;
   }
 }
 

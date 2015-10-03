@@ -3,6 +3,11 @@
 
   angular.module("tiktik").controller("BusinessAccountController", ["$scope", function ($scope) {
     $scope.account = {
+      set : function(subject, value){
+        this.selected[subject] = value;
+        this.input.select(null);
+      },
+
       input: {
         value: null,
         subject: null,
@@ -14,7 +19,7 @@
         },
         subjectIs: function(name){
           return name == this.subject;
-        }
+        },
       },
 
       selected: {
