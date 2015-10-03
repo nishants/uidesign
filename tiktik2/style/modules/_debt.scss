@@ -7,6 +7,7 @@ $topBarTextColor: $bodyBgColor;
 
 $topBarHeight: 45px;
 $bottomBarHeight: 45px;
+$titleBarHeight : $topBarHeight + $bottomBarHeight;
 
 $secondaryTextColor: #675D5D;
 $selectionBlueColor: #629CE4;
@@ -154,4 +155,28 @@ ul.inline-menu{
 
 .error-outline{
   outline: 1px solid red;
+}
+
+.layer-1{
+  z-index: 1;
+}
+
+#body{
+  padding-top: $titleBarHeight + 5px;
+}
+
+@media screen and (max-width: 700px) {
+  #business-account-indicator{
+    position: initial;
+    .input{
+      position: initial;
+    }
+  }
+  #menu-wrapper{
+    position: initial;
+  }
+
+  #body{
+    padding-top: 5px;
+  }
 }
