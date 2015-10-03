@@ -23,9 +23,14 @@
       },
 
       selected: {
-        business    : {name: "Tookitako", id: 1},
-        account     : {name: "Demo", id: 1},
-        subaccount  : {name: "Demo1", id: 1},
+        business    : null,
+        account     : null,
+        subaccount  : null,
+
+        //business    : {name: "Tookitako", id: 1},
+        //account     : {name: "Demo", id: 1},
+        //subaccount  : {name: "Demo1", id: 1},
+
       },
       
       options: {
