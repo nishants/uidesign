@@ -163,10 +163,10 @@ ul.inline-menu{
 
 // hide element by transform it to a point.
 .sutle-hide{
-  transform: translate(0px, -800px) !important;
+  transform: translate(0px, -1800px) !important;
   opacity: 0 !important;
   height: 0 !important;
-  width: 0 !important;
+
   -webkit-transition: width,height 500ms linear !important;
   -moz-transition: all 500ms linear !important;
   -o-transition: all 500ms linear !important;
