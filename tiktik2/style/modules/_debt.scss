@@ -90,6 +90,7 @@ ul.inline-menu{
     background-color: $selectionBlueColor;
   }
   .input{
+    min-width: 350px;
     position: fixed;
     background-color: inherit;
     border: 1px solid #D2CECE;
