@@ -161,6 +161,18 @@ ul.inline-menu{
   z-index: 1;
 }
 
+// hide element by transform it to a point.
+.sutle-hide{
+  transform: translate(0px, -800px) !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  -webkit-transition: width,height 500ms linear !important;
+  -moz-transition: all 500ms linear !important;
+  -o-transition: all 500ms linear !important;
+  transition: all 500ms linear !important;
+}
+
 #body{
   padding-top: $titleBarHeight + 5px;
 }
