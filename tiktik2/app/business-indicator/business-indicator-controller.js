@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  angular.module("tiktik").controller("BusinessAccountController", ["$scope", function ($scope) {
+  angular.module("tiktik").controller("BusinessIndicatorController", ["$scope", function ($scope) {
     $scope.account = {
       resets: function(subject, valueChanged){
         if(!valueChanged){return;}
