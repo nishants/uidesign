@@ -8,7 +8,7 @@
 <body>
 
 <!--app scope starts-->
-<div id="app" ng-app="tiktik">
+<div id="app" ng-app="tiktik" ng-controller="AppController"  class="no-display" ng-class="{'display' : app.loaded}">
 
     <!-- app header space-->
     <section id="header">
@@ -35,6 +35,7 @@
 <!-- app scope ends here-->
 <script src="../lib/angular.js"></script>
 <script src="app/app.js"></script>
+<script src="app/app-controller.js"></script>
 <script src="app/top-menu/menu-controller.js"></script>
 <script src="app/business-indicator/business-indicator-controller.js"></script>
 <script src="app/components/else.js"></script>

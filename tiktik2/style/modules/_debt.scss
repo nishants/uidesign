@@ -143,6 +143,14 @@ ul.inline-menu{
   background-color: $selectionBlueColor;
 }
 
+.no-display{
+  opacity: 0;
+}
+
+.display{
+  opacity: 1;
+}
+
 .inline-list {
   display: block;
   list-style-type: none;
