@@ -51,6 +51,18 @@ ul.inline-menu{
       background-color: $bottomBarColor;
     }
   }
+
+  li.profiles-option {
+    padding: 10px 20px 5px 20px;
+  }
+  li.profiles-option .glyphicon{
+    font-size: 1.5em;
+  }
+
+  li.profiles-option:hover{
+    background-color: $bodyBgColor;
+    color: #A6C6CC;
+  }
 }
 
 #section-bar {
@@ -142,12 +154,10 @@ ul.inline-menu{
 
 .pull-right{
   float: right;
-  clear: both;
 }
 
 .pull-left{
   float: left;
-  clear: both;
 }
 
 .very-large-scrollable-body{
