@@ -1,6 +1,7 @@
 $bottomBarColor: #1A212B;
 $topBarColor: #293e4f;
 $bodyBgColor: #EFEFEF;
+$splashBgColor : $topBarColor;
 
 $bottomBarTextColor: $bodyBgColor;
 $topBarTextColor: $bodyBgColor;
@@ -136,6 +137,14 @@ ul.inline-menu{
     width: 500px;
     z-index: -1;
   }
+}
+
+#splash-screen{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: $splashBgColor;
 }
 
 .clickable:hover{

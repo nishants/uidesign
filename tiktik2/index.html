@@ -8,30 +8,37 @@
 <body>
 
 <!--app scope starts-->
-<div id="app" ng-app="tiktik" ng-controller="AppController"  class="no-display" ng-class="{'display' : app.loaded}">
+<div id="app-wrapper" ng-app="tiktik" ng-controller="AppController">
 
-    <!-- app header space-->
-    <section id="header">
-        <div id="business-account-indicator-wrapper"
-             ng-controller="BusinessIndicatorController"
-             ng-include="'app/business-indicator/business-indicator.html'">
-        </div>
+    <div  class="no-display" ng-class="{'display' : app.loaded}">
 
-        <div id="menu-wrapper"
-             ng-controller="TopMenuController"
-             ng-mouseleave="menu.showByUrl()"
-             ng-include="'app/top-menu/top-menu.html'">
-        </div>
-    </section>
+        <!-- app header space-->
+        <section id="header">
+            <div id="business-account-indicator-wrapper"
+                 ng-controller="BusinessIndicatorController"
+                 ng-include="'app/business-indicator/business-indicator.html'">
+            </div>
 
-    <section id="body" class="very-large-scrollable-body">
-        <p>here is the content</p>
-    </section>
+            <div id="menu-wrapper"
+                 ng-controller="TopMenuController"
+                 ng-mouseleave="menu.showByUrl()"
+                 ng-include="'app/top-menu/top-menu.html'">
+            </div>
+        </section>
+
+        <section id="body"
+                 class="very-large-scrollable-body">
+
+            <p>here is the content</p>
+
+        </section>
 
 
-    <section id="footer"></section>
-
+        <section id="footer"></section>
+    </div>
+    <div id="splash-screen" ng-hide="app.loaded"></div>
 </div>
+
 <!-- app scope ends here-->
 <script src="../lib/angular.js"></script>
 <script src="app/app.js"></script>
