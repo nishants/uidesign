@@ -2,7 +2,9 @@ $stateWidth: 200px;
 $stateMinHeight: 200px;
 $stateBgColor: transparent;
 
-$progressBarColor: green;
+$progressBarColorHighlightColor: rgb(48, 131, 251);
+
+$progressBarColor: rgb(164, 205, 255);
 $progressBar: 5px solid $progressBarColor;
 
 
@@ -17,21 +19,31 @@ ul.progress-indicator {
     width: $stateWidth;
     display: inline-block;
     background-color: $stateBgColor;
-    span {
-      padding: 10px;
-      border-top: $progressBar;
-    }
   }
-  span.from {
+
+  .line.from.current, .line.to.current {
     width: 0.4 * $stateWidth;
   }
-  span.this {
+
+  .line.from, .line.to {
+    padding: 10px;
+    border-top: $progressBar;
+    width: 0.4 * $stateWidth;
+  }
+
+  li:last-child span:last-child {
+    opacity: 0;
+  }
+
+  li:first-child .from:first-child {
+    opacity: 0
+  }
+
+  .circle.this {
     width: 0.2 * $stateWidth;
     height: 0.2 * $stateWidth;
     border-radius: 50%;
     background-color: $progressBarColor;
   }
-  span.to {
-    width: 0.4 * $stateWidth;
-  }
+
 }
