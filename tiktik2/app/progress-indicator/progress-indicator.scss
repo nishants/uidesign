@@ -1,7 +1,9 @@
 $stateWidth: 200px;
 $stateMinHeight: 200px;
+$stateBgColor: transparent;
 
-$progressBar: 5px solid black;
+$progressBarColor: green;
+$progressBar: 5px solid $progressBarColor;
 
 
 ul.progress-indicator {
@@ -14,7 +16,7 @@ ul.progress-indicator {
     min-height: $stateMinHeight;
     width: $stateWidth;
     display: inline-block;
-    background-color: red;
+    background-color: $stateBgColor;
     span {
       padding: 10px;
       border-top: $progressBar;
@@ -27,6 +29,7 @@ ul.progress-indicator {
     width: 0.2 * $stateWidth;
     height: 0.2 * $stateWidth;
     border-radius: 50%;
+    background-color: $progressBarColor;
   }
   span.to {
     width: 0.4 * $stateWidth;

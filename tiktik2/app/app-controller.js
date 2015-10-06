@@ -2,7 +2,7 @@
   "use strict"
   angular.module("tiktik").controller("AppController", ["$scope", "$timeout", function($scope, $timeout){
     var app = {
-      loaded: false,
+      loaded: true,
     };
 
     $timeout(function(){
