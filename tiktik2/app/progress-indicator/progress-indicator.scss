@@ -1,4 +1,4 @@
-$stateWidth: 150px;
+$stateWidth: 100px;
 $stateMinHeight: 200px;
 $stateBgColor: transparent;
 
@@ -36,11 +36,11 @@ ul.progress-indicator {
 
   .line.from, .line.to {
     background-color: $progressBarColor;
-    margin-bottom: 15px;
+    margin-bottom: $stateWidth/13.3333;
     border-top-style: solid;
-    height: 3.75px;
+    height: $stateWidth/20;
     border: none;
-    width: 60px;
+    width: $stateWidth/2.5;
   }
 
   li:last-child span:last-child {
@@ -56,6 +56,7 @@ ul.progress-indicator {
     height: 0.2 * $stateWidth;
     border-radius: 50%;
     background-color: $progressBarColor;
+    transform: scale(1.1);
   }
 
   .current{
