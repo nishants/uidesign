@@ -1,12 +1,12 @@
-$stateWidth: 200px;
+$stateWidth: 400px;
 $stateMinHeight: 200px;
 $stateBgColor: transparent;
 
 $progressBarColorHighlightColor: rgb(48, 131, 251);
 
 $progressBarColor: rgb(164, 205, 255);
-$progressBarHeight: 5px ;
-$progressBarPaddingBottom: 10px ;
+$progressBarPaddingBottom: $stateWidth/20 ;
+$progressBarHeight: $progressBarPaddingBottom/2 ;
 
 
 ul.progress-indicator {
