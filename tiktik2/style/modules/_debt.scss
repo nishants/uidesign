@@ -1,7 +1,6 @@
 $bottomBarColor: #1A212B;
 $topBarColor: #293e4f;
 $bodyBgColor: #EFEFEF;
-$splashBgColor : $topBarColor;
 
 $bottomBarTextColor: $bodyBgColor;
 $topBarTextColor: $bodyBgColor;
@@ -139,14 +138,6 @@ ul.inline-menu{
   }
 }
 
-#splash-screen{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  background-color: $splashBgColor;
-}
-
 .clickable:hover{
   cursor: pointer;
   background-color: $selectionBlueColor;
@@ -175,6 +166,10 @@ ul.inline-menu{
 
 .pull-left{
   float: left;
+}
+
+.text-align-right{
+  text-align: right;
 }
 
 .very-large-scrollable-body{
