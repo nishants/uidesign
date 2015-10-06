@@ -1,25 +1,33 @@
-$stateWidth: 100px;
+$stateWidth: 150px;
 $stateMinHeight: 200px;
 $stateBgColor: transparent;
 
 $progressBarColorHighlightColor: rgb(48, 131, 251);
 
 $progressBarColor: rgb(164, 205, 255);
+
 $progressBarPaddingBottom: $stateWidth/20 ;
 $progressBarHeight: $progressBarPaddingBottom/2 ;
 
+$desciptionFontSize: 13px;
 
 ul.progress-indicator {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
+  display: table-row;
 
   li {
-    min-height: $stateMinHeight;
     width: $stateWidth;
     display: inline-block;
     background-color: $stateBgColor;
+    display: table-cell;
+  }
+
+  .description{
+    height: $stateMinHeight;
+    font-size: $desciptionFontSize;
   }
 
   .line.from.current, .line.to.current {
@@ -27,11 +35,12 @@ ul.progress-indicator {
   }
 
   .line.from, .line.to {
-    padding: $progressBarPaddingBottom;
+    background-color: $progressBarColor;
+    margin-bottom: 15px;
     border-top-style: solid;
-    border-top-width: $progressBarHeight;
-    border-top-color: $progressBarColor;
-    width: 0.4 * $stateWidth;
+    height: 3.75px;
+    border: none;
+    width: 60px;
   }
 
   li:last-child span:last-child {
@@ -50,11 +59,22 @@ ul.progress-indicator {
   }
 
   .current{
-    .line.from, .line.to {
-      border-top-color: $progressBarColorHighlightColor;
+    .line.to {
+      background-image: -webkit-gradient(linear, 0 0, 100% 0, from($progressBarColorHighlightColor), to($progressBarColor));
+      background-image: -webkit-linear-gradient(left, $progressBarColorHighlightColor, transparent);
+      background-image: -moz-linear-gradient(left, $progressBarColorHighlightColor, transparent);
+      background-image: -o-linear-gradient(left, $progressBarColorHighlightColor, transparent);
+    }
+
+    .line.from {
+      background-image: -webkit-gradient(linear, 0 0, 100% 0, from($progressBarColorHighlightColor), to($progressBarColor));
+      background-image: -webkit-linear-gradient(right, $progressBarColorHighlightColor, transparent);
+      background-image: -moz-linear-gradient(right, $progressBarColorHighlightColor, transparent);
+      background-image: -o-linear-gradient(right, $progressBarColorHighlightColor, transparent);
     }
     .circle.this {
       background-color: $progressBarColorHighlightColor;
+      transform: scale(1.1);
     }
   }
 
