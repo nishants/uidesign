@@ -1,3 +1,5 @@
+@import 'fonts';
+
 $bottomBarColor: #1A212B;
 $topBarColor: #293e4f;
 $bodyBgColor: #EFEFEF;
@@ -14,6 +16,7 @@ $selectionBlueColor: #629CE4;
 
 body{
   background-color: $bodyBgColor;
+  @extend .body-font;
 }
 
 * {
@@ -35,6 +38,7 @@ ul.inline-menu{
 #menu-wrapper{
   position: fixed;
   width: 100%;
+  @extend .title-font;
 }
 
 #app-bar {
@@ -90,6 +94,7 @@ ul.inline-menu{
   background-color: $bodyBgColor;
   margin: 2px;
   span{
+    @extend .title-font;
     font-size: 13px;
     color: $secondaryTextColor;
     padding: 5px;
