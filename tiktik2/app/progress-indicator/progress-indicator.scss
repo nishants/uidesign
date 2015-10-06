@@ -5,7 +5,8 @@ $stateBgColor: transparent;
 $progressBarColorHighlightColor: rgb(48, 131, 251);
 
 $progressBarColor: rgb(164, 205, 255);
-$progressBar: 5px solid $progressBarColor;
+$progressBarHeight: 5px ;
+$progressBarPaddingBottom: 10px ;
 
 
 ul.progress-indicator {
@@ -26,8 +27,8 @@ ul.progress-indicator {
   }
 
   .line.from, .line.to {
-    padding: 10px;
-    border-top: $progressBar;
+    padding: $progressBarPaddingBottom;
+    border-top: $progressBarHeight solid $progressBarColor;
     width: 0.4 * $stateWidth;
   }
 
