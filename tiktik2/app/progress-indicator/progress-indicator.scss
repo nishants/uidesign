@@ -1,0 +1,34 @@
+$stateWidth: 200px;
+$stateMinHeight: 200px;
+
+$progressBar: 5px solid black;
+
+
+ul.progress-indicator {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  li {
+    min-height: $stateMinHeight;
+    width: $stateWidth;
+    display: inline-block;
+    background-color: red;
+    span {
+      padding: 10px;
+      border-top: $progressBar;
+    }
+  }
+  span.from {
+    width: 0.4 * $stateWidth;
+  }
+  span.this {
+    width: 0.2 * $stateWidth;
+    height: 0.2 * $stateWidth;
+    border-radius: 50%;
+  }
+  span.to {
+    width: 0.4 * $stateWidth;
+  }
+}
