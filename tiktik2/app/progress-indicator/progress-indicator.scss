@@ -1,4 +1,4 @@
-$stateWidth: 400px;
+$stateWidth: 100px;
 $stateMinHeight: 200px;
 $stateBgColor: transparent;
 
@@ -28,7 +28,9 @@ ul.progress-indicator {
 
   .line.from, .line.to {
     padding: $progressBarPaddingBottom;
-    border-top: $progressBarHeight solid $progressBarColor;
+    border-top-style: solid;
+    border-top-width: $progressBarHeight;
+    border-top-color: $progressBarColor;
     width: 0.4 * $stateWidth;
   }
 
@@ -45,6 +47,15 @@ ul.progress-indicator {
     height: 0.2 * $stateWidth;
     border-radius: 50%;
     background-color: $progressBarColor;
+  }
+
+  .current{
+    .line.from, .line.to {
+      border-top-color: $progressBarColorHighlightColor;
+    }
+    .circle.this {
+      background-color: $progressBarColorHighlightColor;
+    }
   }
 
 }
