@@ -6,6 +6,8 @@
       resets: function(subject, valueChanged){
         if(!valueChanged){return;}
 
+        this.input.value = null;
+
         if(subject == "account"){
           this.selected.subaccount = null;
         }
