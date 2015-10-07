@@ -135,11 +135,9 @@ ul.inline-menu{
         background-color: rgba(26, 33, 43, 0.4);
       }
     }
-    li:hover{
-      a{
+    li:hover > a {
         color: #DEDEDE;
         background-color: rgba(26, 33, 43, 0.4);
-      }
     }
   }
 }
@@ -150,8 +148,9 @@ ul.inline-menu{
   left: 5vw;
   margin: 2px;
   #business-account-indicator{
-    color: grey;
+    color: #6C6E71;
     span{
+      color: #6C6E71;
       border-radius: 15px;
       color: #484444;
       padding: 5px;
