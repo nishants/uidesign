@@ -11,7 +11,7 @@
     </ul>
 </div>
 
-<div id="section-bar" ng-show="!menu.section('dashboard')">
+<div id="section-bar">
     <ul ng-show="menu.section('campaigns')" class="inline-menu inline-list">
         <li ng-class="menu.tab('campaigns') ? 'selected-tab' : '' " ><a>campaigns</a></li>
         <li ng-class="menu.tab('adsets')    ? 'selected-tab' : '' " ><a> adsets</a></li>
@@ -31,14 +31,14 @@
         </li>
     </ul>
 
-    <ul ng-show="menu.section('reports')" class="inline-menu inline-list pull-left">
-        <li ng-class="menu.tab('campaigns') ? 'selected-tab' : '' " >campaigns</li>
-        <li ng-class="menu.tab('missed-call-campaigns')    ? 'selected-tab' : '' " >missed call campaign</li>
-        <li ng-class="menu.tab('campaign-assets')       ? 'selected-tab' : '' " >campaigns assets</li>
+    <ul ng-show="menu.section('reports')" class="inline-menu inline-list">
+        <li ng-class="menu.tab('campaigns') ? 'selected-tab' : '' " ><a>campaigns</a></li>
+        <li ng-class="menu.tab('missed-call-campaigns')    ? 'selected-tab' : '' " ><a>missed call campaign</a></li>
+        <li ng-class="menu.tab('campaign-assets')       ? 'selected-tab' : '' " ><a>campaigns assets</a></li>
     </ul>
 
-    <ul ng-show="menu.section('products')" class="inline-menu inline-list pull-left">
-        <li ng-class="menu.tab('triggers') ? 'selected-tab' : '' " >triggers</li>
-        <li ng-class="menu.tab('behaviour-intel')    ? 'selected-tab' : '' " >behavior intelligence</li>
+    <ul ng-show="menu.section('products')" class="inline-menu inline-list">
+        <li ng-class="menu.tab('triggers') ? 'selected-tab' : '' " ><a>triggers</a></li>
+        <li ng-class="menu.tab('behaviour-intel')    ? 'selected-tab' : '' " ><a>behavior intelligence</a></li>
     </ul>
 </div>

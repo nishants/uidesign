@@ -99,6 +99,7 @@ ul.inline-menu{
     border-top: 1px solid #CCCBCB;
     box-shadow: 1px 3px 3px #B3B3B3;
     margin: 5px;
+    transform: translateY(15px);
   }
 
   li.profiles-option:hover .glyphicon{
@@ -148,6 +149,7 @@ ul.inline-menu{
   left: 5vw;
   margin: 2px;
   #business-account-indicator{
+    transform: translateY(20px);
     color: #6C6E71;
     span{
       color: #6C6E71;
