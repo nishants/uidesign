@@ -4,8 +4,12 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../lib/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style/app.css">
+    <link rel="stylesheet" type="text/css" href="style/app.css">
     <link rel="stylesheet" type="text/css" href="app/progress-indicator/progress-indicator.css">
     <link rel="stylesheet" type="text/css" href="app/top-menu/menu.css">
+
+    <!-- include as last stylesheets-->
+    <link rel="stylesheet" type="text/css" href="style/responsive.css">
 
 </head>
 <body>
@@ -19,6 +23,7 @@
         <section id="header">
             <div id="business-account-indicator-wrapper"
                  ng-controller="BusinessIndicatorController"
+                 class="layer-2"
                  ng-include="'app/business-indicator/business-indicator.html'">
             </div>
 
@@ -34,6 +39,7 @@
                  class="very-large-scrollable-body">
             <p>here is the content</p>
             <div ng-controller="ProgressIndicator"
+                 ng-if="false"
                  ng-include="'app/progress-indicator/progress-indicator.html'"></div>
         </section>
 
