@@ -33,6 +33,10 @@ ul.inline-menu{
     height: 100%;
   }
 }
+.shade-light{
+  background-color: #818181;
+}
+
 .shade-up{
   background: rgba(226,226,226,1);
   background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 100%);
@@ -76,17 +80,16 @@ ul.inline-menu{
         font-size: 16px;
         cursor: pointer;
         text-decoration: none;
-
       }
       a:hover{
         color: #DEDEDE;
-        background-color: rgba(26, 33, 43, 0.4);
+        @extend .shade-light;
       }
     }
     li.selected-link{
       a{
         color: #DEDEDE;
-        background-color: rgba(26, 33, 43, 0.4);
+        @extend .shade-light;
       }
     }
   }
@@ -103,7 +106,7 @@ ul.inline-menu{
   }
 
   li.profiles-option:hover .glyphicon{
-    background-color: #8E9195;
+    @extend .shade-light;
   }
 
   li a {
@@ -133,12 +136,12 @@ ul.inline-menu{
     li.selected-tab{
       a{
         color: #DEDEDE;
-        background-color: rgba(26, 33, 43, 0.4);
+        @extend .shade-light;
       }
     }
     li:hover > a {
         color: #DEDEDE;
-        background-color: rgba(26, 33, 43, 0.4);
+      @extend .shade-light;
     }
   }
 }
@@ -152,12 +155,10 @@ ul.inline-menu{
     transform: translateY(20px);
     color: #6C6E71;
     span{
-      color: #6C6E71;
       border-radius: 15px;
       color: #484444;
       padding: 5px;
       cursor: pointer;
-      text-transform: lowercase;
       font-size: 13px;
       @extend .title-font
     }
