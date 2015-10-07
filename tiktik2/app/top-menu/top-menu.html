@@ -17,7 +17,7 @@
         <li ng-class="menu.tab('adsets')    ? 'selected-tab' : '' " > adsets</li>
         <li ng-class="menu.tab('ads')       ? 'selected-tab' : '' " >ads</li>
         <li ng-class="menu.tab('audiences') ? 'selected-tab' : '' " >audiences</li>
-        <li ng-mouseenter="menu.showMoreThings = true" ng-mouseleave="menu.showMoreThings = false">
+        <li ng-mouseenter="menu.showMoreThings = true" ng-mouseleave="menu.showMoreThings = false" ng-click="menu.showMoreThings = !menu.showMoreThings">
             <span>
                 more <span class="more-glyph glyphicon glyphicon-menu-down"></span>
             </span>
