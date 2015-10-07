@@ -87,59 +87,62 @@ ul.inline-menu{
   }
 }
 
-#business-account-indicator{
+#business-account-indicator-wrapper{
   position: fixed;
   top: 0;
   left: 45vw;
   background-color: $bodyBgColor;
   margin: 2px;
-  span{
-    @extend .title-font;
-    font-size: 13px;
-    color: $secondaryTextColor;
-    padding: 5px;
-  }
-  span.error-outline{
-    color: red;
-  }
-  .subject{
-    color: #EFEFEF;
-    background-color: $selectionBlueColor;
-  }
-  .input{
-    min-width: 350px;
-    position: fixed;
-    background-color: inherit;
-    border: 1px solid #D2CECE;
-    border-radius: 3px;
+  #business-account-indicator{
+    background-color: $bodyBgColor;
+    span{
+      @extend .title-font;
+      font-size: 13px;
+      color: $secondaryTextColor;
+      padding: 5px;
+    }
+    span.error-outline{
+      color: red;
+    }
+    .subject{
+      color: #EFEFEF;
+      background-color: $selectionBlueColor;
+    }
+    .input{
+      min-width: 350px;
+      position: fixed;
+      background-color: inherit;
+      border: 1px solid #D2CECE;
+      border-radius: 3px;
 
-    input{
-      background-color: white;
-      height: 20px;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      padding: 2px;
-      margin: 2px;
+      input{
+        background-color: white;
+        height: 20px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        padding: 2px;
+        margin: 2px;
+        font-size: 13px;
+      }
+    }
+
+    .account-option{
+      margin: 5px;
+      border-radius: 3px;
+      padding: 5px;
+      border: 1px solid #faf5f5;
       font-size: 13px;
     }
-  }
 
-  .account-option{
-    margin: 5px;
-    border-radius: 3px;
-    padding: 5px;
-    border: 1px solid #faf5f5;
-    font-size: 13px;
-  }
-
-  #account-indicator-pad{
-    position: fixed;
-    top: 0;
-    left: 40%;
-    background-color: transparent;
-    height: 500px;
-    width: 500px;
-    z-index: -1;
+    #account-indicator-pad{
+      position: fixed;
+      top: 0;
+      left: 40%;
+      background-color: transparent;
+      height: 500px;
+      width: 500px;
+      z-index: -1;
+    }
   }
 }
 

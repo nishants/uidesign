@@ -16,13 +16,15 @@
     width: 100%;
   }
 
-  #business-account-indicator{
+  #business-account-indicator-wrapper{
     position: initial;
-    .input{
-      position: initial;
-    }
-    input{
-      height: 40px !important;
+    #business-account-indicator{
+      .input{
+        position: initial;
+      }
+      input{
+        height: 40px !important;
+      }
     }
   }
   #menu-wrapper{
