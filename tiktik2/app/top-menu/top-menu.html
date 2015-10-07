@@ -17,7 +17,19 @@
         <li ng-class="menu.tab('adsets')    ? 'selected-tab' : '' " > adsets</li>
         <li ng-class="menu.tab('ads')       ? 'selected-tab' : '' " >ads</li>
         <li ng-class="menu.tab('audiences') ? 'selected-tab' : '' " >audiences</li>
-        <li>more <strong>v</strong></li>
+        <li ng-mouseenter="menu.showMoreThings = true" ng-mouseleave="menu.showMoreThings = false">
+            <span>
+                more <span class="more-glyph glyphicon glyphicon-chevron-down"></span>
+            </span>
+            <div id="more-campaign-sections-dropdown" ng-show="menu.showMoreThings">
+                <ul class="">
+                    <li>Dynamic Product Catalogue</li>
+                    <li>Dynamic Product Audience</li>
+                    <li>App Details</li>
+                    <li></li>
+                 </ul>
+            </div>
+        </li>
     </ul>
 
     <ul ng-show="menu.section('reports')" class="inline-menu inline-list pull-left">
