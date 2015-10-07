@@ -13,7 +13,7 @@
         <li ng-repeat="state in progressIndicator.states"
             ng-class="{'current' : state.current}">
             <div class="state-indicator">
-                <span class="line from"></span><span class="circle this"></span><span class="line to"></span>
+                <span class="line from"></span><span class="circle this"><span class="step-no">{{$index + 1}}</span></span><span class="line to"></span>
             </div>
             <p class="description" ng-bind="state.label"></p>
         </li>

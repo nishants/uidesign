@@ -1,4 +1,4 @@
-$stateWidth: 200px;
+$stateWidth: 400px;
 $stateMinHeight: 200px;
 $stateBgColor: transparent;
 
@@ -43,7 +43,7 @@ ul.progress-indicator {
     width: $stateWidth/2.5;
   }
 
-  li:last-child span:last-child {
+  li:last-child .to:last-child {
     opacity: 0;
   }
 
@@ -57,6 +57,13 @@ ul.progress-indicator {
     border-radius: 50%;
     background-color: $progressBarColor;
     transform: scale(1.1);
+    .step-no{
+      position: fixed;
+      margin-left: - ($stateWidth/40);
+      margin-top: $stateWidth/40;
+      color: #EFE8E8;
+      font-size: $stateWidth/11.1111;
+    }
   }
 
   .current{
