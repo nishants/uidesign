@@ -29,60 +29,98 @@ body{
 ul.inline-menu{
   height: 100%;
   li {
-    padding: 10px 20px 5px 10px;
     font-size: 16px;
     height: 100%;
   }
 }
-
+.shady-gradient{
+  background: rgba(226,226,226,1);
+  background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 44%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(44%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+  background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 44%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+  background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 44%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+  background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 44%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+  background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 44%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );}
 #menu-wrapper{
+  @extend .shady-gradient;
   position: fixed;
   width: 100%;
   @extend .title-font;
 }
 
 #app-bar {
-  background-color: $topBarColor;
   height: $topBarHeight;
   .inline-menu {
     li {
-      color: $topBarTextColor;
-    }
-    li:hover{
-      background-color: rgba(26, 33, 43, 0.4);
+      a{
+        border-radius: 15px;
+        color: #484444;
+        background-color: white;
+        padding: 5px 15px 5px 15px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+
+      }
+      a:hover{
+        color: #DEDEDE;
+        background-color: rgba(26, 33, 43, 0.4);
+      }
     }
     li.selected-link{
-      background-color: $bottomBarColor;
+      a{
+        color: #DEDEDE;
+        background-color: rgba(26, 33, 43, 0.4);
+      }
     }
   }
 
-  li.profiles-option {
-    padding: 10px 20px 5px 20px;
-  }
   li.profiles-option .glyphicon{
     font-size: 1.5em;
+    padding: 5px 10px 5px 10px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 5px;
   }
 
-  li.profiles-option:hover{
-    background-color: $bodyBgColor;
-    color: #A6C6CC;
+  li.profiles-option:hover .glyphicon{
+    background-color: #8E9195;
   }
+
+  li a {
+    color: grey;
+  }
+
 }
 
 #section-bar {
-  background-color: $bottomBarColor;
   height: $bottomBarHeight;
   .inline-menu {
     li {
-      color: $bottomBarTextColor;
+      a{
+        border-radius: 15px;
+        color: #484444;
+        background-color: white;
+        padding: 5px 15px 5px 15px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+      }
     }
     li.selected-tab{
-      background-color: $bodyBgColor;
-      color: $bottomBarColor;
+      a{
+        color: #DEDEDE;
+        background-color: rgba(26, 33, 43, 0.4);
+      }
     }
     li:hover{
-      background-color: $bodyBgColor;
-      color: $bottomBarColor;
+      a{
+        color: #DEDEDE;
+        background-color: rgba(26, 33, 43, 0.4);
+      }
     }
   }
 }
@@ -90,15 +128,14 @@ ul.inline-menu{
 #business-account-indicator-wrapper{
   position: fixed;
   top: 0;
-  left: 45vw;
-  background-color: $bodyBgColor;
+  left: 5vw;
   margin: 2px;
   #business-account-indicator{
-    background-color: $bodyBgColor;
+    color: grey;
     span{
       @extend .title-font;
       font-size: 13px;
-      color: $secondaryTextColor;
+      color: grey;
       padding: 5px;
     }
     span.error-outline{
@@ -111,7 +148,8 @@ ul.inline-menu{
     .input{
       min-width: 350px;
       position: fixed;
-      background-color: inherit;
+      @extend .shady-gradient;
+
       border: 1px solid #D2CECE;
       border-radius: 3px;
 

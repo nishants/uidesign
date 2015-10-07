@@ -1,3 +1,4 @@
+@import '../../style/modules/debt';
 .more-glyph{
   font-size: 13px;
   transform: translate(0px, 1px);
@@ -5,7 +6,7 @@
 
 #more-campaign-sections-dropdown {
   width: 300px;
-  background-color: #293E4F;
+  @extend .shady-gradient;
   position: fixed;
   transform: translate(-10px, 7px);
 
