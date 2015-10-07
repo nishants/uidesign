@@ -4,6 +4,7 @@
   angular.module("tiktik").controller("ProgressIndicator", ['$scope', function ($scope) {
 
     var progressIndicator = {
+      showStateNumbers : true,
       states: [
         {
           name: 'create-adset',
