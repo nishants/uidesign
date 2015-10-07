@@ -20,13 +20,11 @@ ul.progress-indicator {
 
   li {
     width: $stateWidth;
-    display: inline-block;
     background-color: $stateBgColor;
     display: table-cell;
   }
 
   .description{
-    height: $stateMinHeight;
     font-size: $desciptionFontSize;
   }
 
@@ -37,7 +35,6 @@ ul.progress-indicator {
   .line.from, .line.to {
     background-color: $progressBarColor;
     margin-bottom: $stateWidth/13.3333;
-    border-top-style: solid;
     height: $stateWidth/20;
     border: none;
     width: $stateWidth/2.5;
@@ -83,7 +80,13 @@ ul.progress-indicator {
     }
     .circle.this {
       background-color: $progressBarColorHighlightColor;
-      transform: scale(1.1);
+      transform: scale(1.3);
+        .step-no{
+          transform: scale(1);
+        }
+    }
+    .description{
+      transform: scale(1);
     }
   }
 
