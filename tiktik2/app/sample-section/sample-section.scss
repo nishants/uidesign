@@ -1,0 +1,33 @@
+@import '../../style/modules/debt';
+
+.create-audience-progress-bar {
+  margin: 10px;
+  background-color: #F2F2F2;
+  padding: 20px 10px 10px 10px;
+}
+
+.wizard-buttons{
+  margin: 10px;
+  background-color: #F2F2F2;
+
+  button{
+    @extend .tk-button;
+    color: #FAFAFA;
+    background-color: #3083FB;
+  }
+}
+
+.form-wrapper {
+  .form-label{
+    margin: 5px;
+  }
+  .form-input {
+    color: grey;
+    background-color: white;
+    padding: 5px 15px 5px 10px;
+    font-size: 1.3em;
+    text-align: left;
+    border-radius: 10px;
+    @extend .tk-button
+  }
+}
