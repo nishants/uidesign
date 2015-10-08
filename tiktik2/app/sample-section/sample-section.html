@@ -4,21 +4,21 @@
      ng-include="'app/progress-indicator/progress-indicator.html'"></div>
 
 <fieldset class="wizard-buttons">
-    <button class="tk-button" ng-hide="audience.showSection('set-name')"> previous </button>
-    <button class="tk-button" ng-click="audience.showNext()"> next </button>
+    <button class="tk-button" ng-hide="wizard.showSection('set-name')"> previous </button>
+    <button class="tk-button" ng-click="wizard.showNext()"> next </button>
 </fieldset>
 
 <div class="form-wrapper">
     <div class="audience-preview">
-        <p ng-show="!audience.showSection('set-name')">name : {{audience.form.name}}</p>
+        <p ng-show="!wizard.showSection('set-name')">name : {{wizard.form.name}}</p>
     </div>
 
-    <form name="audience.form">
+    <form name="wizard.form">
         <fieldset>
             <label class="form-label">name</label>
             <input type="text"
                    placeholder="audience name"
-                   ng-model="audience.form.name"
+                   ng-model="wizard.form.name"
                    class="audience-name large tk-input">
         </fieldset>
     </form>

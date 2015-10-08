@@ -2,9 +2,9 @@
   "use strict"
   // shows when out of initial view port
   angular.module("tiktik").controller("SampleSectionController", ['$scope', function ($scope) {
-    var findInArray = function(field, value, arr){
-      for(var i = 0; i < arr.length; i++) {
-        if(arr[i][field] == value){
+    var findInArray = function (field, value, arr) {
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i][field] == value) {
           return i;
         }
       }
@@ -12,7 +12,7 @@
     };
 
     var progressIndicator = {
-      showStateNumbers : true,
+      showStateNumbers: true,
       states: [
         {
           name: 'set-name',
@@ -29,19 +29,19 @@
           label: 'set targeting',
           description: 'target by interests, behavior, etc.',
         }],
-      showSection: function(name){
+      showSection: function (name) {
         var index = findInArray("name", name, this.states);
-        return  index > -1 ? this.states[index].current : undefined;
+        return index > -1 ? this.states[index].current : undefined;
       },
 
-      showNext: function(){
+      showNext: function () {
         var index = findInArray("current", true, this.states);
         this.states[index].current = false;
-        this.states[index +1].current = true;
+        this.states[index + 1].current = true;
       }
     };
 
-    $scope.audience = progressIndicator;
+    $scope.wizard = progressIndicator;
     $scope.progressIndicator = progressIndicator;
 
   }]);
