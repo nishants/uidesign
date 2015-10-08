@@ -5,7 +5,7 @@
     var findInArray = function(field, value, arr){
       for(var i = 0; i < arr.length; i++) {
         if(arr[i][field] == value){
-          return arr[i];
+          return i;
         }
       }
       return undefined;
@@ -30,7 +30,14 @@
           description: 'target by interests, behavior, etc.',
         }],
       showSection: function(name){
-        return findInArray("name", name, this.states).current;
+        var index = findInArray("name", name, this.states);
+        return  index > -1 ? this.states[index].current : undefined;
+      },
+
+      showNext: function(){
+        var index = findInArray("current", true, this.states);
+        this.states[index].current = false;
+        this.states[index +1].current = true;
       }
     };
 
