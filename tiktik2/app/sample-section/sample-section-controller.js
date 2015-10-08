@@ -57,6 +57,10 @@
 
       finish: function(){
         this.cancel();
+      },
+
+      allowNext: function(){
+        return false;
       }
     };
 

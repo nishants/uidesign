@@ -7,7 +7,7 @@
 <fieldset class="wizard-buttons">
     <button class="tk-button" ng-click="wizard.cancel()"    ng-hide="!wizard.showSection('set-name')"     > cancel   </button>
     <button class="tk-button" ng-click="wizard.showPrev()"  ng-hide="wizard.showSection('set-name')"      > previous </button>
-    <button class="tk-button" ng-click="wizard.showNext()"  ng-hide="wizard.showSection('set-targeting')" > next     </button>
+    <button class="tk-button" ng-click="wizard.showNext()"  ng-hide="wizard.showSection('set-targeting')" ng-disabled="!wizard.allowNext()" ng-class="{'disabled' : !wizard.allowNext()}"> next     </button>
     <button class="tk-button" ng-click="wizard.finish()"    ng-hide="!wizard.showSection('set-targeting')"> finish   </button>
 </fieldset>
 </div>
