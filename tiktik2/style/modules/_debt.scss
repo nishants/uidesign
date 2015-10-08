@@ -78,6 +78,24 @@ ul.inline-menu{
   text-decoration: none;
 }
 
+.tk-input{
+  box-shadow: 1px 3px 3px #B3B3B3;
+  color: #484444;
+  margin: 5px;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: white;
+  padding: 5px 15px 5px 10px;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.tk-input.large{
+  min-width: 300px;
+}
+
 #app-bar {
   height: $topBarHeight;
   @extend .shade-up;

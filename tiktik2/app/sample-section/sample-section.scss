@@ -14,6 +14,8 @@
     @extend .tk-button;
     color: #FAFAFA;
     background-color: #3083FB;
+    border: none;
+    font-size: 1em;
   }
 }
 
@@ -22,12 +24,7 @@
     margin: 5px;
   }
   .form-input {
-    color: grey;
-    background-color: white;
-    padding: 5px 15px 5px 10px;
-    font-size: 1.3em;
-    text-align: left;
-    border-radius: 10px;
-    @extend .tk-button
+    @extend .tk-input;
+    @extend .tk-input.large;
   }
 }

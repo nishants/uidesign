@@ -54,7 +54,7 @@ ul.inline-menu {
   width: 100%;
   box-shadow: 2px 2px 5px #B9B7B7; }
 
-.tk-button, #app-bar .inline-menu li a, #section-bar .inline-menu li a, .wizard-buttons button, .form-wrapper .form-input {
+.tk-button, #app-bar .inline-menu li a, #section-bar .inline-menu li a, .wizard-buttons button {
   border-radius: 15px;
   border-top: 1px solid #CCCBCB;
   box-shadow: 1px 3px 3px #B3B3B3;
@@ -65,6 +65,22 @@ ul.inline-menu {
   font-size: 16px;
   cursor: pointer;
   text-decoration: none; }
+
+.tk-input, .form-wrapper .form-input {
+  box-shadow: 1px 3px 3px #B3B3B3;
+  color: #484444;
+  margin: 5px;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: white;
+  padding: 5px 15px 5px 10px;
+  text-align: left;
+  border-radius: 10px; }
+
+.tk-input.large, .form-wrapper .form-input {
+  min-width: 300px; }
 
 #app-bar {
   height: 45px; }
@@ -206,16 +222,11 @@ ul.inline-menu {
   background-color: #F2F2F2; }
   .wizard-buttons button {
     color: #FAFAFA;
-    background-color: #3083FB; }
+    background-color: #3083FB;
+    border: none;
+    font-size: 1em; }
 
 .form-wrapper .form-label {
   margin: 5px; }
-.form-wrapper .form-input {
-  color: grey;
-  background-color: white;
-  padding: 5px 15px 5px 10px;
-  font-size: 1.3em;
-  text-align: left;
-  border-radius: 10px; }
 
 /*# sourceMappingURL=sample-section.css.map */
