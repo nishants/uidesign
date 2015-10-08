@@ -14,8 +14,10 @@
 
 <div class="form-wrapper">
     <div class="audience-preview">
-        <p ng-show="!wizard.showSection('set-name')">name : {{wizard.form.name}}</p>
+        <p ng-class="{'no-display' : !wizard.form.name}"> <strong>name</strong> : {{wizard.form.name}}</p>
     </div>
+
+    <hr/>
 
     <form name="wizard.form">
         <fieldset ng-if="wizard.showSection('set-name')">
