@@ -96,6 +96,10 @@ ul.inline-menu{
   min-width: 300px;
 }
 
+.tk-button-pressed{
+  transform: scale(0.8);
+}
+
 #app-bar {
   height: $topBarHeight;
   @extend .shade-up;
