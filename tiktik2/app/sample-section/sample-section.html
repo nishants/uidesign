@@ -16,18 +16,19 @@
     <div class="audience-preview">
         <p ng-class="{'no-display' : !wizard.form.name}"> <strong>audience name</strong> : {{wizard.form.name}}</p>
 
+        <hr/>
+
         <div class="grid">
             <div ng-class="{'no-display' : !wizard.form.demographics}" class="header-card card">
                 <p class="title">{{wizard.form.demographics.name}}</p>
                 <p><strong>genders</strong> : {{wizard.form.demographics.gender}}</p>
                 <p><strong>min age</strong> : {{wizard.form.demographics.fromAge}}</p>
                 <p><strong>max age</strong> : {{wizard.form.demographics.toAge}}</p>
+                <p><a ng-click="wizard.form.demographics = null">reset demographics</a></p>
             </div>
         </div>
 
     </div>
-
-    <hr/>
 
     <form name="wizard.form">
         <fieldset ng-if="wizard.showSection('set-name')">
