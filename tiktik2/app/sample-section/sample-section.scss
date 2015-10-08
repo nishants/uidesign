@@ -6,9 +6,15 @@
   padding: 20px 10px 10px 10px;
 }
 
-.wizard-buttons{
+.wizard-buttons-wrapper{
   margin: 10px;
   background-color: #F2F2F2;
+}
+
+.wizard-buttons{
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 
   button{
     @extend .tk-button;

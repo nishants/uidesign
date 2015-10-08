@@ -3,10 +3,12 @@
      ng-controller="ProgressIndicator"
      ng-include="'app/progress-indicator/progress-indicator.html'"></div>
 
+<div class="wizard-buttons-wrapper">
 <fieldset class="wizard-buttons">
     <button class="tk-button" ng-click="wizard.showPrev()" ng-hide="wizard.showSection('set-name')"> previous </button>
     <button class="tk-button" ng-click="wizard.showNext()" ng-hide="wizard.showSection('set-targeting')"> next </button>
 </fieldset>
+</div>
 
 <div class="form-wrapper">
     <div class="audience-preview">
