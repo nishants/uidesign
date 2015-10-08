@@ -29,19 +29,21 @@
           label: 'set targeting',
           description: 'target by interests, behavior, etc.',
         }],
+    };
+
+    $scope.wizard = {
       showSection: function (name) {
-        var index = findInArray("name", name, this.states);
-        return index > -1 ? this.states[index].current : undefined;
+        var index = findInArray("name", name, progressIndicator.states);
+        return index > -1 ? progressIndicator.states[index].current : undefined;
       },
 
       showNext: function () {
-        var index = findInArray("current", true, this.states);
-        this.states[index].current = false;
-        this.states[index + 1].current = true;
+        var index = findInArray("current", true, progressIndicator.states);
+        progressIndicator.states[index].current = false;
+        progressIndicator.states[index + 1].current = true;
       }
     };
 
-    $scope.wizard = progressIndicator;
     $scope.progressIndicator = progressIndicator;
 
   }]);
