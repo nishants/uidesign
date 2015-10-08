@@ -37,6 +37,12 @@
         return index > -1 ? progressIndicator.states[index].current : undefined;
       },
 
+      showPrev: function () {
+        var index = findInArray("current", true, progressIndicator.states);
+        progressIndicator.states[index].current = false;
+        progressIndicator.states[index - 1].current = true;
+      },
+
       showNext: function () {
         var index = findInArray("current", true, progressIndicator.states);
         progressIndicator.states[index].current = false;
