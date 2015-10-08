@@ -61,6 +61,7 @@ ul.inline-menu{
 #menu-wrapper{
   position: fixed;
   width: 100%;
+  box-shadow: 2px 2px 5px #B9B7B7;
   @extend .title-font;
 }
 
@@ -277,5 +278,7 @@ ul.inline-menu{
 }
 
 #body{
-  padding-top: $titleBarHeight + 5px;
+  padding-top: 120px;
+  min-height: 110vh;
+  background-color: #FAFAFA;
 }
