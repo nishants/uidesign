@@ -60,7 +60,8 @@
       },
 
       allowNext: function(){
-        return false;
+        var state = progressIndicator.states[findInArray("current", true, progressIndicator.states)];
+        return state.name == "set-name" && this.form.name;
       }
     };
 
