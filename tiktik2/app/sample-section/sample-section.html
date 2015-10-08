@@ -14,7 +14,7 @@
     </div>
 
     <form name="wizard.form">
-        <fieldset>
+        <fieldset ng-if="wizard.showSection('set-name')">
             <label class="form-label">name</label>
             <input type="text"
                    placeholder="audience name"
