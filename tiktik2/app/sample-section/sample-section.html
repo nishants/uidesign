@@ -24,13 +24,15 @@
                 <p><strong>genders</strong> : {{wizard.form.demographics.gender}}</p>
                 <p><strong>min age</strong> : {{wizard.form.demographics.fromAge}}</p>
                 <p><strong>max age</strong> : {{wizard.form.demographics.toAge}}</p>
-                <p><a ng-click="wizard.form.demographics = null">reset demographics</a></p>
+                <p ng-class="{'no-display'  : !wizard.showSection('set-demographics')}">
+                    <a ng-click="wizard.form.demographics = null">reset </a></p>
+                <p><span class="indicator-text">demographics</span></p>
             </div>
         </div>
 
     </div>
 
-    <form name="wizard.form">
+    <form>
         <fieldset ng-if="wizard.showSection('set-name')">
             <label class="form-label">name</label>
             <input type="text"
