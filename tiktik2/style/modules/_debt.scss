@@ -65,22 +65,26 @@ ul.inline-menu{
   @extend .title-font;
 }
 
+.tk-button{
+  border-radius: 15px;
+  border-top: 1px solid #CCCBCB;
+  box-shadow: 1px 3px 3px #B3B3B3;
+  color: #484444;
+  background-color: white;
+  padding: 5px 15px 5px 15px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 #app-bar {
   height: $topBarHeight;
   @extend .shade-up;
   .inline-menu {
     li {
       a{
-        border-radius: 15px;
-        border-top: 1px solid #CCCBCB;
-        box-shadow: 1px 3px 3px #B3B3B3;
-        color: #484444;
-        background-color: white;
-        padding: 5px 15px 5px 15px;
-        margin: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        text-decoration: none;
+        @extend .tk-button
       }
       a:hover{
         color: #DEDEDE;
@@ -122,16 +126,7 @@ ul.inline-menu{
   .inline-menu {
     li {
       a{
-        border-radius: 15px;
-        border-top: 1px solid #CCCBCB;
-        box-shadow: 1px 3px 3px #B3B3B3;
-        color: #484444;
-        background-color: white;
-        padding: 5px 15px 5px 15px;
-        margin: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        text-decoration: none;
+        @extend .tk-button
       }
     }
     li.selected-tab{
