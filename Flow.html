@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var
+            fieldTypes = {
+                text: "text",
+                image: "text",
+                videos: "text",
+            },
+            userStory = function (name, steps) {
+                return {
+                    name: name,
+                    steps: steps
+                };
+            },
+            step = function (name, optional, forms, isAsync) {
+                return {
+                    name: name,
+                    optional: optional,
+                    forms: forms,
+                    isAsync: isAsync,
+                };
+            },
+            form = function (name, optional, fields) {
+                return {
+                    name: name,
+                    optional: optional,
+                    fields: fields,
+                };
+            }
+            , field = function (name, type, optional, description) {
+                return {
+                    name: name,
+                    type: type,
+                    optional: optional,
+                    description: description,
+                };
+            }
+    }
+    ;
+
+    var forms = [{
+        name: "create campaign asset",
+        fields: [
+                field("enter-asset-name",           "text",             false),
+                field("save-asset-name",            "button",           false),
+                field("select-asset-name-to-edit",  "select",           false),
+                field("upload-images",              "image-upload",     true),
+                field("add-titles",                 "text",             true),
+                field("add-bodies",                 "text",             true),
+                field("add-links",                  "phone/link",       true),
+                field("add-link-description",       "text",             true),
+                field("add-videos",                 "video-upload",     true),
+
+                //dpa fields
+                field("dpa-name-template",          "text",     true),
+                field("dpa-description-template",   "text",     true),
+                field("dpa-message-template",       "text",     true),
+
+                field("delete-asset",               "button",     true, "why is it on edit page bottom ?"),
+        ]
+    }];
+
+    var simpleUserStory =
+            new UserStory(
+                    "Create a simple ad",
+                    [
+                        new Step()
+                    ]
+            );
+
+    userStory = {
+        name: "create simple ad"
+        steps: [new Step("create campaign asset", false, []),]
+    }
+</script>
+</body>
+</html>
