@@ -5,8 +5,10 @@
 
 <div class="wizard-buttons-wrapper">
 <fieldset class="wizard-buttons">
-    <button class="tk-button" ng-click="wizard.showPrev()"  ng-class="{'no-display' : wizard.showSection('set-name')}"      > previous </button>
-    <button class="tk-button" ng-click="wizard.showNext()"  ng-class="{'no-display' : wizard.showSection('set-targeting')}" > next </button>
+    <button class="tk-button" ng-click="wizard.cancel()"    ng-hide="!wizard.showSection('set-name')"     > cancel   </button>
+    <button class="tk-button" ng-click="wizard.showPrev()"  ng-hide="wizard.showSection('set-name')"      > previous </button>
+    <button class="tk-button" ng-click="wizard.showNext()"  ng-hide="wizard.showSection('set-targeting')" > next     </button>
+    <button class="tk-button" ng-click="wizard.finish()"    ng-hide="!wizard.showSection('set-targeting')"> finish   </button>
 </fieldset>
 </div>
 
