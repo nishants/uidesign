@@ -18,8 +18,8 @@
           name: 'set-name',
           label: 'set name',
           description: 'set name for the audience',
-          current: true,
           summary: 'you did the first thing, you entered : i want food, i like mexican',
+          current: true,
         }, {
           name: 'set-demographics',
           label: 'set demographics',
@@ -61,7 +61,18 @@
 
       allowNext: function(){
         var state = progressIndicator.states[findInArray("current", true, progressIndicator.states)];
-        return state.name == "set-name" && this.form.name;
+        var validSetName      = state.name == "set-name" && this.form.name,
+            validSetDemographic  = state.name == "set-demographics" && this.form.demographics;
+        return validSetName || validSetDemographic;
+      },
+
+      showDemographic: function(){
+        this.form.demographics ={
+          name: "Indian Housewives",
+          gender: "female",
+          fromAge: "27",
+          toAge: "55"
+        }
       }
     };
 

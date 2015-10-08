@@ -14,7 +14,15 @@
 
 <div class="form-wrapper">
     <div class="audience-preview">
-        <p ng-class="{'no-display' : !wizard.form.name}"> <strong>name</strong> : {{wizard.form.name}}</p>
+        <p ng-class="{'no-display' : !wizard.form.name}"> <strong>audience name</strong> : {{wizard.form.name}}</p>
+
+        <div ng-class="{'no-display' : !wizard.form.demographics}">
+            <p><strong>name</strong> : {{wizard.form.demographics.name}}</p>
+            <p><strong>genders</strong> : {{wizard.form.demographics.gender}}</p>
+            <p><strong>min age</strong> : {{wizard.form.demographics.fromAge}}</p>
+            <p><strong>max age</strong> : {{wizard.form.demographics.toAge}}</p>
+        </div>
+
     </div>
 
     <hr/>
@@ -26,6 +34,12 @@
                    placeholder="audience name"
                    ng-model="wizard.form.name"
                    class="audience-name large tk-input">
+        </fieldset>
+
+        <fieldset ng-if="wizard.showSection('set-demographics')">
+            <button ng-click="wizard.showDemographic()"
+                    ng-class="{'no-display' : wizard.form.demographics}"
+                    class="audience-name large tk-button">select demographic target</button>
         </fieldset>
     </form>
 </div>
