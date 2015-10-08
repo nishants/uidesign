@@ -96,6 +96,12 @@ ul.inline-menu{
   min-width: 300px;
 }
 
+.tk-button.disabled{
+  color: #959596;
+  background-color: #B4BDCA;
+  cursor: not-allowed;
+}
+
 .tk-button-pressed{
   transform: scale(0.8);
 }
