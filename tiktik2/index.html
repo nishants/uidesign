@@ -37,6 +37,7 @@
 
         <section id="body"
                  ng-controller="SampleSectionController"
+                 ng-class="{'no-display' : !wizard.show}"
                  ng-include="'app/sample-section/sample-section.html'">
         </section>
 

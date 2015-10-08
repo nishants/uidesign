@@ -32,6 +32,8 @@
     };
 
     $scope.wizard = {
+      show: true,
+
       showSection: function (name) {
         var index = findInArray("name", name, progressIndicator.states);
         return index > -1 ? progressIndicator.states[index].current : undefined;
@@ -47,6 +49,14 @@
         var index = findInArray("current", true, progressIndicator.states);
         progressIndicator.states[index].current = false;
         progressIndicator.states[index + 1].current = true;
+      },
+
+      cancel : function(){
+        this.show = false;
+      },
+
+      finish: function(){
+        this.cancel();
       }
     };
 
