@@ -24,7 +24,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-button xbutton">MANAGE</div>
+                <div class="menu-button xbutton" ng-class="{'opened' : showManageMenu}" ng-click="showManageMenu = !showManageMenu">MANAGE
+                    <div class="absolute-position top-position menu " ng-mouseleave="showManageMenu = false">
+                        <h4 class="menu-head text-align-left">Campaigns</h4>
+                        <div class="text-align-left">
+                            <div class="menu-button xbutton"><a href="google.com">Campaign</a></div>
+                            <div class="menu-button xbutton">Assets</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="menu-button xbutton">REPORTS</div>
                 <div class="menu-button xbutton">PRODUCTS</div>
             </div>
