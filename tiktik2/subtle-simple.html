@@ -10,10 +10,10 @@
 <!--app scope starts-->
 <div id="app-wrapper" ng-app="tiktik" ng-controller="AppController">
 
-    <div id="top-bar2" class="bar">
-        <div id="brand-logo"><p>tookitaki</p></div>
-        <div id="section-menu-buttons">
-            <div id="menu-buttons-wrapper">
+    <div id="top-bar" class="bar">
+        <div id="brand-logo"><p class="pull-left">tookitaki</p></div>
+        <div id="section-menu-buttons" >
+            <div id="menu-buttons-wrapper" class="pull-left">
                 <div class="menu-buttons xbutton">DASHBOARD</div>
                 <div class="menu-buttons xbutton">CREATE</div>
                 <div class="menu-buttons xbutton">MANAGE</div>
@@ -21,13 +21,14 @@
                 <div class="menu-buttons xbutton">PRODUCTS</div>
             </div>
         </div>
-        <div id="business-indicator-wrapper">
-            <div class="business-indicator xbutton">AD-AGENTS / FLIPKART / DIWALI MEGA SALE</div>
+        <div id="business-indicator-wrapper" class="pull-right">
+            <div class="business-indicator xbutton ">AD-AGENTS / FLIPKART / DIWALI MEGA SALE</div>
+            <div id="application-actions" class="pull-right">
+                <div class="app-button xbutton">notify</div>
+                <div class="app-button xbutton">settings</div>
+            </div>
         </div>
-        <div id="application-actions">
-            <div class="app-button xbutton">notify</div>
-            <div class="app-button xbutton">settings</div>
-        </div>
+
     </div>
 </div>
 

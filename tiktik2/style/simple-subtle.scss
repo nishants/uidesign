@@ -37,13 +37,17 @@
     text-align: center;
   }
 
-  .xbutton:hover{
-    //transform: scale(1.1);
+  .highlight-xbutton{
     background-color: rgb(218, 220, 222);
     opacity: 0.8;
   }
 
-  #top-bar2{
+  .xbutton:hover{
+    //transform: scale(1.1);
+    @extend .highlight-xbutton;
+  }
+
+  #top-bar{
     width: 100%;
     padding-left: 10px;
     background-color: rgb(237, 239, 241);
@@ -51,7 +55,13 @@
 
     #brand-logo{
       display: inline-block;
+      width: 200px;
       height: 100%;
+      background-color: green;
+      display: none;
+      * {
+        margin: 0;
+      }
     }
 
     #section-menu-buttons{
@@ -73,6 +83,7 @@
       display: inline-block;
       height: 100%;
       .business-indicator{
+        color: rgba(83, 88, 95, 0.52);;
         display: inline-block;
         //width: 300px;
       }
