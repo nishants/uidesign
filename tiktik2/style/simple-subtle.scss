@@ -34,18 +34,20 @@
     font-size: 13px;
     padding: 20px 10px 5px 10px;
     height: 100%;
+    text-align: center;
   }
 
   .xbutton:hover{
     //transform: scale(1.1);
-    opacity: 0.95;
+    background-color: rgb(218, 220, 222);
+    opacity: 0.8;
   }
 
   #top-bar2{
     width: 100%;
     padding-left: 10px;
-    background-color: rgb(218, 220, 222);
-    height: 60px;
+    background-color: rgb(237, 239, 241);
+    height: 65px;
 
     #brand-logo{
       display: inline-block;
