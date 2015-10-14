@@ -64,9 +64,12 @@
     //transform: scale(1.1);
     @extend .highlight-xbutton;
   }
-
+  #top-bar-shadow{
+    min-width: 1000px;
+  }
   #top-bar{
     width: 100%;
+    min-width: 1000px;
     padding-left: 10px;
     background-color: rgb(237, 239, 241);
     height: 65px;
