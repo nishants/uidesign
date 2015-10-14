@@ -1,43 +1,95 @@
-.bar {
-  color: grey;
-}
+#x{
+  $boldFontFamily: UbuntuTitlingBold;
+  $regularFontFamily: RalewayRegular;
 
-.full-width {
-  width: 100%;
-}
+  // font size for immediate user attention
+  $catchyFontSize: 1.3em;
 
-.absolute-position {
-  position: absolute;
-}
+  @font-face {
+    font-family: $regularFontFamily;
+    src: url("fonts/Raleway-Regular.ttf") format("opentype");
+  }
 
-.top-position {
-  top: 0;
-}
-.display-inline{
-  display: inline-block;
-}
-.text-align-right{
-  text-align: right;
-}
-
-// top menu css
-$topBarHeight             : 75px;
-$topBarHeight             : 75px;
-
-$topBarColor              : grey;
-.top-bar-button{
-  height: 100%;
-  background-color: transparent;
-}
+  @font-face {
+    font-family: $boldFontFamily;
+    src: url("fonts/UbuntuTitling-Bold.ttf") format("opentype");
+  }
 
 
-#top-bar{
-  height: $topBarHeight;
-  background-color: $topBarColor;
-}
+  .body-font{
+    font-family: $regularFontFamily;
+  }
 
-#top-bar > *{
-  height: 100%;
-  padding: 15px;
-  margin: 0 !important;
+  .title-font{
+    font-family: $boldFontFamily;
+  }
+
+
+  .bar {
+    color: grey;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .absolute-position {
+    position: absolute;
+  }
+
+  .top-position {
+    top: 0;
+  }
+  .display-inline{
+    display: inline-block;
+  }
+  .text-align-right{
+    text-align: right;
+  }
+
+  .xbutton:hover{
+    transform: scale(1.1);
+  }
+
+  #top-bar2{
+    width: 100%;
+    padding-left: 10px;
+
+    #brand-logo{
+      display: inline-block;
+    }
+
+    #section-menu-buttons{
+      display: inline-block;
+      width: 500px;
+      #menu-buttons-wrapper{
+        width: 100%;
+        .menu-buttons{
+          display: inline-block;
+          margin: 0;
+          padding: 5px;
+          width: 90px;
+        }
+      }
+    }
+
+    #business-indicator-wrapper{
+      display: inline-block;
+      .business-indicator{
+        display: inline-block;
+        //width: 300px;
+      }
+    }
+
+
+    #application-actions{
+      float: right;
+      display: inline-block;
+      .app-button{
+        display: inline-block;
+        padding: 5px;
+      }
+      padding-right: 10px;
+    }
+  }
 }
