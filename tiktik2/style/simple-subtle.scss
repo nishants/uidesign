@@ -49,6 +49,7 @@
 
     #brand-logo{
       display: inline-block;
+      height: 100%;
     }
 
     #section-menu-buttons{
@@ -61,7 +62,6 @@
         .menu-buttons{
           display: inline-block;
           margin: 0;
-          padding: 5px;
           width: 90px;
         }
       }
@@ -69,6 +69,7 @@
 
     #business-indicator-wrapper{
       display: inline-block;
+      height: 100%;
       .business-indicator{
         display: inline-block;
         //width: 300px;
