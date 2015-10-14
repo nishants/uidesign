@@ -2,10 +2,10 @@
 
 #x{
   * {
-    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -webkit-transition: 0.2s color cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: 0.2s color cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: 0.2s color cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.2s color cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .shadow-element {
@@ -48,7 +48,7 @@
 
   .xbutton{
     @extend .title-font;
-    color: rgb(83, 88, 95);
+    color: rgba(0,0,0,0.7);
     font-size: 13px;
     padding: 20px 10px 5px 10px;
     height: 100%;
@@ -63,6 +63,7 @@
   .xbutton:hover{
     //transform: scale(1.1);
     @extend .highlight-xbutton;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.24);
   }
   #top-bar-shadow{
     min-width: 1000px;
@@ -71,7 +72,7 @@
     width: 100%;
     min-width: 1000px;
     padding-left: 10px;
-    background-color: rgb(237, 239, 241);
+    background-color: #ECECEC;
     height: 65px;
 
     #brand-logo{
