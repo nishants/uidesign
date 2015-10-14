@@ -1,0 +1,43 @@
+.bar {
+  color: grey;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.absolute-position {
+  position: absolute;
+}
+
+.top-position {
+  top: 0;
+}
+.display-inline{
+  display: inline-block;
+}
+.text-align-right{
+  text-align: right;
+}
+
+// top menu css
+$topBarHeight             : 75px;
+$topBarHeight             : 75px;
+
+$topBarColor              : grey;
+.top-bar-button{
+  height: 100%;
+  background-color: transparent;
+}
+
+
+#top-bar{
+  height: $topBarHeight;
+  background-color: $topBarColor;
+}
+
+#top-bar > *{
+  height: 100%;
+  padding: 15px;
+  margin: 0 !important;
+}

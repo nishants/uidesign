@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="simple-subtle.css">
+</head>
+<body>
+
+<!--app scope starts-->
+<div id="app-wrapper" ng-app="tiktik" ng-controller="AppController">
+
+    <div class="no-display" ng-class="{'display' : app.loaded}">
+        <section id="header" class="container-fluid">
+            <div id="top-bar" class="row">
+                <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"><p>tookitaki</p></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 container">
+                    <div class="row">
+                        <div class="top-bar-button col-lg-3">DASHBOARD</div>
+                        <div class="top-bar-button col-lg-2">CREATE</div>
+                        <div class="top-bar-button col-lg-2">MANAGE</div>
+                        <div class="top-bar-button col-lg-2">REPORTS</div>
+                        <div class="top-bar-button col-lg-3">PRODUCTS</div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <div class="full-width top-bar-button">AD-AGENTS / FLIPKART / DIWALI MEGA SALE</div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-align-right">
+                    <div class="top-bar-button col-lg-6 col-md-6 col-sm-6 col-xs-6 text-align-right">notify</div>
+                    <div class="top-bar-button col-lg-6 col-md-6 col-sm-6 col-xs-6 text-align-right">settings</div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="footer"></section>
+    </div>
+</div>
+
+<!-- app scope ends here-->
+<script src="../lib/angular.js"></script>
+<script src="app/app.js"></script>
+<script src="app/app-controller.js"></script>
+</body>
+</html>
