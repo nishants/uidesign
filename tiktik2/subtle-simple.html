@@ -15,11 +15,11 @@
         <div id="section-menu-buttons" >
             <div id="menu-buttons-wrapper" class="pull-left">
                 <div class="menu-button xbutton dashboard-link"><span class="large glyphicon glyphicon-home	"></span></div>
-                <div class="menu-button xbutton opened">CREATE
-                    <div class="absolute-position top-position menu ">
+                <div class="menu-button xbutton" ng-class="{'opened' : showCreateMenu}" ng-click="showCreateMenu = true">CREATE
+                    <div class="absolute-position top-position menu " ng-mouseleave="showCreateMenu = false">
                         <h4 class="menu-head text-align-left">Campaigns</h4>
                         <div class="text-align-left">
-                            <div class="menu-button xbutton">Campaign</div>
+                            <div class="menu-button xbutton"><a href="google.com">Campaign</a></div>
                             <div class="menu-button xbutton">Assets</div>
                         </div>
                     </div>
