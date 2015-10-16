@@ -20,6 +20,9 @@
     @extend .body-font;
   }
 
+  * {
+    -webkit-font-smoothing: antialiased !important;
+  }
   .large{
     transform: scale(1.5)
   };
