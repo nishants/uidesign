@@ -46,7 +46,8 @@
   font-size: 13px;
   padding: 20px 10px 5px 10px;
   height: 100%;
-  text-align: center; }
+  text-align: center;
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0.3); }
 #x .highlight-xbutton, #x .xbutton:hover, #x #top-bar #section-menu-buttons #menu-buttons-wrapper .menu-button.opened {
   background-color: #dadcde;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.24); }
