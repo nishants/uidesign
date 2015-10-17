@@ -3,13 +3,13 @@
   font-family: RalewayRegular;
   src: url("../fonts/Raleway-Regular.ttf") format("opentype"); }
 @font-face {
-  font-family: UbuntuTitlingBold;
-  src: url("../fonts/UbuntuTitling-Bold.ttf") format("opentype"); }
+  font-family: UbuntuMonoOriginal;
+  src: url("../fonts/UbuntuMono-R.ttf") format("opentype"); }
 .body-font, #x body {
   font-family: RalewayRegular; }
 
 .title-font, #x .xbutton {
-  font-family: UbuntuTitlingBold; }
+  font-family: UbuntuMonoOriginal; }
 
 #x * {
   -webkit-transition: 0.2s color cubic-bezier(0.4, 0, 0.2, 1);

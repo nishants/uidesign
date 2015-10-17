@@ -21,13 +21,13 @@ ul {
   font-family: RalewayRegular;
   src: url("../fonts/Raleway-Regular.ttf") format("opentype"); }
 @font-face {
-  font-family: UbuntuTitlingBold;
-  src: url("../fonts/UbuntuTitling-Bold.ttf") format("opentype"); }
+  font-family: UbuntuMonoOriginal;
+  src: url("../fonts/UbuntuMono-R.ttf") format("opentype"); }
 .body-font, body {
   font-family: RalewayRegular; }
 
 .title-font, #menu-wrapper, #business-account-indicator-wrapper #business-account-indicator span {
-  font-family: UbuntuTitlingBold; }
+  font-family: UbuntuMonoOriginal; }
 
 body {
   background-color: #EFEFEF; }

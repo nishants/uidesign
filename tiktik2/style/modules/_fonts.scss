@@ -1,6 +1,6 @@
 /* start fonts */
 
-$boldFontFamily: UbuntuTitlingBold;
+$boldFontFamily: UbuntuMonoOriginal;
 $regularFontFamily: RalewayRegular;
 
 // font size for immediate user attention
@@ -13,9 +13,8 @@ $catchyFontSize: 1.3em;
 
 @font-face {
   font-family: $boldFontFamily;
-  src: url("../fonts/UbuntuTitling-Bold.ttf") format("opentype");
+  src: url("../fonts/UbuntuMono-R.ttf") format("opentype");
 }
-
 
 .body-font{
   font-family: $regularFontFamily;
