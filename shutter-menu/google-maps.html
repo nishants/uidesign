@@ -3,7 +3,7 @@
 
 <head>
     <style>
-        #maps {
+        .map {
             height: 400px;
             width: 100%;
             display: block;
@@ -65,7 +65,9 @@
     }
 
     function initMapFor(locations){
-        initMap(document.getElementById('maps'))
+        var mapContainer = document.createElement("div");
+        mapContainer.className = " map";
+        initMap(document.getElementById('maps').appendChild(mapContainer))
     };
 
     initMapFor(locations);
