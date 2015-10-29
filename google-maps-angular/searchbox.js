@@ -56,7 +56,11 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
           // Create marker for location
           var clickedLocation = arguments[0].latLng;
 
-          var marker = new google.maps.Marker({
+          if($scope.marker){
+            $scope.marker.setMap(null);
+          }
+
+          $scope.marker = new google.maps.Marker({
             position: clickedLocation,
             map: map
           });
