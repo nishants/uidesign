@@ -58,6 +58,7 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
 
           if($scope.marker){
             $scope.marker.setMap(null);
+            $scope.area.setMap(null);
           }
 
           $scope.marker = new google.maps.Marker({
@@ -75,7 +76,7 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
           };
           $scope.marker.addListener('click', toggleBounce);
 
-          var cityCircle = new google.maps.Circle({
+          $scope.area = new google.maps.Circle({
             strokeColor: '#FF0000',
             strokeOpacity: 0.8,
             strokeWeight: 2,
