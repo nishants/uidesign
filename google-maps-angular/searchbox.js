@@ -13,13 +13,6 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
       $templateCache.put('window.tpl.html', '<div ng-controller="WindowCtrl" ng-init="showPlaceDetails(parameter)">{{place.name}}</div>');
     }])
 
-    .controller('WindowCtrl', function ($scope) {
-      $scope.place = {};
-      $scope.showPlaceDetails = function(param) {
-        $scope.place = param;
-      }
-    })
-
     .controller("SearchBoxController",['$scope', '$timeout', 'uiGmapLogger', '$http','uiGmapGoogleMapApi'
       , function ($scope, $timeout, $log, $http, GoogleMapApi) {
         $log.doLog = true
