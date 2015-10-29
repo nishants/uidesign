@@ -50,9 +50,21 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
         });
 
         var selectPlace = function(map, eventName, arguments){
+          // Clear existing markers (these came on last search
+          $scope.map.markers = [];
+
+          // Create marker for location
+          var clickedLocation = arguments[0].latLng;
+
+          var marker = new google.maps.Marker({
+            position: clickedLocation,
+            map: map
+          });
+
+          //Show marker
           console.log(eventName);
           console.log(arguments);
-          console.log("lat: "+ arguments[0].latLng.lat()+", long: "+arguments[0].latLng.lng());
+          console.log("lat: "+ clickedLocation.lat()+", long: "+clickedLocation.lng());
           //location.stop();
         };
         var onPlaceChange = function (searchBox) {
