@@ -126,6 +126,9 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
               longitude: -73.990822
             },
             zoom: 12,
+            options: {
+              draggableCursor: 'crosshair'
+            },
             dragging: false,
             bounds: {},
             markers: [],
