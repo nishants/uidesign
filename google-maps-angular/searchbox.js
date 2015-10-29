@@ -3,7 +3,7 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
     .config(['uiGmapGoogleMapApiProvider', function (GoogleMapApi) {
       GoogleMapApi.configure({
         key: 'AIzaSyDnRA9bsV_CtLr-f0NnFdf7dXZPPMvsEoU',
-        v: '3.17',
+        v: '3.21',
         libraries: 'places'
       });
     }])
@@ -12,6 +12,13 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
       $templateCache.put('searchbox.tpl.html', '<input id="pac-input" class="pac-controls" type="text" placeholder="Search">');
       $templateCache.put('window.tpl.html', '<div ng-controller="WindowCtrl" ng-init="showPlaceDetails(parameter)">{{place.name}}</div>');
     }])
+
+    .controller('WindowCtrl', function ($scope) {
+      $scope.place = {};
+      $scope.showPlaceDetails = function(param) {
+        $scope.place = param;
+      }
+    })
 
     .controller("SearchBoxController",['$scope', '$timeout', 'uiGmapLogger', '$http','uiGmapGoogleMapApi'
       , function ($scope, $timeout, $log, $http, GoogleMapApi) {
@@ -42,6 +49,12 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
           $scope.searchbox.options.bounds = new google.maps.LatLngBounds($scope.defaultBounds.getNorthEast(), $scope.defaultBounds.getSouthWest());
         });
 
+        var selectPlace = function(map, eventName, arguments){
+          console.log(eventName);
+          console.log(arguments);
+          console.log("lat: "+ arguments[0].latLng.lat()+", long: "+arguments[0].latLng.lng());
+          //location.stop();
+        };
         var onPlaceChange = function (searchBox) {
 
           places = searchBox.getPlaces()
@@ -121,6 +134,7 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
               idle: function (map) {
 
               },
+              click: selectPlace,
               dragend: function(map) {
                 //update the search box bounds after dragging the map
                 var bounds = map.getBounds();
@@ -141,7 +155,7 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
             },
             //parentdiv:'searchBoxParent',
             events: {
-              places_changed: onPlaceChange
+              places_changed: onPlaceChange,
             }
           }
         });
