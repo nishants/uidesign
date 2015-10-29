@@ -62,8 +62,19 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
 
           $scope.marker = new google.maps.Marker({
             position: clickedLocation,
-            map: map
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: "I selected this marker"
           });
+          var toggleBounce = function(){
+            if ($scope.marker.getAnimation() !== null) {
+              $scope.marker.setAnimation(null);
+            } else {
+              $scope.marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+          };
+          $scope.marker.addListener('click', toggleBounce);
+
 
           //Show marker
           console.log(eventName);
