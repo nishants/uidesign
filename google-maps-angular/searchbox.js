@@ -87,6 +87,8 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
             radius: 500
           });
 
+          map.panTo(new google.maps.LatLng(clickedLocation.lat(),clickedLocation.lng()));
+
           //Show marker
           console.log(eventName);
           console.log(arguments);
