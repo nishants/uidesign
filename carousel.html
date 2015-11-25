@@ -11,11 +11,11 @@
             width: 400px;
         }
         .one.slide{
-            width: 800px;
+            width: 410px;
         }
 
         .three.slide{
-            width: 100px;
+            width: 380px;
         }
         .red-bg{
             background-color: red;
@@ -47,7 +47,7 @@
 
 
 <hr/>
-<div class="carousel" as-model="variyingWidthCarousel" transition-duration="0.5s">
+<div class="carousel" as-model="variyingWidthCarousel" transition-duration="0.5s" transition-style="linear">
     <div class="slider">
         <div class="slide one red-bg">
             Slide 1
@@ -76,12 +76,15 @@
 
             while(next.length){
                 next.css("float", "left");
+                slides.push({
+                    position: slidesWidthSum,
+                    width: next.prop('offsetWidth')
+                });
                 slidesWidthSum +=  parseInt(next.prop('offsetWidth'))
-                slides.push(next);
                 next = next.next();
             }
 
-            carousel.css("width"    , slides[current].prop('offsetWidth') + "px");
+            carousel.css("width",   slides[current].width + "px");
             carousel.css("overflow" , "hidden");
 
             slider.css("transition"             , "right " + transitionDuration + " " + transitionStyle);
@@ -94,14 +97,12 @@
 
             return {
                 next: function(){
-                    var moveTo    = parseInt(slides[current++].prop('offsetWidth')) + parseInt(slider.css("right"));
-                    slider.css("right", moveTo + "px");
-                    carousel.css("width", slides[current].prop('offsetWidth') + "px");
+                    slider.css("right",     slides[++current].position + "px");
+                    carousel.css("width",   slides[current].width + "px");
                 },
                 previous: function(){
-                    var moveTo    = parseInt(slider.css("right")) - parseInt(slides[current--].prop('offsetWidth'));
-                    slider.css("right", moveTo + "px");
-                    carousel.css("width", slides[current].prop('offsetWidth') + "px");
+                    slider.css("right",     slides[--current].position + "px");
+                    carousel.css("width",   slides[current].width + "px");
                 },
                 hasNext : function(){
                     return current != (slides.length -1);
