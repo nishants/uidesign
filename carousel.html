@@ -11,6 +11,9 @@
         .slide-container{
             width: 1300px;
             position: relative;
+            -webkit-transition: right 0.5s;
+            -moz-transition: right 0.5s;
+            transition: right 0.5s;
         }
         .slide{
             width: 400px;
@@ -42,7 +45,7 @@
     </div>
 </div>
 <button ng-click="carousel.next()">Next</button>
-<button>Back</button>
+<button ng-click="carousel.previous()">Back</button>
 
 
 <script type="text/javascript">
@@ -60,7 +63,10 @@
                     var moveTo    = carouselWidth + parseInt(slideContainerElement.css("right"));
                     slideContainerElement.css("right", moveTo + "px");
                 },
-                previous: function(){}
+                previous: function(){
+                    var moveTo    = parseInt(slideContainerElement.css("right")) - carouselWidth;
+                    slideContainerElement.css("right", moveTo + "px");
+                }
             }
         };
         return {
