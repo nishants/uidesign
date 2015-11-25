@@ -90,7 +90,10 @@
                 index: 0,
                 reset: function(){
                     var offset = 0;
-                    this.$slides = slider.find("div"),
+                    this.$slides = slider.find("div");
+                    this.index = 0;
+                    this.slides = [];
+
                     slider.find("div").css("float", "left");
                     carousel.css("overflow" , "hidden");
                     slider.css("position"   , "relative");
