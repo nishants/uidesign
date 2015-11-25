@@ -43,8 +43,8 @@
         </div>
     </div>
 </div>
-<button ng-click="carousel.next()">Next</button>
-<button ng-click="carousel.previous()">Back</button>
+<button ng-click="carousel.next()"     ng-disabled="!carousel.hasNext()"    >Next</button>
+<button ng-click="carousel.previous()" ng-disabled="!carousel.hasPrevious()">Back</button>
 
 
 <script type="text/javascript">
@@ -52,24 +52,35 @@
     var app = angular.module("carousel-demo", []);
     app.directive("carousel", [function(){
         var carousel = function(carouselElement){
-            var slideContainerElement = carouselElement.find("div"),
-                currentSlide = slideContainerElement.find("div");
+            var slideContainerElement = angular.element(carouselElement.find("div")[0]),
+                    next = slideContainerElement.find("div"),
+                    slidesWidthSum  = 0,
+                    slides = [],
+                    current = 0;
 
+            while(next.length){
+                slidesWidthSum +=  parseInt(next.prop('offsetWidth'))
+                slides.push(next);
+                next = next.next();
+            }
             slideContainerElement.css("right", "0");
             slideContainerElement.css("position", "relative");
-
             return {
                 next: function(){
-                    var moveTo    = parseInt(currentSlide.prop('offsetWidth')) + parseInt(slideContainerElement.css("right"));
+                    var moveTo    = parseInt(slides[current].prop('offsetWidth')) + parseInt(slideContainerElement.css("right"));
                     slideContainerElement.css("right", moveTo + "px");
-                    currentSlide = currentSlide.next();
+                    current++;
                 },
                 previous: function(){
-                    var moveTo    = parseInt(slideContainerElement.css("right")) - parseInt(currentSlide.prop('offsetWidth'));
+                    var moveTo    = parseInt(slideContainerElement.css("right")) - parseInt(slides[current].prop('offsetWidth'));
                     slideContainerElement.css("right", moveTo + "px");
+                    current--;
                 },
                 hasNext : function(){
-                    return !!currentSlide.next();
+                    return current != (slides.length -1);
+                },
+                hasPrevious : function(){
+                    return current != 0;
                 }
             }
         };
