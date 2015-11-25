@@ -51,12 +51,12 @@
     app.directive("carousel", [function(){
         var carousel = function(carouselElement){
             var slideContainerElement = carouselElement.find("div");
+            slideContainerElement.css("right", "0");
 
             return {
                 next: function(){
-                    var currentRight    = parseInt(slideContainerElement.css("right")),
-                        nextRight       = isNaN(currentRight) ? 400 : currentRight + 400;
-                    slideContainerElement.css("right", nextRight + "px");
+                    var moveTo    = 400 + parseInt(slideContainerElement.css("right"));
+                    slideContainerElement.css("right", moveTo + "px");
                 },
                 previous: function(){}
             }
