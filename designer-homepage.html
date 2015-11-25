@@ -28,13 +28,24 @@
         .txt-centered{
             text-align: center;
         }
-        body{
+        .page.blue{
+            background-color: #34495e;
+        }
+        .page.orange{
+            background-color: #f39c12;
+        }
+        .page.green{
             background-color: #5FB59A;
+        }
+        body{
             height: 10vh;
         }
         .title-bar-pad{
             height: 70px;
             background-color: white;
+        }
+        .page{
+            min-height: 100vh;
         }
     </style>
 </head>
@@ -49,5 +60,8 @@
     </div>
 </div>
 <div class="title-bar-pad"></div>
+<div class="page green"></div>
+<div class="page blue"></div>
+<div class="page orange"></div>
 </body>
 </html>
