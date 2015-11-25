@@ -14,6 +14,7 @@
         .slide.hidden{
             /*transform: scale(0.5);*/
             opacity: 0.3;
+            transform: translateY(0.8);
         }
         .slide{
             width: 400px;
@@ -23,11 +24,11 @@
             -o-transition-delay: 0.5s;
             transition-delay: 0.5s;
 
-            -webkit-transition  : opacity   linear  0.5s;
-            -moz-transition     : opacity  linear  0.5s;
-            -ms-transition      : opacity  linear  0.5s;
-            -o-transition       : opacity  linear  0.5s;
-            transition          : opacity  linear  0.5s;
+            -webkit-transition  : all   linear  0.5s;
+            -moz-transition     : all  linear  0.5s;
+            -ms-transition      : all  linear  0.5s;
+            -o-transition       : all  linear  0.5s;
+            transition          : all  linear  0.5s;
         }
         .one.slide{
             width: 410px;
@@ -50,7 +51,7 @@
 
 <body class="txt-centered" ng-app="carousel-demo">
 
-<div class="carousel" as-model="carousel" pad-sides="20">
+<div class="carousel" as-model="carousel" pad-sides="60">
     <div class="slider">
         <div class="slide red-bg">
             Slide 1
@@ -115,8 +116,9 @@
                         });
                         offset += parseInt($e.prop('offsetWidth'));
                     }
-                    slider.css("width"  , (offset+this.slides[this.slides.length -1].width) + "px");
-                    carousel.css("width",   (this.slides[0].width + padSides) + "px");
+                    slider.css("width"  , (offset + this.slides[this.slides.length -1].width) + "px");
+                    slider.css("padding-left"  , (padSides / 2) + "px");
+                    carousel.css("width",   (this.slides[0].width + (padSides)) + "px");
                     slider.css("right"  , "0");
 
                     this.slides[0].show();
@@ -124,14 +126,14 @@
                 },
                 next: function(){
                     slider.css("right",     this.slides[++this.index].position + "px");
-                    carousel.css("width",   (this.slides[this.index].width + padSides) + "px");
+                    carousel.css("width",   (this.slides[this.index].width + (padSides )) + "px");
 
                     this.slides[this.index].show();
                     this.slides[this.index-1].hide();
                 },
                 previous: function(){
                     slider.css("right",     this.slides[--this.index].position + "px");
-                    carousel.css("width",   (this.slides[this.index].width + padSides) + "px");
+                    carousel.css("width",   (this.slides[this.index].width + (padSides)) + "px");
                     this.slides[this.index].show();
                     this.slides[this.index+1].hide();
                 },
