@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="lib/angular.js"></script>
+    <style>
+        .carousel{
+            width: 400px;
+            overflow: hidden;;
+        }
+        .slide-container{
+            width: 1300px;
+            position: relative;
+        }
+        .slide{
+            width: 400px;
+            display: inline-block;
+        }
+        .red-bg{
+            background-color: red;
+        }
+        .green-bg{
+            background-color: green;
+        }
+
+    </style>
+</head>
+
+<body class="txt-centered" ng-app="carousel-demo">
+
+<div class="carousel" as-model="carousel">
+    <div class="slide-container">
+        <div class="slide red-bg">
+            Slide 1
+        </div>
+        <div class="slide green-bg">
+            Slide 2
+        </div>
+        <div class="slide red-bg">
+            Slide 3
+        </div>
+    </div>
+</div>
+<button ng-click="carousel.next()">Next</button>
+<button>Back</button>
+
+
+<script type="text/javascript">
+
+    var app = angular.module("carousel-demo", []);
+    app.directive("carousel", [function(){
+        var carousel = function(carouselElement){
+            var slideContainerElement = carouselElement.find("div");
+
+            return {
+                next: function(){
+                    var currentRight    = parseInt(slideContainerElement.css("right")),
+                        nextRight       = isNaN(currentRight) ? 400 : currentRight + 400;
+                    slideContainerElement.css("right", nextRight + "px");
+                },
+                previous: function(){}
+            }
+        };
+        return {
+            restrict: "C",
+            scope:false,
+            transclude: false,
+            link: function(scope, element, attrs){
+                scope[attrs.asModel] = carousel(element);
+            }
+        };
+    }])
+</script>
+</body>
+</html>
