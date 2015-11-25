@@ -50,12 +50,14 @@
     var app = angular.module("carousel-demo", []);
     app.directive("carousel", [function(){
         var carousel = function(carouselElement){
-            var slideContainerElement = carouselElement.find("div");
+            var slideContainerElement = carouselElement.find("div"),
+                carouselWidth = 400;
+
             slideContainerElement.css("right", "0");
 
             return {
                 next: function(){
-                    var moveTo    = 400 + parseInt(slideContainerElement.css("right"));
+                    var moveTo    = carouselWidth + parseInt(slideContainerElement.css("right"));
                     slideContainerElement.css("right", moveTo + "px");
                 },
                 previous: function(){}
