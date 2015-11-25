@@ -5,9 +5,11 @@
     <script src="lib/angular.js"></script>
     <style>
         .slider{
-            -webkit-transition: right 0.5s;
-            -moz-transition: right 0.5s;
-            transition: right 0.5s;
+            -webkit-transition: right 0.5s, left 0.5s;
+            -moz-transition:    right 0.5s, left 0.5s;
+            -ms-transition:     right 0.5s, left 0.5s;
+            -o-transition:      right 0.5s, left 0.5s;
+            transition:         right 0.5s, left 0.5s;
         }
         .slide{
             width: 400px;
