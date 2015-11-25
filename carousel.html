@@ -49,17 +49,18 @@
     </style>
 </head>
 
-<body class="txt-centered" ng-app="carousel-demo">
+<body class="txt-centered" ng-app="carousel-demo" ng-init="items = [{name: 'one'}, {name: 'two'}, {name: 'three'}]">
 
 <div class="carousel" as-model="carousel" pad-sides="60">
     <div class="slider">
-        <div class="slide red-bg" ng-repeat="item in [{name: 'one'}, {name: 'two'}, {name: 'three'}]">
+        <div class="slide red-bg" ng-repeat="item in items">
             {{item.name}}
         </div>
     </div>
 </div>
 <button ng-click="carousel.next()"     ng-disabled="!carousel.hasNext()"    >Next</button>
 <button ng-click="carousel.previous()" ng-disabled="!carousel.hasPrevious()">Back</button>
+<button ng-click="items.push({name: 'new'})" ng-disabled="items.length ==7">+</button>
 
 
 <hr/>
