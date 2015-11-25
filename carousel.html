@@ -13,7 +13,7 @@
         }
         .slide.hidden{
             /*transform: scale(0.5);*/
-            opacity: 0;
+            opacity: 0.3;
         }
         .slide{
             width: 400px;
@@ -50,7 +50,7 @@
 
 <body class="txt-centered" ng-app="carousel-demo">
 
-<div class="carousel" as-model="carousel">
+<div class="carousel" as-model="carousel" pad-sides="20">
     <div class="slider">
         <div class="slide red-bg">
             Slide 1
@@ -88,7 +88,7 @@
 
     var app = angular.module("carousel-demo", []);
     app.directive("carousel", [function(){
-        var carousel = function(carousel, slider){
+        var carousel = function(carousel, slider, padSides){
             slider.find("div").css("float", "left");
             carousel.css("overflow" , "hidden");
             slider.css("position"   , "relative");
@@ -115,8 +115,8 @@
                         });
                         offset += parseInt($e.prop('offsetWidth'));
                     }
-                    carousel.css("width",   this.slides[0].width + "px");
                     slider.css("width"  , (offset+this.slides[this.slides.length -1].width) + "px");
+                    carousel.css("width",   (this.slides[0].width + padSides) + "px");
                     slider.css("right"  , "0");
 
                     this.slides[0].show();
@@ -124,13 +124,14 @@
                 },
                 next: function(){
                     slider.css("right",     this.slides[++this.index].position + "px");
-                    carousel.css("width",   this.slides[this.index].width + "px");
+                    carousel.css("width",   (this.slides[this.index].width + padSides) + "px");
+
                     this.slides[this.index].show();
                     this.slides[this.index-1].hide();
                 },
                 previous: function(){
                     slider.css("right",     this.slides[--this.index].position + "px");
-                    carousel.css("width",   this.slides[this.index].width + "px");
+                    carousel.css("width",   (this.slides[this.index].width + padSides) + "px");
                     this.slides[this.index].show();
                     this.slides[this.index+1].hide();
                 },
@@ -149,7 +150,8 @@
             link: function(scope, element, attrs){
                 scope[attrs.asModel] = carousel(
                         element,
-                        angular.element(element[0].getElementsByClassName("slider"))
+                        angular.element(element[0].getElementsByClassName("slider")),
+                        attrs.padSides ? parseInt(attrs.padSides) : 0
                 );
             }
         };
