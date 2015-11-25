@@ -54,18 +54,22 @@
     app.directive("carousel", [function(){
         var carousel = function(carouselElement){
             var slideContainerElement = carouselElement.find("div"),
-                carouselWidth = 400;
+                currentSlide = slideContainerElement.find("div");
 
             slideContainerElement.css("right", "0");
 
             return {
                 next: function(){
-                    var moveTo    = carouselWidth + parseInt(slideContainerElement.css("right"));
+                    var moveTo    = parseInt(currentSlide.prop('offsetWidth')) + parseInt(slideContainerElement.css("right"));
                     slideContainerElement.css("right", moveTo + "px");
+                    currentSlide = currentSlide.next();
                 },
                 previous: function(){
-                    var moveTo    = parseInt(slideContainerElement.css("right")) - carouselWidth;
+                    var moveTo    = parseInt(slideContainerElement.css("right")) - parseInt(currentSlide.prop('offsetWidth'));
                     slideContainerElement.css("right", moveTo + "px");
+                },
+                hasNext : function(){
+                    return !!currentSlide.next();
                 }
             }
         };
