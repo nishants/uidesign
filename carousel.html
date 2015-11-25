@@ -4,8 +4,18 @@
 <head>
     <script src="lib/angular.js"></script>
     <style>
+        .carousel{
+        transition: all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+        }
         .slide{
             width: 400px;
+        }
+        .one.slide{
+            width: 800px;
+        }
+
+        .three.slide{
+            width: 100px;
         }
         .red-bg{
             background-color: red;
@@ -35,6 +45,23 @@
 <button ng-click="carousel.next()"     ng-disabled="!carousel.hasNext()"    >Next</button>
 <button ng-click="carousel.previous()" ng-disabled="!carousel.hasPrevious()">Back</button>
 
+
+<hr/>
+<div class="carousel" as-model="variyingWidthCarousel" transition-duration="0.5s">
+    <div class="slider">
+        <div class="slide one red-bg">
+            Slide 1
+        </div>
+        <div class="slide two green-bg">
+            Slide 2
+        </div>
+        <div class="slide three red-bg">
+            Slide 3
+        </div>
+    </div>
+</div>
+<button ng-click="variyingWidthCarousel.next()"     ng-disabled="!variyingWidthCarousel.hasNext()"    >Next</button>
+<button ng-click="variyingWidthCarousel.previous()" ng-disabled="!variyingWidthCarousel.hasPrevious()">Back</button>
 
 <script type="text/javascript">
 
@@ -68,13 +95,13 @@
             return {
                 next: function(){
                     var moveTo    = parseInt(slides[current++].prop('offsetWidth')) + parseInt(slider.css("right"));
-                    carousel.css("width", slides[current].prop('offsetWidth') + "px");
                     slider.css("right", moveTo + "px");
+                    carousel.css("width", slides[current].prop('offsetWidth') + "px");
                 },
                 previous: function(){
-                    var moveTo    = parseInt(slider.css("right")) - parseInt(slides[current].prop('offsetWidth'));
+                    var moveTo    = parseInt(slider.css("right")) - parseInt(slides[current--].prop('offsetWidth'));
                     slider.css("right", moveTo + "px");
-                    current--;
+                    carousel.css("width", slides[current].prop('offsetWidth') + "px");
                 },
                 hasNext : function(){
                     return current != (slides.length -1);
