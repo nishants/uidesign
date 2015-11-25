@@ -4,11 +4,6 @@
 <head>
     <script src="lib/angular.js"></script>
     <style>
-        .slider{
-            -webkit-transition: right 0.5s;
-            -moz-transition: right 0.5s;
-            transition: right 0.5s;
-        }
         .slide{
             width: 400px;
         }
@@ -24,7 +19,7 @@
 
 <body class="txt-centered" ng-app="carousel-demo">
 
-<div class="carousel" as-model="carousel">
+<div class="carousel" as-model="carousel" transition-duration="0.5s" transition-style="linear">
     <div class="slider">
         <div class="slide red-bg">
             Slide 1
@@ -45,7 +40,7 @@
 
     var app = angular.module("carousel-demo", []);
     app.directive("carousel", [function(){
-        var carousel = function(carousel, slider){
+        var carousel = function(carousel, slider, transitionDuration, transitionStyle){
             var
                     next = slider.find("div"),
                     slidesWidthSum  = 0,
@@ -59,12 +54,16 @@
                 next = next.next();
             }
 
-            carousel.css("width", slides[current].prop('offsetWidth') + "px");
-            carousel.css("overflow", "hidden");
+            carousel.css("width"    , slides[current].prop('offsetWidth') + "px");
+            carousel.css("overflow" , "hidden");
 
-            slider.css("right", "0");
-            slider.css("position", "relative");
-            slider.css("width", slidesWidthSum + "px");
+            slider.css("transition"             , "right " + transitionDuration + " " + transitionStyle);
+            slider.css("-moz-transition"        , "right " + transitionDuration + " " + transitionStyle);
+            slider.css("-webkit-transition"     , "right " + transitionDuration + " " + transitionStyle);
+
+            slider.css("right"                  , "0");
+            slider.css("position"               , "relative");
+            slider.css("width"                  , slidesWidthSum + "px");
 
             return {
                 next: function(){
@@ -90,7 +89,12 @@
             scope:false,
             transclude: false,
             link: function(scope, element, attrs){
-                scope[attrs.asModel] = carousel(element, angular.element(element[0].getElementsByClassName("slider")));
+                scope[attrs.asModel] = carousel(
+                        element,
+                        angular.element(element[0].getElementsByClassName("slider")),
+                        attrs.transitionDuration,
+                        attrs.transitionStyle
+                );
             }
         };
     }])
