@@ -10,7 +10,6 @@
         }
         .slide-container{
             width: 1300px;
-            position: relative;
             -webkit-transition: right 0.5s;
             -moz-transition: right 0.5s;
             transition: right 0.5s;
@@ -57,6 +56,7 @@
                 currentSlide = slideContainerElement.find("div");
 
             slideContainerElement.css("right", "0");
+            slideContainerElement.css("position", "relative");
 
             return {
                 next: function(){
