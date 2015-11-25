@@ -9,14 +9,13 @@
             overflow: hidden;;
         }
         .slider{
-            width: 1300px;
             -webkit-transition: right 0.5s;
             -moz-transition: right 0.5s;
             transition: right 0.5s;
         }
         .slide{
             width: 400px;
-            display: inline-block;
+            float: left;
         }
         .red-bg{
             background-color: red;
@@ -65,6 +64,7 @@
             }
             slider.css("right", "0");
             slider.css("position", "relative");
+            slider.css("width", slidesWidthSum + "px");
             return {
                 next: function(){
                     var moveTo    = parseInt(slides[current].prop('offsetWidth')) + parseInt(slider.css("right"));
