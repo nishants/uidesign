@@ -81,13 +81,21 @@
                 };
 
         return {
-            onRead: function(element, callback){
+            whenViewed: function(element){
+                var onViewEvent = {
+                    listenTo: element,
+                    callback: function(){console.error("No callback defined for: "+element)},
+                    then: function(callback){
+                        this.callback = callback;
+                    }
+                };
                 angular.element($window).bind("scroll",function(){
                     if(elementVisible($(element))){
-//                        callback();
+                        onViewEvent.callback();
                         console.log("Element at: " + $(element).offset().top+", Window bottom : " + $window.pageYOffset +", window height: "+ ( + $(window).height()))
                     }
                 });
+               return onViewEvent;
             }
         };
     }]);
@@ -105,8 +113,8 @@
             scope:false,
             restrict: 'A',
             link: function(scope, element, attrs){
-                ScrollListener.onRead(element, function(){
-                    scope.$eval(attrs.whenRead);
+                ScrollListener.whenViewed(element).then(function(){
+                    scope.$eval(attrs.whenViewed);
                 });
             }
         }
