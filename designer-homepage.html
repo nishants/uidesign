@@ -3,6 +3,8 @@
 
 <head>
     <script src="lib/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <style>
@@ -50,18 +52,61 @@
     </style>
 </head>
 
-<body class="txt-centered" >
+<body class="txt-centered" ng-app="designer-page" ng-controller="HomePage">
 <div id="top-bar">
     <div id="navigation-bar">
         <span>Home</span>
-        <span>AngularWidgets</span>
-        <span>Themes</span>
-        <span>Designs</span>
+        <span>Tutorials</span>
+        <span>Widgets</span>
+        <span>About Me</span>
     </div>
 </div>
 <div class="title-bar-pad"></div>
-<div class="page green"></div>
-<div class="page blue"></div>
-<div class="page orange"></div>
+<div class="page green"  ></div>
+<div class="page blue"   ></div>
+<div class="page orange" ></div>
+<div class="page orange" when-read="app.page('aboutme')"></div>
+<script>
+    var app = angular.module("designer-page", []);
+    app.service("ScrollListener", ["$window", function($window){
+        var elementVisible = function ($e) {
+            var viewportBottom = $window.pageYOffset + $(window).height(),
+                elementOffset = ($e.offset().top - $e.height());
+
+            return viewportBottom >= elementOffset;
+        };
+
+        return {
+            onRead: function(element, callback){
+                angular.element($window).bind("scroll",function(){
+                    if(elementVisible($(element))){
+//                        callback();
+                        console.log("Element at: " + $(element).offset().top+", Window bottom : " + $window.pageYOffset +", window height: "+ ( + $(window).height()))
+                    }
+                });
+            }
+        };
+    }]);
+    app.controller("HomePage", ["$scope", function($scope){
+        $scope.app = {
+            page: function(name){
+                console.log("showing"+name);
+            }
+        };
+    }]);
+
+    app.directive("whenRead", ['ScrollListener', function(ScrollListener){
+        return {
+            transclude: false,
+            scope:false,
+            restrict: 'A',
+            link: function(scope, element, attrs){
+                ScrollListener.onRead(element, function(){
+                    scope.$eval(attrs.whenRead);
+                });
+            }
+        }
+    }]);
+</script>
 </body>
 </html>
