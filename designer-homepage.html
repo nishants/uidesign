@@ -9,10 +9,14 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <style>
         #top-bar{
-            background-color: rgba(255, 255,255, 0.5);
+            background-color: rgba(0, 0,0, 0.5);
             position: fixed;
             top: 0;
             width: 100%;
+        }
+        #top-bar + .title-bar-pad{
+            height: 70px;
+            background-color: rgba(0, 0,0, 0.8);
         }
         #navigation-bar{
         }
@@ -22,7 +26,7 @@
             display: inline-block;
             min-width: 100px;
 
-            color: #5f5f5f;
+            color: rgba(233, 233, 233, 1);
             font-weight: 600;
             line-height: 50px;
             font-family: 'Raleway', sans-serif;
@@ -30,24 +34,23 @@
         .txt-centered{
             text-align: center;
         }
-        .page.blue{
-            background-color: #34495e;
-        }
-        .page.orange{
-            background-color: #f39c12;
-        }
-        .page.green{
-            background-color: #5FB59A;
-        }
         body{
             height: 10vh;
         }
-        .title-bar-pad{
-            height: 70px;
-            background-color: white;
-        }
         .page{
             min-height: 100vh;
+        }
+        .one.page{
+            background-color: white;
+        }
+        .two.page{
+            background-color: rgba(200, 200, 200, 0.2);
+        }
+        .three.page{
+            background-color: white;
+        }
+        .four.page{
+            background-color: rgba(200, 200, 200, 0.2);
         }
     </style>
 </head>
@@ -62,10 +65,10 @@
     </div>
 </div>
 <div class="title-bar-pad"></div>
-<div class="page green"  ></div>
-<div class="page blue"   ></div>
-<div class="page orange" ></div>
-<div class="page orange" when-viewed="app.page('aboutme')"></div>
+<div class="page one"  ></div>
+<div class="page two"   ></div>
+<div class="page three" ></div>
+<div class="page four" when-viewed="app.page('aboutme')"></div>
 <script>
     var app = angular.module("designer-page", []);
     app.service("ScrollListener", ["$window", function($window){
