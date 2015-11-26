@@ -65,16 +65,20 @@
 <div class="page green"  ></div>
 <div class="page blue"   ></div>
 <div class="page orange" ></div>
-<div class="page orange" when-read="app.page('aboutme')"></div>
+<div class="page orange" when-viewed="app.page('aboutme')"></div>
 <script>
     var app = angular.module("designer-page", []);
     app.service("ScrollListener", ["$window", function($window){
-        var elementVisible = function ($e) {
-            var viewportBottom = $window.pageYOffset + $(window).height(),
-                elementOffset = ($e.offset().top - $e.height());
+        var
+                activateAtViewPortPercent = 66.667,
+                elementVisible = function ($e) {
+                    var viewportBottom = $window.pageYOffset,
+                            elementTop = ($e.offset().top - $e.height()),
+                            activationOffset = ($(window).height()*activateAtViewPortPercent)/100,
+                            activateAtPosition = viewportBottom + activationOffset;
 
-            return viewportBottom >= elementOffset;
-        };
+                    return activateAtPosition >= elementTop;
+                };
 
         return {
             onRead: function(element, callback){
@@ -95,7 +99,7 @@
         };
     }]);
 
-    app.directive("whenRead", ['ScrollListener', function(ScrollListener){
+    app.directive("whenViewed", ['ScrollListener', function(ScrollListener){
         return {
             transclude: false,
             scope:false,
