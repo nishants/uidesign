@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="lib/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <style>
+        #top-bar{
+            background-color: rgba(0, 0,0, 0.5);
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        #top-bar + .title-bar-pad{
+            height: 70px;
+            background-color: rgba(0, 0,0, 0.8);
+        }
+        #navigation-bar{
+        }
+        #navigation-bar > span{
+            height: 70px;
+            padding-bottom: 20px;
+            display: inline-block;
+            min-width: 100px;
+
+            color: rgba(233, 233, 233, 1);
+            font-weight: 600;
+            line-height: 50px;
+            font-family: 'Raleway', sans-serif;
+        }
+        .txt-centered{
+            text-align: center;
+        }
+        body{
+            height: 10vh;
+        }
+        .page{
+            min-height: 100vh;
+        }
+        .one.page{
+            background-color: white;
+        }
+        .two.page{
+            background-color: rgba(200, 200, 200, 0.2);
+        }
+        .three.page{
+            background-color: white;
+        }
+        .four.page{
+            background-color: rgba(200, 200, 200, 0.2);
+        }
+    </style>
+</head>
+
+<body class="txt-centered" ng-app="scroll-demo" ng-controller="HomePage">
+<div id="top-bar">
+    <div id="navigation-bar">
+        <span>Home</span>
+        <span>Tutorials</span>
+        <span>Widgets</span>
+        <span>About Me</span>
+    </div>
+</div>
+<div class="title-bar-pad"></div>
+<div class="page one"  ></div>
+<div class="page two"   ></div>
+<div class="page three" ></div>
+<div class="page four"
+     scroll-listener="app.pageFour.scroll"
+     ng-class="{'in-view' : (app.pageFour.scroll.scrolledBy() >= 33.33)}">
+</div>
+
+<script>
+    var app = angular.module("scroll-demo", []);
+    app.controller("HomePage", ["$scope", function($scope){
+        $scope.app = {
+            pageFour: {scroll: null},
+            page: function(name){
+                console.log("showing"+name);
+            }
+        };
+        window.app = $scope.app;
+    }]);
+
+    app.service("ScrollEvent", [function(){
+        return {
+            scrolledBy: function(){return 33.33;}
+        };
+    }])
+
+    app.directive("scrollListener", ['$parse', 'ScrollEvent', function($parse, ScrollEvent){
+        return {
+            transclude: false,
+            scope:false,
+            restrict: 'A',
+            link: function(scope, element, attrs){
+                var scrollListener = $parse(attrs.scrollListener);
+                scrollListener.assign(scope, ScrollEvent);
+            }
+        }
+    }]);
+</script>
+</body>
+</html>
