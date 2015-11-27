@@ -87,14 +87,18 @@
 
     app.service("ScrollEvent", [function(){
 
-        return {
-            listen: function(element){
-                return {
+        var ScrollEventListener = {
+            elements: [],
+            listen: function (element) {
+                var target = {
                     $e: $(element),
                     scrolledBy: 33.33
                 };
+                this.elements.push(target);
+                return target;
             }
         };
+        return ScrollEventListener;
     }])
 
     app.directive("scrollListener", ['$parse', 'ScrollEvent', function($parse, ScrollEvent){
