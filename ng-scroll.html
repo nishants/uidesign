@@ -86,6 +86,14 @@
     }]);
 
     app.service("ScrollEvent", [function(){
+        var viewablePartOf = function ($e) {
+            var viewportBottom      = $window.pageYOffset,
+                    elementTop      = ($e.offset().top - $e.height()),
+                    elementHeight   = $e.height(),
+                    percentViewed   =  (viewportBottom - elementTop)/elementHeight * 100;
+
+            return percentViewed;
+        };
 
         var ScrollEventListener = {
             elements: [],
