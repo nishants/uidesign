@@ -88,7 +88,12 @@
     app.service("ScrollEvent", [function(){
 
         return {
-            scrolledBy: 33.33
+            listen: function(element){
+                return {
+                    $e: $(element),
+                    scrolledBy: 33.33
+                };
+            }
         };
     }])
 
@@ -99,7 +104,7 @@
             restrict: 'A',
             link: function(scope, element, attrs){
                 var scrollListener = $parse(attrs.scrollListener);
-                scrollListener.assign(scope, ScrollEvent);
+                scrollListener.assign(scope, ScrollEvent.listen(element));
             }
         }
     }]);
