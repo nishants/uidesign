@@ -70,7 +70,7 @@
 <div class="page three" ></div>
 <div class="page four"
      scroll-listener="app.pageFour.scroll"
-     ng-class="{'in-view' : (app.pageFour.scroll.scrolledBy() >= 33.33)}">
+     ng-class="{'in-view' : (app.pageFour.scroll.scrolledBy >= 33.33)}">
 </div>
 
 <script>
@@ -86,8 +86,9 @@
     }]);
 
     app.service("ScrollEvent", [function(){
+
         return {
-            scrolledBy: function(){return 33.33;}
+            scrolledBy: 33.33
         };
     }])
 
