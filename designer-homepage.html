@@ -55,7 +55,7 @@
     </style>
 </head>
 
-<body class="txt-centered" ng-app="designer-page" ng-controller="HomePage">
+<body class="txt-centered" ng-app="scroll-demo" ng-controller="HomePage">
 <div id="top-bar">
     <div id="navigation-bar">
         <span>Home</span>
@@ -68,57 +68,61 @@
 <div class="page one"  ></div>
 <div class="page two"   ></div>
 <div class="page three" ></div>
-<div class="page four" when-viewed="app.page('aboutme')"></div>
+<div class="page four"
+     scroll-listener="app.pageFour.scroll"
+     ng-class="{'in-view' : (app.pageFour.scroll.scrolledBy >= 33.33)}">
+    {{app.pageFour.scroll.scrolledBy}}
+</div>
+
 <script>
-    var app = angular.module("designer-page", []);
-    app.service("ScrollListener", ["$window", function($window){
-        var
-                activateAtViewPortPercent = 66.667,
-                elementVisible = function ($e) {
-                    var viewportBottom = $window.pageYOffset,
-                            elementTop = ($e.offset().top - $e.height()),
-                            activationOffset = ($(window).height()*activateAtViewPortPercent)/100,
-                            activateAtPosition = viewportBottom + activationOffset;
-
-                    return activateAtPosition >= elementTop;
-                };
-
-        return {
-            whenViewed: function(element){
-                var onViewEvent = {
-                    listenTo: element,
-                    callback: function(){console.error("No callback defined for: "+element)},
-                    then: function(callback){
-                        this.callback = callback;
-                    }
-                };
-                angular.element($window).bind("scroll",function(){
-                    if(elementVisible($(element))){
-                        onViewEvent.callback();
-                        console.log("Element at: " + $(element).offset().top+", Window bottom : " + $window.pageYOffset +", window height: "+ ( + $(window).height()))
-                    }
-                });
-               return onViewEvent;
-            }
-        };
-    }]);
+    var app = angular.module("scroll-demo", []);
     app.controller("HomePage", ["$scope", function($scope){
-        $scope.app = {
-            page: function(name){
-                console.log("showing"+name);
-            }
-        };
+        $scope.app = {pageFour: {},};
+        window.app = $scope.app;
     }]);
 
-    app.directive("whenViewed", ['ScrollListener', function(ScrollListener){
+    app.service("ScrollEvent", ['$window', function($window){
+        var viewablePartOf = function ($e) {
+            var viewportBottom      = $window.pageYOffset,
+                    elementTop      = ($e.offset().top - $e.height()),
+                    elementHeight   = $e.height(),
+                    percentViewed   =  (viewportBottom - elementTop)/elementHeight * 100;
+
+            return percentViewed;
+        };
+
+        var ScrollEventListener = {
+            elements: [],
+            listen: function (element) {
+                var target = {
+                    $e: $(element),
+                    scrolledBy: 33.33,
+                    update: function(){
+                        return this.scrolledBy = viewablePartOf(this.$e);
+                    }
+
+                };
+                this.elements.push(target);
+                return target;
+            },
+        };
+        return ScrollEventListener;
+    }])
+
+    app.directive("scrollListener", ['$parse', 'ScrollEvent', function($parse, ScrollEvent){
         return {
             transclude: false,
             scope:false,
             restrict: 'A',
             link: function(scope, element, attrs){
-                ScrollListener.whenViewed(element).then(function(){
-                    scope.$eval(attrs.whenViewed);
-                });
+                var scrollListener = $parse(attrs.scrollListener);
+                var listener = ScrollEvent.listen(element);
+                scrollListener.assign(scope, listener);
+                angular.element(window).bind("scroll",function(){
+                    scope.$apply(function(){
+                        listener.update();
+                    });
+                })
             }
         }
     }]);
