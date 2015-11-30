@@ -88,6 +88,7 @@
         <span>Tutorials</span>
         <span>Widgets</span>
         <span>About Me</span>
+        <span>Offset : {{Math.abs(app.pageThree.scroll.state.offset)}}</span>
     </div>
 </div>
 <div class="title-bar-pad"></div>
@@ -97,7 +98,7 @@
      scroll-listener="app.pageThree.scroll"
      ng-class="{'above' : app.pageThree.scroll.state.aboveViewport,'highlight' : app.pageThree.scroll.state.inViewport, 'below': app.pageThree.scroll.state.belowViewport}"
      ng-include="'html-with-content.html'"
-     style="opacity: {{Math.abs(app.pageThree.scroll.state.offset)}};transform: translate({{Math.abs(app.pageThree.scroll.state.offset) > 0.66 ? 0 :(app.pageThree.scroll.state.offset*50)}}vw)">
+     style="opacity: {{opacityAt(app.pageThree.scroll.state)}};">
 
 </div>
 <div class="page four blue" ></div>
@@ -107,6 +108,10 @@
     var app = angular.module("scroll-demo", []);
     app.controller("HomePage", ["$scope", function($scope){
         $scope.Math = window.Math;
+        $scope.opacityAt = function(offset){
+            var dissolve = Math.abs(app.pageThree.scroll.state.offset) < 0.5;
+            return dissolve ? Math.abs(app.pageThree.scroll.state.offset) :1;
+        };
         $scope.app = {pageFour: {},pageThree: {}};
         window.app = $scope.app;
     }]);
