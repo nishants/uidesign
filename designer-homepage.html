@@ -149,19 +149,21 @@
     </div>
     <div class="title-bar-pad"></div>
 </nav>
+<article class="contents">
+    <section class="page blue"
+             ng-include="'rob-the-robes/home.html'"></section>
 
-<div class="page blue"
-     ng-include="'rob-the-robes/home.html'"></div>
-<div class="page two green"   ></div>
-<div class="page three orange"
-     scroll-listener="app.pageThree.scroll"
-     ng-class="{'above' : app.pageThree.scroll.state.aboveViewport,'highlight' : app.pageThree.scroll.state.inViewport, 'below': app.pageThree.scroll.state.belowViewport}"
-     ng-include="'html-with-content.html'"
-     style="opacity: {{opacityAt(app.pageThree.scroll.state)}};">
+    <section class="page two green"></section>
 
-</div>
-<div class="page four blue" ></div>
-<div class="page green" ></div>
+    <section class="page three orange"
+             scroll-listener="app.pageThree.scroll"
+             ng-class="{'above' : app.pageThree.scroll.state.aboveViewport,'highlight' : app.pageThree.scroll.state.inViewport, 'below': app.pageThree.scroll.state.belowViewport}"
+             ng-include="'html-with-content.html'"
+             style="opacity: {{opacityAt(app.pageThree.scroll.state)}};"></section>
+
+    <section class="page four blue" ></section>
+    <section class="page green" ></section>
+</article>
 
 <script>
     var app = angular.module("scroll-demo", []);
