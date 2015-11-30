@@ -71,21 +71,17 @@
 <div class="page four"
      scroll-listener="app.pageFour.scroll"
      ng-class="{'in-view' : (app.pageFour.scroll.scrolledBy >= 33.33)}">
+    {{app.pageFour.scroll.scrolledBy}}
 </div>
 
 <script>
     var app = angular.module("scroll-demo", []);
     app.controller("HomePage", ["$scope", function($scope){
-        $scope.app = {
-            pageFour: {scroll: null},
-            page: function(name){
-                console.log("showing"+name);
-            }
-        };
+        $scope.app = {pageFour: {},};
         window.app = $scope.app;
     }]);
 
-    app.service("ScrollEvent", [function(){
+    app.service("ScrollEvent", ['$window', function($window){
         var viewablePartOf = function ($e) {
             var viewportBottom      = $window.pageYOffset,
                     elementTop      = ($e.offset().top - $e.height()),
@@ -100,11 +96,15 @@
             listen: function (element) {
                 var target = {
                     $e: $(element),
-                    scrolledBy: 33.33
+                    scrolledBy: 33.33,
+                    update: function(){
+                        return viewablePartOf(this.$e);
+                    }
+
                 };
                 this.elements.push(target);
                 return target;
-            }
+            },
         };
         return ScrollEventListener;
     }])
