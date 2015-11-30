@@ -151,7 +151,9 @@
 </nav>
 <article class="contents">
     <section class="page blue"
-             ng-include="'rob-the-robes/home.html'"></section>
+             scroll-listener="app.home.scroll"
+             ng-include="'rob-the-robes/home.html'"
+             style="opacity: {{opacityAt(app.home)}};"></section>
 
     <section class="page two green"></section>
 
@@ -172,10 +174,10 @@
         $scope.opacityAt = function(page){
             if(page.scroll){
                 var dissolve = Math.abs(page.scroll.state.offset) < 0.2;
-                return dissolve ? Math.abs(page.scroll.state.offset) :1;
+                return dissolve ? 0.3 + Math.abs(page.scroll.state.offset) :1;
             }
         };
-        $scope.app = {pageFour: {},pageThree: {}};
+        $scope.app = {pageFour: {},pageThree: {}, home: {}};
         window.app = $scope.app;
     }]);
 
