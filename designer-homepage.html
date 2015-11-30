@@ -38,7 +38,7 @@
             height: 10vh;
         }
         .page{
-            min-height: 100vh;
+            min-height: 70vh;
             -webkit-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
             -moz-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
             -o-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -142,7 +142,7 @@
     }]);
     app.service("ScrollEvent", ['PageStates',function(PageStates){
         var viewportBottom  = function(){return window.pageYOffset},
-            viewportTop     = function(){return window.pageYOffset - window.innerHeight},
+            viewportTop     = function(){return window.pageYOffset - $(window).height()},
             elementTop      = function($e){return ($e.offset().top - $e.height())},
             elementBottom   = function($e){return elementTop($e) + $e.height()},
            viewablePartOf = function ($e) {
@@ -163,8 +163,9 @@
                     state: PageStates.BelowViewport,
                     update: function(){
                         this.scrolledBy = viewablePartOf(this.$e);
-                        var aboveViewport = viewportTop() > elementBottom(this.$e),
-                            belowViewport = viewportBottom() < elementTop(this.$e),
+                        var container = (this.$e)[0].getBoundingClientRect(),
+                            aboveViewport = (container.top  + container.height) < 0 ,
+                            belowViewport = (container.top) > $(window).height(),
                             inViewport    = !aboveViewport && !belowViewport;
                         this.state = {
                             aboveViewport   : aboveViewport,
@@ -190,7 +191,7 @@
                 var scrollListener = $parse(attrs.scrollListener);
                 var listener = ScrollEvent.listen(element);
                 scrollListener.assign(scope, listener);
-                angular.element(window).bind("scroll",function(){
+                angular.element(window).bind("DOMContentLoaded load resize scroll",function(){
                     scope.$apply(function(){
                         listener.update();
                     });
