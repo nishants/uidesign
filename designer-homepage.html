@@ -38,15 +38,19 @@
             text-align: center;
         }
         body{
-            height: 10vh;
-            font-family: 'Raleway', sans-serif;
         }
         .page{
             min-height: 70vh;
+            font-size: 30px;
+            font-family: 'Raleway', sans-serif;
+
             -webkit-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
             -moz-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
             -o-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
             transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+        }
+        .page *{
+            margin: 15px;
         }
         .one.page{
             background-color: white;
@@ -72,6 +76,7 @@
         }
         .page.blue{
             background-color: #34495e;
+            color: #e4e6e5;
         }
         .page.orange{
             background-color: #f39c12;
@@ -79,6 +84,18 @@
         .page.green{
             background-color: #5FB59A;
         }
+        @media screen and (max-width: 900px) {
+            #navigation-bar > span{
+                display: block;
+            }
+            #top-bar{
+                background-color: rgba(0, 0,0, 0.8);
+            }
+            #top-bar + .title-bar-pad{
+            display: none
+            }
+        }
+
     </style>
 </head>
 
@@ -92,10 +109,9 @@
     </div>
 </div>
 <div class="title-bar-pad"></div>
-<div class="page orange"
-     ng-include="'rob-the-robes/home.html'"
-        ></div>
-<div class="page two blue"   ></div>
+<div class="page blue"
+     ng-include="'rob-the-robes/home.html'"></div>
+<div class="page two green"   ></div>
 <div class="page three orange"
      scroll-listener="app.pageThree.scroll"
      ng-class="{'above' : app.pageThree.scroll.state.aboveViewport,'highlight' : app.pageThree.scroll.state.inViewport, 'below': app.pageThree.scroll.state.belowViewport}"
@@ -111,7 +127,7 @@
     app.controller("HomePage", ["$scope", function($scope){
         $scope.Math = window.Math;
         $scope.opacityAt = function(offset){
-            var dissolve = Math.abs(app.pageThree.scroll.state.offset) < 0.5;
+            var dissolve = Math.abs(app.pageThree.scroll.state.offset) < 0.2;
             return dissolve ? Math.abs(app.pageThree.scroll.state.offset) :1;
         };
         $scope.app = {pageFour: {},pageThree: {}};
