@@ -133,20 +133,23 @@
 </head>
 
 <body class="txt-centered" ng-app="scroll-demo" ng-controller="HomePage">
-<span id="show-menu"
-      class="menu-button glyphicon glyphicon-menu-hamburger"
-      ng-show="!__showMenuBar"
-      ng-click="__showMenuBar = true"></span>
-<div id="top-bar">
-    <div id="navigation-bar" ng-show="__showMenuBar">
-        <span class="close glyphicon glyphicon-remove" ng-click="__showMenuBar = false"></span>
-        <span class="section-link">Home</span>
-        <span class="section-link">Tutorials</span>
-        <span class="section-link">Widgets</span>
-        <span class="section-link">About Me</span>
+<nav>
+    <span id="show-menu"
+          class="menu-button glyphicon glyphicon-menu-hamburger"
+          ng-show="!__showMenuBar"
+          ng-click="__showMenuBar = true"></span>
+    <div id="top-bar">
+        <div id="navigation-bar" ng-show="__showMenuBar">
+            <span class="close glyphicon glyphicon-remove" ng-click="__showMenuBar = false"></span>
+            <span class="section-link">Home</span>
+            <span class="section-link">Tutorials</span>
+            <span class="section-link">Widgets</span>
+            <span class="section-link">About Me</span>
+        </div>
     </div>
-</div>
-<div class="title-bar-pad"></div>
+    <div class="title-bar-pad"></div>
+</nav>
+
 <div class="page blue"
      ng-include="'rob-the-robes/home.html'"></div>
 <div class="page two green"   ></div>
