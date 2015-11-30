@@ -51,6 +51,7 @@
             background-color: rgba(200, 200, 200, 0.2);
         }
         .three.page{
+            min-height:40vh;
         }
         .four.page{
             background-color: rgba(200, 200, 200, 0.2);
@@ -139,13 +140,13 @@
             BelowViewport: BelowViewport,
         }
     }]);
-    app.service("ScrollEvent", ['$window', 'PageStates',function($window, PageStates){
-        var viewportBottom  = function(){return $window.pageYOffset},
-            viewportTop     = function(){return $window.pageYOffset - $window.innerHeight},
+    app.service("ScrollEvent", ['PageStates',function(PageStates){
+        var viewportBottom  = function(){return window.pageYOffset},
+            viewportTop     = function(){return window.pageYOffset - window.innerHeight},
             elementTop      = function($e){return ($e.offset().top - $e.height())},
             elementBottom   = function($e){return elementTop($e) + $e.height()},
            viewablePartOf = function ($e) {
-            var viewportBottom      = $window.pageYOffset,
+            var viewportBottom      = window.pageYOffset,
                     elementTop      = ($e.offset().top - $e.height()),
                     elementHeight   = $e.height(),
                     percentViewed   =  (viewportBottom - elementTop)/elementHeight * 100;
