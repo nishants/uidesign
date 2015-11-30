@@ -155,7 +155,7 @@
                     state: PageStates.BelowViewport,
                     update: function(){
                         this.scrolledBy = viewablePartOf(this.$e);
-                        var aboveViewport = viewportBottom() > elementBottom(this.$e),
+                        var aboveViewport = viewportTop() > elementBottom(this.$e),
                             belowViewport = viewportBottom() < elementTop(this.$e),
                             inViewport    = !aboveViewport && !belowViewport;
                         this.state = {
