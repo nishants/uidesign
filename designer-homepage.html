@@ -159,7 +159,7 @@
              scroll-listener="app.pageThree.scroll"
              ng-class="{'above' : app.pageThree.scroll.state.aboveViewport,'highlight' : app.pageThree.scroll.state.inViewport, 'below': app.pageThree.scroll.state.belowViewport}"
              ng-include="'html-with-content.html'"
-             style="opacity: {{opacityAt(app.pageThree.scroll.state)}};"></section>
+             style="opacity: {{opacityAt(app.pageThree)}};"></section>
 
     <section class="page four blue" ></section>
     <section class="page green" ></section>
@@ -169,67 +169,30 @@
     var app = angular.module("scroll-demo", []);
     app.controller("HomePage", ["$scope", function($scope){
         $scope.Math = window.Math;
-        $scope.opacityAt = function(offset){
-            var dissolve = Math.abs(app.pageThree.scroll.state.offset) < 0.2;
-            return dissolve ? Math.abs(app.pageThree.scroll.state.offset) :1;
+        $scope.opacityAt = function(page){
+            if(page.scroll){
+                var dissolve = Math.abs(page.scroll.state.offset) < 0.2;
+                return dissolve ? Math.abs(page.scroll.state.offset) :1;
+            }
         };
         $scope.app = {pageFour: {},pageThree: {}};
         window.app = $scope.app;
     }]);
 
-
-
-    app.service("PageStates", [function(){
-        var InViewport  = {
-            name: "InViewport",
-            watching: true,
-            hidden: false,
-            at: function(postion){
-                return
-            },
-            invalidAt: function(position){
-                return false;
-            },
-        }, BelowViewport  = {
-            name: "BelowViewport",
-            watching: false,
-            hidden: true,
-            at: function(position){
-                var watching = position > -5 && position < 105;
-                return watching ? InViewport: this;
-            },
-            invalidAt: function(position){
-                return position > 0 && position < 100;
-            },
-        };
-        return {
-            BelowViewport: BelowViewport,
-        }
-    }]);
-    app.service("ScrollEvent", ['PageStates',function(PageStates){
-        var viewportBottom  = function(){return window.pageYOffset},
-            viewportTop     = function(){return window.pageYOffset - $(window).height()},
-            elementTop      = function($e){return ($e.offset().top - $e.height())},
-            elementBottom   = function($e){return elementTop($e) + $e.height()},
-           viewablePartOf = function ($e) {
-            var viewportBottom      = window.pageYOffset,
-                    elementTop      = ($e.offset().top - $e.height()),
-                    elementHeight   = $e.height(),
-                    percentViewed   =  (viewportBottom - elementTop)/elementHeight * 100;
-
-            return percentViewed;
-        };
-
+    app.service("ScrollEvent", [function(){
         var ScrollEventListener = {
             elements: [],
             listen: function (element) {
                 var target = {
-                    $e: $(element),
-                    scrolledBy: 0,
-                    state: PageStates.BelowViewport,
+                    $e: $(element)[0],
+                    state: {
+                        aboveViewport   : false,
+                        inViewport      : true,
+                        belowViewport   : false,
+                        offset          : 1
+                    },
                     update: function(){
-                        this.scrolledBy = viewablePartOf(this.$e);
-                        var container = (this.$e)[0].getBoundingClientRect(),
+                        var container     = this.$e.getBoundingClientRect(),
                             aboveViewport = (container.top  + container.height) < 0 ,
                             belowViewport = container.top > $(window).height(),
                             inViewport    = !aboveViewport && !belowViewport,
