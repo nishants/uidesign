@@ -88,7 +88,9 @@
 <div class="page two"   ></div>
 <div class="page three"
      scroll-listener="app.pageThree.scroll"
-     ng-class="{'hide' : app.pageThree.scroll.scrolledBy <= 0, 'watching' : app.pageThree.scroll.scrolledBy >= 33.33 , 'bye-bye' : app.pageThree.scroll.scrolledBy >= 95, 'born' : app.pageThree.scroll.scrolledBy >= 5}">
+     ng-class="app.pageThree.scroll.state.name+'-page'">
+
+    {{app.pageThree.scroll.scrolledBy}}
     {{app.pageThree.scroll.scrolledBy >= 33.33 ? "Welcome" : ""}}
     {{app.pageThree.scroll.scrolledBy >= 0 ?     "I am in" : ""}}
     {{app.pageThree.scroll.scrolledBy >= 66.66 ? "One last time" : ""}}
@@ -98,7 +100,7 @@
 <div class="page four"
      scroll-listener="app.pageFour.scroll"
      ng-class="{'in-view' : (app.pageFour.scroll.scrolledBy >= 33.33)}">
-    {{app.pageFour.scroll.scrolledBy}}
+
 </div>
 
 <script>
@@ -108,7 +110,23 @@
         window.app = $scope.app;
     }]);
 
-    app.service("ScrollEvent", ['$window', function($window){
+
+
+    app.service("PageStates", [function(){
+        var Hidden  = {
+            name: "hidden",
+            applyAt: function(position){
+                return true;
+            },
+            invalidAt: function(position){
+                return false;
+            },
+        }
+        return {
+            Hidden: Hidden,
+        }
+    }]);
+    app.service("ScrollEvent", ['$window', 'PageStates',function($window, PageStates){
         var viewablePartOf = function ($e) {
             var viewportBottom      = $window.pageYOffset,
                     elementTop      = ($e.offset().top - $e.height()),
@@ -123,7 +141,8 @@
             listen: function (element) {
                 var target = {
                     $e: $(element),
-                    scrolledBy: 33.33,
+                    scrolledBy: 0,
+                    state: PageStates.Hidden,
                     update: function(){
                         return this.scrolledBy = viewablePartOf(this.$e);
                     }
