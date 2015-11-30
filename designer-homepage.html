@@ -39,6 +39,10 @@
         }
         .page{
             min-height: 100vh;
+            -webkit-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+            -moz-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+            -o-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+            transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
         }
         .one.page{
             background-color: white;
@@ -47,13 +51,25 @@
             background-color: rgba(200, 200, 200, 0.2);
         }
         .three.page{
-            background-color: white;
+            background-color: #272822;
         }
         .four.page{
             background-color: rgba(200, 200, 200, 0.2);
         }
         .in-view:after{
             content: "I am bing viewed"
+        }
+        .hide{
+            opacity: 0.1;
+        }
+        .watching{
+
+        }
+        .bye-bye{
+
+        }
+        .born{
+
         }
     </style>
 </head>
@@ -71,7 +87,8 @@
 <div class="page one"  ></div>
 <div class="page two"   ></div>
 <div class="page three"
-     scroll-listener="app.pageThree.scroll">
+     scroll-listener="app.pageThree.scroll"
+     ng-class="{'hide' : app.pageThree.scroll.scrolledBy <= 0, 'watching' : app.pageThree.scroll.scrolledBy >= 33.33 , 'bye-bye' : app.pageThree.scroll.scrolledBy >= 95, 'born' : app.pageThree.scroll.scrolledBy >= 5}">
     {{app.pageThree.scroll.scrolledBy >= 33.33 ? "Welcome" : ""}}
     {{app.pageThree.scroll.scrolledBy >= 0 ?     "I am in" : ""}}
     {{app.pageThree.scroll.scrolledBy >= 66.66 ? "One last time" : ""}}
