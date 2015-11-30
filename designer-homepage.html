@@ -63,7 +63,7 @@
             opacity: 0.5;
         }
         .watching{
-
+            opacity: 1;
         }
         .bye-bye{
 
@@ -88,7 +88,7 @@
 <div class="page two"   ></div>
 <div class="page three"
      scroll-listener="app.pageThree.scroll"
-     ng-class="{'scroll-to-view': app.pageThree.scroll.state.hidden}">
+     ng-class="{'scroll-to-view': app.pageThree.scroll.state.hidden, 'watching': app.pageThree.scroll.state.watching}">
 
     {{app.pageThree.scroll.scrolledBy}}
     {{app.pageThree.scroll.scrolledBy >= 33.33 ? "Welcome" : ""}}
@@ -113,16 +113,28 @@
 
 
     app.service("PageStates", [function(){
-        var Hidden  = {
-            name: "hidden",
-            hidden: true,
-            applyAt: function(position){
-                return true;
+        var Watching  = {
+            name: "watching",
+            watching: true,
+            hidden: false,
+            at: function(postion){
+                return
             },
             invalidAt: function(position){
                 return false;
             },
-        }
+        }, Hidden  = {
+            name: "hidden",
+            watching: false,
+            hidden: true,
+            at: function(position){
+                var watching = position > -5 && position < 105;
+                return watching ? Watching: this;
+            },
+            invalidAt: function(position){
+                return position > 0 && position < 100;
+            },
+        };
         return {
             Hidden: Hidden,
         }
@@ -145,9 +157,11 @@
                     scrolledBy: 0,
                     state: PageStates.Hidden,
                     update: function(){
-                        return this.scrolledBy = viewablePartOf(this.$e);
+                        this.scrolledBy = viewablePartOf(this.$e);
+                        if(this.state.invalidAt(this.scrolledBy)){
+                            this.state = this.state.at(this.scrolledBy);
+                        }
                     }
-
                 };
                 this.elements.push(target);
                 return target;
