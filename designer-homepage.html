@@ -87,21 +87,10 @@
 <div class="page one"  ></div>
 <div class="page two"   ></div>
 <div class="page three"
-     scroll-listener="app.pageThree.scroll"
-     ng-class="{'scroll-to-view': app.pageThree.scroll.state.hidden, 'watching': app.pageThree.scroll.state.watching}">
-
-    {{app.pageThree.scroll.scrolledBy}}
-    {{app.pageThree.scroll.scrolledBy >= 33.33 ? "Welcome" : ""}}
-    {{app.pageThree.scroll.scrolledBy >= 0 ?     "I am in" : ""}}
-    {{app.pageThree.scroll.scrolledBy >= 66.66 ? "One last time" : ""}}
-    {{app.pageThree.scroll.scrolledBy >= 95 ?   "Bye bye" : ""}}
-
+     scroll-listener="app.pageThree.scroll">
+    {{app.pageThree.scroll.state.name}}
 </div>
-<div class="page four"
-     scroll-listener="app.pageFour.scroll"
-     ng-class="{'in-view' : (app.pageFour.scroll.scrolledBy >= 33.33)}">
-
-</div>
+<div class="page four" scroll-listener="app.pageFour.scroll">{{app.pageFour.scroll.scrolledBy >= 33.33}}</div>
 
 <script>
     var app = angular.module("scroll-demo", []);
@@ -113,8 +102,8 @@
 
 
     app.service("PageStates", [function(){
-        var Watching  = {
-            name: "watching",
+        var InViewport  = {
+            name: "InViewport",
             watching: true,
             hidden: false,
             at: function(postion){
@@ -123,20 +112,20 @@
             invalidAt: function(position){
                 return false;
             },
-        }, Hidden  = {
-            name: "hidden",
+        }, BelowViewport  = {
+            name: "BelowViewport",
             watching: false,
             hidden: true,
             at: function(position){
                 var watching = position > -5 && position < 105;
-                return watching ? Watching: this;
+                return watching ? InViewport: this;
             },
             invalidAt: function(position){
                 return position > 0 && position < 100;
             },
         };
         return {
-            Hidden: Hidden,
+            BelowViewport: BelowViewport,
         }
     }]);
     app.service("ScrollEvent", ['$window', 'PageStates',function($window, PageStates){
@@ -155,7 +144,7 @@
                 var target = {
                     $e: $(element),
                     scrolledBy: 0,
-                    state: PageStates.Hidden,
+                    state: PageStates.BelowViewport,
                     update: function(){
                         this.scrolledBy = viewablePartOf(this.$e);
                         if(this.state.invalidAt(this.scrolledBy)){
