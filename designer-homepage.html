@@ -51,11 +51,8 @@
             background-color: rgba(200, 200, 200, 0.2);
         }
         .three.page{
-            background-color: #272822;
-            min-height: 70vh;
         }
         .four.page{
-            margin-bottom: 500px;
             background-color: rgba(200, 200, 200, 0.2);
         }
         .in-view:after{
@@ -73,6 +70,15 @@
         .born{
 
         }
+        .page.blue{
+            background-color: #34495e;
+        }
+        .page.orange{
+            background-color: #f39c12;
+        }
+        .page.green{
+            background-color: #5FB59A;
+        }
     </style>
 </head>
 
@@ -86,15 +92,16 @@
     </div>
 </div>
 <div class="title-bar-pad"></div>
-<div class="page one"  ></div>
-<div class="page two"   ></div>
+<div class="page orange"  ></div>
+<div class="page two blue"   ></div>
 <div class="page three"
      scroll-listener="app.pageThree.scroll">
     <span  ng-bind='app.pageThree.scroll.state.aboveViewport ?  "aboveViewport" : ""'></span>
     <span  ng-bind='app.pageThree.scroll.state.inViewport ?     "inViewport"    : ""'></span>
     <span  ng-bind='app.pageThree.scroll.state.belowViewport ?  "belowViewport" : ""'></span>
 </div>
-<div class="page four" ></div>
+<div class="page four blue" ></div>
+<div class="page green" ></div>
 
 <script>
     var app = angular.module("scroll-demo", []);
