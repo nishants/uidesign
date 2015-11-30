@@ -78,14 +78,15 @@
             background-color: rgba(200, 200, 200, 0.2);
         }
         .page.above{
-            transform: rotateY(-90deg);
+            transform: translateX(100vw);
             opacity: 0;
         }
         .page.below{
-            transform: rotateY(90deg);
+            transform: translateX(-100vw);
             opacity: 0;
         }
         .page.highlight{
+            transform: translateX(0);
         }
         .page.blue{
             background-color: #34495e;
@@ -186,7 +187,7 @@
             elements: [],
             listen: function (element) {
                 var target = {
-                    $e: $(element)[0],
+                    $e: element[0],
                     state: {
                         aboveViewport   : false,
                         inViewport      : true,
