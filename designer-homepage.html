@@ -68,6 +68,8 @@
             transform: rotateY(90deg);
             opacity: 0;
         }
+        .page.highlight{
+        }
         .page.blue{
             background-color: #34495e;
         }
@@ -94,10 +96,9 @@
 <div class="page two blue"   ></div>
 <div class="page three orange"
      scroll-listener="app.pageThree.scroll"
-     ng-class="{'above' : app.pageThree.scroll.state.aboveViewport, 'below': app.pageThree.scroll.state.belowViewport}">
-    <span  ng-bind='app.pageThree.scroll.state.aboveViewport ?  "aboveViewport" : ""'></span>
-    <span  ng-bind='app.pageThree.scroll.state.inViewport ?     "inViewport"    : ""'></span>
-    <span  ng-bind='app.pageThree.scroll.state.belowViewport ?  "belowViewport" : ""'></span>
+     ng-class="{'above' : app.pageThree.scroll.state.aboveViewport,'highlight' : app.pageThree.scroll.state.inViewport, 'below': app.pageThree.scroll.state.belowViewport}"
+        ng-include="'html-with-content.html'">
+
 </div>
 <div class="page four blue" ></div>
 <div class="page green" ></div>
