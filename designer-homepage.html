@@ -5,7 +5,7 @@
     <script src="lib/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <style>
         body{
@@ -32,7 +32,7 @@
             color: rgba(233, 233, 233, 1);
             font-weight: 600;
             line-height: 50px;
-            font-family: 'Raleway', sans-serif;
+            /*font-family: 'Raleway', sans-serif;*/
         }
         .txt-centered{
             text-align: center;
@@ -84,15 +84,29 @@
         .page.green{
             background-color: #5FB59A;
         }
+        #navigation-bar > .menu-button{
+            display: none;
+        }
         @media screen and (max-width: 900px) {
-            #navigation-bar > span{
+            #navigation-bar > .menu-button{
+                font-size: 30px;
+                text-align: right;
+                padding-right: 20px;
                 display: block;
+            }
+
+            #navigation-bar > .section-link{
+                display: block;
+                font-size: 30px;
             }
             #top-bar{
                 background-color: rgba(0, 0,0, 0.8);
             }
             #top-bar + .title-bar-pad{
-            display: none
+                display: none
+            }
+            .menu-button{
+                display: auto;
             }
         }
 
@@ -102,10 +116,11 @@
 <body class="txt-centered" ng-app="scroll-demo" ng-controller="HomePage">
 <div id="top-bar">
     <div id="navigation-bar">
-        <span>Home</span>
-        <span>Tutorials</span>
-        <span>Widgets</span>
-        <span>About Me</span>
+        <span class="menu-button glyphicon glyphicon-remove"></span>
+        <span class="section-link">Home</span>
+        <span class="section-link">Tutorials</span>
+        <span class="section-link">Widgets</span>
+        <span class="section-link">About Me</span>
     </div>
 </div>
 <div class="title-bar-pad"></div>
