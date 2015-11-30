@@ -59,8 +59,8 @@
         .in-view:after{
             content: "I am bing viewed"
         }
-        .hide{
-            opacity: 0.1;
+        .scroll-to-view{
+            opacity: 0.5;
         }
         .watching{
 
@@ -88,7 +88,7 @@
 <div class="page two"   ></div>
 <div class="page three"
      scroll-listener="app.pageThree.scroll"
-     ng-class="app.pageThree.scroll.state.name+'-page'">
+     ng-class="{'scroll-to-view': app.pageThree.scroll.state.hidden}">
 
     {{app.pageThree.scroll.scrolledBy}}
     {{app.pageThree.scroll.scrolledBy >= 33.33 ? "Welcome" : ""}}
@@ -115,6 +115,7 @@
     app.service("PageStates", [function(){
         var Hidden  = {
             name: "hidden",
+            hidden: true,
             applyAt: function(position){
                 return true;
             },
