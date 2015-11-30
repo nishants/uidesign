@@ -54,7 +54,6 @@
             background-color: rgba(200, 200, 200, 0.2);
         }
         .three.page{
-            transition-duration: 1s;
             min-height:40vh;
         }
         .four.page{
@@ -97,7 +96,8 @@
 <div class="page three orange"
      scroll-listener="app.pageThree.scroll"
      ng-class="{'above' : app.pageThree.scroll.state.aboveViewport,'highlight' : app.pageThree.scroll.state.inViewport, 'below': app.pageThree.scroll.state.belowViewport}"
-        ng-include="'html-with-content.html'">
+     ng-include="'html-with-content.html'"
+     style="opacity: {{app.pageThree.scroll.state.offset}};">
 
 </div>
 <div class="page four blue" ></div>
@@ -165,11 +165,13 @@
                         var container = (this.$e)[0].getBoundingClientRect(),
                             aboveViewport = (container.top  + container.height) < 0 ,
                             belowViewport = container.top > $(window).height(),
-                            inViewport    = !aboveViewport && !belowViewport;
+                            inViewport    = !aboveViewport && !belowViewport,
+                            offset        = container.top > 0 ? (container.height - container.top)/container.height: (container.height + container.top)/container.height;
                         this.state = {
                             aboveViewport   : aboveViewport,
                             inViewport      : inViewport,
                             belowViewport   : belowViewport,
+                            offset         : offset
                         };
 
                     }
