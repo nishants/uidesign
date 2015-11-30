@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <style>
+        body{
+            background-color: grey;
+        }
         #top-bar{
             background-color: rgba(0, 0,0, 0.5);
             position: fixed;
@@ -51,25 +54,19 @@
             background-color: rgba(200, 200, 200, 0.2);
         }
         .three.page{
+            transition-duration: 1s;
             min-height:40vh;
         }
         .four.page{
             background-color: rgba(200, 200, 200, 0.2);
         }
-        .in-view:after{
-            content: "I am bing viewed"
+        .page.above{
+            transform: rotateY(-90deg);
+            opacity: 0;
         }
-        .scroll-to-view{
-            opacity: 0.5;
-        }
-        .watching{
-            opacity: 1;
-        }
-        .bye-bye{
-
-        }
-        .born{
-
+        .page.below{
+            transform: rotateY(90deg);
+            opacity: 0;
         }
         .page.blue{
             background-color: #34495e;
@@ -95,8 +92,9 @@
 <div class="title-bar-pad"></div>
 <div class="page orange"  ></div>
 <div class="page two blue"   ></div>
-<div class="page three"
-     scroll-listener="app.pageThree.scroll">
+<div class="page three orange"
+     scroll-listener="app.pageThree.scroll"
+     ng-class="{'above' : app.pageThree.scroll.state.aboveViewport, 'below': app.pageThree.scroll.state.belowViewport}">
     <span  ng-bind='app.pageThree.scroll.state.aboveViewport ?  "aboveViewport" : ""'></span>
     <span  ng-bind='app.pageThree.scroll.state.inViewport ?     "inViewport"    : ""'></span>
     <span  ng-bind='app.pageThree.scroll.state.belowViewport ?  "belowViewport" : ""'></span>
@@ -165,7 +163,7 @@
                         this.scrolledBy = viewablePartOf(this.$e);
                         var container = (this.$e)[0].getBoundingClientRect(),
                             aboveViewport = (container.top  + container.height) < 0 ,
-                            belowViewport = (container.top) > $(window).height(),
+                            belowViewport = container.top > $(window).height(),
                             inViewport    = !aboveViewport && !belowViewport;
                         this.state = {
                             aboveViewport   : aboveViewport,
