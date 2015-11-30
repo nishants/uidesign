@@ -52,8 +52,10 @@
         }
         .three.page{
             background-color: #272822;
+            min-height: 70vh;
         }
         .four.page{
+            margin-bottom: 500px;
             background-color: rgba(200, 200, 200, 0.2);
         }
         .in-view:after{
@@ -88,9 +90,11 @@
 <div class="page two"   ></div>
 <div class="page three"
      scroll-listener="app.pageThree.scroll">
-    {{app.pageThree.scroll.state.name}}
+    <span  ng-bind='app.pageThree.scroll.state.aboveViewport ?  "aboveViewport" : ""'></span>
+    <span  ng-bind='app.pageThree.scroll.state.inViewport ?     "inViewport"    : ""'></span>
+    <span  ng-bind='app.pageThree.scroll.state.belowViewport ?  "belowViewport" : ""'></span>
 </div>
-<div class="page four" scroll-listener="app.pageFour.scroll">{{app.pageFour.scroll.scrolledBy >= 33.33}}</div>
+<div class="page four" ></div>
 
 <script>
     var app = angular.module("scroll-demo", []);
@@ -129,7 +133,11 @@
         }
     }]);
     app.service("ScrollEvent", ['$window', 'PageStates',function($window, PageStates){
-        var viewablePartOf = function ($e) {
+        var viewportBottom  = function(){return $window.pageYOffset},
+            viewportTop     = function(){return $window.pageYOffset - $window.innerHeight},
+            elementTop      = function($e){return ($e.offset().top - $e.height())},
+            elementBottom   = function($e){return elementTop($e) + $e.height()},
+           viewablePartOf = function ($e) {
             var viewportBottom      = $window.pageYOffset,
                     elementTop      = ($e.offset().top - $e.height()),
                     elementHeight   = $e.height(),
@@ -147,9 +155,15 @@
                     state: PageStates.BelowViewport,
                     update: function(){
                         this.scrolledBy = viewablePartOf(this.$e);
-                        if(this.state.invalidAt(this.scrolledBy)){
-                            this.state = this.state.at(this.scrolledBy);
-                        }
+                        var aboveViewport = viewportBottom() > elementBottom(this.$e),
+                            belowViewport = viewportBottom() < elementTop(this.$e),
+                            inViewport    = !aboveViewport && !belowViewport;
+                        this.state = {
+                            aboveViewport   : aboveViewport,
+                            inViewport      : inViewport,
+                            belowViewport   : belowViewport,
+                        };
+
                     }
                 };
                 this.elements.push(target);
