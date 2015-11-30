@@ -39,6 +39,7 @@
         }
         body{
             height: 10vh;
+            font-family: 'Raleway', sans-serif;
         }
         .page{
             min-height: 70vh;
@@ -88,11 +89,12 @@
         <span>Tutorials</span>
         <span>Widgets</span>
         <span>About Me</span>
-        <span>Offset : {{Math.abs(app.pageThree.scroll.state.offset)}}</span>
     </div>
 </div>
 <div class="title-bar-pad"></div>
-<div class="page orange"  ></div>
+<div class="page orange"
+     ng-include="'rob-the-robes/home.html'"
+        ></div>
 <div class="page two blue"   ></div>
 <div class="page three orange"
      scroll-listener="app.pageThree.scroll"
