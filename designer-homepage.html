@@ -161,9 +161,9 @@
     <div id="top-bar">
         <div id="navigation-bar" ng-show="__showMenuBar">
             <span class="close glyphicon glyphicon-remove" ng-click="__showMenuBar = false"></span>
-            <span class="section-link" ng-class="{'current' : currentPage() == app.home}">Home</span>
+            <span class="section-link" ng-class="{'current' : currentPage() == app.home}" ng-click="app.home.scroll.scrollTo()">Home</span>
             <span class="section-link">Tutorials</span>
-            <span class="section-link" ng-class="{'current' : currentPage() == app.pageThree}">Page 4</span>
+            <span class="section-link" ng-class="{'current' : currentPage() == app.pageThree}" ng-click="app.pageThree.scroll.scrollTo()">Page 3</span>
             <span class="section-link">About Me</span>
         </div>
     </div>
@@ -224,15 +224,19 @@
             elements: [],
             listen: function (element) {
                 var target = {
-                    $e: element[0],
+                    $e: $(element),
                     state: {
                         aboveViewport   : false,
                         inViewport      : true,
                         belowViewport   : false,
                         offset          : 1
                     },
+                    scrollTo: function(){
+                        var position = this.$e.offset().top;
+                        $('html, body').animate({scrollTop: position}, 500);
+                    },
                     update: function(){
-                        var container     = this.$e.getBoundingClientRect(),
+                        var container     = this.$e[0].getBoundingClientRect(),
                             aboveViewport = (container.top  + container.height) < 0 ,
                             belowViewport = container.top > $(window).height(),
                             inViewport    = !aboveViewport && !belowViewport,
