@@ -257,6 +257,20 @@
         return ScrollEventListener;
     }])
 
+    app.controller("ProductCarouse", ['$scope', function($scope){
+        $scope.carousels = [{
+                title: "Coral Serene",
+                description: "A soothing milky white Anarkali suit with a shimmer orange golden border just to give it a tangerine touch.",
+                price: 500,
+                images: [
+                    "https://robtherobe.files.wordpress.com/2015/11/img_6727_edited.jpg?w=1086",
+                    "https://robtherobe.files.wordpress.com/2015/11/img_6728_edited.jpg?w=1086",
+                    "https://robtherobe.files.wordpress.com/2015/11/img_6722_edited.jpg?w=1086",,
+                    "https://robtherobe.files.wordpress.com/2015/11/img_6738_edited.jpg?w=1086"
+                ]
+            }
+        ];
+    }]);
     app.directive("scrollListener", ['$parse', 'ScrollEvent', function($parse, ScrollEvent){
         return {
             transclude: false,
