@@ -133,6 +133,9 @@
                 display: none
             }
         }
+        .current.section-link{
+            outline: 1px solid red;
+        }
 
     </style>
 </head>
@@ -146,9 +149,9 @@
     <div id="top-bar">
         <div id="navigation-bar" ng-show="__showMenuBar">
             <span class="close glyphicon glyphicon-remove" ng-click="__showMenuBar = false"></span>
-            <span class="section-link">Home</span>
+            <span class="section-link" ng-class="{'current' : currentPage() == app.home}">Home</span>
             <span class="section-link">Tutorials</span>
-            <span class="section-link">Widgets</span>
+            <span class="section-link" ng-class="{'current' : currentPage() == app.pageThree}">Page 4</span>
             <span class="section-link">About Me</span>
         </div>
     </div>
@@ -181,8 +184,25 @@
                 return dissolve ? 0.3 + Math.abs(page.scroll.state.offset) :1;
             }
         };
-        $scope.app = {pageFour: {},pageThree: {}, home: {}};
+        var pageFour    = {name: "page-four"};
+        var pageThree   = {name: "page-three"};
+        var home        = {name: "home-page"};
+        var allPages = [home, pageThree, pageFour];
+        $scope.app = {
+            pageFour: pageFour,
+            pageThree: pageThree,
+            home: home
+        };
+        $scope.currentPage = function(){
+            for(var i =0; i< allPages.length; i++){
+                if(allPages[i].scroll.state.inViewport){
+                    return allPages[i];
+                }
+            }
+        };
+
         window.app = $scope.app;
+        $scope.__showMenuBar = true;
     }]);
 
     app.service("ScrollEvent", [function(){
