@@ -57,6 +57,9 @@
         .products-carousel{
             width: 300px;
         }
+        .card:hover{
+            box-shadow: 0 6px 20px #AFAFAF;
+        }
         .card{
             padding: 15px;
             margin: 15px;
@@ -65,12 +68,18 @@
             border-radius: 2px;
             background-color: rgba(255,255,255, 0.9);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+
+            -webkit-transition: all 0.1s ease-out;
+            -moz-transition: all 0.1s ease-out;
+            -ms-transition: all 0.1s ease-out;
+            -o-transition: all 0.1s ease-out;
+            transition: all 0.1s ease-out;
         }
     </style>
 
 
     <div class="products-carousel card"  ng-repeat="temp in [1,2,3,21,22,23, 31,32,33, 41,42,43]">
-        <uib-carousel interval="myInterval" no-wrap="noWrapSlides" >
+        <uib-carousel interval="myInterval"  >
             <uib-slide ng-repeat="slide in carousels" active="slide.active">
                 <img ng-src="{{slide.images[0]}}" style="margin:auto; width:300px;">
 
