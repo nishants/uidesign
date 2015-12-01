@@ -6,6 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="typing-animation.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <style>
         body{
@@ -171,7 +172,6 @@
 <script>
     var app = angular.module("scroll-demo", []);
     app.controller("HomePage", ["$scope", function($scope){
-        $scope.Math = window.Math;
         $scope.opacityAt = function(page){
             if(page.scroll){
                 var dissolve = Math.abs(page.scroll.state.offset) < 0.2;
