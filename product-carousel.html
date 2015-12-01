@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="lib/angular.js"></script>
+
+</head>
+
+<div class="txt-centered" ng-init="items = [{name: 'one'}, {name: 'two'}, {name: 'three'}]">
+
+<style>
+    .carousel{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .slider{
+        -webkit-transition: right 0.5s, left 0.5s;
+        -moz-transition:    right 0.5s, left 0.5s;
+        -ms-transition:     right 0.5s, left 0.5s;
+        -o-transition:      right 0.5s, left 0.5s;
+        transition:         right 0.5s, left 0.5s;
+    }
+    .slide.out{
+        /*transform: scale(0.5);*/
+        opacity: 0.3;
+        transform: translateY(0.8);
+    }
+    .slide{
+        min-width: 400px;
+        -webkit-transition-delay: 0.5s;
+        -moz-transition-delay: 0.5s;
+        -ms-transition-delay: 0.5s;
+        -o-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+
+        -webkit-transition  : all   linear  0.5s;
+        -moz-transition     : all  linear  0.5s;
+        -ms-transition      : all  linear  0.5s;
+        -o-transition       : all  linear  0.5s;
+        transition          : all  linear  0.5s;
+    }
+    .red-bg{
+        background-color: red;
+    }
+
+</style>
+
+<div class="carousel" as-model="carousel" pad-sides="60">
+    <div class="slider">
+        <div class="slide red-bg" ng-repeat="item in items">
+            {{item.name}}
+        </div>
+    </div>
+</div>
+<button ng-click="carousel.next()"     ng-disabled="!carousel.hasNext()"    >Next</button>
+<button ng-click="carousel.previous()" ng-disabled="!carousel.hasPrevious()">Back</button>
+
+</div>
