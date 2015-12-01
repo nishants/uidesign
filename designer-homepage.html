@@ -232,8 +232,8 @@
                         offset          : 1
                     },
                     scrollTo: function(){
-                        var position = this.$e.offset().top;
-                        $('html, body').animate({scrollTop: position}, 500);
+                        var position = this.$e.offset().top, offset = 70 /*scrollBarHeight*/;
+                        $('html, body').animate({scrollTop: position - offset}, 500);
                     },
                     update: function(){
                         var container     = this.$e[0].getBoundingClientRect(),
