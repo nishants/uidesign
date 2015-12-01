@@ -2,8 +2,11 @@
 <html>
 
 <head>
-    <script src="lib/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="typing-animation.css">
@@ -181,7 +184,7 @@
              ng-controller="ProductCarousel"
              ng-include="'product-carousel.html'"></section>
 
-    <section class="page three orange"
+    <section id="page-three" class="page three orange"
              scroll-listener="app.pageThree.scroll"
              ng-class="{'above' : app.pageThree.scroll.state.aboveViewport,'highlight' : app.pageThree.scroll.state.inViewport, 'below': app.pageThree.scroll.state.belowViewport}"
              ng-include="'html-with-content.html'"
@@ -192,7 +195,7 @@
 </article>
 
 <script>
-    var app = angular.module("scroll-demo", []);
+    var app = angular.module("scroll-demo", ['ngAnimate', 'ui.bootstrap']);
     app.controller("HomePage", ["$scope", function($scope){
         $scope.opacityAt = function(page){
             if(page.scroll){
@@ -260,6 +263,21 @@
     }])
 
     app.controller("ProductCarousel", ['$scope', function($scope){
+        $scope.myInterval = 5000;
+        $scope.noWrapSlides = false;
+        var slides = $scope.slides = [];
+        $scope.addSlide = function() {
+            var newWidth = 600 + slides.length + 1;
+            slides.push({
+                image: "https://robtherobe.files.wordpress.com/2015/11/img_6727_edited.jpg?w=1086",
+                text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
+                ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+            });
+        };
+        for (var i=0; i<4; i++) {
+            $scope.addSlide();
+        }
+
         $scope.carousels = [{
                 title: "Coral Serene",
                 description: "A soothing milky white Anarkali suit with a shimmer orange golden border just to give it a tangerine touch.",
@@ -293,6 +311,7 @@
                     "https://robtherobe.files.wordpress.com/2015/11/img_6738_edited.jpg?w=1086"
                 ]
             }
+
         ];
     }]);
     app.directive("scrollListener", ['$parse', 'ScrollEvent', function($parse, ScrollEvent){

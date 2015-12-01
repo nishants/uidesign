@@ -8,51 +8,74 @@
 
 <div class="txt-centered">
 
-<style>
-    .carousel{
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .slider{
-        -webkit-transition: right 0.5s, left 0.5s;
-        -moz-transition:    right 0.5s, left 0.5s;
-        -ms-transition:     right 0.5s, left 0.5s;
-        -o-transition:      right 0.5s, left 0.5s;
-        transition:         right 0.5s, left 0.5s;
-    }
-    .slide.out{
-        /*transform: scale(0.5);*/
-        opacity: 0.3;
-        transform: translateY(0.8);
-    }
-    .slide{
-        min-width: 400px;
-        -webkit-transition-delay: 0.5s;
-        -moz-transition-delay: 0.5s;
-        -ms-transition-delay: 0.5s;
-        -o-transition-delay: 0.5s;
-        transition-delay: 0.5s;
+    <style>
+        .carousel {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-        -webkit-transition  : all   linear  0.5s;
-        -moz-transition     : all  linear  0.5s;
-        -ms-transition      : all  linear  0.5s;
-        -o-transition       : all  linear  0.5s;
-        transition          : all  linear  0.5s;
-    }
-    .red-bg{
-        background-color: red;
-    }
+        .slider {
+            -webkit-transition: right 0.5s, left 0.5s;
+            -moz-transition: right 0.5s, left 0.5s;
+            -ms-transition: right 0.5s, left 0.5s;
+            -o-transition: right 0.5s, left 0.5s;
+            transition: right 0.5s, left 0.5s;
+        }
 
-</style>
+        .slide.out {
+            /*transform: scale(0.5);*/
+            opacity: 0.3;
+            transform: translateY(0.8);
+        }
 
-<div class="carousel" as-model="carousel" pad-sides="60">
-    <div class="slider">
-        <div class="slide red-bg" ng-repeat="item in carousels">
-            {{item.title}}
-        </div>
+        .slide {
+            min-width: 400px;
+            -webkit-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            -ms-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+
+            -webkit-transition: all linear 0.5s;
+            -moz-transition: all linear 0.5s;
+            -ms-transition: all linear 0.5s;
+            -o-transition: all linear 0.5s;
+            transition: all linear 0.5s;
+        }
+
+        .red-bg {
+            background-color: red;
+        }
+
+        #products-carousel .carousel-indicators, #products-carousel .carousel-control {
+            background: none;
+        }
+        #products-carousel .carousel-indicators{
+            display: none;
+        }
+
+        #products-carousel{
+            width: 500px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+            background-color: rgba(255,255,255, 0.9);
+            padding: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+
+    <div id="products-carousel">
+        <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+            <uib-slide ng-repeat="slide in carousels" active="slide.active">
+                <img ng-src="{{slide.images[0]}}" style="margin:auto; width:300px;">
+
+                <div class="carousel-caption">
+                    <h4 ng-bind="slide.title"></h4>
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                </div>
+            </uib-slide>
+        </uib-carousel>
     </div>
-</div>
-<button ng-click="carousel.next()"     ng-disabled="!carousel.hasNext()"    >Next</button>
-<button ng-click="carousel.previous()" ng-disabled="!carousel.hasPrevious()">Back</button>
 
 </div>
