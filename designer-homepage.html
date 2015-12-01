@@ -209,7 +209,7 @@
         };
         $scope.currentPage = function(){
             for(var i =0; i< allPages.length; i++){
-                if(allPages[i].scroll.state.inViewport){
+                if(allPages[i].scroll && allPages[i].scroll.state.inViewport){
                     return allPages[i];
                 }
             }
