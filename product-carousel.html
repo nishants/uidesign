@@ -6,7 +6,7 @@
 
 </head>
 
-<div class="txt-centered" ng-init="items = [{name: 'one'}, {name: 'two'}, {name: 'three'}]">
+<div class="txt-centered">
 
 <style>
     .carousel{
@@ -47,8 +47,8 @@
 
 <div class="carousel" as-model="carousel" pad-sides="60">
     <div class="slider">
-        <div class="slide red-bg" ng-repeat="item in items">
-            {{item.name}}
+        <div class="slide red-bg" ng-repeat="item in carousels">
+            {{item.title}}
         </div>
     </div>
 </div>
