@@ -1,5 +1,5 @@
 
-.type-letter{
+.type-letters{
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -8,7 +8,7 @@
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   animation: type 1s steps(60, end);
 
   margin-left: auto !important;
@@ -17,9 +17,5 @@
 
 @keyframes type{
   from { width: 0; }
-}
-
-@keyframes blink{
-  to{opacity: .0;}
 }
 
