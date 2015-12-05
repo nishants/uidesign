@@ -7,45 +7,48 @@
 
     <style>
         #menu {
-            background-color: green;
-            width: 200px;
-            height: 50px;
+            background-color: rgba(0, 128, 0, 0.5);
+            padding: 5px;
+            display: inline-block;
+            float: right;
+            text-align: right;
 
-            margin: 20px;
+            margin: 0;
+            position: fixed;
+            right: 0;
             overflow: hidden;
-            transition: width 0.2s linear, height 0.2s linear;
+            transition: width 0.2s linear, height 0.2s linear,  background-color 0.2s linear ;
         }
 
         #menu > .menu-items{
-            transition: opacity 0.2s linear, width 0.2s linear, height 0.1s linear;;
-            opacity: 0
+            transition: opacity 0.2s linear,width 0.2s linear, height 0.2s linear;
+            background-color: #EEEEEE;
+            opacity: 0;
         }
-
         #menu.expand > .menu-items{
             opacity: 1;
-            height: 100vh !important;
+            height: 100% !important;
             width: 100% !important;
         }
-        .expand {
-            height: 100vh !important;
+        #menu.expand {
+            height: 100% !important;
             width: 100% !important;
+            background-color: rgba(0, 128, 0, 1);
         }
-        #menu-items {
-            background-color: #EEEEEE;
-            width: 100px;
-            height: 100px;
-
+        #menu > .glyphicon{
+            font-size: 30px;
+            width: 100%;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body ng-app>
 <div id="menu"
-     ng-mouseover="__expand = true"
-     ng-mouseleave="__expand = false"
      ng-class="{'expand' : __expand}">
-    <div id="" class="menu-items">
-        {{"expand : " + (__expand ? "true" : "false")}}
+    <div ng-show="!__expand" class="show-menu glyphicon glyphicon-menu-hamburger" ng-click="__expand = true"></div>
+    <div ng-show="__expand"  class="hide-menu glyphicon glyphicon-remove"         ng-click="__expand = false"></div>
+    <div class="menu-items">
     </div>
 </div>
 </body>
