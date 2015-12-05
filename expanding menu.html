@@ -25,16 +25,21 @@
             height: 0px;
             width: 0px;
             overflow: hidden;
-            transform: translateX(150vw);
         }
         #menu.expand > .menu-items{
             height: auto;
             width: 100%;
 
             opacity: 1;
-            transform: translateX(0px);
             overflow: auto;
         }
+        #menu > .slide-from-right {
+            transform: translateX(150vw);
+        }
+        #menu.expand > .slide-from-right {
+            transform: translateX(0px);
+        }
+
         #menu.expand {
             height: 100% !important;
             width: 100% !important;
@@ -53,7 +58,7 @@
      ng-class="{'expand' : __expand}">
     <div ng-show="!__expand" class="show-menu glyphicon glyphicon-menu-hamburger" ng-click="__expand = true"></div>
     <div ng-show="__expand"  class="hide-menu glyphicon glyphicon-remove"         ng-click="__expand = false"></div>
-    <div class="menu-items">
+    <div class="menu-items slide-from-right">
         <div class="menu-item">Collection 1</div>
         <div class="menu-item">Collection 2</div>
         <div class="menu-item">Collection 3</div>
