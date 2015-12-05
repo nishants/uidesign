@@ -3,9 +3,10 @@
 
 <head>
     <script src="lib/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
 
     <style>
-        #target {
+        #menu {
             background-color: green;
             width: 200px;
             height: 50px;
@@ -15,21 +16,21 @@
             transition: width 0.2s linear, height 0.2s linear;
         }
 
-        #target > .on-expand{
+        #menu > .menu-items{
             transition: opacity 0.2s linear, width 0.2s linear, height 0.1s linear;;
             opacity: 0
         }
 
-        #target.xshow > .on-expand{
+        #menu.expand > .menu-items{
             opacity: 1;
             height: 100vh !important;
             width: 100% !important;
         }
-        .xshow {
+        .expand {
             height: 100vh !important;
             width: 100% !important;
         }
-        #contents{
+        #menu-items {
             background-color: #EEEEEE;
             width: 100px;
             height: 100px;
@@ -39,13 +40,12 @@
 </head>
 
 <body ng-app>
-<div id="target"
+<div id="menu"
      ng-mouseover="__expand = true"
      ng-mouseleave="__expand = false"
-     ng-class="{'xshow' : __expand}">
-    {{"expand : " + (__expand ? "true" : "false")}}
-    <div id="contents" class="on-expand">
-
+     ng-class="{'expand' : __expand}">
+    <div id="" class="menu-items">
+        {{"expand : " + (__expand ? "true" : "false")}}
     </div>
 </div>
 </body>
