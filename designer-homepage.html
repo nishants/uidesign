@@ -328,11 +328,11 @@
                 var scrollListener = $parse(attrs.scrollListener);
                 var listener = ScrollEvent.listen(element);
                 scrollListener.assign(scope, listener);
-                angular.element(window).bind("DOMContentLoaded load resize scroll",function(){
-                    scope.$apply(function(){
-                        listener.update();
-                    });
-                })
+//                angular.element(window).bind("DOMContentLoaded load resize scroll",function(){
+//                    scope.$apply(function(){
+//                        listener.update();
+//                    });
+//                })
             }
         }
     }]);
