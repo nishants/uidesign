@@ -168,7 +168,7 @@
           ng-show="!__showMenuBar"
           ng-click="__showMenuBar = true"></span>
     <div id="top-bar">
-        <div id="navigation-bar" ng-show="__showMenuBar">
+        <div id="navigation-bar" ng-show="__showMenuBar" ng-click="__showMenuBar = false">
             <span class="close glyphicon glyphicon-remove" ng-click="__showMenuBar = false"></span>
             <span class="section-link" ng-class="{'current' : currentPage() == app.home}" ng-click="app.home.scroll.scrollTo()">Home</span>
             <span class="section-link">Tutorials</span>
