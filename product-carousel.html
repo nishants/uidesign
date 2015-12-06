@@ -86,16 +86,7 @@
 
 
     <div class="products-carousel card"  ng-repeat="temp in [1]">
-        <uib-carousel interval="myInterval"  >
-            <uib-slide ng-repeat="slide in carousels" active="slide.active">
-                <img ng-src="{{slide.images[0]}}" style="margin:auto; width:300px;">
-
-                <div class="carousel-caption">
-                    <h4 ng-bind="slide.title"></h4>
-                    <span class="glyphicon glyphicon-thumbs-up"></span>
-                </div>
-            </uib-slide>
-        </uib-carousel>
+        <img ng-src="{{slide.images[0]}}" style="margin:auto; width:300px;">
     </div>
 
 </div>
