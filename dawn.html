@@ -28,9 +28,16 @@
 
         /* Top bar */
         #top-bar{
+            position: fixed;
+            top: 0;
+
+            width: 100%;
             height: 70px;
-            border-bottom: 1px solid #CFCFCF;
             text-align: center;
+            background-color: white;
+
+            border-bottom: 1px solid #CFCFCF;
+            margin-bottom: 15px;
         }
         #top-bar > .navigation{
             display: block;
@@ -75,14 +82,18 @@
             float: right;
         }
 
+        #news-content{
+            margin-top: 85px;
+        }
         /* Columns */
         .columns{
-            padding: 15px;
+            display: table-row;
         }
         .columns > .column{
             max-width: calc(100vw/4);
             padding: 15px;
-            float: left;
+            display: table-cell;
+            border-right: 1px solid rgba(207, 207, 207, 0.39);
         }
         .columns > .column > .article{
             text-align: center;
@@ -132,28 +143,43 @@
     </div>
 </div>
 
-<div class="columns">
-    <div class="column">
-        <div class="article">
-            <h3>Apple raises iTunes Match limit to 100,000 tracks</h3>
-            <span class="tech news-marker"></span>
-            <p class="news-summary">
-                For iTunes users, the $25-per-year iTunes Match is a pretty nifty service, letting them access their entire music library on every device they own...
-            </p>
+<div id="news-content">
+    <div class="columns">
+        <div class="column">
+            <div class="article">
+                <h3>Apple raises iTunes Match limit to 100,000 tracks</h3>
+                <span class="tech news-marker"></span>
+                <p class="news-summary">
+                    For iTunes users, the $25-per-year iTunes Match is a pretty nifty service, letting them access their entire music library on every device they own...
+                </p>
+            </div>
+
+            <div class="article">
+                <h3>Google Ventures Rethinks Its International Investment Strategy</h3>
+                <span class="tech news-marker"></span>
+                <p class="news-summary">
+                    Although Google’s investment arm, Google Ventures, only opened its London office in July 2014 — setting aside an initial $100 million to invest in startups “across Europe” — it’s now abandoning the idea of running separate funds, according to CEO Bill Maris.
+
+                    Speaking in an interview in today’s FT, Maris said the fund wants to have more flexibility in where it invests — so will be pooling its investments into a single global vehicle next year...
+                </p>
+            </div>
         </div>
 
-        <div class="article">
-            <h3>Google Ventures Rethinks Its International Investment Strategy</h3>
-            <span class="tech news-marker"></span>
-            <p class="news-summary">
-                Although Google’s investment arm, Google Ventures, only opened its London office in July 2014 — setting aside an initial $100 million to invest in startups “across Europe” — it’s now abandoning the idea of running separate funds, according to CEO Bill Maris.
+        <div class="column">
+            <div class="article">
+                <h3>Daniel Graf, Former Product Honcho for Twitter and Google Maps, Joins Uber</h3>
+                <span class="business news-marker"></span>
+                <p class="news-summary">
+                    Intent on building dominant transportation software, Uber has steadily been plundering marquee talent from Google. Add another one: Daniel Graf, the former product chief at Twitter and the man credited for bringing Google Maps to the iPhone.
+                </p>
+            </div>
 
-                Speaking in an interview in today’s FT, Maris said the fund wants to have more flexibility in where it invests — so will be pooling its investments into a single global vehicle next year...
-            </p>
-        </div>
-    </div>
-
-    <div class="column">
+            <div class="article">
+                <h3>How the Low-Tax U.S. Stacks Up Against Other Countries</h3>
+                <span class="analysis news-marker"></span>
+                <p class="news-summary">The U.S. is a low-tax country. That’s right. The U.S. is a low-tax country, at least compared with about 30 other mostly developed economies.  The latest cross-country comparisons show that U.S. governments collected 26%….</p>
+            </div>
+        </div>    <div class="column">
         <div class="article">
             <h3>Daniel Graf, Former Product Honcho for Twitter and Google Maps, Joins Uber</h3>
             <span class="business news-marker"></span>
@@ -167,6 +193,21 @@
             <span class="analysis news-marker"></span>
             <p class="news-summary">The U.S. is a low-tax country. That’s right. The U.S. is a low-tax country, at least compared with about 30 other mostly developed economies.  The latest cross-country comparisons show that U.S. governments collected 26%….</p>
         </div>
+    </div>    <div class="column">
+        <div class="article">
+            <h3>Daniel Graf, Former Product Honcho for Twitter and Google Maps, Joins Uber</h3>
+            <span class="business news-marker"></span>
+            <p class="news-summary">
+                Intent on building dominant transportation software, Uber has steadily been plundering marquee talent from Google. Add another one: Daniel Graf, the former product chief at Twitter and the man credited for bringing Google Maps to the iPhone.
+            </p>
+        </div>
+
+        <div class="article">
+            <h3>How the Low-Tax U.S. Stacks Up Against Other Countries</h3>
+            <span class="analysis news-marker"></span>
+            <p class="news-summary">The U.S. is a low-tax country. That’s right. The U.S. is a low-tax country, at least compared with about 30 other mostly developed economies.  The latest cross-country comparisons show that U.S. governments collected 26%….</p>
+        </div>
+    </div>
     </div>
 </div>
 </body>
