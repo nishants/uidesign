@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <style>
+        .brand-logo:after{
+            content: "AMOEBA.SOCIAL"
+        }
+        .brand-punchline:after{
+            content: "NO BULLSHIT"
+        }
+        .news-date{
+
+        }
+        .undo-list {
+            list-style-type: none;
+        }
+        #top-bar{
+            height: 70px;
+            border-bottom: 1px solid black;
+            text-align: center;
+        }
+        #top-bar > .navigation{
+            display: block;
+            position: absolute;
+            text-align: right;
+            width: 100%;
+            padding-right: 15px;
+        }
+        #top-bar > .brand-logo{
+            line-height: 50px;
+        }
+        #top-bar > .foot{
+            line-height: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #top-bar > .foot > span{
+            line-height: 20px;
+            transform: translateY(10px);
+            background-color: white;
+            display: inline-block;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        #top-bar > .foot > .news-date{
+            float: left;
+        }
+
+        #top-bar > .foot > .brand-punchline{
+            float: right;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="top-bar">
+    <ul class="navigation undo-list" >
+        <li><a href="#aboutme">ABOUT ME</a></li>
+        <li><a href="#archives">ARCHIVES</a></li>
+        <li><a href="#search">SEARCH</a></li>
+    </ul>
+    <div class="brand-logo"></div>
+    <div class="foot">
+        <span class="news-date">8 DEC 2015</span>
+        <span class="brand-punchline"></span>
+    </div>
+</div>
+
+<script></script>
+</body>
+</html>
