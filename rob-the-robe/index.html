@@ -86,10 +86,25 @@
             box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
         }
 
+        #show-collections{
+            opacity: 0;
+            display: inline-block;
+            font-size: 30px;
+            line-height: 60px;
+
+            -webkit-transition: all 0.5s linear;
+            -moz-transition:    all 0.5s linear ;
+            -ms-transition:     all 0.5s linear ;
+            -o-transition:      all 0.5s linear ;
+            transition:         all 0.5s linear ;
+        }
         .app-ready #top-bar{
             position: fixed;
             top: 0;
             width: 100%;
+        }
+        .app-ready #top-bar #show-collections{
+            opacity: 1;
         }
 
     </style>
@@ -111,6 +126,7 @@
 </div>
 <div id="top-bar">
     <div id="logo">RR</div>
+    <div id="show-collections"> Collections <span class="glyphicon glyphicon-menu-down"></span></div>
     <div id="call-button" class="glyphicon glyphicon-phone-alt	">
     </div>
 </div>
