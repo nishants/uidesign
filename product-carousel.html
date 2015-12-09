@@ -85,8 +85,20 @@
     </style>
 
 
-    <div class="products-carousel card"  ng-repeat="slide in carousels">
-        <img ng-src="{{slide.images[0]}}" style="margin:auto; width:300px;">
+    <div class="products-carousel card"
+         ng-repeat="slide in carousel"
+         ng-init="slide.__showIndex = 0">
+        <img  ng-repeat="image in slide.images"
+              ng-src="{{'rob-the-robe/carousel/carousel-' + ($index+1) + '.jpg'}}"
+              style="margin:auto; width:300px;"
+              ng-show="slide.__showIndex == $index">
+
+        {{slide.__showIndex}}
+        <select  ng-model="slide.__showIndex">
+            <option ng-repeat="index in [0, 1, 2]"> {{index}}</option>
+        </select>
+
     </div>
+
 
 </div>

@@ -183,7 +183,7 @@
 <article class="contents">
     <section class="page blue"
              scroll-listener="app.home.scroll"
-             ng-include="'rob-the-robes/home.html'"
+             ng-include="'rob-the-robe/home.html'"
              style="opacity: {{opacityAt(app.home)}};"></section>
 
     <section class="page two white"
@@ -268,32 +268,17 @@
     }])
 
     app.controller("ProductCarousel", ['$scope', function($scope){
-        $scope.myInterval = 5000;
-        $scope.noWrapSlides = false;
-        var slides = $scope.slides = [];
-        $scope.addSlide = function() {
-            var newWidth = 600 + slides.length + 1;
-            slides.push({
-                image: "https://robtherobe.files.wordpress.com/2015/11/img_6727_edited.jpg?w=1086",
-                text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-                ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-            });
-        };
-        for (var i=0; i<4; i++) {
-            $scope.addSlide();
-        }
-
-        $scope.carousels = [{
-                title: "Coral Serene",
-                description: "A soothing milky white Anarkali suit with a shimmer orange golden border just to give it a tangerine touch.",
-                price: 500,
-                images: [
-                    "https://robtherobe.files.wordpress.com/2015/11/img_6727_edited.jpg?w=1086",
-                    "https://robtherobe.files.wordpress.com/2015/11/img_6728_edited.jpg?w=1086",
-                    "https://robtherobe.files.wordpress.com/2015/11/img_6722_edited.jpg?w=1086",,
-                    "https://robtherobe.files.wordpress.com/2015/11/img_6738_edited.jpg?w=1086"
-                ]
-            },
+        $scope.carousel = [{
+            title: "Coral Serene",
+            description: "A soothing milky white Anarkali suit with a shimmer orange golden border just to give it a tangerine touch.",
+            price: 500,
+            images: [
+                "https://robtherobe.files.wordpress.com/2015/11/img_6727_edited.jpg?w=1086",
+                "https://robtherobe.files.wordpress.com/2015/11/img_6728_edited.jpg?w=1086",
+                "https://robtherobe.files.wordpress.com/2015/11/img_6722_edited.jpg?w=1086",,
+                "https://robtherobe.files.wordpress.com/2015/11/img_6738_edited.jpg?w=1086"
+            ]
+        },
             {
                 title: "Coral Serene II",
                 description: "A soothing milky white Anarkali suit with a shimmer orange golden border just to give it a tangerine touch.",
@@ -317,8 +302,7 @@
                 ]
             }
 
-        ];
-    }]);
+        ]    }]);
     app.directive("scrollListener", ['$parse', 'ScrollEvent', function($parse, ScrollEvent){
         return {
             transclude: false,
