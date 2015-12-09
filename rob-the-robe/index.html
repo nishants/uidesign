@@ -173,14 +173,36 @@
 </div>
 
 <script>
-    var loader = function(){return $("#loader");};
+    var
+            loader = function(){return $("#loader");},
+            app = {
+                collections: []
+            },
+            CollectionsPage = function($e, data){
+                return {
+                    $e:undefined,
+                    collections: data,
+                    init: function($e){
+                        this.$e = $e;
+                    },
+                    render: function(collections){
+                        this.collections = collections;
+                    }
+                };
+            };
+
     $(document).ready(function(){
-        setTimeout(function(){
-            $("body").addClass("app-ready")
-        }, 500);
-        setTimeout(function(){
-            $("body").addClass("app-active")
-        }, 1000);
+        $.get( "api/all-collections.json", function( data ) {
+            app.collectionsPage = CollectionsPage(data);
+
+            $("body").addClass("app-ready");
+            setTimeout(function(){
+                $("body").addClass("app-ready")
+            }, 500);
+            setTimeout(function(){
+                $("body").addClass("app-active")
+            }, 1000);
+        });
     });
 
 </script>
