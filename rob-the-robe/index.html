@@ -47,7 +47,9 @@
             top: 0;
             font-size: 30px;
         }
-
+        .app-active > #logo{
+            width: 100px;
+        }
 
         /* ****************** splash ******************  */
         #splash{
@@ -96,6 +98,9 @@
         setTimeout(function(){
             $("body").addClass("app-ready")
         }, 500);
+        setTimeout(function(){
+            $("body").addClass("app-active")
+        }, 1000);
     });
 
 </script>
