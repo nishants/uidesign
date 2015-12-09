@@ -26,20 +26,35 @@
         #app{
             height: 100vh;
             width: 100vw;
-            background-color: green;;
         }
-        /* ****************** splash ******************  */
+        /* ****************** logo ******************  */
 
         #logo{
             font-family: "NexaRustSlab";
             font-size: 40px;
+            position: absolute;
+
+            top: 250px;
+            width: 100%;
+
+            -webkit-transition: all 0.25s linear;
+            -moz-transition:    all 0.25s linear ;
+            -ms-transition:     all 0.25s linear ;
+            -o-transition:      all 0.25s linear ;
+            transition:         all 0.25s linear ;
         }
+        .app-ready > #logo{
+            top: 0;
+        }
+
 
         /* ****************** splash ******************  */
         #splash{
             padding-top: 200px;
             height: 100vh;
             min-width:  100vw;
+            background-color: #DDD;;
+
 
             -webkit-transition: all 0.25s linear;
             -moz-transition:    all 0.25s linear ;
@@ -65,8 +80,8 @@
             </path>
         </svg>
     </div>
-    <div id="logo">Rob The Robe</div>
 </div>
+<div id="logo">RR</div>
 <div id="app">
 </div>
 
