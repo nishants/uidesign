@@ -23,6 +23,14 @@
         .not-active{
             width :0px !important;
         }
+        .slide-preview{
+            border: 1px solid #12aaec;
+            margin: 0px
+        }
+        .disable-preview{
+            border: none;
+            margin: 1px;
+        }
     </style>
 
 
@@ -38,11 +46,16 @@
                   ng-src="{{'rob-the-robe/carousel/carousel-' + ($index+1) + '.jpg'}}"
                   ng-class="slide.__showIndex - 1 == $index ? '' : 'not-active'">
         </div>
+        <div class="slide-options">
+            <img
+                    class="slide-preview"
+                    style="width:100px; height: 100px;"
+                    ng-repeat="image in slide.images"
+                    ng-src="{{'rob-the-robe/carousel/carousel-' + ($index+1) + '.jpg'}}"
+                    ng-class="slide.__showIndex - 1 == $index ? '' : 'disable-preview'"
+                    ng-click="slide.__showIndex = $index +1">
 
-        {{slide.__showIndex}}
-        <select  ng-model="slide.__showIndex">
-            <option ng-repeat="index in [1, 2, 3]"> {{index}}</option>
-        </select>
+        </div>
 
     </div>
 
