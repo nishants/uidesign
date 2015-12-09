@@ -12,6 +12,11 @@
             background-color: white;
         }
 
+        @font-face {
+            font-family: 'NexaRustSlab';
+            src: url('../fonts/nexa-rust-slab-black-shadow.otf');
+        }
+
         #splash > .loader{
             text-align: center;
         }
@@ -22,6 +27,12 @@
             height: 100vh;
             width: 100vw;
             background-color: green;;
+        }
+        /* ****************** splash ******************  */
+
+        #logo{
+            font-family: "NexaRustSlab";
+            font-size: 40px;
         }
 
         /* ****************** splash ******************  */
@@ -54,11 +65,9 @@
             </path>
         </svg>
     </div>
-    <h1>Rob The Robe</h1>
+    <div id="logo">Rob The Robe</div>
 </div>
-
 <div id="app">
-
 </div>
 
 <script>
@@ -66,7 +75,7 @@
     $(document).ready(function(){
         setTimeout(function(){
             $("body").addClass("app-ready")
-        }, 1000);
+        }, 500);
     });
 </script>
 </body>
