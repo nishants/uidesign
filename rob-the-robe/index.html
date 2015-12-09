@@ -9,16 +9,26 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <style>
         body{
-            background-color: grey;
+            background-color: white;
         }
         #splash{
-            padding-top: 200px
+            padding-top: 200px;
+            min-height: 100vh;
+            min-width:  100vw;
         }
         #splash > .loader{
             text-align: center;
         }
         .text-center{
             text-align: center;
+        }
+        #app{
+            height: 100vh;
+            width: 100vw;
+            background-color: green;;
+        }
+        .app-ready{
+
         }
 
     </style>
@@ -33,14 +43,18 @@
             </path>
         </svg>
     </div>
-    <h1>
-        Rob The Robe
-    </h1>
+    <h1>Rob The Robe</h1>
 </div>
 
 <div id="app">
 
 </div>
 
+<script>
+    var loader = function(){return $("#loader");};
+    $(document).ready(function(){
+        $("body").addClass("app-ready");
+    });
+</script>
 </body>
 </html>
