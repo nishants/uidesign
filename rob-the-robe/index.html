@@ -11,11 +11,7 @@
         body{
             background-color: white;
         }
-        #splash{
-            padding-top: 200px;
-            min-height: 100vh;
-            min-width:  100vw;
-        }
+
         #splash > .loader{
             text-align: center;
         }
@@ -27,8 +23,23 @@
             width: 100vw;
             background-color: green;;
         }
-        .app-ready{
 
+        /* ****************** splash ******************  */
+        #splash{
+            padding-top: 200px;
+            height: 100vh;
+            min-width:  100vw;
+
+            -webkit-transition: all 0.25s linear;
+            -moz-transition:    all 0.25s linear ;
+            -ms-transition:     all 0.25s linear ;
+            -o-transition:      all 0.25s linear ;
+            transition:         all 0.25s linear ;
+        }
+        .app-ready > #splash{
+            height: 0px !important;
+            padding: 0;
+            overflow: hidden;
         }
 
     </style>
@@ -53,7 +64,9 @@
 <script>
     var loader = function(){return $("#loader");};
     $(document).ready(function(){
-        $("body").addClass("app-ready");
+        setTimeout(function(){
+            $("body").addClass("app-ready")
+        }, 1000);
     });
 </script>
 </body>
