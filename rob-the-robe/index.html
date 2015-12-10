@@ -133,7 +133,8 @@
             max-width: 300px;
         }
         .card{
-            width: 450px
+            width: 350px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -195,6 +196,7 @@
 
                 for(var i =0; i< data.length; i++){
                     var element = collectionPrototype.clone();
+                    element.prop("id", "card-" + i);
                     $e.append(element);
                     collections.push(newCollection(element, data[i]));
                 }
