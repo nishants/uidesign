@@ -1,5 +1,5 @@
 nav {
-  background-color: red;
+  background-color: #89DEB2;
   padding: 5px;
   position: fixed;
   top: 0px;
@@ -9,6 +9,7 @@ nav {
 
 nav > *{
   margin: 0;
+  color: #F2F3F2;
 }
 
 nav > .settings{
@@ -45,6 +46,6 @@ nav > .logo{
 }
 
 nav > .drop-down{
-  border-top: 1px solid rgba(200, 200, 200, 0.8);
+  border-top: 1px solid rgb(214, 222, 218);
   padding: 10px;
 }

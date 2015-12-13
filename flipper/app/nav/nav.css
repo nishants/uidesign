@@ -1,5 +1,5 @@
 nav {
-  background-color: red;
+  background-color: #89DEB2;
   padding: 5px;
   position: fixed;
   top: 0px;
@@ -7,7 +7,8 @@ nav {
   width: 100%; }
 
 nav > * {
-  margin: 0; }
+  margin: 0;
+  color: #F2F3F2; }
 
 nav > .settings {
   float: right;
@@ -38,7 +39,7 @@ nav > .logo {
   opacity: 0; }
 
 nav > .drop-down {
-  border-top: 1px solid rgba(200, 200, 200, 0.8);
+  border-top: 1px solid #d6deda;
   padding: 10px; }
 
 /*# sourceMappingURL=nav.css.map */
