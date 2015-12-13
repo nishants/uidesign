@@ -1,0 +1,27 @@
+nav {
+  background-color: red;
+  padding: 5px;
+}
+nav > *{
+  margin: 0;
+}
+
+nav > .settings{
+  float: right;
+  line-height: 50px;
+  font-size: 25px;
+  display: inline-block;
+}
+
+nav > .search{
+  display: inline-block;
+  line-height: 50px;
+  font-size: 20px;
+  padding-left: 5px;
+}
+nav > .logo{
+  font-size: 30px;
+  line-height: 50px;
+  border-radius: 0px;
+  text-decoration: none !important;
+}
