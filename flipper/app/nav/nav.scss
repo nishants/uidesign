@@ -1,7 +1,12 @@
 nav {
   background-color: red;
   padding: 5px;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  width: 100%;
 }
+
 nav > *{
   margin: 0;
 }
