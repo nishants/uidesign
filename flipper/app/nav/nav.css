@@ -27,4 +27,18 @@ nav > .logo {
   border-radius: 0px;
   text-decoration: none !important; }
 
+.drop-down {
+  height: 100px;
+  overflow: auto;
+  opacity: 1; }
+
+.drop-down.collapse {
+  height: 0px !important;
+  overflow: hidden !important;
+  opacity: 0; }
+
+nav > .drop-down {
+  border-top: 1px solid rgba(200, 200, 200, 0.8);
+  padding: 10px; }
+
 /*# sourceMappingURL=nav.css.map */
