@@ -25,7 +25,7 @@
             display: inline-block;
         }
 
-        body.loaded > #splash{
+        body.ready > #splash{
             display: none;
         }
 
@@ -37,7 +37,7 @@
 
 <body ng-app="flipper"
       ng-controller="AppController"
-      ng-class="{'loaded' : app.loaded}">
+      ng-class="{'ready' : app.ready}">
     <div id="splash">
         <h1>flipper</h1>
         <div class="loader">
