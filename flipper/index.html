@@ -29,8 +29,10 @@
     </style>
 </head>
 
-<body>
-<div id="splash">
+<body ng-app="flipper"
+      ng-controller="AppController">
+<div id="splash"
+     ng-show="!app.loaded" >
     <h1>flipper</h1>
     <div class="loader">
         <svg
@@ -47,9 +49,7 @@
         </svg>
     </div>
 
-    <div class="app"
-         ng-app="flipper"
-         ng-include="app.html"> </div>
+    <div ng-include="app.html"> </div>
 
     <link rel="stylesheet" href="css/app.css">
 

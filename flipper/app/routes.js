@@ -1,8 +1,7 @@
 (function () {
   "use strict"
 
-  Flipper.app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when("", "/book/nglarily");
+  Flipper.app.config(function ($stateProvider) {
      Flipper.pages.forEach(function(page){
        $stateProvider
            .state(page.name, {
