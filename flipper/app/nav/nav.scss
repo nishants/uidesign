@@ -3,8 +3,12 @@ $themeColor:  #2D3E50;
 .navigation-bar{
   height: 60px;
   width: 100%;
+  line-height: 50px;
+
   background-color: $themeColor;
   color: rgba(200,200,200,0.95);
+
+  padding: 5px;
 
   .logo, .call-us{
     float: left;
