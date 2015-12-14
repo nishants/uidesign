@@ -1,6 +1,6 @@
 $themeColor:  #2D3E50;
-$topBarHeight: 60px;
-$topBarLineHeight: 50px;
+$topBarHeight: 50px;
+$topBarLineHeight: 45px;
 
 .navigation-bar, .navigation-menu{
   font-size: 20px;
@@ -15,14 +15,16 @@ $topBarLineHeight: 50px;
 
   text-align: right;
 
-  .logo-and-call{
+  .logo{
     float: left;
+    padding-left: 10px;
   }
-
-  .logo, .call-us{
-    padding-left: 5px;
+  .call-us, .show-menu{
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 25px;
   }
-
   .search{
     display: inline-block;
     background-color: transparent;
@@ -43,11 +45,6 @@ $topBarLineHeight: 50px;
   .search.active{
     input{background-color: white;}
     outline: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .show-menu{
-    width: 50px;
-    text-align: center;
   }
 }
 

@@ -1,12 +1,8 @@
 <div class="navigation-bar">
-    <div class="logo-and-call">
-        <span class="logo">flipper</span>
-        <span class="call-us "><span class="glyphicon glyphicon-earphone"></span></span>
-    </div>
-    <div class="search-and-options">
-        <div  class="search" ng-class="{'active' : __activateSearch}"></span><input ng-click="__activateSearch = true" type="search"><span ng-click="__activateSearch = !__activateSearch" class="search-icon glyphicon glyphicon-search"></div>
-        <span class="show-menu" ng-click="__showMenu = !__showMenu"><span class="search-icon glyphicon glyphicon-align-justify"></span></span>
-    </div>
+    <span class="logo">flipper</span>
+    <span class="call-us "><span class="glyphicon glyphicon-earphone"></span></span>
+    <div  ng-hide="true" class="search" ng-class="{'active' : __activateSearch}"></span><input ng-click="__activateSearch = true" type="search"><span ng-click="__activateSearch = !__activateSearch" class="search-icon glyphicon glyphicon-search"></div>
+    <span class="show-menu" ng-click="__showMenu = !__showMenu"><span class="search-icon glyphicon glyphicon-align-justify"></span></span>
 </div>
 <div class="navigation-menu" ng-class="{'active' : __showMenu}">
     <div class="navigation-option">Ethnic Collection</div>
