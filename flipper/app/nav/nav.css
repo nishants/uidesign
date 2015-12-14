@@ -8,8 +8,9 @@
   background-color: #2D3E50;
   color: rgba(200, 200, 200, 0.95);
   text-align: right; }
+  .navigation-bar .logo-and-call {
+    float: left; }
   .navigation-bar .logo, .navigation-bar .call-us {
-    float: left;
     padding-left: 5px; }
   .navigation-bar .search {
     display: inline-block;
