@@ -1,0 +1,15 @@
+body {
+  min-height: 200vh;
+  text-align: center; }
+
+nav + .pad {
+  min-height: 60px; }
+
+a {
+  text-decoration: none; }
+
+a:hover, a:focus {
+  color: #23527c;
+  text-decoration: none; }
+
+/*# sourceMappingURL=app.css.map */
