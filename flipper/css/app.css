@@ -2,6 +2,12 @@ body {
   min-height: 200vh;
   text-align: center; }
 
+nav {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  min-width: 450px; }
+
 nav + .pad {
   min-height: 60px; }
 

@@ -3,11 +3,7 @@ $topBarHeight: 60px;
 $topBarLineHeight: 50px;
 
 .navigation-bar{
-  top : 0;
-  position: fixed;
-
   height: $topBarHeight;
-  width: 100%;
 
   font-size: 20px;
   line-height: $topBarLineHeight;
@@ -19,6 +15,7 @@ $topBarLineHeight: 50px;
 
   .logo, .call-us{
     float: left;
+    min-width: 50px;
   }
 
   .search{
@@ -47,5 +44,6 @@ $topBarLineHeight: 50px;
 
   .show-menu{
     float: right;
+    width: 50px;
   }
 }
