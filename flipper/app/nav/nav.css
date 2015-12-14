@@ -4,10 +4,11 @@
   line-height: 50px;
   background-color: #2D3E50;
   color: rgba(200, 200, 200, 0.95);
-  padding: 5px; }
+  padding: 5px;
+  text-align: right; }
   .navigation-bar .logo, .navigation-bar .call-us {
     float: left;
-    min-width: 50px; }
+    padding-left: 5px; }
   .navigation-bar .search {
     display: inline-block;
     background-color: transparent; }
@@ -25,8 +26,8 @@
     .navigation-bar .search.active span {
       background-color: #EEE; }
   .navigation-bar .show-menu {
-    float: right;
-    width: 50px; }
+    width: 50px;
+    text-align: center; }
 
 .navigation-menu.active {
   border: 1px solid rgba(255, 255, 255, 0.1);
