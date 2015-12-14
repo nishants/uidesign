@@ -1,6 +1,8 @@
 <a class="logo">flipper</a>
 
-<span class="search glyphicon glyphicon-search"></span>
+<span class="search glyphicon glyphicon-search" ng-click="__showSearch = !__showSearch"></span>
+<input class="search-key fade"ng-click="__showSearch = !__showSearch" ng-class="{'fade-out': !__showSearch}">
+
 <span class="settings glyphicon glyphicon-list" ng-click="__dropDown = !__dropDown"></span>
 <div class="drop-down" ng-class="{'collapse': !__dropDown}">
 </div>

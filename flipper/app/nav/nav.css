@@ -1,6 +1,6 @@
 nav {
   background-color: #89DEB2;
-  padding: 5px;
+  padding: 5px 10px 5px 10px;
   position: fixed;
   top: 0px;
   z-index: 5;
@@ -22,6 +22,22 @@ nav > .search {
   font-size: 20px;
   padding-left: 5px; }
 
+nav > .search-key {
+  line-height: 50px;
+  font-size: 25px;
+  color: #89DEB2;
+  padding-left: 10px; }
+
+nav > .search-key.fade-out {
+  opacity: 0 !important; }
+
+nav > .search-key.fade {
+  opacity: 1;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1); }
+
 nav > .logo {
   font-size: 30px;
   line-height: 50px;
@@ -36,10 +52,12 @@ nav > .logo {
 .drop-down.collapse {
   height: 0px !important;
   overflow: hidden !important;
-  opacity: 0; }
+  opacity: 0;
+  padding: 0; }
 
 nav > .drop-down {
   border-top: 1px solid #d6deda;
-  padding: 10px; }
+  padding: 10px;
+  margin: 5px 0 0; }
 
 /*# sourceMappingURL=nav.css.map */
