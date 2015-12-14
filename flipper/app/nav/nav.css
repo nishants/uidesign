@@ -1,10 +1,12 @@
-.navigation-bar {
-  height: 60px;
+.navigation-bar, .navigation-menu {
   font-size: 20px;
   line-height: 50px;
+  padding: 5px; }
+
+.navigation-bar {
+  height: 60px;
   background-color: #2D3E50;
   color: rgba(200, 200, 200, 0.95);
-  padding: 5px;
   text-align: right; }
   .navigation-bar .logo, .navigation-bar .call-us {
     float: left;
@@ -29,9 +31,17 @@
     width: 50px;
     text-align: center; }
 
+.navigation-menu {
+  text-align: right;
+  padding-right: 15px;
+  color: #C1C2C3;
+  background-color: #2D3E50;
+  height: 0px;
+  overflow: hidden; }
+
 .navigation-menu.active {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: #2D3E50;
-  height: 300px; }
+  height: auto;
+  overflow: auto; }
 
 /*# sourceMappingURL=nav.css.map */
