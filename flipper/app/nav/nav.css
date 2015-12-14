@@ -1,4 +1,6 @@
 .navigation-bar {
+  top: 0;
+  position: fixed;
   height: 60px;
   width: 100%;
   font-size: 20px;
@@ -9,7 +11,19 @@
   .navigation-bar .logo, .navigation-bar .call-us {
     float: left; }
   .navigation-bar .search {
-    display: inline-block; }
+    display: inline-block;
+    background-color: white; }
+    .navigation-bar .search input, .navigation-bar .search span {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background-color: transparent;
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 50px;
+      line-height: 50px; }
+    .navigation-bar .search span {
+      background: #EEE; }
   .navigation-bar .show-menu {
     float: right; }
 
