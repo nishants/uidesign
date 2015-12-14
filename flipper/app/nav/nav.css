@@ -12,7 +12,7 @@
     float: left; }
   .navigation-bar .search {
     display: inline-block;
-    background-color: white; }
+    background-color: transparent; }
     .navigation-bar .search input, .navigation-bar .search span {
       border: none;
       outline: none;
@@ -22,8 +22,10 @@
       padding-right: 10px;
       height: 50px;
       line-height: 50px; }
-    .navigation-bar .search span {
-      background: #EEE; }
+  .navigation-bar .search.active {
+    background-color: white; }
+    .navigation-bar .search.active span {
+      background-color: #EEE; }
   .navigation-bar .show-menu {
     float: right; }
 

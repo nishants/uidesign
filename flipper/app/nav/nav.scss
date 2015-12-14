@@ -23,8 +23,7 @@ $topBarLineHeight: 50px;
 
   .search{
     display: inline-block;
-    background-color: white;
-
+    background-color: transparent;
 
     input, span{
       border: none;
@@ -37,8 +36,12 @@ $topBarLineHeight: 50px;
       height: $topBarLineHeight ;
       line-height: $topBarLineHeight ;
     }
+  }
+
+  .search.active{
+    background-color: white;
     span{
-      background: #EEE;
+      background-color: #EEE;
     }
   }
 
