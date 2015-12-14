@@ -7,6 +7,9 @@ nav {
   width: 100%;
 }
 
+nav + .pad{
+  height: 50px;
+}
 nav > *{
   margin: 0;
   color: #F2F3F2;
