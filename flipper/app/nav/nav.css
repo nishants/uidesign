@@ -28,4 +28,9 @@
     float: right;
     width: 50px; }
 
+.navigation-menu.active {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #2D3E50;
+  height: 300px; }
+
 /*# sourceMappingURL=nav.css.map */

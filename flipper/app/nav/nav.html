@@ -2,6 +2,6 @@
     <span class="logo">flipper</span>
     <span class="call-us "><span class="glyphicon glyphicon-earphone"></span></span>
     <div  class="search" ng-class="{'active' : __activateSearch}"></span><input ng-click="__activateSearch = true" type="search"><span ng-click="__activateSearch = !__activateSearch" class="search-icon glyphicon glyphicon-search"></div>
-    <span class="show-menu"><span class="search-icon glyphicon glyphicon-align-justify"></span></span>
+    <span class="show-menu" ng-click="__showMenu = !__showMenu"><span class="search-icon glyphicon glyphicon-align-justify"></span></span>
 </div>
-<div class="navigation-menu"></div>
+<div class="navigation-menu" ng-class="{'active' : __showMenu}"></div>

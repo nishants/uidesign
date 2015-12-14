@@ -47,3 +47,9 @@ $topBarLineHeight: 50px;
     width: 50px;
   }
 }
+
+.navigation-menu.active{
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: $themeColor;
+  height: 300px;
+}
