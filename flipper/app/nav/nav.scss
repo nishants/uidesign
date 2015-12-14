@@ -37,10 +37,8 @@ $topBarLineHeight: 50px;
   }
 
   .search.active{
-    background-color: white;
-    span{
-      background-color: #EEE;
-    }
+    input{background-color: white;}
+    outline: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .show-menu{

@@ -22,9 +22,9 @@
       height: 50px;
       line-height: 50px; }
   .navigation-bar .search.active {
-    background-color: white; }
-    .navigation-bar .search.active span {
-      background-color: #EEE; }
+    outline: 1px solid rgba(255, 255, 255, 0.1); }
+    .navigation-bar .search.active input {
+      background-color: white; }
   .navigation-bar .show-menu {
     width: 50px;
     text-align: center; }
