@@ -405,6 +405,21 @@
         };
     }])
 
+    app.directive('swipe', function () {
+        return {
+            scope:false,
+            transclude: false,
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                $( "element" ).on( "swipe", swipeHandler );
+
+                function swipeHandler( event ){
+                    scope.$eval(attr.swipe);
+                    alert("swiped");
+                }
+            }
+        }
+    });
     app.directive('slide', function ($timeout) {
         return {
             scope:false,

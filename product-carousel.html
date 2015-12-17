@@ -40,7 +40,8 @@
     <div class="card"
          ng-init="carousel[0].__showIndex = 1">
 
-        <div class="carousel" >
+        <div class="carousel"
+             swipe="carousel[0].__showIndex = (carousel[0].__showIndex + 1) % carousel[0].images.length">
             <img
                   class="slide"
                   style="width:300px; height: 300px;"
@@ -58,8 +59,6 @@
                     ng-click="carousel[0].__showIndex = $index +1">
 
         </div>
-
     </div>
-
 
 </div>
