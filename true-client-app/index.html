@@ -12,9 +12,12 @@
 
 <p style="color: {{compressedCorrectly ? 'green': 'red'}}">
     Result : {{compressedCorrectly ? "Passed" : "Failed"}}
+     {{compressedCorrectly ? "" : "Expected        : " + $scope.expected}}
+     {{compressedCorrectly ? "" : "Decompressed    : "    + decompressed}}
 </p>
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+<script src="lz-string.js"></script>
 <script src="ng-client-app.js"></script>
 <script>
     var test = angular.module("testNgApp", ["ngClientApp"]);
