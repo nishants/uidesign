@@ -414,8 +414,8 @@
                 $( "element" ).on( "swipe", swipeHandler );
 
                 function swipeHandler( event ){
-                    scope.$eval(attr.swipe);
                     alert("swiped");
+                    scope.$eval(attr.swipe);
                 }
             }
         }
