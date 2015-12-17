@@ -5,10 +5,10 @@
     return {
       html: null,
       load: function(){
-        return LZString.decompress(this.html) ;
+        return LZString.decompressFromUTF16(this.html) ;
       },
       update: function(html){
-        this.html = LZString.compress(html);;
+        this.html = LZString.compressToUTF16(html);;
       }
     };
   });
