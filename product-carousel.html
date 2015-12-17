@@ -35,25 +35,24 @@
 
 
     <div class="card"
-         ng-repeat="slide in carousel"
-         ng-init="slide.__showIndex = 1">
+         ng-init="carousel[0].__showIndex = 1">
 
         <div class="carousel" >
             <img
                   class="slide"
                   style="width:300px; height: 300px;"
-                  ng-repeat="image in slide.images"
+                  ng-repeat="image in carousel[0].images"
                   ng-src="{{'rob-the-robe/carousel/carousel-' + ($index+1) + '.jpg'}}"
-                  ng-class="slide.__showIndex - 1 == $index ? '' : 'not-active'">
+                  ng-class="carousel[0].__showIndex - 1 == $index ? '' : 'not-active'">
         </div>
         <div class="slide-options">
             <img
                     class="slide-preview"
                     style="width:50px; height: 50px;"
-                    ng-repeat="image in slide.images"
+                    ng-repeat="image in carousel[0].images"
                     ng-src="{{'rob-the-robe/carousel/carousel-' + ($index+1) + '.jpg'}}"
-                    ng-class="slide.__showIndex - 1 == $index ? '' : 'disable-preview'"
-                    ng-click="slide.__showIndex = $index +1">
+                    ng-class="carousel[0].__showIndex - 1 == $index ? '' : 'disable-preview'"
+                    ng-click="carousel[0].__showIndex = $index +1">
 
         </div>
 
