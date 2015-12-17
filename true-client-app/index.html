@@ -10,10 +10,12 @@
 <body ng-app="testNgApp"
       ng-controller="ShouldCompressAndDecompressAnHtml">
 
-<p style="color: {{compressedCorrectly ? 'green': 'red'}}">
-    Result : {{compressedCorrectly ? "Passed" : "Failed"}}
-     {{compressedCorrectly ? "" : "Expected        : " + $scope.expected}}
-     {{compressedCorrectly ? "" : "Decompressed    : "    + decompressed}}
+<p style="color: {{result.ok ? 'green': 'red'}}">
+    Result : {{result.ok ? "Passed" : "Failed"}}
+    <br>
+    {{result.ok ? "" : "Expected        : "     + result.expected}}
+    <br>
+     {{result.ok ? "" : "Decompressed    : "     + result.actual}}
 </p>
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
@@ -28,7 +30,11 @@
             $scope.decompressed = ngClientApp.load();
             $scope.expected = response.data;
 
-            $scope.compressedCorrectly = $scope.expected.endsWith($scope.decompressed);
+            $scope.result = {
+                ok: $scope.expected.endsWith($scope.decompressed),
+                expected: response.data,
+                actual  : $scope.decompressed,
+            }
         });
 
     });
