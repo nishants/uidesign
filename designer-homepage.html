@@ -157,6 +157,10 @@
         .current.section-link{
             background-color: rgba(200,200,200, 0.3);
         }
+        .page.scroll-area{
+            height: 300px;
+            overflow: scroll;
+        }
 
     </style>
 </head>
@@ -186,11 +190,11 @@
              ng-include="'rob-the-robe/home.html'"
              style="opacity: {{opacityAt(app.home)}};"></section>
 
-    <section class="page two white"
+    <section class="page two white scroll-area"
              ng-controller="ProductCarousel"
              ng-include="'product-carousel.html'"></section>
 
-    <section id="page-three" class="page three orange"
+    <section id="page-three" class="scroll-area page three orange"
              scroll-listener="app.pageThree.scroll"
              ng-include="'html-with-content.html'"
              style="opacity: {{opacityAt(app.pageThree)}};"></section>
