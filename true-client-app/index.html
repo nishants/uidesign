@@ -20,21 +20,24 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 <script src="lz-string.js"></script>
+<script src="angular-local-storage.js"></script>
 <script src="ng-client-app.js"></script>
 <script>
     var test = angular.module("testNgApp", ["ngClientApp"]);
-    test.controller("ShouldCompressAndDecompressAnHtml", function($scope, $http, ngClientApp){
+    test.controller("ShouldCompressAndDecompressAnHtml", function($scope, $http, ngClientApp, localStorageService){
         $http.get("sample-storage-string/01-js-css-html.html").then(function(response){
+
+            localStorageService.clearAll();
+            $scope.expected = response.data;
 
             ngClientApp.update(response.data);
             $scope.decompressed = ngClientApp.load();
-            $scope.expected = response.data;
 
             $scope.result = {
-                ok: $scope.expected.endsWith($scope.decompressed),
+                ok: $scope.expected.length == $scope.decompressed.length && $scope.expected.endsWith($scope.decompressed),
                 expected: response.data,
                 actual  : $scope.decompressed,
-            }
+            };
         });
 
     });
