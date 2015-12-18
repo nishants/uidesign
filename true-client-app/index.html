@@ -10,13 +10,14 @@
 <body ng-app="testNgApp"
       ng-controller="ShouldCompressAndDecompressAnHtml">
 
-<p style="color: {{result.ok ? 'green': 'red'}}">
+<div style="color: {{result.ok ? 'green': 'red'}}">
     Result : {{result.ok ? "Passed" : "Failed"}}
-    <br>
-    {{result.ok ? "" : "Expected        : "     + result.expected}}
-    <br>
-     {{result.ok ? "" : "Decompressed    : "     + result.actual}}
-</p>
+
+    <p ng-if="exists" ng-bind="'.exits() must return false, when loaded for first time.'"></p>
+    <p ng-bind='result.ok ? "" : "Expected        : "     + result.expected'></p>
+    <p ng-bind='result.ok ? "" : "Decompressed    : "     + result.actual'></p>
+
+</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 <script src="lz-string.js"></script>
@@ -28,13 +29,15 @@
         $http.get("sample-storage-string/01-js-css-html.html").then(function(response){
 
             localStorageService.clearAll();
+            $scope.exists = ngClientApp.exists();
+
             $scope.expected = response.data;
 
             ngClientApp.update(response.data);
             $scope.decompressed = ngClientApp.load();
 
             $scope.result = {
-                ok: $scope.expected.length == $scope.decompressed.length && $scope.expected.endsWith($scope.decompressed),
+                ok: !$scope.exists && $scope.expected.length == $scope.decompressed.length && $scope.expected.endsWith($scope.decompressed),
                 expected: response.data,
                 actual  : $scope.decompressed,
             };

@@ -12,6 +12,9 @@
       $log.error("LocalStorageModule not found.");
     }
     return {
+      exists : function(){
+        return !!localStorageService.get("client-data");
+      },
       load: function(){
         return LZString.decompressFromUTF16(localStorageService.get("client-data")) ;
       },
