@@ -8,6 +8,9 @@ $topBarLineHeight: 45px;
   padding: 5px;
 }
 .navigation-bar{
+  position: relative;
+  z-index: 5;
+
   height: $topBarHeight;
 
   background-color: $themeColor;
@@ -54,13 +57,18 @@ $topBarLineHeight: 45px;
   color: #C1C2C3;
   background-color: $themeColor;
 
-  height: 0px;
+  transform: translateY(-200px);
   overflow: hidden;
+
+  -webkit-transition:  transform  50ms linear;
+  -moz-transition:     transform  50ms linear;
+  -o-transition:       transform  50ms linear;
+  transition:          transform  50ms linear;
 }
 
 .navigation-menu.active{
   border: 1px solid rgba(255, 255, 255, 0.1);
   height: auto;
   overflow: auto;
-
+  transform: translateY(0px);
 }

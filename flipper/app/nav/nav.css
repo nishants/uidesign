@@ -4,6 +4,8 @@
   padding: 5px; }
 
 .navigation-bar {
+  position: relative;
+  z-index: 5;
   height: 50px;
   background-color: #2D3E50;
   color: rgba(200, 200, 200, 0.95);
@@ -38,12 +40,17 @@
   padding-right: 15px;
   color: #C1C2C3;
   background-color: #2D3E50;
-  height: 0px;
-  overflow: hidden; }
+  transform: translateY(-200px);
+  overflow: hidden;
+  -webkit-transition: transform  50ms linear;
+  -moz-transition: transform  50ms linear;
+  -o-transition: transform  50ms linear;
+  transition: transform  50ms linear; }
 
 .navigation-menu.active {
   border: 1px solid rgba(255, 255, 255, 0.1);
   height: auto;
-  overflow: auto; }
+  overflow: auto;
+  transform: translateY(0px); }
 
 /*# sourceMappingURL=nav.css.map */
