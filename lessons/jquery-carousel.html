@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Carousel With Jquery</title>
+    <script src="../lib/jquery-2.1.4.min.js"></script>
+    <style>
+        body{
+            width: 100vw !important;
+        }
+        .carousel{
+            width : 500px;
+            height: 500px;
+            overflow: hidden;
+        }
+        .carousel > ul {
+            -webkit-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -moz-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -o-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880); /* custom */
+        }
+
+        .carousel > ul {
+            list-style-type: none;
+            margin: 0;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-padding-start: 0;
+            display: table-row;
+        }
+
+        .carousel > ul > li, .carousel > ul > li > img{
+            width: 50%;
+            height: 500px;
+            display: table-cell;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <ul>
+           <li><img src="../images/carousel/carousel-1.jpg"></li>
+           <li><img src="../images/carousel/carousel-2.jpg"></li>
+           <li><img src="../images/carousel/carousel-3.jpg"></li>
+        </ul>
+    </div>
+
+    <button onclick="carousel.next()">Next</button>
+    <button onclick="carousel.previous()">Previous</button>
+    <script>
+        var transform = function(element, px){
+            element.style.transform = "translate(" + px + "px)"
+        };
+        var carousel = $($(".carousel")[0]);
+
+        var Carousel = function($carousel){
+            this.$viewArea   = $carousel;
+            this.$slider     = $carousel.find("ul")[0];
+            this.$slides     = this.$slider.getElementsByTagName("li");
+            this.__index     = 0;
+            var self = this;
+            var touchStartAt = 0, movedTo = 0;
+            $(document).on('click touchstart', ".carousel", function(e){
+                if(e.originalEvent.touches){
+                    touchStartAt = e.originalEvent.touches[0].pageX;
+                };
+            });
+
+            $(document).on('click touchmove', ".carousel", function(e){
+                self.drag(movedTo - touchStartAt);
+            });
+
+            $(document).on('click touchend', ".carousel", function(e){
+                self.adjust();
+            });
+        };
+
+        Carousel.prototype.next     = function(){
+            this.__index ++;
+            transform(this.$slider, (this.__index * -500));
+        };
+
+        Carousel.prototype.previous = function(){
+            this.__index --;
+            transform(this.$slider, (this.__index * -500));
+        };
+
+        Carousel.prototype.drag     = function(byPixels){
+            transform(this.$slider, (this.__index * -500 ) + byPixels);
+        };
+
+        Carousel.prototype.hasNext  = function(){};
+        Carousel.prototype.hasLast  = function(){};
+        Carousel.prototype.adjust   = function(){};
+
+        window.carousel = new Carousel(carousel);
+
+    </script>
+</body>
+</html>
