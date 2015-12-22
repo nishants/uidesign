@@ -3,11 +3,11 @@
 
   Flipper.app.config(["$stateProvider", function ($stateProvider) {
     $stateProvider.state("home", {
-      url: "/",
+      url: "",
       templateUrl:"app/dress/home.html",
-    }).state("dress", {
-      url: "/dress",
-      template:"<h1>transitioned ? </h1>",
+    }).state("upload", {
+      url: "/upload",
+      templateUrl:"app/upload/upload.html",
     });
   }]);
 
