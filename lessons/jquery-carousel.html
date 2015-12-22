@@ -59,9 +59,12 @@
             $carousel = $($(".carousel")[0]),
 
             Carousel = function ($carousel) {
-                this.$slider = $($carousel.find("ul"));
-                this.$slides = this.$slider.find("li");
-                this.__index = 0;
+                this.$slider  = $($carousel.find("ul"));
+                this.$slides  = this.$slider.find("li");
+                this.__index  = 0;
+                this.__offset = 0;
+                this.__step   = 500;
+
                 var self = this;
                 var touchStartAt = 0, movedTo = 0;
                 $(document).on('click touchstart', ".carousel", function (e) {
@@ -78,21 +81,23 @@
 
         Carousel.prototype.next     = function(){
             this.__index ++;
-            transform(this.$slider, (this.__index * -500));
+            this.__offset = (this.__index * -500);
+            transform(this.$slider, this.__offset);
         };
 
         Carousel.prototype.previous = function(){
             this.__index --;
-            transform(this.$slider, (this.__index * -500));
+            this.__offset = (this.__index * -500);
+            transform(this.$slider, this.__offset);
         };
 
         Carousel.prototype.drag     = function(byPixels){
             transform(this.$slider, (this.__index * -500 ) + byPixels);
         };
 
+        Carousel.prototype.adjust   = function(){};
         Carousel.prototype.hasNext  = function(){};
         Carousel.prototype.hasLast  = function(){};
-        Carousel.prototype.adjust   = function(){};
 
         window.carousel = new Carousel($carousel);
 
