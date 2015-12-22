@@ -52,32 +52,29 @@
     <button onclick="carousel.next()">Next</button>
     <button onclick="carousel.previous()">Previous</button>
     <script>
-        var transform = function(element, px){
-            element.style.transform = "translate(" + px + "px)"
-        };
-        var carousel = $($(".carousel")[0]);
+        var transform = function ($e, px) {
+                    $e.css("transform", "translate(" + px + "px)");
+            },
 
-        var Carousel = function($carousel){
-            this.$viewArea   = $carousel;
-            this.$slider     = $carousel.find("ul")[0];
-            this.$slides     = this.$slider.getElementsByTagName("li");
-            this.__index     = 0;
-            var self = this;
-            var touchStartAt = 0, movedTo = 0;
-            $(document).on('click touchstart', ".carousel", function(e){
-                if(e.originalEvent.touches){
-                    touchStartAt = e.originalEvent.touches[0].pageX;
-                };
-            });
+            $carousel = $($(".carousel")[0]),
 
-            $(document).on('click touchmove', ".carousel", function(e){
-                self.drag(movedTo - touchStartAt);
-            });
+            Carousel = function ($carousel) {
+                this.$slider = $($carousel.find("ul"));
+                this.$slides = this.$slider.find("li");
+                this.__index = 0;
+                var self = this;
+                var touchStartAt = 0, movedTo = 0;
+                $(document).on('click touchstart', ".carousel", function (e) {
+                    touchStartAt = e.originalEvent.touches[0].pageX
+                });
+                $(document).on('click touchmove', ".carousel", function (e) {
+                    self.drag(movedTo - touchStartAt);
+                });
 
-            $(document).on('click touchend', ".carousel", function(e){
-                self.adjust();
-            });
-        };
+                $(document).on('click touchend', ".carousel", function (e) {
+                    self.adjust();
+                });
+            };
 
         Carousel.prototype.next     = function(){
             this.__index ++;
@@ -97,7 +94,7 @@
         Carousel.prototype.hasLast  = function(){};
         Carousel.prototype.adjust   = function(){};
 
-        window.carousel = new Carousel(carousel);
+        window.carousel = new Carousel($carousel);
 
     </script>
 </body>
