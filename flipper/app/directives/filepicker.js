@@ -4,9 +4,11 @@
   window.Flipper.app.directive("picImages", [function(){
     var pickFiles = function(onSuccess, onFailure){
       filepicker.pick({
+            cropRatio: 4/3,
+            conversions: ['crop', 'rotate'],
             mimetype: 'image/*',
             container: 'window',
-            services: ['COMPUTER']
+            services: ['COMPUTER', 'CONVERT']
           },
           function(upload){
             onSuccess(upload);
