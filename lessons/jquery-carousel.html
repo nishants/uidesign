@@ -3,14 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Carousel With Jquery</title>
+    <style>
+        .carousel{
+            width : 500px;
+            height: 500px;
+            overflow: hidden;
+        }
+        .carousel > ul {
+            list-style-type: none;
+            margin: 0;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-padding-start: 0;
+            display: table-row;
+            transform: translateX(-500px);
+        }
+
+        .carousel > ul > li, .carousel > ul > li > img{
+            width: 500px;
+            height: 500px;
+            display: table-cell;
+        }
+
+    </style>
 </head>
 <body>
     <div class="carousel">
         <ul>
-           <li><!--slide--></li>
-           <li><!--slide--></li>
-           <li><!--slide--></li>
-           <li><!--slide--></li>
+           <li><img src="../images/carousel/carousel-1.jpg"></li>
+           <li><img src="../images/carousel/carousel-2.jpg"></li>
+           <li><img src="../images/carousel/carousel-3.jpg"></li>
         </ul>
     </div>
 
