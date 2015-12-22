@@ -1,2 +1,11 @@
 <h1>Upload</h1>
-<button class="pic-images" ng-click="pickFiles()"></button>
+
+<button class="pic-images"
+        ng-click="pickFiles()"
+        on-upload="uploadForm.onUpload">Upload</button>
+
+<h3>Last upload : </h3>
+name: {{uploadForm.lastUpload.name}}
+<img ng-src="{{uploadForm.lastUpload.url}}" style="width: 300px">
+size: {{uploadForm.lastUpload.size}}
+id: {{uploadForm.lastUpload.id}}

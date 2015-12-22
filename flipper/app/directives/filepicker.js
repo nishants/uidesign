@@ -2,29 +2,41 @@
   "use strict"
 
   window.Flipper.app.directive("picImages", [function(){
+    var pickFiles = function(onSuccess, onFailure){
+      filepicker.pick({
+            mimetype: 'image/*',
+            container: 'window',
+            services: ['COMPUTER']
+          },
+          function(upload){
+            onSuccess(upload);
+          },
+          function(error){
+            onFailure(error.toString());
+          }
+      )
+    }
     return {
       scope: false,
       transclude: false,
       restrict: "C",
-      link: function(scope, element, attrs){
+      link: function (scope, element, attrs) {
+        var expression = attrs.onUpload.split("."), callback = scope;
+        for(var i =0; i<expression.length; i++){
+          callback = callback[expression[i]];
+        }
 
+        var onUpload = function (file) {
+              callback(file);
+              scope.$apply();
+            },
+            onError = function (error) {
+              console.error(error);
+            };
 
-        scope.pickFiles = function(){
-          filepicker.pick(
-              {
-                mimetype: 'image/*',
-                container: 'window',
-                services: ['COMPUTER']
-              },
-              function(Blob){
-
-                console.log(JSON.stringify(Blob));
-              },
-              function(FPError){
-                console.log(FPError.toString());
-              }
-          )
-        };
+        element.bind("click", function(){
+          pickFiles(onUpload, onError);
+        })
       }
     };
   }]);

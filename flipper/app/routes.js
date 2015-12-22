@@ -8,6 +8,7 @@
     }).state("upload", {
       url: "/upload",
       templateUrl:"app/upload/upload.html",
+      controller: "UploadController"
     });
   }]);
 
