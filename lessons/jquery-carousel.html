@@ -6,12 +6,9 @@
     <title>Carousel With Jquery</title>
     <script src="../lib/jquery-2.1.4.min.js"></script>
     <style>
-        body{
-            width: 100vw !important;
-        }
         .carousel{
-            width : 500px;
-            height: 500px;
+            width : 300px;
+            height: 300px;
             overflow: hidden;
         }
         .carousel > ul {
@@ -24,18 +21,17 @@
         .carousel > ul {
             list-style-type: none;
             margin: 0;
-            -webkit-margin-before: 0;
-            -webkit-margin-after: 0;
-            -webkit-margin-start: 0px;
-            -webkit-margin-end: 0px;
-            -webkit-padding-start: 0;
             display: table-row;
         }
 
         .carousel > ul > li, .carousel > ul > li > img{
-            width: 500px;
-            height: 500px;
+            /* carousel items have same width and height as the carousel window*/
+            width: 300px;
+            height: 300px;
             display: table-cell;
+        }
+        button{
+            padding: 20px;
         }
 
     </style>
@@ -52,41 +48,28 @@
     <button onclick="carousel.next()"       >Next</button>
     <button onclick="carousel.previous()"   >Previous</button>
     <script>
-        var transform = function ($e, px) {
-                    $e.css("transform", "translate(" + px + "px)");
-            },
-
-            $carousel = $($(".carousel")[0]),
-
-            Carousel = function ($carousel) {
+        var Carousel = function ($carousel) {
                 this.$slider  = $($carousel.find("ul"));
-                this.$slides  = this.$slider.find("li");
                 this.__index  = 0;
-                this.__offset = 0;
                 this.__step   = $carousel.width();
             };
 
         Carousel.prototype.next     = function(){
             this.__index ++;
-            this.__offset = (this.__index * -this.__step);
-            transform(this.$slider, this.__offset);
+            this.rePosition();
         };
 
         Carousel.prototype.previous = function(){
             this.__index --;
-            this.__offset = (this.__index * -this.__step);
-            transform(this.$slider, this.__offset);
+            this.rePosition();
         };
 
-        Carousel.prototype.hasNext      = function(){
-            return true;
-        };
-        Carousel.prototype.hasPrevious  = function(){
-            return this.__index != 0;;
+        Carousel.prototype.rePosition = function(){
+            var offset = (this.__index * - this.__step);
+            this.$slider.css("transform", "translate(" + offset + "px)");
         };
 
-        window.carousel  = new Carousel($($(".carousel")[0]));
-        window.carousel2 = new Carousel($($(".carousel")[1]));
+        window.carousel  = new Carousel($(".carousel").first());
 
     </script>
 </body>
