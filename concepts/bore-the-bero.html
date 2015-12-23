@@ -33,6 +33,12 @@
 
 
         .bar > .open {
+            background-image:    url("../images/door-knobs/graphic knob.jpg");
+            background-size:     cover;                      /* <------ */
+            background-repeat:   no-repeat;
+            background-position: center center;
+        }
+        .bar > .open {
             background-color: red;
             border-radius: 50%;
             outline: none;
@@ -48,7 +54,7 @@
     <nav class="close">
         <ul class="bar">
             <li class="rob">Robe</li>
-            <li class="open fa fa-bars">open</li>
+            <li class="open"></li>
             <li class="robes">Robes</li>
         </ul>
     </nav>
