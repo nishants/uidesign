@@ -8,21 +8,27 @@
     <style>
         #top-bar, #side-left-bar, #side-right-bar{
             position: absolute;
-            background-color: #4d8dff;
             text-align: center;
         }
         #side-left-bar, #side-right-bar{
-            min-height: calc(100vh - 60px);
             width:  50vw;
+        }
+        #side-left-bar > .header, #side-right-bar > .header {
+            line-height: 50px;
+            background-color: #fffbca;
         }
         #top-bar{
             height: 60px;
+            background-color: #4d8dff;
         }
-        #side-right-bar{
+        #side-right-bar > .content{
             background-color: #ff5e46;
+            min-height: calc(100vh - 60px - 50px);
         }
-        #side-left-bar{
+
+        #side-left-bar > .content{
             background-color: #33ffba;
+            min-height: calc(100vh - 60px - 50px);
         }
         .shutter.top{
             top: 0;
@@ -32,22 +38,63 @@
         .shutter.left, .shutter.right{
             top : 60px;
         }
+
+        .shutter.left > .header{
+            border-top-right-radius: 50px;
+        }
+        .shutter.right > .header{
+            border-top-left-radius: 50px;
+        }
+
         .shutter.left{
             left: 0;
         }
+
         .shutter.right{
             right: 0;
+        }
+
+        section{
+            padding-top: 60px;
+            text-align: center;
+        }
+
+        .close > .shutter.top{
+            transform: translateY(-70px);
+        }
+        .close > .shutter.left{
+            transform: translateX(-100vw);
+        }
+
+        .close > .shutter.right{
+            transform: translateX(100vw);
+        }
+
+        .shutter {
+            -webkit-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -moz-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -o-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880); /* custom */
         }
 
     </style>
 </head>
 
 <body >
-    <nav>
+    <nav class="close">
         <div id="top-bar"        class="shutter top"><h1>Top Bar</h1></div>
-        <div id="side-left-bar"  class="shutter left"></div>
-        <div id="side-right-bar" class="shutter right"></div>
+        <div id="side-left-bar"  class="shutter left">
+            <div class="header">Default Tab</div>
+            <div class="content"></div>
+        </div>
+        <div id="side-right-bar" class="shutter right">
+            <div class="header">Second Tab</div>
+            <div class="content"></div>
+        </div>
     </nav>
 
+    <section>
+        <div>Some page</div>
+    </section>
 </body>
 </html>
