@@ -11,6 +11,22 @@
             height: 300px;
             overflow: hidden;
         }
+
+        .carousel > ul {
+            list-style-type: none;
+            display: table-row;
+        }
+
+        .carousel > ul > li{
+            display: table-cell;
+        }
+
+        .carousel > ul > li > img{
+            /* carousel items have same width and height as the carousel window*/
+            width: 300px;
+            height: 300px;
+        }
+
         .carousel > ul {
             -webkit-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
             -moz-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
@@ -18,18 +34,6 @@
             transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880); /* custom */
         }
 
-        .carousel > ul {
-            list-style-type: none;
-            margin: 0;
-            display: table-row;
-        }
-
-        .carousel > ul > li, .carousel > ul > li > img{
-            /* carousel items have same width and height as the carousel window*/
-            width: 300px;
-            height: 300px;
-            display: table-cell;
-        }
         button{
             padding: 20px;
         }
@@ -49,7 +53,7 @@
     <button onclick="carousel.previous()"   >Previous</button>
     <script>
         var Carousel = function ($carousel) {
-                this.$slider  = $($carousel.find("ul"));
+                this.$slider  = $carousel.find("ul").first();
                 this.__index  = 0;
                 this.__step   = $carousel.width();
             };
