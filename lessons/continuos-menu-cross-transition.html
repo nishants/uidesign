@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Carousel With Jquery</title>
+    <script src="../lib/jquery-2.1.4.min.js"></script>
+    <style>
+        .menu{
+            margin: 200px;
+            height: 60px;
+            width: 60px;
+        }
+        .menu > .line{
+            border: 1px solid grey;
+            margin-bottom: 12px;
+        }
+        .menu > .line:last-child{
+            margin-bottom: 0;
+        }
+        .menu:hover > .line.three, .menu:hover > .line.two{
+            opacity: 0;
+        }
+        .menu:hover > .line.four{
+            /*transform: scaleX(1.414) translate(1px,-25px) rotate(-45deg);*/
+            transform: rotate(-45deg) translate(-1px,-21px);
+            width: 81px;
+        }
+        .menu:hover > .line.one{
+            /*transform: scaleX(1.414) translate(1px,25px) rotate(45deg);*/
+            transform: rotate(45deg) translate(15px,30px);
+            width: 81px;
+        }
+        .menu > .line {
+            -webkit-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -moz-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -o-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880); /* custom */
+        }
+    </style>
+</head>
+<body>
+    <div class="menu opened">
+        <div class="line one"></div>
+        <div class="line two"></div>
+        <div class="line three"></div>
+        <div class="line four"></div>
+    </div>
+
+</body>
+</html>
