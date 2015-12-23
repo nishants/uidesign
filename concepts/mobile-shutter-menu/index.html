@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <style>
+        #top-bar, #side-left-bar, #side-right-bar{
+            position: absolute;
+            background-color: #4d8dff;
+            text-align: center;
+        }
+        #side-left-bar, #side-right-bar{
+            min-height: calc(100vh - 60px);
+            width:  50vw;
+        }
+        #top-bar{
+            height: 60px;
+        }
+        #side-right-bar{
+            background-color: #ff5e46;
+        }
+        #side-left-bar{
+            background-color: #33ffba;
+        }
+        .shutter.top{
+            top: 0;
+            width: 100%;
+        }
+
+        .shutter.left, .shutter.right{
+            top : 60px;
+        }
+        .shutter.left{
+            left: 0;
+        }
+        .shutter.right{
+            right: 0;
+        }
+
+    </style>
+</head>
+
+<body >
+    <nav>
+        <div id="top-bar"        class="shutter top"><h1>Top Bar</h1></div>
+        <div id="side-left-bar"  class="shutter left"></div>
+        <div id="side-right-bar" class="shutter right"></div>
+    </nav>
+
+</body>
+</html>
