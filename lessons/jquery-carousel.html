@@ -49,6 +49,14 @@
         </ul>
     </div>
 
+    <div class="carousel">
+        <ul>
+           <li><img src="../images/carousel/carousel-1.jpg"></li>
+           <li><img src="../images/carousel/carousel-2.jpg"></li>
+           <li><img src="../images/carousel/carousel-3.jpg"></li>
+        </ul>
+    </div>
+
     <button onclick="carousel.next()">Next</button>
     <button onclick="carousel.previous()">Previous</button>
     <script>
@@ -67,16 +75,20 @@
 
                 var self = this;
                 var touchStartAt = 0;
-                $(document).on('click touchstart', ".carousel", function (e) {
-                    touchStartAt = e.originalEvent.touches[0].pageX
+                $carousel.on('click touchstart', function (e) {
+                    if(e.originalEvent.touches){//ignore tap
+                        touchStartAt = e.originalEvent.touches[0].pageX
+                    }
                 });
-                $(document).on('click touchmove', ".carousel", function (e) {
-                    var moveTo = e.originalEvent.touches[0].pageX;
-                    self.drag(moveTo - touchStartAt);
-                    touchStartAt = moveTo;
+                $carousel.on('click touchmove', function (e) {
+                    if(e.originalEvent.touches){//ignore tap
+                        var moveTo = e.originalEvent.touches[0].pageX;
+                        self.drag(moveTo - touchStartAt);
+                        touchStartAt = moveTo;
+                    }
                 });
 
-                $(document).on('click touchend', ".carousel", function (e) {
+                $carousel.on('click touchend', function (e) {
                     self.adjust();
                 });
             };
@@ -105,7 +117,8 @@
         Carousel.prototype.hasNext  = function(){};
         Carousel.prototype.hasLast  = function(){};
 
-        window.carousel = new Carousel($carousel);
+        window.carousel = new Carousel($($(".carousel")[0]));
+        window.carousel2 = new Carousel($($(".carousel")[1]));
 
     </script>
 </body>
