@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <script src="../../lib/jquery-2.1.4.min.js"></script>
 
     <style>
@@ -72,6 +73,15 @@
             transform: translateX(100vw);
         }
 
+        .menu-button{
+            position: absolute;
+            top: 0;
+            line-height: 60px;
+            z-index: 100;
+            right: 0;
+            margin: 5px;
+            font-size: 30px;
+        }
         .shutter {
             -webkit-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
             -moz-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
@@ -84,6 +94,7 @@
 
 <body >
     <nav class="close">
+        <span id="show-menu" class="menu-button show-menu fa fa-bars"></span>
         <div id="top-bar"        class="shutter top"><h1>Top Bar</h1></div>
         <div id="side-left-bar"  class="shutter left">
             <div class="header">Default Tab</div>
@@ -97,7 +108,6 @@
 
     <section>
         <div>Some page</div>
-        <button id="show-menu">Show Menu</button>
     </section>
 
     <script>
