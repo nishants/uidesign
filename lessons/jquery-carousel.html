@@ -66,12 +66,14 @@
                 this.__step   = 500;
 
                 var self = this;
-                var touchStartAt = 0, movedTo = 0;
+                var touchStartAt = 0;
                 $(document).on('click touchstart', ".carousel", function (e) {
                     touchStartAt = e.originalEvent.touches[0].pageX
                 });
                 $(document).on('click touchmove', ".carousel", function (e) {
-                    self.drag(movedTo - touchStartAt);
+                    var moveTo = e.originalEvent.touches[0].pageX;
+                    self.drag(moveTo - touchStartAt);
+                    touchStartAt = moveTo;
                 });
 
                 $(document).on('click touchend', ".carousel", function (e) {
@@ -92,10 +94,14 @@
         };
 
         Carousel.prototype.drag     = function(byPixels){
-            transform(this.$slider, (this.__index * -500 ) + byPixels);
+            this.__offset += byPixels;
+            transform(this.$slider, this.__offset);
         };
 
-        Carousel.prototype.adjust   = function(){};
+        Carousel.prototype.adjust   = function(){
+            this.__index = Math.abs(Math.ceil(this.__offset/this.__step));
+        };
+
         Carousel.prototype.hasNext  = function(){};
         Carousel.prototype.hasLast  = function(){};
 
