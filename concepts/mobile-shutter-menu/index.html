@@ -5,6 +5,8 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+
     <style>
         #top-bar, #side-left-bar, #side-right-bar{
             position: absolute;
@@ -95,6 +97,14 @@
 
     <section>
         <div>Some page</div>
+        <button id="show-menu">Show Menu</button>
     </section>
+
+    <script>
+        var nav = $("nav").first();
+        $("#show-menu").click(function(){
+            nav.hasClass("close") ? nav.removeClass("close") : nav.addClass("close");
+        });
+    </script>
 </body>
 </html>
