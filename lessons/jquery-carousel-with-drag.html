@@ -49,8 +49,16 @@
         </ul>
     </div>
 
-    <button onclick="carousel.next()"       >Next</button>
-    <button onclick="carousel.previous()"   >Previous</button>
+    <div class="carousel">
+        <ul>
+           <li><img src="../images/carousel/carousel-1.jpg"></li>
+           <li><img src="../images/carousel/carousel-2.jpg"></li>
+           <li><img src="../images/carousel/carousel-3.jpg"></li>
+        </ul>
+    </div>
+
+    <button onclick="carousel.next()">Next</button>
+    <button onclick="carousel.previous()">Previous</button>
     <script>
         var transform = function ($e, px) {
                     $e.css("transform", "translate(" + px + "px)");
@@ -63,27 +71,51 @@
                 this.$slides  = this.$slider.find("li");
                 this.__index  = 0;
                 this.__offset = 0;
-                this.__step   = $carousel.width();
+                this.__step   = 500;
+                var self = this;
+                var touchStartAt = 0;
+
+                $carousel.on('click touchstart', function (e) {
+                    if(e.originalEvent.touches){//ignore tap
+                        touchStartAt = e.originalEvent.touches[0].pageX
+                    }
+                });
+                $carousel.on('click touchmove', function (e) {
+                    if(e.originalEvent.touches){//ignore tap
+                        var moveTo = e.originalEvent.touches[0].pageX;
+                        self.drag(moveTo - touchStartAt);
+                        touchStartAt = moveTo;
+                    }
+                });
+
+                $carousel.on('click touchend', function (e) {
+                    self.adjust();
+                });
             };
 
         Carousel.prototype.next     = function(){
             this.__index ++;
-            this.__offset = (this.__index * -this.__step);
+            this.__offset = (this.__index * -500);
             transform(this.$slider, this.__offset);
         };
 
         Carousel.prototype.previous = function(){
             this.__index --;
-            this.__offset = (this.__index * -this.__step);
+            this.__offset = (this.__index * -500);
             transform(this.$slider, this.__offset);
         };
 
-        Carousel.prototype.hasNext      = function(){
-            return true;
+        Carousel.prototype.drag     = function(byPixels){
+            this.__offset += byPixels;
+            transform(this.$slider, this.__offset);
         };
-        Carousel.prototype.hasPrevious  = function(){
-            return this.__index != 0;;
+
+        Carousel.prototype.adjust   = function(){
+            this.__index = Math.abs(Math.ceil(this.__offset/this.__step));
         };
+
+        Carousel.prototype.hasNext  = function(){};
+        Carousel.prototype.hasLast  = function(){};
 
         window.carousel  = new Carousel($($(".carousel")[0]));
         window.carousel2 = new Carousel($($(".carousel")[1]));
