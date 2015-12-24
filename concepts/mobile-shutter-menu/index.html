@@ -19,6 +19,8 @@
         #top-bar{
             height: 60px;
             background-color: #4d8dff;
+            padding-left: 10px;
+            padding-right: 10px;
         }
         #side-right-bar > .content{
             background-color: #ff5e46;
@@ -74,16 +76,19 @@
             font-size: 45px;
         }
 
+        .icon{
+            font-size: 40px;
+            line-height: 40px;
+            text-shadow: 1px 1px 1px #ECE9E9;
+            color: #2F2F2E;
+        }
         .menu-button{
             position: fixed;
             top: 0;
             line-height: 60px;
             z-index: 100;
             right: 0;
-            margin: 5px;
-            font-size: 40px;
-            text-shadow: 1px 1px 1px #ECE9E9;
-            color: #2F2F2E;
+            margin: 10px 10px 5px 5px;
         }
         .shutter {
             z-index: 5;
@@ -110,17 +115,34 @@
         .contents{
             height: 300vh;
         }
+
+        #top-bar > .search{
+            position: fixed;
+            font-size: 35px;
+            left: 10px;
+            top: 0;
+            margin-top: 10px;
+        }
+        #top-bar > h1{
+            line-height: 60px;
+            margin: 0;
+        }
     </style>
 </head>
 
 <body>
     <div class="app">
-        <nav class="close">
+        <nav class="">
             <span class="menu-button">
-                <span class="show-menu fa fa-bars"></span>
-                <span class="close-menu fa fa-close"></span>
+                <span class="show-menu icon fa fa-bars "></span>
+                <span class="close-menu icon fa fa-close"></span>
             </span>
-            <div id="top-bar"        class="shutter top"><h1>Top Bar</h1></div>
+
+            <div id="top-bar"        class="shutter top">
+                <span class="search icon fa fa-search"></span>
+                <h1>Brand Logo</h1>
+            </div>
+
             <div id="side-left-bar"  class="shutter left active">
                 <div class="content"></div>
             </div>
