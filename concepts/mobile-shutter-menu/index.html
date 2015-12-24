@@ -16,10 +16,6 @@
         #side-left-bar, #side-right-bar{
             width:  95vw;
         }
-        #side-left-bar > .header > span, #side-right-bar > .header > span {
-            line-height: 50px;
-            background-color: #fffbca;
-        }
         #top-bar{
             height: 60px;
             background-color: #4d8dff;
@@ -40,19 +36,6 @@
 
         .shutter.left, .shutter.right{
             top : 60px;
-        }
-
-        .shutter.left > .header > span{
-            display: inline-block;
-            padding-right: 30px;
-            padding-left: 30px;
-            float: left;
-        }
-        .shutter.right > .header  > span{
-            display: inline-block;
-            padding-left: 30px;
-            padding-right: 30px;
-            float: right;
         }
 
         .shutter.left{
@@ -77,6 +60,18 @@
 
         .close > .shutter.right{
             transform: translateX(100vw);
+        }
+
+        .close > .menu-button > .close-menu{
+            display: none;
+        }
+
+        nav:not(.close) > .menu-button > .show-menu{
+            display: none;
+        }
+
+        .menu-button > .close-menu{
+            font-size: 45px;
         }
 
         .menu-button{
@@ -118,17 +113,18 @@
     </style>
 </head>
 
-<body >
+<body>
     <div class="app">
         <nav class="close">
-            <span id="show-menu" class="menu-button show-menu fa fa-bars"></span>
+            <span class="menu-button">
+                <span class="show-menu fa fa-bars"></span>
+                <span class="close-menu fa fa-close"></span>
+            </span>
             <div id="top-bar"        class="shutter top"><h1>Top Bar</h1></div>
             <div id="side-left-bar"  class="shutter left active">
-                <div class="header"><span>Settings</span></div>
                 <div class="content"></div>
             </div>
             <div id="side-right-bar" class="shutter right">
-                <div class="header"><span>About Us</span></div>
                 <div class="content"></div>
             </div>
         </nav>
@@ -139,7 +135,7 @@
 
     <script>
         var nav = $("nav").first();
-        $("#show-menu").click(function(){
+        $(".menu-button").click(function(){
             nav.hasClass("close") ? nav.removeClass("close") : nav.addClass("close");
         });
     </script>
