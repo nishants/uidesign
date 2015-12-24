@@ -39,7 +39,7 @@
                 <span class="search icon fa fa-search"></span>
                 <span class="search-input">
                     <input type="search">
-                    <span class="search-button fa fa-chevron-right">
+                    <span class="search-button fa fa-chevron-right"></span>
                 </span>
                 <h1 class="logo">Brand Logo</h1>
             </div>
@@ -57,10 +57,19 @@
     </div>
 
     <script>
-        var nav = $("nav").first();
+        var nav = $("nav").first(),
+            topBar = $("#top-bar").first(),
+            searchIcon = $(".search.icon").first();
+
         $(".menu-button").click(function(){
             nav.hasClass("close") ? nav.removeClass("close") : nav.addClass("close");
+            topBar.hasClass("show-search") ? topBar.removeClass("show-search") : "";
         });
+
+        searchIcon.click(function(){
+            topBar.hasClass("show-search") ? topBar.removeClass("show-search") : topBar.addClass("show-search");
+        });
+
     </script>
 </body>
 </html>
