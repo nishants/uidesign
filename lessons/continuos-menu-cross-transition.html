@@ -11,10 +11,7 @@
             height: 60px;
             width: 60px;
         }
-        .menu > .line{
-            border: 1px solid grey;
-            margin-bottom: 12px;
-        }
+
         .menu > .line:last-child{
             margin-bottom: 0;
         }
@@ -31,12 +28,6 @@
             transform: rotate(45deg) translate(15px,30px);
             width: 81px;
         }
-        .menu > .line {
-            -webkit-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
-            -moz-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
-            -o-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
-            transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880); /* custom */
-        }
 
         .marker{
             position: relative;
@@ -47,17 +38,67 @@
             opacity: 0.1;
         }
 
+        .line {
+            -webkit-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -moz-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -o-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880); /* custom */
+        }
+        .line{
+            border: 1px solid grey;
+            margin-bottom: 12px;
+        }
+        /*cross transformer */
+        .cross-transformer{
+            margin-bottom: 12px;
+        }
+        .cross-transformer > .line:first-child {
+            margin-bottom: 0;
+        }
+
+        .cross-transformer > .line:nth-child(2) {
+            border: 1px solid transparent;
+            margin-bottom: 0;
+        }
+
+        .cross > .cross-transformer > .line:first-child {
+            transform: rotate(-50deg);
+        }
+        .cross > .cross-transformer > .line:nth-child(2) {
+            border: 1px solid grey;
+            transform: rotate(50deg) translateY(-2px) translateX(2px);
+        }
+
+        .cross > .line{
+            opacity: 0;
+        }
+
     </style>
 </head>
 <body>
-    <div class="menu opened">
-        <span class="marker">X</span>
-        <div class="line one"></div>
-        <div class="line two"></div>
-        <div class="line three"></div>
-        <div class="line four"></div>
+    <!--<div class="menu opened">-->
+        <!--<span class="marker">X</span>-->
+        <!--<div class="line one"></div>-->
+        <!--<div class="line two"></div>-->
+        <!--<div class="line three"></div>-->
+        <!--<div class="line four"></div>-->
+    <!--</div>-->
+
+    <div class="menu">
+        <div class="line"></div>
+        <div class="cross-transformer">
+            <div class="line one"></div>
+            <div class="line two"></div>
+        </div>
+        <div class="line"></div>
     </div>
 
+<script>
+    var button = $(".menu");
+    button.click(function(){
+        button.hasClass("cross") ? button.removeClass("cross") : button.addClass("cross");
+    })
 
+</script>
 </body>
 </html>
