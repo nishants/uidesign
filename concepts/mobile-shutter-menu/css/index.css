@@ -97,7 +97,7 @@ nav:not(.close) > .menu-button > .show-menu {
   display: none; }
 
 #top-bar.show-search > .search-input {
-  width: calc(100% - 120px);
+  width: calc(100% - 100px);
   margin-left: 10px;
   opacity: 1; }
   #top-bar.show-search > .search-input input {
