@@ -10,7 +10,7 @@
 
     <style>
         #top-bar, #side-left-bar, #side-right-bar{
-            position: absolute;
+            position: fixed;
             text-align: center;
         }
         #side-left-bar, #side-right-bar{
@@ -80,7 +80,7 @@
         }
 
         .menu-button{
-            position: absolute;
+            position: fixed;
             top: 0;
             line-height: 60px;
             z-index: 100;
@@ -103,26 +103,39 @@
             transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880); /* custom */
         }
 
+        .app{
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+        .content-window{
+            overflow: scroll;
+            max-height: 100vh;
+        }
+        .contents{
+            height: 300vh;
+        }
     </style>
 </head>
 
 <body >
-    <nav class="close">
-        <span id="show-menu" class="menu-button show-menu fa fa-bars"></span>
-        <div id="top-bar"        class="shutter top"><h1>Top Bar</h1></div>
-        <div id="side-left-bar"  class="shutter left active">
-            <div class="header"><span>Settings</span></div>
-            <div class="content"></div>
-        </div>
-        <div id="side-right-bar" class="shutter right">
-            <div class="header"><span>About Us</span></div>
-            <div class="content"></div>
-        </div>
-    </nav>
-
-    <section>
-        <div>Some page</div>
-    </section>
+    <div class="app">
+        <nav class="close">
+            <span id="show-menu" class="menu-button show-menu fa fa-bars"></span>
+            <div id="top-bar"        class="shutter top"><h1>Top Bar</h1></div>
+            <div id="side-left-bar"  class="shutter left active">
+                <div class="header"><span>Settings</span></div>
+                <div class="content"></div>
+            </div>
+            <div id="side-right-bar" class="shutter right">
+                <div class="header"><span>About Us</span></div>
+                <div class="content"></div>
+            </div>
+        </nav>
+        <section class="content-window">
+            <div class="contents">Some page</div>
+        </section>
+    </div>
 
     <script>
         var nav = $("nav").first();
