@@ -119,12 +119,27 @@ nav:not(.close) > .menu-button > .show-menu {
   display: none;
 }
 #top-bar.show-search > .search-input {
-  width: calc(100% - 200px);
-  opacity: 1;
-  height: 60px;
-  font-size: 35px;
-  padding-left: 10px;
+  width: calc(100% - 120px);
   margin-left: 10px;
+  opacity: 1;
+
+  input{
+    width: calc(100% - 80px);
+    height: 60px;
+    font-size: 25px;
+    padding-left: 10px;
+    float: left;
+  }
+
+  .search-button{
+    width: 50px;
+    display: inline-block;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    background: #D8D8D8;
+  }
 }
 
 #top-bar > h1 {
