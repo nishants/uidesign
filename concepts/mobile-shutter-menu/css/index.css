@@ -95,7 +95,14 @@ nav:not(.close) > .menu-button > .show-menu {
 #search-panel > .icon {
   margin-right: 0px;
   height: 60px;
-  font-size: 35px; }
+  font-size: 35px;
+  position: relative;
+  z-index: 5;
+  -webkit-transition: all 300ms 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition: all 300ms 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition: all 300ms 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition: all 300ms 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  /* custom */ }
 
 #search-panel > .search {
   float: left; }
@@ -108,27 +115,31 @@ nav:not(.close) > .menu-button > .show-menu {
 
 #search-panel > .search-input {
   float: left;
-  width: 0px;
-  opacity: 0; }
+  width: calc(100% - 80px);
+  opacity: 0;
+  transform: translateX(-100vw);
+  -webkit-transition: transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition: transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition: transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition: transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  /* custom */ }
 
 #search-panel.show-search > .search-input {
-  width: calc(100% - 80px);
   opacity: 1;
-  display: inline-block;
-  -webkit-transition: width 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88), opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-  -moz-transition: width 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88), opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-  -o-transition: width 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88), opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-  transition: width 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88), opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-  /* custom */ }
-  #search-panel.show-search > .search-input input {
+  transform: translateX(0); }
+
+#search-panel > .search-input {
+  display: inline-block; }
+  #search-panel > .search-input input {
     width: calc(100% - 80px);
     height: 60px;
     font-size: 25px;
     padding-left: 10px;
     float: left;
     box-sizing: border-box;
-    border: none; }
-  #search-panel.show-search > .search-input .search-button {
+    border: 1px solid #F4EFEF;
+    border-left: none; }
+  #search-panel > .search-input .search-button {
     width: 50px;
     display: inline-block;
     float: left;
