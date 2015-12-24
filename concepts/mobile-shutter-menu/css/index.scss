@@ -10,8 +10,8 @@
 #top-bar {
   height: 60px;
   background-color: #4d8dff;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 #side-right-bar > .content {
@@ -107,6 +107,24 @@ nav:not(.close) > .menu-button > .show-menu {
   left: 10px;
   top: 0;
   margin-top: 10px;
+}
+#top-bar > .search-input {
+  float: left;
+  width: 0px;
+  opacity: 0;
+}
+#top-bar.show-search > .search-input {}
+
+#top-bar.show-search > h1 {
+  display: none;
+}
+#top-bar.show-search > .search-input {
+  width: calc(100% - 200px);
+  opacity: 1;
+  height: 60px;
+  font-size: 35px;
+  padding-left: 10px;
+  margin-left: 10px;
 }
 
 #top-bar > h1 {
