@@ -9,6 +9,8 @@
     <script src="../../lib/jquery-2.1.4.min.js"></script>
 
     <style>
+        *{    box-sizing: border-box;}
+        input{outline: none;}
         .app{
             overflow: hidden;
             height: 100vh;
@@ -35,12 +37,16 @@
                 <span class="close-menu icon fa fa-close"></span>
             </span>
 
-            <div id="top-bar"        class="shutter top">
+            <span id="search-panel">
                 <span class="search icon fa fa-search"></span>
                 <span class="search-input">
                     <input type="search">
-                    <span class="search-button fa fa-chevron-right"></span>
+                    <span class="search-button icon fa fa-chevron-right"></span>
                 </span>
+            </span>
+
+
+            <div id="top-bar"        class="shutter top">
                 <h1 class="logo">Brand Logo</h1>
             </div>
 
@@ -58,16 +64,15 @@
 
     <script>
         var nav = $("nav").first(),
-            topBar = $("#top-bar").first(),
+            searchPanel = $("#search-panel").first(),
             searchIcon = $(".search.icon").first();
 
         $(".menu-button").click(function(){
             nav.hasClass("close") ? nav.removeClass("close") : nav.addClass("close");
-            topBar.hasClass("show-search") ? topBar.removeClass("show-search") : "";
         });
 
         searchIcon.click(function(){
-            topBar.hasClass("show-search") ? topBar.removeClass("show-search") : topBar.addClass("show-search");
+            searchPanel.hasClass("show-search") ? searchPanel.removeClass("show-search") : searchPanel.addClass("show-search");
         });
 
     </script>
