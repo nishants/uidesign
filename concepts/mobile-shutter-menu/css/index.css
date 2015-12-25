@@ -7,13 +7,15 @@
 
 #top-bar {
   height: 60px;
-  background-color: #4d8dff;
+  background-color: #262110;
   padding-left: 50px;
   padding-right: 50px; }
 
 #top-bar > h1 {
   line-height: 60px;
-  margin: 0; }
+  margin: 0;
+  color: rgba(238, 205, 38, 0.87);
+  text-shadow: 0 0 5px rgba(238, 205, 38, 0.87); }
 
 #side-right-bar > .content {
   background-color: #ff5e46;
