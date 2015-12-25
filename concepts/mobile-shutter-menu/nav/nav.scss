@@ -1,0 +1,26 @@
+.categories > ul{
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  margin-right: -10px;
+  padding: 0;
+}
+.categories > ul > li {
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.categories > ul > li > label{
+  display: inline-block;
+  text-align: right;
+  font-size: 25px;
+  line-height: 40px;
+  height: 50px;
+  padding: 10px;
+}
+.categories > ul > li > img{
+  height: 40px;
+  width:  40px;
+  margin: 5px;
+  float: right;
+}

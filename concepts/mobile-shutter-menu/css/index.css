@@ -3,7 +3,7 @@
   text-align: center; }
 
 #side-left-bar {
-  width: calc(100vw - 100px); }
+  width: calc(100vw - 60px); }
 
 #side-right-bar {
   width: 75vw; }
