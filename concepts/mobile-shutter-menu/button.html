@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .shutter.right > .content > ul{
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        input{outline: none;}
+        .app{
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+        .content-window{
+            overflow: scroll;
+            max-height: 100vh;
+        }
+        .contents{
+            height: 300vh;
+        }
+
+        #bottom-bar{
+            top: calc(100vh - 50px);
+            position: fixed;
+            width: 100%;
+            text-align: center;
+        }
+        .app-menu{
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: #c3f8ff;
+        }
+    </style>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="nav/nav.css">
+
+</head>
+
+<body>
+    <div class="app">
+        <nav class="close">
+            <!--<span class="menu-button">-->
+                <!--<span class="show-menu icon fa fa-bars "></span>-->
+                <!--<span class="close-menu icon fa fa-close"></span>-->
+            <!--</span>-->
+
+            <span id="search-panel">
+                <span class="search icon fa fa-search"></span>
+                <span class="search-input">
+                    <input type="search">
+                    <span class="search-button icon fa fa-chevron-right"></span>
+                </span>
+            </span>
+
+
+            <div id="top-bar"        class="shutter top">
+                <h1 class="logo">Brand Logo</h1>
+            </div>
+
+            <div id="side-left-bar"  class="shutter left active">
+                <div class="content">
+                    <ul class="select-gender">
+                        <li>Women</li>
+                        <li>Men</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div id="side-right-bar" class="shutter right">
+                <div class="content categories">
+                    <ul>
+                        <li>
+                            <label>all</label>
+                        </li>
+                        <li>
+                            <label>Dress</label>
+                            <img src="../../images/category-icons/jewels.svg">
+                        </li>
+                        <li>
+                            <label>Footwear</label>
+                            <img src="../../images/category-icons/dress.svg">
+                        </li>
+                        <li>
+                            <label>Dress</label>
+                            <img src="../../images/category-icons/jewels.svg">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="bottom-bar">
+                <img class="app-menu" src="../../images/door-knobs/graphic%20knob.jpg">
+            </div>
+        </nav>
+        <section class="content-window">
+            <div class="contents">Some page</div>
+        </section>
+    </div>
+
+    <script>
+        var nav = $("nav").first(),
+            searchPanel = $("#search-panel").first(),
+            searchIcon = $(".search.icon").first();
+
+        $(".app-menu").click(function(){
+            nav.hasClass("close") ? nav.removeClass("close") : nav.addClass("close");
+        });
+        $(".menu-button").click(function(){
+            nav.hasClass("close") ? nav.removeClass("close") : nav.addClass("close");
+        });
+
+        searchIcon.click(function(){
+            searchPanel.hasClass("show-search") ? searchPanel.removeClass("show-search") : searchPanel.addClass("show-search");
+        });
+
+    </script>
+</body>
+</html>
