@@ -38,4 +38,11 @@ ul.select-gender > li{
   line-height: 40px;
   background-color: #f4efef;
   border: 1px solid rgba(0, 0, 0, 0.07);
+  color: rgba(0, 0, 0, 0.53);
 }
+
+ul.select-gender > .selected{
+  border-color: rgba(238, 205, 38, 0.87);
+  color: rgba(0, 0, 0, 0.95);
+}
+
