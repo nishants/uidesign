@@ -62,7 +62,20 @@
         #side-right-bar{
             z-index: 99;
         }
+        #search-panel {
+            width: 100% !important;
+        }
 
+        #search-panel > .search.icon{
+            width: 60px;
+        }
+        #search-panel > .search-input {
+            width: calc(100% - 60px) !important;
+            text-align: center;
+        }
+        #search-panel > .search-input > input{
+            width: calc(100% - 50px) !important;
+        }
     </style>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="nav/nav.css">
@@ -80,7 +93,7 @@
             <span id="search-panel">
                 <span class="search icon fa fa-search"></span>
                 <span class="search-input">
-                    <input type="search">
+                    <input type="search" placeholder="search">
                     <span class="search-button icon fa fa-chevron-right"></span>
                 </span>
             </span>
