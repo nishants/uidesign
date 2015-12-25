@@ -2,8 +2,11 @@
   position: fixed;
   text-align: center; }
 
-#side-left-bar, #side-right-bar {
-  width: 95vw; }
+#side-left-bar {
+  width: calc(100vw - 100px); }
+
+#side-right-bar {
+  width: 100px; }
 
 #top-bar {
   height: 60px;
