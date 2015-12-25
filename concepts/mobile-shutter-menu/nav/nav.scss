@@ -24,3 +24,18 @@
   margin: 5px;
   float: right;
 }
+
+ul.select-gender{
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    padding: 0;
+  }
+ul.select-gender > li{
+  width: 50%;
+  height: 50px;
+  padding: 5px;
+  line-height: 40px;
+  background-color: #ff5e46;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
