@@ -156,7 +156,9 @@ nav:not(.close) > .menu-button > .show-menu {
     transform: rotate(0deg); }
 
 #search-panel > .search-input {
-  display: inline-block; }
+  display: inline-block;
+  /* Firefox 18- */
+  /* Firefox 19+ */ }
   #search-panel > .search-input input {
     width: calc(100% - 80px);
     height: 60px;
@@ -168,6 +170,12 @@ nav:not(.close) > .menu-button > .show-menu {
     border-left: none;
     text-shadow: 0 0 1px rgba(173, 149, 27, 0.5); }
   #search-panel > .search-input ::-webkit-input-placeholder {
+    color: rgba(255, 251, 202, 0.1); }
+  #search-panel > .search-input :-moz-placeholder {
+    color: rgba(255, 251, 202, 0.1); }
+  #search-panel > .search-input ::-moz-placeholder {
+    color: rgba(255, 251, 202, 0.1); }
+  #search-panel > .search-input :-ms-input-placeholder {
     color: rgba(255, 251, 202, 0.1); }
   #search-panel > .search-input .search-button {
     width: 50px;

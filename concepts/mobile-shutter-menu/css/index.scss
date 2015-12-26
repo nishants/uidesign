@@ -205,9 +205,10 @@ nav:not(.close) > .menu-button > .show-menu {
     text-shadow: 0 0 1px rgba(173, 149, 27, 0.5);
   }
 
-  ::-webkit-input-placeholder {
-    color: rgba(255, 251, 202, 0.1);
-  }
+  ::-webkit-input-placeholder {  color: rgba(255, 251, 202, 0.1);  }
+  :-moz-placeholder  { color: rgba(255, 251, 202, 0.1);  }/* Firefox 18- */
+  ::-moz-placeholder {color: rgba(255, 251, 202, 0.1);  }  /* Firefox 19+ */
+  :-ms-input-placeholder {  color: rgba(255, 251, 202, 0.1);  }
 
   .search-button{
     width: 50px;
