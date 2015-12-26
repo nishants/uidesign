@@ -5,6 +5,13 @@
   margin-right: -10px;
   padding: 0;
 }
+.categories > ul > li > label.cart {
+  font-size: 40px;
+  padding: 10px;
+  color: rgba(238, 205, 38, 0.87);
+  text-shadow: 0 0 5px rgba(238, 205, 38, 0.87);
+  background: #262110;
+}
 .categories > ul > li {
   display: block;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
