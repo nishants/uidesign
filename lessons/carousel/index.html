@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<article>
+    <h1>Carousel with JQuery</h1>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>
+            In this lesson we will implement a carousel with jQuery.
+            The same can also be don with pure javascript, but we use jQuery to ensure cross browser compatibility.
+            You need moderate skills with js, css and html5.
+        </p>
+    </section>
+
+    <section>
+        <h2>Design</h2>
+        <p>
+            We will implement the carousel as an array of slides.
+            Slides are enclosed in a container with size of a single slide.
+            On next and previous, we will change make the slides move within the container.
+        </p>
+    </section>
+
+    <section>
+        <h2>1. Create slides</h2>
+
+        <pre>
+            <ul>
+                <li><img src="images/one.jpg"></li>
+                <li><img src="images/two.jpg"></li>
+                <li><img src="images/three.jpg"></li>
+            </ul>
+        </pre>
+        <p>
+            Given that slides are a series of elements, a list should be the best structure for our slides.
+            Now lets give some height and width to our slide contents and remove the list style:
+        </p>
+        <pre>
+            <style>
+                ul {
+                    list-style-type: none; /* Remove list style*/
+                }
+                ul > li > img{
+                    height: 300px;
+                    width : 300px;
+                }
+            </style>
+        </pre>
+
+        <p>
+            Now we need to represent all elements in a single row. For this we will use the table row display.
+            You could also use flex to achieve similar results, but table-row appears more intuitive.
+        </p>
+
+        <pre>
+            <style>
+                ul{
+                    list-style-type: none; /* Remove list style*/
+                    display: table-row;
+                }
+                ul > li {
+                    list-style-type: none; /* Remove list style*/
+                    display: table-cell;
+                }
+            </style>
+        </pre>
+
+    </section>
+
+    <section>
+        <h1>2. Create container for slide</h1>
+        <p>
+            This container will enclose our slides. It will show one slide at a time.
+            To achieve a carousel effect, we will move the list(of slides) inside the container..
+        </p>
+
+        <pre>
+            <div class="carousel">
+                <ul>
+                    <li><img src="images/one.jpg"></li>
+                    <li><img src="images/two.jpg"></li>
+                    <li><img src="images/three.jpg"></li>
+                </ul>
+            </div>
+        </pre>
+
+        <p> Now we will make the carousel of the size of slides and hider anything overflowing out of it</p>
+        <pre>
+            <style>
+                .carousel{
+                    height: 300px;
+                    width : 300px;
+                    overflow: hidden; /* Show only 300px x 300px of the list*/
+                }
+            </style>
+        </pre>
+
+        <p>
+            Now that we have a named container for slides, we will refactor our style to avoid global styles:
+        </p>
+        <pre>
+            <style>
+
+                .carousel > ul{
+                    list-style-type: none; /* Remove list style*/
+                    display: table-row;
+                }
+                .carousel > ul > li {
+                    list-style-type: none; /* Remove list style*/
+                    display: table-cell;
+                }
+                .carousel > ul > li > img{
+                    height: 300px;
+                    width : 300px;
+                }
+                .carousel{
+                    height: 300px;
+                    width : 300px;
+                    overflow: hidden;
+                }
+
+            </style>
+        </pre>
+        <p>
+            By default this shows the first content in the list.
+            To show the second item, we will slide the menu by 300px inside the container.
+            So lets try the concept and check if the idea even works.
+        </p>
+        <pre>
+             <style>
+                 .carousel > ul{
+                     transform: translateX(-300px);
+                 }
+             </style>
+        </pre>
+
+    </section>
+
+
+</article>
+
+</body>
+</html>
