@@ -4,11 +4,24 @@
 <head>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
+    <script src="../../lib/angular-1.4.3.js"></script>
+
+    <link rel="stylesheet" href="../../lib/code-mirror/codemirror.css"/>
+    <script src="../../lib/code-mirror/codemirror.js"></script>
+
+    <!-- code mirror modes for mixed html(dependent on xml, css and js modes -->
+    <script src="../../lib/code-mirror/xml-mode.js"></script>
+    <script src="../../lib/code-mirror/js-mode.js"></script>
+    <script src="../../lib/code-mirror/css-mode.js"></script>
+    <script src="../../lib/code-mirror/html-mixed-mode.js"></script>
+
+    <script src="../editor.js"></script>
+
 </head>
 
 <body>
 
-<article>
+<article ng-app="editor">
     <h1>Carousel with JQuery</h1>
 
     <section>
@@ -32,13 +45,13 @@
     <section>
         <h2>1. Create slides</h2>
 
-        <pre>
+        <textarea class="code">
             <ul>
                 <li><img src="images/one.jpg"></li>
                 <li><img src="images/two.jpg"></li>
                 <li><img src="images/three.jpg"></li>
             </ul>
-        </pre>
+        </textarea>
         <p>
             Given that slides are a series of elements, a list should be the best structure for our slides.
             Now lets give some height and width to our slide contents and remove the list style:
