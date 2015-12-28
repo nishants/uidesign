@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Touch With Jquery</title>
+    <script src="../lib/jquery-2.1.4.min.js"></script>
+    <style>
+        body{
+            margin: 300px;
+        }
+        .touch-me{
+            background-color: red;
+            width: 40px;
+            height: 40px;
+        }
+        .console{
+            margin: 10px;
+            border: 1px solid #EEE;
+        }
+    </style>
+</head>
+<body>
+    <div class="touch-me"></div>
+    <div class="console"></div>
+    <script>
+        var print = function(message){
+            $('.console').first().html(message)
+        }
+        $(".touch-me").on('click touchstart', function(){
+            print("you touched me");
+        })
+    </script>
+</body>
+</html>
