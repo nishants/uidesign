@@ -23,14 +23,21 @@
     <div class="touch-me"></div>
     <div class="console"></div>
     <script>
+        /****************
+         * Touch move updated at every 1px.
+        *****************/
         var print = function(message){
             $('.console').first().html(message)
-        }
-        $(".touch-me").on('click touchstart', function(){
-            print("you touched me");
+            },
+            touchedAt = function(e){
+                return !(e || e.originalEvent.touches) ? null :  {x: e.originalEvent.touches[0].pageX, y: e.originalEvent.touches[0].pageY}
+            };
+
+        $(".touch-me").on('click touchstart', function(e){
+            print("you touched me, at" + touchedAt(e).x);
         });
-        $(".touch-me").on('click touchmove', function(){
-            print("you moved me");
+        $(".touch-me").on('click touchmove', function(e){
+            print("you moved me, at "+ touchedAt(e).x);
         });
     </script>
 </body>
