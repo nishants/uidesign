@@ -28,7 +28,10 @@
         }
         $(".touch-me").on('click touchstart', function(){
             print("you touched me");
-        })
+        });
+        $(".touch-me").on('click touchmove', function(){
+            print("you moved me");
+        });
     </script>
 </body>
 </html>
