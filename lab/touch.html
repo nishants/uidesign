@@ -25,19 +25,28 @@
     <script>
         /****************
          * Touch move updated at every 1px.
-        *****************/
-        var print = function(message){
-            $('.console').first().html(message)
-            },
-            touchedAt = function(e){
-                return !(e || e.originalEvent.touches) ? null :  {x: e.originalEvent.touches[0].pageX, y: e.originalEvent.touches[0].pageY}
-            };
+         *****************/
+        var print = function (message) {
+                    $('.console').first().html($('.console').first().html(message) + "<br>" + message)
+                },
+                touchedAt = function (e) {
+                    return !(e || e.originalEvent.touches) ? null : {
+                        x: e.originalEvent.touches[0].pageX,
+                        y: e.originalEvent.touches[0].pageY
+                    }
+                },
+                move = function (e, x, y) {
+                    e.css("transform", "translate(" + x + "px, " + y + "px)");
+                }, touchStartAt = {};
 
-        $(".touch-me").on('click touchstart', function(e){
-            print("you touched me, at" + touchedAt(e).x);
+        $(".touch-me").on('click touchstart', function (e) {
+            touchStartAt = touchedAt(e);
+            print("you touched me at " + touchStartAt.x + ", " + touchStartAt.y);
         });
-        $(".touch-me").on('click touchmove', function(e){
-            print("you moved me, at "+ touchedAt(e).x);
+        $(".touch-me").on('click touchmove', function (e) {
+            var touchedAtPos = touchedAt(e);
+            print("you moved me at " + touchedAtPos.x + ", " + touchedAtPos.y);
+            move($(e.target), touchedAtPos.x - touchStartAt.x, touchedAtPos.y - touchStartAt.y);
         });
     </script>
 </body>
