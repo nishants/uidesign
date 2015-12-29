@@ -13,6 +13,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            outline: none;
         }
         body{
             min-width: 800px;
@@ -38,7 +39,8 @@
         }
         header > h1 {
             display: inline-block;
-            padding: 100px;
+            padding: 50px;
+            font-size: 50px;;
         }
 
         footer{
@@ -46,15 +48,16 @@
             text-align: center;
         }
 
-        footer > .send-mail > input, footer > .send-mail> button{
+        footer > .send-mail > input, footer > .send-mail> button, .mail-body > textarea{
             height: 60px;
             padding: 10px;
             line-height: 90%;
             font-size: 30px;
-            float:  left;
-
             background-color: white;
             border: none;
+        }
+        footer > .send-mail > input, footer > .send-mail> button{
+            float:  left;
         }
 
         footer > .send-mail{
@@ -67,7 +70,6 @@
         }
         footer > .send-mail > input {
             width: calc(100% - 90px);
-            text-align: center;
         }
 
         footer > .send-mail > button {
