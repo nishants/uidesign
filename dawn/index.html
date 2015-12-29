@@ -4,8 +4,8 @@
 <head>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
-    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <script src="../../lib/jquery-2.1.4.min.js"></script>
 
     <style>
@@ -35,6 +35,41 @@
             padding: 100px;
         }
 
+        footer{
+            padding: 50px;
+            text-align: center;
+        }
+
+        footer > .contact-me > input, footer > .contact-me> button{
+            height: 60px;
+            padding: 10px;
+            line-height: 90%;
+            font-size: 30px;
+            float:  left;
+
+            background-color: white;
+            border: none;
+        }
+
+        footer > .contact-me{
+            height: 80px;
+            content:"";
+            display:table;
+            clear:both;
+            min-width: 90%;
+            text-align: center;
+            margin: auto;
+        }
+        footer > .contact-me > input {
+            width: 80%;
+            text-align: center;
+        }
+
+        footer > .contact-me > button {
+            padding: 10px 30px 10px 30px;
+            border-left: 1px solid rgba(0,0,0,0.1);
+        }
+
     </style>
 </head>
 
@@ -47,8 +82,10 @@
 
     </article>
     <footer>
-        <input type="email" placeholder="Your Mail">
-        <button>Send Mail</button>
+        <div class="contact-me">
+            <input type="email" placeholder="Your Mail">
+            <button class="fa fa-paper-plane"></button>
+        </div>
     </footer>
 </body>
 </html>
