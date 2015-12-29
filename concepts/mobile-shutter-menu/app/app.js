@@ -14,7 +14,8 @@
           return url.length ? url.split("collections/")[1] : "home";
         },
         items: []
-      }
+      },
+      updatingCollection: true
     };
 
     $scope.nav = {showSearch: false, showMenu: false};
@@ -23,6 +24,9 @@
       Collections.fetch($scope.app.collection.name()).then(function(collection){
         $scope.app.collection.items = collection;
         $scope.app.updatingCollection = false;
+      }, function(){
+          console.error("failed to fetch collection" + $scope.app.collection.name());
+          $scope.app.updatingCollection = false;
       });
     };
 

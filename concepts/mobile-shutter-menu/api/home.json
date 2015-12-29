@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "name": "Dress 1",
+      "description": "An ecstatic shimmer gold blouse with a solid hot pink lehenga skirt and a heavy tassle work on the dupatta",
+      "keyword": "ethnic, pink, golden, sleeveless",
+      "images": [
+        {
+          "url": "../../rob-the-robe/carousel/carousel-1.jpg",
+          "label": ""
+        },
+        {
+          "url": "../../rob-the-robe/carousel/carousel-1.jpg",
+          "label": ""
+        },
+        {
+          "url": "../../rob-the-robe/carousel/carousel-1.jpg",
+          "label": ""
+        },
+        {
+          "url": "../../rob-the-robe/carousel/carousel-1.jpg",
+          "label": ""
+        }
+      ]
+    }
+  ]
+}

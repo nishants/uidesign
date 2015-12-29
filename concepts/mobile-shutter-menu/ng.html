@@ -81,6 +81,17 @@
         #search-panel > .search-input > input{
             width: calc(100% - 50px) !important;
         }
+        .app > #app-loader{
+            z-index: 25;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .app:not(.loading) > #app-loader{
+            display: none;
+        }
+
     </style>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="nav/nav.css">
@@ -90,7 +101,7 @@
 </head>
 
 <body>
-<div class="app" ng-app="app" ng-controller="AppController">
+<div class="app" ng-app="app" ng-controller="AppController" ng-class="{'loading' : app.updatingCollection}">
     <nav ng-class="{'close' : !nav.showMenu}">
         <!--<span class="menu-button">-->
         <!--<span class="show-menu icon fa fa-bars "></span>-->
@@ -149,6 +160,7 @@
             <img class="app-menu" src="../../images/door-knobs/RR.png" ng-click="nav.showMenu = !nav.showMenu">
         </div>
     </nav>
+    <div id="app-loader">Loading...</div>
     <section class="content-window">
         <div class="contents">Some page</div>
     </section>
