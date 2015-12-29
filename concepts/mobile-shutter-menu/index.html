@@ -34,24 +34,71 @@
             height: 300vh;
         }
 
+        #bottom-bar{
+            top: calc(100vh - 60px);
+            position: fixed;
+            width: 100%;
+            text-align: center;
+            z-index: 101;
+        }
+        nav:not(.close) > #bottom-bar> .app-menu{
+            transform: rotate(180deg) scale(0.8);
+            box-shadow: -1px -3px 3px rgba(179, 179, 179, 0.44);
+            opacity: 0.5;
+        }
+        .app-menu{
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: #c3f8ff;
+            box-shadow: 1px 3px 3px #B3B3B3;
+
+            -webkit-transition: all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -moz-transition:    all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -o-transition:      all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            transition:         all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+        }
+
+        #top-bar, #side-left-bar {
+            z-index: 100;
+        }
+        #side-right-bar{
+            z-index: 99;
+        }
+        #search-panel {
+            width: 100% !important;
+        }
+
+        #search-panel > .search.icon{
+            width: 60px;
+        }
+        #search-panel > .search-input {
+            width: calc(100% - 60px) !important;
+            text-align: center;
+        }
+        #search-panel > .search-input > input{
+            width: calc(100% - 50px) !important;
+        }
     </style>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="nav/nav.css">
+    <link rel="stylesheet" href="nav/sections.css">
 
 </head>
 
 <body>
     <div class="app">
         <nav class="close">
-            <span class="menu-button">
-                <span class="show-menu icon fa fa-bars "></span>
-                <span class="close-menu icon fa fa-close"></span>
-            </span>
+            <!--<span class="menu-button">-->
+                <!--<span class="show-menu icon fa fa-bars "></span>-->
+                <!--<span class="close-menu icon fa fa-close"></span>-->
+            <!--</span>-->
 
             <span id="search-panel">
                 <span class="search icon fa fa-search"></span>
                 <span class="search-input">
-                    <input type="search">
+                    <input type="search" placeholder="search">
                     <span class="search-button icon fa fa-chevron-right"></span>
                 </span>
             </span>
@@ -64,17 +111,22 @@
             <div id="side-left-bar"  class="shutter left active">
                 <div class="content">
                     <ul class="select-gender">
-                        <li>Women</li>
+                        <li class="selected">Women</li>
                         <li>Men</li>
                     </ul>
-
+                    <ul class="collections">
+                        <li>All</li>
+                        <li>Collection-1</li>
+                        <li>Collection-2</li>
+                        <li>Collection-3</li>
+                    </ul>
                 </div>
             </div>
             <div id="side-right-bar" class="shutter right">
                 <div class="content categories">
                     <ul>
                         <li>
-                            <label>all</label>
+                            <label class="cart fa fa-shopping-cart"></i></label>
                         </li>
                         <li>
                             <label>Dress</label>
@@ -91,6 +143,9 @@
                     </ul>
                 </div>
             </div>
+            <div id="bottom-bar">
+                <img class="app-menu" src="../../images/door-knobs/RR.png">
+            </div>
         </nav>
         <section class="content-window">
             <div class="contents">Some page</div>
@@ -102,6 +157,9 @@
             searchPanel = $("#search-panel").first(),
             searchIcon = $(".search.icon").first();
 
+        $(".app-menu").click(function(){
+            nav.hasClass("close") ? nav.removeClass("close") : nav.addClass("close");
+        });
         $(".menu-button").click(function(){
             nav.hasClass("close") ? nav.removeClass("close") : nav.addClass("close");
         });
