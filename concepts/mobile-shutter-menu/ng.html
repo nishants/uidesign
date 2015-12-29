@@ -85,12 +85,13 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="nav/nav.css">
     <link rel="stylesheet" href="nav/sections.css">
+    <script src="app/app.js"></script>
 
 </head>
 
 <body>
-<div class="app" ng-app>
-    <nav ng-init="nav = {showSearch: false, showMenu: false}" ng-class="{'close' : !nav.showMenu}">
+<div class="app" ng-app="app" ng-controller="AppController">
+    <nav ng-class="{'close' : !nav.showMenu}">
         <!--<span class="menu-button">-->
         <!--<span class="show-menu icon fa fa-bars "></span>-->
         <!--<span class="close-menu icon fa fa-close"></span>-->
@@ -149,6 +150,7 @@
         </div>
     </nav>
     <section class="content-window">
+        <input ng-model="app.collection.name">
         <div class="contents">Some page</div>
     </section>
 </div>
