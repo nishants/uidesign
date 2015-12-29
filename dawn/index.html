@@ -18,33 +18,34 @@
         body{
             min-width: 800px;
         }
+        header, footer, article{
+            padding : 20px;
+        }
         header, footer{
             background-color: #EEE;
-            padding: 20px;
         }
+
         header > img{
             height: 200px;
             width: 200px;
+            margin-right: 50px;
+            float: right;
+
             border-radius: 50%;
             -webkit-box-shadow: 5px 5px 59px -8px rgba(0,0,0,0.75);
             -moz-box-shadow: 5px 5px 59px -8px rgba(0,0,0,0.75);
             box-shadow: 5px 5px 59px -8px rgba(0,0,0,0.75);
         }
-        header:after{
-            content: "";
-        }
-        header > img{
-            float: right;
-            margin: 20px;
-        }
         header > h1 {
             display: inline-block;
             padding: 50px;
             font-size: 50px;;
+            height: 200px;
+            margin: 0;
         }
 
         footer{
-            padding: 50px;
+            padding: 50px 150px;
             text-align: center;
         }
 
@@ -87,8 +88,12 @@
             width: 100%;
             border: none;
         }
-        article{
-            height: 50px;
+
+
+        section{
+            background-color: rgba(0,0,0,0.01);
+            padding: 50px;
+            height: 500px;
         }
 
     </style>
@@ -100,6 +105,9 @@
         <img src="../images/carousel/carousel-1.jpg">
     </header>
     <article>
+        <section>
+            <h2>Demos</h2>
+        </section>
 
     </article>
     <footer>
