@@ -2,11 +2,16 @@
   "use strict"
   var app = angular.module("app", []);
 
+  if(!window.location.hash) {
+    location.hash = '#collections/home';
+  }
+
   app.controller("AppController", ["$scope", "Collections", "$location", function($scope, Collections, $location){
     $scope.app = {
       collection: {
         name: function(){
-          return $location.url().split("collection/")[1];
+          var url = $location.url();
+          return url.length ? url.split("collections/")[1] : "home";
         },
         items: []
       }
@@ -22,6 +27,7 @@
     };
 
     $scope.$watch("app.collection.name()", updateCollection);
+    window.$location = $location;
   }]);
 
   app.service("Collections", ["$http", function($http){
