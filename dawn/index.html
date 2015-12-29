@@ -14,6 +14,9 @@
             margin: 0;
             padding: 0;
         }
+        body{
+            min-width: 800px;
+        }
         header, footer{
             background-color: #EEE;
             padding: 20px;
@@ -21,7 +24,10 @@
         header > img{
             height: 200px;
             width: 200px;
-            border-radius: 50%;;
+            border-radius: 50%;
+            -webkit-box-shadow: 5px 5px 59px -8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 5px 5px 59px -8px rgba(0,0,0,0.75);
+            box-shadow: 5px 5px 59px -8px rgba(0,0,0,0.75);
         }
         header:after{
             content: "";
@@ -52,24 +58,33 @@
         }
 
         footer > .send-mail{
-            height: 80px;
             content:"";
             display:table;
             clear:both;
-            min-width: 90%;
+            width: 100%;
             text-align: center;
             margin: auto;
         }
         footer > .send-mail > input {
-            width: 80%;
+            width: calc(100% - 90px);
             text-align: center;
         }
 
         footer > .send-mail > button {
+            width: 90px;
             padding: 10px 30px 10px 30px;
             border-left: 1px solid rgba(0,0,0,0.1);
         }
 
+        footer > .mail-body{
+            border-top: 1px solid rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        footer > .mail-body > textarea{
+            width: 100%;
+            border: none;
+        }
         article{
             height: 50px;
         }
@@ -89,6 +104,9 @@
         <div class="send-mail">
             <input type="email" placeholder="Your Mail">
             <button class="fa fa-paper-plane"></button>
+        </div>
+        <div class="mail-body">
+            <textarea></textarea>
         </div>
     </footer>
 </body>
