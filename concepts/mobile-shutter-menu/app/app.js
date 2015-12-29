@@ -21,8 +21,8 @@
     $scope.nav = {showSearch: false, showMenu: false};
     var updateCollection = function(){
       $scope.app.updatingCollection = true;
-      Collections.fetch($scope.app.collection.name()).then(function(collection){
-        $scope.app.collection.items = collection;
+      Collections.fetch($scope.app.collection.name()).then(function(items){
+        $scope.app.collection.items = items;
         $scope.app.updatingCollection = false;
       }, function(){
           console.error("failed to fetch collection" + $scope.app.collection.name());
@@ -38,10 +38,10 @@
     return {
       fetch: function(name){
         var url = "api/" + name + ".json";
-        return $http.get(url).then(function(data){
-          return data;
+        return $http.get(url).then(function(reponse){
+          return reponse.data.items;
         });
       }
-    }
+    };
   }]);
-})();
+}).call(this);
