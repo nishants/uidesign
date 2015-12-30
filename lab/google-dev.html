@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Touch With Jquery</title>
+    <title>Google Dev</title>
     <script src="../lib/jquery-2.1.4.min.js"></script>
     <style>
         *{
@@ -10,29 +10,49 @@
             margin: 0;
             padding: 0;
         }
-        .devsite-top-logo-row > img{
+        #top-fixed-bar > img{
             display: inline-block;
             height: 36px;
             width: 216px;
         }
 
-        .devsite-top-logo-row{
+        #top-fixed-bar{
             height: 76px;
+            top: 0px;
             position: fixed;
             background-color: #3367D6;
             width: 100%;
             padding: 10px 24px;
             line-height: 24px;
         }
+
+        #branding{
+            background-color: #4285F4;
+            margin-top: 76px;
+            padding: 20px 50px;
+        }
+        #branding > .gmail-logo{
+            padding: 25px;
+            background-color: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        #branding > .gmail-logo > img{
+            height: 32px;
+            width: 32px;
+        }
     </style>
 </head>
 <body>
 <nav>
-    <div class="devsite-top-logo-row">
+    <div id="top-fixed-bar">
         <img src="https://developers.google.com/_static/73b214bebc/images/redesign-14/devsite-logo-white-wordmark-new.svg" alt="Google Developers" class="devsite-logo-wordmark">
     </div>
     <div id="branding">
-
+        <div class="gmail-logo">
+            <img src="../images/gmail_64dp.png">
+        </div>
     </div>
     <div id="menu">
 
