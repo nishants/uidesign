@@ -9,68 +9,54 @@
             height: 99000vh;
         }
 
-        .walker{
-            height: 100vh;
-            width: 100vw;
-            position: fixed;
-            top: 20vh;
-        }
-        .slider{
+        .panorama{
             display: flex;
-            transform: translateX(-900vw);
+            position: fixed;
+            top: 0px;
         }
-        .slide{
-            height: 50vh;
-            width: 100vw;
-            display: inline;
-            float: left;
+        .panorama > img{
+            height: 100vh;
         }
-        .slider > div:nth-child(2n+1) .slide{
-            background-color: green;
-        }
-        .slider > div:nth-child(2n) .slide{
-            background-color: red;
-        }
-
     </style>
 </head>
 <body>
-<div class="walker">
-    <div class="slider">
-        <div> <div class="slide"></div></div>
-        <div> <div class="slide"></div></div>
-        <div> <div class="slide"></div></div>
-        <div> <div class="slide"></div></div>
-        <div> <div class="slide"></div></div>
-        <div> <div class="slide"></div></div>
-        <div> <div class="slide"></div></div>
-        <div> <div class="slide"></div></div>
-        <div> <div class="slide"></div></div>
-        <div> <div class="slide"></div></div>
-    </div>
+<div class="panorama">
+        <img src="../images/360-rocket-sunset.jpg">
 </div>
 
 <script>
     var
-        currentPosition = -900,
-        $target  = $(".slider").first(),
-        onScrollDown = function(scrolledBy){
+        $target  = $(".panorama").first(),
+        currentPosition = 0,
+        moveBy = function(scrolledBy){
             currentPosition += scrolledBy;
-            $target.css("transform", "translateX(" + (-currentPosition) + "px)")
-            console.log(scrolledBy);
-        },
-        onScrollUp = function(scrolledBy){
-            currentPosition += scrolledBy;
-            $target.css("transform", "translateX(" + (-currentPosition) + "px)");
-            console.log(scrolledBy);
+            $target.css("transform", "translateX(" + (currentPosition) + "px)")
         },
         lastScrollTop = 0 ;
 
     $(window).bind("scroll",function(e){
         var scrolledBy = $(window).scrollTop() - lastScrollTop;
-        scrolledBy > 0 ? onScrollDown(scrolledBy) : onScrollUp(scrolledBy);
+        moveBy(-scrolledBy);
         lastScrollTop = $(window).scrollTop();
     });
+
+
+
+    $(document).ready(function(){
+        var image = $(".panorama > img");
+        image.load(function(){
+            var panorama = $(".panorama");
+            var updateHtml = "";
+            var imageSrc = image.attr("src");
+
+            var imagesNeededToFillDocument = $(document).height() / image.width();
+            for(var i =0; i < imagesNeededToFillDocument; i ++){
+                updateHtml += "<img src='"+imageSrc+"'>";
+            }
+            panorama.append(updateHtml);
+        });
+    });
+
 </script>
 </body>
 </html>
