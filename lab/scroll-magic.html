@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Dev</title>
+    <script src="../lib/jquery-2.1.4.min.js"></script>
+    <style>
+        body{
+            height: 99000vh;
+        }
+
+        .walker{
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 20vh;
+        }
+        .slider{
+            display: flex;
+            transform: translateX(-900vw);
+        }
+        .slide{
+            height: 50vh;
+            width: 100vw;
+            display: inline;
+            float: left;
+        }
+        .slider > div:nth-child(2n+1) .slide{
+            background-color: green;
+        }
+        .slider > div:nth-child(2n) .slide{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="walker">
+    <div class="slider">
+        <div> <div class="slide"></div></div>
+        <div> <div class="slide"></div></div>
+        <div> <div class="slide"></div></div>
+        <div> <div class="slide"></div></div>
+        <div> <div class="slide"></div></div>
+        <div> <div class="slide"></div></div>
+        <div> <div class="slide"></div></div>
+        <div> <div class="slide"></div></div>
+        <div> <div class="slide"></div></div>
+        <div> <div class="slide"></div></div>
+    </div>
+</div>
+
+<script>
+    var
+        currentPosition = -900,
+        $target  = $(".slider").first(),
+        onScrollDown = function(scrolledBy){
+            currentPosition += scrolledBy;
+            $target.css("transform", "translateX(" + (-currentPosition) + "px)")
+            console.log(scrolledBy);
+        },
+        onScrollUp = function(scrolledBy){
+            currentPosition += scrolledBy;
+            $target.css("transform", "translateX(" + (-currentPosition) + "px)");
+            console.log(scrolledBy);
+        },
+        lastScrollTop = 0 ;
+
+    $(window).bind("scroll",function(e){
+        var scrolledBy = $(window).scrollTop() - lastScrollTop;
+        scrolledBy > 0 ? onScrollDown(scrolledBy) : onScrollUp(scrolledBy);
+        lastScrollTop = $(window).scrollTop();
+    });
+</script>
+</body>
+</html>
