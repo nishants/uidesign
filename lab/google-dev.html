@@ -51,33 +51,47 @@
             height: 32px;
             width: 32px;
         }
-        #menu{
+        .menu{
             padding: 20px;
             background-color: #4285F4;
             box-shadow: 0 2px 3px rgba(0,0,0,.28);
         }
-        #menu > ul{
+        .menu > ul{
             list-style: none;
             display: block;
         }
-        #menu > ul > li{
+        .menu > ul > li{
             display: inline-block;
             color: rgba(255,255,255,.7);
             font-size: 25px;
             line-height: 44px;
             padding: 5px 20px;
         }
-        #menu > ul > li > a{
+        .menu > ul > li > a{
             border-bottom: 2px solid transparent;
         }
-        #menu > ul > li.current{
+        .menu > ul > li.current{
             border-bottom: 2px solid white
+        }
+
+        nav > .menu{
+            -webkit-transition: all  500ms linear;
+            -moz-transition:    all  500ms linear;
+            -o-transition:      all  500ms linear;
+            transition:         all  500ms linear; /* custom */
+        }
+
+        nav.collapse > .menu{
+            position: fixed;
+            width: 100%;
+
+            top: 76px;
         }
 
     </style>
 </head>
 <body>
-<nav>
+<nav class="a">
     <div id="top-fixed-bar">
         <img src="https://developers.google.com/_static/73b214bebc/images/redesign-14/devsite-logo-white-wordmark-new.svg" alt="Google Developers" class="devsite-logo-wordmark">
     </div>
@@ -86,7 +100,7 @@
             <img src="../images/gmail_64dp.png">
         </div>
     </div>
-    <div id="menu">
+    <div class="menu">
         <ul>
             <li class="current"><a href="#">Guide</a></li>
             <li><a href="#">Reference</a></li>
