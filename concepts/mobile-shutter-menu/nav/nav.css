@@ -8,8 +8,8 @@
 .categories > ul > li > label.cart {
   font-size: 40px;
   padding: 10px;
-  color: rgba(238, 205, 38, 0.87);
-  text-shadow: 0 0 5px rgba(238, 205, 38, 0.87);
+  color: #f7f7f7;
+  text-shadow: 0 0 5px #f7f7f7;
   background: #262110; }
 
 .categories > ul > li {
@@ -46,7 +46,6 @@ ul.select-gender > li {
   color: rgba(0, 0, 0, 0.53); }
 
 ul.select-gender > .selected {
-  border-color: rgba(238, 205, 38, 0.87);
   color: rgba(0, 0, 0, 0.95); }
 
 /*# sourceMappingURL=nav.css.map */
