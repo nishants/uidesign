@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Google Dev</title>
+    <title>Scroll Magic</title>
     <script src="../lib/jquery-2.1.4.min.js"></script>
     <style>
         body{
@@ -55,15 +55,12 @@
         lastScrollTop = $(window).scrollTop();
     });
 
-
-
     $(document).ready(function(){
         var image = $(".panorama > img");
         image.load(function(){
             var panorama = $(".panorama");
             var updateHtml = "";
             var imageSrc = image.attr("src");
-
             var imagesNeededToFillDocument = $(document).height() / image.width();
             for(var i =0; i < imagesNeededToFillDocument; i ++){
                 updateHtml += "<img src='"+imageSrc+"'>";
