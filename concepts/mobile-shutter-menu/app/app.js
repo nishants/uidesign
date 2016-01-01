@@ -25,7 +25,7 @@
         $scope.app.collection.items = items;
         $scope.app.updatingCollection = false;
       }, function(){
-          console.error("failed to fetch collection" + $scope.app.collection.name());
+          console.error("failed to fetch collection: " + $scope.app.collection.name());
           $scope.app.updatingCollection = false;
       });
     };

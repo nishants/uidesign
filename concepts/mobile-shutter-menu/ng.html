@@ -92,7 +92,7 @@
             font-size: 30px;
         }
 
-        .app:not(.loading) > #app-loader{
+        .app:not(.loading) > #app-loader:not(.data-loading){
             display: none;
         }
 
@@ -133,10 +133,9 @@
                     <li>Men</li>
                 </ul>
                 <ul class="collections" ng-click="nav.showMenu = false">
-                    <li><a href="#/collections/all">All</a></li>
-                    <li>Collection-1</li>
-                    <li>Collection-2</li>
-                    <li>Collection-3</li>
+                    <li><a href="#/collections/home">All</a></li>
+                    <li><a href="#/collections/collection-1">Collection-1</a></li>
+                    <li><a href="#/collections/collection-2">Collection-2</a></li>
                 </ul>
             </div>
         </div>
@@ -165,7 +164,7 @@
             <img class="app-menu" src="../../images/door-knobs/RR-sliver.png" ng-click="nav.showMenu = !nav.showMenu">
         </div>
     </nav>
-    <div id="app-loader">Loading...</div>
+    <div id="app-loader" ng-class="{'data-loading' : app.updatingCollection}">Loading...</div>
     <section class="content-window">
         <div class="contents">
             <div class="card" ng-repeat="item in app.collection.items">
