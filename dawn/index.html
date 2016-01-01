@@ -14,6 +14,7 @@
             margin: 0px auto;
             padding: 0;
             outline: none;
+            color: rgba(64, 64, 64, 1);
         }
         body{
             min-width: 800px;
@@ -89,24 +90,65 @@
             border: none;
         }
 
+        article{
+            background-color: rgba(238, 238, 238, 0.3);;
+        }
 
         section{
             background-color: rgba(0,0,0,0.01);
-            padding: 50px;
             height: 500px;
         }
+        section > h2{
+
+        }
+
+        .card{
+            background-color: white;
+            border: 1px solid rgba(164, 164, 164, 0.1);
+            display: inline-block;
+            width: 400px;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .card > .body, .card > .head{
+        }
+        .card > .body > img{
+            width: 100%;
+        }
+
 
     </style>
 </head>
 
 <body>
     <header>
-        <h1>My Playground</h1>
-        <img src="../images/carousel/carousel-1.jpg">
+        <h1>Nishant Singh</h1>
+        <img src="../images/me-small.png">
     </header>
     <article>
         <section>
             <h2>Demos</h2>
+            <div>
+                <div class="card">
+                    <div class="head">
+                        <h2>Progres Indicator for Wizards</h2>
+                        <p>Spice up your wizard with a progress indicator created with sass.</p>
+                    </div>
+                    <div class="body">
+                        <img src="../images/carousel/carousel-1.jpg">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="head">
+                        <h2>Progres Indicator for Wizards</h2>
+                        <p>Spice up your wizard with a progress indicator created with sass.</p>
+                    </div>
+                    <div class="body">
+                        <img src="../images/carousel/carousel-1.jpg">
+                    </div>
+                </div>
+            </div>
         </section>
 
     </article>
