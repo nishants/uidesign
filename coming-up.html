@@ -15,6 +15,7 @@
             box-sizing: border-box;
             outline: none;
 
+            text-align: center;
             -webkit-transition: all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
             -moz-transition:    all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
             -o-transition:      all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
@@ -36,9 +37,8 @@
 
         #amoeba-social > ul#blog-sections > li{
             display: inline-block;
-            padding: 10px;
+            padding: 7px;
             font-weight: 300;
-            font-size: 20px;
             background-color: rgba(242, 243, 242, 0.15);;
 
             min-width: 100px;
@@ -53,7 +53,7 @@
             text-shadow: 0 0 5px #f7f7f7;
         }
 
-        #amoeba-social.loading > ul#blog-sections, #amoeba-social.loading > #blog-title{
+        #amoeba-social.loading > ul#blog-sections, #amoeba-social.loading > #blog-title, #amoeba-social.loading > #search-panel{
             margin-top: 100vh;
             opacity: 0;
         }
@@ -69,13 +69,13 @@
         }
 
         #search-panel > .input > .addon{
-            background-color: white;
+            background-color: rgba(247, 247, 247, 0.85);
             padding: 5px 15px;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
         }
         #search-panel .input > input{
-            color: #F7F7F7;
+            color: rgba(247, 247, 247, 0.85);
             min-width: 300px;
             padding: 5px 10px;
             background: rgba(255,255,255,0.05);
