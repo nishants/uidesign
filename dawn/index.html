@@ -25,6 +25,9 @@
         header, footer{
             background-color: #EEE;
         }
+        header{
+            text-align: left;
+        }
 
         header > img{
             height: 100px;
@@ -45,8 +48,8 @@
             margin: 0;
         }
 
-        footer{
-            padding: 50px 150px;
+        footer, article{
+            padding: 10px 15px;
             text-align: center;
         }
 
@@ -96,19 +99,19 @@
 
         section{
             background-color: rgba(0,0,0,0.01);
-            height: 500px;
-        }
-        section > h2{
-
         }
 
+        .deck{
+        }
+        .deck > .card{
+            display: inline-block;
+            width: 400px;
+            margin: 5px;
+        }
         .card{
             background-color: white;
             border: 1px solid rgba(164, 164, 164, 0.1);
-            display: inline-block;
-            width: 400px;
             padding: 10px;
-            margin: 5px;
         }
 
         .card > .body, .card > .head{
@@ -129,7 +132,7 @@
     <article>
         <section>
             <h2>Demos</h2>
-            <div>
+            <div class="deck">
                 <div class="card">
                     <div class="head">
                         <h2>Progres Indicator for Wizards</h2>
