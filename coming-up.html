@@ -35,11 +35,23 @@
             display: block;
         }
 
+        #amoeba-social > ul#blog-sections > li:hover{
+            background-color: rgba(247, 247, 247, 0.85);
+            color: rgb(97, 99, 97);
+        }
+        .clickable:hover{
+            opacity: 0.8;
+        }
+        .clickable.clicked{
+            transform: scale(0.9);
+        }
+
         #amoeba-social > ul#blog-sections > li{
             display: inline-block;
             padding: 7px;
             font-weight: 300;
             background-color: rgba(242, 243, 242, 0.15);;
+            color: rgba(247, 247, 247, 0.85);
 
             min-width: 100px;
             border: 1px solid rgba(242, 243, 242, 0.3);
@@ -103,14 +115,14 @@
     <div id="search-panel">
         <div class="input">
             <input type="search">
-            <span class="addon fa fa-search"></span>
+            <span class="clickable addon fa fa-search"></span>
         </div>
     </div>
     <ul id="blog-sections" class="title-font">
-        <li>lab</li>
-        <li>concepts</li>
-        <li>lessons</li>
-        <li>about me</li>
+        <li class="clickable">lab</li>
+        <li class="clickable">concepts</li>
+        <li class="clickable">lessons</li>
+        <li class="clickable">about me</li>
     </ul>
     <script src="lib/jquery-2.1.4.min.js"></script>
 
@@ -118,6 +130,16 @@
         setTimeout(function(){
             $("#amoeba-social").removeClass("loading");
         },100);
+
+        var $clickables = $(".clickable");
+        $clickables.on("mousedown", function(e){
+            $(e.target).addClass("clicked");
+
+        });
+        $clickables.on("mouseup mouseleave", function(e){
+            $(e.target).removeClass("clicked");
+        });
+
     </script>
 </body>
 </html>
