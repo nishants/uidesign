@@ -24,6 +24,7 @@
       Collections.fetch($scope.app.collection.name()).then(function(items){
         $scope.app.collection.items = items;
         $scope.app.updatingCollection = false;
+        $('.content-window').animate({scrollTop: 0}, 500);
       }, function(){
           console.error("failed to fetch collection: " + $scope.app.collection.name());
           $scope.app.updatingCollection = false;
