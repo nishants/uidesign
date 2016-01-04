@@ -8,153 +8,93 @@
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
 
     <style>
-        *{
-            box-sizing: border-box;
-            margin: 0px auto;
-            padding: 0;
+        #top-bar, #bottom-bar{
+            height: 60px;
+            background-color: #181818;
+            position: fixed;
+            width: 100%;
         }
-
-        body{
+        #top-bar{
+            top: 0;
+        }
+        #bottom-bar{
+            bottom: 0;
+        }
+        #content{
+            padding-top: 60px;
+        }
+        .missions{
+            list-style: none;
+            display: block;
             text-align: center;
         }
 
-        .mission {
-            border: 1px solid #EEE;
-        }
-        .mission > .planet, .mission > .spacecraft{
-            padding: 5px;
-        }
-        .mission > .planet{
-            border-bottom: 1px solid #EEE;
-        }
-
-        .mission > .planet > img{
-            border-radius: 50%;
-            height: 60px;
-            width: 60px;
-            display: block;
-        }
-        .mission >.planet > span.name{
-            font-size: 13px;
-        }
-        .mission >.planet > span.distance{
-            font-size: 9px;
-        }
-        .mission >.planet > span.name, .mission >.planet > span.distance{
-            display: block;
-        }
-        .mission {
+        .missions > .mission{
+            margin: 5px;
             display: inline-block;
-            background-color: white;
-        }
-        .select-spacecraft > #missions > .mission:not(.select){
-            opacity: 0.5;
-        }
-        .select-spacecraft > #missions > .mission.select{
-            -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-            box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-            transform: scale(1.1);
-            background: white;
-        }
-        #spacecrafts{
-            position: fixed;
-            width: 100%;
-            background-color: #F5F5F5;
-            bottom: 0px;
-            max-height: 50vh;
-            overflow: auto;
-        }
-        #spacecrafts > .spacecraft{
-            display: flex;
+            font-size: 10px;
+            font-color: #181818;
+            border: 1px solid #181818;
+            min-width: 100px;
             padding: 5px;
         }
-        #spacecrafts > .spacecraft > .indicator{
-            margin: 0;
-            border-right: 1px solid #e7e7e7;
-            padding-right: 5px;
-            display: flex;
-            flex-direction: column;
-            font-size: 13px;
-        }
-        #spacecrafts > .spacecraft > .indicator > img{
+        .missions > .mission > img {
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
-            height: 20px;
-            width: 20px;
-            display: block;
-            margin:  auto;
         }
-        #spacecrafts > .spacecraft > .select{
-            font-size: 25px;
-            padding: 5px;
-            border: 1px solid rgba(1,1,1,0.05);
-            margin: 0px 0px 0px auto;
-        }
-        #spacecrafts > .spacecraft > .description{
-            font-size: 13px;
-            margin: 0px;
-            text-align: left;
-            padding: 5px;
-            line-height: 20px;
-        }
-        #spacecrafts > .spacecraft > .description > .range{
-            display: block;
-        }
-        #spacecrafts > .spacecraft > .indicator > img, #spacecrafts > .spacecraft > .description{
-            float: left;
-            line-height: 15px;
+        .missions > .mission.selected > .no-mission{
+            display: none;
         }
 
+        .mission .spacecraft {
+            padding: 5px;
+            border-top: 1px solid #EEE;
+            margin-top: 5px;
+        }
+
+        .mission .spacecraft > img{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            float: left;
+        }
+        .mission .spacecraft > .time{
+            padding: 5px;
+            display: inline-block;
+            float: left;
+        }
+        .mission .spacecraft > .remove, .mission .spacecraft > .add{
+            float: right;
+            font-size: 20px;
+        }
+        .mission .spacecraft:after{
+            content:"";
+            display:table;
+            clear:both;
+        }
     </style>
 
 </head>
 
 <body>
-    <div id="app" class="select-spacecraft">
-        <div id="missions">
-            <div class="mission">
-                <div class="planet">
+    <div id="app">
+        <div id="top-bar"></div>
+        <div id="content">
+            <ul class="missions">
+                <li class="mission selected">
                     <img src="../../images/carousel/carousel-1.jpg">
-                    <span class="name">Planet 1</span>
-                    <span class="distance">100 megamiles</span>
-                </div>
-                <div class="spacecraft">
-                    <button class="send-mission">Send Mission</button>
-                </div>
-
-            </div>
-            <div class="mission select">
-                <div class="planet">
-                    <img src="../../images/carousel/carousel-2.jpg">
-                    <span class="name">Planet 1</span>
-                    <span class="distance">100 megamiles</span>
-                </div>
-                <div class="spacecraft">
-                    <button class="send-mission">Send Mission</button>
-                </div>
-
-            </div>
+                    <div class="name">Donlon</div>
+                    <div class="distance">100 megamiles</div>
+                    <div class="no-mission">No Mission <span class="add fa fa-chevron-right"></span></div>
+                    <div class="spacecraft"><img src="../../images/carousel/carousel-1.jpg"><span class="time">(5 hr)</span> <span class="remove fa fa-times"></span></div>
+                </li>
+            </ul>
         </div>
-        <ul id="spacecrafts">
-            <li class="spacecraft">
-                <div class="indicator">
-                    <img src="../../images/category-icons/jewels.svg">
-                    <div>
-                        <span class="name">Space Pod</span>
-                        <span class="count">(4)</span>
-                    </div>
-                </div>
-                <div class="description">
-                    <span class="range">Range : 200 megamiles</span>
-                    <span class="speed">Speed : 500 megamiles/hour</span>
-                </div>
-                <div class="select ">
-                    <span class="fa fa-check"></span>
-                </div>
-            </li>
-        </ul>
+        <div id="bottom-bar">
+            <ul class="space-crafts"></ul>
+        </div>
     </div>
-
 
     <script></script>
 </body>
