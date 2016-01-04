@@ -15,7 +15,6 @@
 
         body{
             text-align: center;
-            padding: 20px;
         }
 
         .mission {
@@ -57,6 +56,40 @@
             transform: scale(1.1);
             background: white;
         }
+        #spacecrafts{
+            position: fixed;
+            width: 100%;
+            background-color: #F5F5F5;
+            bottom: 0px;
+            max-height: 50vh;
+            overflow: auto;
+        }
+        #spacecrafts > .spacecraft{
+            display: flex;
+            padding: 5px;
+        }
+        #spacecrafts > .spacecraft > img{
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            display: block;
+            margin:  5px;
+        }
+        #spacecrafts > .spacecraft > .description{
+            font-size: 13px;
+            margin: 0px;
+        }
+        #spacecrafts > .spacecraft > .description > .range{
+            height: 100%;
+            display: inline-block;
+            border-left: 1px solid #e7e7e7;
+            padding-left: 5px;
+        }
+        #spacecrafts > .spacecraft > img, #spacecrafts > .spacecraft > .description{
+            float: left;
+            line-height: 30px;
+        }
+
     </style>
 
 </head>
@@ -87,6 +120,16 @@
 
             </div>
         </div>
+        <ul id="spacecrafts">
+            <li class="spacecraft">
+                <img src="../../images/category-icons/jewels.svg">
+                <div class="description">
+                    <span class="count">(4)</span>
+                    <span class="range">200 megamiles</span>
+                    <span class="speed">500 megamiles/hour</span>
+                </div>
+            </li>
+        </ul>
     </div>
 
 
