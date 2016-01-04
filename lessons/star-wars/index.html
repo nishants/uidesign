@@ -90,6 +90,14 @@
             padding: 5px;
         }
 
+        #bottom-bar.expand{
+            height: auto;
+        }
+
+        #bottom-bar.expand > .spacecrafts > .spacecraft{
+            display: block;
+        }
+
         .spacecrafts{
             text-align: center;
         }
@@ -114,7 +122,7 @@
 </head>
 
 <body>
-    <div id="app" ng-app>
+    <div id="app" ng-app ng-init="app = {expandBottomBar: true}">
         <div id="top-bar"></div>
         <div id="content">
             <ul class="missions undo-list">
@@ -128,7 +136,7 @@
                 <li class="submit"><button class="submit">Find Falcone</button></li>
             </ul>
         </div>
-        <div id="bottom-bar">
+        <div id="bottom-bar" ng-class="{'expand' : app.expandBottomBar}" ng-click="app.expandBottomBar = !app.expandBottomBar">
             <ul class="spacecrafts undo-list">
                 <li class="spacecraft" ng-repeat="i in [1,2,3,4]">
                     <img src="../../images/carousel/carousel-1.jpg">
