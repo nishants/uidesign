@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
 
     <style>
         *{
@@ -83,6 +84,12 @@
             display: block;
             margin:  auto;
         }
+        #spacecrafts > .spacecraft > .select{
+            font-size: 25px;
+            padding: 5px;
+            border: 1px solid rgba(1,1,1,0.05);
+            margin: 0px 0px 0px auto;
+        }
         #spacecrafts > .spacecraft > .description{
             font-size: 13px;
             margin: 0px;
@@ -138,8 +145,11 @@
                     </div>
                 </div>
                 <div class="description">
-                    <span class="range">200 megamiles</span>
-                    <span class="speed">500 megamiles/hour</span>
+                    <span class="range">Range : 200 megamiles</span>
+                    <span class="speed">Speed : 500 megamiles/hour</span>
+                </div>
+                <div class="select ">
+                    <span class="fa fa-check"></span>
                 </div>
             </li>
         </ul>
