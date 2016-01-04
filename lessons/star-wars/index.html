@@ -70,27 +70,32 @@
         }
         #spacecrafts > .spacecraft > .indicator{
             margin: 0;
+            border-right: 1px solid #e7e7e7;
+            padding-right: 5px;
+            display: flex;
+            flex-direction: column;
+            font-size: 13px;
         }
         #spacecrafts > .spacecraft > .indicator > img{
             border-radius: 50%;
             height: 20px;
             width: 20px;
             display: block;
-            margin:  5px;
+            margin:  auto;
         }
         #spacecrafts > .spacecraft > .description{
             font-size: 13px;
             margin: 0px;
+            text-align: left;
+            padding: 5px;
+            line-height: 20px;
         }
         #spacecrafts > .spacecraft > .description > .range{
-            height: 100%;
-            display: inline-block;
-            border-left: 1px solid #e7e7e7;
-            padding-left: 5px;
+            display: block;
         }
         #spacecrafts > .spacecraft > .indicator > img, #spacecrafts > .spacecraft > .description{
             float: left;
-            line-height: 30px;
+            line-height: 15px;
         }
 
     </style>
@@ -127,9 +132,12 @@
             <li class="spacecraft">
                 <div class="indicator">
                     <img src="../../images/category-icons/jewels.svg">
+                    <div>
+                        <span class="name">Space Pod</span>
+                        <span class="count">(4)</span>
+                    </div>
                 </div>
                 <div class="description">
-                    <span class="count">(4)</span>
                     <span class="range">200 megamiles</span>
                     <span class="speed">500 megamiles/hour</span>
                 </div>
