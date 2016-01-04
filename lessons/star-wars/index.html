@@ -106,13 +106,13 @@
             display: inline-block;
         }
 
-        .spacecrafts > .spacecraft > .count{
+        .spacecrafts > .spacecraft .icon > .count{
             font-size: 10px;
             line-height: 20px;
             color: white;
             margin-top: -5px;
         }
-        .spacecrafts > .spacecraft > img{
+        .spacecrafts > .spacecraft .icon > img{
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -139,8 +139,10 @@
         <div id="bottom-bar" ng-class="{'expand' : app.expandBottomBar}" ng-click="app.expandBottomBar = !app.expandBottomBar">
             <ul class="spacecrafts undo-list">
                 <li class="spacecraft" ng-repeat="i in [1,2,3,4]">
-                    <img src="../../images/carousel/carousel-1.jpg">
-                    <div class="count">(5)</div>
+                    <div class="icon">
+                        <img src="../../images/carousel/carousel-1.jpg">
+                        <div class="count">(5)</div>
+                    </div>
                 </li>
             </ul>
         </div>
