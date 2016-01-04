@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px auto;
+            padding: 0;
+        }
+
+        body{
+            text-align: center;
+            padding: 20px;
+        }
+
+        .mission {
+            border: 1px solid #EEE;
+        }
+        .mission > .planet, .mission > .spacecraft{
+            padding: 5px;
+        }
+        .mission > .planet{
+            border-bottom: 1px solid #EEE;
+        }
+
+        .mission > .planet > img{
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            display: block;
+        }
+        .mission >.planet > span.name{
+            font-size: 13px;
+        }
+        .mission >.planet > span.distance{
+            font-size: 9px;
+        }
+        .mission >.planet > span.name, .mission >.planet > span.distance{
+            display: block;
+        }
+        .mission {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <div id="missions">
+            <div class="mission">
+                <div class="planet">
+                    <img src="../../images/carousel/carousel-1.jpg">
+                    <span class="name">Planet 1</span>
+                    <span class="distance">100 megamiles</span>
+                </div>
+                <div class="spacecraft">
+                    <button class="send-mission">Send Mission</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script></script>
+</body>
+</html>
