@@ -89,6 +89,26 @@
             width: 100%;
             padding: 5px;
         }
+
+        .spacecrafts{
+            text-align: center;
+        }
+        .spacecrafts > .spacecraft{
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .spacecrafts > .spacecraft > .count{
+            font-size: 10px;
+            line-height: 20px;
+            color: white;
+            margin-top: -5px;
+        }
+        .spacecrafts > .spacecraft > img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
     </style>
 
 </head>
@@ -109,7 +129,12 @@
             </ul>
         </div>
         <div id="bottom-bar">
-            <ul class="space-crafts"></ul>
+            <ul class="spacecrafts undo-list">
+                <li class="spacecraft" ng-repeat="i in [1,2,3,4]">
+                    <img src="../../images/carousel/carousel-1.jpg">
+                    <div class="count">(5)</div>
+                </li>
+            </ul>
         </div>
     </div>
 
