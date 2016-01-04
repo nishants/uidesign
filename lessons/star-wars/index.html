@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
         #top-bar, #bottom-bar{
             height: 60px;
             background-color: #181818;
@@ -23,8 +26,12 @@
         #content{
             padding-top: 60px;
         }
-        .missions{
+        .undo-list{
             list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .missions{
             display: block;
             text-align: center;
         }
@@ -73,6 +80,15 @@
             display:table;
             clear:both;
         }
+
+        .missions > .submit > button{
+            width: 100%;
+            line-height: 50px;
+        }
+        .missions > .submit{
+            width: 100%;
+            padding: 5px;
+        }
     </style>
 
 </head>
@@ -81,7 +97,7 @@
     <div id="app" ng-app>
         <div id="top-bar"></div>
         <div id="content">
-            <ul class="missions">
+            <ul class="missions undo-list">
                 <li class="mission selected" ng-repeat="item in [1, 2, 3, 4, 5]">
                     <img src="../../images/carousel/carousel-1.jpg">
                     <div class="name">Donlon</div>
@@ -89,6 +105,7 @@
                     <div class="no-mission">No Mission <span class="add fa fa-chevron-right"></span></div>
                     <div class="spacecraft"><img src="../../images/carousel/carousel-1.jpg"><span class="time">(5 hr)</span> <span class="remove fa fa-times"></span></div>
                 </li>
+                <li class="submit"><button class="submit">Find Falcone</button></li>
             </ul>
         </div>
         <div id="bottom-bar">
