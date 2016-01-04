@@ -68,7 +68,10 @@
             display: flex;
             padding: 5px;
         }
-        #spacecrafts > .spacecraft > img{
+        #spacecrafts > .spacecraft > .indicator{
+            margin: 0;
+        }
+        #spacecrafts > .spacecraft > .indicator > img{
             border-radius: 50%;
             height: 20px;
             width: 20px;
@@ -85,7 +88,7 @@
             border-left: 1px solid #e7e7e7;
             padding-left: 5px;
         }
-        #spacecrafts > .spacecraft > img, #spacecrafts > .spacecraft > .description{
+        #spacecrafts > .spacecraft > .indicator > img, #spacecrafts > .spacecraft > .description{
             float: left;
             line-height: 30px;
         }
@@ -122,7 +125,9 @@
         </div>
         <ul id="spacecrafts">
             <li class="spacecraft">
-                <img src="../../images/category-icons/jewels.svg">
+                <div class="indicator">
+                    <img src="../../images/category-icons/jewels.svg">
+                </div>
                 <div class="description">
                     <span class="count">(4)</span>
                     <span class="range">200 megamiles</span>
