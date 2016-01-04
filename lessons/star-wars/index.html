@@ -45,17 +45,39 @@
         }
         .mission {
             display: inline-block;
+            background-color: white;
+        }
+        .select-spacecraft > #missions > .mission:not(.select){
+            opacity: 0.5;
+        }
+        .select-spacecraft > #missions > .mission.select{
+            -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+            transform: scale(1.1);
+            background: white;
         }
     </style>
 
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="select-spacecraft">
         <div id="missions">
             <div class="mission">
                 <div class="planet">
                     <img src="../../images/carousel/carousel-1.jpg">
+                    <span class="name">Planet 1</span>
+                    <span class="distance">100 megamiles</span>
+                </div>
+                <div class="spacecraft">
+                    <button class="send-mission">Send Mission</button>
+                </div>
+
+            </div>
+            <div class="mission select">
+                <div class="planet">
+                    <img src="../../images/carousel/carousel-2.jpg">
                     <span class="name">Planet 1</span>
                     <span class="distance">100 megamiles</span>
                 </div>
