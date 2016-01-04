@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px auto;
+            padding: 0;
+        }
+
+        body{
+            text-align: center;
+        }
+
+        .mission {
+            border: 1px solid #EEE;
+        }
+        .mission > .planet, .mission > .spacecraft{
+            padding: 5px;
+        }
+        .mission > .planet{
+            border-bottom: 1px solid #EEE;
+        }
+
+        .mission > .planet > img{
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            display: block;
+        }
+        .mission >.planet > span.name{
+            font-size: 13px;
+        }
+        .mission >.planet > span.distance{
+            font-size: 9px;
+        }
+        .mission >.planet > span.name, .mission >.planet > span.distance{
+            display: block;
+        }
+        .mission {
+            display: inline-block;
+            background-color: white;
+        }
+        .select-spacecraft > #missions > .mission:not(.select){
+            opacity: 0.5;
+        }
+        .select-spacecraft > #missions > .mission.select{
+            -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+            transform: scale(1.1);
+            background: white;
+        }
+        #spacecrafts{
+            position: fixed;
+            width: 100%;
+            background-color: #F5F5F5;
+            bottom: 0px;
+            max-height: 50vh;
+            overflow: auto;
+        }
+        #spacecrafts > .spacecraft{
+            display: flex;
+            padding: 5px;
+        }
+        #spacecrafts > .spacecraft > .indicator{
+            margin: 0;
+            border-right: 1px solid #e7e7e7;
+            padding-right: 5px;
+            display: flex;
+            flex-direction: column;
+            font-size: 13px;
+        }
+        #spacecrafts > .spacecraft > .indicator > img{
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            display: block;
+            margin:  auto;
+        }
+        #spacecrafts > .spacecraft > .select{
+            font-size: 25px;
+            padding: 5px;
+            border: 1px solid rgba(1,1,1,0.05);
+            margin: 0px 0px 0px auto;
+        }
+        #spacecrafts > .spacecraft > .description{
+            font-size: 13px;
+            margin: 0px;
+            text-align: left;
+            padding: 5px;
+            line-height: 20px;
+        }
+        #spacecrafts > .spacecraft > .description > .range{
+            display: block;
+        }
+        #spacecrafts > .spacecraft > .indicator > img, #spacecrafts > .spacecraft > .description{
+            float: left;
+            line-height: 15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="app" class="select-spacecraft">
+        <div id="missions">
+            <div class="mission">
+                <div class="planet">
+                    <img src="../../images/carousel/carousel-1.jpg">
+                    <span class="name">Planet 1</span>
+                    <span class="distance">100 megamiles</span>
+                </div>
+                <div class="spacecraft">
+                    <button class="send-mission">Send Mission</button>
+                </div>
+
+            </div>
+            <div class="mission select">
+                <div class="planet">
+                    <img src="../../images/carousel/carousel-2.jpg">
+                    <span class="name">Planet 1</span>
+                    <span class="distance">100 megamiles</span>
+                </div>
+                <div class="spacecraft">
+                    <button class="send-mission">Send Mission</button>
+                </div>
+
+            </div>
+        </div>
+        <ul id="spacecrafts">
+            <li class="spacecraft">
+                <div class="indicator">
+                    <img src="../../images/category-icons/jewels.svg">
+                    <div>
+                        <span class="name">Space Pod</span>
+                        <span class="count">(4)</span>
+                    </div>
+                </div>
+                <div class="description">
+                    <span class="range">Range : 200 megamiles</span>
+                    <span class="speed">Speed : 500 megamiles/hour</span>
+                </div>
+                <div class="select ">
+                    <span class="fa fa-check"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <script></script>
+</body>
+</html>
