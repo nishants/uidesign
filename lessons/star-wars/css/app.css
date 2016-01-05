@@ -47,8 +47,8 @@ bottom: 0;
   margin: 5px;
   display: inline-block;
   font-size: 10px;
-  font-color: #181818;
-  border: 1px solid #181818;
+  border: 1px solid rgba(0,0,0, 0.1);
+  border-radius: 5px;
   min-width: 100px;
   padding: 5px;
 }
@@ -86,6 +86,7 @@ bottom: 0;
   height: 20px;
   border-radius: 50%;
   float: left;
+  opacity: 0.5;
 }
 .mission .spacecraft > .time{
   padding: 5px;

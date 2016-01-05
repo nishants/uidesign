@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="spacecraft">
-                        <img src="../../images/carousel/carousel-1.jpg">
+                        <img ng-src="{{planet.spacecraft | vehicleIcon}}">
                         <span class="time">({{planet | missionTime:planet.spacecraft}} hr)</span>
                         <span class="remove fa fa-times" ng-click="game.removeMissionFor(planet)"></span></div>
                 </li>
