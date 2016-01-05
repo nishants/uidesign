@@ -236,14 +236,15 @@
 
         game.service("FindFalconeApi", function($http, server){
             var apiToken = undefined,
-                tokenUrl = server + "/token",
-                requestToken = $http.get(tokenUrl, {timeout: 3000}).then(function (response) {
-                    apiToken = response.token;
-                }, function(){
-                    console.log("Token api failed "+"(" + tokenUrl +").");
-                    console.log("Continuing without token");
-                    apiToken = "no-token";
-                });
+                tokenUrl = server + "/token";
+
+            $http.get(tokenUrl, {timeout: 3000}).then(function (response) {
+                apiToken = response.token;
+            }, function(){
+                console.log("Token api failed "+"(" + tokenUrl +").");
+                console.log("Continuing without token");
+                apiToken = "no-token";
+            });
 
             return {
                 loading: function(){
