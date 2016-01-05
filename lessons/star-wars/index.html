@@ -36,7 +36,7 @@
                 <li class="mission"
                     ng-repeat="planet in game.planets()"
                     ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.noMoreMissions() && !planet.spacecraft}">
-                    <img src="../../images/carousel/carousel-1.jpg">
+                    <img ng-src="{{planet | imageFor}}">
                     <div class="name">{{planet.name}}</div>
                     <div class="distance"> {{planet.distance}} megamiles</div>
 
@@ -87,5 +87,7 @@
     <script src="app/models/planets.js"></script>
     <script src="app/models/vehicle.js"></script>
     <script src="app/mission-time-filter.js"></script>
+    <script src="app/planet-image-filter.js"></script>
+
 </body>
 </html>
