@@ -206,7 +206,7 @@
                 <li class="mission selected" ng-repeat="planet in game.planets()" ng-click="game.expandBottomBar = game.selectSpacecraft = true;">
                     <img src="../../images/carousel/carousel-1.jpg">
                     <div class="name">{{planet.name}}</div>
-                    <div class="distance"> {{planet.distance}}megamiles</div>
+                    <div class="distance"> {{planet.distance}} megamiles</div>
                     <div class="no-mission">No Mission <span class="add fa fa-chevron-right"></span></div>
                     <div class="spacecraft"><img src="../../images/carousel/carousel-1.jpg"><span class="time">(5 hr)</span> <span class="remove fa fa-times"></span></div>
                 </li>
@@ -257,7 +257,25 @@
             };
         });
 
-        game.service("FindFalconeApi", function($http, server, Vehicles){
+        game.factory("Planets", function(){
+            var Planet = function(data){
+                this.name       = data.name;
+                this.distance   = data.distance;
+                this.spacecraft = null;
+            };
+
+            return {
+                parse: function (array) {
+                    var planets = [];
+                    for(var i =0; i< array.length; i++){
+                        planets.push(new Planet(array[i]));
+                    }
+                    return planets;
+                }
+            };
+        })
+
+        game.service("FindFalconeApi", function($http, server, Vehicles, Planets){
             var apiToken    = undefined,
                 planets     = undefined,
                 vehicles    = undefined,
@@ -271,7 +289,8 @@
             });
 
             $http.get(planetsUrl).then(function(response){
-                planets = response.data;
+                planets = Planets.parse(response.data);
+
             });
 
             $http.get(vehiclesUrl).then(function(response){
