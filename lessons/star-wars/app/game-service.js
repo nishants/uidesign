@@ -7,18 +7,20 @@
 
         tokenUrl    = server + "/token",
         planetsUrl  = server + "/planets",
-        vehiclesUrl = server + "/vehicles";
+        vehiclesUrl = server + "/vehicles",
+        submitUrl   = server + "/find",
 
-    $http.post(tokenUrl, {}, {headers: {Accept: "application/json"}}).then(function (response) {
-      apiToken = response.data.token;
-    });
+        requestConfig = {headers: {Accept: "application/json", "Content-Type" :"application/json"}},
 
-    $http.get(planetsUrl).then(function(response){
+        getToken = $http.post(tokenUrl, {}, requestConfig);
+
+
+    $http.get(planetsUrl, requestConfig).then(function(response){
       planets = Planets.parse(response.data);
 
     });
 
-    $http.get(vehiclesUrl).then(function(response){
+    $http.get(vehiclesUrl, requestConfig).then(function(response){
       vehicles = Vehicles.parse(response.data);
     });
 
@@ -31,6 +33,24 @@
       },
       vehicles: function(){
         return vehicles;
+      },
+      submit : function(missions, ifWon, ifLost){
+        var request = {planet_names: [], vehicle_names:[]};
+        for(var i  = 0; i < missions.length; i++){
+          var mission = missions[i];
+          request.planet_names.push(mission.name);
+          request.vehicle_names.push(mission.spacecraft.name);
+        }
+
+        getToken.then(function (response) {
+          request.token = response.data.token;
+          $http.post(submitUrl, request, requestConfig).then(function (response) {
+            var result = response.data;
+            result.status == "success" ? ifWon(result.planet_name) :ifLost();
+          }, function (response) {
+            console.error(response);
+          });
+        });
       }
     };
 

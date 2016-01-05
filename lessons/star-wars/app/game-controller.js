@@ -31,6 +31,19 @@
       },
       removeMissionFor: function(planet){
         planet.spacecraft = null;
+      },
+      findFalcone: function(){
+        var missions = [];
+        var planets = this.planets();
+        for(var i =0; i< planets.length; i++){
+          var planet = planets[i];
+          planet.spacecraft ? missions.push(planet) : "";
+        }
+        GameService.submit(missions, function(foundAt){
+          alert("You Win, found at " + foundAt);
+        }, function(){
+          alert("You Loose");
+        });
       }
     };
   }])
