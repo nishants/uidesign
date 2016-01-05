@@ -120,6 +120,7 @@
 
         .expand > .spacecrafts .spacecraft{
             height: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3)
         }
 
         .expand > .spacecrafts .spacecraft > .icon, .expand > .spacecrafts .spacecraft > .description{
@@ -129,6 +130,9 @@
         :not(.expand) > .spacecrafts .spacecraft > .description{
             display: none;
         }
+        #bottom-bar.expand{
+            background-color: rgba(24, 24, 24, 0.85);
+        }
         .expand > .spacecrafts .spacecraft > .description{
             line-height: 20px;
             margin-left: 10px;
@@ -137,6 +141,16 @@
         .expand > .spacecrafts .spacecraft > .description > span{
             display: block;
         }
+        .expand > .spacecrafts .spacecraft > .select{
+            float: right;
+            height: 30px;
+            font-size: 20px;
+            padding: 5px;
+            border: 1px solid;
+            margin: 10px 5px;
+        }
+
+
     </style>
 
 </head>
@@ -166,6 +180,9 @@
                     <div class="description">
                         <span class="range">Range: 2000 megamiles</span>
                         <span class="speed">Speed: 2000 megamiles/hr</span>
+                    </div>
+                    <div class="select">
+                        <span class="fa fa-check"></span>
                     </div>
                 </li>
             </ul>
