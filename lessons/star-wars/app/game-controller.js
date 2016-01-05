@@ -28,6 +28,9 @@
           missions += planet.spacecraft ? 1 : 0;
         }
         return missions == 4;
+      },
+      removeMissionFor: function(planet){
+        planet.spacecraft = null;
       }
     };
   }])
