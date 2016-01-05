@@ -46,6 +46,10 @@
   min-width: 100px;
   padding: 5px;
 }
+.missions > .mission.ignored {
+  opacity: 0.3;
+}
+
 .missions > .mission > img {
   width: 35px;
   height: 35px;
@@ -62,6 +66,7 @@
 .mission.assigned .no-mission {
   display: none;
 }
+
 
 .mission .spacecraft, .mission .no-mission  {
   padding: 5px;

@@ -35,14 +35,17 @@
             <ul class="missions undo-list">
                 <li class="mission"
                     ng-repeat="planet in game.planets()"
-                    ng-class="{'assigned' : planet.spacecraft}">
+                    ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.noMoreMissions() && !planet.spacecraft}">
                     <img src="../../images/carousel/carousel-1.jpg">
                     <div class="name">{{planet.name}}</div>
                     <div class="distance"> {{planet.distance}} megamiles</div>
-                    <div class="no-mission" ng-click="game.selectSpacecraftFor(planet)">
+
+                    <div class="no-mission"
+                         ng-click="game.selectSpacecraftFor(planet)">
                         No Mission
                         <span class="add fa fa-chevron-right"></span>
                     </div>
+
                     <div class="spacecraft">
                         <img src="../../images/carousel/carousel-1.jpg">
                         <span class="time">({{planet | missionTime:planet.spacecraft}} hr)</span>
