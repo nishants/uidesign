@@ -149,7 +149,7 @@
         }
 
         .expand > .spacecrafts .spacecraft{
-            height: 60px;
+            height: 80px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2)
         }
 
@@ -167,13 +167,16 @@
             background-color: rgba(24, 24, 24, 0.85);
         }
         .expand > .spacecrafts .spacecraft > .description{
-            line-height: 20px;
             margin-left: 10px;
             text-align: left;
         }
         .expand > .spacecrafts .spacecraft > .description > span{
             display: block;
         }
+        .expand > .spacecrafts .spacecraft > .description > .name{
+            font-size: 13px;
+        }
+
         .expand > .spacecrafts .spacecraft > .select{
             float: right;
             height: 30px;
@@ -218,6 +221,7 @@
                         <div class="count">({{vehicle.total_no}})</div>
                     </div>
                     <div class="description">
+                        <span class="name">{{vehicle.name}}</span>
                         <span class="range">Range: {{vehicle.max_distance}} megamiles</span>
                         <span class="speed">Speed: {{vehicle.speed}} megamiles/hr</span>
                     </div>
