@@ -1,0 +1,192 @@
+
+* {
+  box-sizing: border-box;
+}
+#loader{
+  position: absolute;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  background-color: #181818;
+  color: white;
+  text-align: center;
+  padding-top: 10vh;
+}
+
+#top-bar, #bottom-bar{
+  height: 60px;
+  background-color: #181818;
+  position: fixed;
+  width: 100%;
+  color: white;
+}
+#top-bar{
+  top: 0;
+}
+#bottom-bar{
+  bottom: 0;
+}
+#content{
+  padding-top: 60px;
+}
+.undo-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#top-bar > .restart{
+  float: left;
+}
+#top-bar > .total-time{
+  float: right;
+}
+#top-bar > .restart, #top-bar > .total-time{
+  height: 60px;
+  font-size: 20px;
+  padding: 15px;
+  line-height: 30px;
+}
+.missions{
+  display: block;
+  text-align: center;
+}
+
+.missions > .mission{
+  margin: 5px;
+  display: inline-block;
+  font-size: 10px;
+  font-color: #181818;
+  border: 1px solid #181818;
+  min-width: 100px;
+  padding: 5px;
+}
+.missions > .mission > img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.missions > .mission.selected > .no-mission{
+  display: none;
+}
+
+.mission:not(.assigned) .spacecraft {
+  display: none;
+}
+
+.mission.assigned .no-mission {
+  display: none;
+}
+
+.mission .spacecraft, .mission .no-mission  {
+  padding: 5px;
+  border-top: 1px solid #EEE;
+  margin-top: 5px;
+  height: 35px;
+}
+
+.mission .spacecraft > img{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  float: left;
+}
+.mission .spacecraft > .time{
+  padding: 5px;
+  display: inline-block;
+  float: left;
+}
+.mission .spacecraft > .remove, .mission .spacecraft > .add{
+  float: right;
+  font-size: 20px;
+}
+.mission .spacecraft:after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.missions > .submit > button{
+  width: 100%;
+  line-height: 50px;
+  max-width: 300px;
+}
+
+.missions > .submit{
+  width: 100%;
+  padding: 5px;
+}
+
+#bottom-bar.expand{
+  height: auto;
+}
+
+#bottom-bar.expand > .spacecrafts > .spacecraft{
+  display: block;
+}
+
+.spacecrafts{
+  text-align: center;
+}
+.spacecrafts > .spacecraft{
+  padding: 5px;
+  display: inline-block;
+  font-size: 10px;
+  line-height: 20px;
+}
+
+.spacecrafts > .spacecraft .icon {
+  width: 50px;
+}
+
+.spacecrafts > .spacecraft .icon > .count{
+  margin-top: -5px;
+}
+.spacecrafts > .spacecraft .icon > img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.expand > .spacecrafts .spacecraft{
+  height: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+.expand > .spacecrafts .spacecraft > .icon{
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.expand > .spacecrafts .spacecraft > .icon, .expand > .spacecrafts .spacecraft > .description{
+  display: inline-block;
+  float: left;
+}
+:not(.expand) > .spacecrafts .spacecraft > .description{
+  display: none;
+}
+#bottom-bar.expand{
+  background-color: rgba(24, 24, 24, 0.85);
+}
+.expand > .spacecrafts .spacecraft > .description{
+  margin-left: 10px;
+  text-align: left;
+}
+.expand > .spacecrafts .spacecraft > .description > span{
+  display: block;
+}
+.expand > .spacecrafts .spacecraft > .description > .name{
+  font-size: 13px;
+}
+
+.expand > .spacecrafts .spacecraft > .select{
+  float: right;
+  height: 30px;
+  font-size: 20px;
+  padding: 5px;
+  border: 1px solid;
+  margin: 10px 5px;
+}
+.expand:not(.and-select) > .spacecrafts .spacecraft > .select{
+  display: none;
+}
+
+
