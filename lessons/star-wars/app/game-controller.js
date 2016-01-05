@@ -47,6 +47,9 @@
         }, function(){
           alert("You Loose");
         });
+      },
+      disabledVehicle: function(vehicle){
+        return vehicle.count == 0;
       }
     };
   }])
