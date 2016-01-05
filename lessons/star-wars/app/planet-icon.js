@@ -4,7 +4,7 @@
   game.filter("planetIcon", function(){
     var images = {
       "Donlon"  : "images/Donlon.png",
-      "Enchai"  : "images/Enchai.png",
+      "Enchai"  : "images/Enchai.jpg",
       "Jebing"  : "images/Jebing.png",
       "Sapir"   : "images/Sapir.png",
       "Lerbin"  : "images/Lerbin.jpg",
