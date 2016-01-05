@@ -9,6 +9,9 @@
       selectedPlanet: null,
       selectVehicle : function(vehicle){
         this.selectedPlanet.spacecraft = vehicle;  this.selectedPlanet = null; this.expandBottomBar = false;
+      },
+      selectSpacecraftFor: function(planet){
+        this.selectedPlanet = planet;
       }
     };
   }])
