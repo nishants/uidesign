@@ -1,9 +1,21 @@
 (function () {
   "use strict"
-  game.filter("missionTime", function(){
+  var timeFor = function (planet, spacecraft) {
+    return spacecraft ? planet.distance / spacecraft.speed : "";
+  };
 
-    return function(planet, spacecraft){
-      return spacecraft ? planet.distance / spacecraft.speed : "";
+  game.filter("missionTime", function(){
+    return timeFor;
+  });
+  game.filter("totalMissionTime", function(){
+    return function(planets){
+      var time = 0;
+      for(var i =0; i < planets.length; i++){
+        var planet = planets[i];
+        time += planet.spacecraft ? timeFor(planet, planet.spacecraft) : 0;
+      }
+      return time;
     };
   });
+
 }).call(this);
