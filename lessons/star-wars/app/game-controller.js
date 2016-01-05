@@ -11,7 +11,9 @@
         this.selectedPlanet.spacecraft = vehicle;
         this.selectedPlanet = null;
         this.expandBottomBar = false;
+        vehicle.count --;
       },
+
       selectSpacecraftFor: function(planet){
         if(this.noMoreMissions()) return;
         this.selectedPlanet = planet;
@@ -30,6 +32,7 @@
         return missions == 4;
       },
       removeMissionFor: function(planet){
+        planet.spacecraft.count ++;
         planet.spacecraft = null;
       },
       findFalcone: function(){

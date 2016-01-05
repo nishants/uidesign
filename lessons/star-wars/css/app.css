@@ -183,3 +183,11 @@
 .expand:not(.and-select) > .spacecrafts .spacecraft > .select{
   display: none;
 }
+
+.checkbox:not(.checked) > *{
+  opacity: 0.1;
+}
+
+.checkbox:not(.checked):hover > *{
+  opacity: 0.5;
+}
