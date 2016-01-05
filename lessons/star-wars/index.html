@@ -11,6 +11,17 @@
         * {
             box-sizing: border-box;
         }
+        #loader{
+            position: absolute;
+            z-index: 100;
+            height: 100%;
+            width: 100%;
+            background-color: #181818;
+            color: white;
+            text-align: center;
+            padding-top: 10vh;
+        }
+
         #top-bar, #bottom-bar{
             height: 60px;
             background-color: #181818;
@@ -181,7 +192,9 @@
 </head>
 
 <body>
-    <div id="app" ng-app ng-init="app = {expandBottomBar: false, selectSpacecraft: false}">
+    <div id="app" ng-app="FindFalcone" ng-controller="GameController" ng-init="app = {expandBottomBar: false, selectSpacecraft: false}">
+        <div id="loader" ng-show="game.loading()">Loading...</div>
+
         <div id="top-bar">
             <div class="restart"> <span class="fa fa-undo"></span></div>
             <div class="total-time"> 200 hours </span></div>
@@ -218,5 +231,33 @@
     </div>
 
     <script src="../../lib/angular-1.4.3.js"></script>
+    <script>
+        var game = angular.module("FindFalcone", []);
+        game.value("server", "https://findfalcone.herokuapp.com");
+
+        game.service("FindFalconeApi", function($http, server){
+            var apiToken = undefined,
+                tokenUrl = server + "/token",
+                requestToken = $http.get(tokenUrl, {timeout: 3000}).then(function (response) {
+                    apiToken = response.token;
+                }, function(){
+                    console.log("token api failed "+"(tokenUrl)");
+                    console.log("Continuing without token");
+                    apiToken = "no-token";
+                });
+
+            return {
+                loading: function(){
+                    return !apiToken;
+                }
+            };
+
+        });
+        game.controller("GameController", ["$scope", "FindFalconeApi", function($scope, FindFalconeApi){
+            $scope.game = {
+                loading: FindFalconeApi.loading
+            };
+        }])
+    </script>
 </body>
 </html>
