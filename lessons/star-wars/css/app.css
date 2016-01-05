@@ -57,8 +57,8 @@ bottom: 0;
 }
 
 .missions > .mission > img {
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
 }
 .missions > .mission.selected > .no-mission{
