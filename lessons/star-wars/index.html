@@ -200,10 +200,10 @@
         </div>
         <div id="content">
             <ul class="missions undo-list">
-                <li class="mission selected" ng-repeat="item in [1, 2, 3, 4, 5]" ng-click="game.expandBottomBar = game.selectSpacecraft = true;">
+                <li class="mission selected" ng-repeat="planet in game.planets()" ng-click="game.expandBottomBar = game.selectSpacecraft = true;">
                     <img src="../../images/carousel/carousel-1.jpg">
-                    <div class="name">Donlon</div>
-                    <div class="distance">100 megamiles</div>
+                    <div class="name">{{planet.name}}</div>
+                    <div class="distance"> {{planet.distance}}megamiles</div>
                     <div class="no-mission">No Mission <span class="add fa fa-chevron-right"></span></div>
                     <div class="spacecraft"><img src="../../images/carousel/carousel-1.jpg"><span class="time">(5 hr)</span> <span class="remove fa fa-times"></span></div>
                 </li>
@@ -212,14 +212,14 @@
         </div>
         <div id="bottom-bar" ng-class="{'expand' : game.expandBottomBar, 'and-select' : game.selectSpacecraft}">
             <ul class="spacecrafts undo-list">
-                <li class="spacecraft" ng-repeat="i in [1,2,3,4]">
+                <li class="spacecraft" ng-repeat="vehicle in game.vehicles()">
                     <div class="icon" ng-click="game.expandBottomBar = !game.expandBottomBar">
                         <img src="../../images/carousel/carousel-1.jpg">
-                        <div class="count">(5)</div>
+                        <div class="count">({{vehicle.total_no}})</div>
                     </div>
                     <div class="description">
-                        <span class="range">Range: 2000 megamiles</span>
-                        <span class="speed">Speed: 2000 megamiles/hr</span>
+                        <span class="range">Range: {{vehicle.max_distance}} megamiles</span>
+                        <span class="speed">Speed: {{vehicle.speed}} megamiles/hr</span>
                     </div>
                     <div class="select" ng-click="game.expandBottomBar = game.selectSpacecraft = false;">
                         <span class="fa fa-check"></span>
@@ -235,32 +235,48 @@
         game.value("server", "https://findfalcone.herokuapp.com");
 
         game.service("FindFalconeApi", function($http, server){
-            var apiToken = undefined,
-                tokenUrl = server + "/token";
+            var apiToken    = undefined,
+                planets     = undefined,
+                vehicles    = undefined,
 
-            $http.get(tokenUrl, {timeout: 3000}).then(function (response) {
-                apiToken = response.token;
-            }, function(){
-                console.log("Token api failed "+"(" + tokenUrl +").");
-                console.log("Continuing without token");
-                apiToken = "no-token";
+                tokenUrl    = server + "/token",
+                planetsUrl  = server + "/planets",
+                vehiclesUrl = server + "/vehicles";
+
+            $http.post(tokenUrl, {}, {headers: {Accept: "application/json"}}).then(function (response) {
+                apiToken = response.data.token;
+            });
+
+            $http.get(planetsUrl).then(function(response){
+                planets = response.data;
+            });
+
+            $http.get(vehiclesUrl).then(function(response){
+                vehicles = response.data;
             });
 
             return {
                 loading: function(){
-                    return !apiToken;
+                    return !(planets && vehicles);
+                },
+                planets: function(){
+                    return planets;
+                },
+                vehicles: function(){
+                    return vehicles;
                 }
             };
 
         });
         game.controller("GameController", ["$scope", "FindFalconeApi", function($scope, FindFalconeApi){
             $scope.game = {
-                loading: FindFalconeApi.loading,
+                loading  : FindFalconeApi.loading,
+                planets  : FindFalconeApi.planets,
+                vehicles : FindFalconeApi.vehicles,
                 expandBottomBar: false,
                 selectSpacecraft: false
             };
         }]);
-
 
     </script>
 </body>
