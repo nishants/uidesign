@@ -218,11 +218,11 @@
                 <li class="spacecraft" ng-repeat="vehicle in game.vehicles()">
                     <div class="icon" ng-click="game.expandBottomBar = !game.expandBottomBar">
                         <img src="../../images/carousel/carousel-1.jpg">
-                        <div class="count">({{vehicle.total_no}})</div>
+                        <div class="count">({{vehicle.count}})</div>
                     </div>
                     <div class="description">
                         <span class="name">{{vehicle.name}}</span>
-                        <span class="range">Range: {{vehicle.max_distance}} megamiles</span>
+                        <span class="range">Range: {{vehicle.range}} megamiles</span>
                         <span class="speed">Speed: {{vehicle.speed}} megamiles/hr</span>
                     </div>
                     <div class="select" ng-click="game.expandBottomBar = game.selectSpacecraft = false;">
@@ -238,7 +238,26 @@
         var game = angular.module("FindFalcone", []);
         game.value("server", "https://findfalcone.herokuapp.com");
 
-        game.service("FindFalconeApi", function($http, server){
+        game.factory("Vehicles", function(){
+            var Vehicle = function(data){
+                this.name  = data.name;
+                this.count = data.total_no;
+                this.range = data.max_distance;
+                this.speed = data.speed;
+            };
+
+            return {
+                parse : function(array){
+                    var vehicles = [];
+                    for(var i =0; i< array.length; i++){
+                        vehicles.push(new Vehicle(array[i]));
+                    }
+                    return vehicles;
+                }
+            };
+        });
+
+        game.service("FindFalconeApi", function($http, server, Vehicles){
             var apiToken    = undefined,
                 planets     = undefined,
                 vehicles    = undefined,
@@ -256,7 +275,7 @@
             });
 
             $http.get(vehiclesUrl).then(function(response){
-                vehicles = response.data;
+                vehicles = Vehicles.parse(response.data);
             });
 
             return {
