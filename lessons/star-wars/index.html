@@ -79,7 +79,15 @@
             display: none;
         }
 
-        .mission .spacecraft {
+        .mission:not(.assigned) .spacecraft {
+            display: none;
+        }
+
+        .mission.assigned .no-mission {
+            display: none;
+        }
+
+        .mission .spacecraft, .mission .no-mission  {
             padding: 5px;
             border-top: 1px solid #EEE;
             margin-top: 5px;
@@ -203,17 +211,23 @@
         </div>
         <div id="content">
             <ul class="missions undo-list">
-                <li class="mission selected" ng-repeat="planet in game.planets()" ng-click="game.expandBottomBar = game.selectSpacecraft = true;">
+                <li class="mission"
+                    ng-repeat="planet in game.planets()"
+                    ng-click="game.expandBottomBar = true;"
+                    ng-class="{'assigned' : planet.spacecraft}">
                     <img src="../../images/carousel/carousel-1.jpg">
                     <div class="name">{{planet.name}}</div>
                     <div class="distance"> {{planet.distance}} megamiles</div>
-                    <div class="no-mission">No Mission <span class="add fa fa-chevron-right"></span></div>
+                    <div class="no-mission" ng-click="game.selectedPlanet = planet">
+                        No Mission
+                        <span class="add fa fa-chevron-right"></span>
+                    </div>
                     <div class="spacecraft"><img src="../../images/carousel/carousel-1.jpg"><span class="time">(5 hr)</span> <span class="remove fa fa-times"></span></div>
                 </li>
                 <li class="submit"><button class="submit">Find Falcone</button></li>
             </ul>
         </div>
-        <div id="bottom-bar" ng-class="{'expand' : game.expandBottomBar, 'and-select' : game.selectSpacecraft}">
+        <div id="bottom-bar" ng-class="{'expand' : game.expandBottomBar, 'and-select' : game.selectedPlanet}">
             <ul class="spacecrafts undo-list">
                 <li class="spacecraft" ng-repeat="vehicle in game.vehicles()">
                     <div class="icon" ng-click="game.expandBottomBar = !game.expandBottomBar">
@@ -225,7 +239,7 @@
                         <span class="range">Range: {{vehicle.range}} megamiles</span>
                         <span class="speed">Speed: {{vehicle.speed}} megamiles/hr</span>
                     </div>
-                    <div class="select" ng-click="game.expandBottomBar = game.selectSpacecraft = false;">
+                    <div class="select" ng-click="game.selectedPlanet.spacecraft = vehicle;  game.selectedPlanet = null; game.expandBottomBar = false;">
                         <span class="fa fa-check"></span>
                     </div>
                 </li>
@@ -316,7 +330,7 @@
                 planets  : FindFalconeApi.planets,
                 vehicles : FindFalconeApi.vehicles,
                 expandBottomBar: false,
-                selectSpacecraft: false
+                selectedPlanet: null
             };
         }]);
 
