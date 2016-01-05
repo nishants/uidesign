@@ -32,7 +32,7 @@
             <div class="total-time">{{ game.planets() | totalMissionTime}} hours </span></div>
         </div>
         <div id="content">
-            <ul class="missions undo-list">
+            <ul class="missions undo-list" ng-if="!game.loading()">
                 <li class="mission"
                     ng-repeat="planet in game.planets()"
                     ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.noMoreMissions() && !planet.spacecraft}">
@@ -51,7 +51,9 @@
                         <span class="time">({{planet | missionTime:planet.spacecraft}} hr)</span>
                         <span class="remove fa fa-times" ng-click="game.removeMissionFor(planet)"></span></div>
                 </li>
-                <li class="submit"><button class="submit">Find Falcone</button></li>
+                <li class="submit">
+                    <button  ng-disabled="!game.noMoreMissions()">Find Falcone</button>
+                </li>
             </ul>
         </div>
         <div id="bottom-bar" ng-class="{'expand' : game.expandBottomBar, 'and-select' : game.selectedPlanet}">
