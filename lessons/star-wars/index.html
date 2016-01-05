@@ -35,7 +35,6 @@
             <ul class="missions undo-list">
                 <li class="mission"
                     ng-repeat="planet in game.planets()"
-                    ng-click="game.expandBottomBar = true;"
                     ng-class="{'assigned' : planet.spacecraft}">
                     <img src="../../images/carousel/carousel-1.jpg">
                     <div class="name">{{planet.name}}</div>
@@ -55,7 +54,7 @@
         <div id="bottom-bar" ng-class="{'expand' : game.expandBottomBar, 'and-select' : game.selectedPlanet}">
             <ul class="spacecrafts undo-list">
                 <li class="spacecraft" ng-repeat="vehicle in game.vehicles()">
-                    <div class="icon" ng-click="game.expandBottomBar = !game.expandBottomBar">
+                    <div class="icon" ng-click="game.toggleSpacecraftMenu()">
                         <img src="../../images/carousel/carousel-1.jpg">
                         <div class="count">({{vehicle.count}})</div>
                     </div>

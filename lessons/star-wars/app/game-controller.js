@@ -8,10 +8,16 @@
       expandBottomBar: false,
       selectedPlanet: null,
       selectVehicle : function(vehicle){
-        this.selectedPlanet.spacecraft = vehicle;  this.selectedPlanet = null; this.expandBottomBar = false;
+        this.selectedPlanet.spacecraft = vehicle;
+        this.selectedPlanet = null;
+        this.expandBottomBar = false;
       },
       selectSpacecraftFor: function(planet){
         this.selectedPlanet = planet;
+        this.expandBottomBar = true;
+      },
+      toggleSpacecraftMenu: function(){
+        this.expandBottomBar = !this.expandBottomBar;
       }
     };
   }])

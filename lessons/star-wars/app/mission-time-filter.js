@@ -9,6 +9,7 @@
   });
   game.filter("totalMissionTime", function(){
     return function(planets){
+      if(!planets) return 0;
       var time = 0;
       for(var i =0; i < planets.length; i++){
         var planet = planets[i];
