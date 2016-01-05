@@ -16,6 +16,7 @@
             background-color: #181818;
             position: fixed;
             width: 100%;
+            color: white;
         }
         #top-bar{
             top: 0;
@@ -30,6 +31,19 @@
             list-style: none;
             margin: 0;
             padding: 0;
+        }
+
+        #top-bar > .restart{
+            float: left;
+        }
+        #top-bar > .total-time{
+            float: right;
+        }
+        #top-bar > .restart, #top-bar > .total-time{
+            height: 60px;
+            font-size: 20px;
+            padding: 15px;
+            line-height: 30px;
         }
         .missions{
             display: block;
@@ -104,7 +118,6 @@
         .spacecrafts > .spacecraft{
             padding: 5px;
             display: inline-block;
-            color: white;
             font-size: 10px;
             line-height: 20px;
         }
@@ -157,7 +170,10 @@
 
 <body>
     <div id="app" ng-app ng-init="app = {expandBottomBar: true}">
-        <div id="top-bar"></div>
+        <div id="top-bar">
+            <div class="restart"> <span class="fa fa-undo"></span></div>
+            <div class="total-time"> 200 hours </span></div>
+        </div>
         <div id="content">
             <ul class="missions undo-list">
                 <li class="mission selected" ng-repeat="item in [1, 2, 3, 4, 5]">
