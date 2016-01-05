@@ -44,7 +44,7 @@
                         No Mission
                         <span class="add fa fa-chevron-right"></span>
                     </div>
-                    <div class="spacecraft"><img src="../../images/carousel/carousel-1.jpg"><span class="time">(5 hr)</span> <span class="remove fa fa-times"></span></div>
+                    <div class="spacecraft"><img src="../../images/carousel/carousel-1.jpg"><span class="time">({{planet | missionTime:planet.spacecraft}} hr)</span> <span class="remove fa fa-times"></span></div>
                 </li>
                 <li class="submit"><button class="submit">Find Falcone</button></li>
             </ul>
@@ -75,5 +75,6 @@
     <script src="app/game-service.js"></script>
     <script src="app/models/planets.js"></script>
     <script src="app/models/vehicle.js"></script>
+    <script src="app/mission-time-filter.js"></script>
 </body>
 </html>
