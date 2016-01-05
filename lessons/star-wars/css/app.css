@@ -146,6 +146,9 @@ bottom: 0;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1px;
 }
 
 .expand > .spacecrafts .spacecraft{

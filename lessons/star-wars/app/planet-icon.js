@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  game.filter("imageFor", function(){
+  game.filter("planetIcon", function(){
     var images = {
       "Donlon"  : "images/Donlon.png",
       "Enchai"  : "images/Enchai.png",

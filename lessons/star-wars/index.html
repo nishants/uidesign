@@ -36,7 +36,7 @@
                 <li class="mission"
                     ng-repeat="planet in game.planets()"
                     ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.noMoreMissions() && !planet.spacecraft}">
-                    <img ng-src="{{planet | imageFor}}">
+                    <img ng-src="{{planet | planetIcon}}">
                     <div class="name">{{planet.name}}</div>
                     <div class="distance"> {{planet.distance}} megamiles</div>
 
@@ -63,7 +63,7 @@
                     ng-repeat="vehicle in game.vehicles()"
                     ng-class="{'disable' : game.disabledVehicle(vehicle)}">
                     <div class="icon" ng-click="game.toggleSpacecraftMenu()">
-                        <img src="../../images/carousel/carousel-1.jpg">
+                        <img ng-src="{{vehicle | vehicleIcon}}">
                         <div class="count">({{vehicle.count}})</div>
                     </div>
                     <div class="description">
@@ -87,7 +87,8 @@
     <script src="app/models/planets.js"></script>
     <script src="app/models/vehicle.js"></script>
     <script src="app/mission-time-filter.js"></script>
-    <script src="app/planet-image-filter.js"></script>
+    <script src="app/planet-icon.js"></script>
+    <script src="app/vehicle-icon.js"></script>
 
 </body>
 </html>
