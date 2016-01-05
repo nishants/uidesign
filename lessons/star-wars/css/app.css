@@ -57,8 +57,8 @@ bottom: 0;
 }
 
 .missions > .mission > img {
-  width: 35px;
-  height: 35px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
 }
 .missions > .mission.selected > .no-mission{
@@ -93,6 +93,10 @@ bottom: 0;
   display: inline-block;
   float: left;
 }
+.mission .spacecraft > .remove{
+  color: rgba(250, 8, 8, 0.3);
+}
+
 .mission .spacecraft > .remove, .mission .spacecraft > .add{
   float: right;
   font-size: 20px;
