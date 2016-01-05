@@ -9,8 +9,13 @@
   top: 0;
 }
 #bottom-bar{
-  bottom: 0;
+bottom: 0;
 }
+#bottom-bar.expand{
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
 #content{
   padding-top: 60px;
   padding-bottom: 100px;
@@ -192,4 +197,15 @@
 
 .checkbox:not(.checked):hover > *{
   opacity: 0.5;
+}
+
+:not(.expand) > .spacecrafts > .collapse-bottom-bar{
+  display: none;
+}
+
+.spacecrafts > .collapse-bottom-bar{
+  height: 30px;
+  border-bottom: 1px solid;
+  padding: 5px;
+  margin: 5px 12px;
 }

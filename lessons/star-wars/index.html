@@ -58,6 +58,7 @@
         </div>
         <div id="bottom-bar" ng-class="{'expand' : game.expandBottomBar, 'and-select' : game.selectedPlanet}">
             <ul class="spacecrafts undo-list">
+                <li class="collapse-bottom-bar" ng-click="game.cancelSelection()"><span class="fa fa-chevron-down"></span></li>
                 <li class="spacecraft"
                     ng-repeat="vehicle in game.vehicles()"
                     ng-class="{'disable' : game.disabledVehicle(vehicle)}">

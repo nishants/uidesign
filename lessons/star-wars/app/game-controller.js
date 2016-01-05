@@ -50,7 +50,7 @@
       },
       disabledVehicle: function(vehicle){
         var outOfRange = this.selectedPlanet && vehicle.range < this.selectedPlanet.distance;
-        return vehicle.count == 0 || ( outOfRange);
+        return vehicle.count == 0 || outOfRange;
       }
     };
   }])
