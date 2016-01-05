@@ -6,7 +6,10 @@
       planets  : GameService.planets,
       vehicles : GameService.vehicles,
       expandBottomBar: false,
-      selectedPlanet: null
+      selectedPlanet: null,
+      selectVehicle : function(vehicle){
+        this.selectedPlanet.spacecraft = vehicle;  this.selectedPlanet = null; this.expandBottomBar = false;
+      }
     };
   }])
 }).call(this);

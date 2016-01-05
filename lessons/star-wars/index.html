@@ -44,7 +44,10 @@
                         No Mission
                         <span class="add fa fa-chevron-right"></span>
                     </div>
-                    <div class="spacecraft"><img src="../../images/carousel/carousel-1.jpg"><span class="time">({{planet | missionTime:planet.spacecraft}} hr)</span> <span class="remove fa fa-times"></span></div>
+                    <div class="spacecraft">
+                        <img src="../../images/carousel/carousel-1.jpg">
+                        <span class="time">({{planet | missionTime:planet.spacecraft}} hr)</span>
+                        <span class="remove fa fa-times"></span></div>
                 </li>
                 <li class="submit"><button class="submit">Find Falcone</button></li>
             </ul>
@@ -61,7 +64,7 @@
                         <span class="range">Range: {{vehicle.range}} megamiles</span>
                         <span class="speed">Speed: {{vehicle.speed}} megamiles/hr</span>
                     </div>
-                    <div class="select" ng-click="game.selectedPlanet.spacecraft = vehicle;  game.selectedPlanet = null; game.expandBottomBar = false;">
+                    <div class="select" ng-click="game.selectVehicle(vehicle)">
                         <span class="fa fa-check"></span>
                     </div>
                 </li>
