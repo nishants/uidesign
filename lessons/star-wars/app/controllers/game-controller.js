@@ -13,7 +13,10 @@
       expandBottomBar: false,
       selectedPlanet: null,
       selectVehicle : function(vehicle){
-        if(this.disabledVehicle(vehicle)){
+        if(!this.expandBottomBar){
+          return this.expandBottomBar = true;
+        }
+        if(!this.selectedPlanet || this.disabledVehicle(vehicle)){
           return;
         }
         this.selectedPlanet.spacecraft = vehicle;
