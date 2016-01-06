@@ -28,7 +28,7 @@
     <div id="loader" ng-show="game.loading()">Loading...</div>
     <div id="app">
         <div id="top-bar">
-            <div class="restart"> <span class="fa fa-undo"></span></div>
+            <div class="restart" ng-click="game.reset()"> <span class="fa fa-undo"></span></div>
             <div class="total-time">{{ game.planets() | totalMissionTime}} hours </span></div>
         </div>
         <div id="content">

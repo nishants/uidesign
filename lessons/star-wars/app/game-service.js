@@ -1,42 +1,42 @@
 (function () {
   "use strict"
-  game.service("GameService", function($http, server, Vehicles, Planets){
-    var apiToken    = undefined,
-        planets     = undefined,
-        vehicles    = undefined,
+  game.service("GameService", function ($http, server, Vehicles, Planets) {
+    var planets = undefined,
+        vehicles = undefined,
 
-        tokenUrl    = server + "/token",
-        planetsUrl  = server + "/planets",
+        tokenUrl = server + "/token",
+        planetsUrl = server + "/planets",
         vehiclesUrl = server + "/vehicles",
-        submitUrl   = server + "/find",
+        submitUrl = server + "/find",
 
-        requestConfig = {headers: {Accept: "application/json", "Content-Type" :"application/json"}},
+        requestConfig = {headers: {Accept: "application/json", "Content-Type": "application/json"}},
+        getToken = $http.post(tokenUrl, {}, requestConfig),
 
-        getToken = $http.post(tokenUrl, {}, requestConfig);
+        reset = function () {
+          planets = vehicles = null;
+          $http.get(planetsUrl, requestConfig).then(function (response) {
+            planets = Planets.parse(response.data);
+          });
+          $http.get(vehiclesUrl, requestConfig).then(function (response) {
+            vehicles = Vehicles.parse(response.data);
+          });
+        };
 
-
-    $http.get(planetsUrl, requestConfig).then(function(response){
-      planets = Planets.parse(response.data);
-
-    });
-
-    $http.get(vehiclesUrl, requestConfig).then(function(response){
-      vehicles = Vehicles.parse(response.data);
-    });
-
+    reset();
     return {
-      loading: function(){
+      loading: function () {
         return !(planets && vehicles);
       },
-      planets: function(){
+      planets: function () {
         return planets;
       },
-      vehicles: function(){
+      vehicles: function () {
         return vehicles;
       },
-      submit : function(missions, ifWon, ifLost){
-        var request = {planet_names: [], vehicle_names:[]};
-        for(var i  = 0; i < missions.length; i++){
+      reset: reset,
+      submit: function (missions, ifWon, ifLost) {
+        var request = {planet_names: [], vehicle_names: []};
+        for (var i = 0; i < missions.length; i++) {
           var mission = missions[i];
           request.planet_names.push(mission.name);
           request.vehicle_names.push(mission.spacecraft.name);
@@ -46,7 +46,7 @@
           request.token = response.data.token;
           $http.post(submitUrl, request, requestConfig).then(function (response) {
             var result = response.data;
-            result.status == "success" ? ifWon(result.planet_name) :ifLost();
+            result.status == "success" ? ifWon(result.planet_name) : ifLost();
           }, function (response) {
             console.error(response);
           });

@@ -5,6 +5,11 @@
       loading  : GameService.loading,
       planets  : GameService.planets,
       vehicles : GameService.vehicles,
+      reset    : function(){
+        this.expandBottomBar =  false,
+        this.selectedPlanet  = null,
+        GameService.reset();
+      },
       expandBottomBar: false,
       selectedPlanet: null,
       selectVehicle : function(vehicle){
