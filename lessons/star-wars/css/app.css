@@ -12,8 +12,8 @@
 bottom: 0;
 }
 #bottom-bar.expand{
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
+  border-top-left-radius:15px;
+  border-top-right-radius: 15px;
 }
 
 #content{
