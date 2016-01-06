@@ -1,8 +1,8 @@
 (function () {
   "use strict"
   game.service("GameService", function ($http, server, Vehicles, Planets) {
-    var planets = undefined,
-        vehicles = undefined,
+    var planets  = [],
+        vehicles = [],
 
         tokenUrl = server + "/token",
         planetsUrl = server + "/planets",

@@ -11,7 +11,7 @@
       "other"   : "images/other-vehicle.jpg"
     };
     return function(vehicle){
-      return images[vehicle.name] ? images[vehicle.name] : images["other"];
+      return vehicle ? images[vehicle.name] ? images[vehicle.name] : images["other"] : "";
     };
   });
 
