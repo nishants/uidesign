@@ -13,6 +13,9 @@
       expandBottomBar: false,
       selectedPlanet: null,
       selectVehicle : function(vehicle){
+        if(this.disabledVehicle(vehicle)){
+          return;
+        }
         this.selectedPlanet.spacecraft = vehicle;
         this.selectedPlanet = null;
         this.expandBottomBar = false;

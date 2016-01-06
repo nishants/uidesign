@@ -61,8 +61,9 @@
                 <li class="collapse-bottom-bar" ng-click="game.cancelSelection()"><span class="fa fa-chevron-down"></span></li>
                 <li class="spacecraft"
                     ng-repeat="vehicle in game.vehicles()"
-                    ng-class="{'disable' : game.disabledVehicle(vehicle)}">
-                    <div class="icon" ng-click="game.toggleSpacecraftMenu()">
+                    ng-class="{'disable' : game.disabledVehicle(vehicle)}"
+                    ng-click="game.selectVehicle(vehicle)">
+                    <div class="icon">
                         <img ng-src="{{vehicle | vehicleIcon}}">
                         <div class="count">({{vehicle.count}})</div>
                     </div>
@@ -71,9 +72,9 @@
                         <span class="range">Range: {{vehicle.range}} megamiles</span>
                         <span class="speed">Speed: {{vehicle.speed}} megamiles/hr</span>
                     </div>
-                    <div class="select checkbox"
-                         ng-click="game.selectVehicle(vehicle)">
-                        <span class="fa fa-check"></span>
+
+                    <div class="select" >
+                        <span class="select fa fa-chevron-right"></span>
                     </div>
                 </li>
             </ul>
