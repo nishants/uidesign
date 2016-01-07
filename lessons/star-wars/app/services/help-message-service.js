@@ -5,7 +5,7 @@
       {
         name          : "onLoad",
         messageFor    : function(state){
-          return "Create four missions";
+          return "Create four missions.";
         },
         appliesTo     : function(state){
           return !state.expandBottomBar && !state.selectedPlanet && !state.noMoreMissions();
@@ -14,12 +14,22 @@
       {
         name          : "showVehicles",
         messageFor    : function(){
-          return "Select planet and assign vehicle";
+          return "Select planet and assign vehicle.";
         },
         appliesTo     : function(state){
           return state.expandBottomBar && !state.selectedPlanet && !state.noMoreMissions();
         },
+      },
+      {
+        name          : "selectVehicle",
+        messageFor    : function(state){
+          return "Select a spacecraft with range over " + state.selectedPlanet.distance + "megamiles.";
+        },
+        appliesTo     : function(state){
+          return state.expandBottomBar && state.selectedPlanet ;
+        },
       }
+
     ];
 
     return {
