@@ -1,6 +1,6 @@
 (function () {
   "use strict"
-  game.controller("GameController", ["$scope", "GameService", function($scope, GameService){
+  game.controller("GameController", ["$scope", "GameService", "HelpMessageService", function($scope, GameService, HelpMessages){
     $scope.game = {
       loading  : GameService.loading,
       planets  : GameService.planets,
@@ -74,7 +74,7 @@
         this.expandBottomBar = false;
       },
       message : function(){
-        return "Very long user help message.";
+        return HelpMessages.messageFor(this);
       },
     };
   }])
