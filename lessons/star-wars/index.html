@@ -81,8 +81,29 @@
                 </li>
             </ul>
             <div class="submit">
-                <span class="total-time"> Search time : {{ game.planets() | totalMissionTime}} hours </span>
-                <button  ng-disabled="!game.noMoreMissions()" ng-click="game.findFalcone()">Find Falcone</button>
+                <div class="info">
+                    <div class="field">
+                        <div class="name">Time</div>
+                        <div class="value">{{ game.planets() | totalMissionTime}} Hours</div>
+                    </div>
+                    <div class="field">
+                        <div class="name">Search</div>
+                        <div class="value commas">
+                            <span ng-repeat="planet in game.assignedPlanets()" ng-bind="planet.name"></span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="name">Don't Search</div>
+                        <div class="value commas">
+                            <span ng-repeat="planet in game.unAssignedPlanets()" ng-bind="planet.name"></span>
+                        </div>
+                    </div>
+
+                    <div class="action">
+                        <span >submit</span>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div id="bottom-bar" ng-class="{'expand' : game.expandBottomBar, 'and-select' : game.selectedPlanet}">

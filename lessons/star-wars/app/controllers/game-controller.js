@@ -87,6 +87,22 @@
       message : function(){
         return this.loading() ? "" : (window.message = HelpMessages.messageFor(this));
       },
+      unAssignedPlanets: function(){
+        var result = [];
+        var planets = this.planets();
+        for(var i = 0; i < planets.length; i++){
+          !planets[i].spacecraft ? result.push(planets[i]) : "";
+        }
+        return result;
+      },
+      assignedPlanets: function(){
+        var result = [];
+        var planets = this.planets();
+        for(var i = 0; i < planets.length; i++){
+          planets[i].spacecraft ? result.push(planets[i]) : "";
+        }
+        return result;
+      }
     };
   }])
 }).call(this);
