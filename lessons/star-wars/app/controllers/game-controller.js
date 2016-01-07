@@ -10,6 +10,12 @@
         this.selectedPlanet  = null,
         GameService.reset();
       },
+      ignore: function(planet){
+        var notSelected = (this.selectedPlanet && this.selectedPlanet != planet);
+        var noMissionAded = this.noMoreMissions() && !planet.spacecraft;
+        return noMissionAded || notSelected;
+      },
+
       expandBottomBar: false,
       selectedPlanet: null,
       selectVehicle : function(vehicle){

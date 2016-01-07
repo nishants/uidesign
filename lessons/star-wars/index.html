@@ -29,13 +29,13 @@
     <div id="app">
         <div id="top-bar">
             <div class="restart" ng-click="game.reset()"> <span class="fa fa-undo"></span></div>
-            <div class="total-time">{{ game.planets() | totalMissionTime}} hours </span></div>
+            <div class="total-time"></div>
         </div>
         <div id="content">
             <ul class="missions undo-list" ng-if="!game.loading()">
                 <li class="mission"
                     ng-repeat="planet in game.planets()"
-                    ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.noMoreMissions() && !planet.spacecraft}">
+                    ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.ignore(planet)}">
                     <img ng-src="{{planet | planetIcon}}">
                     <div class="name">{{planet.name}}</div>
                     <div class="distance"> {{planet.distance}} megamiles</div>
