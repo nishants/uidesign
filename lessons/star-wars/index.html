@@ -26,6 +26,14 @@
 
 <body ng-app="game" ng-controller="GameController">
     <div id="loader" ng-show="game.loading()">Loading...</div>
+    <div class="modal" ng-class="{'show' : game.popup}">
+        <div class="modal-contents" ng-if="game.popup">
+            <h1 ng-bind="game.popup.title"></h1>
+            <p ng-bind="game.popup.text"></p>
+            <button ng-click="game.reset()">Play again</button>
+        </div>
+    </div>
+
     <div id="app">
         <div id="top-bar">
             <div class="restart" ng-click="game.reset()"> <span class="fa fa-undo"></span></div>

@@ -6,8 +6,9 @@
       planets  : GameService.planets,
       vehicles : GameService.vehicles,
       reset    : function(){
-        this.expandBottomBar =  false,
-        this.selectedPlanet  = null,
+        this.expandBottomBar =  false;
+        this.selectedPlanet  = null;
+        this.popup           = null;
         GameService.reset();
       },
       ignore: function(planet){
@@ -62,10 +63,17 @@
           var planet = planets[i];
           planet.spacecraft ? missions.push(planet) : "";
         }
+        var self = this;
         GameService.submit(missions, function(foundAt){
-          alert("You Win, found at " + foundAt);
+          self.popup  = {
+            title: "Your Won !",
+            text : "Falcone found on planet "+ foundAt +"."
+          };
         }, function(){
-          alert("You Loose");
+          self.popup  = {
+            title: "You Loose !",
+            text : "Falcone not found at any of the selected planet."
+          };
         });
       },
       disabledVehicle: function(vehicle){
