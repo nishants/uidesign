@@ -72,7 +72,7 @@
         }, function(){
           self.popup  = {
             title: "You Loose !",
-            text : "Falcone not found at any of the selected planet."
+            text : "Falcone not found at any of the selected planets."
           };
         });
       },
