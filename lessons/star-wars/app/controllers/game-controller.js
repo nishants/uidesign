@@ -73,7 +73,9 @@
         this.selectedPlanet = null;
         this.expandBottomBar = false;
       },
-      message : "Very long user help message.",
+      message : function(){
+        return "Very long user help message.";
+      },
     };
   }])
 }).call(this);
