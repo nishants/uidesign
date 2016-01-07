@@ -29,7 +29,7 @@
     <div id="app">
         <div id="top-bar">
             <div class="restart" ng-click="game.reset()"> <span class="fa fa-undo"></span></div>
-            <div class="total-time"></div>
+            <div class="message">{{game.message()}}</div>
         </div>
         <div id="content">
             <ul class="missions undo-list" ng-if="!game.loading()">

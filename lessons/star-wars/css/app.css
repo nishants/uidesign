@@ -30,15 +30,24 @@
   padding: 0;
 }
 
-#top-bar > .restart {
-  float: left;
-}
-
-#top-bar > .restart{
+#top-bar > .restart, #top-bar > .message {
   height: 60px;
   font-size: 20px;
-  padding: 15px;
-  line-height: 30px;
+  padding: 10px;
+  line-height: 40px;
+  max-width: 250px;
+  overflow: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#top-bar > .message {
+  text-align: right;
+  float: right;
+  font-size: 10px;
+}
+
+#top-bar > .restart {
+  float: left;
 }
 
 .missions {
