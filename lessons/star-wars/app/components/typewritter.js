@@ -11,7 +11,8 @@
         scope.$watch(attrs.ngType, function(){
           element.removeClass("show");
           $timeout(function(){
-            element.html(scope.$eval(attrs.ngType));
+            var value = scope.$eval(attrs.ngType);
+            value ? element.html(value) : element.html("");
             element.addClass("show");
           });
         });
