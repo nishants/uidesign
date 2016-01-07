@@ -10,6 +10,15 @@
         appliesTo     : function(state){
           return !state.expandBottomBar && !state.selectedPlanet && !state.noMoreMissions();
         },
+      },
+      {
+        name          : "showVehicles",
+        messageFor    : function(){
+          return "Select planet and assign vehicle";
+        },
+        appliesTo     : function(state){
+          return state.expandBottomBar && !state.selectedPlanet && !state.noMoreMissions();
+        },
       }
     ];
 
