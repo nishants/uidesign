@@ -120,10 +120,6 @@
   padding-right: 10px;
 }
 
-.mission:not(.assigned) > .info > .action{
-  margin-top: 40px;
-}
-
 .mission > .info > .action > .ignore{
   color: rgba(0, 0, 0, 1);
 }

@@ -58,17 +58,19 @@
                         </div>
                         <div class="field">
                             <span class="name">Distance</span>
-                            <span class="value" ng-bind="planet.distance"></span>
+                            <span class="value">{{planet.distance}} megamiles</span>
                         </div>
 
-                        <div class="field" ng-if="planet.spacecraft">
+                        <div class="field">
                             <span class="name">Spacecraft</span>
-                            <span class="value" ng-bind="planet.spacecraft.name"></span>
+                            <span class="value" ng-if="planet.spacecraft" ng-bind="planet.spacecraft.name"></span>
+                            <span class="value" ng-if="!planet.spacecraft">-</span>
                         </div>
 
-                        <div class="field" ng-if="planet.spacecraft">
+                        <div class="field" >
                             <span class="name">Time</span>
-                            <span class="value">{{planet | missionTime:planet.spacecraft}}</span>
+                            <span class="value" ng-if="planet.spacecraft">{{planet | missionTime:planet.spacecraft}} hours</span>
+                            <span class="value" ng-if="!planet.spacecraft">-</span>
                         </div>
 
                         <div class="action">
