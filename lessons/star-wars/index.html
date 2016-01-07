@@ -29,7 +29,9 @@
     <div id="app">
         <div id="top-bar">
             <div class="restart" ng-click="game.reset()"> <span class="fa fa-undo"></span></div>
-            <div class="message">{{game.message()}}</div>
+            <div class="message">
+                <div class=" typewritter"  ng-type="game.message"></div>
+            </div>
         </div>
         <div id="content">
             <ul class="missions undo-list" ng-if="!game.loading()">
@@ -91,6 +93,7 @@
     <script src="app/components/mission-time-filter.js"></script>
     <script src="app/components/planet-icon.js"></script>
     <script src="app/components/vehicle-icon.js"></script>
+    <script src="app/components/typewritter.js"></script>
 
 </body>
 </html>
