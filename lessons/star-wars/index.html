@@ -46,20 +46,38 @@
                 <li class="mission"
                     ng-repeat="planet in game.planets()"
                     ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.ignore(planet)}">
-                    <img ng-src="{{planet | planetIcon}}">
-                    <div class="name">{{planet.name}}</div>
-                    <div class="distance"> {{planet.distance}} megamiles</div>
 
-                    <div class="no-mission"
-                         ng-click="game.selectSpacecraftFor(planet)">
-                        Send Mission
-                        <span class="add fa fa-chevron-right"></span>
+                    <div class="planet">
+                        <img ng-src="{{planet | planetIcon}}">
                     </div>
 
-                    <div class="spacecraft">
-                        <img ng-src="{{planet.spacecraft | vehicleIcon}}">
-                        <span class="time">({{planet | missionTime:planet.spacecraft}} hr)</span>
-                        <span class="remove fa fa-times" ng-click="game.removeMissionFor(planet)"></span></div>
+                    <div class="info">
+                        <div class="field">
+                            <span class="name">Name</span>
+                            <span class="value" ng-bind="planet.name"></span>
+                        </div>
+                        <div class="field">
+                            <span class="name">Distance</span>
+                            <span class="value" ng-bind="planet.distance"></span>
+                        </div>
+
+                        <div class="field" ng-if="planet.spacecraft">
+                            <span class="name">Spacecraft</span>
+                            <span class="value" ng-bind="planet.spacecraft.name"></span>
+                        </div>
+
+                        <div class="field" ng-if="planet.spacecraft">
+                            <span class="name">Time</span>
+                            <span class="value">{{planet | missionTime:planet.spacecraft}}</span>
+                        </div>
+
+                        <div class="action">
+                            <span class="send"   ng-click="game.selectSpacecraftFor(planet)">set mission</span>
+                            <span class="cancel" ng-click="game.removeMissionFor(planet)">cancel</span>
+                            <span class="ignore" >no mission</span>
+                        </div>
+
+                    </div>
                 </li>
             </ul>
             <div class="submit">
