@@ -34,11 +34,7 @@
   float: left;
 }
 
-#top-bar > .total-time {
-  float: right;
-}
-
-#top-bar > .restart, #top-bar > .total-time {
+#top-bar > .restart{
   height: 60px;
   font-size: 20px;
   padding: 15px;
