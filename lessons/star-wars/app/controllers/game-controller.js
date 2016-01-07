@@ -74,7 +74,7 @@
         this.expandBottomBar = false;
       },
       message : function(){
-        return HelpMessages.messageFor(this);
+        return this.loading() ? "" : (window.message = HelpMessages.messageFor(this));
       },
     };
   }])
