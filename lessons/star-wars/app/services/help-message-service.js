@@ -5,10 +5,10 @@
       {
         name          : "onLoad",
         messageFor    : function(state){
-          return "Create four missions.";
+          return "Create 4 missions.";
         },
         appliesTo     : function(state){
-          return !state.expandBottomBar && !state.selectedPlanet && !state.noMoreMissions();
+          return !state.expandBottomBar && !state.selectedPlanet && state.assignedMissons() == 0;
         },
       },
       {
@@ -27,6 +27,15 @@
         },
         appliesTo     : function(state){
           return state.expandBottomBar && state.selectedPlanet ;
+        },
+      },
+      {
+        name          : "selectMore",
+        messageFor    : function(state){
+          return "Create " + (4 - state.assignedMissons()) + " more missions.";
+        },
+        appliesTo     : function(state){
+          return !state.expandBottomBar && !state.selectedPlanet && !state.noMoreMissions() ;
         },
       }
 
