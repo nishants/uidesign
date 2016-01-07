@@ -25,7 +25,7 @@
     reset();
     return {
       loading: function () {
-        return !(planets && vehicles);
+        return !(planets.length && vehicles.length);
       },
       planets: function () {
         return planets;
