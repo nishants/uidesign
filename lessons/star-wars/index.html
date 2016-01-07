@@ -41,7 +41,7 @@
                 <div class=" typewritter"  ng-type="game.message()"></div>
             </div>
         </div>
-        <div id="content">
+        <div id="content" ng-class="{'fade' : game.popup}">
             <ul class="missions undo-list" ng-if="!game.loading()">
                 <li class="mission"
                     ng-repeat="planet in game.planets()"
