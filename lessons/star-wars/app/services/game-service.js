@@ -13,7 +13,7 @@
         getToken = $http.post(tokenUrl, {}, requestConfig),
 
         reset = function () {
-          planets = vehicles = null;
+          planets = vehicles = [];
           $http.get(planetsUrl, requestConfig).then(function (response) {
             planets = Planets.parse(response.data);
           });
