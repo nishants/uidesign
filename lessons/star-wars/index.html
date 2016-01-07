@@ -52,6 +52,7 @@
                         <span class="remove fa fa-times" ng-click="game.removeMissionFor(planet)"></span></div>
                 </li>
                 <li class="submit">
+                    <span class="total-time"> Search time : {{ game.planets() | totalMissionTime}} hours </span>
                     <button  ng-disabled="!game.noMoreMissions()" ng-click="game.findFalcone()">Find Falcone</button>
                 </li>
             </ul>
