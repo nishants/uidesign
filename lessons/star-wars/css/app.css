@@ -56,8 +56,10 @@
 }
 
 .missions {
-  display: block;
   text-align: center;
+  display: table;
+  clear: both;
+  margin: auto;
 }
 
 .missions > .mission {
@@ -68,6 +70,9 @@
   border-radius: 5px;
   min-width: 100px;
   padding: 5px;
+  width: 150px;
+  height: 150px;
+  float: left;
 }
 
 .missions > .mission.ignored {
@@ -128,11 +133,11 @@
   clear: both;
 }
 
-.missions > .submit > button[disabled="disabled"] {
+.submit > button[disabled="disabled"] {
   opacity: 0.3;
 }
 
-.missions > .submit {
+.submit {
   max-width: 300px;
   display: block;
   margin: auto;
@@ -140,13 +145,13 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.missions > .submit > .total-time {
+.submit > .total-time {
   width: 100%;
   line-height: 25px;
   font-size: 16px;
 
 }
-.missions > .submit > button {
+.submit > button {
   width: 100%;
   line-height: 50px;
 }
