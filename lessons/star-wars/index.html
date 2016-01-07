@@ -21,6 +21,14 @@
             text-align: center;
             padding-top: 10vh;
         }
+        .small{
+            width: 10px;
+            height: 10px;
+            transform: scale(1.5);
+        }
+        .icon{
+            border-radius: 50%;
+        }
     </style>
 </head>
 
@@ -64,6 +72,7 @@
                         <div class="field">
                             <span class="name">Spacecraft</span>
                             <span class="value" ng-if="planet.spacecraft" ng-bind="planet.spacecraft.name"></span>
+                            <img class="small icon" ng-if="planet.spacecraft" ng-src="{{planet.spacecraft | vehicleIcon}}">
                             <span class="value" ng-if="!planet.spacecraft">-</span>
                         </div>
 
