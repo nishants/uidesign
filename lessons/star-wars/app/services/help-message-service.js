@@ -8,7 +8,7 @@
           return "Create four missions";
         },
         appliesTo     : function(state){
-          return true;
+          return !state.expandBottomBar && !state.selectedPlanet && !state.noMoreMissions();
         },
       }
     ];
