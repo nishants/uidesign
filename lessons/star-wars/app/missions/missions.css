@@ -5,6 +5,7 @@
 .missions > .mission,
 .submit {
   text-align: left;
+  border-bottom: 1px solid #EEE;
 }
 
 .missions > .mission {
