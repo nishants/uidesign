@@ -1,4 +1,4 @@
-<ul class="spacecrafts undo-list" style="  background-color: black;">
+<ul class="spacecrafts undo-list">
     <li class="collapse-bottom-bar" ng-click="game.cancelSelection()"><span class="fa fa-chevron-down"></span></li>
     <li class="spacecraft card"
         ng-repeat="vehicle in game.vehicles()"
@@ -25,7 +25,9 @@
                 <span class="value">{{vehicle.speed}} megamiles/hr</span>
             </div>
 
-            <div class="action">
+            <div class="action"
+                 ng-show="game.selectedPlanet"
+                 ng-click="game.selectVehicleFor()">
                 <span>select</span>
             </div>
 
