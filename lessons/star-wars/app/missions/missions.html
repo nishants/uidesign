@@ -31,9 +31,16 @@
             </div>
 
             <div class="action">
-                <span class="send"   ng-click="game.selectSpacecraftFor(planet)">set mission</span>
-                <span class="cancel" ng-click="game.removeMissionFor(planet)">cancel</span>
-                <span class="ignore" >no mission</span>
+                <span class="send"
+                      ng-if="!planet.spacecraft && !game.ignore(planet)"
+                      ng-click="game.selectSpacecraftFor(planet)">set mission</span>
+
+                <span class="cancel"
+                      ng-if="planet.spacecraft"
+                      ng-click="game.removeMissionFor(planet)">cancel</span>
+
+                <span class="ignore"
+                      ng-if="game.ignore(planet)"> no mission</span>
             </div>
 
         </div>

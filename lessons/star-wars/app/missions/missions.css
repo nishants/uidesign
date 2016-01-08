@@ -2,17 +2,16 @@
   text-align: center;
 }
 
-.missions > .mission, .submit {
+.missions > .mission,
+.submit {
   margin: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
-  width: 100%;
-  text-align: left;
-  line-height: 20px;
-}
 
-.submit{
-  height: 180px;
+  width: 100%;
+  line-height: 20px;
+
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .missions > .mission {
@@ -24,13 +23,13 @@
   opacity: 0.3;
 }
 
-.missions > .mission > .planet{
+.missions > .mission > .planet {
   display: inline-block;
   float: left;
   width: 100px;
 }
 
-.missions > .mission > .info{
+.missions > .mission > .info {
   float: left;
   height: 80px;
   width: calc(100% - 100px);
@@ -42,61 +41,10 @@
   border-radius: 50%;
 }
 
-.missions > .mission.selected > .no-mission {
-  display: none;
-}
-
-
-.mission > .info > .action > .ignore{
+.mission > .info > .action > .ignore {
   color: rgba(0, 0, 0, 1);
 }
 
-.mission:not(.assigned) > .info > .action > .cancel, .mission.assigned > .info > .action > .send,.mission.ignored > .info > .action > .send, .mission:not(.ignored) > .info > .action > .ignore{
-  display: none;
-}
-
-
-
-.mission:not(.assigned) .spacecraft {
-  display: none;
-}
-
-.mission.assigned .no-mission {
-  display: none;
-}
-
-.mission .spacecraft, .mission .no-mission {
-  padding: 5px;
-  border-top: 1px solid #EEE;
-  margin-top: 5px;
-  height: 35px;
-}
-
-.mission .spacecraft > img {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  float: left;
-  opacity: 0.5;
-}
-
-.mission .spacecraft > .time {
-  padding: 5px;
-  display: inline-block;
-  float: left;
-}
-
-.mission .spacecraft > .remove {
-  color: rgba(250, 8, 8, 0.3);
-}
-
-.mission .spacecraft > .remove, .mission .spacecraft > .add {
-  float: right;
-  font-size: 20px;
-}
-
-.mission .spacecraft:after {
-  content: "";
-  display: table;
-  clear: both;
+.submit > .info > .action {
+  margin-top: 10px;
 }

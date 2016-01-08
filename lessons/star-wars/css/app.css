@@ -88,15 +88,6 @@ body{
 }
 
 
-.submit > .info > .action {
-  margin-top: 10px;
-}
-
-.submit > button[disabled="disabled"] {
-  opacity: 0.3;
-}
-
-
 #bottom-bar.expand {
   height: auto;
 }
