@@ -1,9 +1,9 @@
 <ul class="missions undo-list" ng-if="!game.loading()">
-    <li class="mission"
+    <li class="mission card"
         ng-repeat="planet in game.planets()"
         ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.ignore(planet)}">
 
-        <div class="planet">
+        <div class="planet icon">
             <img ng-src="{{planet.icon}}">
         </div>
 
@@ -47,7 +47,7 @@
     </li>
 </ul>
 
-<div class="submit">
+<div class="submit card">
     <div class="info">
         <div class="field">
             <div class="name">Time</div>
