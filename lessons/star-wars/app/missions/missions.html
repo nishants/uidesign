@@ -35,12 +35,12 @@
                 <span class="send fa fa-chevron-right"
                       ng-if="!planet.spacecraft && !game.ignore(planet)"
                       ng-click="game.selectSpacecraftFor(planet)"></span>
-                <span class="cancel"
+                <span class="cancel fa fa-close"
                       ng-if="planet.spacecraft"
-                      ng-click="game.removeMissionFor(planet)">cancel</span>
+                      ng-click="game.removeMissionFor(planet)"></span>
 
-                <span class="ignore"
-                      ng-if="game.ignore(planet) && !game.selectedPlanet"> no mission</span>
+                <span class="ignore fa fa-ban"
+                      ng-if="game.ignore(planet) && !game.selectedPlanet"></span>
         </div>
     </li>
 </ul>
