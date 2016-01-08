@@ -16,6 +16,7 @@
   display: inline-block;
   float: left;
   width: 100px;
+  text-align: center;
 }
 
 .card .info {
