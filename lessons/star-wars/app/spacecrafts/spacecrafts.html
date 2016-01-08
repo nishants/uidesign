@@ -5,7 +5,7 @@
         ng-class="{'disable' : game.disabledVehicle(vehicle)}"
         ng-click="game.selectVehicle(vehicle)">
         <div class="icon">
-            <img ng-src="{{vehicle | vehicleIcon}}">
+            <img ng-src="{{vehicle.icon}}">
             <div class="count">({{vehicle.count}})</div>
         </div>
         <div class="description">

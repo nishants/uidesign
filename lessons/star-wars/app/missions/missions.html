@@ -20,7 +20,7 @@
             <div class="field">
                 <span class="name">Spacecraft</span>
                 <span class="value" ng-if="planet.spacecraft" ng-bind="planet.spacecraft.name"></span>
-                <img class="small icon" ng-if="planet.spacecraft" ng-src="{{planet.spacecraft | vehicleIcon}}">
+                <img class="small icon" ng-if="planet.spacecraft" ng-src="{{planet.spacecraft.icon}}">
                 <span class="value" ng-if="!planet.spacecraft">-</span>
             </div>
 
