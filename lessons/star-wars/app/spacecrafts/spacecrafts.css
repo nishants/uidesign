@@ -1,99 +1,29 @@
-
-#bottom-bar.expand > .spacecrafts > .spacecraft {
-  display: block;
+.spacecrafts > .spacecraft{
+  height: 120px;
 }
 
-.spacecrafts {
-  text-align: center;
-}
-
-.spacecrafts > .spacecraft {
-  padding: 5px;
-  display: inline-block;
-  font-size: 10px;
-  line-height: 20px;
-}
-
-.spacecrafts > .spacecraft .icon {
-  width: 50px;
-}
-
-.spacecrafts > .spacecraft .icon > .count {
-  margin-top: -5px;
-}
-
-.spacecrafts > .spacecraft .icon > img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 1px;
-}
-
-.expand > .spacecrafts .spacecraft {
-  height: 80px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2)
-}
-
-.expand > .spacecrafts .spacecraft > .icon {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.expand > .spacecrafts .spacecraft > .icon, .expand > .spacecrafts .spacecraft > .description {
-  display: inline-block;
-  float: left;
-}
-
-:not(.expand) > .spacecrafts .spacecraft > .description {
-  display: none;
-}
-
-#bottom-bar.expand {
-  background-color: rgba(24, 24, 24, 0.85);
-}
-
-.expand > .spacecrafts .spacecraft > .description {
-  margin-left: 10px;
-  text-align: left;
-}
-
-.expand > .spacecrafts .spacecraft > .description > span {
-  display: block;
-}
-
-.expand > .spacecrafts .spacecraft > .description > .name {
-  font-size: 13px;
-}
-
-.expand > .spacecrafts .spacecraft > .select {
-  float: right;
-  height: 30px;
-  font-size: 20px;
-  padding: 5px;
-  margin: 10px 5px;
-}
-
-.expand:not(.and-select) > .spacecrafts .spacecraft > .select {
-  display: none;
-}
-.spacecraft.disable{
-  opacity: 0.5;
-}
-.spacecraft.disable > .select {
-  visibility: hidden;
+:not(.expand) > .spacecrafts > .spacecraft > .icon > img{
+  width: 25px;
+  height: 25px;
 }
 
 :not(.expand) > .spacecrafts > .collapse-bottom-bar {
   display: none;
 }
 
-.spacecrafts > .collapse-bottom-bar {
-  height: 50px;
-  width: 50px;
-  padding: 15px;
-  margin: -25px auto 0px auto;
-  background-color: rgba(24, 24, 24, 0.85);
-  border-radius: 50%;
-  border: 1px solid rgba(254, 254, 254, 0.2);
+:not(.expand) > .spacecrafts > .spacecraft {
+  display: inline-block;
+  width: 60px;
+}
+
+:not(.expand) > .spacecrafts > .spacecraft {
+  padding-top: 5px;
+}
+:not(.expand) > .spacecrafts > .spacecraft > .info{
+  display: none;
+}
+
+:not(.expand) > .spacecrafts > .spacecraft > .icon{
+  width: 60px;
+  margin-top: -5px;
 }

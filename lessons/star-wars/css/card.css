@@ -25,6 +25,13 @@
   width: calc(100% - 100px);
 }
 
+.card > .info > .action{
+  text-align: right;
+  color: rgba(48, 131, 251, 1);
+  font-size: 13px;
+  padding-right: 10px;
+}
+
 .card  > .info > .field > .name,.card > .info > .field > .value{
   font-size: 13px;
 }
@@ -43,11 +50,4 @@
 
 .commas > span:first-child:before{
   content: "";
-}
-
-.card .info > .action{
-  text-align: right;
-  color: rgba(48, 131, 251, 1);
-  font-size: 13px;
-  padding-right: 10px;
 }
