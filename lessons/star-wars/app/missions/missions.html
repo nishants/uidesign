@@ -40,7 +40,7 @@
                       ng-click="game.removeMissionFor(planet)">cancel</span>
 
                 <span class="ignore"
-                      ng-if="game.ignore(planet)"> no mission</span>
+                      ng-if="game.ignore(planet) && !game.selectedPlanet"> no mission</span>
             </div>
 
         </div>
