@@ -13,7 +13,6 @@
   display: inline-block;
   float: left;
   text-align: center;
-  padding: 5px;
 }
 
 .card .info {
@@ -22,9 +21,9 @@
   padding: 5px;
 }
 
-.card > .info > .action{
+.card > .action{
   text-align: right;
-  color: rgba(48, 131, 251, 1);
+  color: rgb(116, 173, 255);
   font-size: 13px;
   padding-right: 10px;
 }

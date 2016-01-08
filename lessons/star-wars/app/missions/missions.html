@@ -1,5 +1,6 @@
 <ul class="missions undo-list" ng-if="!game.loading()">
     <li class="mission card"
+        ng-click="planet.spacecraft ? '' : game.selectSpacecraftFor(planet)"
         ng-repeat="planet in game.planets()"
         ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.ignore(planet)}">
 
@@ -29,20 +30,17 @@
                 <span class="value" ng-if="planet.spacecraft">{{planet | missionTime:planet.spacecraft}} hours</span>
                 <span class="value" ng-if="!planet.spacecraft">-</span>
             </div>
-
-            <div class="action">
-                <span class="send"
+        </div>
+        <div class="action">
+                <span class="send fa fa-chevron-right"
                       ng-if="!planet.spacecraft && !game.ignore(planet)"
-                      ng-click="game.selectSpacecraftFor(planet)">set mission</span>
-
+                      ng-click="game.selectSpacecraftFor(planet)"></span>
                 <span class="cancel"
                       ng-if="planet.spacecraft"
                       ng-click="game.removeMissionFor(planet)">cancel</span>
 
                 <span class="ignore"
                       ng-if="game.ignore(planet) && !game.selectedPlanet"> no mission</span>
-            </div>
-
         </div>
     </li>
 </ul>

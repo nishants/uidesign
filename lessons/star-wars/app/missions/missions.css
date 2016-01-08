@@ -23,3 +23,20 @@
 .submit > .info > .action {
   margin-top: 10px;
 }
+
+.mission > .icon{
+  width: 90px;
+}
+
+.mission > .info{
+  font-size: 13px;
+  width: 180px;
+}
+
+
+.mission > .action{
+  float: left;
+  font-size: 20px;
+  padding: 25px 10px;
+  width: calc(100% - 270px);
+}
