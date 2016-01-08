@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll Progress</title>
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <link href='../../lib/normalize-3.0.2.css' rel='stylesheet' type='text/css'>
+
+    <style>
+        body{
+            height: 500vh;
+        }
+
+        .progress{
+            transform: translateX(500vh);
+            height: 10px;
+            background-color: #4a89dc;
+            box-sizing: content-box;
+            /*padding-right: 100vh;*/
+            /*position: relative;*/
+            /*left: -100vh;*/
+        }
+        .progress-bar{
+            height: 10px;
+            position: fixed;
+            top: 0;
+            background-color: rgba(101, 135, 255, 0.27);
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+
+    <script>
+
+
+        var $progress = $(".progress").first(),
+            currentPosition = 0,
+            lastScrollTop = 0,
+            totalHeight = undefined,
+            moveBy = function (scrolledBy) {
+                currentPosition += scrolledBy;
+                $progress.css("transform", "translateX(" + (currentPosition - totalHeight) + "px)")
+            };
+
+        $(document).ready(function(){
+            totalHeight = $("body").height();
+            $progress.width(totalHeight);
+        });
+
+        $(window).bind("scroll",function(){
+            var scrolledBy = $(window).scrollTop() - lastScrollTop;
+            moveBy(scrolledBy);
+            lastScrollTop = $(window).scrollTop();
+        });
+
+
+    </script>
+</body>
+</html>
