@@ -3,7 +3,7 @@
         ng-repeat="planet in game.planets()"
         ng-class="{'assigned' : planet.spacecraft, 'ignored' : game.ignore(planet)}">
 
-        <div class="planet icon">
+        <div class="icon">
             <img ng-src="{{planet.icon}}">
         </div>
 

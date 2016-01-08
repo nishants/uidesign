@@ -2,14 +2,6 @@
   text-align: center;
 }
 
-.card{
-  margin: 5px;
-  padding: 10px;
-  width: 100%;
-  line-height: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
 .missions > .mission,
 .submit {
   text-align: left;
@@ -24,25 +16,7 @@
   opacity: 0.3;
 }
 
-.missions > .mission > .planet {
-  display: inline-block;
-  float: left;
-  width: 100px;
-}
-
-.missions > .mission > .info {
-  float: left;
-  height: 80px;
-  width: calc(100% - 100px);
-}
-
-.missions > .mission > .planet > img {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-}
-
-.mission > .info > .action > .ignore {
+.mission .ignore {
   color: rgba(0, 0, 0, 1);
 }
 

@@ -1,0 +1,52 @@
+.card{
+  margin: 5px;
+  padding: 10px;
+  width: 100%;
+  line-height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card > .icon > img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.card > .icon {
+  display: inline-block;
+  float: left;
+  width: 100px;
+}
+
+.card .info {
+  float: left;
+  height: 80px;
+  width: calc(100% - 100px);
+}
+
+.card  > .info > .field > .name,.card > .info > .field > .value{
+  font-size: 13px;
+}
+
+.card .info > .field > .name{
+  font-weight: bold;
+}
+
+.info > .field > .value{
+  font-weight: normal;
+}
+
+.commas > span:before{
+  content: ", ";
+}
+
+.commas > span:first-child:before{
+  content: "";
+}
+
+.card .info > .action{
+  text-align: right;
+  color: rgba(48, 131, 251, 1);
+  font-size: 13px;
+  padding-right: 10px;
+}

@@ -60,34 +60,6 @@ body{
   float: left;
 }
 
-.info > .field > .name, .info > .field > .value{
-  font-size: 13px;
-}
-
-.info > .field > .name{
-  font-weight: 900;
-}
-
-.info > .field > .value{
-  opacity: 0.7;
-}
-
-.info > .field > .value.commas > span:before{
-  content: ", ";
-}
-
-.info > .field > .value.commas > span:first-child:before{
-  content: "";
-}
-
-.info > .action{
-  text-align: right;
-  color: rgba(48, 131, 251, 1);
-  font-size: 13px;
-  padding-right: 10px;
-}
-
-
 #bottom-bar.expand {
   height: auto;
 }
