@@ -9,7 +9,6 @@
 
 .missions > .mission {
   display: inline-block;
-  height: 120px;
 }
 
 .missions > .mission.ignored {
