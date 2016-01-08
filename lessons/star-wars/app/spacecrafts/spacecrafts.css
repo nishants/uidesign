@@ -1,5 +1,15 @@
+.spacecrafts{
+  text-align: center;
+}
 .spacecrafts > .spacecraft{
   height: 120px;
+}
+
+.collapse-bottom-bar{
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 10px;
 }
 
 :not(.expand) > .spacecrafts > .spacecraft > .icon > img{
