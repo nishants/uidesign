@@ -1,8 +1,14 @@
 .spacecrafts{
   text-align: center;
 }
+
 .spacecrafts > .spacecraft{
   height: 120px;
+}
+
+.spacecrafts > .spacecraft > .icon > .count{
+  font-size: 10px;
+  margin-top: -5px;
 }
 
 .collapse-bottom-bar{
