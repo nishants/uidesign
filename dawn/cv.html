@@ -25,7 +25,35 @@
         .profile-pic > img{
             height: 100px;
             width: 100px;
-        } 
+        }
+        ul.inline-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+        ul.inline-list > li{
+            display: inline-block;
+        }
+
+        .tokenized > :after{
+            content: " | ";
+        }
+
+        .tokenized > li:last-child:after{
+            content: "";
+        }
+
+        .companies{
+            float: right;
+            line-height: 20px;
+            width: 100%;
+            text-align: right;
+        }
+        .tags{
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -40,6 +68,65 @@
             <img src="images/me.png">
         </div>
     </header>
+
+<article>
+    <section class="summary">
+        <ul class="companies tokenized inline-list ">
+            <li>Thougthworks</li>
+            <li>Oracle</li>
+            <li>Xebia</li>
+            <li>Infosys</li>
+        </ul>
+        <ul  class="highlights">
+           <li>i am a polyglot programmer.</li>
+           <li>i have worked in various cross functional, truly agile teams; contributing in backend development, front-end development and quality assurance.</li>
+           <li>i have good skills in java (like compiling and loading classes dynamically and over web, annotation based excel parser, library that records outgoing http calls and plays back like proxy server  ).</li>
+           <li>i have strong experience in angularjs.</li>
+           <li>i am proficient with data structures, software design, architecture, extreme prgramming.</li>
+           <li>i can copy a ux design into responsive css3 webpage (apart from Photoshop stuff ).</li>
+           <li>i can make highly modular, testable apps in java, javascript, python, ruby, coffee-script.</li>
+           <li>i enjoy training and mentoring.</li>
+        </ul>
+
+        <ul class="tags tokenized inline-list">
+            <li>design</li>
+            <li> architecture</li>
+            <li> object oriented design</li>
+            <li> api</li>
+            <li> rest</li>
+            <li> micro-services
+                java
+            </li>
+            <li> spring</li>
+            <li> junit</li>
+            <li> selenium</li>
+            <li> maven</li>
+            <li> tomcat
+                javascript
+            </li>
+            <li> jquery</li>
+            <li> angularjs</li>
+            <li> ruby</li>
+            <li> css3</li>
+            <li> html5</li>
+            <li> responsive</li>
+            <li> single-page-apps
+                tdd
+            </li>
+            <li> bdd</li>
+            <li> ci</li>
+            <li> refactoring</li>
+            <li> clean-code</li>
+            <li> agile</li>
+            <li> lean</li>
+            <li> evolutionary-design</li>
+            <li> mentoring</li>
+            <li>coaching</li>
+            <li> training</li>
+        </ul>
+
+    </section>
+</article>
 
 </body>
 </html>
