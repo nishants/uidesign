@@ -1,0 +1,58 @@
+$iconSize: 350px;
+$transitionTime: 500ms;
+
+$iconHeight: $iconSize;
+$iconWidth: $iconSize;
+#twister {
+  -webkit-transition: all $transitionTime cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition:    all $transitionTime cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition:      all $transitionTime cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition:         all $transitionTime cubic-bezier(0.45, 0.515, 0.36, 0.88);
+
+  > .before {
+    transition-delay: $transitionTime/2;
+    transition: opacity $transitionTime/2 cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  }
+  > .after {
+    transition: opacity $transitionTime/2 cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  }
+}
+
+#twister {
+  background-color: #4285F4;
+  height: $iconHeight;
+  width: $iconWidth;
+  border-radius: 50%;
+
+  overflow: hidden;
+  > .before, > .after {
+    position: relative;
+    height: $iconHeight;
+    width: $iconWidth;
+    border-radius: 50%;
+
+    text-align: center;
+    padding-top: $iconSize/12;
+    font-size: 2/3*$iconSize;
+  }
+  > .before {
+    background-color: #ff9b2f;
+    opacity: 0;
+  }
+  > .after {
+    background-color: #89deaa;
+    top: -$iconHeight;
+  }
+}
+
+#twister:hover {
+  transform: rotate(360deg);
+
+  > .before {
+    opacity: 1;
+  }
+  > .after {
+    opacity: 0;
+  }
+}
+
