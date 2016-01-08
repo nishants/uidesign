@@ -3,7 +3,15 @@
 }
 
 .spacecrafts > .spacecraft{
-  height: 120px;
+  height: 80px;
+}
+
+.spacecrafts > .spacecraft.disable{
+  opacity: 0.5;
+}
+
+.spacecrafts > .spacecraft.disable .action, .spacecrafts > .spacecraft.disable .action{
+  display: none;
 }
 
 .spacecrafts > .spacecraft > .icon > .count{
@@ -17,6 +25,16 @@
   text-align: center;
   padding: 10px;
 }
+
+.spacecrafts > .spacecraft > .icon > img{
+  width: 45px;
+  height: 45px;
+}
+
+.spacecrafts > .spacecraft > .info{
+  height: 50px;
+}
+
 
 :not(.expand) > .spacecrafts > .spacecraft > .icon > img{
   width: 25px;
