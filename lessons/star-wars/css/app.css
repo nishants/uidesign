@@ -30,8 +30,8 @@ body{
 }
 
 #bottom-bar.expand {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .undo-list {

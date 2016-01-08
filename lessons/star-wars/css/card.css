@@ -1,8 +1,6 @@
 .card{
-  margin: 5px;
   padding: 10px;
-  width: calc(100% - 10px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .card > .icon > img {
@@ -14,15 +12,14 @@
 .card > .icon {
   display: inline-block;
   float: left;
-  width: 100px;
   text-align: center;
+  padding: 5px;
 }
 
 .card .info {
   float: left;
-  height: 80px;
   text-align: left;
-  width: calc(100% - 100px);
+  padding: 5px;
 }
 
 .card > .info > .action{
@@ -30,10 +27,6 @@
   color: rgba(48, 131, 251, 1);
   font-size: 13px;
   padding-right: 10px;
-}
-
-.card  > .info > .field > .name,.card > .info > .field > .value{
-  font-size: 13px;
 }
 
 .card .info > .field > .name{

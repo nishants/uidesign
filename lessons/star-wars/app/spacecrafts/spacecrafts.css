@@ -3,7 +3,8 @@
 }
 
 .spacecrafts > .spacecraft{
-  height: 80px;
+  height: 65px;
+  padding: 5px;
 }
 
 .spacecrafts > .spacecraft.disable{
@@ -18,20 +19,30 @@
   font-size: 10px;
 }
 
+
+.collapse-bottom-bar, .spacecrafts > .spacecraft {
+  border-bottom: 1px solid #575758;
+
+}
 .collapse-bottom-bar{
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
   padding: 10px;
+  background-color: rgb(64, 64, 64);
 }
 
 .spacecrafts > .spacecraft > .icon > img{
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
 }
 
+.spacecrafts > .spacecraft > .icon{
+  width: 60px;
+}
 .spacecrafts > .spacecraft > .info{
-  height: 50px;
+  font-size: 10px;
+  line-height: 12px;
+  width: calc(100% - 60px);
 }
 
 
