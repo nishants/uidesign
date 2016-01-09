@@ -21,12 +21,22 @@
             width: 100vw;
             position: relative;
             left: -100vw;
+
         }
 
         .progress-bar{
             position: fixed;
             top: 0;
             background-color: rgba(101, 135, 255, 0.27);
+
+            -webkit-transition: opacity 1s  cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -moz-transition:    opacity 1s  cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -o-transition:      opacity 1s  cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            transition:         opacity 1s  cubic-bezier(0.45, 0.515, 0.36, 0.88);
+
+        }
+        .progress-bar:not(.show){
+            opacity: 0;
         }
 
     </style>
@@ -40,15 +50,19 @@
     <script>
 
 
-        var $progress = $(".progress").first(),
+        var $progress       = $(".progress").first(),
+            $progressBar    = $(".progress-bar").first(),
             currentPosition = 0,
-            lastScrollTop = 0,
-            totalHeight = 0,
-            windowHeight = 0,
+            lastScrollTop   = 0,
+            totalHeight     = 0,
+            windowHeight    = 0,
             moveBy = function (scrolledBy) {
                 currentPosition += scrolledBy;
                 var progress = (currentPosition) / (totalHeight - windowHeight)  * 100;
-                $progress.css("transform", "translateX(" + (progress) + "vw)")
+                $progress.css("transform", "translateX(" + (progress) + "vw)");
+                setTimeout(function(){
+                    ( (progress == 100 || progress == 0)) ?  $progressBar.removeClass("show") : $progressBar.addClass("show");
+                },0);
             };
 
         $(document).ready(function(){
