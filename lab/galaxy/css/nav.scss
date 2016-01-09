@@ -1,4 +1,5 @@
 $navLayer : 100;
+$navHeight: calc(100vh - 100px);
 
 nav{
   .left-pane,.right-pane{
@@ -10,8 +11,6 @@ nav{
 }
 
 nav{
-  width: 350px;
-  height: 500px;
   background-color: black;
   overflow: hidden;
   z-index: $navLayer;
@@ -26,12 +25,12 @@ nav{
     .overview{
       float: left;
       width: 100px;
-      height: 500px;
+      height: $navHeight;
     }
     .description{
       float: left;
       width: 150px;
-      height: 500px;
+      height: $navHeight;
     }
   }
 
