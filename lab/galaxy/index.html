@@ -32,6 +32,7 @@
         }
         header{
             top: 0px;
+            z-index: 205;
         }
 
         header > .logo{
@@ -51,10 +52,34 @@
             float: right;
         }
 
+        #loader.done{
+            transform: translateY(-150vh);
+        }
+        #loader{
+            position: absolute;
+            top: 50px;
+            z-index: 200;
+
+            height: calc(100vh - 50px);
+            width: 100%;
+
+            background-color: #181818;
+            color: white;
+
+            text-align: center;
+            padding-top: 10vh;
+
+            -webkit-transition: all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -moz-transition:    all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -o-transition:      all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            transition:         all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+        }
+
     </style>
 </head>
 
 <body ng-app>
+    <div id="loader" class="done">Loading</div>
     <header>
         <div class="logo">by Dawn</div>
         <div class="reset fa fa-undo"></div>
