@@ -1,5 +1,5 @@
 $navLayer : 100;
-$navHeight: calc(100vh - 100px);
+$navHeight: calc(100vh - 50px);
 
 nav{
   .left-pane,.right-pane{
@@ -13,10 +13,10 @@ nav{
 nav{
   background-color: black;
   overflow: hidden;
-  z-index: $navLayer;
   margin-top: 50px;
 
   .left-pane,.right-pane{
+    z-index: $navLayer;
     position: fixed;
     box-sizing: border-box;
     margin:0;
