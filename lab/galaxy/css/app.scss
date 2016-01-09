@@ -1,0 +1,18 @@
+
+.left-pane,.right-pane{
+  box-sizing: border-box;
+  position: fixed;
+  margin:0;
+  padding:0;
+
+  .overview{
+    float: left;
+    width: 100px;
+    height: 500px;
+  }
+  .description{
+    float: left;
+    width: 150px;
+    height: 500px;
+  }
+}
