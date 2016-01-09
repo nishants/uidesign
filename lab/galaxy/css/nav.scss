@@ -1,5 +1,6 @@
 $navLayer : 100;
 $navHeight: calc(100vh - 50px);
+$menuButtonSize: 40px;
 
 nav{
   .left-pane,.right-pane{
@@ -14,25 +15,6 @@ nav{
   background-color: black;
   overflow: hidden;
   margin-top: 50px;
-
-  .menu-button{
-    position: fixed;
-    top: 50px;
-    right: 0px;
-    z-index: $navLayer + 1;
-
-    width: 40px;
-    height: 40px;
-
-    margin: 10px 10px 0 0;
-    padding-top: 10px;
-
-    background-color: rgba(1, 1, 1, 0.5);
-    color: white;
-
-    text-align: center;
-    border-radius: 50%;
-  }
 
   .left-pane,.right-pane{
     z-index: $navLayer;
@@ -79,4 +61,36 @@ nav.show.vehicles{
   .left-pane{
     transform: translateX(0px);
   }
+}
+
+nav > .menu-button{
+  position: fixed;
+  top: 50px;
+  right: 0px;
+  z-index: $navLayer + 1;
+
+  width: $menuButtonSize;
+  height: $menuButtonSize;
+  overflow: hidden;
+
+  margin: 10px 10px 0 0;
+
+  background-color: rgba(1, 1, 1, 0.5);
+  color: white;
+
+  text-align: center;
+  border-radius: 50%;
+}
+
+.menu-button > .open, .close{
+  padding-top: 10px;
+  float: left;
+  height: $menuButtonSize;
+  width: $menuButtonSize;
+}
+
+.menu-button > .close{
+  position: relative;
+  opacity: 0;
+  top: -$menuButtonSize;
 }
