@@ -4,6 +4,8 @@ $transitionTime: 500ms;
 $slideHeight: $slideSize;
 $slideWidth: $slideSize;
 
+$rotateBy : 360deg;
+
 .carousel {
   -webkit-transition: all $transitionTime cubic-bezier(0.45, 0.515, 0.36, 0.88);
   -moz-transition:    all $transitionTime cubic-bezier(0.45, 0.515, 0.36, 0.88);
@@ -70,12 +72,16 @@ $slideWidth: $slideSize;
 }
 
 .carousel.index1{
+  transform: rotate($rotateBy);
+
   .slide:last-child {
     opacity: 0;
   }
 }
 
 .carousel.index2{
+  transform: rotate(2 * $rotateBy);
+
   .slide:nth-child(3){
     opacity: 0;
   }
@@ -88,6 +94,8 @@ $slideWidth: $slideSize;
 
 
 .carousel.index3{
+  transform: rotate(3 * $rotateBy);
+
   .slide:nth-child(2){
     opacity: 0;
   }
