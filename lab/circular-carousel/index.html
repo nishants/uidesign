@@ -21,5 +21,27 @@
         <img class="slide" src="../../images/carousel/carousel-2.jpg">
         <img class="slide" src="../../images/carousel/carousel-1.jpg">
     </div>
+
+    <button onclick="carousel.next()">next</button>
+    <button onclick="carousel.previous()">previous</button>
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            window.carousel = {
+                index: 0,
+                total: 4,
+                $carousel: $(".carousel").first(),
+                next: function(){
+                    this.$carousel.addClass("index" + (++this.index % this.total));
+                },
+                previous: function(){
+                    var state = carousel.$carousel.prop("class").replace(/index[0-9]/g, "");
+                    state += (" index" + (--this.index % this.total))
+                    carousel.$carousel.prop("class", state);
+                },
+            };
+
+        });
+    </script>
 </body>
 </html>
