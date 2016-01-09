@@ -32,9 +32,13 @@
                 total: 4,
                 $carousel: $(".carousel").first(),
                 next: function(){
-                    this.$carousel.addClass("index" + (++this.index % this.total));
+                    if(this.index == this.total -1) return ;
+                    var state = carousel.$carousel.prop("class").replace(/index[0-9]/g, "");
+                    state += (" index" + (++this.index % this.total))
+                    carousel.$carousel.prop("class", state);
                 },
                 previous: function(){
+                    if(this.index == 0) return ;
                     var state = carousel.$carousel.prop("class").replace(/index[0-9]/g, "");
                     state += (" index" + (--this.index % this.total))
                     carousel.$carousel.prop("class", state);
