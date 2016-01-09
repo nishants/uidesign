@@ -9,19 +9,21 @@
     <style>
         body{
             height: 500vh;
+
+        }
+        *{
+            box-sizing: content-box;
         }
 
         .progress{
-            transform: translateX(500vh);
-            height: 10px;
+            height: 2px;
             background-color: #4a89dc;
-            box-sizing: content-box;
-            /*padding-right: 100vh;*/
-            /*position: relative;*/
-            /*left: -100vh;*/
+            width: 100vw;
+            position: relative;
+            left: -100vw;
         }
+
         .progress-bar{
-            height: 10px;
             position: fixed;
             top: 0;
             background-color: rgba(101, 135, 255, 0.27);
@@ -41,15 +43,17 @@
         var $progress = $(".progress").first(),
             currentPosition = 0,
             lastScrollTop = 0,
-            totalHeight = undefined,
+            totalHeight = 0,
+            windowHeight = 0,
             moveBy = function (scrolledBy) {
                 currentPosition += scrolledBy;
-                $progress.css("transform", "translateX(" + (currentPosition - totalHeight) + "px)")
+                var progress = (currentPosition) / (totalHeight - windowHeight)  * 100;
+                $progress.css("transform", "translateX(" + (progress) + "vw)")
             };
 
         $(document).ready(function(){
             totalHeight = $("body").height();
-            $progress.width(totalHeight);
+            windowHeight = $(window).height();
         });
 
         $(window).bind("scroll",function(){
