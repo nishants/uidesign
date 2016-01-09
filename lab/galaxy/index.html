@@ -60,12 +60,12 @@
         <div class="reset fa fa-undo"></div>
     </header>
 
-    <nav class="vehicles" ng-class="{'show' : __showNav}">
-        <div class="menu-button" ng-click="__showNav = !__showNav">
+    <nav ng-class="{'show' : __showNav, 'vehicles' : __selectVehicle, 'planets' : !__selectVehicle}">
+        <div class="menu-button" ng-click="__showNav = !__showNav; __selectVehicle = false;">
             <div class="open">+</div>
             <div class="close">x</div>
         </div>
-        <div class="left-pane">
+        <div class="left-pane" ng-click="__selectVehicle = true">
             <div class="red overview"></div>
             <div class="light-red description"></div>
         </div>
