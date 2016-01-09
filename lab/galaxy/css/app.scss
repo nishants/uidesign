@@ -1,18 +1,48 @@
+$navLayer : 100;
 
-.left-pane,.right-pane{
-  box-sizing: border-box;
-  position: fixed;
-  margin:0;
-  padding:0;
-
-  .overview{
-    float: left;
-    width: 100px;
-    height: 500px;
-  }
-  .description{
-    float: left;
-    width: 150px;
-    height: 500px;
+nav{
+  .left-pane,.right-pane{
+    -webkit-transition: all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    -moz-transition:    all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    -o-transition:      all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    transition:         all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
   }
 }
+
+nav{
+  width: 350px;
+  height: 500px;
+  background-color: black;
+  overflow: hidden;
+  z-index: $navLayer;
+  margin-top: 50px;
+
+  .left-pane,.right-pane{
+    position: fixed;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+
+    .overview{
+      float: left;
+      width: 100px;
+      height: 500px;
+    }
+    .description{
+      float: left;
+      width: 150px;
+      height: 500px;
+    }
+  }
+
+  .right-pane{
+    right: 0px;
+  }
+}
+
+nav.show-planet{
+  .right-pane{
+    transform: translateX(150px);
+  }
+}
+
