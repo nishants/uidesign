@@ -3,7 +3,7 @@ $navHeight: calc(100vh - 50px);
 $menuButtonSize: 40px;
 
 nav{
-  .left-pane,.right-pane{
+  .left-pane, .right-pane, .menu-button{
     -webkit-transition: all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
     -moz-transition:    all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
     -o-transition:      all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
@@ -91,6 +91,17 @@ nav > .menu-button{
 
 .menu-button > .close{
   position: relative;
-  opacity: 0;
   top: -$menuButtonSize;
+}
+
+nav.show > .menu-button{
+  transform: rotate(360deg);
+}
+
+nav:not(.show) > .menu-button > .close{
+   visibility: hidden;
+}
+
+nav.show > .menu-button > .open{
+   visibility: hidden;
 }
