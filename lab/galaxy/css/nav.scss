@@ -35,14 +35,21 @@ nav{
     }
   }
 
+  .left-pane{
+    transform: translateX(-250px);
+  }
+
   .right-pane{
     right: 0px;
+    transform: translateX(250px);
   }
 }
 
-nav.show-planet{
+nav.show.planets{
   .right-pane{
     transform: translateX(150px);
   }
+  .left-pane{
+    transform: translateX(0px);
+  }
 }
-
