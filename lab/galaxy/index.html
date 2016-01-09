@@ -25,6 +25,7 @@
         }
         header, footer{
             height: 50px;
+            padding: 15px;
             position: fixed;
             width: 100%;
             background-color: #EEE;
@@ -32,15 +33,32 @@
         header{
             top: 0px;
         }
+
+        header > .logo{
+            float: left;
+        }
+        header > .reset{
+            float: right;
+        }
+
         footer{
             bottom: 0px;
+        }
+        footer > .time{
+            float: left;
+        }
+        footer > .submit{
+            float: right;
         }
 
     </style>
 </head>
 
 <body>
-    <header>header</header>
+    <header>
+        <div class="logo">by Dawn</div>
+        <div class="reset fa fa-undo"></div>
+    </header>
 
     <nav class="show vehicles">
         <div class="left-pane">
@@ -53,6 +71,9 @@
         </div>
     </nav>
 
-    <footer>footer</footer>
+    <footer>
+        <div class="time">200 Hours</div>
+        <div class="submit">Find Falcone</div>
+    </footer>
 </body>
 </html>
