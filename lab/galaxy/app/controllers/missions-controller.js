@@ -9,11 +9,14 @@
       vehicles: [],
       missions: [],
       removeMission: function(index){
-        this.missions[index].destination.assigned = false;
+        var mission = this.missions[index];
+        mission.destination.assigned = false;
+        mission.vehicle.count++;
         this.missions.splice(index, 1);
       },
       addMission: function(destination, vehicle){
         destination.assigned = true;
+        vehicle.count--;
         this.missions.push({
           destination: destination,
           vehicle: vehicle

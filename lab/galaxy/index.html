@@ -136,7 +136,9 @@
         </div>
         <div class="right-pane">
             <ul class="vehicles undo-list">
-                <li ng-repeat="vehicle in galaxy.vehicles" ng-click="galaxy.addMission(galaxy.ui.selectPlanet, vehicle); galaxy.ui.showMenu = false;">
+                <li ng-repeat="vehicle in galaxy.vehicles"
+                    ng-class="{'disabled' : !vehicle.count}"
+                    ng-click="galaxy.addMission(galaxy.ui.selectPlanet, vehicle); galaxy.ui.showMenu = false;">
                     <div class="blue overview">
                         <img ng-src="../../lessons/star-wars/{{vehicle.icon}}">
                     </div>
