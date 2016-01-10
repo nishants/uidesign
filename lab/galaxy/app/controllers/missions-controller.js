@@ -10,14 +10,20 @@
       missions: Missions,
 
       selectDestination: function(planet){
-        galaxy.ui.selectPlanet = planet;
+        if(!planet.assigned){
+          galaxy.ui.selectPlanet = planet;
+        }
       },
 
       selectVehicle: function(vehicle){
-        var destination = galaxy.ui.selectPlanet;
-        this.missions.add(destination, vehicle);
-        galaxy.ui.selectPlanet = null;
-        galaxy.ui.showMenu     = false;
+        var destination = galaxy.ui.selectPlanet,
+            ignore = !(destination && vehicle.count);
+
+        if(!ignore){
+          this.missions.add(destination, vehicle);
+          galaxy.ui.selectPlanet = null;
+          galaxy.ui.showMenu     = false;
+        }
       }
     };
 
