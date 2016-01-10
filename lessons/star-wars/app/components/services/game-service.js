@@ -36,6 +36,17 @@
 
     reset();
     return {
+      allPlanets: function(){
+        return {then: function(callback){
+          callback(planets);
+        }};
+      },
+      allVehicles: function(){
+        return {then: function(callback){
+          callback(vehicles);
+        }};
+      },
+
       loading: function () {
         return !(planets.length && vehicles.length);
       },

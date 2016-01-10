@@ -100,7 +100,7 @@
     </style>
 </head>
 
-<body ng-app="galaxy" ng-controller="GameController">
+<body ng-app="galaxy" ng-controller="MissionsController">
     <div id="loader" class="done">Loading</div>
     <header>
         <div class="logo">by Dawn</div>
@@ -114,7 +114,7 @@
         </div>
         <div class="left-pane" ng-click="__selectVehicle = true">
             <ul class="undo-list">
-                <li ng-repeat="planet in game.planets()">
+                <li ng-repeat="planet in galaxy.planets">
                     <div class="red overview">
                         <img ng-src="../../lessons/star-wars/{{planet.icon}}">
                     </div>
@@ -127,7 +127,7 @@
         </div>
         <div class="right-pane">
             <ul class="undo-list">
-                <li ng-repeat="vehicle in game.vehicles()">
+                <li ng-repeat="vehicle in galaxy.vehicles">
                     <div class="blue overview">
                         <img ng-src="../../lessons/star-wars/{{vehicle.icon}}">
                     </div>
@@ -142,7 +142,7 @@
 
     <article>
         <h1>Missions</h1>
-        <ul class="missions undo-list" ng-init="missions = [{destination: game.planets()[0], vehicle: game.vehicles()[2]}]">
+        <ul class="missions undo-list" ng-init="missions = [{destination: galaxy.planets[0], vehicle: galaxy.vehicles[2]}]">
             <li class="no-missions" ng-if="!missions.length">
                 <h1>No Missions</h1>
             </li>
@@ -177,6 +177,7 @@
 
     <!-- New app -->
     <script src="app/app.js"></script>
+    <script src="app/controllers/missions-controller.js"></script>
 
 </body>
 </html>
