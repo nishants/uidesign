@@ -138,7 +138,7 @@
             <ul class="vehicles undo-list">
                 <li ng-repeat="vehicle in galaxy.vehicles"
                     ng-class="{'disabled' : !vehicle.count}"
-                    ng-click="galaxy.addMission(galaxy.ui.selectPlanet, vehicle); galaxy.ui.showMenu = false;">
+                    ng-click="galaxy.selectVehicle(vehicle);">
                     <div class="blue overview">
                         <img ng-src="../../lessons/star-wars/{{vehicle.icon}}">
                     </div>

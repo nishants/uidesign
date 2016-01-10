@@ -14,13 +14,15 @@
         mission.vehicle.count++;
         this.missions.splice(index, 1);
       },
-      addMission: function(destination, vehicle){
-        destination.assigned = true;
-        vehicle.count--;
+      selectVehicle: function(vehicle){
+        var destination = galaxy.ui.selectPlanet;
         this.missions.push({
           destination: destination,
           vehicle: vehicle
         });
+        destination.assigned = true;
+        galaxy.ui.showMenu   = false;
+        vehicle.count--;
       }
     };
 
