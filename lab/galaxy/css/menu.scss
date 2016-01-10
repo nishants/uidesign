@@ -34,7 +34,6 @@ nav{
 
       padding: 10px;
       text-align: center;
-      border-bottom: 1px solid rgba(1, 1, 1, 0.1);
 
       img{
         height: 30px;
@@ -57,11 +56,17 @@ nav{
 
   .left-pane{
     transform: translateX(-250px);
+    .overview, .description{
+      border-bottom: 1px solid rgba(251, 251, 251, 0.3);
+    }
   }
 
   .right-pane{
     right: 0px;
     transform: translateX(250px);
+    .overview, .description{
+      border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+    }
   }
 }
 
