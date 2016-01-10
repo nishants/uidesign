@@ -2,7 +2,7 @@ $menuLayer: 100;
 $menuHeight: calc(100vh - 50px);
 $menuButtonSize: 40px;
 $menuItemHeight: 75px;
-$topBarHeight : 50px;
+$topBarHeight : 52px;
 
 nav{
   .left-pane, .right-pane, .menu-button{
@@ -25,6 +25,8 @@ nav{
   .left-pane,.right-pane{
     z-index: $menuLayer;
     position: fixed;
+    top: $topBarHeight;
+
     box-sizing: border-box;
     margin:0;
     padding:0;
@@ -77,6 +79,22 @@ nav{
       border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     }
   }
+
+  .planets > li:first-child > .overview {
+    border-top-right-radius: 2px;
+  }
+  .planets > li:last-child > .overview{
+    border-bottom-right-radius: 2px;
+  }
+
+
+  .vehicles > li:first-child > .overview {
+    border-top-left-radius: 2px;
+  }
+  .vehicles > li:last-child > .overview{
+    border-bottom-left-radius: 2px;
+  }
+
 
   .right-pane{
     right: 0px;
