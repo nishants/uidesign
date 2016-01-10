@@ -1,5 +1,5 @@
-$navLayer : 100;
-$navHeight: calc(100vh - 50px);
+$menuLayer: 100;
+$menuHeight: calc(100vh - 50px);
 $menuButtonSize: 40px;
 
 nav{
@@ -21,7 +21,7 @@ nav{
   }
 
   .left-pane,.right-pane{
-    z-index: $navLayer;
+    z-index: $menuLayer;
     position: fixed;
     box-sizing: border-box;
     margin:0;
@@ -97,7 +97,7 @@ nav{
   position: fixed;
   top: 50px;
   right: 0px;
-  z-index: $navLayer + 1;
+  z-index: $menuLayer + 1;
 
   width: $menuButtonSize;
   height: $menuButtonSize;
