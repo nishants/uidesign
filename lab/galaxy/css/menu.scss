@@ -137,3 +137,7 @@ nav{
 #menu.show > .menu-button > .open{
    visibility: hidden;
 }
+
+.menu-button.disabled{
+  opacity: 0;
+}
