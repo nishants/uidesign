@@ -111,12 +111,10 @@
         }
 
         .fade-in{
-            transition-delay: 500ms;
-
-            -webkit-transition: opacity  1000ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-            -moz-transition:    opacity  1000ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-            -o-transition:      opacity  1000ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-            transition:         opacity  1000ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -webkit-transition: opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -moz-transition:    opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -o-transition:      opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            transition:         opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
         }
         .fade-in:not(.show){
             opacity: 0;
@@ -185,7 +183,9 @@
                     <img ng-src="../../lessons/star-wars/{{mission.vehicle.icon}}">
                     <span class="name" ng-bind="mission.vehicle.name"></span>
                 </div>
-                <div class="cancel fa fa-close" ng-click="galaxy.missions.remove($index)"></div>
+                <div class="cancel fa fa-close"
+                     transition-delay="500"
+                     click-out="galaxy.missions.remove($index)"></div>
             </li>
         </ul>
     </article>
@@ -210,6 +210,7 @@
     <script src="app/controllers/missions-controller.js"></script>
     <script src="app/models/missions.js"></script>
     <script src="app/diretictives/fade-in.js"></script>
+    <script src="app/diretictives/click-out.js"></script>
 
 </body>
 </html>

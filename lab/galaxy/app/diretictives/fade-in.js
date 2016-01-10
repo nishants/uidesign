@@ -9,6 +9,7 @@
         setTimeout(function(){
           element.addClass("show");
         },100);
+        scope.__fadeElement = element;
       }
     };
   });
