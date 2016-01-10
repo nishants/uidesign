@@ -1,7 +1,7 @@
 $menuLayer: 100;
 $menuHeight: calc(100vh - 50px);
 $menuButtonSize: 40px;
-$menuItemHeight: 50px;
+$menuItemHeight: 60px;
 $topBarHeight : 50px;
 
 nav{
@@ -48,8 +48,8 @@ nav{
       width: 150px;
       height: $menuItemHeight;
 
-      font-size: 13px;
-      line-height: 20px;
+      font-size: 10px;
+      line-height: 13px;
       padding: 10px;
 
       border-bottom: 1px solid rgba(1, 1, 1, 0.1);
