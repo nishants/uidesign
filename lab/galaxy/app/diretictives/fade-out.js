@@ -10,7 +10,7 @@
           scope.__fadeElement.removeClass("show");
           $timeout(function(){
             scope.$eval(attrs.fadeOut);
-          },attrs.transitionDelay);
+          },parseInt(attrs.transitionDelay));
         });
       }
     };

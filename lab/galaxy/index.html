@@ -111,10 +111,10 @@
         }
 
         .fade-in{
-            -webkit-transition: opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-            -moz-transition:    opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-            -o-transition:      opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-            transition:         opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -webkit-transition: opacity  200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -moz-transition:    opacity  200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -o-transition:      opacity  200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            transition:         opacity  200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
         }
         .fade-in:not(.show){
             opacity: 0;
@@ -184,7 +184,7 @@
                     <span class="name" ng-bind="mission.vehicle.name"></span>
                 </div>
                 <div class="cancel fa fa-close"
-                     transition-delay="500"
+                     transition-delay="200"
                      fade-out="galaxy.missions.remove($index)"></div>
             </li>
         </ul>
@@ -192,7 +192,7 @@
 
     <footer id="bottom-bar">
         <div class="time">200 Hours</div>
-        <div class="submit disabled" ng-click="galaxy.findFalcone()">Find Falcone</div>
+        <div class="submit" ng-class="{'disabled' : galaxy.missions.all.length < 4}" ng-click="galaxy.findFalcone()">Find Falcone</div>
     </footer>
     <script src="../../lib/angular-1.4.3.js"></script>
 

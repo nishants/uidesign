@@ -8,7 +8,7 @@
       link: function(scope, element){
         setTimeout(function(){
           element.addClass("show");
-        },100);
+        },0);
         scope.__fadeElement = element;
       }
     };
