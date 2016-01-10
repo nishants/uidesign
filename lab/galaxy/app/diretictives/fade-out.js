@@ -1,6 +1,6 @@
 (function () {
   "use strict"
-  galaxy.directive("clickOut", function($timeout){
+  galaxy.directive("fadeOut", function($timeout){
     return {
       restrict: "A",
       scope: false,
