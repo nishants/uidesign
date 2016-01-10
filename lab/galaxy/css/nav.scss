@@ -16,6 +16,10 @@ nav{
   overflow: hidden;
   margin-top: 50px;
 
+  .planets > li, .vehicles > li{
+    height: 50px;
+  }
+
   .left-pane,.right-pane{
     z-index: $navLayer;
     position: fixed;
