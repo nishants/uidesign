@@ -164,7 +164,7 @@
                     <img ng-src="../../lessons/star-wars/{{mission.vehicle.icon}}">
                     <span class="name" ng-bind="mission.vehicle.name"></span>
                 </div>
-                <div class="cancel fa fa-close" ></div>
+                <div class="cancel fa fa-close" ng-click="galaxy.missions.splice($index, 1)"></div>
             </li>
         </ul>
     </article>
