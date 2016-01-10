@@ -6,7 +6,7 @@
           content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/top-bottom-bars.css">
     <style>
         * {
@@ -116,7 +116,7 @@
         <div class="reset fa fa-undo"></div>
     </header>
 
-    <nav ng-class="{'show' : galaxy.ui.showMenu, 'vehicles' : galaxy.ui.selectPlanet, 'planets' : !galaxy.ui.selectPlanet}">
+    <nav id="menu" ng-class="{'show' : galaxy.ui.showMenu, 'vehicles' : galaxy.ui.selectPlanet, 'planets' : !galaxy.ui.selectPlanet}">
         <div class="menu-button" ng-click="galaxy.ui.showMenu = !galaxy.ui.showMenu; galaxy.ui.selectPlanet = null;">
             <div class="open">+</div>
             <div class="close">x</div>

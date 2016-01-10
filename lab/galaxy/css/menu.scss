@@ -11,7 +11,7 @@ nav{
   }
 }
 
-nav{
+#menu{
   background-color: black;
   overflow: hidden;
   margin-top: 50px;
@@ -65,7 +65,7 @@ nav{
   }
 }
 
-nav.show.planets{
+#menu.show.planets{
   .right-pane{
     transform: translateX(150px);
   }
@@ -74,7 +74,7 @@ nav.show.planets{
   }
 }
 
-nav.show.vehicles{
+#menu.show.vehicles{
   .right-pane{
     transform: translateX(0px);
   }
@@ -83,7 +83,7 @@ nav.show.vehicles{
   }
 }
 
-nav > .menu-button{
+#menu > .menu-button{
   position: fixed;
   top: 50px;
   right: 0px;
@@ -114,16 +114,16 @@ nav > .menu-button{
   top: -$menuButtonSize;
 }
 
-nav.show > .menu-button{
+#menu.show > .menu-button{
   transform: rotate(360deg);
   background-color: rgba(255, 255, 255, 0.5);
   color: rgba(1, 1, 1, 0.5);
 }
 
-nav:not(.show) > .menu-button > .close{
+#menu:not(.show) > .menu-button > .close{
    visibility: hidden;
 }
 
-nav.show > .menu-button > .open{
+#menu.show > .menu-button > .open{
    visibility: hidden;
 }
