@@ -110,6 +110,17 @@
             color: #FF5722;
         }
 
+        .fade-in{
+            transition-delay: 500ms;
+
+            -webkit-transition: opacity  1000ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -moz-transition:    opacity  1000ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            -o-transition:      opacity  1000ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+            transition:         opacity  1000ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+        }
+        .fade-in:not(.show){
+            opacity: 0;
+        }
     </style>
 </head>
 
@@ -165,7 +176,7 @@
             <li class="no-missions" ng-if="!galaxy.missions.all.length">
                 <h1>No Missions</h1>
             </li>
-            <li class="mission" ng-repeat="mission in galaxy.missions.all">
+            <li class="mission fade-in" ng-repeat="mission in galaxy.missions.all">
                 <div class="destination">
                     <img ng-src="../../lessons/star-wars/{{mission.destination.icon}}">
                     <span class="name" ng-bind="mission.destination.name"></span>
@@ -198,6 +209,7 @@
     <script src="app/app.js"></script>
     <script src="app/controllers/missions-controller.js"></script>
     <script src="app/models/missions.js"></script>
+    <script src="app/diretictives/fade-in.js"></script>
 
 </body>
 </html>
