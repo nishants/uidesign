@@ -8,9 +8,14 @@
       planets : [],
       vehicles: [],
       missions: [],
-      addMission: function(planet, vehicle){
+      removeMission: function(index){
+        this.missions[index].destination.assigned = false;
+        this.missions.splice(index, 1);
+      },
+      addMission: function(destination, vehicle){
+        destination.assigned = true;
         this.missions.push({
-          destination: planet,
+          destination: destination,
           vehicle: vehicle
         });
       }

@@ -123,7 +123,7 @@
         </div>
         <div class="left-pane" >
             <ul class="planets undo-list">
-                <li ng-repeat="planet in galaxy.planets" ng-click="galaxy.ui.selectPlanet = planet">
+                <li ng-repeat="planet in galaxy.planets" ng-click="galaxy.ui.selectPlanet = planet" ng-class="{'disabled' : planet.assigned}">
                     <div class="red overview" >
                         <img ng-src="../../lessons/star-wars/{{planet.icon}}">
                     </div>
@@ -164,7 +164,7 @@
                     <img ng-src="../../lessons/star-wars/{{mission.vehicle.icon}}">
                     <span class="name" ng-bind="mission.vehicle.name"></span>
                 </div>
-                <div class="cancel fa fa-close" ng-click="galaxy.missions.splice($index, 1)"></div>
+                <div class="cancel fa fa-close" ng-click="galaxy.removeMission($index)"></div>
             </li>
         </ul>
     </article>
