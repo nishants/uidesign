@@ -1,0 +1,34 @@
+$barHeight : 50px;
+
+header, footer {
+  height: $barHeight;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  background-color: #EEE;
+}
+
+header {
+  top: 0px;
+  z-index: 205;
+}
+
+header > .logo {
+  float: left;
+}
+
+header > .reset {
+  float: right;
+}
+
+footer {
+  bottom: 0px;
+}
+
+footer > .time {
+  float: left;
+}
+
+footer > .submit {
+  float: right;
+}

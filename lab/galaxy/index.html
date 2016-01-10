@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/top-bottom-bars.css">
     <style>
         * {
             box-sizing: border-box;
@@ -28,38 +29,7 @@
             background-color: #acbbdc;
         }
 
-        header, footer {
-            height: 50px;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            background-color: #EEE;
-        }
 
-        header {
-            top: 0px;
-            z-index: 205;
-        }
-
-        header > .logo {
-            float: left;
-        }
-
-        header > .reset {
-            float: right;
-        }
-
-        footer {
-            bottom: 0px;
-        }
-
-        footer > .time {
-            float: left;
-        }
-
-        footer > .submit {
-            float: right;
-        }
 
         #loader.done {
             transform: translateY(-150vh);
@@ -171,7 +141,7 @@
 
     <article>
         <h1>Missions</h1>
-        <ul class="missions undo-list" ng-init="missions = [{destination: game.planets()[0], vehicle: game.vehicles()[0]}]">
+        <ul class="missions undo-list" ng-insit="missions = [{destination: game.planets()[0], vehicle: game.vehicles()[0]}]">
             <li class="no-missions" ng-if="!missions.length">
                 <h1>No Missions</h1>
             </li>
