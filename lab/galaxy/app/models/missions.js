@@ -3,6 +3,11 @@
   game.factory("Missions", function () {
     return {
       all : [],
+      reset: function() {
+        while (this.all.length) {
+          this.remove(0);
+        }
+      },
       remove : function(index){
         var mission = this.all[index];
         mission.destination.assigned = false;
