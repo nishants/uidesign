@@ -9,7 +9,7 @@
         element.bind("click", function(){
           scope.__fadeElement.removeClass("show");
           $timeout(function(){
-            scope.$eval(attrs.clickOut);
+            scope.$eval(attrs.fadeOut);
           },attrs.transitionDelay);
         });
       }
