@@ -2,7 +2,7 @@
   "use strict"
 
 
-  game.directive("typewritter", function($timeout){
+  game.directive("typewriter", function($timeout){
     return {
       restrict: "C",
       scope: false,

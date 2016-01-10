@@ -13,6 +13,28 @@
             box-sizing: border-box;
         }
 
+        .typewriter:not(.show){
+            display: none !important;
+        }
+        .typewriter {
+            -webkit-transition: none;
+            -moz-transition: none;
+            -o-transition: none;
+            transition: none;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            -webkit-animation   : type 1s steps(60, end);
+            animation           : type 1s steps(60, end);
+            text-align: left;
+        }
+
+        @keyframes type {
+            from {
+                width: 0;
+            }
+        }
+
         .blue {
             background-color: #4a89dc;
         }
@@ -152,7 +174,7 @@
                         <div >{{vehicle.name}}</div>
                         <div >{{vehicle.range}} megamiles</div>
                         <div >{{vehicle.speed}} megamiles/hours</div>
-                        <div >{{vehicle | reachFor:galaxy.ui.selectPlanet}}</div>
+                        <div class="typewriter" ng-type="vehicle | reachFor:galaxy.ui.selectPlanet"></div>
                     </div>
                 </li>
             </ul>
@@ -196,7 +218,7 @@
     <script src="../../lessons/star-wars/app/missions/planets.js"></script>
     <script src="../../lessons/star-wars/app/spacecrafts/vehicle.js"></script>
     <script src="../../lessons/star-wars/app/components/mission-time-filter.js"></script>
-    <script src="../../lessons/star-wars/app/components/typewritter.js"></script>
+    <script src="../../lessons/star-wars/app/components/typewriter.js"></script>
 
     <!-- New app -->
     <script src="app/app.js"></script>
