@@ -1,28 +1,18 @@
 (function () {
   "use strict"
-  game.controller("MissionsController", ["$scope", "GameService", "HelpMessageService", function($scope, GameService, HelpMessages){
+  game.controller("MissionsController", ["$scope", "GameService", "Missions", function($scope, GameService, Missions){
 
     var galaxy = {
       ready   : false,
       ui      : {selectPlanet: false, showMenu: false},
       planets : [],
       vehicles: [],
-      missions: [],
-      removeMission: function(index){
-        var mission = this.missions[index];
-        mission.destination.assigned = false;
-        mission.vehicle.count++;
-        this.missions.splice(index, 1);
-      },
+      missions: Missions,
       selectVehicle: function(vehicle){
         var destination = galaxy.ui.selectPlanet;
-        this.missions.push({
-          destination: destination,
-          vehicle: vehicle
-        });
-        destination.assigned = true;
-        galaxy.ui.showMenu   = false;
-        vehicle.count--;
+        this.missions.add(destination, vehicle);
+        galaxy.ui.selectPlanet = null;
+        galaxy.ui.showMenu     = false;
       }
     };
 

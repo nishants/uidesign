@@ -154,10 +154,10 @@
     <article>
         <h1>Missions</h1>
         <ul class="missions undo-list">
-            <li class="no-missions" ng-if="!galaxy.missions.length">
+            <li class="no-missions" ng-if="!galaxy.missions.all.length">
                 <h1>No Missions</h1>
             </li>
-            <li class="mission" ng-repeat="mission in galaxy.missions">
+            <li class="mission" ng-repeat="mission in galaxy.missions.all">
                 <div class="destination">
                     <img ng-src="../../lessons/star-wars/{{mission.destination.icon}}">
                     <span class="name" ng-bind="mission.destination.name"></span>
@@ -166,7 +166,7 @@
                     <img ng-src="../../lessons/star-wars/{{mission.vehicle.icon}}">
                     <span class="name" ng-bind="mission.vehicle.name"></span>
                 </div>
-                <div class="cancel fa fa-close" ng-click="galaxy.removeMission($index)"></div>
+                <div class="cancel fa fa-close" ng-click="galaxy.missions.remove($index)"></div>
             </li>
         </ul>
     </article>
@@ -189,6 +189,7 @@
     <!-- New app -->
     <script src="app/app.js"></script>
     <script src="app/controllers/missions-controller.js"></script>
+    <script src="app/models/missions.js"></script>
 
 </body>
 </html>
