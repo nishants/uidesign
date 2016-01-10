@@ -8,6 +8,11 @@
       planets : [],
       vehicles: [],
       missions: Missions,
+
+      selectDestination: function(planet){
+        galaxy.ui.selectPlanet = planet;
+      },
+
       selectVehicle: function(vehicle){
         var destination = galaxy.ui.selectPlanet;
         this.missions.add(destination, vehicle);
