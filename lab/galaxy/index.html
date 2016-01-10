@@ -125,7 +125,7 @@
             <ul class="planets undo-list">
                 <li ng-repeat="planet in galaxy.planets"
                     ng-click="galaxy.selectDestination(planet)"
-                    ng-class="{'disabled' : planet.assigned}">
+                    ng-class="{'disabled' : planet.assigned, 'selected' : planet.name == galaxy.ui.selectPlanet.name}">
                     <div class="red overview" >
                         <img ng-src="../../lessons/star-wars/{{planet.icon}}">
                     </div>
