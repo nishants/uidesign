@@ -8,6 +8,12 @@
       planets : [],
       vehicles: [],
       missions: [],
+      addMission: function(planet, vehicle){
+        this.missions.push({
+          destination: planet,
+          vehicle: vehicle
+        });
+      }
     };
 
     GameService.allPlanets().then(function(planets){

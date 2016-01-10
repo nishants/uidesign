@@ -127,7 +127,7 @@
         </div>
         <div class="right-pane">
             <ul class="vehicles undo-list">
-                <li ng-repeat="vehicle in galaxy.vehicles">
+                <li ng-repeat="vehicle in galaxy.vehicles" ng-click="galaxy.addMission(galaxy.ui.selectPlanet, vehicle); galaxy.ui.showMenu = false;">
                     <div class="blue overview">
                         <img ng-src="../../lessons/star-wars/{{vehicle.icon}}">
                     </div>
@@ -142,11 +142,11 @@
 
     <article>
         <h1>Missions</h1>
-        <ul class="missions undo-list" ng-init="missions = [{destination: galaxy.planets[0], vehicle: galaxy.vehicles[2]}]">
-            <li class="no-missions" ng-if="!missions.length">
+        <ul class="missions undo-list">
+            <li class="no-missions" ng-if="!galaxy.missions.length">
                 <h1>No Missions</h1>
             </li>
-            <li class="mission" ng-repeat="mission in missions">
+            <li class="mission" ng-repeat="mission in galaxy.missions">
                 <div class="destination">
                     <img ng-src="../../lessons/star-wars/{{mission.destination.icon}}">
                     <span class="name" ng-bind="mission.destination.name"></span>
