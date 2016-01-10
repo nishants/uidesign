@@ -1,6 +1,8 @@
 $menuLayer: 100;
 $menuHeight: calc(100vh - 50px);
 $menuButtonSize: 40px;
+$menuItemHeight: 50px;
+$topBarHeight : 50px;
 
 nav{
   .left-pane, .right-pane, .menu-button{
@@ -14,10 +16,10 @@ nav{
 #menu{
   background-color: black;
   overflow: hidden;
-  margin-top: 50px;
+  margin-top: $topBarHeight;
 
   .planets > li, .vehicles > li{
-    height: 50px;
+    height: $menuItemHeight;
   }
 
   .left-pane,.right-pane{
@@ -30,7 +32,7 @@ nav{
     .overview{
       float: left;
       width: 100px;
-      height: 50px;
+      height: $menuItemHeight;
 
       padding: 10px;
       text-align: center;
@@ -44,7 +46,7 @@ nav{
     .description{
       float: left;
       width: 150px;
-      height: 50px;
+      height: $menuItemHeight;
 
       font-size: 13px;
       line-height: 20px;
@@ -95,15 +97,14 @@ nav{
 
 #menu > .menu-button{
   position: fixed;
-  top: 50px;
+  top: $topBarHeight;
   right: 0px;
   z-index: $menuLayer + 1;
+  margin: 10px 10px 0 0;
 
   width: $menuButtonSize;
   height: $menuButtonSize;
   overflow: hidden;
-
-  margin: 10px 10px 0 0;
 
   background-color: rgba(1, 1, 1, 0.5);
   color: white;
