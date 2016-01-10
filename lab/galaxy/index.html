@@ -172,7 +172,7 @@
     <article>
         <h1>Missions</h1>
         <ul class="missions undo-list" ng-init="missions = [{destination: game.planets()[0], vehicle: game.vehicles()[0]}]">
-            <li class="no-missions" ng-if="missions.length">
+            <li class="no-missions" ng-if="!missions.length">
                 <h1>No Missions</h1>
             </li>
             <li class="mission" ng-repeat="mission in missions">
