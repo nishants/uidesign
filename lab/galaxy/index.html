@@ -85,10 +85,16 @@
             transition: all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
         }
 
+        .undo-list{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
     </style>
 </head>
 
-<body ng-app>
+<body ng-app="game" ng-controller="GameController">
     <div id="loader" class="done">Loading</div>
     <header>
         <div class="logo">by Dawn</div>
@@ -101,8 +107,17 @@
             <div class="close">x</div>
         </div>
         <div class="left-pane" ng-click="__selectVehicle = true">
-            <div class="red overview"></div>
-            <div class="light-red description"></div>
+            <ul class="undo-list">
+                <li ng-repeat="planet in game.planets()">
+                    <div class="red overview">
+                        <img ng-src="../../lessons/star-wars/{{planet.icon}}">
+                    </div>
+                    <div class="light-red description">
+                        <div ng-bind="planet.name"></div>
+                        <div >{{planet.distance}} megamiles</div>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div class="right-pane">
             <div class="blue overview"></div>
@@ -118,5 +133,14 @@
         <div class="submit">Find Falcone</div>
     </footer>
     <script src="../../lib/angular-1.4.3.js"></script>
+
+    <script src="../../lessons/star-wars/app/app.js"></script>
+    <script src="../../lessons/star-wars/app/controllers/game-controller.js"></script>
+    <script src="../../lessons/star-wars/app/components/services/game-service.js"></script>
+    <script src="../../lessons/star-wars/app/components/services/help-message-service.js"></script>
+    <script src="../../lessons/star-wars/app/missions/planets.js"></script>
+    <script src="../../lessons/star-wars/app/spacecrafts/vehicle.js"></script>
+    <script src="../../lessons/star-wars/app/components/mission-time-filter.js"></script>
+    <script src="../../lessons/star-wars/app/components/typewritter.js"></script>
 </body>
 </html>
