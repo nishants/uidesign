@@ -4,9 +4,10 @@
 
     var galaxy = {
       loading : true,
+      ui      : {selectPlanet: false, showMenu: false},
       planets : [],
       vehicles: [],
-      missions: []
+      missions: [],
     };
 
     GameService.allPlanets().then(function(planets){

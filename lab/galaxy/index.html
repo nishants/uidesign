@@ -107,15 +107,15 @@
         <div class="reset fa fa-undo"></div>
     </header>
 
-    <nav ng-class="{'show' : __showNav, 'vehicles' : __selectVehicle, 'planets' : !__selectVehicle}">
-        <div class="menu-button" ng-click="__showNav = !__showNav; __selectVehicle = false;">
+    <nav ng-class="{'show' : galaxy.ui.showMenu, 'vehicles' : galaxy.ui.selectPlanet, 'planets' : !galaxy.ui.selectPlanet}">
+        <div class="menu-button" ng-click="galaxy.ui.showMenu = !galaxy.ui.showMenu; galaxy.ui.selectPlanet = null;">
             <div class="open">+</div>
             <div class="close">x</div>
         </div>
-        <div class="left-pane" ng-click="__selectVehicle = true">
-            <ul class="undo-list">
-                <li ng-repeat="planet in galaxy.planets">
-                    <div class="red overview">
+        <div class="left-pane" >
+            <ul class="planets undo-list">
+                <li ng-repeat="planet in galaxy.planets" ng-click="galaxy.ui.selectPlanet = planet">
+                    <div class="red overview" >
                         <img ng-src="../../lessons/star-wars/{{planet.icon}}">
                     </div>
                     <div class="light-red description">
@@ -126,7 +126,7 @@
             </ul>
         </div>
         <div class="right-pane">
-            <ul class="undo-list">
+            <ul class="vehicles undo-list">
                 <li ng-repeat="vehicle in galaxy.vehicles">
                     <div class="blue overview">
                         <img ng-src="../../lessons/star-wars/{{vehicle.icon}}">
