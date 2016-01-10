@@ -120,8 +120,17 @@
             </ul>
         </div>
         <div class="right-pane">
-            <div class="blue overview"></div>
-            <div class="light-blue description"></div>
+            <ul class="undo-list">
+                <li ng-repeat="vehicle in game.vehicles()">
+                    <div class="blue overview">
+                        <img ng-src="../../lessons/star-wars/{{vehicle.icon}}">
+                    </div>
+                    <div class="light-blue description">
+                        <div ng-bind="vehicle.name"></div>
+                        <div >{{vehicle.speed}} megamiles/hours</div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
 
