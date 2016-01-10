@@ -3,7 +3,7 @@
   galaxy.directive("fadeIn", function(){
     return {
       restrict: "C",
-      scope: false,
+      scope: true,
       transclude: false,
       link: function(scope, element){
         setTimeout(function(){
