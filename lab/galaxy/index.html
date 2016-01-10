@@ -110,7 +110,7 @@
 </head>
 
 <body ng-app="galaxy" ng-controller="MissionsController">
-    <div id="loader" class="done">Loading</div>
+    <div id="loader" ng-class="{'done' : galaxy.ready}">Loading</div>
     <header>
         <div class="logo">by Dawn</div>
         <div class="reset fa fa-undo"></div>
