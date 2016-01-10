@@ -126,7 +126,7 @@
     <div id="loader" ng-class="{'done' : galaxy.ready}">Loading</div>
     <header>
         <div class="logo">by Dawn</div>
-        <div class="reset fa fa-undo"></div>
+        <div class="reset fa fa-undo" animation-duration="1000"></div>
     </header>
 
     <nav id="menu" ng-class="{'show' : galaxy.ui.showMenu, 'vehicles' : galaxy.ui.selectPlanet, 'planets' : !galaxy.ui.selectPlanet}">
@@ -211,6 +211,7 @@
     <script src="app/models/missions.js"></script>
     <script src="app/diretictives/fade-in.js"></script>
     <script src="app/diretictives/fade-out.js"></script>
+    <script src="app/diretictives/reset.js"></script>
 
 </body>
 </html>

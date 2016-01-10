@@ -20,6 +20,27 @@ header > .logo {
 
 header > .reset {
   float: right;
+  animation: reset;
+}
+
+header > .reset.animate {
+  opacity: 0.8;
+  animation-name: fadeIn;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    transform : rotate(-360deg);
+  }
 }
 
 #bottom-bar {
