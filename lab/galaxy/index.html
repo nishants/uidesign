@@ -158,9 +158,10 @@
                     ng-click="galaxy.selectVehicle(vehicle);">
                     <div class="blue overview">
                         <img ng-src="../../lessons/star-wars/{{vehicle.icon}}">
+                        <div>({{vehicle.count}})</div>
                     </div>
                     <div class="light-blue description">
-                        <div >{{vehicle.name}} ({{vehicle.count}})</div>
+                        <div >{{vehicle.name}}</div>
                         <div >{{vehicle.range}} megamiles</div>
                         <div >{{vehicle.speed}} megamiles/hours</div>
                     </div>
