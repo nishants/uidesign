@@ -68,6 +68,14 @@ nav{
       border-bottom: 1px solid rgba(1, 1, 1, 0.1);
     }
   }
+
+  .disabled{
+    .overview img{
+      opacity: 0.3;
+    } .description{
+      color: rgba(1, 1, 1, 0.3);
+    }
+  }
 }
 
 #menu.show.planets{
