@@ -48,17 +48,27 @@ header > .reset.animate {
 
   .time {
     float: left;
+    border: 10px solid rgb(130, 196, 133);
+    background-color: rgb(130, 196, 133);
+    div{
+      border-radius: 1px;
+
+      padding-top: 7.5px;
+      font-size: 13px;
+      background-color: rgb(211, 235, 212);
+      height: 100%;
+    }
   }
 
   .time, .submit{
     height: $barHeight;
-    padding: 15px;
     width: 50%;
     text-align: center;
   }
 
   .submit {
     float: right;
+    padding: 15px;
     background-color: #FF9800;
     -webkit-transition: opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
     -moz-transition:    opacity  500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
