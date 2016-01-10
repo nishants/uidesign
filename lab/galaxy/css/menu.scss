@@ -1,7 +1,7 @@
 $menuLayer: 100;
 $menuHeight: calc(100vh - 50px);
 $menuButtonSize: 40px;
-$menuItemHeight: 60px;
+$menuItemHeight: 75px;
 $topBarHeight : 50px;
 
 nav{
@@ -41,9 +41,20 @@ nav{
       padding: 10px;
       text-align: center;
 
+      .img-outline{
+        background-color: rgba(1,1,1,0.5);
+        border-radius: 50%;
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        padding-top: 7.5px;
+
+        border-top: 1px solid rgba(0, 0, 0, 0.43);
+        box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.21);
+      }
       img{
-        height: 30px;
-        width: 30px;
+        height: 25px;
+        width: 25px;
         border-radius: 50%;
       }
     }

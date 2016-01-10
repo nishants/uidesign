@@ -157,13 +157,14 @@
                     ng-class="{'disabled' : !vehicle.count}"
                     ng-click="galaxy.selectVehicle(vehicle);">
                     <div class="blue overview">
-                        <img ng-src="../../lessons/star-wars/{{vehicle.icon}}">
+                        <div class="img-outline"><img ng-src="../../lessons/star-wars/{{vehicle.icon}}"></div>
                         <div>({{vehicle.count}})</div>
                     </div>
                     <div class="light-blue description">
                         <div >{{vehicle.name}}</div>
                         <div >{{vehicle.range}} megamiles</div>
                         <div >{{vehicle.speed}} megamiles/hours</div>
+                        <div >{{vehicle | reachFor:galaxy.ui.selectPlanet}}</div>
                     </div>
                 </li>
             </ul>
@@ -214,6 +215,7 @@
     <script src="app/diretictives/fade-in.js"></script>
     <script src="app/diretictives/fade-out.js"></script>
     <script src="app/diretictives/reset.js"></script>
+    <script src="app/filters/reach-for.js"></script>
 
 </body>
 </html>
