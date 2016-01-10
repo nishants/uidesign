@@ -1,8 +1,7 @@
 $barHeight : 50px;
+$topBarLayer: 205;
 
 header, footer {
-  height: $barHeight;
-  padding: 15px;
   position: fixed;
   width: 100%;
   background-color: #EEE;
@@ -10,7 +9,9 @@ header, footer {
 
 header {
   top: 0px;
-  z-index: 205;
+  padding: 15px;
+  z-index: $topBarLayer;
+  height: $barHeight;
 }
 
 header > .logo {
@@ -21,14 +22,26 @@ header > .reset {
   float: right;
 }
 
-footer {
+#bottom-bar {
   bottom: 0px;
+
+  .time {
+    float: left;
+  }
+
+  .time, .submit{
+    height: $barHeight;
+    padding: 15px;
+    width: 50%;
+    text-align: center;
+  }
+
+  .submit {
+    float: right;
+  }
+  .submit.disabled {
+    background-color: #DADADA;
+    color: #CBC7C6;
+  }
 }
 
-footer > .time {
-  float: left;
-}
-
-footer > .submit {
-  float: right;
-}
