@@ -35,8 +35,7 @@ nav{
     .overview{
       float: left;
       height: $menuItemHeight;
-      color: rgba(238, 238, 238, 0.72);
-
+      color: rgba(0, 0, 0, 0.64);
       padding: 10px 20px;
       text-align: center;
 
@@ -70,7 +69,12 @@ nav{
   .left-pane{
     transform: translateX(-250px);
     .overview, .description{
-      border-bottom: 1px solid rgba(251, 251, 251, 0.3);
+      background-color: rgb(85, 206, 194);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);;
+      border-right: 1px solid rgba(0, 0, 0, 0.05);;
+    }
+    .description:last-child{
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     }
   }
 

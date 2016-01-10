@@ -13,14 +13,6 @@
             box-sizing: border-box;
         }
 
-        .red {
-            background-color: #ff5e46;
-        }
-
-        .light-red {
-            background-color: #ffa27e;
-        }
-
         .blue {
             background-color: #4a89dc;
         }
@@ -28,8 +20,6 @@
         .light-blue {
             background-color: #acbbdc;
         }
-
-
 
         #loader.done {
             transform: translateY(-150vh);
@@ -141,10 +131,8 @@
                 <li ng-repeat="planet in galaxy.planets"
                     ng-click="galaxy.selectDestination(planet)"
                     ng-class="{'disabled' : planet.assigned, 'selected' : planet.name == galaxy.ui.selectPlanet.name}">
-                    <div class="red overview" >
+                    <div class="overview" >
                         <img ng-src="../../lessons/star-wars/{{planet.icon}}">
-                    </div>
-                    <div class="light-red description">
                         <div ng-bind="planet.name"></div>
                         <div >{{planet.distance}} megamiles</div>
                     </div>
