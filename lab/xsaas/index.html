@@ -41,7 +41,9 @@
             <header class="header">
                 <span class="title">Campaigns</span>
                 <div class="filter-box">
-                    <div class="filter-button fa fa-filter" ng-click="__showMenu == 'show-campaigns-filter' ?__showMenu = null : __showMenu = 'show-campaigns-filter'">
+                    <div class="filter-button" ng-click="__showMenu == 'show-campaigns-filter' ?__showMenu = null : __showMenu = 'show-campaigns-filter'">
+                        <span class="fa fa-close"  ng-show="__showMenu == 'show-campaigns-filter'"></span>
+                        <span class="fa fa-filter" ng-hide="__showMenu == 'show-campaigns-filter'"></span>
                     </div>
 
                     <ul class="filters undo-list">
@@ -60,7 +62,9 @@
             <header class="header">
                 <span class="title">Adsets</span>
                 <div class="filter-box">
-                    <div class="filter-button fa fa-filter" ng-click="__showMenu == 'show-adsets-filter' ?__showMenu = null : __showMenu = 'show-adsets-filter';">
+                    <div class="filter-button" ng-click="__showMenu == 'show-adsets-filter' ?__showMenu = null : __showMenu = 'show-adsets-filter';">
+                        <span class="fa fa-close"  ng-show="__showMenu == 'show-adsets-filter'"></span>
+                        <span class="fa fa-filter" ng-hide="__showMenu == 'show-adsets-filter'"></span>
                     </div>
 
                     <ul class="filters undo-list">
@@ -79,7 +83,9 @@
             <header class="header">
                 <span class="title">Ads</span>
                 <div class="filter-box">
-                    <div class="filter-button fa fa-filter" ng-click="__showMenu == 'show-ads-filter' ?__showMenu = null : (__showMenu = 'show-ads-filter')">
+                    <div class="filter-button" ng-click="__showMenu == 'show-ads-filter' ?__showMenu = null : (__showMenu = 'show-ads-filter')">
+                        <span class="fa fa-close"  ng-show="__showMenu == 'show-ads-filter'"></span>
+                        <span class="fa fa-filter" ng-hide="__showMenu == 'show-ads-filter'"></span>
                     </div>
 
                     <ul class="filters undo-list">
