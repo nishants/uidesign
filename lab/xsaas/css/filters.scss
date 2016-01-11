@@ -3,6 +3,7 @@
 $offsetFromButton  : 10px;
 $menuWidth         : 300px;
 $menuWrapperPadding: 10px;
+$menuRightOffset   : 10px;
 $barHeight         : $topBarHeight;
 
 #filter-menu-wrapper{
@@ -10,7 +11,7 @@ $barHeight         : $topBarHeight;
 
   position: fixed;
   top: $topBarHeight * 2 + $offsetFromButton; /*initial position*/
-  right: 0;
+  right: $menuRightOffset;
   z-index: $modalLayer -1;
 
   height: $menuWidth;
@@ -18,13 +19,14 @@ $barHeight         : $topBarHeight;
   background-color: #EEE;
 
   padding: $menuWrapperPadding;
-  border-radius: 3px;
+  border-radius: 2px;
 
   text-align: center;
 
   .marker {
     position: relative;
     top: -$offsetFromButton - $menuWrapperPadding;
+    left: $menuRightOffset;
 
     float: right;
     width: 0;
@@ -37,7 +39,7 @@ $barHeight         : $topBarHeight;
 }
 
 :not(.show-menu) > #filter-menu-wrapper{
-  transform : translateX($menuWidth);
+  transform : translateX(10px + $menuWidth + $menuRightOffset);
 }
 
 .filter-button{
