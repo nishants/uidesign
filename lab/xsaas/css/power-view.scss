@@ -1,1 +1,14 @@
 @import "config";
+
+$sectionHeaderColor: $topBarColor;
+$sectionHeaderHeight: $topBarHeight;
+
+#power-access{
+  #campaigns, #adsets, #ads{
+    .section-bar{
+      height: $sectionHeaderHeight;
+      background-color: $sectionHeaderColor;
+    }
+    height: calc(#{"100vh -  #{$sectionHeaderHeight * 4}"});
+  }
+}
