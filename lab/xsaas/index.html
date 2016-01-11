@@ -36,12 +36,12 @@
 
     </nav>
 
-    <article id="power-access" class="{{__section}}" ng-class="{'show-menu' : __showMenu}">
+    <article id="power-access" class="{{__section}} {{__showMenu}}" ng-class="{'show-menu' : __showMenu}">
         <section id="campaigns" ng-click="__section = 'show-campaigns'">
             <header class="header">
                 <span class="title">Campaigns</span>
                 <div class="filter-box">
-                    <div class="filter-button fa fa-filter" ng-click="__showMenu = !__showMenu;">
+                    <div class="filter-button fa fa-filter" ng-click="__showMenu == 'show-campaigns-filter' ?__showMenu = null : __showMenu = 'show-campaigns-filter'">
                     </div>
 
                     <ul class="filters undo-list">
@@ -60,7 +60,7 @@
             <header class="header">
                 <span class="title">Adsets</span>
                 <div class="filter-box">
-                    <div class="filter-button fa fa-filter" ng-click="__showMenu = !__showMenu;">
+                    <div class="filter-button fa fa-filter" ng-click="__showMenu == 'show-adsets-filter' ?__showMenu = null : __showMenu = 'show-adsets-filter';">
                     </div>
 
                     <ul class="filters undo-list">
@@ -79,7 +79,7 @@
             <header class="header">
                 <span class="title">Ads</span>
                 <div class="filter-box">
-                    <div class="filter-button fa fa-filter" ng-click="__showMenu = !__showMenu;">
+                    <div class="filter-button fa fa-filter" ng-click="__showMenu == 'show-ads-filter' ?__showMenu = null : (__showMenu = 'show-ads-filter')">
                     </div>
 
                     <ul class="filters undo-list">

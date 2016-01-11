@@ -50,10 +50,10 @@ $barHeight         : $topBarHeight;
   }
 }
 
-.show-adsets.show-menu > #filter-menu-wrapper{
+.show-adsets-filter.show-menu > #filter-menu-wrapper{
   transform : translateY($barHeight);
 }
 
-.show-ads.show-menu > #filter-menu-wrapper{
+.show-ads-filter.show-menu > #filter-menu-wrapper{
   transform : translateY(2*$barHeight);
 }
