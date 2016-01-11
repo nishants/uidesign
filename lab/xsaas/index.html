@@ -36,12 +36,12 @@
 
     </nav>
 
-    <article id="power-access" ng-class="__section">
+    <article id="power-access" class="{{__section}}" ng-class="{'show-menu' : __showMenu}">
         <section id="campaigns" ng-click="__section = 'show-campaigns'">
             <header class="header">
                 <span class="title">Campaigns</span>
                 <div class="filter-box">
-                    <div class="add fa fa-filter"></div>
+                    <div class="add fa fa-filter" ng-click="__showMenu = !__showMenu;"></div>
 
                     <ul class="filters undo-list">
                         <li class="filter"
