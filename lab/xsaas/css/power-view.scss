@@ -45,3 +45,10 @@ $sectionBorder       : 1px solid rgba(1, 1, 1, 0.1);
     transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $sectionCount - 2px}"}));
   }
 }
+
+.show-ads{
+  @extend .show-adsets;
+  #ads{
+    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $sectionCount - 2px}"}));
+  }
+}

@@ -34,16 +34,16 @@
 
     </nav>
 
-    <article id="power-access" ng-class="{'show-adsets' : __showAdsets, 'show-ads' : __showAds}">
-        <section id="campaigns" class="active" ng-click="__showAdsets = false; __showAds = false; ">
+    <article id="power-access" ng-class="__section">
+        <section id="campaigns" class="active" ng-click="__section = 'show-campaigns'">
             <header class="header"></header>
             <div class="red content"></div>
         </section>
-        <section id="adsets" ng-click="__showAdsets = true">
+        <section id="adsets" ng-click="__section = 'show-adsets'">
             <header class="header"></header>
             <div class="blue content"></div>
         </section>
-        <section id="ads" ng-click="__showAds = true">
+        <section id="ads" ng-click="__section = 'show-ads'">
             <header class="header"></header>
             <div class="green content"></div>
         </section>
