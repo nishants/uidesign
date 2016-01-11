@@ -23,3 +23,12 @@ $menuWidth        : 300px;
 :not(.show-menu) > #filter-menu-wrapper{
   transform : translateX(300px);
 }
+
+.filter-button{
+  @include animate(transform, 500ms);
+}
+.show-menu{
+  .filter-button{
+    transform : rotate(360deg);
+  }
+}
