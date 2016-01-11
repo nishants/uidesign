@@ -17,25 +17,40 @@
         * {
             box-sizing: border-box;
         }
+        .red{
+            background-color: #ff5e46;
+        }
+        .green{
+            background-color: #4caf50;
+        }
+        .blue{
+            background-color: #4d8dff;
+        }
     </style>
 </head>
 
-<body>
+<body ng-app>
     <nav id="top-bar">
 
     </nav>
 
-    <article id="power-access">
-        <section id="campaigns">
-            <header class="section-bar"></header>
+    <article id="power-access" ng-class="{'show-adsets' : __showAdsets, 'show-ads' : __showAds}">
+        <section id="campaigns" class="active" ng-click="__showAdsets = false; __showAds = false; ">
+            <header class="header"></header>
+            <div class="red content"></div>
         </section>
-        <section id="adsets">
-            <header class="section-bar"></header>
+        <section id="adsets" ng-click="__showAdsets = true">
+            <header class="header"></header>
+            <div class="blue content"></div>
         </section>
-        <section id="ads">
-            <header class="section-bar"></header>
+        <section id="ads" ng-click="__showAds = true">
+            <header class="header"></header>
+            <div class="green content"></div>
         </section>
     </article>
+
+
+    <script src="../../lib/angular-1.4.3.js"></script>
 </body>
 
 </html>
