@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>expanding search widget</title>
+    <link rel="stylesheet" href="../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .bar{
+            height: 35px;
+            position: absolute;
+            width: 100%;
+            background-color: #3d3d3d;
+        }
+        .bar > .logo, .bar > .menu, .bar > .search{
+            border: 2px;
+            height: calc(35px - 8px);
+            margin: 2px;
+        }
+        .menu{
+            width: 400px;
+            float: right;
+            background-color: #EEE;
+        }
+        .logo{
+            width: 150px;
+            float: left;
+            background-color: #EEE;
+        }
+        .search{
+            width: calc(100% - 150px - 400px - 12px);
+            float: left;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bar">
+        <div class="logo">some logo</div>
+        <div class="search">
+
+        </div>
+        <div class="menu"></div>
+    </div>
+</body>
+</html>
