@@ -3,6 +3,7 @@
 $offsetFromButton  : 10px;
 $menuWidth         : 300px;
 $menuWrapperPadding: 10px;
+$barHeight         : $topBarHeight;
 
 #filter-menu-wrapper{
   @include animate(transform, 500ms);
@@ -47,4 +48,12 @@ $menuWrapperPadding: 10px;
     transform : rotate(360deg);
     opacity: 0.5;
   }
+}
+
+.show-adsets.show-menu > #filter-menu-wrapper{
+  transform : translateY($barHeight);
+}
+
+.show-ads.show-menu > #filter-menu-wrapper{
+  transform : translateY(2*$barHeight);
 }
