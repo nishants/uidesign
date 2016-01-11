@@ -8,11 +8,11 @@ $barHeight : $topBarHeight;
     height : $barHeight;
   }
 
-  .filters{
+  .filter-box{
     float: right;
-    .add, .filter{
-      float: left;
-    }
+    .filters > .filter{
+        float: left;
+      }
     .add{
       margin: 7.5px;
       padding-top: 7px;
