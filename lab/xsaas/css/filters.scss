@@ -12,7 +12,7 @@ $barHeight         : $topBarHeight;
   position: fixed;
   top: $topBarHeight * 2 + $offsetFromButton; /*initial position*/
   right: $menuRightOffset;
-  z-index: $modalLayer -1;
+  z-index: $modalLayer - 1;
 
   height: $menuWidth;
   width: $menuWidth;
