@@ -12,6 +12,7 @@
     <!-- app css-->
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/power-view.css">
+    <link rel="stylesheet" href="css/sections.css">
 
     <style>
         * {
@@ -35,16 +36,24 @@
     </nav>
 
     <article id="power-access" ng-class="__section">
-        <section id="campaigns" class="active" ng-click="__section = 'show-campaigns'">
-            <header class="header"></header>
+        <section id="campaigns" ng-click="__section = 'show-campaigns'">
+            <header class="header">
+                <span class="title">Campaigns</span>
+            </header>
             <div class="red content"></div>
         </section>
+
         <section id="adsets" ng-click="__section = 'show-adsets'">
-            <header class="header"></header>
+            <header class="header">
+                <span class="title">Adsets</span>
+            </header>
             <div class="blue content"></div>
         </section>
+
         <section id="ads" ng-click="__section = 'show-ads'">
-            <header class="header"></header>
+            <header class="header">
+                <span class="title">Ads</span>
+            </header>
             <div class="green content"></div>
         </section>
     </article>
