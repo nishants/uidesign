@@ -16,7 +16,7 @@ $barHeight         : $topBarHeight;
 
   height: $menuWidth;
   width: $menuWidth;
-  background-color: #EEE;
+  background-color: white;
 
   padding: $menuWrapperPadding;
   border-radius: 2px;
@@ -34,7 +34,7 @@ $barHeight         : $topBarHeight;
 
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid #EEE;
+    border-bottom: 15px solid white;
   }
 }
 
