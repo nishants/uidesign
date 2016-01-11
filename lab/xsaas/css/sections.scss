@@ -1,0 +1,10 @@
+@import "config";
+$barHeight : $topBarHeight;
+
+#power-access{
+  section .header .title{
+    padding: ($barHeight - $defaultLineHeight)/2 0px 0px 5px;
+    display: inline-block;
+    height: 100%;
+  }
+}

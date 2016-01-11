@@ -2,8 +2,8 @@
 
 body{
   font-family: Raleway;
-  font-size: 13px;
-  line-height: 16px;
+  font-size: $defaultFontSize;
+  line-height: $defaultLineHeight;
 }
 
 #top-bar{
