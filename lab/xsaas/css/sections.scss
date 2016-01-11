@@ -1,5 +1,7 @@
 @import "config";
 $barHeight : $topBarHeight;
+$titleWidth: 100px;
+$filterButtonWidth : 35px;
 
 #power-access > section > .header {
   .title, .filter{
@@ -8,14 +10,20 @@ $barHeight : $topBarHeight;
     height : $barHeight;
   }
 
+  .title{
+    width: 100px;
+  }
+
   .filter-box{
     float: right;
+    max-width: calc(#{"100% -  #{$titleWidth}"});
+
     ul.filters{
-      float: left;
+      float: right;
       display: block;
-      max-width: 200px;
+      max-width: calc(#{"100% -  #{$filterButtonWidth + 15px}"}); /* 15 pixel for margin of filter button*/
       overflow: hidden;
-      height: 50px;
+      height: $barHeight;
 
       li.filter{
         float: left;
@@ -23,11 +31,12 @@ $barHeight : $topBarHeight;
       }
     }
     .add{
+      float: right;
       margin: 7.5px;
       padding-top: 7px;
 
       height: $barHeight - ($barHeight - $defaultLineHeight)/2;
-      width: 35px;
+      width: $filterButtonWidth;
 
       text-align: center;
       font-size: 20px;
