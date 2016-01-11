@@ -48,15 +48,17 @@ header > .reset.animate {
 
   .time {
     float: left;
-    border: 10px solid rgb(130, 196, 133);
-    background-color: rgb(130, 196, 133);
+    border: 3px solid #316487;
+    background-color: #316487;
     div{
-      border-radius: 1px;
-
-      padding-top: 7.5px;
+      border-radius: 5px;
+      border: 1px solid #316487;
+      padding-top: 15px;
       font-size: 13px;
-      background-color: rgb(211, 235, 212);
+      background-color: rgba(255, 255, 255, 0.96);
       height: 100%;
+      color: #316487;
+      text-shadow: rgba(92, 104, 113, 0.21) 0 0 1px;
     }
   }
 
@@ -68,7 +70,7 @@ header > .reset.animate {
 
   .submit {
     /* background-color: rgb(28, 184, 65); */
-    border-top: 1px solid #96d1f8;
+    border: 1px solid #96d1f8;
     background: #316487;
     background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#316487));
     background: -webkit-linear-gradient(top, #3e779d, #316487);
@@ -93,6 +95,7 @@ header > .reset.animate {
     background: #DADADA;
     text-shadow: #DADADA 0 1px 0;
     color: #CBC7C6;
+    border-color: #CBC7C6;
   }
 }
 
