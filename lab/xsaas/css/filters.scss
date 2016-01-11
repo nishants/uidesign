@@ -1,0 +1,25 @@
+@import "config";
+
+$offsetFromButton : 10px;
+$menuWidth        : 300px;
+
+#filter-menu-wrapper{
+  @include animate(transform, 500ms);
+
+  position: fixed;
+  top: $topBarHeight * 2 + $offsetFromButton; /*initial position*/
+  right: 0;
+  z-index: $modalLayer -1;
+
+  height: $menuWidth;
+  width: $menuWidth;
+  background-color: #EEE;
+
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+:not(.show-menu) > #filter-menu-wrapper{
+  transform : translateX(300px);
+}
