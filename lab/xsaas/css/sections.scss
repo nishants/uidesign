@@ -10,9 +10,18 @@ $barHeight : $topBarHeight;
 
   .filter-box{
     float: right;
-    .filters > .filter{
+    ul.filters{
+      float: left;
+      display: block;
+      max-width: 200px;
+      overflow: hidden;
+      height: 50px;
+
+      li.filter{
         float: left;
+        display: inline;
       }
+    }
     .add{
       margin: 7.5px;
       padding-top: 7px;
