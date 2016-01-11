@@ -1,10 +1,32 @@
 @import "config";
 $barHeight : $topBarHeight;
 
-#power-access{
-  section .header .title{
-    padding: ($barHeight - $defaultLineHeight)/2 0px 0px 5px;
+#power-access > section > .header {
+  .title, .filter{
+    padding: ($barHeight - $defaultLineHeight)/2 5px 5px 5px;
     display: inline-block;
-    height: 100%;
+    height : $barHeight;
+  }
+
+  .filters{
+    float: right;
+    .add, .filter{
+      float: left;
+    }
+    .add{
+      margin: 7.5px;
+      padding-top: 7px;
+
+      height: $barHeight - ($barHeight - $defaultLineHeight)/2;
+      width: 35px;
+
+      text-align: center;
+      font-size: 20px;
+
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+
+      color: rgba(0, 0, 0, 0.67);
+    }
   }
 }

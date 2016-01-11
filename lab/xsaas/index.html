@@ -39,6 +39,14 @@
         <section id="campaigns" ng-click="__section = 'show-campaigns'">
             <header class="header">
                 <span class="title">Campaigns</span>
+                <div class="filters">
+                    <div class="filter"
+                          ng-repeat="f in [{name: 'filter2'}, {name: 'filter3'}, {name: 'filter4'}, {name: 'filter5'}]">
+                        {{f.name}}
+                        <span class="fa fa-close"></span>
+                    </div>
+                    <div class="add fa fa-filter"></div>
+                </div>
             </header>
             <div class="red content"></div>
         </section>
