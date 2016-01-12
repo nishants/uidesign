@@ -5,23 +5,30 @@ $menuWidth         : 300px;
 $menuWrapperPadding: 10px;
 $menuRightOffset   : 10px;
 $barHeight         : $topBarHeight;
+$animateTime       : 300ms;
 
 #filter-menu-wrapper{
   @include animate(transform, 500ms);
+  transition-delay: $animateTime;
 
   position: fixed;
   top: $topBarHeight * 2 + $offsetFromButton; /*initial position*/
   right: $menuRightOffset;
   z-index: $modalLayer - 1;
 
-  height: $menuWidth;
-  width: $menuWidth;
-  background-color: white;
+  .filter-menu{
+    height: $menuWidth;
+    width: $menuWidth;
+    background-color: white;
 
-  padding: $menuWrapperPadding;
-  border-radius: 2px;
+    padding: $menuWrapperPadding;
+    border-radius: 2px;
 
-  text-align: center;
+    text-align: center;
+
+    @include animate(opacity, $animateTime);
+    transition-delay: 0ms;
+  }
 
   .marker {
     position: relative;
@@ -39,7 +46,10 @@ $barHeight         : $topBarHeight;
 }
 
 :not(.show-menu) > #filter-menu-wrapper{
-  transform : translateX(10px + $menuWidth + $menuRightOffset);
+  visibility: hidden;
+  .filter-menu{
+    opacity: 0;
+  }
 }
 
 .filter-button{
@@ -59,8 +69,10 @@ $barHeight         : $topBarHeight;
 }
 .show-adsets-filter.show-menu > #filter-menu-wrapper{
   transform : translateY($barHeight);
+  opacity: 1;
 }
 
 .show-ads-filter.show-menu > #filter-menu-wrapper{
   transform : translateY(2*$barHeight);
+  opacity: 1;
 }
