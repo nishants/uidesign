@@ -33,12 +33,12 @@
 
     </nav>
 
-    <article id="power-access" class="{{__section}} {{__showMenu}}" ng-class="{'show-menu' : __showMenu}">
+    <article id="power-access" ng-class="{'show-menu' : __showMenu}">
         <section id="audiences">
             <header class="header">
                 <span class="title">audiences</span>
                 <div class="filter-box">
-                    <div class="filter-button" ng-click="__showMenu == 'show-ads-filter' ?__showMenu = null : (__showMenu = 'show-ads-filter')">
+                    <div class="filter-button" ng-click="__showMenu = !__showMenu">
                         <span class="fa fa-filter"></span>
                     </div>
 
@@ -65,7 +65,12 @@
                  </span>
             </div>
         </section>
-
+        <div id="filter-menu-wrapper">
+            <div class="filter-menu">
+                <div class="marker"></div>
+                <div>clear all</div>
+            </div>
+        </div>
     </article>
 
 
