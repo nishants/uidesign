@@ -2,7 +2,7 @@
 
 $sectionHeaderColor  : #EEE;
 $sectionHeaderHeight : $topBarHeight;
-$sectionCount        : 4;
+$barsCount           : 4;  /* top bar + section bars*/
 $sectionBorder       : 1px solid rgba(1, 1, 1, 0.1);
 
 #power-access{
@@ -22,7 +22,7 @@ $sectionBorder       : 1px solid rgba(1, 1, 1, 0.1);
     }
     .content{
       overflow: auto;
-      height: calc(#{"100vh -  #{$sectionHeaderHeight * $sectionCount}"});
+      height: calc(#{"100vh -  #{$sectionHeaderHeight * $barsCount}"});
     }
   }
 
@@ -36,19 +36,19 @@ $sectionBorder       : 1px solid rgba(1, 1, 1, 0.1);
 
   #ads {
     z-index: 2;
-    top: calc(#{"-100vh +  #{$sectionHeaderHeight * $sectionCount - 2px}"})
+    top: calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - 2px}"})
   }
 }
 
 .show-adsets{
   #adsets{
-    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $sectionCount - 2px}"}));
+    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - 2px}"}));
   }
 }
 
 .show-ads{
   @extend .show-adsets;
   #ads{
-    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $sectionCount - 2px}"}));
+    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - 2px}"}));
   }
 }
