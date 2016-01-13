@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- external css-->
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+
+    <!-- app css-->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/audiences.css">
+
+    <link rel="stylesheet" href="css/power-view.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/filters.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .lime-green{
+            background-color: #8BC34A;
+        }
+
+    </style>
+</head>
+
+<body ng-app>
+    <nav id="top-bar">
+
+    </nav>
+
+    <article id="power-access" class="{{__section}} {{__showMenu}}" ng-class="{'show-menu' : __showMenu}">
+        <section id="audiences">
+            <header class="header">
+                <span class="title">audiences</span>
+                <div class="filter-box">
+                    <div class="filter-button" ng-click="__showMenu == 'show-ads-filter' ?__showMenu = null : (__showMenu = 'show-ads-filter')">
+                        <span class="fa fa-filter"></span>
+                    </div>
+
+                    <ul class="filters undo-list">
+                        <li class="filter"
+                            ng-repeat="f in [{name: 'running'}, {name: 'saved'}, {name: 'recent'}, {name: 'custom'}, {name: 'lookalike'}]">
+                            {{f.name}}
+                            <span class="fa fa-close"></span>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <div class="content lime-green">
+
+            </div>
+            <div id="targeting" class="header"
+                 ng-init="__selected = {name: null}; targets = [{name: 'custom '}, {name: ' lookalike '}, {name: ' work '}, {name: ' relationship '}, {name: ' language '}, {name: ' interest '}, {name: ' connection '}, {name: ' education '}, {name: ' mobile '}, {name: ' behavior '}, {name: ' family '}, {name: ' life event '}, {name: ' mobile'}]">
+                <span class="target"
+                      ng-repeat="target in targets" ng-bind="target.name"
+                      ng-click="__selected.name == target.name ? __selected.name = null : __selected.name = target.name;"
+                      ng-class="{'selected' : __selected.name == target.name}">
+                 </span>
+            </div>
+        </section>
+
+    </article>
+
+
+    <script src="../../lib/angular-1.4.3.js"></script>
+<script></script>
+</body>
+
+</html>
+

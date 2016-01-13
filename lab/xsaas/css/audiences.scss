@@ -1,0 +1,35 @@
+@import "config";
+$sectionHeaderHeight : $topBarHeight;
+
+#power-access > #audiences{
+    .content{
+      overflow: auto;
+      height: calc(#{"100vh -  #{$sectionHeaderHeight + $topBarHeight}"});
+    }
+  #targeting{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+
+    .target, .target:after{
+      text-align: center;
+      display: inline-block;
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+
+    .target:not(:last-child):after{
+      content: " | ";
+      width: 10px;
+    }
+
+    .target.selected{
+      //font-weight: bold;
+    }
+    .target.selected:after{
+      content: " x ";
+      width: 10px;
+    }
+
+  }
+}
