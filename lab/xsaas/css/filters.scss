@@ -6,15 +6,19 @@ $menuWrapperPadding: 10px;
 $menuRightOffset   : 10px;
 $barHeight         : $topBarHeight;
 $animateTime       : 300ms;
+$wrapperPadding    : 50px;
+$wrapperPaddingTop : 20px;
 
 #filter-menu-wrapper{
   @include animate(transform, 500ms);
   transition-delay: $animateTime;
 
   position: fixed;
-  top: $topBarHeight * 2 + $offsetFromButton; /*initial position*/
-  right: $menuRightOffset;
+  top: $topBarHeight * 2 + $offsetFromButton - $wrapperPaddingTop; /*initial position*/
+  right: $menuRightOffset - $wrapperPadding;
   z-index: $modalLayer - 1;
+  padding: $wrapperPaddingTop $wrapperPadding  ;
+  background: transparent;
 
   .filter-menu{
     height: $menuWidth;
