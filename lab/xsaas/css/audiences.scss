@@ -6,6 +6,12 @@ $sectionHeaderHeight : $topBarHeight;
       overflow: auto;
       height: calc(#{"100vh -  #{$sectionHeaderHeight + $topBarHeight}"});
     }
+
+  #targeting.show-target{
+    .target:not(.selected){
+      opacity: 0.1;
+    }
+  }
   #targeting{
     position: fixed;
     bottom: 0px;
@@ -30,6 +36,5 @@ $sectionHeaderHeight : $topBarHeight;
       content: " x ";
       width: 10px;
     }
-
   }
 }
