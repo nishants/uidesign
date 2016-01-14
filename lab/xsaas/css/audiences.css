@@ -1,0 +1,31 @@
+/* modal start on or after this z-index*/
+@font-face {
+  font-family: Raleway;
+  src: url("../../../lib/fonts/Raleway-Regular.ttf") format("opentype"); }
+ul.undo-list, ul.undo-list > li {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+#power-access > #audiences .content {
+  overflow: auto;
+  height: calc(100vh -  60px); }
+#power-access > #audiences #targeting.show-target .target:not(.selected) {
+  opacity: 0.1; }
+#power-access > #audiences #targeting {
+  position: fixed;
+  bottom: 0px;
+  width: 100%; }
+  #power-access > #audiences #targeting .target, #power-access > #audiences #targeting .target:after {
+    text-align: center;
+    display: inline-block;
+    padding-left: 1px;
+    padding-right: 1px; }
+  #power-access > #audiences #targeting .target:not(:last-child):after {
+    content: " | ";
+    width: 10px; }
+  #power-access > #audiences #targeting .target.selected:after {
+    content: " x ";
+    width: 10px; }
+
+/*# sourceMappingURL=audiences.css.map */

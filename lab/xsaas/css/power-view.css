@@ -1,0 +1,43 @@
+/* modal start on or after this z-index*/
+@font-face {
+  font-family: Raleway;
+  src: url("../../../lib/fonts/Raleway-Regular.ttf") format("opentype"); }
+ul.undo-list, ul.undo-list > li {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/* top bar + 3   section bars*/
+#power-access {
+  box-sizing: border-box;
+  height: calc(100vh -  30px);
+  overflow: hidden; }
+  #power-access section {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid rgba(1, 1, 1, 0.1);
+    -webkit-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    -moz-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    -o-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88); }
+    #power-access section .header {
+      height: 30px;
+      background-color: #EEE; }
+    #power-access section .content {
+      overflow: auto;
+      height: calc(100vh -  120px); }
+  #power-access #campaigns {
+    z-index: 1; }
+  #power-access #adsets {
+    z-index: 2; }
+  #power-access #ads {
+    z-index: 2;
+    top: calc(-100vh +  118px); }
+
+.show-adsets #adsets, .show-ads #adsets {
+  transform: translateY(calc(-100vh +  118px)); }
+
+.show-ads #ads {
+  transform: translateY(calc(-100vh +  118px)); }
+
+/*# sourceMappingURL=power-view.css.map */

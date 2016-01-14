@@ -1,0 +1,84 @@
+/* modal start on or after this z-index*/
+@font-face {
+  font-family: Raleway;
+  src: url("../../../lib/fonts/Raleway-Regular.ttf") format("opentype"); }
+ul.undo-list, ul.undo-list > li {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+#filter-menu-wrapper {
+  -webkit-transition: 500ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition: 500ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition: 500ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition: 500ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition-delay: 300ms;
+  position: fixed;
+  top: 50px;
+  /*initial position*/
+  right: -40px;
+  z-index: 99;
+  padding: 20px 50px;
+  background: transparent; }
+  #filter-menu-wrapper .filter-menu {
+    height: 300px;
+    width: 300px;
+    background-color: #EEE;
+    padding: 10px;
+    border-radius: 2px;
+    text-align: center;
+    -webkit-transition: 300ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    -moz-transition: 300ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    -o-transition: 300ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    transition: 300ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    transition-delay: 0ms; }
+  #filter-menu-wrapper .marker {
+    position: relative;
+    top: -17px;
+    left: 10px;
+    float: right;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #EEE; }
+
+:not(.show-menu) > #filter-menu-wrapper {
+  visibility: hidden; }
+  :not(.show-menu) > #filter-menu-wrapper .filter-menu {
+    opacity: 0; }
+
+.filter-button {
+  float: right;
+  height: 28px;
+  line-height: 26px;
+  width: 35px;
+  text-align: center;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.67); }
+
+.filter-button {
+  -webkit-transition: 500ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition: 500ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition: 500ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition: 500ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88); }
+
+.show-menu .filter-button {
+  opacity: 0.5;
+  border-color: rgba(0, 0, 0, 0.1); }
+
+.filter-button {
+  border: 1px solid transparent; }
+
+.filter-button:hover {
+  border-color: rgba(0, 0, 0, 0.1); }
+
+.show-adsets-filter.show-menu > #filter-menu-wrapper {
+  transform: translateY(30px);
+  opacity: 1; }
+
+.show-ads-filter.show-menu > #filter-menu-wrapper {
+  transform: translateY(60px);
+  opacity: 1; }
+
+/*# sourceMappingURL=filters.css.map */
