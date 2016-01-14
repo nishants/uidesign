@@ -16,7 +16,7 @@ $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth}"});
 
   .filter-box{
     float: right;
-    max-width: $filterBoxMaxWidth;
+    width: $filterBoxMaxWidth;
 
     ul.filters{
       float: right;
