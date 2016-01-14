@@ -1,0 +1,28 @@
+<table id="campaigns-table">
+    <thead>
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Results</th>
+            <th>Cost</th>
+            <th>Reach</th>
+            <th>Spend</th>
+            <th>Created</th>
+            <th>Updated</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="campaign in campaigns">
+        <th><input type="checkbox"></th>
+        <th><span class="campaigns" ng-bind="campaign.name"></span></th>
+        <th><span class="campaigns" ng-bind="campaign.status"></span></th>
+        <th><span class="campaigns" ng-bind="campaign.result"></span></th>
+        <th><span class="campaigns" ng-bind="campaign.cost"></span></th>
+        <th><span class="campaigns" ng-bind="campaign.reach"></span></th>
+        <th><span class="campaigns" ng-bind="campaign.spend"></span></th>
+        <th><span class="campaigns" ng-bind="campaign.created"></span></th>
+        <th><span class="campaigns" ng-bind="campaign.updated"></span></th>
+    </tr>
+    </tbody>
+</table>
