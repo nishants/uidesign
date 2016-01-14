@@ -1,28 +1,28 @@
-<table id="campaigns-table">
+<table id="campaigns-table" class="fixed-head">
     <thead>
         <tr>
-            <th><input type="checkbox"></th>
-            <th>Name</th>
-            <th>Status</th>
-            <th>Results</th>
-            <th>Cost</th>
-            <th>Reach</th>
-            <th>Spend</th>
+            <th class="select"><input type="checkbox"></th>
+            <th class="name">Name</th>
+            <th class="small" >Status</th>
+            <th class="small" >Results</th>
+            <th class="small" >Cost</th>
+            <th class="small" >Reach</th>
+            <th class="small" >Spend</th>
             <th>Created</th>
             <th>Updated</th>
         </tr>
     </thead>
     <tbody>
     <tr ng-repeat="campaign in campaigns">
-        <th><input type="checkbox"></th>
-        <th><span class="campaigns" ng-bind="campaign.name"></span></th>
-        <th><span class="campaigns" ng-bind="campaign.status"></span></th>
-        <th><span class="campaigns" ng-bind="campaign.result"></span></th>
-        <th><span class="campaigns" ng-bind="campaign.cost"></span></th>
-        <th><span class="campaigns" ng-bind="campaign.reach"></span></th>
-        <th><span class="campaigns" ng-bind="campaign.spend"></span></th>
-        <th><span class="campaigns" ng-bind="campaign.created"></span></th>
-        <th><span class="campaigns" ng-bind="campaign.updated"></span></th>
+        <td class="select"><input type="checkbox"></td>
+        <td class="name">{{campaign.name}}</td>
+        <td class="small" >running</span></td>
+        <td class="small" >1 click</td>
+        <td class="small" >{{campaign.cost}}</span></td>
+        <td class="small" >{{campaign.reach}}</td>
+        <td class="small" >{{campaign.spend}}</td>
+        <td class="date">{{campaign.created}}</td>
+        <td class="date">{{campaign.updated}}</span></td>
     </tr>
     </tbody>
 </table>

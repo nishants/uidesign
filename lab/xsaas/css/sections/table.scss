@@ -1,3 +1,16 @@
 section .content > table{
   width: 100%;
+  min-width: 1000px;
+  overflow: auto;
+
+  td, th{
+    width: 80px;
+    height: 25px;
+    display: inline-block;
+    overflow: hidden;
+
+    text-align: center;
+    line-height: 23px;   /* Hide overflowing lines*/
+    font-size: 13px;
+  }
 }
