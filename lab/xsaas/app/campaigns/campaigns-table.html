@@ -3,24 +3,24 @@
         <tr>
             <th class="select"><input type="checkbox"></th>
             <th class="name">Name</th>
-            <th class="small" >Status</th>
-            <th class="small" >Results</th>
-            <th class="small" >Cost</th>
-            <th class="small" >Reach</th>
-            <th class="small" >Spend</th>
-            <th>Created</th>
-            <th>Updated</th>
+            <th >Status</th>
+            <th >Results</th>
+            <th >Cost</th>
+            <th >Reach</th>
+            <th >Spend</th>
+            <th class="date">Created</th>
+            <th class="date">Updated</th>
         </tr>
     </thead>
     <tbody>
     <tr ng-repeat="campaign in campaigns">
         <td class="select"><input type="checkbox"></td>
-        <td class="name">{{campaign.name}}</td>
-        <td class="small" >running</span></td>
-        <td class="small" >1 click</td>
-        <td class="small" >{{campaign.cost}}</span></td>
-        <td class="small" >{{campaign.reach}}</td>
-        <td class="small" >{{campaign.spend}}</td>
+        <td class="name">{{$index +" : " + campaign.name }}</td>
+        <td>running</span></td>
+        <td>1 click</td>
+        <td>{{campaign.cost}}</span></td>
+        <td>{{campaign.reach}}</td>
+        <td>{{campaign.spend}}</td>
         <td class="date">{{campaign.created}}</td>
         <td class="date">{{campaign.updated}}</span></td>
     </tr>

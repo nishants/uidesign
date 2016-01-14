@@ -6,9 +6,10 @@ $modalLayer       : 100; /* modal start on or after this z-index*/
 
 $sectionTableRowHeight : 25px;
 $sectionTableFontSize  : 13px;
-$defaultCellWidth      : 80px;
+$defaultCellWidth      : 60px;
 $tableMinWidth         : 896px;
 $tableMaxHeight        : calc(#{"100vh -  #{$topBarHeight * 4}"});
+$tableMinHeight        : $sectionTableRowHeight * 11  /*Show ten rows and header*/;
 
 @mixin animate($time, $property) {
   -webkit-transition: $property  $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
