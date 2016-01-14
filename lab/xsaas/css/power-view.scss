@@ -3,7 +3,7 @@
 $sectionHeaderColor  : #EEE;
 $sectionHeaderHeight : $topBarHeight;
 $barsCount           : 4;  /* top bar + 3   section bars*/
-$sectionBorder       : 1px solid rgba(1, 1, 1, 0.1);
+$sectionBorderSize   : 0px;
 
 #power-access{
   box-sizing: border-box;
@@ -13,12 +13,12 @@ $sectionBorder       : 1px solid rgba(1, 1, 1, 0.1);
   section{
     position: relative;
     box-sizing: border-box;
-    border: $sectionBorder;
+    border: $sectionBorderSize solid rgba(251, 251, 251, 0.1);
     @include animate(all, 500ms);
 
     .header{
       height: $sectionHeaderHeight;
-      background-color: $sectionHeaderColor;
+      @extend .gradient-bar;
     }
     .content{
       overflow: auto;
@@ -36,19 +36,19 @@ $sectionBorder       : 1px solid rgba(1, 1, 1, 0.1);
 
   #ads {
     z-index: 2;
-    top: calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - 2px}"})
+    top: calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $sectionBorderSize*2}"})
   }
 }
 
 .show-adsets{
   #adsets{
-    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - 2px}"}));
+    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $sectionBorderSize*2}"}));
   }
 }
 
 .show-ads{
   @extend .show-adsets;
   #ads{
-    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - 2px}"}));
+    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $sectionBorderSize*2}"}));
   }
 }

@@ -30,3 +30,11 @@ ul.undo-list, ul.undo-list > li{
   padding: 0;
   list-style: none;
 }
+.gradient-bar{
+  background: rgb(221, 221, 221);
+  background: -moz-linear-gradient(270deg, rgb(221, 221, 221) 27%, rgb(229, 229, 229) 76%);
+  background: -webkit-linear-gradient(270deg, rgb(221, 221, 221) 27%, rgb(229, 229, 229) 76%);
+  background: -o-linear-gradient(270deg, rgb(221, 221, 221) 27%, rgb(229, 229, 229) 76%);
+  background: -ms-linear-gradient(270deg, rgb(221, 221, 221) 27%, rgb(229, 229, 229) 76%);
+  background: linear-gradient(0deg, rgb(221, 221, 221) 27%, rgb(229, 229, 229) 76%);
+}
