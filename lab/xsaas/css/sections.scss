@@ -1,7 +1,7 @@
 @import "config";
 $barHeight : $topBarHeight;
 $titleWidth: 100px;
-$filterButtonWidth : 35px;
+$filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth}"});
 
 #power-access > section > .header {
   .title, .filter{
@@ -16,12 +16,12 @@ $filterButtonWidth : 35px;
 
   .filter-box{
     float: right;
-    max-width: calc(#{"100% -  #{$titleWidth}"});
+    max-width: $filterBoxMaxWidth;
 
     ul.filters{
       float: right;
       display: block;
-      max-width: calc(#{"100% -  #{$filterButtonWidth + 15px}"}); /* 15 pixel for margin of filter button*/
+      max-width: calc(#{"100% -  #{$filterButtonWidth + 5px}"}); /* 15 pixel for margin of filter button*/
       overflow: hidden;
       height: $barHeight;
 
@@ -29,20 +29,6 @@ $filterButtonWidth : 35px;
         float: left;
         display: inline;
       }
-    }
-    .filter-button{
-      float: right;
-      margin: 7.5px;
-      padding-top: 7px;
-
-      height: $barHeight - ($barHeight - $defaultLineHeight)/2;
-      width: $filterButtonWidth;
-
-      text-align: center;
-      font-size: 20px;
-
-      border-radius: 5px;
-      color: rgba(0, 0, 0, 0.67);
     }
   }
 }

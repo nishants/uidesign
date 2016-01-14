@@ -9,6 +9,12 @@ $animateTime       : 300ms;
 $wrapperPadding    : 50px;
 $wrapperPaddingTop : 20px;
 
+$filterButtonMargin : 2px;
+$filterBorderSize   : 1px;
+$filterButtonHeight : $barHeight - 2 *$filterButtonMargin + 2*$filterBorderSize;
+$filterButtonWidth : 35px;
+
+
 #filter-menu-wrapper{
   @include animate(transform, 500ms);
   transition-delay: $animateTime;
@@ -23,7 +29,7 @@ $wrapperPaddingTop : 20px;
   .filter-menu{
     height: $menuWidth;
     width: $menuWidth;
-    background-color: white;
+    background-color: #EEE;
 
     padding: $menuWrapperPadding;
     border-radius: 2px;
@@ -45,7 +51,7 @@ $wrapperPaddingTop : 20px;
 
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid white;
+    border-bottom: 15px solid #EEE;
   }
 }
 
@@ -56,6 +62,16 @@ $wrapperPaddingTop : 20px;
   }
 }
 
+.filter-button{
+  float: right;
+  height: $filterButtonHeight;
+  line-height: $filterButtonHeight - 2px;
+  width: $filterButtonWidth;
+
+  text-align: center;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.67);
+}
 .filter-button{
   @include animate(transform, 500ms);
 }
