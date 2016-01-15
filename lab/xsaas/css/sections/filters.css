@@ -37,7 +37,6 @@ ul.undo-list, ul.undo-list > li {
     height: 300px;
     width: 300px;
     background-color: #EEE;
-    padding: 10px;
     border-radius: 2px;
     text-align: center;
     -webkit-transition: 300ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
@@ -45,16 +44,6 @@ ul.undo-list, ul.undo-list > li {
     -o-transition: 300ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
     transition: 300ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
     transition-delay: 0ms; }
-  #filter-menu-wrapper .marker {
-    position: relative;
-    top: -17px;
-    left: 10px;
-    float: right;
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid #EEE; }
 
 :not(.show-menu) > #filter-menu-wrapper {
   visibility: hidden; }

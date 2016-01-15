@@ -34,27 +34,11 @@ $filterButtonWidth : 35px;
     width: $menuWidth;
     background-color: #EEE;
 
-    padding: $menuWrapperPadding;
     border-radius: 2px;
-
     text-align: center;
 
     @include animate(opacity, $animateTime);
     transition-delay: 0ms;
-  }
-
-  .marker {
-    position: relative;
-    top: -17px;
-    left: $menuRightOffset;
-
-    float: right;
-    width: 0;
-    height: 0;
-
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid #EEE;
   }
 }
 
