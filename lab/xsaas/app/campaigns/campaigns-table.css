@@ -1,11 +1,11 @@
-#campaigns-table .name {
+.campaigns-table .name {
   width: 250px;
   text-align: left;
   padding-left: 10px;
   overflow: hidden; }
-#campaigns-table .date {
+.campaigns-table .date {
   width: 80px; }
-#campaigns-table .select {
+.campaigns-table .select {
   width: 20px; }
 
 /*# sourceMappingURL=campaigns-table.css.map */
