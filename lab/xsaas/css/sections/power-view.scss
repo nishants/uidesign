@@ -5,6 +5,12 @@ $sectionHeaderHeight : $topBarHeight;
 $barsCount           : 4;  /* top bar + 3   section bars*/
 $sectionBorderSize   : 0px;
 
+$fullContentHeight   : calc(#{"100vh -  #{$sectionHeaderHeight * $barsCount}"});
+$adsetsOffsetFull    : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $sectionBorderSize*2}"});
+
+$adsInitialOffset    : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $sectionBorderSize*2}"});
+$adsOffsetFull       : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $sectionBorderSize*2}"});
+
 #power-access{
   section{
     position: relative;
@@ -18,7 +24,7 @@ $sectionBorderSize   : 0px;
     }
     .content{
       overflow: auto;
-      height: calc(#{"100vh -  #{$sectionHeaderHeight * $barsCount}"});
+      height  : $fullContentHeight;
     }
   }
 
@@ -32,19 +38,19 @@ $sectionBorderSize   : 0px;
 
   #ads {
     z-index: 2;
-    top: calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $sectionBorderSize*2}"})
+    top: $adsInitialOffset
   }
 }
 
 .show-adsets{
   #adsets{
-    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $sectionBorderSize*2}"}));
+    transform: translateY($adsetsOffsetFull);
   }
 }
 
 .show-ads{
   @extend .show-adsets;
   #ads{
-    transform: translateY(calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $sectionBorderSize*2}"}));
+    transform: translateY($adsOffsetFull);
   }
 }
