@@ -3,6 +3,10 @@ $barHeight : $topBarHeight;
 $titleWidth: 100px;
 $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth}"});
 
+#power-access > section > .content {
+  background-color: #F9F9F9;
+  text-align: center;
+}
 #power-access > section > .header {
   .title, .filter{
     padding: ($barHeight - $defaultLineHeight)/2 5px 5px 5px;

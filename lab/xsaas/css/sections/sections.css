@@ -20,6 +20,10 @@ ul.undo-list, ul.undo-list > li {
   background: -ms-linear-gradient(270deg, #dddddd 27%, #e5e5e5 76%);
   background: linear-gradient(0deg, #dddddd 27%, #e5e5e5 76%); }
 
+#power-access > section > .content {
+  background-color: #F9F9F9;
+  text-align: center; }
+
 #power-access > section > .header .title, #power-access > section > .header .filter {
   padding: 7px 5px 5px 5px;
   display: inline-block;
