@@ -36,20 +36,30 @@ ul.undo-list, ul.undo-list > li {
   float: right;
   width: 25px;
   line-height: 23px;
+  border-radius: 3px;
   text-align: center;
-  color: rgba(0, 0, 0, 0.05); }
+  color: rgba(0, 0, 0, 0.05);
+  -webkit-transition: 200ms background-color cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition: 200ms background-color cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition: 200ms background-color cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition: 200ms background-color cubic-bezier(0.45, 0.515, 0.36, 0.88); }
 .campaigns.table .td.name .menu {
   height: 200px;
   margin-left: -10px;
   width: 250px;
   background-color: white;
-  opacity: 0; }
+  opacity: 0;
+  -webkit-transition: 200ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition: 200ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition: 200ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition: 200ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88); }
 .campaigns.table .td.name.active, .campaigns.table .td.name:hover {
   background-color: white;
   border-bottom: 1px solid #2196F3;
   overflow: visible; }
   .campaigns.table .td.name.active .actions, .campaigns.table .td.name:hover .actions {
-    color: #2196F3; }
+    background-color: #2196F3;
+    color: white; }
   .campaigns.table .td.name.active .menu, .campaigns.table .td.name:hover .menu {
     opacity: 1;
     transform: translateY(-7.5px); }
