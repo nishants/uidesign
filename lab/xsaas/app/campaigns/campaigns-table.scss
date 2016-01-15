@@ -9,8 +9,15 @@
   }
 
   .td.name{
+    .value{
+      display: inline-block;
+      width: calc(100% - 15px);
+      overflow: hidden;
+    }
     .actions{
+      display: inline-block;
       float: right;
+      width: 15px;
       color: rgba(0 ,0, 0, 0.05);
       line-height: $sectionTableRowHeight - 2px;
     }
