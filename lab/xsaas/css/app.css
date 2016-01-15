@@ -15,6 +15,9 @@ ul.undo-list, ul.undo-list > li {
   background: -ms-linear-gradient(270deg, #dddddd 27%, #e5e5e5 76%);
   background: linear-gradient(0deg, #dddddd 27%, #e5e5e5 76%); }
 
+@font-face {
+  font-family: Raleway;
+  src: url(../../../lib/fonts/Raleway-Regular.ttf) format("opentype"); }
 body {
   font-family: Raleway;
   font-size: 13px;
