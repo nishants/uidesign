@@ -45,4 +45,10 @@ section .content > .table {
     /* Hide overflowing lines*/
     font-size: 13px; }
 
+section .content > .stripe.table .tbody > .tr:nth-child(2n) {
+  background-color: #F9F9F9; }
+
+section .content > .stripe.table .tbody > .tr:nth-child(2n+1) {
+  background-color: #FFF; }
+
 /*# sourceMappingURL=table.css.map */

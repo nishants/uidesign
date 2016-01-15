@@ -34,3 +34,10 @@ section .content > .table{
     font-size: $fontSize;
   }
 }
+
+section .content > .stripe.table .tbody > .tr:nth-child(2n){
+  background-color: #F9F9F9;
+}
+section .content > .stripe.table .tbody > .tr:nth-child(2n+1){
+  background-color: #FFF;
+}

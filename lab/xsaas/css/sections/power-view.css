@@ -35,7 +35,8 @@ ul.undo-list, ul.undo-list > li {
     overflow: auto;
     height: calc(100vh -  120px); }
   #power-access section .page-nav {
-    margin: 5px; }
+    margin: 5px;
+    text-align: center; }
 #power-access #campaigns {
   z-index: 1; }
 #power-access #adsets {
