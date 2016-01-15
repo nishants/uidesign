@@ -10,3 +10,9 @@ body{
   height: $topBarHeight;
   background-color: $topBarColor;
 }
+
+article {
+  box-sizing: border-box;
+  height: calc(#{"100vh -  #{$topBarHeight}"});
+  overflow: hidden;
+}

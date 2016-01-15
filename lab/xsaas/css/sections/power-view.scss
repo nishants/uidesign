@@ -6,10 +6,6 @@ $barsCount           : 4;  /* top bar + 3   section bars*/
 $sectionBorderSize   : 0px;
 
 #power-access{
-  box-sizing: border-box;
-  height: calc(#{"100vh -  #{$sectionHeaderHeight}"});
-  overflow: hidden;
-
   section{
     position: relative;
     box-sizing: border-box;

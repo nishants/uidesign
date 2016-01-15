@@ -16,30 +16,26 @@ ul.undo-list, ul.undo-list > li {
   background: linear-gradient(0deg, #dddddd 27%, #e5e5e5 76%); }
 
 /* top bar + 3   section bars*/
-#power-access {
+#power-access section {
+  position: relative;
   box-sizing: border-box;
-  height: calc(100vh -  30px);
-  overflow: hidden; }
-  #power-access section {
-    position: relative;
-    box-sizing: border-box;
-    border: 0px solid rgba(251, 251, 251, 0.1);
-    -webkit-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
-    -moz-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
-    -o-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
-    transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88); }
-    #power-access section .header {
-      height: 30px; }
-    #power-access section .content {
-      overflow: auto;
-      height: calc(100vh -  120px); }
-  #power-access #campaigns {
-    z-index: 1; }
-  #power-access #adsets {
-    z-index: 2; }
-  #power-access #ads {
-    z-index: 2;
-    top: calc(-100vh +  120px); }
+  border: 0px solid rgba(251, 251, 251, 0.1);
+  -webkit-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88); }
+  #power-access section .header {
+    height: 30px; }
+  #power-access section .content {
+    overflow: auto;
+    height: calc(100vh -  120px); }
+#power-access #campaigns {
+  z-index: 1; }
+#power-access #adsets {
+  z-index: 2; }
+#power-access #ads {
+  z-index: 2;
+  top: calc(-100vh +  120px); }
 
 .show-adsets #adsets, .show-ads #adsets {
   transform: translateY(calc(-100vh +  120px)); }
