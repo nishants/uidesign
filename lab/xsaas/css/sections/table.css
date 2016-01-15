@@ -17,8 +17,14 @@ ul.undo-list, ul.undo-list > li {
 
 section .content > .table {
   width: 100%;
+  height: 100%;
   min-width: 896px;
-  overflow: auto; }
+  overflow: auto;
+  /* scroll left inside table (columns)*/ }
+  section .content > .table .tbody {
+    overflow: auto;
+    /* scroll contents (rows)*/
+    height: calc(100% -  25px); }
   section .content > .table .tr {
     height: 25px; }
   section .content > .table .td, section .content > .table .th {
