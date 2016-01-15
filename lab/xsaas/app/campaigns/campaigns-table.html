@@ -19,9 +19,11 @@
         <div class="tr"
              ng-repeat="campaign in campaigns">
             <div class="td select"><input type="checkbox"></div>
-            <div class="td name">
+            <div class="td name" ng-class="{'active' : __active}" ng-mouseleave="__active = false">
                 <span class="value"> {{$index +" : " + campaign.name}} </span>
-                <span class="actions fa fa-chevron-down"></span>
+                <span class="actions fa fa-chevron-down"
+                      ng-click="__active = true"
+                      ng-mouseenter="__active = true"></span>
                 <div class="menu"></div>
             </div>
             <div class="td">running</span></div>

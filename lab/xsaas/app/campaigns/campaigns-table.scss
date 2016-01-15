@@ -60,9 +60,6 @@ $nameCellPad  : 10px;
       transform: translateY(-7.5px);
     }
   }
-  .td.name:hover {
-    @extend .td.name.active;
-  }
 
   .td.date, .th.date{
     width: 80px;

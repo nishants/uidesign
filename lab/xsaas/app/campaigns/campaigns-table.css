@@ -53,14 +53,14 @@ ul.undo-list, ul.undo-list > li {
   -moz-transition: 200ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
   -o-transition: 200ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88);
   transition: 200ms opacity cubic-bezier(0.45, 0.515, 0.36, 0.88); }
-.campaigns.table .td.name.active, .campaigns.table .td.name:hover {
+.campaigns.table .td.name.active {
   background-color: white;
   border-bottom: 1px solid #2196F3;
   overflow: visible; }
-  .campaigns.table .td.name.active .actions, .campaigns.table .td.name:hover .actions {
+  .campaigns.table .td.name.active .actions {
     background-color: #2196F3;
     color: white; }
-  .campaigns.table .td.name.active .menu, .campaigns.table .td.name:hover .menu {
+  .campaigns.table .td.name.active .menu {
     opacity: 1;
     transform: translateY(-7.5px); }
 .campaigns.table .td.date, .campaigns.table .th.date {
