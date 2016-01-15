@@ -24,7 +24,7 @@
       },
 
       __showFilter: function(filter){
-        this.showMenu == filter ? this.showMenu = null : this.showMenu = filter;
+        this.showMenu == filter ? this.showMenu = '' : this.showMenu = filter;
       },
 
       showCampaigns: function(){
