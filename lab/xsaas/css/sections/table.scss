@@ -33,9 +33,14 @@ section .content > .table{
     line-height: $rowHeight - 2px;   /* Hide overflowing lines*/
     font-size: $fontSize;
   }
-  .table-footer.tr > .td{
-    width: 100%;
-    background-color: #EEE;
+  .table-footer.tr {
+    background-color: transparent !important;
+    text-align: center;
+    .td{
+      width: calc(100% - 5px);
+      background-color: #EEE;
+    }
+
   }
 }
 

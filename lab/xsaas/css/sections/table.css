@@ -44,9 +44,12 @@ section .content > .table {
     line-height: 23px;
     /* Hide overflowing lines*/
     font-size: 13px; }
-  section .content > .table .table-footer.tr > .td {
-    width: 100%;
-    background-color: #EEE; }
+  section .content > .table .table-footer.tr {
+    background-color: transparent !important;
+    text-align: center; }
+    section .content > .table .table-footer.tr .td {
+      width: calc(100% - 5px);
+      background-color: #EEE; }
 
 section .content > .stripe.table .tbody > .tr:nth-child(2n) {
   background-color: #F9F9F9; }
