@@ -28,6 +28,7 @@ $adsOffsetFull       : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $
     }
     .page-nav{
       margin: 5px;
+      text-align: center;
     }
   }
 

@@ -42,9 +42,11 @@
       showCampaignsFilter: function(){
         this.__showFilter('show-campaigns-filter');
       },
+
       showAdsetsFilter: function(){
         this.__showFilter('show-adsets-filter');
       },
+
       showAdsFilter: function(){
         this.__showFilter('show-ads-filter');
       }
