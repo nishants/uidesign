@@ -65,18 +65,17 @@ $splitSectionHeight : 200px;
   #campaigns{
     .content{
       height: calc(#{"100vh -  #{($sectionHeaderHeight + $splitSectionHeight) * 2 + 2 * $sectionHeaderHeight - $sectionBorderSize*4}"});
-
-    };
+    }
   }
   #adsets{
     .content{
       height: $splitSectionHeight;
-    };
+    }
   }
   #ads{
     top: 0;
     .content{
       height: $splitSectionHeight;
-    };
+    }
   }
 }

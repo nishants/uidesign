@@ -18,29 +18,35 @@
         return this.__split ? "split" : state;
       },
 
-      showCampaigns: function(){
+      __showSection: function(section){
         this.__split = false;
-        this.section = 'show-campaigns';
+        this.section = section;
+      },
+
+      __showFilter: function(filter){
+        this.showMenu == filter ? this.showMenu = null : this.showMenu = filter;
+      },
+
+      showCampaigns: function(){
+        this.__showSection('show-campaigns');
       },
 
       showAdsets: function(){
-        this.__split = false;
-        this.section = 'show-adsets';
+        this.__showSection('show-adsets');
       },
 
       showAds: function(){
-        this.__split = false;
-        this.section = 'show-ads';
+        this.__showSection('show-ads');
       },
 
       showCampaignsFilter: function(){
-        this.showMenu == 'show-campaigns-filter' ?this.showMenu = null : this.showMenu = 'show-campaigns-filter';
+        this.__showFilter('show-campaigns-filter');
       },
       showAdsetsFilter: function(){
-        this.showMenu == 'show-adsets-filter' ? this.showMenu = null : this.showMenu = 'show-adsets-filter';
+        this.__showFilter('show-adsets-filter');
       },
       showAdsFilter: function(){
-        this.showMenu == 'show-ads-filter' ?this.showMenu = null : (this.showMenu = 'show-ads-filter');
+        this.__showFilter('show-ads-filter');
       }
     };
 
