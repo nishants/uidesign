@@ -1,14 +1,14 @@
-.campaigns-table{
-  .name{
+.campaigns.table{
+  .td.name, .th.name{
     width: 250px;
     text-align: left;
     padding-left: 10px;
     overflow: hidden;
   }
-  .date{
+  .td.date, .th.date{
     width: 80px;
   }
-  .select{
+  .td.select, .th.select{
     width: 20px;
   }
 }

@@ -1,28 +1,29 @@
-<table class="campaigns-table fixed-head">
-    <thead>
-        <tr>
-            <th class="select"><input type="checkbox"></th>
-            <th class="name">Name</th>
-            <th >Status</th>
-            <th >Results</th>
-            <th >Cost</th>
-            <th >Reach</th>
-            <th >Spend</th>
-            <th class="date">Created</th>
-            <th class="date">Updated</th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="campaign in campaigns">
-        <td class="select"><input type="checkbox"></td>
-        <td class="name">{{$index +" : " + campaign.name }}</td>
-        <td>running</span></td>
-        <td>1 click</td>
-        <td>{{campaign.cost}}</span></td>
-        <td>{{campaign.reach}}</td>
-        <td>{{campaign.spend}}</td>
-        <td class="date">{{campaign.created}}</td>
-        <td class="date">{{campaign.updated}}</span></td>
-    </tr>
-    </tbody>
-</table>
+<div class="campaigns table fixed-head">
+    <div class="thead">
+        <div class="tr">
+            <div class="th select"><input type="checkbox"></div>
+            <div class="th name">Name</div>
+            <div class="th ">Status</div>
+            <div class="th ">Results</div>
+            <div class="th ">Cost</div>
+            <div class="th ">Reach</div>
+            <div class="th ">Spend</div>
+            <div class="th date">Created</div>
+            <div class="th date">Updated</div>
+        </div>
+    </div>
+    <div class="tbody">
+        <div class="tr"
+             ng-repeat="campaign in campaigns">
+            <div class="td select"><input type="checkbox"></div>
+            <div class="td name">{{$index +" : " + campaign.name }}</div>
+            <div class="td">running</span></div>
+            <div class="td">1 click</div>
+            <div class="td">{{campaign.cost}}</span></div>
+            <div class="td">{{campaign.reach}}</div>
+            <div class="td">{{campaign.spend}}</div>
+            <div class="td date">{{campaign.created}}</div>
+            <div class="td date">{{campaign.updated}}</span></div>
+        </div>
+    </div>
+</div>

@@ -3,13 +3,14 @@ $rowHeight : $sectionTableRowHeight;
 $fontSize  : $sectionTableFontSize;
 $minWidth  : $tableMinWidth;
 
-section .content > table{
+section .content > .table{
   width: 100%;
   min-width: $minWidth;
-  //maxHeight:
   overflow: auto;
-
-  td, th{
+  .tr{
+    height: $rowHeight;
+  }
+  .td, .th{
     width: $defaultCellWidth;
     height: $rowHeight;
     display: inline-block;
