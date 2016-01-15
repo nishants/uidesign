@@ -5,10 +5,11 @@ $minWidth  : $tableMinWidth;
 
 section .content > .table{
   height: calc(100% - 5px);
-  display: inline-block;
 
   min-width: $minWidth;
   overflow: auto; /* scroll left inside table (columns)*/
+
+  text-align: center;
 
   .thead{
     @extend .solid-bar;
@@ -49,4 +50,12 @@ section .content > .stripe.table .tbody > .tr:nth-child(2n){
 }
 section .content > .stripe.table .tbody > .tr:nth-child(2n+1){
   background-color: #FFF;
+}
+
+.table-controls{
+  height: $rowHeight;
+  line-height: $rowHeight - 2px;
+  font-size: $fontSize;
+
+  background-color: #F9F9F9;
 }

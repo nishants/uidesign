@@ -22,10 +22,10 @@ ul.undo-list, ul.undo-list > li {
 
 section .content > .table {
   height: calc(100% - 5px);
-  display: inline-block;
   min-width: 786px;
   overflow: auto;
-  /* scroll left inside table (columns)*/ }
+  /* scroll left inside table (columns)*/
+  text-align: center; }
   section .content > .table .thead {
     background-color: #F3F0F0;
     border-bottom: 1px solid #E6E6E6; }
@@ -56,5 +56,11 @@ section .content > .stripe.table .tbody > .tr:nth-child(2n) {
 
 section .content > .stripe.table .tbody > .tr:nth-child(2n+1) {
   background-color: #FFF; }
+
+.table-controls {
+  height: 25px;
+  line-height: 23px;
+  font-size: 13px;
+  background-color: #F9F9F9; }
 
 /*# sourceMappingURL=table.css.map */
