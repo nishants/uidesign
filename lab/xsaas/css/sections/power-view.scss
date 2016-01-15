@@ -54,3 +54,26 @@ $adsOffsetFull       : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $
     transform: translateY($adsOffsetFull);
   }
 }
+
+/*Split pane config*/
+$splitSectionHeight : 200px;
+
+#power-access.split{
+  #campaigns{
+    .content{
+      height: calc(#{"100vh -  #{($sectionHeaderHeight + $splitSectionHeight) * 2 + 2 * $sectionHeaderHeight - $sectionBorderSize*4}"});
+
+    };
+  }
+  #adsets{
+    .content{
+      height: $splitSectionHeight;
+    };
+  }
+  #ads{
+    top: 0;
+    .content{
+      height: $splitSectionHeight;
+    };
+  }
+}

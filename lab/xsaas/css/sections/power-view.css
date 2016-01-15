@@ -48,4 +48,14 @@ ul.undo-list, ul.undo-list > li {
 .show-ads #ads {
   transform: translateY(calc(-100vh +  120px)); }
 
+/*Split pane config*/
+#power-access.split #campaigns .content {
+  height: calc(100vh -  520px); }
+#power-access.split #adsets .content {
+  height: 200px; }
+#power-access.split #ads {
+  top: 0; }
+  #power-access.split #ads .content {
+    height: 200px; }
+
 /*# sourceMappingURL=power-view.css.map */
