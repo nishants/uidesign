@@ -6,6 +6,12 @@
       showMenu :  '',
       showCampaigns: function(){
         this.showMenu == 'show-campaigns-filter' ?this.showMenu = null : this.showMenu = 'show-campaigns-filter';
+      },
+      showAdsets: function(){
+        ui.showMenu == 'show-adsets-filter' ? ui.showMenu = null : ui.showMenu = 'show-adsets-filter';
+      },
+      showAds: function(){
+        ui.showMenu == 'show-ads-filter' ?ui.showMenu = null : (ui.showMenu = 'show-ads-filter');
       }
     };
 
