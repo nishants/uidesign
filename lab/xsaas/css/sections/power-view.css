@@ -13,7 +13,10 @@ ul.undo-list, ul.undo-list > li {
   background: -webkit-linear-gradient(270deg, #dddddd 27%, #e5e5e5 76%);
   background: -o-linear-gradient(270deg, #dddddd 27%, #e5e5e5 76%);
   background: -ms-linear-gradient(270deg, #dddddd 27%, #e5e5e5 76%);
-  background: linear-gradient(0deg, #dddddd 27%, #e5e5e5 76%); }
+  background: linear-gradient(0deg, #dddddd 27%, #e5e5e5 76%);
+  -webkit-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
+  box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
+  border-bottom: 1px solid #D0D0D0; }
 
 /* top bar + 3   section bars*/
 #power-access section {

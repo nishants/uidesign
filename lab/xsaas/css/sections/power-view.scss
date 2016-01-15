@@ -13,8 +13,8 @@ $sectionBorderSize   : 0px;
     @include animate(all, 500ms);
 
     .header{
-      height: $sectionHeaderHeight;
       @extend .gradient-bar;
+      height: $sectionHeaderHeight;
     }
     .content{
       overflow: auto;
