@@ -30,6 +30,12 @@ ul.undo-list, ul.undo-list > li{
   padding: 0;
   list-style: none;
 }
+.solid-bar{
+  -webkit-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
+  box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
+  border-bottom: 1px solid #D0D0D0;
+}
+
 .gradient-bar{
   background: rgb(221, 221, 221);
   background: -moz-linear-gradient(270deg, rgb(221, 221, 221) 27%, rgb(229, 229, 229) 76%);
@@ -38,7 +44,5 @@ ul.undo-list, ul.undo-list > li{
   background: -ms-linear-gradient(270deg, rgb(221, 221, 221) 27%, rgb(229, 229, 229) 76%);
   background: linear-gradient(0deg, rgb(221, 221, 221) 27%, rgb(229, 229, 229) 76%);
 
-  -webkit-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
-  box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
-  border-bottom: 1px solid #D0D0D0;
+  @extend .solid-bar;
 }

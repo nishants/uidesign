@@ -10,6 +10,12 @@ section .content > .table{
   min-width: $minWidth;
   overflow: auto; /* scroll left inside table (columns)*/
 
+  .thead{
+    @extend .solid-bar;
+    background-color: #F3F0F0;
+    border-bottom: 1px solid #E6E6E6;
+  }
+
   .tbody{
     overflow: auto; /* scroll contents (rows)*/
     height: calc(#{"100% -  #{$rowHeight}"});
