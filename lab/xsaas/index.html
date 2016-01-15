@@ -40,7 +40,7 @@
     </nav>
 
     <article id="power-access" ng-class="ui.state()" ng-controller="CampaignsController">
-        <section id="campaigns" ng-click="ui.section = 'show-campaigns'">
+        <section id="campaigns" ng-click="ui.showCampaigns()">
             <header class="header">
                 <span class="title">Campaigns</span>
                 <div class="filter-box">
@@ -60,7 +60,7 @@
             <div class="content" ng-include="'app/campaigns/campaigns-table.html'"></div>
         </section>
 
-        <section id="adsets" ng-click="ui.section = 'show-adsets'">
+        <section id="adsets" ng-click="ui.showAdsets()">
             <header class="header">
                 <span class="title">Adsets</span>
                 <div class="filter-box">
@@ -80,7 +80,7 @@
             <div class="lime-green content" ng-include="'app/campaigns/campaigns-table.html'"></div>
         </section>
 
-        <section id="ads" ng-click="ui.section = 'show-ads'">
+        <section id="ads" ng-click="ui.showAds()">
             <header class="header">
                 <span class="title">Ads</span>
                 <div class="filter-box">
