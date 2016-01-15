@@ -94,4 +94,32 @@ ul.undo-list, ul.undo-list > li {
   transform: translateY(60px);
   opacity: 1; }
 
+.filter-menu {
+  overflow: hidden; }
+  .filter-menu ul.menu {
+    list-style: none;
+    display: table-row;
+    padding: 0px;
+    margin: 0px;
+    -webkit-transition: 300ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    -moz-transition: 300ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    -o-transition: 300ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88);
+    transition: 300ms transform cubic-bezier(0.45, 0.515, 0.36, 0.88); }
+    .filter-menu ul.menu .campaigns, .filter-menu ul.menu .adsets, .filter-menu ul.menu .ads {
+      display: table-cell;
+      float: left;
+      padding: 0px;
+      margin: 0px;
+      height: 300px;
+      width: 300px; }
+
+.show-campaigns-filter #filter-menu-wrapper .filter-menu ul.menu {
+  transform: translateY(0px); }
+
+.show-adsets-filter ul.menu {
+  transform: translateY(-300px); }
+
+.show-ads-filter ul.menu {
+  transform: translateY(-600px); }
+
 /*# sourceMappingURL=filters.css.map */

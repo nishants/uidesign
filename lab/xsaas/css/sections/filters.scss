@@ -1,7 +1,10 @@
 @import "../config";
 
 $offsetFromButton  : 10px;
+
 $menuWidth         : 300px;
+$menuHeight        : 300px;
+
 $menuWrapperPadding: 10px;
 $menuRightOffset   : 10px;
 $barHeight         : $topBarHeight;
@@ -27,7 +30,7 @@ $filterButtonWidth : 35px;
   background: transparent;
 
   .filter-menu{
-    height: $menuWidth;
+    height: $menuHeight;
     width: $menuWidth;
     background-color: #EEE;
 
@@ -95,4 +98,40 @@ $filterButtonWidth : 35px;
 .show-ads-filter.show-menu > #filter-menu-wrapper{
   transform : translateY(2*$barHeight);
   opacity: 1;
+}
+
+.filter-menu {
+  overflow: hidden;
+  ul.menu {
+    list-style: none;
+    display: table-row;
+    padding: 0px;
+    margin: 0px;
+    @include animate(transform, $animateTime);
+
+    .campaigns, .adsets, .ads{
+      display: table-cell;
+      float: left;
+      padding: 0px;
+      margin: 0px;
+      height: $menuHeight;
+      width: $menuWidth;
+    }
+  }
+}
+
+.show-campaigns-filter #filter-menu-wrapper .filter-menu{
+  ul.menu{
+    transform: translateY(0px);
+  }
+}
+.show-adsets-filter{
+  ul.menu{
+    transform: translateY(-300px);
+  }
+}
+.show-ads-filter{
+  ul.menu{
+    transform: translateY(-600px);
+  }
 }
