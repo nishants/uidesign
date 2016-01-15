@@ -7,10 +7,10 @@ ul.undo-list, ul.undo-list > li {
   padding: 0;
   list-style: none; }
 
-.solid-bar, .gradient-bar, section .content > .table .thead {
+.solid-bar, .gradient-bar, section .content > .table .thead, section .content > .table .tr {
   -webkit-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
   box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
-  border-bottom: 1px solid #D0D0D0; }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
 
 .gradient-bar {
   background: #dddddd;
@@ -34,7 +34,9 @@ section .content > .table {
     /* scroll contents (rows)*/
     height: calc(100% -  25px); }
   section .content > .table .tr {
-    height: 25px; }
+    height: 25px;
+    box-shadow: white 0 1px 0;
+    border-bottom: 1px solid rgba(230, 230, 230, 0.76); }
   section .content > .table .td, section .content > .table .th {
     width: 60px;
     height: 25px;
@@ -61,6 +63,8 @@ section .content > .stripe.table .tbody > .tr:nth-child(2n+1) {
   height: 25px;
   line-height: 23px;
   font-size: 13px;
-  background-color: #F9F9F9; }
+  background-color: #F9F9F9;
+  box-shadow: white 0 1px 0;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.76); }
 
 /*# sourceMappingURL=table.css.map */

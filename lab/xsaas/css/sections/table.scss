@@ -22,7 +22,10 @@ section .content > .table{
     height: calc(#{"100% -  #{$rowHeight}"});
   }
   .tr{
+    @extend .solid-bar;
     height: $rowHeight;
+    box-shadow: rgb(255, 255, 255) 0 1px 0;
+    border-bottom: 1px solid rgba(230, 230, 230, 0.76);
   }
   .td, .th{
     width: $defaultCellWidth;
@@ -58,4 +61,6 @@ section .content > .stripe.table .tbody > .tr:nth-child(2n+1){
   font-size: $fontSize;
 
   background-color: #F9F9F9;
+  box-shadow: rgb(255, 255, 255) 0 1px 0;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.76);
 }
