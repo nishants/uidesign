@@ -26,10 +26,6 @@ $adsOffsetFull       : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $
       overflow: auto;
       height  : $fullContentHeight;
     }
-    .page-nav{
-      margin: 5px;
-      text-align: center;
-    }
   }
 
   #campaigns {
