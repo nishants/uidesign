@@ -9,7 +9,7 @@ $filterButtonWidth : 35px;
 $sectionTableRowHeight : 25px;
 $sectionTableFontSize  : 13px;
 $defaultCellWidth      : 60px;
-$tableMinWidth         : 896px;
+$tableMinWidth         : 786px;
 $tableMaxHeight        : calc(#{"100vh -  #{$topBarHeight * 4}"});
 $tableMinHeight        : $sectionTableRowHeight * 11  /*Show ten rows and header*/;
 
