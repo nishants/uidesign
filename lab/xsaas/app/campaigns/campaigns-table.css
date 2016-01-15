@@ -27,16 +27,32 @@ ul.undo-list, ul.undo-list > li {
   overflow: hidden; }
 .campaigns.table .td.name .value {
   display: inline-block;
-  width: calc(100% - 15px);
+  width: calc(100% - 25px);
+  height: 25px;
+  line-height: 23px;
   overflow: hidden; }
 .campaigns.table .td.name .actions {
   display: inline-block;
   float: right;
-  width: 15px;
-  color: rgba(0, 0, 0, 0.05);
-  line-height: 23px; }
-.campaigns.table .td.name:hover .actions {
-  color: rgba(0, 0, 0, 0.2); }
+  width: 25px;
+  line-height: 23px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.05); }
+.campaigns.table .td.name .menu {
+  height: 200px;
+  margin-left: -10px;
+  width: 250px;
+  background-color: white;
+  opacity: 0; }
+.campaigns.table .td.name.active, .campaigns.table .td.name:hover {
+  background-color: white;
+  border-bottom: 1px solid #2196F3;
+  overflow: visible; }
+  .campaigns.table .td.name.active .actions, .campaigns.table .td.name:hover .actions {
+    color: #2196F3; }
+  .campaigns.table .td.name.active .menu, .campaigns.table .td.name:hover .menu {
+    opacity: 1;
+    transform: translateY(-7.5px); }
 .campaigns.table .td.date, .campaigns.table .th.date {
   width: 80px; }
 .campaigns.table .td.select, .campaigns.table .th.select {
