@@ -16,7 +16,7 @@ $adsOffsetFull       : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $
     position: relative;
     box-sizing: border-box;
     border: $sectionBorderSize solid rgba(251, 251, 251, 0.1);
-    @include animate(all, 500ms);
+    @include animate(transform, 500ms);
 
     .header{
       @extend .gradient-bar;
