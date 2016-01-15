@@ -1,4 +1,4 @@
-@import "config";
+@import "../config";
 $barHeight : $topBarHeight;
 $titleWidth: 100px;
 $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth}"});
