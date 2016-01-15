@@ -4,14 +4,22 @@
     $scope.ui = {
       section  : 'show-campaigns',
       showMenu :  '',
+
+      state    : function(){
+        var state = "";
+        state += this.section +" "   || "";
+        state += this.showMenu  ? (this.showMenu + " show-menu ") : "";
+
+        return state;
+      },
       showCampaigns: function(){
         this.showMenu == 'show-campaigns-filter' ?this.showMenu = null : this.showMenu = 'show-campaigns-filter';
       },
       showAdsets: function(){
-        ui.showMenu == 'show-adsets-filter' ? ui.showMenu = null : ui.showMenu = 'show-adsets-filter';
+        this.showMenu == 'show-adsets-filter' ? this.showMenu = null : this.showMenu = 'show-adsets-filter';
       },
       showAds: function(){
-        ui.showMenu == 'show-ads-filter' ?ui.showMenu = null : (ui.showMenu = 'show-ads-filter');
+        this.showMenu == 'show-ads-filter' ?this.showMenu = null : (this.showMenu = 'show-ads-filter');
       }
     };
 

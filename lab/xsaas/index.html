@@ -39,7 +39,7 @@
 
     </nav>
 
-    <article id="power-access" class=" {{ui.section}} {{ui.showMenu}}" ng-class="{'show-menu' : ui.showMenu}" ng-controller="CampaignsController">
+    <article id="power-access" ng-class="ui.state()" ng-controller="CampaignsController">
         <section id="campaigns" ng-click="ui.section = 'show-campaigns'">
             <header class="header">
                 <span class="title">Campaigns</span>
