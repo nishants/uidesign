@@ -35,13 +35,11 @@
 </head>
 
 <body ng-app="xsaas">
-    <nav id="top-bar">
-
-    </nav>
+    <nav id="top-bar"></nav>
 
     <article id="power-access" ng-class="ui.state()" ng-controller="CampaignsController">
         <section id="campaigns">
-            <header class="header" ng-click="ui.showCampaigns()">
+            <header class="header" ng-click="ui.showCampaigns()" ng-dblclick="ui.split()">
                 <span class="title">Campaigns</span>
                 <div class="filter-box">
                     <div class="filter-button" ng-click="ui.showCampaignsFilter()">
@@ -61,7 +59,7 @@
         </section>
 
         <section id="adsets">
-            <header class="header" ng-click="ui.showAdsets()">
+            <header class="header" ng-click="ui.showAdsets()" ng-dblclick="ui.split()">
                 <span class="title">Adsets</span>
                 <div class="filter-box">
                     <div class="filter-button" ng-click="ui.showAdsetsFilter();">
@@ -81,7 +79,7 @@
         </section>
 
         <section id="ads">
-            <header class="header" ng-click="ui.showAds()">
+            <header class="header" ng-click="ui.showAds()" ng-dblclick="ui.split()">
                 <span class="title">Ads</span>
                 <div class="filter-box">
                     <div class="filter-button" ng-click="ui.showAdsFilter()">
@@ -107,7 +105,6 @@
             </div>
         </div>
     </article>
-
 
     <script src="../../lib/angular-1.4.3.js"></script>
     <script src="app/app.js"></script>

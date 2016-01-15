@@ -23,7 +23,6 @@
         this.section = 'show-campaigns';
       },
 
-
       showAdsets: function(){
         this.__split = false;
         this.section = 'show-adsets';
@@ -34,7 +33,6 @@
         this.section = 'show-ads';
       },
 
-
       showCampaignsFilter: function(){
         this.showMenu == 'show-campaigns-filter' ?this.showMenu = null : this.showMenu = 'show-campaigns-filter';
       },
@@ -44,7 +42,6 @@
       showAdsFilter: function(){
         this.showMenu == 'show-ads-filter' ?this.showMenu = null : (this.showMenu = 'show-ads-filter');
       }
-
     };
 
     $scope.Campaigns = {
