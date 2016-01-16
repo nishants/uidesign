@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- external css-->
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+
+    <!-- app css-->
+    <link rel="stylesheet" href="css/calendar.css">
+
+    <style>
+
+
+    </style>
+</head>
+
+<body ng-app="c">
+
+
+    <div class="calendar"
+         ng-init="weekdays = ['Sun' ,'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat']"
+         calendar-month="0",
+         calendar-year="2016">
+        <div class="head">
+            <div class="cell" ng-repeat="day in weekdays">
+                <span ng-bind="day"></span>
+            </div>
+        </div>
+        <div class="body">
+            <ul class="month">
+                <li ng-repeat="week in __calendar.weeks">
+                    <div class="cell" ng-repeat="weekday in week.days">
+                        <span ng-bind="weekday"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../../lib/angular-1.4.3.js"></script>
+<script>
+    var calendar = angular.module("c",[]);
+    calendar.directive("calendar", function(){
+        var calendarFor = function(month, year){
+            var monthDay  = new Date(year, month).getDay(),
+                    totalDays = new Date(year, month, 0).getDate() ;
+
+            var calendar   = [
+                        [0, 0, 0, 0, 0, 0, 0, ],
+                        [0, 0, 0, 0, 0, 0, 0, ],
+                        [0, 0, 0, 0, 0, 0, 0, ],
+                        [0, 0, 0, 0, 0, 0, 0, ],
+                        [0, 0, 0, 0, 0, 0, 0, ],
+                        [0, 0, 0, 0, 0, 0, 0, ]
+                    ],
+                    monthWeek   = 0;
+
+            for(var i = 1; i <= totalDays; i++){
+                calendar[monthWeek][monthDay] = i;
+                monthDay = (monthDay + 1);
+                if(monthDay == 7) {
+                    monthWeek++
+                    monthDay = 0;
+                }
+            }
+            var result = {
+                weeks : []
+            };
+            for(var i = 0; i < calendar.length; i++){
+                var month = {days: calendar[i]};
+                result.weeks.push(month);
+            }
+
+            return result;
+        };
+
+        return {
+            restrict : "C",
+            scope: true,
+            transclude: false,
+            link: function(scope, element, attrs){
+                scope.__calendar = calendarFor(parseInt(attrs.calendarMonth), parseInt(attrs.calendarYear));
+            }
+        }
+    });
+</script>
+</body>
+
+</html>
