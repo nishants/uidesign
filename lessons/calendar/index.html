@@ -25,8 +25,8 @@
 
     <div class="calendar"
          ng-init="weekdays = ['Sun' ,'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat']"
-         calendar-month="{{calendar.month}}"
-         calendar-year ="{{calendar.year}}">
+         calendar-month="calendar.month"
+         calendar-year ="calendar.year">
         <div class="head">
             <div class="cell" ng-repeat="day in weekdays">
                 <span ng-bind="day"></span>
@@ -49,7 +49,7 @@
     calendar.directive("calendar", function(){
         var calendarFor = function(month, year){
             var monthDay  = new Date(year, month).getDay(),
-                totalDays = new Date(year, month, 0).getDate() ;
+                totalDays = new Date(year, month + 1, 0).getDate() ;
 
             var calendar   = [
                         [],
@@ -85,8 +85,14 @@
             scope: true,
             transclude: false,
             link: function(scope, element, attrs){
+                var month = function(){
+                    return scope.$eval(attrs.calendarMonth);
+                }, year = function(){
+                    return scope.$eval(attrs.calendarYear);
+                };
+
                 var update = function(){
-                    scope.__calendar = calendarFor(parseInt(attrs.calendarMonth), parseInt(attrs.calendarYear))
+                    scope.__calendar = calendarFor(parseInt(month()), parseInt(year()))
                 };
                 scope.$watch(attrs.calendarMonth, update);
                 scope.$watch(attrs.calendarYear, update);
