@@ -18,9 +18,11 @@
     </style>
 </head>
 
-<body ng-app="c" ng-init="calendar = {month: '1', year: '2016'}">
+<body ng-app="c" ng-controller="CalendarController">
 
-    <input type="text" ng-model="calendar.month" placeholder="month">
+    <select ng-model="calendar.month"
+            ng-options="month.value as month.label for month in calendar.monthNames">
+    </select>
     <input type="text" ng-model="calendar.year"  placeholder="year">
 
     <div class="calendar"
@@ -46,6 +48,24 @@
     <script src="../../lib/angular-1.4.3.js"></script>
 <script>
     var calendar = angular.module("c",[]);
+    var monthNames = [
+        {label: "Jan",  value: 0},
+        {label: "Feb",  value: 1},
+        {label: "March",value: 2},
+        {label: "April",value: 3},
+        {label: "May",  value: 4},
+        {label: "June", value: 5},
+        {label: "July", value: 6},
+        {label: "Aug",  value: 7},
+        {label: "Sept", value: 8},
+        {label: "Oct",  value: 9},
+        {label: "Nov",  value: 10},
+        {label: "Dec",  value: 11},
+    ];
+
+    calendar.controller("CalendarController", function($scope){
+        $scope.calendar     = {month: 1, year: '2016', monthNames: monthNames};
+    });
     calendar.directive("calendar", function(){
         var calendarFor = function(month, year){
             var monthDay  = new Date(year, month).getDay(),
