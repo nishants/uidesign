@@ -33,7 +33,7 @@
         <div class="body">
             <ul class="month">
                 <li ng-repeat="week in __calendar.weeks">
-                    <div class="cell" ng-repeat="weekday in week.days">
+                    <div class="cell" ng-repeat="weekday in week.days track by $index">
                         <span ng-bind="weekday"></span>
                     </div>
                 </li>
@@ -47,15 +47,15 @@
     calendar.directive("calendar", function(){
         var calendarFor = function(month, year){
             var monthDay  = new Date(year, month).getDay(),
-                    totalDays = new Date(year, month, 0).getDate() ;
+                totalDays = new Date(year, month, 0).getDate() ;
 
             var calendar   = [
-                        [0, 0, 0, 0, 0, 0, 0, ],
-                        [0, 0, 0, 0, 0, 0, 0, ],
-                        [0, 0, 0, 0, 0, 0, 0, ],
-                        [0, 0, 0, 0, 0, 0, 0, ],
-                        [0, 0, 0, 0, 0, 0, 0, ],
-                        [0, 0, 0, 0, 0, 0, 0, ]
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        []
                     ],
                     monthWeek   = 0;
 
