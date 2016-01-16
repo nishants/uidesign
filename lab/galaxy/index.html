@@ -12,6 +12,9 @@
         * {
             box-sizing: border-box;
         }
+        html{
+            background: url(../../images/stars/twinkle.gif) repeat fixed center center;
+        }
 
         .typewriter:not(.show){
             display: none !important;
@@ -131,6 +134,14 @@
         .fade-in:not(.show){
             opacity: 0;
         }
+
+        .space-station{
+            position: fixed;
+            bottom: 50px;
+            width: 100%;
+            z-index: -1;
+
+        }
     </style>
 </head>
 
@@ -207,6 +218,8 @@
         <div class="time"><div>200 Hours</div></div>
         <div class="submit" ng-class="{'disabled' : galaxy.missions.all.length < 4}" ng-click="galaxy.findFalcone()">Find Falcone</div>
     </footer>
+
+    <img class="space-station" ng-src="../../images/stars/space-center.png">
 
 
     <script src="../../lib/angular-1.4.3.js"></script>
