@@ -18,13 +18,15 @@
     </style>
 </head>
 
-<body ng-app="c">
+<body ng-app="c" ng-init="calendar = {month: '1', year: '2016'}">
 
+    <input type="text" ng-model="calendar.month" placeholder="month">
+    <input type="text" ng-model="calendar.year"  placeholder="year">
 
     <div class="calendar"
          ng-init="weekdays = ['Sun' ,'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat']"
-         calendar-month="0",
-         calendar-year="2016">
+         calendar-month="{{calendar.month}}"
+         calendar-year ="{{calendar.year}}">
         <div class="head">
             <div class="cell" ng-repeat="day in weekdays">
                 <span ng-bind="day"></span>
@@ -83,7 +85,11 @@
             scope: true,
             transclude: false,
             link: function(scope, element, attrs){
-                scope.__calendar = calendarFor(parseInt(attrs.calendarMonth), parseInt(attrs.calendarYear));
+                var update = function(){
+                    scope.__calendar = calendarFor(parseInt(attrs.calendarMonth), parseInt(attrs.calendarYear))
+                };
+                scope.$watch(attrs.calendarMonth, update);
+                scope.$watch(attrs.calendarYear, update);
             }
         }
     });
