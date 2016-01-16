@@ -34,12 +34,16 @@ nav{
     line-height: 13px;
 
 
+    .overview, .description{
+      border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+    }
     .overview{
       float: left;
       height: $menuItemHeight;
       color: rgba(0, 0, 0, 0.64);
       padding: 10px 20px;
       text-align: center;
+      background-color: rgba(50, 111, 156, 0.84);
 
       .img-outline{
         background-color: rgba(1,1,1,0.5);
@@ -70,14 +74,6 @@ nav{
 
   .left-pane{
     transform: translateX(-250px);
-    .overview, .description{
-      background-color: rgba(202, 219, 235, 0.96);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);;
-      border-right: 1px solid rgba(0, 0, 0, 0.05);;
-    }
-    .description:last-child{
-      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    }
   }
 
   .planets > li:first-child > .overview {
@@ -99,9 +95,6 @@ nav{
   .right-pane{
     right: 0px;
     transform: translateX(250px);
-    .overview, .description{
-      border-bottom: 1px solid rgba(1, 1, 1, 0.1);
-    }
   }
 
   .disabled{
@@ -139,7 +132,8 @@ nav{
   height: $menuButtonSize;
   overflow: hidden;
 
-  background-color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px rgb(73, 106, 130);
+  background-color: #316487;
   color: black;
 
   text-align: center;
@@ -160,8 +154,6 @@ nav{
 
 #menu.show > .menu-button{
   transform: rotate(360deg);
-  background-color: rgba(255, 255, 255, 0.5);
-  color: rgba(1, 1, 1, 0.5);
 }
 
 #menu:not(.show) > .menu-button > .close{

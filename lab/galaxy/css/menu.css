@@ -19,12 +19,15 @@ nav .left-pane, nav .right-pane, nav .menu-button {
     padding: 0;
     font-size: 10px;
     line-height: 13px; }
+    #menu .left-pane .overview, #menu .left-pane .description, #menu .right-pane .overview, #menu .right-pane .description {
+      border-bottom: 1px solid rgba(1, 1, 1, 0.1); }
     #menu .left-pane .overview, #menu .right-pane .overview {
       float: left;
       height: 75px;
       color: rgba(0, 0, 0, 0.64);
       padding: 10px 20px;
-      text-align: center; }
+      text-align: center;
+      background-color: rgba(50, 111, 156, 0.84); }
       #menu .left-pane .overview .img-outline, #menu .right-pane .overview .img-outline {
         background-color: rgba(1, 1, 1, 0.5);
         border-radius: 50%;
@@ -46,12 +49,6 @@ nav .left-pane, nav .right-pane, nav .menu-button {
       border-bottom: 1px solid rgba(1, 1, 1, 0.1); }
   #menu .left-pane {
     transform: translateX(-250px); }
-    #menu .left-pane .overview, #menu .left-pane .description {
-      background-color: rgba(202, 219, 235, 0.96);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      border-right: 1px solid rgba(0, 0, 0, 0.05); }
-    #menu .left-pane .description:last-child {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
   #menu .planets > li:first-child > .overview {
     border-top-right-radius: 2px; }
   #menu .planets > li:last-child > .overview {
@@ -63,8 +60,6 @@ nav .left-pane, nav .right-pane, nav .menu-button {
   #menu .right-pane {
     right: 0px;
     transform: translateX(250px); }
-    #menu .right-pane .overview, #menu .right-pane .description {
-      border-bottom: 1px solid rgba(1, 1, 1, 0.1); }
   #menu .disabled .overview img {
     opacity: 0.3; }
   #menu .disabled .description {
@@ -87,7 +82,8 @@ nav .left-pane, nav .right-pane, nav .menu-button {
   width: 40px;
   height: 40px;
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px #496a82;
+  background-color: #316487;
   color: black;
   text-align: center;
   border-radius: 50%; }
@@ -103,9 +99,7 @@ nav .left-pane, nav .right-pane, nav .menu-button {
   top: -40px; }
 
 #menu.show > .menu-button {
-  transform: rotate(360deg);
-  background-color: rgba(255, 255, 255, 0.5);
-  color: rgba(1, 1, 1, 0.5); }
+  transform: rotate(360deg); }
 
 #menu:not(.show) > .menu-button > .close {
   visibility: hidden; }
