@@ -6,29 +6,62 @@
     <script src="../lib/jquery-2.1.4.min.js"></script>
     <style>
         body{
-            color: white;
             background-color: black;
         }
+        a{
+            color: white;
+        }
         body > .scrollable{
-            height: 400px;
-            width: 400px;
+            height: 200px;
+            width: 200px;
         }
 
          h1{
-            margin-bottom: 300px;
-            color: white;
+             width: 200px;
+             height: 200px;
         }
         .scrollable{
             overflow: auto;
         }
+        #horizontal {
+            height: 200px;
+            width: 200px;
+            overflow: auto;
+        }
+
+        #horizontal > .scrollable{
+            height: 400px;
+            width: 2000px;
+        }
+
+        #horizontal > .scrollable > h1{
+            display: inline-block;
+            float: left;
+        }
+
+        h1:nth-child(2n){
+            background-color: white;
+        }
+
+        h1:nth-child(2n+1){
+            background-color: #EEE;
+        }
+
     </style>
 </head>
 <body>
-<a href="#x1">1</a>
-<a href="#x2">2</a>
-<a href="#x3">3</a>
-<a href="#x4">4</a>
-<a href="#x5">5</a>
+    <a href="#x1">1</a>
+    <a href="#x2">2</a>
+    <a href="#x3">3</a>
+    <a href="#x4">4</a>
+    <a href="#x5">5</a>
+
+    <a href="#x6">6</a>
+    <a href="#x7">7</a>
+    <a href="#x8">8</a>
+    <a href="#x9">9</a>
+    <a href="#x10">10</a>
+
     <div class="scrollable">
         <h1 id="x1">1</h1>
         <h1 id="x2">2</h1>
@@ -36,6 +69,17 @@
         <h1 id="x4">4</h1>
         <h1 id="x5">5</h1>
     </div>
+
+    <div id="horizontal" class="scrollable">
+        <div class="scrollable">
+            <h1 id="x6">6</h1>
+            <h1 id="x7">7</h1>
+            <h1 id="x8">8</h1>
+            <h1 id="x9">9</h1>
+            <h1 id="x10">10</h1>
+        </div>
+    </div>
+
 
     <script>
 
