@@ -1,7 +1,8 @@
 @import "../config";
 $barHeight : $topBarHeight;
 $titleWidth: 100px;
-$filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth}"});
+$searchWidth: 200px;
+$filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth + $searchWidth}"});
 
 #power-access > section > .content {
   background-color: #F9F9F9;
@@ -14,8 +15,54 @@ $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth}"});
     height : $barHeight;
   }
 
-  .title{
-    width: 100px;
+  .search-and-title{
+    max-width: $titleWidth + $searchWidth;
+    height : $barHeight;
+    float: left;
+
+    .title{
+      float: left;
+      padding-right: 0px;
+    }
+    .search{
+      width: $searchWidth ;
+      height : $barHeight;
+      float: left;
+      padding: 2.5px;
+
+      .icon, input{
+        float: left;
+        height : $barHeight - 5px;
+        line-height : $barHeight - 7px;
+        outline: none;
+        border: none;
+      }
+      .icon{
+        width: $barHeight - 5px;
+        text-align: center;
+        border: 1px solid #EEE;
+      }
+      input{
+        width: calc(100% - #{$barHeight - 5px});
+        box-sizing: border-box;
+        padding: 5px;
+        border: 1px solid transparent;
+
+        @include animate(all, 500ms);
+      }
+    }
+  }
+  .search-and-title:not(:hover){
+    .search{
+      .icon{
+        border: 1px solid transparent;
+      }
+      input{
+        width: 0;
+        opacity: 0;
+        padding: 0;
+      }
+    }
   }
 
   .filter-box{

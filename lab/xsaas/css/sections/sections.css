@@ -28,11 +28,46 @@ ul.undo-list, ul.undo-list > li {
   padding: 7px 5px 5px 5px;
   display: inline-block;
   height: 30px; }
-#power-access > section > .header .title {
-  width: 100px; }
+#power-access > section > .header .search-and-title {
+  max-width: 300px;
+  height: 30px;
+  float: left; }
+  #power-access > section > .header .search-and-title .title {
+    float: left;
+    padding-right: 0px; }
+  #power-access > section > .header .search-and-title .search {
+    width: 200px;
+    height: 30px;
+    float: left;
+    padding: 2.5px; }
+    #power-access > section > .header .search-and-title .search .icon, #power-access > section > .header .search-and-title .search input {
+      float: left;
+      height: 25px;
+      line-height: 23px;
+      outline: none;
+      border: none; }
+    #power-access > section > .header .search-and-title .search .icon {
+      width: 25px;
+      text-align: center;
+      border: 1px solid #EEE; }
+    #power-access > section > .header .search-and-title .search input {
+      width: calc(100% - 25px);
+      box-sizing: border-box;
+      padding: 5px;
+      border: 1px solid transparent;
+      -webkit-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      -moz-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      -o-transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      transition: 500ms all cubic-bezier(0.45, 0.515, 0.36, 0.88); }
+#power-access > section > .header .search-and-title:not(:hover) .search .icon {
+  border: 1px solid transparent; }
+#power-access > section > .header .search-and-title:not(:hover) .search input {
+  width: 0;
+  opacity: 0;
+  padding: 0; }
 #power-access > section > .header .filter-box {
   float: right;
-  width: calc(100% -  100px); }
+  width: calc(100% -  300px); }
   #power-access > section > .header .filter-box ul.filters {
     float: right;
     display: block;

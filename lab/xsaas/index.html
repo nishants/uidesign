@@ -40,7 +40,13 @@
     <article id="power-access" ng-class="ui.state()" ng-controller="CampaignsController">
         <section id="campaigns">
             <header class="header" ng-click="ui.showCampaigns()" ng-dblclick="ui.split()">
-                <span class="title">Campaigns</span>
+                <div class="search-and-title">
+                    <span class="title">Campaigns</span>
+                    <div class="search">
+                        <span class="icon fa fa-search"></span>
+                        <input>
+                    </div>
+                </div>
                 <div class="filter-box">
                     <div class="filter-button" ng-click="ui.showCampaignsFilter()">
                         <span class="fa fa-filter"></span>
