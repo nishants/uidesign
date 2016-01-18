@@ -56,6 +56,7 @@ $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth + $searchWidth}"});
     .search{
       .icon{
         border: 1px solid transparent;
+        opacity: 0.1;
       }
       input{
         width: 0;
