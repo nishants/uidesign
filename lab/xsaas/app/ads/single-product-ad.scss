@@ -1,0 +1,34 @@
+.ad{
+  width: 470px;  /*fb preview size*/
+
+  .body{
+    border: 1px solid #EEE;
+
+    textarea{
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+  }
+
+  .image{
+    img{
+      width: 100%;  /*fb preview size*/
+    }
+  }
+  .title, .link-description, .display-url{
+    border: 1px solid #EEE;
+
+    input{
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: none;
+    }
+  }
+  .cta-button{
+    select{
+      float: right;
+    }
+  }
+}
