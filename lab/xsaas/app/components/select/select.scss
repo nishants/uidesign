@@ -1,7 +1,30 @@
+$boxHeight : 30px;
+
 .select-box{
+  overflow: hidden;
+  height: $boxHeight;
+
+  .mask{
+    height: $boxHeight;
+    width: 100%;
+    .icon{
+      float: right;
+      display: inline-block;
+
+      height: $boxHeight;
+      line-height: $boxHeight - 2px;
+      padding: 0px 10px;
+
+      border:1px solid  #EEE;
+      color: #EEE;
+    }
+  }
   select{
     -webkit-appearance: none;
-    height: 30px;
+    height: $boxHeight;
     width: 100%;
+    position: relative;
+    top: -$boxHeight;
+    opacity: 0.1;
   }
 }
