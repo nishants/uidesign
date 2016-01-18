@@ -60,25 +60,22 @@
     <script>
 
         var Carousel = function ($carousel) {
-            this.__index  = 0;
+            this.__index    = 0;
             this.$carousel  = $carousel;
-            this.__step   = $carousel.width();
+            this.width      = $carousel.width();
         };
 
         Carousel.prototype.next     = function(){
-            this.__index = Math.floor($("#horizontal").scrollLeft()/this.__step);
-            this.__index ++;
-            this.rePosition();
+            var index = Math.floor($("#horizontal").scrollLeft()/this.width);
+            this.moveTo(++index *  this.width);
         };
 
         Carousel.prototype.previous = function(){
-            this.__index = Math.floor($("#horizontal").scrollLeft()/this.__step);
-            this.__index --;
-            this.rePosition();
+            var index = Math.floor($("#horizontal").scrollLeft()/this.width);
+            this.moveTo(--index *  this.width);
         };
 
-        Carousel.prototype.rePosition = function(){
-            var offset = (this.__index *  this.__step);
+        Carousel.prototype.moveTo = function(offset){
             this.$carousel.animate({scrollLeft: offset}, 100);
         };
 
