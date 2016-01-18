@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll Magic</title>
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <style>
+        body{
+            height: 99000vh;
+        }
+        *{box-sizing: border-box;}
+
+        ul > li:nth-child(3n){
+            background-color: green;
+        }
+
+        ul > li:nth-child(3n+1){
+            background-color: blue;
+        }
+
+        ul > li:nth-child(3n+2){
+            background-color: red;
+        }
+
+        ul.h-scroll {
+            position: fixed;
+            top: 100px;
+            list-style-type: none;
+            height: 200px;
+
+            display: block;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul.h-scroll > li{
+            height: 200px;
+            width:  200px;
+            float: left;
+        }
+
+        .h-scroll {
+            -webkit-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -moz-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            -o-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
+            transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880); /* custom */
+        }
+    </style>
+</head>
+<body>
+<ul class="h-scroll">
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+</ul>
+
+<script>
+    var
+        $target  = $(".h-scroll").first(),
+        currentPosition = 0,
+        moveBy = function(scrolledBy){
+            currentPosition += scrolledBy;
+            $target.css("transform", "translateX(" + (currentPosition) + "px)")
+        },
+        lastScrollTop = 0 ;
+
+    $(window).bind("scroll",function(e){
+        var scrolledBy = $(window).scrollTop() - lastScrollTop;
+        moveBy(-scrolledBy);
+        lastScrollTop = $(window).scrollTop();
+    });
+
+    $(document).ready(function(){
+        $target.width($target.find("li").length * $target.find("li").first().width())
+    });
+
+</script>
+</body>
+</html>
