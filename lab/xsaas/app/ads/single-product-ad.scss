@@ -1,5 +1,14 @@
+$lineHeight : 30px;
+
 .ad{
   width: 470px;  /*fb preview size*/
+  label{
+    display: block;
+    font-size: 10px;
+  }
+  .page{
+    border: 1px solid #EEE;
+  }
 
   .body{
     border: 1px solid #EEE;
@@ -8,6 +17,7 @@
       width: 100%;
       padding: 15px;
       box-sizing: border-box;
+      border: none;
     }
   }
 
@@ -21,14 +31,15 @@
 
     input{
       width: 100%;
-      height: 100%;
       box-sizing: border-box;
       border: none;
+      height: $lineHeight;
     }
   }
   .cta-button{
     select{
       float: right;
+      height: 60px;
     }
   }
 }
