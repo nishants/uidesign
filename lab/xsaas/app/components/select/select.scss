@@ -3,6 +3,7 @@ $boxHeight : 30px;
 .select-box{
   overflow: hidden;
   height: $boxHeight;
+  border:1px solid  #EEE;
 
   .mask{
     height: $boxHeight;
@@ -15,7 +16,7 @@ $boxHeight : 30px;
       line-height: $boxHeight - 2px;
       padding: 0px 10px;
 
-      border:1px solid  #EEE;
+      border-left:1px solid  #EEE;
       color: #EEE;
     }
   }
@@ -25,6 +26,6 @@ $boxHeight : 30px;
     width: 100%;
     position: relative;
     top: -$boxHeight;
-    opacity: 0.1;
+    opacity: 0;
   }
 }
