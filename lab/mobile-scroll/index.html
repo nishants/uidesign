@@ -22,7 +22,7 @@
             display: block;
 
             height: 200px;
-            width: 2000px;
+            width: 1000px;
         }
 
         #horizontal > ul > li{
@@ -66,18 +66,20 @@
         };
 
         Carousel.prototype.next     = function(){
+            this.__index = Math.floor($("#horizontal").scrollLeft()/this.__step);
             this.__index ++;
             this.rePosition();
         };
 
         Carousel.prototype.previous = function(){
+            this.__index = Math.floor($("#horizontal").scrollLeft()/this.__step);
             this.__index --;
             this.rePosition();
         };
 
         Carousel.prototype.rePosition = function(){
             var offset = (this.__index *  this.__step);
-            this.$carousel.animate({scrollLeft: offset}, 500);
+            this.$carousel.animate({scrollLeft: offset}, 100);
         };
 
         $(document).ready(function(){
