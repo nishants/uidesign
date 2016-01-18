@@ -3,106 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="../../lib/angular-1.4.3.js"></script>
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
     <style>
-        *{
-            -webkit-transition: all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-            -moz-transition:    all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-            -o-transition:      all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-            transition:         all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-        }
         body{
             background-color: black;
         }
-        a{
-            color: white;
-        }
-        body > .scrollable{
-            height: 200px;
-            width: 200px;
-        }
 
-         h1{
-             width: 200px;
-             height: 200px;
-             margin: 0;
-        }
-        .scrollable{
-            overflow: auto;
-        }
         #horizontal {
             height: 200px;
             width: 200px;
             overflow: auto;
         }
 
-        #horizontal > .scrollable{
+        #horizontal > ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+
             height: 200px;
             width: 2000px;
         }
 
-        #horizontal > .scrollable > h1{
-            display: inline-block;
-            float: left;
+        #horizontal > ul > li{
+             width: 200px;
+             height: 200px;
+             margin: 0;
+             display: inline-block;
+             float: left;
         }
 
-        h1:nth-child(2n){
+
+        #horizontal > ul  > li:nth-child(2n){
             background-color: white;
         }
 
-        h1:nth-child(2n+1){
+        #horizontal > ul  > li:nth-child(2n + 1){
             background-color: #EEE;
         }
 
     </style>
 </head>
 <body>
-    <a href="#x1">1</a>
-    <a href="#x2">2</a>
-    <a href="#x3">3</a>
-    <a href="#x4">4</a>
-    <a href="#x5">5</a>
-
-    <a href="#x6">6</a>
-    <a href="#x7">7</a>
-    <a href="#x8">8</a>
-    <a href="#x9">9</a>
-    <a href="#x10">10</a>
-
-    <div class="scrollable">
-        <h1>1</h1>
-        <h1 id="x2">2</h1>
-        <h1 id="x3">3</h1>
-        <h1 id="x4">4</h1>
-        <h1 id="x5">5</h1>
+    <div id="horizontal">
+        <ul>
+            <li >6</li>
+            <li id="x7">7</li>
+            <li id="x8">8</li>
+            <li id="x9">9</li>
+            <li id="x10">10</li>
+        </ul>
     </div>
 
-    <div id="horizontal" class="scrollable">
-        <div class="scrollable">
-            <h1 >6</h1>
-            <h1 id="x7">7</h1>
-            <h1 id="x8">8</h1>
-            <h1 id="x9">9</h1>
-            <h1 id="x10">10</h1>
-        </div>
-    </div>
-
-
+    <button onclick="carousel.next()">next</button>
+    <button onclick="carousel.previous()">previous</button>
     <script>
 
+        var Carousel = function ($carousel) {
+            this.__index  = 0;
+            this.$carousel  = $carousel;
+            this.__step   = $carousel.width();
+        };
+
+        Carousel.prototype.next     = function(){
+            this.__index ++;
+            this.rePosition();
+        };
+
+        Carousel.prototype.previous = function(){
+            this.__index --;
+            this.rePosition();
+        };
+
+        Carousel.prototype.rePosition = function(){
+            var offset = (this.__index *  this.__step);
+            this.$carousel.animate({scrollLeft: offset}, 500);
+        };
+
         $(document).ready(function(){
-            $("a").first().click(function(){
-                var target = $("h1").first();
-                var position = target.offset().top;
-                $(".scrollable").first().animate({scrollTop: position}, 500);
-            });
-
-            $($("a")[5]).click(function(){
-                var target = $($("h1")[5]);
-                var position = target.offset().left;
-                $($(".scrollable")[1]).animate({scrollLeft: position}, 500);
-            });
-
+            window.carousel  = new Carousel($("#horizontal"));
         });
     </script>
 </body>
