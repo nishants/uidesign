@@ -26,9 +26,21 @@ $formLineHeight    : 30px;
   }
 
   .form-section{
+    min-height: $formLineHeight;
+    margin-bottom: 10px;
+
     label.name, input.value{
       height: $formLineHeight;
       line-height: $formLineHeight - 2px;
+    }
+
+    .value{
+      line-height: $formLineHeight - 2px;
+      width: 400px;
+      float: left;
+      padding-left: 10px;
+      border: 1px solid #EEE;
+      min-height: $formLineHeight;
     }
 
     label.name{
@@ -38,12 +50,5 @@ $formLineHeight    : 30px;
       text-align: right;
       overflow: hidden;
     }
-
-    input.value{
-      float: left;
-      padding-left: 10px;
-      width: 300px;
-    }
   }
-
 }
