@@ -60,8 +60,8 @@
     <script>
 
         var Carousel = function ($carousel) {
-            this.$slider  = $carousel.find("ul").first();
             this.__index  = 0;
+            this.$carousel  = $carousel;
             this.__step   = $carousel.width();
         };
 
@@ -77,7 +77,7 @@
 
         Carousel.prototype.rePosition = function(){
             var offset = (this.__index *  this.__step);
-            this.$slider.animate({scrollLeft: offset}, 500);
+            this.$carousel.animate({scrollLeft: offset}, 500);
         };
 
         $(document).ready(function(){
