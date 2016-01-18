@@ -22,7 +22,7 @@
             background-color: red;
         }
 
-        ul.h-scroll {
+        ul.scroll {
             position: fixed;
             top: 100px;
             list-style-type: none;
@@ -33,13 +33,16 @@
             padding: 0px;
         }
 
+
         ul.h-scroll > li{
-            height: 200px;
-            width:  200px;
             float: left;
         }
+        ul.scroll > li{
+            height: 200px;
+            width:  200px;
+        }
 
-        .h-scroll {
+        .scroll {
             -webkit-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
             -moz-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
             -o-transition: all 500ms cubic-bezier(0.450, 0.515, 0.360, 0.880);
@@ -48,20 +51,30 @@
     </style>
 </head>
 <body>
-<ul class="h-scroll">
+<ul class="h-scroll scroll">
     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
 </ul>
 
+<ul class="v-scroll scroll">
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+</ul>
+
+
 <script>
     var
         $target  = $(".h-scroll").first(),
+        $target2  = $(".v-scroll").first(),
         currentPosition = 0,
         moveBy = function(scrolledBy){
             currentPosition += scrolledBy;
             $target.css("transform", "translateX(" + (currentPosition) + "px)")
+            $target2.css("transform", "translateY(" + (currentPosition) + "px)")
         },
         lastScrollTop = 0 ;
 
@@ -72,7 +85,8 @@
     });
 
     $(document).ready(function(){
-        $target.width($target.find("li").length * $target.find("li").first().width())
+        $target.width($target.find("li").length * $target.find("li").first().width());
+        $target.height($target.find("li").length * $target.find("li").first().height());
     });
 
 </script>
