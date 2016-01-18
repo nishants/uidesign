@@ -50,6 +50,14 @@ $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth + $searchWidth}"});
 
         @include animate(all, 500ms);
       }
+      .suggestions{
+        top: $barHeight;
+
+        height: 300px;
+        width: 100%;
+        position: relative;
+        background-color: white;
+      }
     }
   }
   .search-and-title:not(:hover){
@@ -62,6 +70,9 @@ $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth + $searchWidth}"});
         width: 0;
         opacity: 0;
         padding: 0;
+      }
+      .suggestions{
+        visibility: hidden;
       }
     }
   }
