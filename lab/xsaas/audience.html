@@ -52,7 +52,12 @@
                     <button class="save">Save</button>
                 </div>
             </header>
-            <div class="content" ng-include="'app/audiences/audience-form.html'"></div>
+            <div class="content">
+                <div class="audience-form"
+                     ng-controller="AudienceFormController"
+                     ng-include="'app/audiences/audience-form.html'">
+                </div>
+            </div>
         </section>
         <div id="filter-menu-wrapper" ng-mouseleave="__showMenu = false">
             <div class="filter-menu">
