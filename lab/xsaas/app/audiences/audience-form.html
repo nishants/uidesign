@@ -37,7 +37,9 @@
 
     </form>
     <div class="overview" ng-init="__selected = {name: null}; targets = [{name: 'custom '}, {name: ' lookalike '}, {name: ' work '}, {name: ' relationship '}, {name: ' language '}, {name: ' interest '}, {name: ' connection '}, {name: ' education '}, {name: ' mobile '}, {name: ' behavior '}, {name: ' family '}, {name: ' life event '}, {name: ' mobile'}]">
+
         <ul class="summary undo-list">
+            <li class="title">Audience Name</li>
             <li  ng-repeat="target in targets" ng-bind="target.name">
             </li>
         </ul>

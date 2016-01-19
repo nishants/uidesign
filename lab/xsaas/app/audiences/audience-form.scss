@@ -1,37 +1,40 @@
+@import '../../css/config';
 
-$audienceFormHeight : 80vh;
-$audienceFormWidth : 80vw;
-$formLineHeight    : 30px;
+$formLineHeight     : 30px;
+$overviewLineHeight : 25px;
+$overviewWidth      : 200px;
+$formWidth          : calc(100% - #{$overviewWidth});
 
 .audience-form{
-  height: $audienceFormHeight;
-  padding: 10px;
+  padding-top: 10px;
+  height: 100%;
   width: 100%;
 
-  overflow: hidden;
-
   .editor,.overview{
-    height: $audienceFormHeight;
+    float: left;
   }
   .editor{
-    width: 100%;
-    overflow: auto;
+    width: $formWidth;
     text-align: left;
   }
+
   .overview{
-    position: relative;
-    top: -$audienceFormHeight;
-    float: right;
-    width: 200px;
+    width: $overviewWidth;
     border: 1px solid #EEE;
     .summary{
       text-align: left;
-      padding-left: 10px;
-      line-height: $formLineHeight - 2px;
+      padding: 10px;
+      line-height: $overviewLineHeight - 2px;
+
+      .title{
+        line-height: $formLineHeight - 2px;
+        font-weight: bold;
+        border-bottom: 1px solid #EEE;
+      }
     }
     .save-form{
       display: block;
-      height: 30px;
+      height: $formLineHeight;
       width: calc(100% - 10px);
       margin: 5px;
       padding-left: 10px;
