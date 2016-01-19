@@ -13,7 +13,7 @@
     }, {
       id: 'interest_group_id',
       api: 'interest_groups',
-      label: 'Interest Audience',
+      label: 'Interests',
 
       previewColumns: ["name", "target"],
       previewTemplate: "app/audiences/preview/interest_groups.html",
@@ -24,7 +24,7 @@
     }, {
       id: 'connection_object_id',
       api: 'connection_objects',
-      label: 'Connection Targeting',
+      label: 'Connections',
 
       previewColumns: ["name", "connections", "excluded connections", "friends of connections", "score"],
       previewTemplate: "app/audiences/preview/connection_objects.html",
@@ -35,7 +35,7 @@
     }, {
       id: 'relationship_object_id',
       api: 'relationship_objects',
-      label: 'Relationship Object',
+      label: 'Relationships',
 
       previewColumns: ["name", "interested in", "status"],
       previewTemplate: "app/audiences/preview/relationship_objects.html",
@@ -47,7 +47,7 @@
       {
         id: 'language_object_id',
         api: 'language_objects',
-        label: 'Language Targeting',
+        label: 'Languages',
         previewColumns: ["name", "languages"],
         previewTemplate: "app/audiences/preview/language_objects.html",
         inlineTemplate: 'app/audiences/inline/language_objects.html',
@@ -57,7 +57,7 @@
       }, {
         id: 'education_targeting_id',
         api: 'education_targetings',
-        label: 'Education Targeting',
+        label: 'Education',
         previewColumns: ["name", "schools", "education", "college years", "majors"],
 
         previewTemplate: "app/audiences/preview/education_targetings.html",
@@ -69,7 +69,7 @@
       {
         id: 'mobile_targeting_id',
         api: 'mobile_targetings',
-        label: 'Mobile Targeting',
+        label: 'Mobile',
         previewColumns: ["name", "user os", "user device"],
 
         previewTemplate: "app/audiences/preview/mobile_targetings.html",
@@ -81,7 +81,7 @@
       {
         id: 'work_targeting_id',
         api: 'work_targetings',
-        label: 'Work Targeting',
+        label: 'Work',
         previewColumns: ["name", "employers", "positions", "industries"],
 
         previewTemplate: "app/audiences/preview/work_targetings.html",
@@ -93,7 +93,7 @@
       {
         id: 'behavior_targeting_id',
         api: 'behavior_targetings',
-        label: 'Behavior Targeting',
+        label: 'Behavior',
 
         previewColumns: ["name", "behaviors"],
         previewTemplate: "app/audiences/preview/behavior_targetings.html",
@@ -104,7 +104,7 @@
       }, {
         id: 'family_statuses_targeting_id',
         api: 'family_statuses_targetings',
-        label: 'Family Status',
+        label: 'Family',
 
         previewColumns: ["name", "status"],
         previewTemplate: "app/audiences/preview/family_statuses_targetings.html",

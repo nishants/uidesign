@@ -51,7 +51,6 @@ $overviewBackground : rgba(255, 255, 255, 0.3);
   .form-section{
     min-height: $formLineHeight;
     margin-bottom: 10px;
-    width: calc(100% - 300px);
     min-width: 500px;
 
     label.name, input.value{
