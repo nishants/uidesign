@@ -1,6 +1,8 @@
 (function () {
   "use strict"
   app.controller("AudienceFormController", function ($scope, Audiences) {
-    $scope.audienceTargets = Audiences.targets();
+    $scope.form = {
+      targets: Audiences.targets()
+    };
   })
 }).call(this);
