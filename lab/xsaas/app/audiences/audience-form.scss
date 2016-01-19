@@ -23,13 +23,14 @@ $overviewBackground : rgba(255, 255, 255, 0.3);
 
   .overview{
     width: $overviewWidth;
-    border: 1px solid #EEE;
     background-color: $overviewBackground;
 
     .summary{
       text-align: left;
       padding: 10px;
       line-height: $overviewLineHeight - 2px;
+      border: 1px solid #EEE;
+      margin: 0px 5px;
 
       .title{
         line-height: $formLineHeight - 2px;
