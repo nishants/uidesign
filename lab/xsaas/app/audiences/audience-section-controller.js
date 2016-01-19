@@ -3,7 +3,7 @@
   app.controller("AudienceSectionController", function ($scope) {
     $scope.state = {
       showTable: false,
-      showForm: false,
+      showForm: true,
     };
   });
 }).call(this);
