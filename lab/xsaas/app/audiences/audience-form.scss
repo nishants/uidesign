@@ -10,6 +10,8 @@ $overviewBackground : rgba(255, 255, 255, 0.3);
   padding-top: 10px;
   height: 100%;
   width: 100%;
+  overflow: auto;
+  min-width: 700px;
 
   .editor,.overview{
     float: left;
@@ -17,13 +19,13 @@ $overviewBackground : rgba(255, 255, 255, 0.3);
   .editor{
     width: $formWidth;
     text-align: left;
-    overflow: auto;
   }
 
   .overview{
     width: $overviewWidth;
     border: 1px solid #EEE;
     background-color: $overviewBackground;
+
     .summary{
       text-align: left;
       padding: 10px;
