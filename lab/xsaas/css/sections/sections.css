@@ -74,18 +74,24 @@ ul.undo-list, ul.undo-list > li {
   padding: 0; }
 #power-access > section > .header .search-and-title:not(:hover) .search .suggestions {
   visibility: hidden; }
-#power-access > section > .header .filter-box {
+#power-access > section > .header .filter-box, #power-access > section > .header .save-form {
   float: right;
   width: calc(100% -  300px); }
-  #power-access > section > .header .filter-box ul.filters {
+  #power-access > section > .header .filter-box ul.filters, #power-access > section > .header .save-form ul.filters {
     float: right;
     display: block;
     max-width: calc(100% -  40px);
     /* 15 pixel for margin of filter button*/
     overflow: hidden;
     height: 30px; }
-    #power-access > section > .header .filter-box ul.filters li.filter {
+    #power-access > section > .header .filter-box ul.filters li.filter, #power-access > section > .header .save-form ul.filters li.filter {
       float: left;
       display: inline; }
+
+#power-access > section:not(.create) > header .save-form {
+  display: none; }
+
+#power-access section.create > header .filter-box {
+  display: none; }
 
 /*# sourceMappingURL=sections.css.map */

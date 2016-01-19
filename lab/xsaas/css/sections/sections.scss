@@ -77,7 +77,7 @@ $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth + $searchWidth}"});
     }
   }
 
-  .filter-box{
+  .filter-box, .save-form{
     float: right;
     width: $filterBoxMaxWidth;
 
@@ -93,5 +93,17 @@ $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth + $searchWidth}"});
         display: inline;
       }
     }
+  }
+}
+
+#power-access > section:not(.create) > header{
+  .save-form{
+    display: none;
+  }
+}
+
+#power-access section.create > header{
+  .filter-box{
+    display: none;
   }
 }

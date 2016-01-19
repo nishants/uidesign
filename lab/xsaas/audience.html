@@ -32,7 +32,7 @@
     </nav>
 
     <article id="power-access" ng-class="{'show-menu' : __showMenu}">
-        <section id="audiences">
+        <section id="audiences" class="create">
             <header class="header">
                 <span class="title">audiences</span>
                 <div class="filter-box">
@@ -47,6 +47,11 @@
                             <span class="fa fa-close"></span>
                         </li>
                     </ul>
+                </div>
+                <div class="save-form">
+                    <div class="filter-button" ng-click="__showMenu = !__showMenu">
+                        <span class="fa fa-save"></span>
+                    </div>
                 </div>
             </header>
             <div class="content" ng-include="'app/audiences/audience-form.html'"></div>
