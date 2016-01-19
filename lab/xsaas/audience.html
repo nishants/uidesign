@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/sections/sections.css">
     <link rel="stylesheet" href="css/sections/filters.css">
     <link rel="stylesheet" href="app/audiences/audience-form.css">
+    <link rel="stylesheet" href="css/sections/table.css">
+    <link rel="stylesheet" href="app/campaigns/campaigns-table.css">
 
     <style>
         * {
@@ -35,7 +37,7 @@
         <section id="audiences" ng-controller="AudienceSectionController" ng-class="{'create' : state.showForm}">
             <header class="header">
                 <span class="title">audiences</span>
-                <div class="filter-box" ng-click="state.showForm = true">
+                <div class="filter-box" ng-click="state.showForm = true; state.showTable =  false;">
                     <div class="filter-button" ng-click="__showMenu = !__showMenu">
                         <span class="fa fa-filter"></span>
                     </div>
@@ -49,15 +51,20 @@
                     </ul>
                 </div>
                 <div class="save-form">
-                    <button class="save" ng-click="state.showForm = false">Save</button>
+                    <button class="save" ng-click="state.showForm = false; state.showTable = true;">Save</button>
                 </div>
             </header>
-            <div class="content">
+            <div class="content"
+                 ng-if="state.showForm">
                 <div class="audience-form"
-                     ng-if="state.showForm"
                      ng-controller="AudienceFormController"
                      ng-include="'app/audiences/audience-form.html'">
                 </div>
+            </div>
+            <div class="content"
+                 ng-controller="CampaignsController"
+                 ng-include="'app/campaigns/campaigns-table.html'"
+                 ng-if="state.showTable">
             </div>
 
         </section>
@@ -78,6 +85,9 @@
     <script src="app/audiences/audience-form-controller.js"></script>
     <script src="app/audiences/audience.scrollable.js"></script>
     <script src="app/audiences/audience-section-controller.js"></script>
+
+    <script src="app/campaigns/campaigns.js"></script>
+    <script src="app/campaigns/campaigns-controller.js"></script>
 <script></script>
 </body>
 
