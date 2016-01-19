@@ -87,6 +87,16 @@ ul.undo-list, ul.undo-list > li {
     #power-access > section > .header .filter-box ul.filters li.filter, #power-access > section > .header .save-form ul.filters li.filter {
       float: left;
       display: inline; }
+#power-access > section > .header .save-form {
+  text-align: right; }
+  #power-access > section > .header .save-form button.save {
+    width: 100%;
+    outline: none;
+    height: 30px;
+    line-height: 24px;
+    text-align: center;
+    border: none;
+    color: rgba(0, 0, 0, 0.67); }
 
 #power-access > section:not(.create) > header .save-form {
   display: none; }

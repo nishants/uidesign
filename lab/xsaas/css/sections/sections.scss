@@ -94,6 +94,19 @@ $filterBoxMaxWidth : calc(#{"100% -  #{$titleWidth + $searchWidth}"});
       }
     }
   }
+
+  .save-form{
+    text-align: right;
+    button.save{
+      width: 100%;
+      outline: none;
+      height: $barHeight;
+      line-height: $barHeight - 6px;
+      text-align: center;
+      border: none;
+      color: rgba(0, 0, 0, 0.67);
+    }
+  }
 }
 
 #power-access > section:not(.create) > header{
