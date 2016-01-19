@@ -4,10 +4,10 @@ $formLineHeight     : 30px;
 $overviewLineHeight : 25px;
 $overviewWidth      : 200px;
 $formWidth          : calc(100% - #{$overviewWidth});
+$formHeight         : calc(100vh - #{2 * $topBarHeight});
 $overviewBackground : rgba(255, 255, 255, 0.3);
 
 .audience-form{
-  padding-top: 10px;
   height: 100%;
   width: 100%;
   overflow: auto;
@@ -15,10 +15,14 @@ $overviewBackground : rgba(255, 255, 255, 0.3);
 
   .editor,.overview{
     float: left;
+    padding-top: 10px;
+    max-height: $formHeight;
+    overflow: auto;
   }
   .editor{
     width: $formWidth;
     text-align: left;
+    padding-right: 5px;
   }
 
   .overview{
