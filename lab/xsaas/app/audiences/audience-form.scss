@@ -39,8 +39,8 @@ $scrollablePartHeight    : calc(100vh - #{2 * $topBarHeight + $topPadding + $fix
   .overview{
     width: $overviewWidth;
     background-color: $overviewBackground;
-    max-height: $formHeight;
     overflow: auto;
+    height: 100%;
 
     .summary, .reach{
       text-align: left;
