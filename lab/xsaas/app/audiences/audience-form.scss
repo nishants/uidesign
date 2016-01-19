@@ -117,10 +117,50 @@ $scrollablePartHeight    : calc(100vh - #{2 * $topBarHeight + $topPadding + $fix
 
   .form-section.flash-focus{
     .value{
+      -webkit-animation-name: flash-highlight;
+      -moz-animation-name: flash-highlight;
+      -o-animation-name: flash-highlight;
       animation-name: flash-highlight;
+
+      -webkit-animation-duration: 2s;
+      -moz-animation-duration: 2s;
+      -o-animation-duration: 2s;
       animation-duration: 2s;
     }
     @keyframes flash-highlight{
+      from {
+        background-color: transparent;
+      }
+      30%{
+        background-color: rgba(33, 150, 243, 0.13);
+      }
+      to{
+        background-color: transparent;
+      }
+    }
+    @-webkit-keyframes flash-highlight{
+      from {
+        background-color: transparent;
+      }
+      30%{
+        background-color: rgba(33, 150, 243, 0.13);
+      }
+      to{
+        background-color: transparent;
+      }
+    }
+    @-moz-keyframes flash-highlight{
+      from {
+        background-color: transparent;
+      }
+      30%{
+        background-color: rgba(33, 150, 243, 0.13);
+      }
+      to{
+        background-color: transparent;
+      }
+    }
+    @-o-keyframes flash-highlight{
       from {
         background-color: transparent;
       }
