@@ -40,8 +40,9 @@ $scrollablePartHeight    : calc(100vh - #{2 * $topBarHeight + $topPadding + $fix
     width: $overviewWidth;
     background-color: $overviewBackground;
     max-height: $formHeight;
+    overflow: auto;
 
-    .summary{
+    .summary, .reach{
       text-align: left;
       padding: 10px;
       line-height: $overviewLineHeight - 2px;
@@ -54,13 +55,8 @@ $scrollablePartHeight    : calc(100vh - #{2 * $topBarHeight + $topPadding + $fix
         border-bottom: 1px solid #EEE;
       }
     }
-    .save-form{
-      display: block;
-      height: $formLineHeight;
-      width: calc(100% - 10px);
-      margin: 5px;
-      padding-left: 10px;
-      padding-right: 10px;
+    .reach{
+      margin-top: 10px;
     }
   }
 
