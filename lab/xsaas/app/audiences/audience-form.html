@@ -5,7 +5,9 @@
             <input class="value" value="SomeAudienceName">
         </div>
 
-        <div class="form-section" ng-repeat="target in form.targets">
+        <div class="form-section"
+             ng-repeat="target in form.targets"
+             id="{{target.id}}">
             <label class="name" ng-bind="target.label"></label>
             <div class="value">
                 <div>
@@ -31,11 +33,11 @@
 
 
     </form>
-    <div class="overview" ng-init="__selected = {name: null}; targets = [{name: 'custom '}, {name: ' lookalike '}, {name: ' work '}, {name: ' relationship '}, {name: ' language '}, {name: ' interest '}, {name: ' connection '}, {name: ' education '}, {name: ' mobile '}, {name: ' behavior '}, {name: ' family '}, {name: ' life event '}, {name: ' mobile'}]">
+    <div class="overview">
 
         <ul class="summary undo-list">
             <li class="title">Audience Name</li>
-            <li  ng-repeat="target in targets" ng-bind="target.name">
+            <li  ng-repeat="target in form.targets" ng-bind="target.label" ng-click="goto(target.id)">
             </li>
         </ul>
         <button class="save-form">Save</button>
