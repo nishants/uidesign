@@ -21,12 +21,12 @@
           window.offsets = offsets;
 
         };
-        var form = $(element);
+        var scrollable = $(element).find(".scrollable").first();
         scope.goto = function(targetId){
-          form.animate({scrollTop: 0}, 10, function(){
-            var target = form.find("#" + targetId);
+          scrollable.animate({scrollTop: 0}, 10, function(){
+            var target = scrollable.find("#" + targetId);
             var scrollTop = target.offset().top - target.height();
-            form.animate({scrollTop: scrollTop}, 500);
+            scrollable.animate({scrollTop: scrollTop}, 500);
           });
         }
 

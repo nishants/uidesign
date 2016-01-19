@@ -7,27 +7,39 @@ $formWidth          : calc(100% - #{$overviewWidth});
 $formHeight         : calc(100vh - #{2 * $topBarHeight});
 $overviewBackground : rgba(255, 255, 255, 0.3);
 
+$topPadding : 10px;
+$fixedPartHeight         : $formLineHeight;
+$scrollablePartHeight    : calc(100vh - #{2 * $topBarHeight + $topPadding + $fixedPartHeight});
+
 .audience-form{
   height: 100%;
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
   min-width: 700px;
 
   .editor,.overview{
     float: left;
     padding-top: 10px;
-    max-height: $formHeight;
-    overflow: auto;
+    overflow: hidden;
   }
   .editor{
     width: $formWidth;
     text-align: left;
     padding-right: 5px;
+    overflow: hidden;
+    .fixed{
+      padding-top: $topPadding;
+    }
+    .scrollable{
+      height: $scrollablePartHeight;
+      overflow: auto;
+    }
   }
 
   .overview{
     width: $overviewWidth;
     background-color: $overviewBackground;
+    max-height: $formHeight;
 
     .summary{
       text-align: left;
