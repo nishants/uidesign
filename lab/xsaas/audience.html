@@ -22,14 +22,11 @@
         * {
             box-sizing: border-box;
         }
-        .lime-green{
-            background-color: #8BC34A;
-        }
 
     </style>
 </head>
 
-<body ng-app>
+<body ng-app="xsaas">
     <nav id="top-bar">
 
     </nav>
@@ -52,7 +49,7 @@
                     </ul>
                 </div>
             </header>
-            <div class="content lime-green" ng-include="'app/audiences/audience-form.html'"></div>
+            <div class="content" ng-include="'app/audiences/audience-form.html'"></div>
         </section>
         <div id="filter-menu-wrapper" ng-mouseleave="__showMenu = false">
             <div class="filter-menu">
@@ -66,6 +63,7 @@
     <script src="../../lib/angular-1.4.3.js"></script>
     <script src="app/app.js"></script>
     <script src="app/audiences/audiences.js"></script>
+    <script src="app/audiences/audience-form-controller.js"></script>
 <script></script>
 </body>
 
