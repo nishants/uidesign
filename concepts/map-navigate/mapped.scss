@@ -1,9 +1,19 @@
 $topBarHeight : 50px;
 $articleHeight : calc(100vh  - #{$topBarHeight});
+$articleWidth  : 100vw;
+
+$mapHeight : calc((100vh  - #{$topBarHeight}) * 2);
+$mapWidth  : calc(100vw * 2);
+
 #mapped{
   margin-top: $topBarHeight;
+  height    : $mapHeight;
+  width     : $mapWidth;
+  overflow: hidden;
+
   article{
     height: $articleHeight;
+    width: $articleWidth;
     float: left;
   }
 }
