@@ -1,12 +1,38 @@
 
+$linkHeight       : 30px;
+$linkWidth        : 100px;
+$indicatorHeight  : 2px;
 
-
-.section-links{
-  list-style: none;
-  display: block;
-  li{
-    display: inline-block;
+.menu{
+  width: $linkWidth * 4;
+  height: $linkHeight + $indicatorHeight;
+  .section-links{
+    list-style: none;
+    display: block;
     float: left;
-    width: 100px;
+    margin: 0px;
+    padding: 0px;
+
+    li{
+      display: inline-block;
+      float: left;
+      width: $linkWidth;
+      height: $linkHeight;
+      margin: 0px;
+      padding: 0px;
+      text-align: center;
+    }
+  }
+
+  .indicator{
+    display: block;
+    float: left;
+
+    width: 100%;
+    height: $indicatorHeight;
+
+    background-color: #e6e6e6;
   }
 }
+
+

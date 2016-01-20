@@ -53,11 +53,15 @@
 
 <body ng-app="mapped" ng-controller="AppController">
     <div id="top-bar">
-        <ul class="section-links">
-            <li ng-click="app.showOne()">one</li>
-            <li ng-click="app.showTwo()">two</li>
-            <li ng-click="app.showThree()">three</li>
-            <li ng-click="app.showOther()">other</li>        </ul>
+        <div class="menu">
+            <ul class="section-links">
+                <li ng-click="app.showOne()">one</li>
+                <li ng-click="app.showTwo()">two</li>
+                <li ng-click="app.showThree()">three</li>
+                <li ng-click="app.showOther()">other</li>
+            </ul>
+            <div class="indicator"></div>
+        </div>
     </div>
 
     <div id="mapped">
