@@ -5,9 +5,13 @@ $articleWidth  : 100vw;
 $mapHeight : calc((100vh  - #{$topBarHeight}) * 2);
 $mapWidth  : calc(100vw * 2);
 
-$topRight    : translateX(-$articleWidth);
-$bottomRight : translateX(-$articleWidth) translateY(calc( -100vh  + #{$topBarHeight}));
-$bottomLeft  : translateY(calc( -100vh  + #{$topBarHeight}));
+@mixin transform( $property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
 
 #mapped{
   margin-top: $topBarHeight;
@@ -16,8 +20,8 @@ $bottomLeft  : translateY(calc( -100vh  + #{$topBarHeight}));
   width     : $articleWidth;
 
   .articles{
-    height    : $mapHeight;
-    width     : $mapWidth;
+    height    : $articleHeight;
+    width     : 4 * $articleWidth;
     article{
       height: $articleHeight;
       width : $articleWidth;
@@ -27,12 +31,14 @@ $bottomLeft  : translateY(calc( -100vh  + #{$topBarHeight}));
   }
 
   .articles.two{
-    transform: $topRight;
+    @include transform(translateX(-$articleWidth))
   }
+
   .articles.three{
-    transform: $bottomLeft;
+    @include transform(translateX(2 * -$articleWidth));
   }
+
   .articles.other{
-    transform: $bottomRight;
+    @include transform(translateX(3 * -$articleWidth));
   }
 }
