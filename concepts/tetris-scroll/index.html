@@ -70,10 +70,11 @@
 
     <div id="tetris" class="tetris" ng-class="articles.current.name">
         <div class="articles">
-            <article ng-repeat="article in articles.all" ng-class="article.name">
+            <article ng-repeat="article in articles.all" class="{{article.name}} {{article.sections[article.section].name}}">
                 <section ng-repeat="section in article.sections">
                     <h1>{{section.label}}</h1>
                     <h2>{{article.label}}</h2>
+                    <a ng-click="article.section = (article.section + 1)%article.sections.length" href="#">next</a>
                 </section>
             </article>
         </div>
@@ -124,6 +125,9 @@
                                 this.current = article;
                              },
         };
+        articles.all.forEach(function(article){
+            article.section = 0;
+        });
         $scope.articles = articles;
     });
 </script>
