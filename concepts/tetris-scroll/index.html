@@ -67,10 +67,12 @@
 
     <div id="tetris">
         <div class="articles">
-            <article><img src="../../images/carousel/carousel-1.jpg"></article>
-            <article><img src="../../images/carousel/carousel-2.jpg"></article>
-            <article><img src="../../images/carousel/carousel-3.jpg"></article>
-            <article><img src="../../images/stars.gif"></article>
+            <article ng-repeat="article in articles.all">
+                <section ng-repeat="section in article.sections">
+                    <h1>{{section.label}}</h1>
+                    <h2>{{article.label}}</h2>
+                </section>
+            </article>
         </div>
     </div>
 

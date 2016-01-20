@@ -1,36 +1,7 @@
-#tetris {
-  margin-top: 50px;
-  overflow: hidden;
-  height: calc(100vh  - 50px);
-  width: 100vw; }
-  #tetris .articles {
-    height: calc(100vh  - 50px);
-    width: 400vw; }
-    #tetris .articles article {
-      height: calc(100vh  - 50px);
-      width: 100vw;
-      float: left;
-      overflow: hidden; }
-
-.two .articles {
-  -webkit-transform: translateX(-100vw);
-  -moz-transform: translateX(-100vw);
-  -ms-transform: translateX(-100vw);
-  -o-transform: translateX(-100vw);
-  transform: translateX(-100vw); }
-
-.three .articles {
-  -webkit-transform: translateX(-200vw);
-  -moz-transform: translateX(-200vw);
-  -ms-transform: translateX(-200vw);
-  -o-transform: translateX(-200vw);
-  transform: translateX(-200vw); }
-
-.other .articles {
-  -webkit-transform: translateX(-300vw);
-  -moz-transform: translateX(-300vw);
-  -ms-transform: translateX(-300vw);
-  -o-transform: translateX(-300vw);
-  transform: translateX(-300vw); }
+.articles article section {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  padding-top: 30vh; }
 
 /*# sourceMappingURL=tetris.css.map */
