@@ -4,6 +4,9 @@
   text-align: center;
   padding-top: 30vh; }
 
+#tetris .articles article.a {
+  background-color: #008040; }
+
 #tetris .articles article.b {
   background-color: #FFD479; }
 
