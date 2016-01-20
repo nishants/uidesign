@@ -77,6 +77,41 @@
 
 <script>
     var app = angular.module("tetris", [])
+    app.value("layout", {
+        articles: [
+                    {    name: "a",
+                        label: "A",
+                        sections: [
+                            {name: "one",   label: "1"},
+                            {name: "two",   label: "2"},
+                            {name: "three", label: "3"}
+                        ]
+                    },
+
+                    {    name: "b",
+                        label: "B",
+                        sections: [
+                            {name: "one",   label: "1"},
+                            {name: "two",   label: "2"},
+                        ]
+                    },
+                    {    name: "c",
+                        label: "C",
+                        sections: [
+                            {name: "one",   label: "1"},
+                        ]
+                    },
+                    {    name: "d",
+                        label: "D",
+                        sections: [
+                            {name: "one",   label: "1"},
+                            {name: "two",   label: "2"},
+                            {name: "three", label: "3"},
+                            {name: "four",  label: "4"}
+                        ]
+                    }
+        ]
+    });
     app.controller("AppController", function($scope){
         var sectionOne = "one",
             sectionTwo = "two",
