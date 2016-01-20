@@ -67,7 +67,7 @@
 
     <div id="tetris">
         <div class="articles">
-            <article ng-repeat="article in articles.all">
+            <article ng-repeat="article in articles.all" ng-class="article.name">
                 <section ng-repeat="section in article.sections">
                     <h1>{{section.label}}</h1>
                     <h2>{{article.label}}</h2>

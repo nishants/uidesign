@@ -4,4 +4,13 @@
   text-align: center;
   padding-top: 30vh; }
 
+#tetris .articles article.b {
+  background-color: #FFD479; }
+
+#tetris .articles article.c {
+  background-color: #76D6FF; }
+
+#tetris .articles article.d {
+  background-color: #FF7E79; }
+
 /*# sourceMappingURL=tetris.css.map */
