@@ -28,21 +28,21 @@
       height: 100%;
       background-color: #4a89dc; }
 
-.two .pointer {
+.b .pointer {
   -webkit-transform: translateX(70px);
   -moz-transform: translateX(70px);
   -ms-transform: translateX(70px);
   -o-transform: translateX(70px);
   transform: translateX(70px); }
 
-.three .pointer {
+.c .pointer {
   -webkit-transform: translateX(140px);
   -moz-transform: translateX(140px);
   -ms-transform: translateX(140px);
   -o-transform: translateX(140px);
   transform: translateX(140px); }
 
-.other .pointer {
+.d .pointer {
   -webkit-transform: translateX(210px);
   -moz-transform: translateX(210px);
   -ms-transform: translateX(210px);

@@ -53,16 +53,14 @@ $linkPointerLeft  : $linkPad/2 + 10px;
   }
 }
 
-.two .pointer{
+.b .pointer{
   @include transform(translateX($linkWidth))
 }
 
-.three .pointer{
+.c .pointer{
   @include transform(translateX(2 * $linkWidth))
 }
 
-.other .pointer{
+.d .pointer{
   @include transform(translateX(3 * $linkWidth))
 }
-
-
