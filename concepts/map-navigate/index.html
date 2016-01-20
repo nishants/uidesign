@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
         }
-        .articles{
+        .articles, .pointer{
             -webkit-transition: all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
             -moz-transition:    all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
             -o-transition:      all 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
@@ -51,7 +51,7 @@
 
 </head>
 
-<body ng-app="mapped" ng-controller="AppController">
+<body ng-app="mapped" ng-controller="AppController" ng-class="app.showSection">
     <div id="top-bar">
         <div class="menu">
             <ul class="section-links">
@@ -60,12 +60,14 @@
                 <li ng-click="app.showThree()">three</li>
                 <li ng-click="app.showOther()">other</li>
             </ul>
-            <div class="indicator"></div>
+            <div class="indicator">
+                <div class="pointer two"></div>
+            </div>
         </div>
     </div>
 
     <div id="mapped">
-        <div class="articles" ng-class="app.showSection">
+        <div class="articles">
             <article><img src="../../images/carousel/carousel-1.jpg"></article>
             <article><img src="../../images/carousel/carousel-2.jpg"></article>
             <article><img src="../../images/carousel/carousel-3.jpg"></article>

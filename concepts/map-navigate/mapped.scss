@@ -29,16 +29,16 @@ $mapWidth  : calc(100vw * 2);
       overflow: hidden;
     }
   }
+}
 
-  .articles.two{
-    @include transform(translateX(-$articleWidth))
-  }
+.two .articles{
+  @include transform(translateX(-$articleWidth))
+}
 
-  .articles.three{
-    @include transform(translateX(2 * -$articleWidth));
-  }
+.three .articles{
+  @include transform(translateX(2 * -$articleWidth));
+}
 
-  .articles.other{
-    @include transform(translateX(3 * -$articleWidth));
-  }
+.other .articles{
+  @include transform(translateX(3 * -$articleWidth));
 }
