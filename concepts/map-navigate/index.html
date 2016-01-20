@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <script src="../../lib/angular-1.4.3.js"></script>
-
     <style>
         *{
             box-sizing: border-box;
@@ -47,15 +46,18 @@
         }
     </style>
     <link rel="stylesheet" href="mapped.css">
+    <link rel="stylesheet" href="menu.css">
+
 
 </head>
 
 <body ng-app="mapped" ng-controller="AppController">
     <div id="top-bar">
-        <span ng-click="app.showOne()">one</span>
-        <span ng-click="app.showTwo()">two</span>
-        <span ng-click="app.showThree()">three</span>
-        <span ng-click="app.showOther()">other</span>
+        <ul class="section-links">
+            <li ng-click="app.showOne()">one</li>
+            <li ng-click="app.showTwo()">two</li>
+            <li ng-click="app.showThree()">three</li>
+            <li ng-click="app.showOther()">other</li>        </ul>
     </div>
 
     <div id="mapped">
