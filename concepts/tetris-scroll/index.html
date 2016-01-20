@@ -51,14 +51,13 @@
 
 </head>
 
-<body ng-app="tetris" ng-controller="AppController" ng-class="app.showSection">
+<body ng-app="tetris" ng-controller="AppController" ng-class="articles.current.label">
     <div id="top-bar">
         <div class="menu">
-            <ul class="section-links">
-                <li ng-click="app.showOne()">one</li>
-                <li ng-click="app.showTwo()">two</li>
-                <li ng-click="app.showThree()">three</li>
-                <li ng-click="app.showOther()">other</li>
+            <ul class="section-links" >
+                <li ng-click="articles.show(article)"
+                    ng-bind="article.label"
+                    ng-repeat="article in articles.all"></li>
             </ul>
             <div class="indicator">
                 <div class="pointer two"></div>
@@ -112,30 +111,15 @@
                     }
         ]
     });
-    app.controller("AppController", function($scope){
-        var sectionOne = "one",
-            sectionTwo = "two",
-            sectionThree = "three",
-            sectionOther = "other";
-
-        $scope.app = {
-            showSection: sectionOne,
-            __setSection: function(name){
-
-            },
-            showOne: function(){
-                return this.showSection = sectionOne;
-            },
-            showTwo: function(){
-                return this.showSection = sectionTwo;
-            },
-            showThree: function(){
-                return this.showSection = sectionThree;
-            },
-            showOther: function(){
-                return this.showSection = sectionOther;
-            }
+    app.controller("AppController", function($scope, layout){
+        var articles = {
+                all        : layout.articles,
+                current    : layout.articles[0],
+                show       : function(article){
+                                this.current = article;
+                             },
         };
+        $scope.articles = articles;
     });
 </script>
 </body>
