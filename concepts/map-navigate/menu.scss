@@ -3,8 +3,8 @@ $linkHeight       : 30px;
 $linkWidth        : 70px;
 $linkPad          : 5px;
 $indicatorHeight  : 2px;
-
-$linkPointerWidth : $linkWidth - $linkPad;
+$linkPointerWidth : $linkWidth - $linkPad - 20px;
+$linkPointerLeft  : $linkPad/2 + 10px;
 
 @mixin transform( $property) {
   -webkit-transform: $property;
@@ -45,7 +45,7 @@ $linkPointerWidth : $linkWidth - $linkPad;
 
     .pointer{
       position: relative;
-      left: $linkPad/2;
+      left: $linkPointerLeft;
       width: $linkPointerWidth;
       height: 100%;
       background-color: #4a89dc;
