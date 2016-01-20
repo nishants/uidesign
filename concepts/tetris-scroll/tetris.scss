@@ -2,20 +2,27 @@ $topBarHeight : 50px;
 $articleHeight : calc(100vh  - #{$topBarHeight});
 $articleWidth  : 100vw;
 
+.tetris{
+  height: $articleHeight;
+  width: $articleWidth;
+  overflow: scroll;
+
+  margin-top: $topBarHeight;
+}
 .articles{
   width: $articleWidth * 4;
 }
 
 .articles article{
-  height: 100vh;
-  width: 100vw;
+  height: $articleHeight;
+  width: $articleWidth;
   float: left;
   overflow: scroll;
 }
 
 .articles article section{
-  height: 100vh;
-  width: 100vw;
+  height: $articleHeight;
+  width: $articleWidth;
   text-align: center;
   padding-top: 30vh;
   text-shadow: 1px 1px rgba(0,0,0,0.2);
