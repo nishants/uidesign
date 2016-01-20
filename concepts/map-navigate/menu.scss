@@ -1,8 +1,10 @@
 
 $linkHeight       : 30px;
-$linkWidth        : 100px;
+$linkWidth        : 70px;
 $linkPad          : 5px;
 $indicatorHeight  : 2px;
+
+$linkPointerWidth : $linkWidth - $linkPad;
 
 @mixin transform( $property) {
   -webkit-transform: $property;
@@ -11,7 +13,6 @@ $indicatorHeight  : 2px;
   -o-transform: $property;
   transform: $property;
 }
-
 
 .menu{
   width: $linkWidth * 4;
@@ -28,6 +29,7 @@ $indicatorHeight  : 2px;
       float: left;
       width: $linkWidth;
       height: $linkHeight;
+      line-height: $linkHeight - 2px;
       margin: 0px;
       text-align: center;
       padding: 0px $linkPad;
@@ -43,9 +45,8 @@ $indicatorHeight  : 2px;
 
     .pointer{
       position: relative;
-      left: $linkPad;
-
-      width: $linkWidth - $linkPad;
+      left: $linkPad/2;
+      width: $linkPointerWidth;
       height: 100%;
       background-color: #4a89dc;
     }
