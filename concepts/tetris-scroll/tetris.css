@@ -32,4 +32,25 @@
 #tetris .articles article.d {
   background-color: #FF7E79; }
 
+#tetris.b .articles {
+  -webkit-transform: translateX(-100vw);
+  -moz-transform: translateX(-100vw);
+  -ms-transform: translateX(-100vw);
+  -o-transform: translateX(-100vw);
+  transform: translateX(-100vw); }
+
+#tetris.c .articles {
+  -webkit-transform: translateX(-200vw);
+  -moz-transform: translateX(-200vw);
+  -ms-transform: translateX(-200vw);
+  -o-transform: translateX(-200vw);
+  transform: translateX(-200vw); }
+
+#tetris.d .articles {
+  -webkit-transform: translateX(-300vw);
+  -moz-transform: translateX(-300vw);
+  -ms-transform: translateX(-300vw);
+  -o-transform: translateX(-300vw);
+  transform: translateX(-300vw); }
+
 /*# sourceMappingURL=tetris.css.map */

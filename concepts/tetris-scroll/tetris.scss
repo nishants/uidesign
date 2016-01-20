@@ -2,6 +2,14 @@ $topBarHeight : 50px;
 $articleHeight : calc(100vh  - #{$topBarHeight});
 $articleWidth  : 100vw;
 
+@mixin transform( $property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
 .tetris{
   height: $articleHeight;
   width: $articleWidth;
@@ -42,4 +50,14 @@ $articleWidth  : 100vw;
 
 #tetris .articles article.d{
   background-color: #FF7E79;
+}
+
+#tetris.b .articles{
+  @include transform(translateX(-$articleWidth));
+}
+#tetris.c .articles{
+  @include transform(translateX(-$articleWidth * 2));
+}
+#tetris.d .articles{
+  @include transform(translateX(-$articleWidth * 3));
 }

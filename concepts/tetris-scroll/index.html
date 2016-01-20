@@ -68,7 +68,7 @@
         </div>
     </div>
 
-    <div id="tetris" class="tetris">
+    <div id="tetris" class="tetris" ng-class="articles.current.name">
         <div class="articles">
             <article ng-repeat="article in articles.all" ng-class="article.name">
                 <section ng-repeat="section in article.sections">
