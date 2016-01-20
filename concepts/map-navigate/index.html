@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <script src="../../lib/angular-1.4.3.js"></script>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #EEE;
+        }
+        #top-bar{
+            position: fixed;
+            top : 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            color: white;
+        }
+        #top-bar span{
+            width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        article img{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="mapped.css">
+
+</head>
+
+<body ng-app="mapped" ng-controller="AppController">
+    <div id="top-bar">
+        <span ng-click="app.showOne()">one</span>
+        <span ng-click="app.showTwo()">two</span>
+        <span ng-click="app.showThree()">three</span>
+        <span ng-click="app.showOther()">other</span>
+    </div>
+
+    <div id="mapped" ng-class="app.showSection">
+        <article><img src="../../images/carousel/carousel-1.jpg"></article>
+        <article><img src="../../images/carousel/carousel-2.jpg"></article>
+        <article><img src="../../images/carousel/carousel-3.jpg"></article>
+        <article><img src="../../images/stars.gif"></article>
+    </div>
+
+<script>
+    var app = angular.module("mapped", [])
+    app.controller("AppController", function($scope){
+        var sectionOne = "one",
+            sectionTwo = "two",
+            sectionThree = "three",
+            sectionOther = "other";
+
+        $scope.app = {
+            showSection: sectionOne,
+            __setSection: function(name){
+
+            },
+            showOne: function(){
+                return this.showSection = sectionOne;
+            },
+            showTwo: function(){
+                return this.showSection = sectionTwo;
+            },
+            showThree: function(){
+                return this.showSection = sectionThree;
+            },
+            showOther: function(){
+                return this.showSection = sectionOther;
+            }
+        };
+    });
+</script>
+</body>
+</html>

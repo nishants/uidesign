@@ -1,0 +1,9 @@
+$topBarHeight : 50px;
+$articleHeight : calc(100vh  - #{$topBarHeight});
+#mapped{
+  margin-top: $topBarHeight;
+  article{
+    height: $articleHeight;
+    float: left;
+  }
+}
