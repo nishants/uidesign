@@ -126,18 +126,6 @@
         };
         $scope.articles = articles;
     });
-    app.directive("tetris", function(){
-        return {
-            restrict   : "C",
-            scope      : false,
-            transcldue : false,
-            link       : function(scope, element, attrs){
-                            element.bind("scroll", function(){
-                            console.log(element.scrollLeft());
-                         });
-            }
-        };
-    });
 </script>
 </body>
 </html>
