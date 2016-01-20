@@ -2,6 +2,17 @@ $topBarHeight : 50px;
 $articleHeight : calc(100vh  - #{$topBarHeight});
 $articleWidth  : 100vw;
 
+.articles{
+  width: $articleWidth * 4;
+}
+
+.articles article{
+  height: 100vh;
+  width: 100vw;
+  float: left;
+  overflow: scroll;
+}
+
 .articles article section{
   height: 100vh;
   width: 100vw;
