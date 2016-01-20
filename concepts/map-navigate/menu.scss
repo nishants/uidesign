@@ -1,6 +1,7 @@
 
 $linkHeight       : 30px;
 $linkWidth        : 100px;
+$linkPad          : 5px;
 $indicatorHeight  : 2px;
 
 @mixin transform( $property) {
@@ -28,8 +29,8 @@ $indicatorHeight  : 2px;
       width: $linkWidth;
       height: $linkHeight;
       margin: 0px;
-      padding: 0px;
       text-align: center;
+      padding: 0px $linkPad;
     }
   }
 
@@ -40,9 +41,11 @@ $indicatorHeight  : 2px;
     width: 100%;
     height: $indicatorHeight;
 
-    background-color: #e6e6e6;
     .pointer{
-      width: $linkWidth;
+      position: relative;
+      left: $linkPad;
+
+      width: $linkWidth - $linkPad;
       height: 100%;
       background-color: #4a89dc;
     }
