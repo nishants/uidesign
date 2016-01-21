@@ -13,10 +13,10 @@ $articleWidth  : 100vw;
 .tetris{
   height: $articleHeight;
   width: $articleWidth;
-  overflow: scroll;
-
-  margin-top: $topBarHeight;
+  overflow: hidden;
+  display: table-row;
 }
+
 .articles{
   width: $articleWidth * 4;
 }
@@ -24,8 +24,12 @@ $articleWidth  : 100vw;
 .articles article{
   height: $articleHeight;
   width: $articleWidth;
-  float: left;
+  display: table-cell;
   overflow: hidden;
+}
+
+.articles article .sections{
+  height: $articleHeight;
 }
 
 .articles article section{

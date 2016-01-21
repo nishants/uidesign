@@ -1,7 +1,7 @@
 $topBarHeight : 50px;
 $show2 : calc(#{$topBarHeight}  - 100vh);
 $show3 : calc(#{2 * $topBarHeight}  - 200vh);
-$show4 : calc(#{3 * $topBarHeight}  - 200vh);
+$show4 : calc(#{3 * $topBarHeight}  - 300vh);
 
 @mixin transform( $property) {
   -webkit-transform: $property;

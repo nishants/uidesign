@@ -1,8 +1,8 @@
 .tetris {
   height: calc(100vh  - 50px);
   width: 100vw;
-  overflow: scroll;
-  margin-top: 50px; }
+  overflow: hidden;
+  display: table-row; }
 
 .articles {
   width: 400vw; }
@@ -10,8 +10,11 @@
 .articles article {
   height: calc(100vh  - 50px);
   width: 100vw;
-  float: left;
+  display: table-cell;
   overflow: hidden; }
+
+.articles article .sections {
+  height: calc(100vh  - 50px); }
 
 .articles article section {
   height: calc(100vh  - 50px);
