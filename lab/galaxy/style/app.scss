@@ -1,0 +1,30 @@
+@import "config";
+
+html{
+  background: url(../images/twinkle.gif) repeat fixed center center;
+}
+
+#galaxy > * {
+  box-sizing: border-box;
+}
+
+.undo-list{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img.space-station, #bottom-bar{
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+}
+
+img.space-station{
+  z-index: $backgroundLayer;
+}
+
+#bottom-bar{
+  z-index: $barsLayer;
+  background-color: white;
+}
