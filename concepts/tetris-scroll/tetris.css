@@ -11,7 +11,7 @@
   height: calc(100vh  - 50px);
   width: 100vw;
   float: left;
-  overflow: scroll; }
+  overflow: hidden; }
 
 .articles article section {
   height: calc(100vh  - 50px);

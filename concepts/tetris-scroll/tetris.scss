@@ -25,7 +25,7 @@ $articleWidth  : 100vw;
   height: $articleHeight;
   width: $articleWidth;
   float: left;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .articles article section{
@@ -55,9 +55,11 @@ $articleWidth  : 100vw;
 #tetris.b .articles{
   @include transform(translateX(-$articleWidth));
 }
+
 #tetris.c .articles{
   @include transform(translateX(-$articleWidth * 2));
 }
+
 #tetris.d .articles{
   @include transform(translateX(-$articleWidth * 3));
 }

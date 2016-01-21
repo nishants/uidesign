@@ -50,6 +50,7 @@
     </style>
     <link rel="stylesheet" href="tetris.css">
     <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="articles.css">
 
 
 </head>
@@ -70,12 +71,15 @@
 
     <div id="tetris" class="tetris" ng-class="articles.current.name">
         <div class="articles">
-            <article ng-repeat="article in articles.all" class="{{article.name}} {{article.sections[article.section].name}}">
-                <section ng-repeat="section in article.sections">
-                    <h1>{{section.label}}</h1>
-                    <h2>{{article.label}}</h2>
-                    <a ng-click="article.section = (article.section + 1)%article.sections.length" href="#">next</a>
-                </section>
+                <article ng-repeat="article in articles.all" class="{{article.name}} {{article.sections[article.section].name}}">
+                    <div class="sections">
+
+                    <section ng-repeat="section in article.sections">
+                        <h1>{{section.label}}</h1>
+                        <h2>{{article.label}}</h2>
+                        <a ng-click="article.section = (article.section + 1) % article.sections.length" href="#">next</a>
+                    </section>
+                    </div>
             </article>
         </div>
     </div>
