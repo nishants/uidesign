@@ -40,5 +40,15 @@ h1{
       border-radius:  $defaultBorderRadius 0px 0px $defaultBorderRadius;
     }
   }
+  .mission.add:not(.select){
+    .overview{
+      .vehicle{
+        display: none;
+      }
+      .planet{
+        display: none;
+      }
+    }
+  }
 }
 
