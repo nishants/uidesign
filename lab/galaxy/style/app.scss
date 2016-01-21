@@ -14,9 +14,12 @@ html{
   list-style: none;
 }
 
-img.space-station, #bottom-bar{
+img.space-station, #bottom-bar, #top-bar{
   width: 100%;
   position: fixed;
+}
+
+img.space-station, #bottom-bar{
   bottom: 0px;
 }
 
@@ -24,7 +27,21 @@ img.space-station{
   z-index: $backgroundLayer;
 }
 
-#bottom-bar{
+#bottom-bar, #top-bar{
   z-index: $barsLayer;
-  background-color: white;
+  background-color: $barsColor;
+  height: $barsHeight;
+}
+
+#top-bar{
+  border-bottom: $barsBorder;
+}
+
+#bottom-bar{
+  border-top: $barsBorder;
+  padding: 2.5px;
+}
+
+#bottom-bar{
+  @import "bottom-bar";
 }
