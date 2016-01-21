@@ -8,7 +8,7 @@ body{
   min-width: $appMinWidth;
 }
 
-#galaxy > * {
+* {
   box-sizing: border-box;
 }
 
@@ -16,6 +16,11 @@ body{
   margin: 0px;
   padding: 0px;
   list-style: none;
+}
+
+.undo-list > li{
+  margin: 0px;
+  padding: 0px;
 }
 
 img.space-station, #bottom-bar, #top-bar{
@@ -58,8 +63,8 @@ img.space-station{
   width: 360px;
   text-align: center;
   color: $contentColor;
-  border: $contentBorder;
-  box-shadow: $contentShadow;
+  //border: $contentBorder;
+  //box-shadow: $contentShadow;
 
   @import "content";
 }
