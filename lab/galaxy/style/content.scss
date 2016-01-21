@@ -32,12 +32,31 @@ h1{
       font-size: 25px;
       text-align: center;
     }
-    .overview{
-      width: calc(100% - #{$iconWidth});
+    .overview, .vehicle, .planet{
       float: left;
       background-color: $bgColor;
       border-right: $overviewBorder;
+    }
+
+    .overview, .vehicle{
       border-radius:  $defaultBorderRadius 0px 0px $defaultBorderRadius;
+    }
+
+    .overview{
+      width: calc(100% - #{$iconWidth});
+    }
+
+    .planet{
+      width: $planetWidth
+    }
+
+    .vehicle{
+      width: calc(100% - #{$planetWidth})
+    }
+  }
+  .mission.select {
+    .overview {
+      .add{display: none;}
     }
   }
   .mission.add:not(.select){
