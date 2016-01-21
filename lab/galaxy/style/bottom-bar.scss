@@ -1,0 +1,28 @@
+@import "config";
+
+$borderSize : 1px;
+
+button.submit,.time{
+  height: $barsHeight - 7px;
+  line-height: $barsHeight - 9px;
+  border: $barsBorder;
+  box-sizing: border-box;
+}
+
+.time{
+  float: left;
+  color: #A4C936;
+  min-width: 150px;
+  text-align: center;
+  overflow: hidden;
+  width: calc(100% - 200px - #{$borderSize * 4});
+  border-color: #A4C936;
+}
+
+button.submit{
+  float: right;
+  width: 200px;
+
+  background-color: #A4C936;
+  color: white;
+}
