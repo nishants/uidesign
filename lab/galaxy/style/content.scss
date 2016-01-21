@@ -49,7 +49,7 @@ h1{
     .planet{
       width: $planetWidth;
       overflow: hidden;
-      @import 'planet-overview';
+      @import 'planets-menu';
     }
 
     .vehicle{
