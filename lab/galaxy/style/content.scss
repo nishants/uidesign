@@ -47,7 +47,10 @@ h1{
     }
 
     .planet{
-      width: $planetWidth
+      width: $planetWidth;
+      height: $menuHeight;
+      overflow: auto;
+      @import 'planet-overview';
     }
 
     .vehicle{

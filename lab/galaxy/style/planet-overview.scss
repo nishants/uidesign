@@ -1,0 +1,15 @@
+$height: 30px;
+$fontSize: 13px;
+
+
+.planet-overview{
+  height: $height * 3;
+  font-size: $fontSize;
+
+  img, .name, .distance{
+    height: $height;
+    line-height: $fontSize + 5px;
+    display: block;
+    margin: 0px auto;
+  }
+}
