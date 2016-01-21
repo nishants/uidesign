@@ -54,5 +54,12 @@ img.space-station{
 }
 
 .content{
-  margin-top: $barsHeight; /* space behind top bar*/
+  margin: $barsHeight + 10px  auto 0 auto; /* space behind top bar*/
+  width: 360px;
+  text-align: center;
+  color: $contentColor;
+  border: $contentBorder;
+  box-shadow: $contentShadow;
+
+  @import "content";
 }
