@@ -11,18 +11,18 @@ button.submit,.time{
 
 .time{
   float: left;
-  color: #A4C936;
+  color: $themeColor;
   min-width: 150px;
   text-align: center;
   overflow: hidden;
   width: calc(100% - 200px - #{$borderSize * 4});
-  border-color: #A4C936;
+  border-color: $themeColor;
 }
 
 button.submit{
   float: right;
   width: 200px;
 
-  background-color: #A4C936;
+  background-color: $themeColor;
   color: white;
 }

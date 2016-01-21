@@ -1,6 +1,8 @@
 $backgroundImage :  "../images/twinkle.gif";
 $spaceStationImage : "../images/space-center.png";
 
+$appMinWidth  : 360px;
+
 // z-indexes
 $backgroundLayer : 1;
 $barsLayer       : 100;
@@ -9,3 +11,5 @@ $barsLayer       : 100;
 $barsHeight : 50px;
 $barsBorder      : 1px solid rgba(255, 255, 255, 0.1);
 $barsColor       : rgba(0, 0, 0, 0.62);
+
+$themeColor      : #A4C936;
