@@ -28,6 +28,10 @@ img.space-station, #bottom-bar{
   bottom: 0px;
 }
 
+#top-bar{
+  top: 0px;
+}
+
 img.space-station{
   z-index: $backgroundLayer;
 }
@@ -47,4 +51,8 @@ img.space-station{
 #bottom-bar{
   border-top: $barsBorder;
   @import "bottom-bar";
+}
+
+.content{
+  margin-top: $barsHeight; /* space behind top bar*/
 }
