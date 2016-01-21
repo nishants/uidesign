@@ -48,8 +48,7 @@ h1{
 
     .planet{
       width: $planetWidth;
-      height: $menuHeight;
-      overflow: auto;
+      overflow: hidden;
       @import 'planet-overview';
     }
 
