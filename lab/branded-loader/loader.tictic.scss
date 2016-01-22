@@ -1,16 +1,35 @@
 $bgColor: rgba(0, 0, 0, 0.49);
 $size   : 200px;
 
+@mixin transition($time, $property) {
+  -webkit-transition: $property  $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition:    $property  $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition:      $property  $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition:         $property  $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
+}
+@mixin transform($function) {
+  -webkit-transform: $function;
+  -moz-transform:    $function;
+  -ms-transform:     $function;
+  -o-transform:      $function;
+    transform:       $function;
+}
+
 .loader{
   .view{
     height: $size;
-    width: $size;
+    min-width: $size;
     border: 1px solid #BD1010;
     line-height: $size - 5px;
     text-align: center;
 
+    .t, .small-cog, .large-cog{
+      display: inline-block;
+    }
     .t {
-      font-size: $size/2;
+      font-size: $size/0.8;
+      font-family: sans-serif;
+      @include transform(rotate(180deg) rotateY(180deg));
     }
     .small-cog {
       font-size: $size/4;
