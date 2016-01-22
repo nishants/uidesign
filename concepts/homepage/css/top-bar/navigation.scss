@@ -1,0 +1,17 @@
+@import "../config";
+
+.navigation{
+  @extend .undo-list;
+  li{
+    height: $topBarHeight;
+    float: left;
+    padding: 0px 10px;
+    text-align: center;
+    border-right: 1px solid #4d4d4d;
+  }
+  li:hover{
+    background-color: $topBarColor;
+    color: $topBarBG;
+    border-color: #4d4d4d;
+  }
+}
