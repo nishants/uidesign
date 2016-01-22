@@ -8,15 +8,12 @@ body{
   height: calc(100vh - #{$topBarHeight});
   width: 100vw;
   overflow: hidden;
-  > * {
-    height: 100%;
-    width: 100%;
-    background-color: green;
-    display: none;
-  }
 }
 
 #top-bar{
+  position: fixed;
+  top: 0px;
+  z-index: 1;
   font-size: $topBarFontSize;
   height: $topBarHeight;
   background-color: $topBarBG;

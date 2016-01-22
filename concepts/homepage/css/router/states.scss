@@ -1,7 +1,25 @@
+@import '../config';
+
 @mixin activate($index){
-  display: block;
+  transform : translateY(0vh);
 }
 
+#app > #view > * {
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  position: fixed;
+  left: 0;
+  top: 50px;
+  transform : translateY(-150vh);
+  @include transition(transform, 1s);
+}
+
+#app > #view > *:nth-child(2n){
+  background-color: #ff7b85;
+}
+
+#app.url-state1 > #view .url-state1{ @include activate(0); }
 #app.url-state1 > #view .url-state1{ @include activate(0); }
 #app.url-state2 > #view .url-state2{ @include activate(0); }
 #app.url-state3 > #view .url-state3{ @include activate(0); }

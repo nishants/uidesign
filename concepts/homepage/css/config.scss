@@ -15,13 +15,16 @@ $appMinWidth : $actionsWidth + $menuWidth;
 *{
   box-sizing: border-box;
 }
-.undo-list, .undo-list > li{
+.undo-list{
   list-style: none;
   padding: 0px;
   margin: 0px;
   display: block;
 }
 
+.undo-list > li{
+  display: block;
+}
 
 @mixin transition($property, $time) {
   -webkit-transition: $property $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
