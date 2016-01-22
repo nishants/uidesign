@@ -1,3 +1,11 @@
-#app.url-state > #view .url-state2{
+@mixin activate($index){
   display: block;
 }
+
+#app.url-state1 > #view .url-state1{ @include activate(0); }
+#app.url-state2 > #view .url-state2{ @include activate(0); }
+#app.url-state3 > #view .url-state3{ @include activate(0); }
+#app.url-state4 > #view .url-state4{ @include activate(0); }
+#app.url-state5 > #view .url-state5{ @include activate(0); }
+
+#app.default    > #view .default   {  display: block;  }
