@@ -14,3 +14,22 @@ $linkWidth : 80px;
     border-right: 1px solid #4d4d4d;
   }
 }
+
+.sign-in{
+  height: $topBarHeight - 15px;
+  line-height: $topBarHeight - 17px;
+  margin: 7.5px 5px 0px 0px;
+  padding: 0px 20px;
+  float: right;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid ;
+
+  @include transition(all, 500ms);
+}
+
+.sign-in:hover{
+  background-color: $topBarColor;
+  color: $topBarBG;
+  border-color: #4d4d4d;
+}
