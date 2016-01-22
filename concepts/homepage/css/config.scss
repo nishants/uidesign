@@ -3,6 +3,9 @@ $topBarBG    : black;
 $topBarColor : #C7C7C7;
 $topBarFontSize: 13px;
 
+*{
+  box-sizing: border-box;
+}
 .undo-list, .undo-list > li{
   list-style: none;
   padding: 0px;
