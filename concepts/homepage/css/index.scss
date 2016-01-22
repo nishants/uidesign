@@ -1,5 +1,8 @@
 @import "config";
 
+body{
+  min-width: $appMinWidth;
+}
 #top-bar{
   font-size: $topBarFontSize;
   height: $topBarHeight;

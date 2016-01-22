@@ -1,7 +1,16 @@
+// Top bar
 $topBarHeight: 50px;
 $topBarBG    : black;
 $topBarColor : #C7C7C7;
 $topBarFontSize: 13px;
+
+$menuBorder: 1px solid #4d4d4d;
+
+$menuWidth : 450px;
+$actionsWidth: 150px;
+
+// Body
+$appMinWidth : $actionsWidth + $menuWidth;
 
 *{
   box-sizing: border-box;
