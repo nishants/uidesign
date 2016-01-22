@@ -4,6 +4,13 @@ body{
   min-width: $appMinWidth;
 }
 
+#view{
+  height: calc(100vh - #{$topBarHeight});
+  width: 100vw;
+  overflow: hidden;
+  @import 'view/view';
+}
+
 #top-bar{
   font-size: $topBarFontSize;
   height: $topBarHeight;
