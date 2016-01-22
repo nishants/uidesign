@@ -11,16 +11,17 @@ body{
 }
 
 #top-bar{
-  position: fixed;
-  min-width: $appMinWidth;
-  top: 0px;
+  position: relative;
   z-index: 1;
+
   width: 100%;
-  font-size: $topBarFontSize;
+  min-width: $appMinWidth;
   height: $topBarHeight;
-  background-color: $topBarBG;
-  color: $topBarColor;
   line-height: $topBarHeight - 2px;
+
+  background-color: $topBarBG;
+  font-size: $topBarFontSize;
+  color: $topBarColor;
   @import 'top-bar/top-bar';
 }
 

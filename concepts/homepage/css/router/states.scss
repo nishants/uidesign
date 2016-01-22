@@ -26,4 +26,6 @@
 #app.url-state4 > #view .url-state4{ @include activate(0); }
 #app.url-state5 > #view .url-state5{ @include activate(0); }
 
-#app.default    > #view .default   {  display: block;  }
+#app.default    > #view .default   {
+  @include activate(0);
+}
