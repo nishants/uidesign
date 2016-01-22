@@ -12,6 +12,7 @@ body{
 
 #top-bar{
   position: fixed;
+  min-width: $appMinWidth;
   top: 0px;
   z-index: 1;
   width: 100%;
