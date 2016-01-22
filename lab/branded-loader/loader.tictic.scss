@@ -1,0 +1,41 @@
+$bgColor: rgba(0, 0, 0, 0.49);
+$size   : 200px;
+
+.loader{
+  .view{
+    height: $size;
+    width: $size;
+    border: 1px solid #BD1010;
+    line-height: $size - 5px;
+    text-align: center;
+
+    .t {
+      font-size: $size/2;
+    }
+    .small-cog {
+      font-size: $size/4;
+    }
+    .large-cog {
+      font-size: $size/2;
+      position: relative;
+      top:  -$size/10;
+      left: -$size/200 *15;
+    }
+  }
+  .bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    min-width:  100vw;
+    background-color: $bgColor;
+  }
+}
+
+.loader.no-bg{
+  .bg{
+    display: none;
+  }
+}
