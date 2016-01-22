@@ -80,3 +80,12 @@ $loaderTime: 60s  * $durationInMinutes;
     }
   }
 }
+
+.loader:hover > .view{
+  .small-cog {
+    @include transform(rotate($rotationsSmall));
+  }
+  .large-cog {
+    @include transform(rotate($rotationsLarge));
+  }
+}
