@@ -6,5 +6,5 @@
   background-color: $topBarBG;
   color: $topBarColor;
   line-height: $topBarHeight - 2px;
-  @import 'top-bar';
+  @import 'top-bar/top-bar';
 }
