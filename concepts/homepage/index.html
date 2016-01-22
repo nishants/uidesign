@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<div id="app" class="url-state">
+<div id="app" class="route url-state" ng-app="xsaas" ng-class="state.name">
     <header id="top-bar">
         <div class="left-menu">
             <ul class="navigation">
@@ -42,12 +42,24 @@
     <!-- Container for view, by url state-->
     <div id="view">
         <article class="url-state1"></article>
-        <article class="url-state2"></article>
+        <article class="url-state2">
+            <a href="#/one">one</a>
+            <a href="#/two">two</a>
+            <a href="#/three">three</a>
+            <a href="#/four">four</a>
+            <a href="#/five">five</a>
+            <a href="#/six">six</a>
+            <a href="#/seven">seven</a>
+            <a href="#/eight">eight</a>
+        </article>
         <article class="url-state3"></article>
         <article class="url-state4"></article>
         <article class="url-state5"></article>
     </div>
 
+    <script src="../../lib/angular-1.4.3.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/components/router.js"></script>
 </div>
 </body>
 </html>
