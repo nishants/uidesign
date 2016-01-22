@@ -5,7 +5,7 @@
   height: $topBarHeight;
   overflow: hidden;
 }
-.indicator:nth-child(n):not(:last-child):after{
+.indicator:nth-child(n):not(:first-child):before{
   content: "/";
   padding: 0px 5px;
 }
