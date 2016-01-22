@@ -8,6 +8,7 @@ body{
   height: calc(100vh - #{$topBarHeight});
   width: 100vw;
   overflow: hidden;
+  background-color: white;
 }
 
 #top-bar{
