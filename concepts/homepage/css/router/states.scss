@@ -1,7 +1,9 @@
 @import '../config';
 
 @mixin activate($index){
-  transform : translateY(0vh);
+  opacity : 1;
+  z-index: 1;
+
 }
 
 #app > #view > * {
@@ -11,8 +13,9 @@
   position: fixed;
   left: 0;
   top: 50px;
-  transform : translateY(-150vh);
-  @include transition(transform, 1s);
+  opacity : 0;
+  z-index: -1;
+  @include transition(opacity, 100ms);
 }
 
 #app > #view > *:nth-child(2n){
