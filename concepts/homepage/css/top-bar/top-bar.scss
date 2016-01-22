@@ -4,6 +4,7 @@ $linkCount : 6;
 $linkWidth : 80px;
 
 $menuWidth : 450px;
+$actionsWidth: 150px;
 
 .left-menu{
   float: left;
@@ -16,6 +17,9 @@ $menuWidth : 450px;
   width: calc(100% - #{$menuWidth});
   .business-account{
     float: left;
+    max-width: calc(100% - #{$actionsWidth});
+    height: $topBarHeight;
+    overflow: hidden;
     @extend .undo-list;
     @import "business-account";
   }
@@ -23,7 +27,7 @@ $menuWidth : 450px;
   .actions{
     @extend .undo-list;
     float: right;
-    width: 150px;
+    width: $actionsWidth;
     @import "actions";
   }
 }
