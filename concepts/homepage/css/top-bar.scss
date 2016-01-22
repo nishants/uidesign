@@ -36,11 +36,11 @@ $menuWidth : 450px;
     .indicator{
       float: left;
       height: $topBarHeight;
-      max-width: 100px;
       overflow: hidden;
     }
     .indicator:nth-child(n):not(:last-child):after{
-      content: " / ";
+      content: "/";
+      padding: 0px 5px;
     }
   }
 }
