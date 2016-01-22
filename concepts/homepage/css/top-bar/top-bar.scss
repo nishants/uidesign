@@ -10,12 +10,13 @@
   float: right;
   width: calc(100% - #{$menuWidth});
   .business-account{
+    @extend .undo-list;
+    @import "business-account";
     float: left;
     max-width: calc(100% - #{$actionsWidth});
     height: $topBarHeight;
     overflow: hidden;
-    @extend .undo-list;
-    @import "business-account";
+    padding: 0px 5px !important;
   }
 
   .actions{
