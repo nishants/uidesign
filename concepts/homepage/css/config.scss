@@ -1,0 +1,11 @@
+$topBarHeight: 50px;
+$topBarBG    : black;
+$topBarColor : #C7C7C7;
+$topBarFontSize: 13px;
+
+.undo-list, .undo-list > li{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: block;
+}

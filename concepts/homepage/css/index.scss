@@ -1,0 +1,10 @@
+@import "config";
+
+#top-bar{
+  font-size: $topBarFontSize;
+  height: $topBarHeight;
+  background-color: $topBarBG;
+  color: $topBarColor;
+  line-height: $topBarHeight - 2px;
+  @import 'top-bar';
+}
