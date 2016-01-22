@@ -1,0 +1,10 @@
+@import "../config";
+
+.user, .notification, .refresh{
+  float: left;
+  width: 50px;
+  text-align: center;
+  height: $topBarHeight;
+  line-height: $topBarHeight - 2px;
+  font-size: 16px;
+}

@@ -1,15 +1,11 @@
 @import "../config";
 
-.business-account{
+.indicator{
   float: left;
-  @extend .undo-list;
-  .indicator{
-    float: left;
-    height: $topBarHeight;
-    overflow: hidden;
-  }
-  .indicator:nth-child(n):not(:last-child):after{
-    content: "/";
-    padding: 0px 5px;
-  }
+  height: $topBarHeight;
+  overflow: hidden;
+}
+.indicator:nth-child(n):not(:last-child):after{
+  content: "/";
+  padding: 0px 5px;
 }

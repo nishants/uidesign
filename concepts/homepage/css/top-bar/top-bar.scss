@@ -14,18 +14,16 @@ $menuWidth : 450px;
 .right-menu{
   float: right;
   width: calc(100% - #{$menuWidth});
-  @import "business-account";
+  .business-account{
+    float: left;
+    @extend .undo-list;
+    @import "business-account";
+  }
+
   .actions{
     @extend .undo-list;
     float: right;
     width: 150px;
-    .user, .notification, .refresh{
-      float: left;
-      width: 50px;
-      text-align: center;
-      height: $topBarHeight;
-      line-height: $topBarHeight - 2px;
-      font-size: 20px;
-    }
+    @import "actions";
   }
 }
