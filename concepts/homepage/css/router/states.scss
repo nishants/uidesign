@@ -23,6 +23,7 @@
 #app.home       > #view { @include activate($homeIndex); }
 #app.campaigns  > #view { @include activate($campaignsIndex); }
 #app.audiences  > #view { @include activate($audiencesIndex); }
+#app.assets     > #view { @include activate($assetsIndex); }
 #app.reports    > #view { @include activate($reportsIndex); }
 #app.settings   > #view { @include activate($settingsIndex); }
 

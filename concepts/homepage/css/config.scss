@@ -34,14 +34,15 @@ $appMinWidth : $actionsWidth + $menuWidth;
 }
 
 //sections
-$articlesCount : 5;
+$articlesCount : 6;
 $articlesWidth : 100vw;
 $articleHeight : calc(100vh - #{$topBarHeight});
 
 $homeIndex         : 0;
 $campaignsIndex    : 1;
 $audiencesIndex    : 2;
-$reportsIndex      : 3;
-$settingsIndex     : 4;
+$assetsIndex       : 3;
+$reportsIndex      : 4;
+$settingsIndex     : 5;
 
 $defaultIndex      : 1;
