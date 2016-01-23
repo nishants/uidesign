@@ -7,12 +7,31 @@
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <style></style>
+    <style>
+        #loader{
+            position: fixed;
+            top:0px;
+            left:0px;
+            z-index: 9999;
+
+            height: 100%;
+            width: 100%;
+            min-height: 100vh;
+            min-width: 100vw;
+
+            background-color: black;
+            color: white;
+            text-align : center;
+        }
+        #app.ready > #loader{
+            display: none;
+        }
+    </style>
 
 </head>
 
 <body>
-<div id="app" class="route" ng-app="xsaas" ng-class="state.name">
+<div id="app" class="route {{state.name}}" ng-app="xsaas" ng-class="{'ready' : ui.ready}" ng-controller="UIController">
     <header id="top-bar">
         <div class="left-menu">
             <ul class="navigation">
@@ -50,10 +69,12 @@
         <article class="reports">   <h1>reports</h1>   </article>
         <article class="settings">  <h1>settings</h1>  </article>
     </div>
-
-    <script src="../../lib/angular-1.4.3.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/components/router.js"></script>
+    <div id="loader"><h1>Loading...</h1></div>
 </div>
+
+<script src="../../lib/angular-1.4.3.js"></script>
+<script src="app/app.js"></script>
+<script src="app/components/router.js"></script>
+<script src="app/ui-controller.js"></script>
 </body>
 </html>

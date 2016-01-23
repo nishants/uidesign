@@ -10,4 +10,3 @@ Adding a new article :
 2. create a new article index in config.scss
 3. add article container  inside index.html#view
 4. add #app.stateName in states.scss.
-
