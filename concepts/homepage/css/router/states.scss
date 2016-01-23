@@ -20,11 +20,11 @@
   background-color: #ff7b85;
 }
 
-#app.url-state1 > #view { @include activate($homeIndex); }
-#app.url-state2 > #view { @include activate($campaignsIndex); }
-#app.url-state3 > #view { @include activate($audiencesIndex); }
-#app.url-state4 > #view { @include activate($reportsIndex); }
-#app.url-state5 > #view { @include activate($settingsIndex); }
+#app.home       > #view { @include activate($homeIndex); }
+#app.campaigns  > #view { @include activate($campaignsIndex); }
+#app.audiences  > #view { @include activate($audiencesIndex); }
+#app.reports    > #view { @include activate($reportsIndex); }
+#app.settings   > #view { @include activate($settingsIndex); }
 
 #app.default    > #view {
   @include activate($defaultIndex);
