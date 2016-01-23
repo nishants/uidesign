@@ -9,6 +9,9 @@
 .right-menu{
   float: right;
   width: calc(100% - #{$menuWidth});
+  > a{
+    @extend .undo-link;
+  }
   .business-account{
     @extend .undo-list;
     @import "business-account";
