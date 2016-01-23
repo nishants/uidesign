@@ -4,10 +4,15 @@ body{
   min-width: $appMinWidth;
 }
 
-#view{
-  height: calc(100vh - #{$topBarHeight});
+#app{
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
+}
+
+#view{
+  height: $articleHeight;
+  width: calc(#{$articlesCount} * #{$articlesWidth});
   background-color: white;
 }
 

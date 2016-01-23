@@ -1,34 +1,31 @@
 @import '../config';
 
 @mixin activate($index){
-  opacity : 1;
-  z-index: 1;
-
+  transform: translateX(calc( #{ - $articlesWidth} * #{$index}))
 }
 
-#app > #view > * {
-  height: 100%;
-  width: 100%;
+#app > #view {
+  @include transition(transform, 500ms);
+}
+
+#app > #view > *{
+  float: left;
+  height: $articleHeight;
+  width: $articlesWidth;
   background-color: green;
-  position: fixed;
-  left: 0;
-  top: 50px;
-  opacity : 0;
-  z-index: -1;
-  @include transition(opacity, 100ms);
 }
+
 
 #app > #view > *:nth-child(2n){
   background-color: #ff7b85;
 }
 
-#app.url-state1 > #view .url-state1{ @include activate(0); }
-#app.url-state1 > #view .url-state1{ @include activate(0); }
-#app.url-state2 > #view .url-state2{ @include activate(0); }
-#app.url-state3 > #view .url-state3{ @include activate(0); }
-#app.url-state4 > #view .url-state4{ @include activate(0); }
-#app.url-state5 > #view .url-state5{ @include activate(0); }
+#app.url-state1 > #view { @include activate($homeIndex); }
+#app.url-state2 > #view { @include activate($campaignsIndex); }
+#app.url-state3 > #view { @include activate($audiencesIndex); }
+#app.url-state4 > #view { @include activate($reportsIndex); }
+#app.url-state5 > #view { @include activate($settingsIndex); }
 
-#app.default    > #view .default   {
-  @include activate(0);
+#app.default    > #view {
+  @include activate($defaultIndex);
 }
