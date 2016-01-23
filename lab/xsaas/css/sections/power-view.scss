@@ -46,6 +46,11 @@ $adsOffsetFull       : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $
   #adsets{
     transform: translateY($adsetsOffsetFull);
   }
+  #campaigns{
+    > header{
+      cursor: ns-resize;
+    }
+  }
 }
 
 #power-access:not(.show-adsets){
@@ -68,6 +73,11 @@ $adsOffsetFull       : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $
   @extend .show-adsets;
   #ads{
     transform: translateY($adsOffsetFull);
+  }
+  #adsets{
+    > header{
+      cursor: ns-resize;
+    }
   }
 }
 

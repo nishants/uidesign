@@ -44,6 +44,8 @@ ul.undo-list, ul.undo-list > li {
 
 .show-adsets #adsets, .show-ads #adsets {
   transform: translateY(calc(-100vh +  120px)); }
+.show-adsets #campaigns > header, .show-ads #campaigns > header {
+  cursor: ns-resize; }
 
 #power-access:not(.show-adsets):not(.show-ads) #adsets > header {
   cursor: n-resize; }
@@ -53,6 +55,8 @@ ul.undo-list, ul.undo-list > li {
 
 .show-ads #ads {
   transform: translateY(calc(-100vh +  120px)); }
+.show-ads #adsets > header {
+  cursor: ns-resize; }
 
 /*Split pane config*/
 #power-access.split #campaigns .content {
