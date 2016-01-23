@@ -45,6 +45,12 @@ ul.undo-list, ul.undo-list > li {
 .show-adsets #adsets, .show-ads #adsets {
   transform: translateY(calc(-100vh +  120px)); }
 
+#power-access:not(.show-adsets):not(.show-ads) #adsets > header {
+  cursor: n-resize; }
+
+#power-access:not(.show-ads) #ads > header {
+  cursor: n-resize; }
+
 .show-ads #ads {
   transform: translateY(calc(-100vh +  120px)); }
 

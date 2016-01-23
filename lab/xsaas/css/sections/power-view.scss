@@ -48,6 +48,22 @@ $adsOffsetFull       : calc(#{"-100vh +  #{$sectionHeaderHeight * $barsCount - $
   }
 }
 
+#power-access:not(.show-adsets){
+  #adsets{
+    > header{
+      cursor: n-resize;
+    }
+  }
+}
+
+#power-access:not(.show-ads){
+  #ads{
+    > header{
+      cursor: n-resize;
+    }
+  }
+}
+
 .show-ads{
   @extend .show-adsets;
   #ads{
