@@ -32,3 +32,16 @@ $appMinWidth : $actionsWidth + $menuWidth;
   -o-transition: $property $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
   transition: $property $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
 }
+
+//sections
+$articlesCount : 5;
+$articlesWidth : 100vw;
+$articleHeight : calc(100vh - #{$topBarHeight});
+
+$homeIndex         : 0;
+$campaignsIndex    : 1;
+$audiencesIndex    : 2;
+$reportsIndex      : 3;
+$settingsIndex     : 4;
+
+$defaultIndex      : 1;
