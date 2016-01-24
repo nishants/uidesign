@@ -8,7 +8,7 @@
 
 #view{
   height: $articleHeight;
-  width: calc(#{$articlesCount} * #{$articlesWidth});
+  width: 100%;
   background-color: white;
 }
 

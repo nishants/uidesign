@@ -2,6 +2,10 @@
   "use strict"
   var router =  {routes: [
     {
+      name: "home",
+      url : "home/"
+    },
+    {
       name: "campaigns",
       url : "campaigns/"
     },
