@@ -21,7 +21,7 @@
   height: $topBarHeight;
   line-height: $topBarHeight - 2px;
 
-  background-color: $topBarBG;
+  background: linear-gradient(to bottom, #252525, #020202);
   font-size: $topBarFontSize;
   color: $topBarColor;
   @import 'top-bar/top-bar';
