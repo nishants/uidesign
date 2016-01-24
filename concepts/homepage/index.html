@@ -61,18 +61,16 @@
 
     <!-- Container for view, by url state-->
     <div id="view">
-        <article class="home">      <h1>home</h1>      </article>
-        <article class="campaigns"> <h1>campaigns</h1> </article>
-        <article class="audiences"> <h1>audiences</h1> </article>
-        <article class="assets">    <h1>assets</h1>    </article>
-        <article class="reports">   <h1>reports</h1>   </article>
-        <article class="settings">  <h1>settings</h1>  </article>
+        <article class="{{route.name}}" ng-repeat="route in ui.routes">
+            <h1>{{route.name}}</h1>
+        </article>
     </div>
     <div id="loader"><h1>Loading...</h1></div>
 </div>
 
 <script src="../../lib/angular-1.4.3.js"></script>
 <script src="app/app.js"></script>
+<script src="app/routes.js"></script>
 <script src="app/components/router.js"></script>
 <script src="app/ui-controller.js"></script>
 </body>
