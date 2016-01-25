@@ -28,9 +28,11 @@ $notificationBgColor: rgba(100, 164, 100, 1);
 
     border-radius: 50%;
     background-color: $notificationBgColor;
+
+    @include transition(opacity, 500ms);
   }
 }
 
 .user:not(.notification){
-  .icon:last-child{display: none;}
+  .icon:last-child{opacity: 0;}
 }
