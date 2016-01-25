@@ -1,12 +1,38 @@
 @import "../config";
 
+$linkPadding : 10px;
+$optionsMargin : 15px; // serves as pad for closing on mouse out.
+
 .navigation{
   @extend .undo-list;
   li{
     height: $topBarHeight;
     float: left;
-    padding: 0px 10px;
+    padding: 0px $linkPadding;
     text-align: center;
     border-right: $menuBorder;
+    overflow: hidden;
+  }
+
+  li.more{
+    width: 50px;
+    overflow: visible;
+    > i{
+      height: $topBarHeight;
+      display: block;
+      line-height: $topBarHeight - 2px;
+      width: 100%;
+    }
+    .options{
+      float: right;
+      top: -10px;
+      position: relative;
+      margin: $optionsMargin ;
+      left: $linkPadding + $linkPadding;
+
+      height: 350px;
+      width: 350px;
+      background-color: #EEE;
+    }
   }
 }

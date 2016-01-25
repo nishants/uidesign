@@ -40,7 +40,14 @@
                 <li><a href="#/audiences">audiences</a></li>
                 <li><a href="#/assets">assets</a></li>
                 <li><a href="#/reports">reports</a></li>
-                <li><i class="fa fa-chevron-down"></i></li>
+                <li class="more" ng-click="__showMore = !__showMore;">
+                    <i class="fa fa-chevron-down"></i>
+                    <div class="options"
+                         ng-show="__showMore"
+                         ng-mouseleave="__showMore = false;">
+
+                    </div>
+                </li>
             </ul>
         </div>
 
