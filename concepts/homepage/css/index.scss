@@ -33,9 +33,11 @@
 @import "router/states";
 
 #user-settings{
-  top: $topBarHeight + 5px;
+  top: $topBarHeight - 5px;
   position: fixed;
-  right: 50px;
+  right: 0px;
+
+  margin: 15px 50px; /* margin acts as padding of hover and leaving space for update icon*/
 
   min-height: $topBarHeight;
   width: 300px;
