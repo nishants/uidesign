@@ -4,6 +4,7 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  font-size: $defaultFontSize;
 }
 
 #view{
@@ -40,12 +41,26 @@
   margin: 15px 50px; /* margin acts as padding of hover and leaving space for update icon*/
 
   min-height: $topBarHeight;
-  width: 300px;
+  width: $settingsMenuWidth;
 
   background-color: #EEE;
-  @include transition(transform, 100ms) ;
+  border-radius: 2px;
+  text-align: center;
+  overflow: hidden;
+
+  @include transition(transform, 300ms) ;
+  @import 'app-menu';
 }
 
 #app:not(.settings) > #user-settings{
   @include transform(translateX(500px));
 }
+
+#app.settings.user > #user-settings .contents{
+  @include transform(translateX(-$settingsMenuWidth));
+}
+
+#app.settings.notifications > #user-settings .contents{
+  @include transform(translateX(-2*$settingsMenuWidth));
+}
+

@@ -12,6 +12,14 @@ $actionsWidth: 150px;
 // Body
 $appMinWidth : $actionsWidth + $menuWidth;
 
+//Defaults
+$defaultLineHeight : 30px;
+$defaultFontSize   : 13px;
+
+//settings panel
+$settingsMenuWidth : 330px;
+$settingsMenuHeight : 330px;
+
 *{
   box-sizing: border-box;
 }
