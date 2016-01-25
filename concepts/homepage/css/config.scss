@@ -38,6 +38,14 @@ $appMinWidth : $actionsWidth + $menuWidth;
   transition: $property $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
 }
 
+@mixin transform( $property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
 //sections
 $articlesCount : 6;
 $articlesWidth : 100vw;

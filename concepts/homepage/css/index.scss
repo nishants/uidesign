@@ -31,3 +31,19 @@
 }
 
 @import "router/states";
+
+#user-settings{
+  top: $topBarHeight + 5px;
+  position: fixed;
+  right: 50px;
+
+  min-height: $topBarHeight;
+  width: 300px;
+
+  background-color: #EEE;
+  @include transition(transform, 100ms) ;
+}
+
+#app:not(.settings) > #user-settings{
+  @include transform(translateX(500px));
+}
