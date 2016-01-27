@@ -3,11 +3,8 @@
   app.directive("route", function ($location) {
 
     var updateRoute = function(scope, route){
-      var routeName = route.length ? route.split("/")[1] : "default";
       scope.$apply(function(){
-        scope.state = {
-          name: routeName
-        };
+        scope.ui.load(route);
       });
     };
 
@@ -15,7 +12,7 @@
       restrict: "C",
       scope: false,
       transclude: false,
-      link: function(scope, element){
+      link: function(scope){
 
         var lastUrl = "#/";
         updateRoute(scope,"");
