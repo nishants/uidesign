@@ -7,7 +7,24 @@
     },
     {
       name: "campaigns",
-      url : "campaigns/"
+      url : "campaigns/",
+      sections : [
+        {
+          url : "",
+          controller: "CampaignsController",
+          template  : "app/campaigns/power-access.html"
+        },
+        {
+          url : ":id/publish",
+          controller: "PublishCampaignController",
+          template  : "app/campaigns/publish.html"
+        },
+        {
+          url : ":id/view",
+          controller: "ViewCampaignController",
+          template  : "app/campaigns/view.html"
+        }
+      ]
     },
     {
       name: "audiences",

@@ -5,13 +5,17 @@
       ready : false,
       views: router.routes,
       view : null,
+      __views: {},
       load: function(url){
         var routeName = url.length ? url.split("/")[1] : "default";
-        this.view = {
-          name: routeName
-        };
+        this.view = ui.__views[routeName];
       }
     };
+
+    for(var i = 0; i < router.routes.length; i++){
+      var view = router.routes[i];
+      ui.__views[view.name] = view;
+    }
 
     $timeout(function(){
       ui.ready = true;
