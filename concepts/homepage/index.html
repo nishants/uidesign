@@ -31,7 +31,7 @@
 </head>
 
 <body>
-<div id="app" class="route {{ui.state.name}}" ng-app="xsaas" ng-class="{'ready' : ui.ready}" ng-controller="UIController">
+<div id="app" class="route {{ui.view.name}}" ng-app="xsaas" ng-class="{'ready' : ui.ready}" ng-controller="UIController">
     <header id="top-bar">
         <div class="left-menu">
             <ul class="navigation">
@@ -72,7 +72,7 @@
     <!-- Container for view, by url state-->
     <div id="view" layout>
         <article view class="{{route.name}}"
-                 ng-repeat="route in ui.routes">
+                 ng-repeat="route in ui.views">
             <h1>{{route.name}}</h1>
         </article>
     </div>

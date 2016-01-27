@@ -3,11 +3,11 @@
   app.controller("UIController", function($scope, $timeout, router){
     var ui = {
       ready : false,
-      routes: router.routes,
-      state : null,
+      views: router.routes,
+      view : null,
       load: function(url){
         var routeName = url.length ? url.split("/")[1] : "default";
-        this.state = {
+        this.view = {
           name: routeName
         };
       }

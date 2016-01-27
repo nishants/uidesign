@@ -21,7 +21,7 @@
         $(window).on("resize", resize);
 
         scope.render = function(index){
-          if (index == scope.ui.routes.length - 1){
+          if (index == scope.ui.views.length - 1){
             resize();
           }
         }
