@@ -4,7 +4,6 @@
 
     var updateRoute = function(scope, route){
       var routeName = route.length ? route.split("/")[1] : "default";
-      console.log("loading state : " + routeName);
       scope.$apply(function(){
         scope.state = {
           name: routeName
