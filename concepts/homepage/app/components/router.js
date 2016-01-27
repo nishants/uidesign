@@ -4,9 +4,12 @@
 
     var updateRoute = function(scope, route){
       var routeName = route.length ? route.split("/")[1] : "default";
-      scope.state = {
-        name: routeName
-      };
+      console.log("loading state : " + routeName);
+      scope.$apply(function(){
+        scope.state = {
+          name: routeName
+        };
+      });
     };
 
     return {
@@ -17,7 +20,7 @@
 
         var lastUrl = "#/";
         updateRoute(scope,"");
-        scope.$watch(function(){
+        $(window).bind("hashchange", function(){
           lastUrl != $location.url() ? updateRoute(scope, lastUrl = $location.url()) : "";
         });
       }
