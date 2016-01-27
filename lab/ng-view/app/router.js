@@ -11,6 +11,7 @@
       load: function(url){
         var tokens = url.split("/");
         this.view =  routes.forName(tokens[1]);
+        this.state=  this.view.stateByName(tokens[3]);
       }
     };
   });
