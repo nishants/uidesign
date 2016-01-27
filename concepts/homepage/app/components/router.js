@@ -30,6 +30,7 @@
         $(window).bind("hashchange", function(){
           lastUrl != $location.url() ? updateRoute(scope, lastUrl = $location.url()) : "";
         });
+        $(window).trigger("hashchange");
       }
     };
   });
