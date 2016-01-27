@@ -2,8 +2,19 @@
   "use strict"
   app.directive("route", function ($location) {
 
+    var safeApply = function(scope, fn) {
+      var phase = scope.$root.$$phase;
+      if(phase == '$apply' || phase == '$digest') {
+        if(fn && (typeof(fn) === 'function')) {
+          fn();
+        }
+      } else {
+        scope.$apply(fn);
+      }
+    };
+
     var updateRoute = function(scope, route){
-      scope.$apply(function(){
+      safeApply(scope, function(){
         scope.ui.load(route);
       });
     };
