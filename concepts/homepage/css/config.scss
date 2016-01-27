@@ -53,7 +53,12 @@ $settingsMenuHeight : 330px;
   -o-transform: $property;
   transform: $property;
 }
+// Font
 
+@font-face {
+  font-family: defaultFontFamily;
+  src: url(../../../lib/fonts/Raleway-Regular.ttf) format("opentype");
+}
 //sections
 $articlesCount : 6;
 $articlesWidth : 100vw;
