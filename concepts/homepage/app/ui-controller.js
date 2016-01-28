@@ -1,21 +1,11 @@
 (function(){
   "use strict"
-  app.controller("UIController", function($scope, $timeout, router){
+  app.controller("UIController", function($scope, $timeout, routesConfig, router){
     var ui = {
       ready : false,
-      views: router.routes,
-      view : null,
-      __views: {},
-      load: function(url){
-        var routeName = url.length ? url.split("/")[1] : "default";
-        this.view = ui.__views[routeName];
-      }
+      views: routesConfig.routes,
+      router: router
     };
-
-    for(var i = 0; i < router.routes.length; i++){
-      var view = router.routes[i];
-      ui.__views[view.name] = view;
-    }
 
     $timeout(function(){
       ui.ready = true;

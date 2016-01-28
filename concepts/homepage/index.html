@@ -31,7 +31,7 @@
 </head>
 
 <body>
-<div id="app" class="route {{ui.view.name}}" ng-app="xsaas" ng-class="{'ready' : ui.ready}" ng-controller="UIController">
+<div id="app" class="route {{ui.router.view.name}}" ng-app="xsaas" ng-class="{'ready' : ui.ready}" ng-controller="UIController">
     <header id="top-bar">
         <div class="left-menu">
             <ul class="navigation">
@@ -94,8 +94,10 @@
 <script src="../../lib/jquery-2.1.4.min.js"></script>
 <script src="../../lib/angular-1.4.3.js"></script>
 <script src="app/app.js"></script>
-<script src="app/routes.js"></script>
-<script src="app/components/router.js"></script>
+<script src="app/route-config.js"></script>
+<script src="app/router/routes.js"></script>
+<script src="app/router/router.js"></script>
+
 <script src="app/components/route-layout.js"></script>
 <script src="app/components/route-view.js"></script>
 <script src="app/ui-controller.js"></script>
