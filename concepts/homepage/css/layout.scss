@@ -1,0 +1,22 @@
+@import 'config';
+
+.views{
+  overflow: hidden;
+}
+.view{
+  width: $articlesWidth;
+  float: left;
+  overflow: hidden;
+}
+.state{
+  width: $articlesWidth;
+  height: $articleHeight;
+  overflow: auto;
+
+  background-color: white;
+  border: 1px solid black;
+}
+
+.views, .states{
+  @include transition(transform, 500ms);
+}

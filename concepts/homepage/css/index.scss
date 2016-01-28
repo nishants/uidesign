@@ -26,7 +26,11 @@
   @import 'top-bar/top-bar';
 }
 
-@import "router/states";
+[layout] {
+  width: $articlesWidth;
+  height: $articleHeight;
+  @import "layout";
+}
 
 #user-settings{
   top: $topBarHeight - 5px;
