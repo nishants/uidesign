@@ -69,13 +69,18 @@
         </div>
     </header>
 
-    <!-- Container for view, by url state-->
-    <div id="view" layout>
-        <article view class="{{route.name}}"
-                 ng-repeat="route in ui.views">
-            <h1>{{route.name}}</h1>
-        </article>
+    <div layout>
+        <ul class="views undo-list">
+            <li class="view view{{$index}}" ng-repeat="view in ui.views">
+                <ul class="states {{view.name}} undo-list">
+                    <li class="state state{{$index}}" ng-repeat="state in view.states">
+                        {{view.name}} - {{state.name}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
+
     <div id="user-settings">
         <ul class="settings-header undo-list">
             <li>Account</li>
