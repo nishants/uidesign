@@ -1,6 +1,6 @@
 (function(){
   "use strict"
-  app.service("router",function(routes){
+  app.service("router",function(Contexts){
 
     var defaultView   = null,
         defaultState  = null;
@@ -24,7 +24,7 @@
       param: {id: null},
       load: function (url) {
         var tokens = url.split("/");
-        this.view  = routes.forName(tokens[1]);
+        this.view  = Contexts.forName(tokens[1]);
         this.state = this.view.stateByName(tokens[3]);
       },
       render : function(){
