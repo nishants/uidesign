@@ -19,8 +19,6 @@ $notificationBgColor: rgba(100, 164, 100, 1);
 
     height: $topBarHeight;
     width: $topBarHeight;
-    transform: scale(0.4);
-
     color: $notificationColor;
 
     text-shadow: 0px 0px 15px rgba(100, 164, 100, 0.1);
@@ -29,6 +27,7 @@ $notificationBgColor: rgba(100, 164, 100, 1);
     border-radius: 50%;
     background-color: $notificationBgColor;
 
+    @include transform(scale(0.4));
     @include transition(opacity, 500ms);
   }
 }
