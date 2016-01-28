@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  app.directive("layout", function (routesConfig) {
+  app.directive("layout", function (routesConfig, router) {
 
 
     var views = routesConfig.routes;
@@ -12,6 +12,7 @@
 
       layout.height( viewHeight);
       layout.width(routesConfig.routes.length * viewWidth);
+      router.render();
     }
 
     return {

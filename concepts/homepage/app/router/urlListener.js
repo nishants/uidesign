@@ -15,6 +15,7 @@
     $(window).on("hashchange", function(){
       update(function(){
         router.load($location.url());
+        router.render();
       });
     });
 
