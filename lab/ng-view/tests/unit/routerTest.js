@@ -16,5 +16,6 @@ describe('Router Tests', function() {
     router.load("/campaigns/a15ths/view");
     expect(router.view.name).toEqual("campaigns");
     expect(router.state.name).toEqual("view");
+    expect(router.param.id).toEqual("a15ths");
   });
 });
