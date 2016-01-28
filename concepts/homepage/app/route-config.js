@@ -1,26 +1,27 @@
 (function(){
   "use strict"
-  var router =  {routes: [
+  var config =  {routes: [
     {
       name: "home",
-      url : "home/"
+      url : "home/",
+      states: []
     },
     {
       name: "campaigns",
       url : "campaigns/",
-      sections : [
+      states : [
         {
-          url : "",
+          name : "",
           controller: "CampaignsController",
           template  : "app/campaigns/power-access.html"
         },
         {
-          url : ":id/publish",
+          name : "publish",
           controller: "PublishCampaignController",
           template  : "app/campaigns/publish.html"
         },
         {
-          url : ":id/view",
+          name : "view",
           controller: "ViewCampaignController",
           template  : "app/campaigns/view.html"
         }
@@ -28,20 +29,24 @@
     },
     {
       name: "audiences",
-      url : "audiences/"
+      url : "audiences/",
+      states: []
     },
     {
       name: "assets",
-      url : "assets/"
+      url : "assets/",
+      states: []
     },
     {
       name: "reports",
-      url : "reports/"
+      url : "reports/",
+      states: []
     },
     {
       name: "settings",
-      url : "settings/"
+      url : "settings/",
+      states: []
     }
   ]};
-  app.value("router", router);
+  app.value("routesConfig", config);
 }).call(this);
