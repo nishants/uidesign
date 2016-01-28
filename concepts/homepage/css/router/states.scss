@@ -1,6 +1,9 @@
 @import '../config';
 
 [layout]{
+  width: $articlesWidth;
+  height: $articleHeight;
+
   .views{
     overflow: hidden;
   }

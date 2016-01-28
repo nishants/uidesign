@@ -22,11 +22,8 @@
       link: function(scope){
         $(window).on("resize", resize);
         scope.render = function(index){
-          if (index == scope.ui.views.length - 1){
-            resize();
-          }
+          resize();
         };
-
       }
     };
   });

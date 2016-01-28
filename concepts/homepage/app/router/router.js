@@ -6,8 +6,6 @@
         defaultState  = null;
 
     var setView = function(viewIndex, stateIndex){
-
-
       var views       = $(".views").first(),
           states      = $(".view" + viewIndex+" > .states").first(),
 

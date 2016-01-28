@@ -1,6 +1,6 @@
 (function () {
   "use strict"
-  app.directive("view", function () {
+  app.directive("state", function () {
 
     return {
       restrict: "C",
