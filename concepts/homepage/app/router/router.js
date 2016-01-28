@@ -14,25 +14,17 @@
             $rootScope.$apply(fn);
           }
         };
-    var router = {
+    return {
       view: defaultView,
       state: defaultState,
       param: {id: null},
       load: function (url) {
         var tokens = url.split("/");
-        this.view = routes.forName(tokens[1]);
+        this.view  = routes.forName(tokens[1]);
+        console.log("view :" + url)
         this.state = this.view.stateByName(tokens[3]);
         this.param.id = tokens[2];
       }
     };
-
-    $(window).on("hashchange", function(url){
-      router.load($location.url());
-      update();
-    });
-
-    $(window).trigger("hashchange");
-
-    return router;
   });
 }).call(this);
