@@ -1,31 +1,24 @@
 @import '../config';
 
-@mixin activate($index){
-  transform: translateX(calc( #{ - $articlesWidth} * #{$index}))
-}
+[layout]{
+  .views{
+    overflow: hidden;
+  }
+  .view{
+    width: $articlesWidth;
+    float: left;
+    overflow: hidden;
+  }
+  .state{
+    width: $articlesWidth;
+    height: $articleHeight;
+    overflow: auto;
 
-#app > #view {
-  @include transition(transform, 500ms);
-}
+    background-color: white;
+    border: 1px solid black;
+  }
 
-#app > #view > *{
-  float: left;
-  height: $articleHeight;
-  background-color: green;
-}
-
-
-#app > #view > *:nth-child(2n){
-  background-color: #ff7b85;
-}
-
-#app.home       > #view { @include activate($homeIndex); }
-#app.campaigns  > #view { @include activate($campaignsIndex); }
-#app.audiences  > #view { @include activate($audiencesIndex); }
-#app.assets     > #view { @include activate($assetsIndex); }
-#app.reports    > #view { @include activate($reportsIndex); }
-#app.settings   > #view { @include activate($settingsIndex); }
-
-#app.default    > #view {
-  @include activate($defaultIndex);
+  .views, .states{
+    @include transition(transform, 500ms);
+  }
 }

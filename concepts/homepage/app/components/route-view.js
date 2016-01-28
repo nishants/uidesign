@@ -3,8 +3,8 @@
   app.directive("view", function () {
 
     return {
-      restrict: "A",
-      scope: true,
+      restrict: "C",
+      scope: false,
       transclude: false,
       link: function(scope){
         scope.render(scope.$index);
