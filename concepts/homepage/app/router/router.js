@@ -28,7 +28,7 @@
         var tokens = url.split("/");
         this.view  = routes.forName(tokens[1]);
         this.state = this.view.stateByName(tokens[3]);
-        setView(this.view.index, this.state.index);
+        setView(this.view.index, this.state ? this.state.index : 0);
       }
     };
   });
