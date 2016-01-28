@@ -34,22 +34,22 @@
     {
       name: "audiences",
       url : "audiences/",
-      states: []
+      states: [{name : "",}]
     },
     {
       name: "assets",
       url : "assets/",
-      states: []
+      states: [{name : "",}]
     },
     {
       name: "reports",
       url : "reports/",
-      states: []
+      states: [{name : "",}]
     },
     {
       name: "settings",
       url : "settings/",
-      states: []
+      states: [{name : "",}]
     }
   ]};
   app.value("routesConfig", config);
