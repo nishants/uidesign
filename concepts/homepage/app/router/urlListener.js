@@ -1,11 +1,28 @@
 (function(){
   "use strict"
-  app.service("urlListener",function(routes, $location, router){
-    $(window).on("hashchange", function(url){
-      router.load($location.url());
-      update();
+  app.directive("ngApp",function($rootScope, $location, router){
+    var update        = function(fn) {
+      var phase = $rootScope.$$phase;
+      if(phase == '$apply' || phase == '$digest') {
+        if(fn && (typeof(fn) === 'function')) {
+          fn();
+        }
+      } else {
+        $rootScope.$apply(fn);
+      }
+    };
+
+    $(window).on("hashchange", function(){
+      update(function(){
+        router.load($location.url());
+      });
     });
 
     $(window).trigger("hashchange");
+    return {
+      restrict: "A",
+      scope: false,
+      transclude: false,
+    };
   });
 }).call(this);
