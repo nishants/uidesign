@@ -6,6 +6,11 @@ describe("serialize fields", function(){
       onDateHash        = "created=" + onDate.getTime(),
       serializer        = new ox.define(definition);
 
+  it("should serialize empty params", function(){
+    var encoded    = serializer.encode({});
+    expect(encoded).toEqual("");
+  });
+
   it("should serialize string fields, if field type not set", function(){
     var encoded    = serializer.encode({name: nameValue});
     expect(encoded).toEqual(nameValueHash);
