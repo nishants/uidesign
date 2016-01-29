@@ -25,4 +25,13 @@ describe("serialize fields", function(){
 
     expect(encoded).toEqual(expected);
   });
+
+  it("should ignore undefined fields and methods present on params", function(){
+    var nameValue = "I am X.",
+        onDate     = new Date(),
+        expected   = "name=" + encodeURIComponent(nameValue)+ "&" + "created=" + onDate.getTime(),
+        encoded    = new ox.define(definition).encode({name: nameValue, created: onDate, extraField1: "some field name", extraField2: new Date(), someMethod: function(){}});
+
+    expect(encoded).toEqual(expected);
+  });
 })
