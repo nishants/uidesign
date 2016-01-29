@@ -1,11 +1,22 @@
 (function(){
   "use strict"
-  var Field = function(definition){
-    this.definition = definition;
-  };
+  var encodeString = function(value){return encodeURIComponent(value);},
+      encodeDate   = function(value){return value.getTime();},
+      fieldType = {
+        undefined : {encode : encodeString},
+        String    : {encode : encodeString},
+        string    : {encode : encodeString},
+        date      : {encode : encodeDate},
+        Date      : {encode : encodeDate}
+      },
+      Field = function(definition){
+        this.name = definition.name
+        this.type = fieldType[definition.type];
+      };
 
   Field.prototype.encode = function(params){
-    return this.definition.name+"=" + encodeURIComponent(params[this.definition.name]);
+    var fieldName = this.name;
+    return fieldName+"=" + this.type.encode(params[fieldName]);
   };
 
   var Template = function(definition){
@@ -23,9 +34,10 @@
   State.prototype.encode = function(params){
     var hash = "";
     for(var i = 0; i < this.template.fields.length; i++){
-      hash += this.template.fields[i].encode(params);
+      var field = this.template.fields[i];
+      hash += params[field.name] ? (field.encode(params) + "&") : "";
     }
-    return hash;
+    return hash.slice(0, hash.length - 1);
   };
 
   window.ox = {
