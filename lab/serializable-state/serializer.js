@@ -14,9 +14,8 @@
         this.type = fieldType[definition.type];
       };
 
-  Field.prototype.encode = function(params){
-    var fieldName = this.name;
-    return fieldName+"=" + this.type.encode(params[fieldName]);
+  Field.prototype.encode = function(value){
+    return this.name+"=" + this.type.encode(value);
   };
 
   var Template = function(definition){
@@ -34,8 +33,9 @@
   State.prototype.encode = function(params){
     var hash = "";
     for(var i = 0; i < this.template.fields.length; i++){
-      var field = this.template.fields[i];
-      hash += params[field.name] ? (field.encode(params) + "&") : "";
+      var field      = this.template.fields[i],
+          fieldValue = params[field.name];
+      hash += fieldValue ? (field.encode(fieldValue) + "&") : "";
     }
     return hash.slice(0, hash.length - 1);
   };
