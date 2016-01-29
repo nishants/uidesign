@@ -1,5 +1,5 @@
 describe("serialize fields", function(){
-  var definition = {fields: [{name: "name"}, {name: "created", type: "date"}]};
+  var definition = {fields: [{name: "name"}, {name: "created", type: "date"}, {name: "alwaysMissing", type: "date"}]};
 
 
   it("should serialize string fields, if field type not set", function(){
