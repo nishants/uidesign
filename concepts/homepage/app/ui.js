@@ -1,10 +1,10 @@
 (function(){
   "use strict"
-  app.service("ui",function(routesConfig, router, $timeout){
+  app.service("ui",function(config, router, $timeout){
 
     var ui =  {
       ready : false,
-      layout: {views: routesConfig.routes},
+      layout: {views: config.routes},
       router: router
     };
 

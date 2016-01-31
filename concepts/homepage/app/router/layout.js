@@ -1,7 +1,7 @@
 (function () {
   "use strict"
 
-  app.directive("layout", function (routesConfig) {
+  app.directive("layout", function (config) {
 
     var resize = function(){
           var layout       = $(".views").first();
@@ -9,7 +9,7 @@
           var viewWidth    = $("#app").width();
 
           layout.height( viewHeight);
-          layout.width(routesConfig.routes.length * viewWidth);
+          layout.width(config.routes.length * viewWidth);
         };
 
     return {

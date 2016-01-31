@@ -52,5 +52,5 @@
       states: [{name : "",}]
     }
   ]};
-  app.value("routesConfig", config);
+  app.value("config", config);
 }).call(this);

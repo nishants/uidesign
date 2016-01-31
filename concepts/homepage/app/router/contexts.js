@@ -1,6 +1,6 @@
 (function(){
   "use strict"
-  app.service("Contexts",function(routesConfig, layout){
+  app.service("Contexts",function(config, layout){
     var contextsByName  = {},
         statesFrom = function(params){
           var states = {};
@@ -25,7 +25,7 @@
       layout.switchTo(this.index, this.defaultState.index);
     };
 
-    routesConfig.routes.forEach(function(config, index){
+    config.routes.forEach(function(config, index){
       var context = new Context(config, index);
       contextsByName[context.name] = context;
     });
