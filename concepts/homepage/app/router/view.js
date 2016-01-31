@@ -1,7 +1,7 @@
 (function(){
   "use strict"
   app.service("View",function(config, layout){
-    var contextsByName  = {},
+    var viewsByName  = {},
         statesFrom = function(params){
           var states = {};
           params.forEach(function(state, index){
@@ -10,28 +10,28 @@
           });
           return states;
         },
-        Context = function(config, index){
+        View = function(config, index){
           this.name   = config.name;
           this.states = statesFrom(config.states);
           this.index  = index;
           this.defaultState = this.states[""];
         };
 
-    Context.prototype.stateByName = function(name){
+    View.prototype.stateByName = function(name){
       return this.states[name];
     };
 
-    Context.prototype.load = function(urlQuery){
+    View.prototype.load = function(urlQuery){
       layout.switchTo(this.index, this.defaultState.index);
     };
 
     config.routes.forEach(function(config, index){
-      contextsByName[config.name] = new Context(config, index);
+      viewsByName[config.name] = new View(config, index);
     });
 
     return {
       forName: function (name) {
-        return contextsByName[name];
+        return viewsByName[name];
       },
     };
   });
