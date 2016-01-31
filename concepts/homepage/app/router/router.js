@@ -6,12 +6,14 @@
     return {
       param: {id: null},
       load: function (url) {
-        var tokens = url.split("/");
-        currentView  = Contexts.forName(tokens[1]);
-        currentState = currentView.stateByName(tokens[3]);
+        var contextName = url.split("/")[1].split("?")[0],
+            urlQuery = url.split("/")[1].split("?")[1],
+            stateId  = urlQuery ? urlQuery.split("state=")[1] : "";
+
+        Contexts.forName(contextName).render(stateId);
       },
       render : function(){
-        Contexts.switchTo(currentView.index, currentState ? currentState.index : 0);
+        //Contexts.switchTo(currentView.index, currentState ? currentState.index : 0);
       }
     };
   });
