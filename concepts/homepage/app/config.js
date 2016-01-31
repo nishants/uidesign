@@ -7,7 +7,7 @@
       states: [{
         name : "",
         controller: "CampaignsController",
-        html  : "app/campaigns/power-access.html"
+        html  : ""
       }]
     },
     {
@@ -17,7 +17,7 @@
         {
           name : "",
           controller: "CampaignsController",
-          template  : "app/campaigns/power-access.html"
+          html  : "app/campaigns/turbo-editor.html"
         },
         {
           name : "publish",
