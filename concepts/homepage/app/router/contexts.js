@@ -33,7 +33,7 @@
           this.name   = config.name;
           this.states = statesFrom(config.states);
           this.index  = index;
-          this.defaultState = this.states[config.states[0].name];
+          this.defaultState = this.states[""];
         };
 
     Context.prototype.stateByName = function(name){

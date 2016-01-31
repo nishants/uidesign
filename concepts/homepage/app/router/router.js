@@ -10,7 +10,7 @@
             urlQuery = url.split("/")[1].split("?")[1],
             stateId  = urlQuery ? urlQuery.split("state=")[1] : "";
 
-        Contexts.forName(contextName).render(stateId);
+        Contexts.forName(contextName).load(stateId);
       }
     };
   });

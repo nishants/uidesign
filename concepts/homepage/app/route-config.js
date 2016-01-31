@@ -5,7 +5,7 @@
       name: "home",
       url : "home/",
       states: [        {
-        name : "dashboard",
+        name : "",
         controller: "CampaignsController",
         template  : "app/campaigns/power-access.html"
       }]
