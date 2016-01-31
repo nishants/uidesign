@@ -10,6 +10,9 @@
 
           layout.height( viewHeight);
           layout.width(config.routes.length * viewWidth);
+
+          // resize the current view to app width
+          $(window).trigger("hashchange");
         };
 
     return {

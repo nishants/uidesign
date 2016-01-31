@@ -4,10 +4,10 @@
     {
       name: "home",
       url : "home/",
-      states: [        {
+      states: [{
         name : "",
         controller: "CampaignsController",
-        template  : "app/campaigns/power-access.html"
+        html  : "app/campaigns/power-access.html"
       }]
     },
     {
