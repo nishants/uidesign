@@ -71,7 +71,7 @@
 
     <div layout>
         <ul class="views undo-list">
-            <li class="view view{{$index}}" ng-repeat="view in ui.views">
+            <li class="view view{{$index}}" ng-repeat="view in ui.layout.views">
                 <ul class="states {{view.name}} undo-list">
                     <li class="state state{{$index}}" ng-repeat="state in view.states">
                         {{view.name}} - {{state.name}}

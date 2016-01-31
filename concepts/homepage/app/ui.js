@@ -4,7 +4,7 @@
 
     var ui =  {
       ready : false,
-      views: routesConfig.routes,
+      layout: {views: routesConfig.routes},
       router: router
     };
 
