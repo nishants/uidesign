@@ -35,11 +35,11 @@
     <header id="top-bar">
         <div class="left-menu">
             <ul class="navigation">
-                <li><a href="#/home">home</a></li>
-                <li><a href="#/campaigns">campaigns</a></li>
-                <li><a href="#/audiences">audiences</a></li>
-                <li><a href="#/assets">assets</a></li>
-                <li><a href="#/reports">reports</a></li>
+                <li class="home" ><a href="#/home">home</a></li>
+                <li class="campaigns" ><a href="#/campaigns">campaigns</a></li>
+                <li class="audiences" ><a href="#/audiences">audiences</a></li>
+                <li class="assets" ><a href="#/assets">assets</a></li>
+                <li class="reports" ><a href="#/reports">reports</a></li>
                 <li class="more" ng-click="__showMore = !__showMore;">
                     <i class="fa fa-chevron-down" ng-mouseenter="__showMore = true"></i>
                     <div class="options"
@@ -49,6 +49,7 @@
                     </div>
                 </li>
             </ul>
+            <div class="navigation-pointer"></div>
         </div>
 
         <div class="right-menu">

@@ -3,6 +3,8 @@
 .left-menu{
   float: left;
   width: $menuWidth;
+  height: $topBarHeight;
+  overflow: visible; /*navigation pointer overflows*/
   @import "navigation";
 }
 

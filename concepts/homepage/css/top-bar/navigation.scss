@@ -5,6 +5,8 @@ $optionsMargin : 15px; // serves as pad for closing on mouse out.
 
 .navigation{
   @extend .undo-list;
+  height: $topBarHeight;
+
   li{
     height: $topBarHeight;
     float: left;
@@ -35,4 +37,12 @@ $optionsMargin : 15px; // serves as pad for closing on mouse out.
       background-color: #EEE;
     }
   }
+}
+
+.navigation-pointer{
+  height: 3px;
+  background-color: #4a89dc;
+  width: 10px;
+  border-radius: 15px;
+  @include transition(all, 200ms);
 }

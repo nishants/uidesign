@@ -13,6 +13,20 @@
             // resize the current view to app width
             $(window).trigger("hashchange");
           },
+        positionNavigationIndicator = function(name){
+          var target = $(".navigation > li." + name).first(),
+              pointer = $(".navigation-pointer").first(),
+              show = function () {
+                pointer.css("opacity", "1");
+                pointer.css("transform", "translateX(" + target.position().left + "px)");
+                pointer.width(target.innerWidth())
+              },
+              hide = function () {
+                pointer.css("opacity", "0");
+              };
+          target.length ? show(): hide();
+
+        },
         switchTo = function (viewIndex, stateIndex) {
           var views = $(".views").first(),
               states = $(".view" + viewIndex + " > .states").first(),
@@ -25,6 +39,7 @@
 
           views.css("transform", "translateX(-" + offsetView + "px)");
           states.css("transform", "translateY(-" + offsetState + "px)");
+          positionNavigationIndicator(config.routes[viewIndex].name);
         };
 
     return {
