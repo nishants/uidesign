@@ -1,8 +1,8 @@
 (function(){
   "use strict"
   app.factory("Contexts",function(routesConfig){
-    var indexes  = {},
-        indexed = function(params){
+    var contexts  = {},
+        statesFrom = function(params){
           var states = {};
           params.forEach(function(state, index){
             states[state.name] = state;
@@ -12,7 +12,7 @@
         },
         Context = function(config, index){
           this.name   = config.name;
-          this.states = indexed(config.states);
+          this.states = statesFrom(config.states);
           this.index  = index;
         };
 
@@ -22,12 +22,12 @@
 
     routesConfig.routes.forEach(function(config, index){
       var route = new Context(config, index);
-      indexes[route.name] = route;
+      contexts[route.name] = route;
     });
 
     return {
       forName : function(routeName){
-        return indexes[routeName];
+        return contexts[routeName];
       }
     };
   });
