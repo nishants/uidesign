@@ -10,7 +10,7 @@
 
     $timeout(function(){
       ui.ready = true;
-    }, 1000);
+    }, 100);
 
     return ui;
   });

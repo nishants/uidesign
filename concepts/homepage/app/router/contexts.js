@@ -26,8 +26,7 @@
     };
 
     config.routes.forEach(function(config, index){
-      var context = new Context(config, index);
-      contextsByName[context.name] = context;
+      contextsByName[config.name] = new Context(config, index);
     });
 
     return {
