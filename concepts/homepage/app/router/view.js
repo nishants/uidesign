@@ -22,8 +22,8 @@
     };
 
     View.prototype.load = function(stateParam){
-      var stateIndex = stateParam.name ? this.stateByName(stateParam.name).index : this.defaultState.index;
-      layout.switchTo(this.index, stateIndex);
+      var state = stateParam.name ? this.stateByName(stateParam.name) : this.defaultState;
+      layout.switchTo(this.index, state.index);
     };
 
     config.routes.forEach(function(config, index){
