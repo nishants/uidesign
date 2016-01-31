@@ -1,7 +1,7 @@
 (function(){
   "use strict"
   app.service("Contexts",function(routesConfig, layout){
-    var contexts  = {},
+    var contextsByName  = {},
         statesFrom = function(params){
           var states = {};
           params.forEach(function(state, index){
@@ -26,13 +26,13 @@
     };
 
     routesConfig.routes.forEach(function(config, index){
-      var route = new Context(config, index);
-      contexts[route.name] = route;
+      var context = new Context(config, index);
+      contextsByName[context.name] = context;
     });
 
     return {
-      forName: function (routeName) {
-        return contexts[routeName];
+      forName: function (name) {
+        return contextsByName[name];
       },
     };
   });
