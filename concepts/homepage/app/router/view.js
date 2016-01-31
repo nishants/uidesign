@@ -1,6 +1,6 @@
 (function(){
   "use strict"
-  app.service("Contexts",function(config, layout){
+  app.service("View",function(config, layout){
     var contextsByName  = {},
         statesFrom = function(params){
           var states = {};
