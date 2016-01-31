@@ -1,4 +1,4 @@
-describe('View Switching Test', function() {
+describe('View Switching', function() {
   var config,
       View,
       switchTo = jasmine.createSpy();;
@@ -19,6 +19,16 @@ describe('View Switching Test', function() {
     View.forName(view.name).load({name: state.name});
 
     expect(switchTo).toHaveBeenCalledWith(viewIndex, stateIndex);
+  });
+
+  it('first state in view should be invoked be default if no state params', function() {
+    var viewIndex   =  1,
+        expectedStateIndex  = 0,
+        view = config.routes[viewIndex];
+
+    View.forName(view.name).load({});
+
+    expect(switchTo).toHaveBeenCalledWith(viewIndex, expectedStateIndex);
   });
 
 });
