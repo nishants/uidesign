@@ -11,9 +11,6 @@
             stateId  = urlQuery ? urlQuery.split("state=")[1] : "";
 
         Contexts.forName(contextName).render(stateId);
-      },
-      render : function(){
-        //Contexts.switchTo(currentView.index, currentState ? currentState.index : 0);
       }
     };
   });

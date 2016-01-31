@@ -12,7 +12,6 @@
 
       layout.height( viewHeight);
       layout.width(routesConfig.routes.length * viewWidth);
-      router.render();
     }
 
     return {

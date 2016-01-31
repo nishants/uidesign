@@ -1,6 +1,25 @@
 (function(){
   "use strict"
-  app.factory("Contexts",function(routesConfig){
+  app.service("Contexts",function(routesConfig){
+    var service = {
+      forName: function (routeName) {
+        return contexts[routeName];
+      },
+      switchTo: function (viewIndex, stateIndex) {
+        var views = $(".views").first(),
+            states = $(".view" + viewIndex + " > .states").first(),
+
+            viewHeight = $("[layout]").first().height(),
+            viewWidth = $("[layout]").first().width(),
+
+            offsetView = viewIndex * viewWidth,
+            offsetState = stateIndex * viewHeight;
+
+        views.css("transform", "translateX(-" + offsetView + "px)");
+        states.css("transform", "translateY(-" + offsetState + "px)");
+      }
+    };
+
     var contexts  = {},
         statesFrom = function(params){
           var states = {};
@@ -14,10 +33,16 @@
           this.name   = config.name;
           this.states = statesFrom(config.states);
           this.index  = index;
+          this.defaultState = this.states[config.states[0].name];
         };
 
     Context.prototype.stateByName = function(name){
       return this.states[name];
+    };
+
+    Context.prototype.render = function(urlQuery){
+      var queryJson = decodeURIComponent(urlQuery);
+      service.switchTo(this.index, this.defaultState.index);
     };
 
     routesConfig.routes.forEach(function(config, index){
@@ -25,23 +50,6 @@
       contexts[route.name] = route;
     });
 
-    return {
-      forName : function(routeName){
-        return contexts[routeName];
-      },
-      switchTo : function(viewIndex, stateIndex){
-      var views       = $(".views").first(),
-          states      = $(".view" + viewIndex+" > .states").first(),
-
-          viewHeight  = $("[layout]").first().height(),
-          viewWidth   = $("[layout]").first().width(),
-
-          offsetView  = viewIndex * viewWidth,
-          offsetState = stateIndex * viewHeight;
-
-      views.css("transform", "translateX(-" +offsetView +"px)");
-      states.css("transform", "translateY(-"+offsetState + "px)");
-    }
-    };
+    return service;
   });
 }).call(this);
