@@ -16,10 +16,11 @@
         positionNavigationIndicator = function(name){
           var target = $(".navigation > li." + name).first(),
               pointer = $(".navigation-pointer").first(),
+              padding  = 20,
               show = function () {
                 pointer.css("opacity", "1");
-                pointer.css("transform", "translateX(" + target.position().left + "px)");
-                pointer.width(target.innerWidth())
+                pointer.css("transform", "translateX(" + (target.position().left + padding/2) + "px)");
+                pointer.width(target.innerWidth() - padding);
               },
               hide = function () {
                 pointer.css("opacity", "0");

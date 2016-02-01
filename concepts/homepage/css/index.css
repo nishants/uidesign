@@ -101,9 +101,11 @@
           width: 350px;
           background-color: #EEE; }
     #top-bar .left-menu .navigation-pointer {
-      height: 3px;
+      position: relative;
+      top: -10px;
+      height: 2px;
       background-color: #4a89dc;
-      width: 10px;
+      width: 0px;
       border-radius: 15px;
       -webkit-transition: all 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
       -moz-transition: all 200ms cubic-bezier(0.45, 0.515, 0.36, 0.88);

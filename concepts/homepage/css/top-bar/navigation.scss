@@ -40,9 +40,11 @@ $optionsMargin : 15px; // serves as pad for closing on mouse out.
 }
 
 .navigation-pointer{
-  height: 3px;
+  position: relative;
+  top : -10px;
+  height: 2px;
   background-color: #4a89dc;
-  width: 10px;
+  width: 0px;
   border-radius: 15px;
   @include transition(all, 200ms);
 }
