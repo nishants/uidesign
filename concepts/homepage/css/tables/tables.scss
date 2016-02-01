@@ -9,8 +9,7 @@ $defaultCellWidth : 80px;
 
   min-width: $minWidth;
   overflow: auto; /* scroll left inside table (columns)*/
-
-  text-align: center;
+  text-align: left;
 
   .thead{
     background-color: #F3F0F0;
