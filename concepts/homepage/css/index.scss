@@ -6,6 +6,7 @@
   overflow: hidden;
   font-size: $defaultFontSize;
   font-family: defaultFontFamily;
+  min-width: $appMinWidth;
 }
 
 #top-bar{
@@ -27,7 +28,7 @@
 }
 
 [layout] {
-  width: $articlesWidth;
+  width: 100%;
   height: $articleHeight;
   @import "layout";
 }

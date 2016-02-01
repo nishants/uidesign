@@ -22,7 +22,8 @@
   width: 100vw;
   overflow: hidden;
   font-size: 13px;
-  font-family: defaultFontFamily; }
+  font-family: defaultFontFamily;
+  min-width: 500px; }
 
 #top-bar {
   position: relative;
@@ -243,7 +244,7 @@
         opacity: 0; }
 
 [layout] {
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 35px); }
   [layout] * {
     box-sizing: border-box; }
@@ -268,7 +269,7 @@
     float: left;
     overflow: hidden; }
   [layout] .state {
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 35px);
     overflow: auto;
     background-color: white;

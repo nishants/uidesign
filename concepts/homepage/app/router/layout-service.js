@@ -6,9 +6,11 @@
             var layout       = $(".views").first();
             var viewHeight   = $("#app").height() - $("#top-bar").height();
             var viewWidth    = $("#app").width();
+            var views        = $(".views > .view");
 
             layout.height( viewHeight);
             layout.width(config.routes.length * viewWidth);
+            views.width(viewWidth);
 
             // resize the current view to app width
             $(window).trigger("hashchange");
