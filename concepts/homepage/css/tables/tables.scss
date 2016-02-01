@@ -26,7 +26,6 @@ $tableControlsHeight : $topBarHeight;
   }
   .tr{
     height: $rowHeight;
-    box-shadow: rgb(255, 255, 255) 0 1px 0;
     border-bottom: 1px solid rgba(230, 230, 230, 0.76);
   }
   .td, .th{
@@ -38,5 +37,11 @@ $tableControlsHeight : $topBarHeight;
     text-align: center;
     line-height: $rowHeight - 2px;   /* Hide overflowing lines*/
     font-size: $fontSize;
+  }
+}
+
+.table.selectable{
+  .td.select, .th.select{
+    width: 30px;
   }
 }
