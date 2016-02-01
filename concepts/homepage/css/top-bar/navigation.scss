@@ -15,9 +15,13 @@ $optionsMargin : 15px; // serves as pad for closing on mouse out.
     border-right: $menuBorder;
     overflow: hidden;
   }
+  li:last-child{
+    border-color: transparent;
+  }
 
   li.more{
-    width: 50px;
+    width: 30px;
+    padding: 0px 5px;
     overflow: visible;
     > i{
       height: $topBarHeight;
