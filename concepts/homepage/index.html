@@ -42,11 +42,13 @@
                 <li class="reports" ><a href="#/reports">reports</a></li>
                 <li class="more" ng-click="__showMore = !__showMore;">
                     <i class="fa fa-chevron-down" ng-mouseenter="__showMore = true"></i>
-                    <div class="options"
+                    <ul class="dropdown undo-list"
                          ng-show="__showMore"
                          ng-mouseleave="__showMore = false;">
-
-                    </div>
+                        <li>Triggers</li>
+                        <li>Targets</li>
+                        <li>Dynamic Products</li>
+                    </ul>
                 </li>
             </ul>
             <div class="navigation-pointer"></div>

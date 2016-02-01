@@ -2,7 +2,7 @@
 
 $linkPadding : 10px;
 $optionsMargin : 15px; // serves as pad for closing on mouse out.
-
+$dropDownPadding : 20px; // This padding avoids accidental closing of dropdown on hover out
 .navigation{
   @extend .undo-list;
   height: $topBarHeight;
@@ -29,16 +29,15 @@ $optionsMargin : 15px; // serves as pad for closing on mouse out.
       line-height: $topBarHeight - 2px;
       width: 100%;
     }
-    .options{
+    .dropdown{
       float: right;
-      top: -10px;
+      top: (-$dropDownPadding );
       position: relative;
-      margin: $optionsMargin ;
-      left: $linkPadding + $linkPadding;
+      padding: $dropDownPadding;
 
-      height: 350px;
-      width: 350px;
-      background-color: #EEE;
+      left: $linkPadding + $linkPadding + $dropDownPadding/2;
+      background-color: transparent;
+      @import 'dropdown';
     }
   }
 }

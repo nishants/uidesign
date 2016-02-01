@@ -94,15 +94,37 @@
           display: block;
           line-height: 33px;
           width: 100%; }
-        #top-bar .left-menu .navigation li.more .options {
+        #top-bar .left-menu .navigation li.more .dropdown {
           float: right;
-          top: -10px;
+          top: -20px;
           position: relative;
-          margin: 15px;
-          left: 20px;
-          height: 350px;
-          width: 350px;
-          background-color: #EEE; }
+          padding: 20px;
+          left: 30px;
+          background-color: transparent; }
+          #top-bar .left-menu .navigation li.more .dropdown * {
+            box-sizing: border-box; }
+          #top-bar .left-menu .navigation li.more .dropdown .undo-list, #top-bar .left-menu .navigation li.more .dropdown .navigation, #top-bar .left-menu .navigation li.more .dropdown .right-menu .business-account, #top-bar .right-menu .left-menu .navigation li.more .dropdown .business-account, #top-bar .left-menu .navigation li.more .dropdown .right-menu .actions, #top-bar .right-menu .left-menu .navigation li.more .dropdown .actions {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: block; }
+          #top-bar .left-menu .navigation li.more .dropdown .undo-list > li, #top-bar .left-menu .navigation li.more .dropdown .navigation > li, #top-bar .left-menu .navigation li.more .dropdown .right-menu .business-account > li, #top-bar .right-menu .left-menu .navigation li.more .dropdown .business-account > li, #top-bar .left-menu .navigation li.more .dropdown .right-menu .actions > li, #top-bar .right-menu .left-menu .navigation li.more .dropdown .actions > li {
+            display: block; }
+          #top-bar .left-menu .navigation li.more .dropdown .undo-link, #top-bar .left-menu .navigation li.more .dropdown a {
+            text-decoration: none;
+            color: inherit; }
+@font-face {
+  #top-bar .left-menu .navigation li.more .dropdown {
+    font-family: defaultFontFamily;
+    src: url(../../../lib/fonts/Raleway-Regular.ttf) format("opentype"); } }
+          #top-bar .left-menu .navigation li.more .dropdown li {
+            color: black;
+            text-shadow: none;
+            border-right: none;
+            height: 35px;
+            width: 100px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: #EEE; }
     #top-bar .left-menu .navigation-pointer {
       position: relative;
       top: -10px;
