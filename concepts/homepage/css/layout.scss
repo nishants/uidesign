@@ -18,5 +18,5 @@
 }
 
 .views, .states{
-  @include transition(transform, 500ms);
+  @include transition(transform, 200ms);
 }
