@@ -78,8 +78,8 @@
             <li class="view view{{$index}}" ng-repeat="view in ui.layout.views">
                 <ul class="states {{view.name}} undo-list">
                     <li class="state state{{$index}}" ng-repeat="state in view.states">
-                        {{view.name}} - {{state.name}}
-                        <div ng-include="state.html"></div>
+                        <div class="contents" ng-if="view.name != 'campaigns'">{{view.name}} - {{state.name}}</div>
+                        <div class="contents" ng-include="state.html" ng-if="view.name == 'campaigns'"></div>
                     </li>
                 </ul>
             </li>
