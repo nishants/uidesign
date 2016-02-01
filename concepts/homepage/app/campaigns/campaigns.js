@@ -3,7 +3,7 @@
   app.controller("CampaignsTable", function($http, $scope){
 
     var campaigns = {
-      all: []
+      all: [],
     };
 
     $http.get("api/campaigns.json").then(function(response){
