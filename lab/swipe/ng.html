@@ -104,7 +104,7 @@
             });
         };
 
-        var Swiper = function($e){
+        var Swiper = function($e, params){
             $e.find("li").each(function(i, swipable){
                 new Wrapper($(swipable));
             });
@@ -117,7 +117,17 @@
                 scope        : true,
                 transclude   : false,
                 link : function(scope, element, attrs){
-                    new Swiper($(element));
+                    new Swiper($(element), {
+                        whileSwiping : function(){
+                            console.log("Swiping");
+                        },
+                        whileSwipingOut: function(){
+                            console.log("SwipingOut");
+                        },
+                        onSwipeOut : function(){
+                            console.log("SwipeOut");
+                        },
+                    });
                 }
             };
         })
