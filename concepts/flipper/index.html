@@ -31,10 +31,29 @@
 </head>
 
 <body>
-<div id="app" ng-app="flipper" ng-class="{'ready' : ui.ready}" ng-controller="UIController"></div>
+<div id="app"
+     ng-app="flipper"
+     ng-class="{'ready' : ui.ready}"
+     ng-controller="UIController">
+
+    <div>{{ui.message}}</div>
+    <ul class="swiper"
+        while-swiping-out="demo.whileSwipingOut(swiper.actionIndex)"
+        on-swipe-out="demo.onSwipeOut(swiper.actionIndex)">
+
+        <li><div class="swipable"><div class="demo">Swipe me out</div></div></li>
+        <li><div class="swipable">Swipe me out</div></li>
+        <li><div class="swipable">Swipe me out</div></li>
+        <li><div class="swipable">Swipe me out</div></li>
+        <li><div class="swipable">Swipe me out</div></li>
+        <li><div class="swipable">Swipe me out</div></li>
+    </ul>
+
+</div>
 
 <script src="../../lib/jquery-2.1.4.min.js"></script>
 <script src="../../lib/angular-1.4.3.js"></script>
+<script src="../../lab/swipe/swiper.js"></script>
 <script src="app/flipper.js"></script>
 <script src="app/ui-controller.js"></script>
 <script src="app/ui.js"></script>
