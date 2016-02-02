@@ -63,16 +63,14 @@
             });
 
             $e.on(' touchmove', function (e) {
-                $(e.target).attr("swiped-to", touchedAt(e));
-                var swipeDistance = wrapper.startAt
-                        - parseInt($(e.target).attr("swiped-to"))
+                wrapper.swipedTo = touchedAt(e);
+                var swipeDistance = wrapper.startAt - wrapper.swipedTo;
                 $(e.target).css("transform", "translateX(-"+ swipeDistance + "px)" );
             });
 
 
             $e.on(' touchend', function (e) {
-                var swipeDistance = wrapper.startAt
-                        - parseInt($(e.target).attr("swiped-to"));
+                var swipeDistance = wrapper.startAt - wrapper.swipedTo;
                 swipeDistance > threshold ? swipedOut(e.target) : "";
             });
         };
