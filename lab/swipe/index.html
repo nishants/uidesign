@@ -55,6 +55,9 @@
 
         $(".wrapper").on(' touchmove', function (e) {
             $(e.target).attr("swiped-to", touchedAt(e));
+            var swipeDistance = parseInt($(e.target).attr("touch-start-at"))
+                    - parseInt($(e.target).attr("swiped-to"))
+            $(e.target).css("transform", "translateX(-"+ swipeDistance + "px)" );
         });
 
         $(".wrapper").on(' touchend', function (e) {
