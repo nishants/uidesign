@@ -40,9 +40,27 @@
     </ul>
 
     <script>
-        $(".wrapper").on('click', function(event){
-            var target = $(event.target);
+        var swipedOut = function(target){
+            var target = $(target);
             target.hasClass("wrapper") ? target.height("0px") : target.parent(".wrapper").height("0px");
+                }, threshold = 30;
+
+        var touchedAt = function (e) {
+            return e.originalEvent.touches[0].pageX
+        };
+
+        $(".wrapper").on(' touchstart', function (e) {
+            $(e.target).attr("touch-start-at", touchedAt(e));
+        });
+
+        $(".wrapper").on(' touchmove', function (e) {
+            $(e.target).attr("swiped-to", touchedAt(e));
+        });
+
+        $(".wrapper").on(' touchend', function (e) {
+            var swipeDistance = parseInt($(e.target).attr("touch-start-at"))
+                                - parseInt($(e.target).attr("swiped-to"));
+            swipeDistance > threshold ? swipedOut(e.target) : "";
         });
     </script>
 </body>
