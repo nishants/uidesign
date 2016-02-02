@@ -53,7 +53,7 @@
     </style>
 </head>
 <body>
-    <ul class="container">
+    <ul class="swiper">
         <li class="wrapper"><div class="item">Swipe me out</div></li>
         <li class="wrapper"><div class="item">Swipe me out</div></li>
         <li class="wrapper"><div class="item">Swipe me out</div></li>
@@ -103,14 +103,14 @@
             });
         };
 
-        var Container = function($e){
+        var Swiper = function($e){
             var wrappers = [];
             $e.find(".wrapper").each(function(i, wrapper){
                 wrappers.push(new Wrapper($(wrapper)));
             });
         };
         $(document).ready(function(){
-            new Container($(".container").first());
+            new Swiper($(".swiper").first());
         });
     </script>
 </body>
