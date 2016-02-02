@@ -67,6 +67,17 @@
             $wrapper.addClass("swiped-out");
          }, threshold = 100;
 
+        var swipingOut = function($e){
+            $e.addClass("swiping-out")
+        };
+        var notSwipingOut = function($e){
+            $e.removeClass("swiping-out")
+        };
+        var swipeEnds = function(wrapper, target){
+            target.css("transform", "" );// allow transfrom through css class to apply
+            wrapper.removeClass("swiping-out");
+        };
+
         var touchedAt = function (e) {
             return e.originalEvent.touches[0].pageX
         };
@@ -82,14 +93,13 @@
                 wrapper.swipedTo = touchedAt(e);
                 var swipeDistance = wrapper.startAt - wrapper.swipedTo;
                 $(e.target).css("transform", "translateX(-"+ swipeDistance + "px)" );
-                swipeDistance > threshold ? wrapper.$e.addClass("swiping-out") : wrapper.$e.removeClass("swiping-out");
+                swipeDistance > threshold ? swipingOut(wrapper.$e) : notSwipingOut(wrapper.$e);
             });
 
             $e.on('touchend', function (e) {
                 var swipeDistance = wrapper.startAt - wrapper.swipedTo;
                 swipeDistance > threshold ? swipedOut(wrapper.$e) : "";
-                $(e.target).css("transform", "" );
-                wrapper.$e.removeClass("swiping-out");
+                swipeEnds(wrapper.$e, $(e.target));
             });
         };
 
