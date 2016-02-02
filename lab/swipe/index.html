@@ -11,31 +11,31 @@
         body{
             padding: 5px 10px;
         }
-        ul{
+
+        ul.swiper{
+            margin: 0px auto;
             list-style: none;
-            margin: 0px;
             padding: 0px;
-        }
-        ul{
-            margin: auto;
+
             overflow: hidden;
             background: #EEE;
         }
-        li{
+
+        ul.swiper > li{
             height: 100px;
             transition: height 300ms ease-in;
             transition-delay: 100ms;
             overflow: hidden;
         }
 
-        .item{
+        ul.swiper > li > .swappable{
             border: 1px solid rgba(0,0,0,.1);
             background-color: #4caf50;
             line-height: 100px;
             text-align: center;
         }
 
-        .swiped-out > .item{
+        ul.swiper > li.swiped-out > .swappable{
             transition-delay: 0ms;
             transform : translateX(-100vw);
             opacity: 0;
@@ -45,7 +45,7 @@
             height: 0px !important;
             border: none;
         }
-        .swiping-out > .item{
+        .swiping-out > .swappable{
             opacity: 0.8;
             transform: scaleY(0.8);
         }
@@ -54,12 +54,12 @@
 </head>
 <body>
     <ul class="swiper">
-        <li><div class="item">Swipe me out</div></li>
-        <li><div class="item">Swipe me out</div></li>
-        <li><div class="item">Swipe me out</div></li>
-        <li><div class="item">Swipe me out</div></li>
-        <li><div class="item">Swipe me out</div></li>
-        <li><div class="item">Swipe me out</div></li>
+        <li><div class="swappable">Swipe me out</div></li>
+        <li><div class="swappable">Swipe me out</div></li>
+        <li><div class="swappable">Swipe me out</div></li>
+        <li><div class="swappable">Swipe me out</div></li>
+        <li><div class="swappable">Swipe me out</div></li>
+        <li><div class="swappable">Swipe me out</div></li>
     </ul>
 
     <script>
