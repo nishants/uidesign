@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll Magic</title>
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <style>
+        body{
+            background: #EEE;
+        }
+        *{box-sizing: border-box;}
+        .wrapper{
+            height: 100px;
+        }
+
+        ul{
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            overflow: hidden;
+        }
+        .container .wrapper{
+            transition: height 500ms linear;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li class="wrapper"><div class="item">Swipe me out</div></li>
+        <li class="wrapper"><div class="item">Swipe me out</div></li>
+        <li class="wrapper"><div class="item">Swipe me out</div></li>
+        <li class="wrapper"><div class="item">Swipe me out</div></li>
+        <li class="wrapper"><div class="item">Swipe me out</div></li>
+        <li class="wrapper"><div class="item">Swipe me out</div></li>
+    </ul>
+
+    <script>
+        $(".wrapper").on('click', function(event){
+            $(event.target).parent(".wrapper").height("0px");
+        });
+    </script>
+</body>
+</html>
