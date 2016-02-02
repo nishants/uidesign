@@ -57,24 +57,26 @@
         };
 
         var Wrapper = function($e){
+            var wrapper = this;
             $e.on('touchstart', function (e) {
-                $(e.target).attr("touch-start-at", touchedAt(e));
+                wrapper.startAt = touchedAt(e);
             });
 
             $e.on(' touchmove', function (e) {
                 $(e.target).attr("swiped-to", touchedAt(e));
-                var swipeDistance = parseInt($(e.target).attr("touch-start-at"))
+                var swipeDistance = wrapper.startAt
                         - parseInt($(e.target).attr("swiped-to"))
                 $(e.target).css("transform", "translateX(-"+ swipeDistance + "px)" );
             });
 
 
             $e.on(' touchend', function (e) {
-                var swipeDistance = parseInt($(e.target).attr("touch-start-at"))
+                var swipeDistance = wrapper.startAt
                         - parseInt($(e.target).attr("swiped-to"));
                 swipeDistance > threshold ? swipedOut(e.target) : "";
             });
         };
+
         var Container = function($e){
             var wrappers = [];
             $e.find(".wrapper").each(function(i, wrapper){
