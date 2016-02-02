@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Scroll Magic</title>
+    <title>Swipe</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <style>
         body{
@@ -11,13 +13,17 @@
         *{box-sizing: border-box;}
         .container{
             background-color: white;
-            width: 200px;
             margin: auto;
         }
         ul{
             list-style: none;
             margin: 0px;
             padding: 0px;
+        }
+        li{
+            border: 1px solid rgba(0,0,0,.1);
+            line-height: 100px;
+            text-align: center;
         }
         .container{
             overflow: hidden;
