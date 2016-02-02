@@ -77,14 +77,13 @@
                 wrapper.startAt = touchedAt(e);
             });
 
-            $e.on(' touchmove', function (e) {
+            $e.on('touchmove', function (e) {
                 wrapper.swipedTo = touchedAt(e);
                 var swipeDistance = wrapper.startAt - wrapper.swipedTo;
                 $(e.target).css("transform", "translateX(-"+ swipeDistance + "px)" );
             });
 
-
-            $e.on(' touchend', function (e) {
+            $e.on('touchend', function (e) {
                 var swipeDistance = wrapper.startAt - wrapper.swipedTo;
                 swipeDistance > threshold ? swipedOut(wrapper.$e) : "";
                 $(e.target).css("transform", "" );
