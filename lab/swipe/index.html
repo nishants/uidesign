@@ -47,14 +47,13 @@
         }
         .swiping-out > .swappable{
             opacity: 0.8;
-            transform: scaleY(0.8);
         }
 
     </style>
 </head>
 <body>
     <ul class="swiper">
-        <li><div class="swappable">Swipe me out</div></li>
+        <li><div class="swappable"><div class="demo">Swipe me out</div></div></li>
         <li><div class="swappable">Swipe me out</div></li>
         <li><div class="swappable">Swipe me out</div></li>
         <li><div class="swappable">Swipe me out</div></li>
@@ -85,6 +84,7 @@
         var Wrapper = function($e){
             this.$e = $e;
             var wrapper = this;
+            var swappable = $e.find(".swappable").first();
             $e.on('touchstart', function (e) {
                 wrapper.startAt = touchedAt(e);
             });
@@ -92,14 +92,14 @@
             $e.on('touchmove', function (e) {
                 wrapper.swipedTo = touchedAt(e);
                 var swipeDistance = wrapper.startAt - wrapper.swipedTo;
-                $(e.target).css("transform", "translateX(-"+ swipeDistance + "px)" );
+                swappable.css("transform", "translateX(-"+ swipeDistance + "px)" );
                 swipeDistance > threshold ? swipingOut(wrapper.$e) : notSwipingOut(wrapper.$e);
             });
 
             $e.on('touchend', function (e) {
                 var swipeDistance = wrapper.startAt - wrapper.swipedTo;
                 swipeDistance > threshold ? swipedOut(wrapper.$e) : "";
-                swipeEnds(wrapper.$e, $(e.target));
+                swipeEnds(wrapper.$e, $(swappable));
             });
         };
 
