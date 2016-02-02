@@ -8,20 +8,20 @@
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <style>
         *{box-sizing: border-box;}
-        .container{
-            background: #EEE;
-            margin: auto;
+        body{
+            padding: 5px 10px;
         }
         ul{
             list-style: none;
             margin: 0px;
             padding: 0px;
         }
-        .container{
+        ul{
+            margin: auto;
             overflow: hidden;
-            width: 80%;
+            background: #EEE;
         }
-        .container .wrapper{
+        li{
             height: 100px;
             transition: height 300ms ease-in;
             transition-delay: 100ms;
@@ -35,17 +35,17 @@
             text-align: center;
         }
 
-        .wrapper.swiped-out > .item{
+        .swiped-out > .item{
             transition-delay: 0ms;
             transform : translateX(-100vw);
             opacity: 0;
         }
 
-        .wrapper.swiped-out{
+        .swiped-out{
             height: 0px !important;
             border: none;
         }
-        .wrapper.swiping-out > .item{
+        .swiping-out > .item{
             opacity: 0.8;
             transform: scaleY(0.8);
         }
@@ -54,12 +54,12 @@
 </head>
 <body>
     <ul class="swiper">
-        <li class="wrapper"><div class="item">Swipe me out</div></li>
-        <li class="wrapper"><div class="item">Swipe me out</div></li>
-        <li class="wrapper"><div class="item">Swipe me out</div></li>
-        <li class="wrapper"><div class="item">Swipe me out</div></li>
-        <li class="wrapper"><div class="item">Swipe me out</div></li>
-        <li class="wrapper"><div class="item">Swipe me out</div></li>
+        <li><div class="item">Swipe me out</div></li>
+        <li><div class="item">Swipe me out</div></li>
+        <li><div class="item">Swipe me out</div></li>
+        <li><div class="item">Swipe me out</div></li>
+        <li><div class="item">Swipe me out</div></li>
+        <li><div class="item">Swipe me out</div></li>
     </ul>
 
     <script>
@@ -104,9 +104,8 @@
         };
 
         var Swiper = function($e){
-            var wrappers = [];
-            $e.find(".wrapper").each(function(i, wrapper){
-                wrappers.push(new Wrapper($(wrapper)));
+            $e.find("li").each(function(i, swappable){
+                new Wrapper($(swappable));
             });
         };
         $(document).ready(function(){
