@@ -54,7 +54,11 @@
 </head>
 <body ng-app="swiper-demo"
       ng-controller="SwiperDemo">
-    <ul class="swiper" while-swiping-out="demo.whileSwipingOut(swiper.actionIndex)">
+    <div>{{demo.message}}</div>
+    <ul class="swiper"
+        while-swiping-out="demo.whileSwipingOut(swiper.actionIndex)"
+        on-swipe-out="demo.onSwipeOut(swiper.actionIndex)">
+
         <li><div class="swipable"><div class="demo">Swipe me out</div></div></li>
         <li><div class="swipable">Swipe me out</div></li>
         <li><div class="swipable">Swipe me out</div></li>
@@ -146,10 +150,10 @@
         angular.module("swiper-demo").controller("SwiperDemo", ["$scope", function($scope){
             var demo = {
                     whileSwipingOut : function(index){
-                        console.log("Swiping out index : " + index);
+                        console.log("swiping out : " + index);
                     },
-                    onSwipeOut : function(){
-                        console.log("SwipeOut");
+                    onSwipeOut : function(index){
+                        console.log("swiped out : " + index);
                     }
             };
             $scope.demo = demo;
