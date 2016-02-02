@@ -31,6 +31,7 @@
         .container .wrapper{
             height: 100px;
             transition: height 500ms linear;
+            overflow: hidden;
         }
 
     </style>
@@ -55,21 +56,33 @@
             return e.originalEvent.touches[0].pageX
         };
 
-        $(".wrapper").on(' touchstart', function (e) {
-            $(e.target).attr("touch-start-at", touchedAt(e));
-        });
+        var Wrapper = function($e){
+            $e.on('touchstart', function (e) {
+                $(e.target).attr("touch-start-at", touchedAt(e));
+            });
 
-        $(".wrapper").on(' touchmove', function (e) {
-            $(e.target).attr("swiped-to", touchedAt(e));
-            var swipeDistance = parseInt($(e.target).attr("touch-start-at"))
-                    - parseInt($(e.target).attr("swiped-to"))
-            $(e.target).css("transform", "translateX(-"+ swipeDistance + "px)" );
-        });
+            $e.on(' touchmove', function (e) {
+                $(e.target).attr("swiped-to", touchedAt(e));
+                var swipeDistance = parseInt($(e.target).attr("touch-start-at"))
+                        - parseInt($(e.target).attr("swiped-to"))
+                $(e.target).css("transform", "translateX(-"+ swipeDistance + "px)" );
+            });
 
-        $(".wrapper").on(' touchend', function (e) {
-            var swipeDistance = parseInt($(e.target).attr("touch-start-at"))
-                                - parseInt($(e.target).attr("swiped-to"));
-            swipeDistance > threshold ? swipedOut(e.target) : "";
+
+            $e.on(' touchend', function (e) {
+                var swipeDistance = parseInt($(e.target).attr("touch-start-at"))
+                        - parseInt($(e.target).attr("swiped-to"));
+                swipeDistance > threshold ? swipedOut(e.target) : "";
+            });
+        };
+        var Container = function($e){
+            var wrappers = [];
+            $e.find(".wrapper").each(function(i, wrapper){
+                wrappers.push(new Wrapper($(wrapper)));
+            });
+        };
+        $(document).ready(function(){
+            new Container($(".container").first());
         });
     </script>
 </body>
