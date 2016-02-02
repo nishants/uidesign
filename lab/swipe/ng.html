@@ -64,7 +64,7 @@
     </ul>
 
     <script>
-        var Wrapper = function($e, params){
+        var Wrapper = function($e, index, params){
             this.$e = $e;
             var threshold = params.threshold ? params.threshold : 100;
             var wrapper = this;
@@ -77,7 +77,7 @@
 
             var swipingOut = function($e){
                 $e.addClass("swiping-out")
-                params.whileSwipingOut();
+                params.whileSwipingOut(index);
             };
             var notSwipingOut = function($e){
                 $e.removeClass("swiping-out")
@@ -110,8 +110,8 @@
         };
 
         var Swiper = function($e, params){
-            $e.find("li").each(function(i, swipable){
-                new Wrapper($(swipable), params);
+            $e.find("li").each(function(index, swipable){
+                new Wrapper($(swipable), index, params);
             });
         };
 
@@ -122,12 +122,16 @@
                 scope        : true,
                 transclude   : false,
                 link : function(scope, element, attrs){
+                    scope.swiper = {
+                        actionIndex: -1
+                    };
                     new Swiper($(element), {
                         threshold: 100,
                         whileSwiping : function(){
                             console.log("Swiping");
                         },
-                        whileSwipingOut: function(){
+                        whileSwipingOut: function(index){
+                            scope.swiper.actionIndex = index;
                             scope.$eval(attrs.whileSwipingOut);
                         },
                         onSwipeOut : function(){
@@ -141,8 +145,8 @@
         angular.module("swiper-demo", ["swiper"]);
         angular.module("swiper-demo").controller("SwiperDemo", ["$scope", function($scope){
             var demo = {
-                    whileSwipingOut : function(){
-                        console.log("Swiping out index : ");
+                    whileSwipingOut : function(index){
+                        console.log("Swiping out index : " + index);
                     },
                     onSwipeOut : function(){
                         console.log("SwipeOut");
