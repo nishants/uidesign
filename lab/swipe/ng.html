@@ -63,29 +63,31 @@
     </ul>
 
     <script>
-        var swipedOut = function($wrapper){
-            $wrapper.addClass("swiped-out");
-         }, threshold = 100;
-
-        var swipingOut = function($e){
-            $e.addClass("swiping-out")
-        };
-        var notSwipingOut = function($e){
-            $e.removeClass("swiping-out")
-        };
-        var swipeEnds = function(wrapper, target){
-            target.css("transform", "" );// allow transfrom through css class to apply
-            wrapper.removeClass("swiping-out");
-        };
-
-        var touchedAt = function (e) {
-            return e.originalEvent.touches[0].pageX
-        };
-
-        var Wrapper = function($e){
+        var Wrapper = function($e, params){
             this.$e = $e;
+            var threshold = params.threshold ? params.threshold : 100;
             var wrapper = this;
             var swipable = $e.find(".swipable").first();
+
+            var swipedOut = function($wrapper){
+                $wrapper.addClass("swiped-out");
+            };
+
+            var swipingOut = function($e){
+                $e.addClass("swiping-out")
+            };
+            var notSwipingOut = function($e){
+                $e.removeClass("swiping-out")
+            };
+            var swipeEnds = function(wrapper, target){
+                target.css("transform", "" );// allow transfrom through css class to apply
+                wrapper.removeClass("swiping-out");
+            };
+
+            var touchedAt = function (e) {
+                return e.originalEvent.touches[0].pageX
+            };
+
             $e.on('touchstart', function (e) {
                 wrapper.startAt = touchedAt(e);
             });
@@ -106,7 +108,7 @@
 
         var Swiper = function($e, params){
             $e.find("li").each(function(i, swipable){
-                new Wrapper($(swipable));
+                new Wrapper($(swipable), params);
             });
         };
 
@@ -118,6 +120,7 @@
                 transclude   : false,
                 link : function(scope, element, attrs){
                     new Swiper($(element), {
+                        threshold: 100,
                         whileSwiping : function(){
                             console.log("Swiping");
                         },
