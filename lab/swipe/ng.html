@@ -58,6 +58,7 @@
     <div>{{demo.message}}</div>
     <ul class="swiper"
         while-swiping-out="demo.whileSwipingOut(swiper.actionIndex)"
+        on-swipe-cancel="demo.onSwipeCancel(swiper.actionIndex)"
         on-swipe-out="demo.onSwipeOut(swiper.actionIndex)">
 
         <li><div class="swipable"><div class="demo">Swipe me out</div></div></li>
@@ -78,6 +79,10 @@
                     message: initialMessage,
                     whileSwipingOut : function(index){
                         this.message = swiping + index;
+                        $scope.$apply();
+                    },
+                    onSwipeCancel : function(index){
+                        this.message = initialMessage;
                         $scope.$apply();
                     },
                     onSwipeOut : function(index){

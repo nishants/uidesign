@@ -13,11 +13,12 @@
     };
 
     var swipingOut = function($e){
-      $e.addClass("swiping-out")
+      $e.addClass("swiping-out");
       params.whileSwipingOut(index);
     };
     var notSwipingOut = function($e){
-      $e.removeClass("swiping-out")
+      $e.removeClass("swiping-out");
+      params.onSwipeCancel(index);
     };
     var swipeEnds = function(wrapper, target){
       target.css("transform", "" );// allow transfrom through css class to apply
@@ -64,8 +65,8 @@
         };
         new Swiper($(element), {
           threshold: 100,
-          whileSwiping : function(){
-            console.log("Swiping");
+          onSwipeCancel : function(){
+            scope.$eval(attrs.onSwipeCancel);
           },
           whileSwipingOut: function(index){
             scope.swiper.actionIndex = index;
