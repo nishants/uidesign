@@ -30,8 +30,23 @@
         }
         .container .wrapper{
             height: 100px;
-            transition: height 500ms linear;
+            transition: height 300ms linear;
+            transition-delay: 500ms;
             overflow: hidden;
+        }
+
+        .item{
+            transition: all 500ms linear;
+            transition-delay: 0ms;
+        }
+        .wrapper.swiped-out > .item{
+            transform : translateX(-100vw);
+            opacity: 0;
+        }
+
+        .wrapper.swiped-out{
+            height: 0px !important;
+            border: none;
         }
 
     </style>
@@ -47,16 +62,16 @@
     </ul>
 
     <script>
-        var swipedOut = function(target){
-            var target = $(target);
-            target.hasClass("wrapper") ? target.height("0px") : target.parent(".wrapper").height("0px");
-                }, threshold = 30;
+        var swipedOut = function($wrapper){
+            $wrapper.addClass("swiped-out");
+         }, threshold = 100;
 
         var touchedAt = function (e) {
             return e.originalEvent.touches[0].pageX
         };
 
         var Wrapper = function($e){
+            this.$e = $e;
             var wrapper = this;
             $e.on('touchstart', function (e) {
                 wrapper.startAt = touchedAt(e);
@@ -71,7 +86,8 @@
 
             $e.on(' touchend', function (e) {
                 var swipeDistance = wrapper.startAt - wrapper.swipedTo;
-                swipeDistance > threshold ? swipedOut(e.target) : "";
+                swipeDistance > threshold ? swipedOut(wrapper.$e) : "";
+                $(e.target).css("transform", "" );
             });
         };
 
