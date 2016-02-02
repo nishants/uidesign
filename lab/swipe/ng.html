@@ -71,10 +71,12 @@
 
             var swipedOut = function($wrapper){
                 $wrapper.addClass("swiped-out");
+                params.onSwipeOut();
             };
 
             var swipingOut = function($e){
                 $e.addClass("swiping-out")
+                params.whileSwipingOut();
             };
             var notSwipingOut = function($e){
                 $e.removeClass("swiping-out")
