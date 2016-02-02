@@ -148,12 +148,18 @@
 
         angular.module("swiper-demo", ["swiper"]);
         angular.module("swiper-demo").controller("SwiperDemo", ["$scope", function($scope){
+            var initialMessage = "Swipe a card left, just like tinder",
+                swiping        = "Swiping away card-",
+                swiped         = "Swiped away card-" ;
             var demo = {
+                    message: initialMessage,
                     whileSwipingOut : function(index){
-                        console.log("swiping out : " + index);
+                        this.message = swiping + index;
+                        $scope.$apply();
                     },
                     onSwipeOut : function(index){
-                        console.log("swiped out : " + index);
+                        this.message = swiped + index;
+                        $scope.$apply();
                     }
             };
             $scope.demo = demo;
