@@ -15,7 +15,7 @@
 <body ng-app="world-traverl" ng-controller="MapController">
     <div class  = "map"
          onload = "map.load()"
-         ng-include="'../../world map/world-map-edited.svg'"></div>
+         ng-include="'images/map.svg'"></div>
 
 <script src="../../lib/Snap.svg-0.4.1/dist/snap.svg-min.js"></script>
 <script src="../../lib/jquery-2.1.4.min.js"></script>
@@ -23,12 +23,12 @@
 <script>
 
     var countriesToInitialize = [
-        {code: "in"},
-        {code: "es"},
-        {code: "ae"},
-        {code: "bt"},
-        {code: "gr"},
-        {code: "ph"},
+        { code: "in", name: "India"      ,},
+        { code: "es", name: "Spain"      ,},
+        { code: "ae", name: "UAE"        ,},
+        { code: "bt", name: "Bhutan"     ,},
+        { code: "gr", name: "Greece"     ,},
+        { code: "ph", name: "Philippines",}
     ];
     var Country = function(map, isoCode){
         var selector = "." + isoCode + ".land",
