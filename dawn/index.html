@@ -12,7 +12,7 @@
     <style></style>
 </head>
 
-<body id="homepage" class="reading">
+<body id="homepage">
     <header id="top-bar">
         <span class="trademark">[ amoeba.social ]</span>
         <ul class="menu"><li>Widgets</li><li>Development</li><li>Design</li></ul>
@@ -42,5 +42,16 @@
             </ul>
         </section>
     </article>
+    <script>
+        var     $homePage = $("#homepage"),
+                $article = $("#article"),
+                $intro = $("#intro");
+
+        var readingBelow =
+        $article.on("scroll", function(){
+            var scrollOffset = $article.scrollTop() - $intro.height();
+            scrollOffset > 0 ? $homePage.addClass("reading") : $homePage.removeClass("reading");
+        });
+    </script>
 </body>
 </html>
