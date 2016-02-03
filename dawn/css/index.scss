@@ -13,14 +13,14 @@ $topBarIntroPadding: 50px;
     background-color: #E74C3C;
     color: white;
     padding: $topBarIntroPadding $topBarPadding 0px $topBarPadding*2;
-    @include transition(all, 100ms);
+    @include transition(all, 500ms);
     @import "top-bar";
   }
 
   #article{
     height: calc(100vh - #{$topBarHeight + $topBarIntroPadding});
     overflow: scroll;
-    @include transition(all, 100ms);
+    @include transition(all, 500ms);
     @import 'sections/intro';
     @import 'sections/overview';
   }
