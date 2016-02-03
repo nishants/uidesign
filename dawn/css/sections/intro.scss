@@ -1,8 +1,16 @@
 @import '../config';
 
+#intro:after{
+  content: "";
+  display: table;
+  clear: both;
+}
 #intro{
   color: white;
   text-transform: uppercase;
+  padding: 0px $topBarPadding;
+  background-color: #E74C3C;
+
   .left,.right{
     width: 50%;
     height: 100%;
