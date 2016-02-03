@@ -12,10 +12,26 @@
 
 </head>
 
-<body ng-app>
-    <div class="map" ng-include="'../../world map/Discrete Best Map.svg'"></div>
+<body ng-app="world-traverl" ng-controller="MapController">
+    <div class  = "map"
+         onload = "map.load()"
+         ng-include="'../../world map/Discrete Best Map.svg'"></div>
 
-<script src="../../lib/jquery-2.1.4.min.js"></script>
+<script src="../../lib/Snap.svg-0.4.1/dist/snap.svg-min.js"></script>
 <script src="../../lib/angular-1.4.3.js"></script>
+<script>
+
+
+    var app = angular.module("world-traverl",[]);
+    app.controller("MapController", function($scope){
+       $scope.map = {
+           load: function(){
+               var map = Snap(".map > svg");
+               map.animate({r: 50}, 1000);
+           }
+       };
+    });
+
+</script>
 </body>
 </html>
