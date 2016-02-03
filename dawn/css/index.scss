@@ -1,0 +1,18 @@
+@import 'config';
+
+
+
+#homepage{
+  background-color: #E74C3C;
+
+  #top-bar{
+    height: $topBarHeight;
+    background-color: #E74C3C;
+    color: white;
+    padding: 0px $topBarPadding;
+    @import "top-bar";
+  }
+  #article{
+
+  }
+}

@@ -1,0 +1,19 @@
+@import 'config';
+
+h1{
+  float: left;
+  display: inline-block;
+  line-height: $topBarHeight;
+  margin: 0px;
+}
+
+ul.menu{
+  float: right;
+  @extend .undo-list;
+  > li{
+    display: inline-block;
+    padding: 0px 10px;
+    float: left;
+    line-height: $topBarHeight;
+  }
+}

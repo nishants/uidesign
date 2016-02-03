@@ -6,179 +6,20 @@
           content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="../lib/jquery-2.1.4.min.js"></script>
 
-    <style>
-        *{
-            box-sizing: border-box;
-            margin: 0px auto;
-            padding: 0;
-            outline: none;
-            color: rgba(64, 64, 64, 1);
-        }
-        body{
-            min-width: 800px;
-        }
-        header, footer, article{
-            padding : 20px;
-        }
-        header, footer{
-            background-color: #EEE;
-        }
-        header{
-            text-align: left;
-        }
-
-        header > img{
-            height: 100px;
-            width: 100px;
-            margin-right: 50px;
-            float: right;
-
-            border-radius: 50%;
-            -webkit-box-shadow: 5px 5px 59px -8px rgba(0,0,0,0.75);
-            -moz-box-shadow: 5px 5px 59px -8px rgba(0,0,0,0.75);
-            box-shadow: 5px 5px 59px -8px rgba(0,0,0,0.75);
-        }
-        header > h1 {
-            display: inline-block;
-            font-size: 50px;
-            line-height: 90px;
-            height: 100px;
-            margin: 0;
-        }
-
-        footer{
-            padding: 10px 15px;
-            text-align: center;
-        }
-
-        footer > .send-mail > input, footer > .send-mail> button, .mail-body > textarea{
-            height: 60px;
-            padding: 20px;
-            line-height: 90%;
-            font-size: 30px;
-            background-color: white;
-            border: none;
-        }
-        footer > .send-mail > input, footer > .send-mail> button{
-            float:  left;
-        }
-
-        footer > .send-mail{
-            content:"";
-            display:table;
-            clear:both;
-            width: 100%;
-            text-align: center;
-            margin: auto;
-        }
-        footer > .send-mail > input {
-            width: calc(100% - 90px);
-        }
-
-        footer > .send-mail > button {
-            width: 90px;
-            padding: 10px;
-            border-left: 1px solid rgba(0,0,0,0.1);
-        }
-
-        footer > .mail-body{
-            border-top: 1px solid rgba(0,0,0,0.1);
-            width: 100%;
-        }
-
-        footer > .mail-body > textarea{
-            width: 100%;
-            border: none;
-        }
-
-        article{
-            background-color: rgba(238, 238, 238, 0.3);
-            text-align: center;
-            padding: 0;
-        }
-
-        section{
-            background-color: green;
-            padding: 10px 15px;
-        }
-
-        .deck{
-        }
-        .deck > .card{
-            display: inline-block;
-            width: 400px;
-            margin: 5px;
-        }
-        .card{
-            background-color: white;
-            border: 1px solid rgba(164, 164, 164, 0.1);
-            padding: 10px;
-        }
-
-        .card > .body, .card > .head{
-        }
-        .card > .body > img{
-            width: 100%;
-        }
-        .card > .actions{
-            text-align: right;
-        }
-        .card > .actions > a{
-            height: 30px;
-            display: inline-block;
-            line-height: 20px;
-            padding: 5px;
-        }
-
-    </style>
+    <style></style>
 </head>
 
-<body>
-    <header>
-        <h1>Nishant Singh</h1>
-        <img src="../images/me-small.png">
-    </header>
-    <article>
-        <section>
-            <h2>Demos</h2>
-            <div class="deck">
-                <div class="card">
-                    <div class="head">
-                        <h2>Progres Indicator for Wizards</h2>
-                        <p>Spice up your wizard with a progress indicator created with sass.</p>
-                    </div>
-                    <div class="body">
-                        <img src="../images/carousel/carousel-1.jpg">
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="head">
-                        <h2>Progres Indicator for Wizards</h2>
-                        <p>Spice up your wizard with a progress indicator created with sass.</p>
-                    </div>
-                    <div class="body">
-                        <img src="../images/carousel/carousel-1.jpg">
-                    </div>
-                    <div class="actions">
-                        <a>View</a>
-                        <a>Edit</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<body id="homepage">
+    <div id="top-bar">
+        <h1>amoeba.social</h1>
+        <ul class="menu"><li>Widgets</li><li>Development</li><li>Design</li></ul>
+    </div>
+    <article id="article">
+
 
     </article>
-    <footer>
-        <h1>Lets Talk</h1>
-        <div class="send-mail">
-            <input type="email" placeholder="your email">
-            <button class="fa fa-paper-plane"></button>
-        </div>
-        <div class="mail-body">
-            <textarea></textarea>
-        </div>
-    </footer>
 </body>
 </html>

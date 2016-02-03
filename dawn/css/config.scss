@@ -1,0 +1,22 @@
+$topBarColor   : #E74C3C;
+$topBarPadding : 50px;
+$topBarHeight  : 100px;
+
+*{
+  box-sizing: border-box;
+}
+.undo-list{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: block;
+}
+
+.undo-list > li{
+  display: block;
+}
+
+.undo-link{
+  text-decoration: none;
+  color: inherit;
+}
