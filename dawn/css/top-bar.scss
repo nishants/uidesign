@@ -1,10 +1,12 @@
 @import 'config';
 
-h1{
+.trademark{
   float: left;
   display: inline-block;
   line-height: $topBarHeight;
   margin: 0px;
+  font-weight: 800;
+  font-size: 30px;
 }
 
 ul.menu{
@@ -15,5 +17,8 @@ ul.menu{
     padding: 0px 10px;
     float: left;
     line-height: $topBarHeight;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 400;
   }
 }
