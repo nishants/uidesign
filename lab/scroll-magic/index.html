@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Scroll Magic From Mobile</title>
-    <script src="../lib/jquery-2.1.4.min.js"></script>
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
     <style>
         body{
             height: 99000vh;
@@ -36,7 +36,7 @@
 <body>
 <div class="loader"><h1>Loading...</h1></div>
 <div class="panorama">
-        <img src="../images/360-rocket-sunset.jpg">
+        <img src="../../images/360-rocket-sunset.jpg">
 </div>
 
 <script>
@@ -47,12 +47,19 @@
             currentPosition += scrolledBy;
             $target.css("transform", "translateX(" + (currentPosition) + "px)")
         },
-        lastScrollTop = 0 ;
+        lastScrollTop = 0,
+        touchedAt = function (e) {
+            return e.originalEvent.touches[0].pageY
+        },
+        scrollingFrom = $(window).scrollTop() ;
 
-    $(window).bind("scroll",function(e){
-        var scrolledBy = $(window).scrollTop() - lastScrollTop;
+    $(window).bind("touchstart",function(e){
+        scrollingFrom = touchedAt(e);
+    });
+
+    $(window).bind("touchmove",function(e){
+        var scrolledBy = scrollingFrom - touchedAt(e);
         moveBy(-scrolledBy);
-        lastScrollTop = $(window).scrollTop();
     });
 
     $(document).ready(function(){
