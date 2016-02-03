@@ -1,15 +1,17 @@
 @import 'config';
 
+$topBarIntroPadding: 50px;
+
 #homepage{
   background-color: #E74C3C;
   font-family: $defaultFontFamily;
   font-weight: 200;
 
   #top-bar{
-    height: $topBarHeight;
+    height: $topBarHeight + $topBarIntroPadding;
     background-color: #E74C3C;
     color: white;
-    padding: 0px $topBarPadding;
+    padding: $topBarIntroPadding $topBarPadding 0px $topBarPadding/2;
     @import "top-bar";
   }
   #article{
