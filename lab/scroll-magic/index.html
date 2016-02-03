@@ -43,9 +43,10 @@
     var
         $target  = $(".panorama").first(),
         currentPosition = 0,
+        speed = 2,
         moveBy = function(scrolledBy){
             currentPosition += scrolledBy;
-            $target.css("transform", "translateX(" + (currentPosition) + "px)")
+            $target.css("transform", "translateX(" + (speed * currentPosition) + "px)")
         },
         lastScrollTop = 0,
         touchedAt = function (e) {
