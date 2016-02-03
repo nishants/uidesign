@@ -1,5 +1,5 @@
 $topBarColor   : #E74C3C;
-$topBarPadding : 100px;
+$topBarPadding : 50px;
 $topBarHeight  : 100px;
 
 *{
@@ -22,3 +22,11 @@ $topBarHeight  : 100px;
 }
 $defaultFontFamily : 'Raleway', sans-serif;
 @import url(https://fonts.googleapis.com/css?family=Raleway:500,900,700,300,400,600,800,200,100);
+
+.light-text{
+  font-weight: 200;
+}
+
+.very-heavy-text{
+  font-weight: 900;
+}

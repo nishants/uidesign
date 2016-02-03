@@ -11,10 +11,11 @@ $topBarIntroPadding: 50px;
     height: $topBarHeight + $topBarIntroPadding;
     background-color: #E74C3C;
     color: white;
-    padding: $topBarIntroPadding $topBarPadding 0px $topBarPadding/2;
+    padding: $topBarIntroPadding $topBarPadding 0px $topBarPadding*2;
     @import "top-bar";
   }
   #article{
-
+    padding: 0px $topBarPadding;
+    @import 'sections/intro';
   }
 }

@@ -5,8 +5,8 @@
   display: inline-block;
   line-height: $topBarHeight;
   margin: 0px;
-  font-weight: 800;
   font-size: 30px;
+  @extend .very-heavy-text;
 }
 
 ul.menu{
@@ -19,6 +19,6 @@ ul.menu{
     line-height: $topBarHeight;
     font-size: 13px;
     text-transform: uppercase;
-    font-weight: 700;
+    @extend .very-heavy-text;
   }
 }
