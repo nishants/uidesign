@@ -30,6 +30,10 @@
         this.land =  inland.length ? inland : coast;
     };
 
+    Country.prototype.highlight = function(){
+        this.land.css("fill", "red");
+    };
+
     var Map = function($map){
         this.$map = $map;
     };
@@ -42,11 +46,13 @@
     app.controller("MapController", function($scope){
        $scope.map = {
            map: null,
+           ready: false,
            findCountry: function(code){
                return this.map.findCountry(code);
            },
            load: function(){
                this.map = new Map($(".map > svg").first());
+               this.ready = true;
            }
        };
         window.map = $scope.map;
