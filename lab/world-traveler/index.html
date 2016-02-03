@@ -12,7 +12,11 @@
         }
 
         .map{
-            transition: transform 500ms ease-in;
+            -webkit-transition: transform 500ms linear ;
+            -moz-transition: transform 500ms linear ;
+            -ms-transition: transform 500ms linear ;
+            -o-transition: transform 500ms linear ;
+            transition: transform 500ms linear ;;
         }
         .map > svg{
             width: 600px;
@@ -29,52 +33,17 @@
 <script src="../../lib/Snap.svg-0.4.1/dist/snap.svg-min.js"></script>
 <script src="../../lib/jquery-2.1.4.min.js"></script>
 <script src="../../lib/angular-1.4.3.js"></script>
+<script src="map.js"></script>
 <script>
 
     var countriesToInitialize = [
-        { code: "in", name: "India"      ,position: "scale(5) translateY(50px) translateX(150px)"},
-        { code: "es", name: "Spain"      ,position: "scale(5) translateY(80px) translateX(280px)"},
-        { code: "ae", name: "UAE"        ,position: "scale(9) translateY(50px) translateX(200px)"},
-        { code: "bt", name: "Bhutan"     ,position: "scale(5) translateY(50px) translateX(90px)"},
-        { code: "gr", name: "Greece"     ,position: "scale(5) translateY(50px) translateX(90px)"},
-        { code: "ph", name: "Philippines",position: "scale(5) translateY(50px) translateX(90px)"}
+        { code: "in", name: "India"      ,position: "translateY(250px) translateX(790px) scale(5)"},
+        { code: "es", name: "Spain"      ,position: "translateY(480px) translateX(2080px) scale(7)"},
+        { code: "ae", name: "UAE"        ,position: "translateY(650px) translateX(2990px) scale(15)"},
+        { code: "bt", name: "Bhutan"     ,position: "translateY(950px) translateX(2590px) scale(19)"},
+        { code: "gr", name: "Greece"     ,position: "translateY(480px) translateX(2080px) scale(7)"},
+        { code: "ph", name: "Philippines",position: "translateY(450px) translateX(1390px) scale(15)"}
     ];
-    var Country = function(map, country){
-        var isoCode = country.code;
-        var selector = "." + isoCode + ".land",
-            coast = map.find(selector),
-            inland = coast.find(selector);
-
-        this.land =  inland.length ? inland : coast;
-        this.position = country.position;
-        var self = this;
-    };
-
-    Country.prototype.highlight = function(){
-        this.land.css("fill", "red");
-        this.land.children().css("fill", "red");//required of island countries like Philllipines
-    };
-
-    var Map = function($map, $wrapper){
-        var countries = {};
-        var self = this;
-        countriesToInitialize.forEach(function(country){
-            countries[country.code] = new Country($map, country);
-            countries[country.code].land.on("click", function(){
-                countries[country.code].highlight();
-                self.findCountry(country.code);
-            });
-        });
-        this.countries = countries;
-        this.$wrapper = $wrapper;
-    };
-
-    Map.prototype.findCountry = function(isoCode){
-        var country = this.countries[isoCode];
-        this.$wrapper.css("transform", country.position);
-        country.highlight();
-        return country;
-    };
 
     var app = angular.module("world-traverl",[]);
     app.controller("MapController", function($scope){
