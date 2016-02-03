@@ -16,7 +16,12 @@
             -moz-transition: transform 500ms linear ;
             -ms-transition: transform 500ms linear ;
             -o-transition: transform 500ms linear ;
-            transition: transform 500ms linear ;;
+            transition: transform 500ms linear ;
+            -webkit-transform-origin: 0 0;
+            -moz-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+            -o-transform-origin: 0 0;
+            transform-origin: 0 0;
         }
         .map > svg{
             width: 600px;
@@ -37,7 +42,7 @@
 <script>
 
     var countriesToInitialize = [
-        { code: "in", name: "India"      ,position: "translateY(250px) translateX(790px) scale(5)"},
+        { code: "in", name: "India"      ,position: " translateY(-390px) translateX(-1590px) scale(5)"},
         { code: "es", name: "Spain"      ,position: "translateY(480px) translateX(2080px) scale(7)"},
         { code: "ae", name: "UAE"        ,position: "translateY(650px) translateX(2990px) scale(15)"},
         { code: "bt", name: "Bhutan"     ,position: "translateY(950px) translateX(2590px) scale(19)"},
