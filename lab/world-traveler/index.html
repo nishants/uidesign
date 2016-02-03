@@ -27,10 +27,10 @@
     app.controller("MapController", function($scope){
        $scope.map = {
            findCountry: function(code){
-               this.svg.find("."+ code +".land").find("."+ code +".land").css("fill", "red");
-               this.svg.find("."+ code +".land").css("fill", "red")
-               this.svg.find("."+ code +".land").find("."+ code +".land").css("stroke", "blue");
-               this.svg.find("."+ code +".land").css("stroke", "blue");
+               var coast = this.svg.find("." + code + ".land");
+               var inland = coast.find("." + code + ".land");
+               return inland.length ? inland : coast;
+
            },
            load: function(){
                this.svg = $(".map > svg").first();
