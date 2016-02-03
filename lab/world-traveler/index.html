@@ -22,10 +22,18 @@
 <script src="../../lib/angular-1.4.3.js"></script>
 <script>
 
+    var countriesToInitialize = [
+        {code: "in"},
+        {code: "es"},
+        {code: "ae"},
+        {code: "bt"},
+        {code: "gr"},
+        {code: "ph"},
+    ];
     var Country = function(map, isoCode){
         var selector = "." + isoCode + ".land",
             coast = map.find(selector),
-            inland = coast.find(selector).first();
+            inland = coast.find(selector);
 
         this.land =  inland.length ? inland : coast;
         var self = this;
@@ -36,6 +44,7 @@
 
     Country.prototype.highlight = function(){
         this.land.css("fill", "red");
+        this.land.children().css("fill", "red");//required of island countries like Philllipines
     };
 
     var Map = function($map){
