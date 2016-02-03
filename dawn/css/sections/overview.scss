@@ -7,6 +7,7 @@
 
   > ul{
     @extend .undo-list;
+    color: white;
 
     li.what-we-do{
       text-align: center;
@@ -15,12 +16,28 @@
 
       @extend .very-heavy-text;
       .how{
-        color: white;
       }
       .help{
         color: #FFCC00;
       }
     }
 
+    li {
+      padding-bottom: 100px;
+      .left, .right {
+        width: 50%;
+        height: 100%;
+      }
+      .left {
+        float: left;
+      }
+      .right{
+        float: left;
+        img{
+          height: 240px;
+          float: right;
+        }
+      }
+    }
   }
 }
