@@ -3,6 +3,24 @@
 #overview{
   height: 100vh;
   background-color: #2C3E50;
-  padding: 0px $topBarPadding;
+  padding: 100px $topBarPadding;
 
+  > ul{
+    @extend .undo-list;
+
+    li.what-we-do{
+      text-align: center;
+      font-size: 40px;
+      text-transform: uppercase;
+
+      @extend .very-heavy-text;
+      .how{
+        color: white;
+      }
+      .help{
+        color: #FFCC00;
+      }
+    }
+
+  }
 }
