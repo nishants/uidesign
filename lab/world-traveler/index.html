@@ -49,10 +49,15 @@
 
     var Map = function($map){
         this.$map = $map;
+        var countries = {};
+        countriesToInitialize.forEach(function(country){
+            countries[country.code] = new Country($map, country.code);
+        });
+        this.countries = countries;
     };
 
     Map.prototype.findCountry = function(isoCode){
-        return new Country(this.$map, isoCode)
+        return this.countries[isoCode];
     };
 
     var app = angular.module("world-traverl",[]);
