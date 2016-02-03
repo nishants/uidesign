@@ -22,18 +22,31 @@
 <script src="../../lib/angular-1.4.3.js"></script>
 <script>
 
+    var Country = function(map, isoCode){
+        var selector = "." + isoCode + ".land",
+            coast = map.find(selector),
+            inland = coast.find(selector);
+
+        this.land =  inland.length ? inland : coast;
+    };
+
+    var Map = function($map){
+        this.$map = $map;
+    };
+
+    Map.prototype.findCountry = function(isoCode){
+        return new Country(this.$map, isoCode)
+    };
 
     var app = angular.module("world-traverl",[]);
     app.controller("MapController", function($scope){
        $scope.map = {
+           map: null,
            findCountry: function(code){
-               var coast = this.svg.find("." + code + ".land");
-               var inland = coast.find("." + code + ".land");
-               return inland.length ? inland : coast;
-
+               return this.map.findCountry(code);
            },
            load: function(){
-               this.svg = $(".map > svg").first();
+               this.map = new Map($(".map > svg").first());
            }
        };
         window.map = $scope.map;
