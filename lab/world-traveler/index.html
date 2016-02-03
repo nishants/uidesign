@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <style>
 
+        .map > svg{
+            width: 600px;
+        }
     </style>
 
 </head>
@@ -23,23 +26,25 @@
 <script>
 
     var countriesToInitialize = [
-        { code: "in", name: "India"      ,},
-        { code: "es", name: "Spain"      ,},
-        { code: "ae", name: "UAE"        ,},
-        { code: "bt", name: "Bhutan"     ,},
-        { code: "gr", name: "Greece"     ,},
-        { code: "ph", name: "Philippines",}
+        { code: "in", name: "India"      ,position: "scale(5) translateY(50px) translateX(150px)"},
+        { code: "es", name: "Spain"      ,position: "scale(5) translateY(50px) translateX(90px)"},
+        { code: "ae", name: "UAE"        ,position: "scale(5) translateY(50px) translateX(90px)"},
+        { code: "bt", name: "Bhutan"     ,position: "scale(5) translateY(50px) translateX(90px)"},
+        { code: "gr", name: "Greece"     ,position: "scale(5) translateY(50px) translateX(90px)"},
+        { code: "ph", name: "Philippines",position: "scale(5) translateY(50px) translateX(90px)"}
     ];
-    var Country = function(map, isoCode){
+    var Country = function(map, country){
+        var isoCode = country.code;
         var selector = "." + isoCode + ".land",
             coast = map.find(selector),
             inland = coast.find(selector);
 
         this.land =  inland.length ? inland : coast;
+        this.position = country.position;
         var self = this;
         this.land.on("click", function(){
             self.highlight();
-        })
+        });
     };
 
     Country.prototype.highlight = function(){
@@ -47,17 +52,21 @@
         this.land.children().css("fill", "red");//required of island countries like Philllipines
     };
 
-    var Map = function($map){
+    var Map = function($map, $wrapper){
         this.$map = $map;
         var countries = {};
         countriesToInitialize.forEach(function(country){
-            countries[country.code] = new Country($map, country.code);
+            countries[country.code] = new Country($map, country);
         });
         this.countries = countries;
+        this.$wrapper = $wrapper;
     };
 
     Map.prototype.findCountry = function(isoCode){
-        return this.countries[isoCode];
+        var country = this.countries[isoCode];
+        this.$wrapper.css("transform", country.position);
+        country.highlight();
+        return country;
     };
 
     var app = angular.module("world-traverl",[]);
@@ -69,7 +78,7 @@
                return this.map.findCountry(code);
            },
            load: function(){
-               this.map = new Map($(".map > svg").first());
+               this.map = new Map($(".map > svg").first(), $(".map").first());
                this.ready = true;
            }
        };
