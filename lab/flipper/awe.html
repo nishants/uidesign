@@ -32,6 +32,7 @@
 </ul>
 
     <script>
+        var swiperFor
         var Page = function($page){
                     this.$e = $page;
             },
@@ -41,17 +42,21 @@
                     pages.push(new Page($(page)));
                 });
 
-                this.next  = function(){
-                    index > -1 ? pages[index].$e.addClass("closed") : "";
-                    index= (index + 1) % pages.length;
-                    pages[index].$e.addClass("opened");
-                };
-                this.previous = function(){
-                    pages[index].$e.removeClass("opened");
-                    index= Math.abs(index - 1) % pages.length;
-                    pages[index].$e.removeClass("closed");
-                };
+                var next = function () {
+                        index > -1 ? pages[index].$e.addClass("closed") : "";
+                        index = (index + 1) % pages.length;
+                        pages[index].$e.addClass("opened");
+                    },
+                    previous = function () {
+                        pages[index].$e.removeClass("opened");
+                        index = Math.abs(index - 1) % pages.length;
+                        pages[index].$e.removeClass("closed");
+                    };
+
+                this.next  = next;
+                this.previous = previous;
                 this.next();
+
             };
         var flipper = new Flipper($(".flipper").first());
 
