@@ -1,6 +1,14 @@
 
 $flipperHeight : 100vh;
 
+@mixin transition($property, $time){
+  -webkit-transition: $property $time cubic-bezier(0.080, 0.285, 0.400, 0); /* older webkit */
+  -webkit-transition: $property $time cubic-bezier(0.080, 0.285, 0.400, -0.075);
+  -moz-transition:    $property $time cubic-bezier(0.080, 0.285, 0.400, -0.075);
+  -o-transition:      $property $time cubic-bezier(0.080, 0.285, 0.400, -0.075);
+  transition:         $property $time cubic-bezier(0.080, 0.285, 0.400, -0.075); /* custom */
+}
+
 ul.undo-list{
   list-style: none;
   margin: 0px auto;
@@ -31,6 +39,7 @@ $pages : 3;
     background-color: white;
     height: 100vh;
     text-align: center;
+    @include transition(transform, 500ms);
     transition: transform 500ms cubic-bezier(0,.74,.51,.51);
     h1{margin: 0px;}
   }
