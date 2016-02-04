@@ -19,6 +19,7 @@
 
             overflow: hidden;
             background: #EEE;
+            height: 100vh;
         }
 
         ul.flipper > li{
@@ -78,7 +79,7 @@
         };
 
         var touchedAt = function (e) {
-            return e.originalEvent.touches[0].pageX
+            return e.originalEvent.touches[0].pageY
         };
 
         var Wrapper = function($e){
@@ -92,7 +93,7 @@
             $e.on('touchmove', function (e) {
                 wrapper.flippedTo = touchedAt(e);
                 var flipDistance = wrapper.startAt - wrapper.flippedTo;
-                flippable.css("transform", "translateX(-"+ flipDistance + "px)" );
+                flippable.css("transform", "translateY(-"+ flipDistance + "px)" );
                 flipDistance > threshold ? flippingOut(wrapper.$e) : notFlippingOut(wrapper.$e);
             });
 
