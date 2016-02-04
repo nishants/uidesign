@@ -32,23 +32,38 @@
 </ul>
 
     <script>
-        var Swipe = function($e,callbacks){
-                    $e.on("touchstart", function(){
-                        console.log("touchstart");
+        var Touch = function($e,callbacks){
+                    touchedAt = function (e) {
+                        return {
+                            x: e.originalEvent.touches[0].pageX,
+                            y: e.originalEvent.touches[0].pageY
+                        };
+                    };
+
+                    $e.on("touchstart", function(e){
+                        callbacks.begin(e);
                     });
 
-                    $e.on("touchmove", function(){
-                        console.log("touchmove");
+                    $e.on("touchmove", function(e){
+                        callbacks.move(e);
                     });
 
-                    $e.on("touchend", function(){
-                        console.log("touchend");
-
+                    $e.on("touchend", function(e){
+                        callbacks.end(e);
                     });
-
             },
             Page = function($page){
-                new Swipe($page);
+                new Touch($page, {
+                    begin : function(){
+                        console.log("touchstart");
+                    },
+                    move : function(){
+                        console.log("touchmove");
+                    },
+                    end : function(){
+                        console.log("touchend");
+                    }
+                });
                 this.$e = $page;
             },
             Flipper = function($flipper){
