@@ -32,9 +32,24 @@
 </ul>
 
     <script>
-        var swiperFor
-        var Page = function($page){
-                    this.$e = $page;
+        var Swipe = function($e,callbacks){
+                    $e.on("touchstart", function(){
+                        console.log("touchstart");
+                    });
+
+                    $e.on("touchmove", function(){
+                        console.log("touchmove");
+                    });
+
+                    $e.on("touchend", function(){
+                        console.log("touchend");
+
+                    });
+
+            },
+            Page = function($page){
+                new Swipe($page);
+                this.$e = $page;
             },
             Flipper = function($flipper){
                 var pages = [], step, index = -1;
