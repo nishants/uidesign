@@ -35,6 +35,9 @@
     <script>
         var Flippable = function($page){
                     this.$e = $page;
+                    this.reset = function(){
+                        $page.css("transform", "translateY(-" + ($page.height()) + "px)")
+                    };
                     this.moveTo = function(yPosition){
                         $page.css("transform", "translateY(-" + ($page.height() + yPosition) + "px)")
                     };
@@ -55,6 +58,7 @@
                         },
                         end: function () {
                             console.log("Page " + index +" gone");
+                            flippable.reset();
                         }
                     });
                 });
@@ -76,6 +80,7 @@
 
             };
         var flipper = new Flipper($(".flipper").first());
+        $("body").height($(window.height()));
 
         $("h1").click(function(){
             flipper.next();
