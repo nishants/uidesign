@@ -105,9 +105,11 @@
         };
 
         var Flipper = function($e){
-            $e.find("li").each(function(i, flippable){
-                new Wrapper($(flippable));
-            });
+            var flippable = [];
+            var $flippable = $e.find("li");
+            for(var i = 0; i < $flippable.length; i++){
+                flippable.push(new Wrapper($($flippable[i])));
+            }
         };
         $(document).ready(function(){
             new Flipper($(".flipper").first());
