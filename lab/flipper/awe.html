@@ -13,7 +13,7 @@
     <style>
         *{box-sizing: border-box; !important}
         body{
-            height: 100vh;
+            height: 100%;
             width: 100vw;
             overflow: hidden;
         }
@@ -33,21 +33,25 @@
 </ul>
 
     <script>
-        var Page = function($page){
+        var Flippable = function($page){
                     this.$e = $page;
+                    this.moveTo = function(yPosition){
+                        $page.css("transform", "translateY(-" + ($page.height() + yPosition) + "px)")
+                    };
             },
             Flipper = function($flipper){
                 var pages = [], step, index = -1;
                 $flipper.find(" > li").each(function(index, page){
                     var $page = $(page);
-                    pages.push(new Page($page));
+                    var flippable = new Flippable($page);
+                    pages.push(flippable);
                     new Touch($page, {
                         begin: function () {
                             console.log("Page " + index );
                         },
                         move: function (offset) {
                             console.log("x:" + offset.x + ", y:" + offset.y);
-                            $page.css("transform", "translateY(-" + ($page.height() + offset.y) + "px)");
+                            flippable.moveTo(offset.y);
                         },
                         end: function () {
                             console.log("Page " + index +" gone");
