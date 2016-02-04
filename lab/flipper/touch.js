@@ -17,8 +17,8 @@
     $e.on("touchmove", function(e){
       var position = touchedAt(e);
       var offset = {
-        x: lastPosition.x - position.x,
-        y: lastPosition.y - position.y,
+        x: startPosition.x - position.x,
+        y: startPosition.y - position.y,
       };
       lastPosition  = position;
       callbacks.move(offset);

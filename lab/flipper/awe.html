@@ -43,13 +43,14 @@
                     pages.push(new Page($page));
                     new Touch($page, {
                         begin: function () {
-                            console.log("touchstart");
+                            console.log("Page " + index );
                         },
                         move: function (offset) {
                             console.log("x:" + offset.x + ", y:" + offset.y);
+                            $page.css("transform", "translateY(-" + ($page.height() + offset.y) + "px)");
                         },
                         end: function () {
-                            console.log("touchend");
+                            console.log("Page " + index +" gone");
                         }
                     });
                 });
