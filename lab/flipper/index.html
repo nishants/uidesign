@@ -12,7 +12,7 @@
             padding: 5px 10px;
         }
 
-        ul.swiper{
+        ul.flipper{
             margin: 0px auto;
             list-style: none;
             padding: 0px;
@@ -21,21 +21,21 @@
             background: #EEE;
         }
 
-        ul.swiper > li{
+        ul.flipper > li{
             height: 100px;
             transition: height 300ms ease-in;
             transition-delay: 100ms;
             overflow: hidden;
         }
 
-        ul.swiper > li > .swipable{
+        ul.flipper > li > .flippable{
             border: 1px solid rgba(0,0,0,.1);
             background-color: #4caf50;
             line-height: 100px;
             text-align: center;
         }
 
-        ul.swiper > li.swiped-out > .swipable{
+        ul.flipper > li.swiped-out > .flippable{
             transition-delay: 0ms;
             transform : translateX(-100vw);
             opacity: 0;
@@ -45,20 +45,20 @@
             height: 0px !important;
             border: none;
         }
-        .swiping-out > .swipable{
+        .swiping-out > .flippable{
             opacity: 0.8;
         }
 
     </style>
 </head>
 <body>
-    <ul class="swiper">
-        <li><div class="swipable"><div class="demo">Swipe me out</div></div></li>
-        <li><div class="swipable">Swipe me out</div></li>
-        <li><div class="swipable">Swipe me out</div></li>
-        <li><div class="swipable">Swipe me out</div></li>
-        <li><div class="swipable">Swipe me out</div></li>
-        <li><div class="swipable">Swipe me out</div></li>
+    <ul class="flipper">
+        <li><div class="flippable"><div class="demo">Swipe me out</div></div></li>
+        <li><div class="flippable">Swipe me out</div></li>
+        <li><div class="flippable">Swipe me out</div></li>
+        <li><div class="flippable">Swipe me out</div></li>
+        <li><div class="flippable">Swipe me out</div></li>
+        <li><div class="flippable">Swipe me out</div></li>
     </ul>
 
     <script>
@@ -84,7 +84,7 @@
         var Wrapper = function($e){
             this.$e = $e;
             var wrapper = this;
-            var swipable = $e.find(".swipable").first();
+            var flippable = $e.find(".flippable").first();
             $e.on('touchstart', function (e) {
                 wrapper.startAt = touchedAt(e);
             });
@@ -92,24 +92,24 @@
             $e.on('touchmove', function (e) {
                 wrapper.swipedTo = touchedAt(e);
                 var swipeDistance = wrapper.startAt - wrapper.swipedTo;
-                swipable.css("transform", "translateX(-"+ swipeDistance + "px)" );
+                flippable.css("transform", "translateX(-"+ swipeDistance + "px)" );
                 swipeDistance > threshold ? swipingOut(wrapper.$e) : notSwipingOut(wrapper.$e);
             });
 
             $e.on('touchend', function (e) {
                 var swipeDistance = wrapper.startAt - wrapper.swipedTo;
                 swipeDistance > threshold ? swipedOut(wrapper.$e) : "";
-                swipeEnds(wrapper.$e, $(swipable));
+                swipeEnds(wrapper.$e, $(flippable));
             });
         };
 
-        var Swiper = function($e){
-            $e.find("li").each(function(i, swipable){
-                new Wrapper($(swipable));
+        var Flipper = function($e){
+            $e.find("li").each(function(i, flippable){
+                new Wrapper($(flippable));
             });
         };
         $(document).ready(function(){
-            new Swiper($(".swiper").first());
+            new Flipper($(".flipper").first());
         });
     </script>
 </body>
