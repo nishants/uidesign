@@ -12,8 +12,14 @@
     <style>
         *{box-sizing: border-box; !important}
         body{
-            /*height: 100vh;*/
+            height: 100vh;
             width: 100vw;
+            overflow: hidden;
+        }
+        .page:nth-child(1){
+            background-color: #acbbdc;
+        }        .page:nth-child(2){
+            background-color: #4caf50;
         }
     </style>
 
@@ -30,24 +36,22 @@
                     this.$e = $page;
             },
             Flipper = function($flipper){
-                var pages = [], step, index = 0;
+                var pages = [], step, index = -1;
                 $flipper.find(" > li").each(function(index, page){
                     pages.push(new Page($(page)));
                 });
-                var reposition = function(){
-                    step = pages[index].$e.height();
-                    $flipper.css("transform", "translateY(" + (-step * index) + "px)")
-                };
+
                 this.next  = function(){
+                    index > -1 ? pages[index].$e.addClass("closed") : "";
                     index= (index + 1) % pages.length;
-                    reposition();
+                    pages[index].$e.addClass("opened");
                 };
                 this.previous = function(){
+                    pages[index].$e.removeClass("opened");
                     index= Math.abs(index - 1) % pages.length;
-                    reposition();
+                    pages[index].$e.removeClass("closed");
                 };
-
-                reposition();
+                this.next();
             };
         var flipper = new Flipper($(".flipper").first());
 
