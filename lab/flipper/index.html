@@ -26,7 +26,6 @@
             height: 100vh;
             transition: height 300ms ease-in;
             transition-delay: 100ms;
-            overflow: hidden;
         }
 
         ul.flipper > li > .flippable{
@@ -63,18 +62,21 @@
     </ul>
 
     <script>
-        var flippedOut = function($wrapper){
+        var flippedOut = function($wrapper, $next){
             $wrapper.addClass("flipped-out");
          }, threshold = 100;
 
-        var flippingOut = function($e){
+        var flippingOut = function($e, $next){
             $e.addClass("flipping-out")
         };
-        var notFlippingOut = function($e){
+        var notFlippingOut = function($e, $next){
             $e.removeClass("flipping-out")
         };
-        var flipEnds = function(wrapper, target){
+        var flipEnds = function(wrapper, target, $nextFlippable){
             target.css("transform", "" );// allow transfrom through css class to apply
+            wrapper.removeClass("flipping-out");
+
+            $nextFlippable.css("transform", "" );// allow transfrom through css class to apply
             wrapper.removeClass("flipping-out");
         };
 
@@ -82,10 +84,12 @@
             return e.originalEvent.touches[0].pageY
         };
 
-        var Wrapper = function($e){
+        var Wrapper = function($e, $next){
             this.$e = $e;
             var wrapper = this;
             var flippable = $e.find(".flippable").first();
+            var $nextFlippable = $next.find(".flippable").first();
+
             $e.on('touchstart', function (e) {
                 wrapper.startAt = touchedAt(e);
             });
@@ -94,13 +98,14 @@
                 wrapper.flippedTo = touchedAt(e);
                 var flipDistance = wrapper.startAt - wrapper.flippedTo;
                 flippable.css("transform", "translateY(-"+ flipDistance + "px)" );
+                $nextFlippable.css("transform", "translateY(-"+ flipDistance + "px)" );
                 flipDistance > threshold ? flippingOut(wrapper.$e) : notFlippingOut(wrapper.$e);
             });
 
             $e.on('touchend', function (e) {
                 var flipDistance = wrapper.startAt - wrapper.flippedTo;
                 flipDistance > threshold ? flippedOut(wrapper.$e) : "";
-                flipEnds(wrapper.$e, $(flippable));
+                flipEnds(wrapper.$e, $(flippable), $nextFlippable);
             });
         };
 
@@ -108,7 +113,7 @@
             var flippable = [];
             var $flippable = $e.find("li");
             for(var i = 0; i < $flippable.length; i++){
-                flippable.push(new Wrapper($($flippable[i])));
+                flippable.push(new Wrapper($($flippable[i]), $($flippable[i+1])));
             }
         };
         $(document).ready(function(){
