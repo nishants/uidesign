@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="awe.css">
     <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <script src="touch.js"></script>
 
     <style>
         *{box-sizing: border-box; !important}
@@ -32,35 +33,7 @@
 </ul>
 
     <script>
-        var Touch = function($e, callbacks){
-                var touchedAt = function (e) {
-                    return {
-                        x: e.originalEvent.touches[0].pageX,
-                        y: e.originalEvent.touches[0].pageY
-                    };
-                }, startPosition = null, lastPosition = null;
-
-                $e.on("touchstart", function(e){
-                    startPosition = touchedAt(e);
-                    lastPosition  = startPosition;
-                    callbacks.begin(startPosition);
-                });
-
-                $e.on("touchmove", function(e){
-                    var position = touchedAt(e);
-                    var offset = {
-                        x: lastPosition.x - position.x,
-                        y: lastPosition.y - position.y,
-                    };
-                    lastPosition  = position;
-                    callbacks.move(offset);
-                });
-
-                $e.on("touchend", function(e){
-                    callbacks.end(e);
-                });
-            },
-            Page = function($page){
+        var Page = function($page){
                 new Touch($page, {
                     begin : function(){
                         console.log("touchstart");
