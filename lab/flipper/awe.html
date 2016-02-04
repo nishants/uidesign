@@ -34,23 +34,24 @@
 
     <script>
         var Page = function($page){
-                new Touch($page, {
-                    begin : function(){
-                        console.log("touchstart");
-                    },
-                    move : function(offset){
-                        console.log("x:" + offset.x + ", y:" + offset.y);
-                    },
-                    end : function(){
-                        console.log("touchend");
-                    }
-                });
-                this.$e = $page;
+                    this.$e = $page;
             },
             Flipper = function($flipper){
                 var pages = [], step, index = -1;
                 $flipper.find(" > li").each(function(index, page){
-                    pages.push(new Page($(page)));
+                    var $page = $(page);
+                    pages.push(new Page($page));
+                    new Touch($page, {
+                        begin: function () {
+                            console.log("touchstart");
+                        },
+                        move: function (offset) {
+                            console.log("x:" + offset.x + ", y:" + offset.y);
+                        },
+                        end: function () {
+                            console.log("touchend");
+                        }
+                    });
                 });
 
                 var next = function () {
