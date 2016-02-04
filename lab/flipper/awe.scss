@@ -1,0 +1,24 @@
+$flipperHeight : 100vh;
+
+ul.undo-list{
+  list-style: none;
+  margin: 0px auto;
+  display: block;
+  padding: 0px;
+}
+
+$pages : 3;
+.flipper{
+  @extend .undo-list;
+  height: $flipperHeight * $pages;
+  overflow: hidden;
+  background-color: #EEE;
+
+  .page{
+    display: block;
+    background-color: white;
+    height: 100vh;
+    text-align: center;
+    h1{margin: 0px;}
+  }
+}

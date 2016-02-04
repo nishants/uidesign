@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flip</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="awe.css">
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+
+    <style>
+        *{box-sizing: border-box; !important}
+        body{
+            /*height: 100vh;*/
+            width: 100vw;
+        }
+    </style>
+
+</head>
+<body>
+<ul class="flipper undo-list">
+    <li class="page"><h1>Page 1</h1><p>para1</p></li>
+    <li class="page"><h1>Page 2</h1><p>para2</p></li>
+    <li class="page"><h1>Page 3</h1><p>para3</p></li>
+</ul>
+
+    <script>
+        var Page = function($page){
+                    this.$e = $page;
+            },
+            Flipper = function($flipper){
+                var pages = [], step, index = 0;
+                $flipper.find(" > li").each(function(index, page){
+                    pages.push(new Page($(page)));
+                });
+                var reposition = function(){
+                    step = pages[index].$e.height();
+                    $flipper.css("transform", "translateY(" + (-step * index) + "px)")
+                };
+                this.next  = function(){
+                    index= (index + 1) % pages.length;
+                    reposition();
+                };
+                this.previous = function(){
+                    index= Math.abs(index - 1) % pages.length;
+                    reposition();
+                };
+
+                reposition();
+            };
+        var flipper = new Flipper($(".flipper").first());
+
+        $("h1").click(function(){
+            flipper.next();
+        });
+
+        $("p").click(function(){
+            flipper.previous();
+        });
+    </script>
+</body>
+</html>
