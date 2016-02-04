@@ -32,33 +32,41 @@
 </ul>
 
     <script>
-        var Touch = function($e,callbacks){
-                    touchedAt = function (e) {
-                        return {
-                            x: e.originalEvent.touches[0].pageX,
-                            y: e.originalEvent.touches[0].pageY
-                        };
+        var Touch = function($e, callbacks){
+                var touchedAt = function (e) {
+                    return {
+                        x: e.originalEvent.touches[0].pageX,
+                        y: e.originalEvent.touches[0].pageY
                     };
+                }, startPosition = null, lastPosition = null;
 
-                    $e.on("touchstart", function(e){
-                        callbacks.begin(e);
-                    });
+                $e.on("touchstart", function(e){
+                    startPosition = touchedAt(e);
+                    lastPosition  = startPosition;
+                    callbacks.begin(startPosition);
+                });
 
-                    $e.on("touchmove", function(e){
-                        callbacks.move(e);
-                    });
+                $e.on("touchmove", function(e){
+                    var position = touchedAt(e);
+                    var offset = {
+                        x: lastPosition.x - position.x,
+                        y: lastPosition.y - position.y,
+                    };
+                    lastPosition  = position;
+                    callbacks.move(offset);
+                });
 
-                    $e.on("touchend", function(e){
-                        callbacks.end(e);
-                    });
+                $e.on("touchend", function(e){
+                    callbacks.end(e);
+                });
             },
             Page = function($page){
                 new Touch($page, {
                     begin : function(){
                         console.log("touchstart");
                     },
-                    move : function(){
-                        console.log("touchmove");
+                    move : function(offset){
+                        console.log("x:" + offset.x + ", y:" + offset.y);
                     },
                     end : function(){
                         console.log("touchend");
