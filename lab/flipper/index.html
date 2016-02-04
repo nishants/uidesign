@@ -31,35 +31,85 @@
         ul.flipper > li > .flippable{
             border: 1px solid rgba(0,0,0,.1);
             background-color: #4caf50;
-            line-height: 100vh;
             text-align: center;
         }
 
         ul.flipper > li.flipped-out > .flippable{
             transition-delay: 0ms;
-            transform : translateX(-100vw);
+            transform : translateY(-100vh);
             opacity: 0;
         }
 
         .flipped-out{
             height: 0px !important;
             border: none;
+            overflow: hidden !important;
         }
         .flipping-out > .flippable{
             opacity: 0.8;
         }
 
+        .flippable > img{
+            width: 100%;
+        }
     </style>
 </head>
 <body>
-    <ul class="flipper">
-        <li><div class="flippable"><div class="demo">Flip me out</div></div></li>
-        <li><div class="flippable">Flip me out</div></li>
-        <li><div class="flippable">Flip me out</div></li>
-        <li><div class="flippable">Flip me out</div></li>
-        <li><div class="flippable">Flip me out</div></li>
-        <li><div class="flippable">Flip me out</div></li>
-    </ul>
+<ul class="flipper">
+    <li>
+        <div class="flippable">
+            <img src="../../images/carousel/carousel-1.jpg">
+        </div>
+        <div class="fixed">
+            The image above is flippable. However the content is not.
+        </div>
+    </li>
+    <li>
+
+        <div class="flippable">
+            <img src="../../images/carousel/carousel-1.jpg">
+        </div>
+        <div class="fixed">
+            The image above is flippable. However the content is not.
+        </div>
+
+    </li>
+    <li>
+
+        <div class="flippable">
+            <img src="../../images/carousel/carousel-1.jpg">
+        </div>
+        <div class="fixed">
+            The image above is flippable. However the content is not.
+        </div>
+
+    </li>
+    <li>
+        <div class="flippable">
+            <img src="../../images/carousel/carousel-1.jpg">
+        </div>
+        <div class="fixed">
+            The image above is flippable. However the content is not.
+        </div>
+
+    </li>
+    <li>
+        <div class="flippable">
+            <img src="../../images/carousel/carousel-1.jpg">
+        </div>
+        <div class="fixed">
+            The image above is flippable. However the content is not.
+        </div>
+    </li>
+    <li>
+        <div class="flippable">
+            <img src="../../images/carousel/carousel-1.jpg">
+        </div>
+        <div class="fixed">
+            The image above is flippable. However the content is not.
+        </div>
+    </li>
+</ul>
 
     <script>
         var flippedOut = function($wrapper, $next){
