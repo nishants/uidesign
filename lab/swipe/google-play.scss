@@ -28,7 +28,7 @@ ul.swiper > li.climate{
         line-height: 38px;
 
         font-weight: 300;
-        font-size: 23px;
+        font-size: 20px;
         width: 50%;
         text-align: center;
       }
@@ -62,6 +62,9 @@ ul.swiper > li.climate{
 
       .fore-cast{
         @extend .resize-container;
+        color: #828282;
+        font-weight: 300;
+
         .now, .week{
           width: 50%;
           float: left;
@@ -69,6 +72,8 @@ ul.swiper > li.climate{
 
         .now{
           height: 60px;
+          color: #B1B1B1;
+
           .humidity, .wind, .sky{
             height: 20px;
             line-height: 18px;
@@ -103,6 +108,9 @@ ul.swiper > li.climate{
               display: inline-block;
               font-size: 5px;
               top: -10px;
+            }
+            .min{
+              color: #B1B1B1;
             }
           }
         }
