@@ -40,5 +40,9 @@ $pages : 3;
     height: 100vh;
     text-align: center;
     h1{margin: 0px;}
+    //@include transition(transform, 100ms);
+    img{
+      transition: none;
+    }
   }
 }

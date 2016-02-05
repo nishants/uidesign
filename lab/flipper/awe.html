@@ -53,10 +53,10 @@
                     this.$e = $page;
                     var $swipable = $page.find(".swipable");
                     this.reset = function(){
-                        $page.css("transform", "");
+                        $swipable.css("transform", "");
                     };
                     this.moveTo = function(yPosition){
-                        $page.css("transform", "translateY(-" + ($page.height() + yPosition) + "px)");
+                        $swipable.css("transform", "translateY(" + ( -yPosition) + "px)");
                     };
                     this.open = function(){
                         $page.addClass("opened");
