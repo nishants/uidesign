@@ -11,16 +11,20 @@
     <script src="touch.js"></script>
 
     <style>
-        *{box-sizing: border-box; !important}
+        *{box-sizing: border-box !important; }
         body{
             height: 100vh;
             width: 100vw;
             overflow: hidden;
         }
         .page:nth-child(1){
-            background-color: #acbbdc;
-        }        .page:nth-child(2){
+            background-color: #FFC107;
+        }
+        .page:nth-child(2){
             background-color: #4caf50;
+        }
+        .page:nth-child(3){
+            background-color: #00BCD4;
         }
         img{
             width: 100%;
@@ -45,7 +49,7 @@
 </ul>
 
     <script>
-        var Flippable = function($page){
+        var Page = function($page){
                     this.$e = $page;
                     var $swipable = $page.find(".swipable");
                     this.reset = function(){
@@ -54,13 +58,25 @@
                     this.moveTo = function(yPosition){
                         $page.css("transform", "translateY(-" + ($page.height() + yPosition) + "px)");
                     };
+                    this.open = function(){
+                        $page.addClass("opened");
+                    };
+                    this.close = function(){
+                        $page.addClass("closed");
+                    };
+                    this.unOpen = function(){
+                        $page.removeClass("opened");
+                    };
+                    this.unClose = function(){
+                        $page.removeClass("closed");
+                    };
             },
             Flipper = function($flipper){
                 var pages = [], step, index = -1;
                 var self = this;
                 $flipper.find(" > li").each(function(index, page){
                     var $page = $(page);
-                    var flippable = new Flippable($page);
+                    var flippable = new Page($page);
                     pages.push(flippable);
                     var senstivity = 2;
                     new Touch($page, {
@@ -84,14 +100,14 @@
                 });
 
                 var next = function () {
-                        index > -1 ? pages[index].$e.addClass("closed") : "";
+                        index > -1 ? pages[index].close() : "";
                         index = (index + 1) % pages.length;
-                        pages[index].$e.addClass("opened");
+                        pages[index].open();
                     },
                     previous = function () {
-                        pages[index].$e.removeClass("opened");
+                        pages[index].unOpen();
                         index = Math.abs(index - 1) % pages.length;
-                        pages[index].$e.removeClass("closed");
+                        pages[index].unClose();
                     };
 
                 this.next  = next;
