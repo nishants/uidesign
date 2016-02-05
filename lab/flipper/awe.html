@@ -22,19 +22,32 @@
         }        .page:nth-child(2){
             background-color: #4caf50;
         }
+        img{
+            width: 100%;
+        }
     </style>
 
 </head>
 <body>
 <ul class="flipper undo-list">
-    <li class="page"><h1>Page 1</h1><p>para1</p></li>
-    <li class="page"><h1>Page 2</h1><p>para2</p></li>
-    <li class="page"><h1>Page 3</h1><p>para3</p></li>
+    <li class="page">
+        <h1>Page 1</h1><p>para1</p>
+        <img class="swipable" src="../../images/carousel/carousel-1.jpg">
+    </li>
+    <li class="page">
+        <h1>Page 2</h1><p>para2</p>
+        <img class="swipable" src="../../images/carousel/carousel-2.jpg">
+    </li>
+    <li class="page">
+        <h1>Page 3</h1><p>para3</p>
+        <img class="swipable" src="../../images/carousel/carousel-3.jpg">
+    </li>
 </ul>
 
     <script>
         var Flippable = function($page){
                     this.$e = $page;
+                    var $swipable = $page.find(".swipable");
                     this.reset = function(){
                         $page.css("transform", "");
                     };
