@@ -76,25 +76,24 @@
                 var self = this;
                 $flipper.find(" > li").each(function(index, page){
                     var $page = $(page);
-                    var flippable = new Page($page);
-                    pages.push(flippable);
+                    pages.push(new Page($page));
                     var senstivity = 2;
                     new Touch($page, {
                         begin: function () {
                         },
                         move: function (offset) {
-                            flippable.moveTo(offset.y * senstivity);
+                            pages[index].moveTo(offset.y * senstivity);
                         },
                         end: function () {
-                            flippable.reset();
+                            pages[index].reset();
                         },
                         swipeUp: function(){
                             self.next();
-                            flippable.reset();
+                            pages[index].reset();
                         },
                         swipeDown: function(){
                             self.previous();
-                            flippable.reset();
+                            pages[index].reset();
                         }
                     });
                 });
