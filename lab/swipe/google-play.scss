@@ -1,7 +1,7 @@
 $cardHeight : 486px;
 $cardPadding: 20px;
 
-$middleRowHeight: 200px;
+$middleRowHeight: 100px;
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
 
 ul.swiper > li.climate{
@@ -11,28 +11,29 @@ ul.swiper > li.climate{
 
   .card{
       background-color: white;
-      padding: $cardPadding;
+      padding: 10px $cardPadding;
       .location{
         margin: 0px;
-        height: 50px;
-        text-align: left;
+        height: 40px;
+        line-height: 38px;
+
         font-weight: 300;
         font-size: 23px;
+        width: 50%;
+        text-align: center;
       }
 
       .current{
         .sun, .temp{
           float: left;
           height: $middleRowHeight;
-          line-height: $middleRowHeight - 25px;
+          line-height: $middleRowHeight - 5px;
           font-size: 80px;
-
+          width: 50%;
         }
         .sun{
-          width: calc(50% - 25px);
         }
         .temp{
-          width: calc(50% + 25px);
           text-align: right;
 
         }
