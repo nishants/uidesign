@@ -75,6 +75,16 @@ ul.swiper > li.climate{
             width: 50px;
           }
         }
+        ul.week{
+          list-style: none;
+          margin: 0px;
+          padding: 0px;
+          display: block;
+          li{
+            display: inline-block;
+            float: left;
+          }
+        }
 
       }
     }
