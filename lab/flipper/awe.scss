@@ -23,6 +23,9 @@ $pages : 3;
   overflow: hidden;
   background-color: #EEE;
 
+  .page.opened.closed{
+    opacity: 0.5;
+  }
   .page.opened{
     transform: translateY(-100vh)
   }
