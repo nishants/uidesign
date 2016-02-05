@@ -36,14 +36,15 @@
         var Flippable = function($page){
                     this.$e = $page;
                     this.reset = function(){
-                        $page.css("transform", "translateY(-" + ($page.height()) + "px)")
+                        $page.css("transform", "");
                     };
                     this.moveTo = function(yPosition){
-                        $page.css("transform", "translateY(-" + ($page.height() + yPosition) + "px)")
+                        $page.css("transform", "translateY(-" + ($page.height() + yPosition) + "px)");
                     };
             },
             Flipper = function($flipper){
                 var pages = [], step, index = -1;
+                var self = this;
                 $flipper.find(" > li").each(function(index, page){
                     var $page = $(page);
                     var flippable = new Flippable($page);
@@ -58,6 +59,14 @@
                         },
                         end: function () {
                             console.log("Page " + index +" gone");
+                            flippable.reset();
+                        },
+                        swipeUp: function(){
+                            self.next();
+                            flippable.reset();
+                        },
+                        swipeDown: function(){
+                            self.previous();
                             flippable.reset();
                         }
                     });
@@ -80,7 +89,7 @@
 
             };
         var flipper = new Flipper($(".flipper").first());
-        $("body").height($(window.height()));
+        $("body").height($(window).height());
 
         $("h1").click(function(){
             flipper.next();

@@ -1,11 +1,12 @@
 (function(){
   "use strict"
   var Touch = function($e, callbacks){
-    var touchedAt = function (e) {
-      return {
-        x: e.originalEvent.touches[0].pageX,
-        y: e.originalEvent.touches[0].pageY
-      };
+    var swipeDistance = callbacks.swipeDistance || 30,
+          touchedAt = function (e) {
+          return {
+            x: e.originalEvent.touches[0].pageX,
+            y: e.originalEvent.touches[0].pageY
+          };
     }, startPosition = null, lastPosition = null;
 
     $e.on("touchstart", function(e){
@@ -25,6 +26,10 @@
     });
 
     $e.on("touchend", function(e){
+      var distance = lastPosition.y - startPosition.y,
+          swipe    = Math.abs(distance) > swipeDistance,
+          swipeUp  = distance < 0;
+      swipe ? ( swipeUp ? callbacks.swipeUp() : callbacks.swipeDown() ) : "";
       callbacks.end(e);
     });
   };
