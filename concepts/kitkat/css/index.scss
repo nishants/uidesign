@@ -1,0 +1,10 @@
+
+#app{
+  height: calc(100% - 60px);
+  width: 100%;
+  background-color: black;
+  .view{
+    height: 100%;
+    width: 100%;
+  }
+}
