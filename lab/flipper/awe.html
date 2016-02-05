@@ -62,16 +62,14 @@
                     var $page = $(page);
                     var flippable = new Flippable($page);
                     pages.push(flippable);
+                    var senstivity = 2;
                     new Touch($page, {
                         begin: function () {
-                            console.log("Page " + index );
                         },
                         move: function (offset) {
-                            console.log("x:" + offset.x + ", y:" + offset.y);
-                            flippable.moveTo(offset.y);
+                            flippable.moveTo(offset.y * senstivity);
                         },
                         end: function () {
-                            console.log("Page " + index +" gone");
                             flippable.reset();
                         },
                         swipeUp: function(){
@@ -102,7 +100,7 @@
 
             };
         var flipper = new Flipper($(".flipper").first());
-        $("body").height($(window).height());
+        $("body").height($(window).height() - 60);
 
         $("h1").click(function(){
             flipper.next();
