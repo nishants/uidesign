@@ -1,0 +1,35 @@
+$cardHeight : 486px;
+$cardPadding: 20px;
+
+$middleRowHeight: 200px;
+
+ul.swiper > li.climate{
+    height: $cardHeight;
+    color: #707070;
+
+  .card{
+      background-color: white;
+      padding: $cardPadding;
+      .location{
+        margin: 0px;
+
+        text-align: left;
+        font-size: 23px;
+      }
+
+      .current{
+        .sun, .temp{
+          width: 50%;
+          float: left;
+          height: $middleRowHeight;
+          line-height: $middleRowHeight - 25px;
+          font-size: 110px;
+
+        }
+        .sun{
+          color: #FFEB3B;
+        }
+
+      }
+    }
+}

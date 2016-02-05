@@ -5,6 +5,9 @@
     <title>Swipe</title>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="google-play.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <style>
         *{box-sizing: border-box;}
@@ -22,7 +25,7 @@
         }
 
         ul.swiper > li{
-            height: 100px;
+            min-height: 100px;
             transition: height 300ms ease-in;
             transition-delay: 100ms;
             overflow: hidden;
@@ -54,7 +57,31 @@
 <body>
     <ul class="swiper">
         <li><div class="swipable"><div class="demo">Swipe me out</div></div></li>
-        <li><div class="swipable">Swipe me out</div></li>
+        <li class="climate">
+            <div class="swipable card">
+                <h1 class="location">Varanasi</h1>
+                <div class="current">
+                    <div class="sun fa fa-circle"></div>
+                    <div class="temp">21</div>
+                </div>
+                <div class="weather">
+                    <div class="now">
+                        <div class="sky">Clear</div>
+                        <div class="wind">8 km/h</div>
+                        <div class="humidity"> <span class="fa fa-umbrella"></span>0%</div>
+                    </div>
+                    <ul class="week">
+                        <li>
+                            <div class="day">FRI</div>
+                            <div class="sky fa-fa-circle"></div>
+                            <div class="max">25</div>
+                            <div class="min">11</div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </li>
         <li><div class="swipable">Swipe me out</div></li>
         <li><div class="swipable">Swipe me out</div></li>
         <li><div class="swipable">Swipe me out</div></li>
