@@ -32,6 +32,7 @@
         }
         #mockup{
             width: 100vw;
+            opacity: 0.2;
         }
     </style>
 
@@ -39,8 +40,15 @@
 
 <body>
     <div id="app">
-
-        <img id="mockup" src="../../images/kitkat.png">
+        <div class="device-bar">
+            <ul class="device-status">
+                <li class="network"><span>H</span>+R</li>
+                <li class="signal fa fa-signal"></li>
+                <li class="battery fa fa-battery-three-quarters"></li>
+                <li class="time">1:24</li>
+            </ul>
+        </div>
+        <!--<img id="mockup" src="../../images/kitkat.png">-->
     </div>
 </body>
 </html>
