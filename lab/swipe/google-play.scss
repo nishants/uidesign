@@ -2,10 +2,12 @@ $cardHeight : 486px;
 $cardPadding: 20px;
 
 $middleRowHeight: 200px;
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 ul.swiper > li.climate{
     height: $cardHeight;
     color: #707070;
+    font-family: 'Roboto', sans-serif;
 
   .card{
       background-color: white;
