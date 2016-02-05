@@ -10,11 +10,19 @@
     height: $deviceBarHeight;
     color: white;
 
-    .device-status{
-      float: right;
+    .notifications, .device-status{
       list-style: none;
       margin: 0px;
       padding: 0px;
+    }
+    .notifications{
+      float: left;
+      width: calc(100% - 80px);
+      @import 'notifications';
+    }
+    .device-status{
+      float: right;
+      width: 80px;
       @import 'device-bar';
     }
 
