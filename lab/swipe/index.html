@@ -25,18 +25,11 @@
         }
 
         ul.swiper > li{
-            min-height: 100px;
             transition: height 300ms ease-in;
             transition-delay: 100ms;
             overflow: hidden;
         }
 
-        ul.swiper > li > .swipable:not(.card){
-            border: 1px solid rgba(0,0,0,.1);
-            background-color: #4caf50;
-            line-height: 100px;
-            text-align: center;
-        }
 
         ul.swiper > li.swiped-out > .swipable{
             transition-delay: 0ms;
@@ -48,15 +41,14 @@
             height: 0px !important;
             border: none;
         }
-        .swiping-out > .swipable{
-            opacity: 0.8;
+        .swiping-out > .card.swipable{
+            opacity: 0.5;
         }
 
     </style>
 </head>
 <body>
     <ul class="swiper">
-        <li><div class="swipable"><div class="demo">Swipe me out</div></div></li>
         <li class="climate">
             <div class="swipable card">
                 <div class="header">Varanasi</div>
@@ -97,14 +89,17 @@
             </div>
         </li>
         <li>
-            <div class="card">
+            <div class="swipable card">
                 <div class="header">"Ghayal Once Again"</div>
                 <div class="searches">100,000+ people searched in India</div>
             </div>
         </li>
-        <li><div class="swipable">Swipe me out</div></li>
-        <li><div class="swipable">Swipe me out</div></li>
-        <li><div class="swipable">Swipe me out</div></li>
+        <li>
+            <div class="swipable card">
+                <div class="header">"Ghayal Once Again"</div>
+                <div class="searches">100,000+ people searched in India</div>
+            </div>
+        </li>
     </ul>
 
     <script>
