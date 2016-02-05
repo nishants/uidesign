@@ -55,13 +55,7 @@ ul.swiper > li.climate{
           line-height: $middleRowHeight - 5px;
           font-size: 80px;
           width: 50%;
-        }
-        .sun{
           text-align: center;
-        }
-        .temp{
-          text-align: right;
-
         }
 
         .degree:after{
@@ -93,8 +87,8 @@ ul.swiper > li.climate{
             height: 20px;
             line-height: 18px;
             font-size: 13px;
-            text-align: right;
-            width: 80px;
+            text-align: center;
+            margin: auto;
           }
         }
         ul.week{
