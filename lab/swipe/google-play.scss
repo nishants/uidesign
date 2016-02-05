@@ -92,6 +92,17 @@ ul.swiper > li.climate{
             height: 20px;
             font-size: 13px;
             line-height: 20px;
+            .max, .min{
+              font-size: 11px;
+            }
+            .degree:after{
+              font-weight: 700;
+              content: "O";
+              position: relative;
+              display: inline-block;
+              font-size: 5px;
+              top: -10px;
+            }
           }
         }
 
