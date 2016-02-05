@@ -2,7 +2,7 @@ $cardHeight : 486px;
 $cardPadding: 20px;
 
 $middleRowHeight: 200px;
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100);
 
 ul.swiper > li.climate{
     height: $cardHeight;
@@ -14,8 +14,9 @@ ul.swiper > li.climate{
       padding: $cardPadding;
       .location{
         margin: 0px;
-
+        height: 50px;
         text-align: left;
+        font-weight: 300;
         font-size: 23px;
       }
 
@@ -29,7 +30,7 @@ ul.swiper > li.climate{
 
         }
         .sun{
-          color: #FFEB3B;
+          color: #FFE168;
         }
 
       }
