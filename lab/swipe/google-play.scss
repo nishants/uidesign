@@ -13,7 +13,7 @@ $middleRowHeight: 100px;
   color: #FFE168;
 }
 ul > li:first-child{
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 li > .card{
@@ -21,7 +21,7 @@ li > .card{
   padding: 10px $cardPadding;
   color: #707070;
   font-family: 'Roboto', sans-serif;
-  margin: 0px 5px 5px 5px;
+  margin: 0px 10px 10px 10px;
   box-shadow: 0px 2px 2px #D0CFCF;
 
   .header{
