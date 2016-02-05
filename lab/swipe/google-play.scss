@@ -69,6 +69,8 @@ ul.swiper > li.climate{
           height: 60px;
           .humidity, .wind, .sky{
             height: 20px;
+            line-height: 18px;
+            font-size: 13px;
             text-align: left;
             width: 50px;
           }
