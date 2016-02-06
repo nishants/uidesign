@@ -14,7 +14,7 @@
     };
 
     var $search = $(".google-play > .search > .input").first();
-    $search.on("click", app.showGooglePLay);
+    $search.on("touchstart", app.showGooglePLay);
     app.reload = function(state){
       $app.removeClass();
       $app.addClass(state);
