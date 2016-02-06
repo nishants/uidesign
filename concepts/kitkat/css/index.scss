@@ -1,7 +1,7 @@
 @import 'config';
 
 #app{
-  height: calc(100% - 60px);
+  height: $calculateAppHeight;
   width: 100%;
   font-family: 'Roboto', sans-serif;
 
@@ -38,6 +38,8 @@
   .google-play{
     @import 'google-play';
   }
+
+  @import 'google-play-window';
 
   .view{
     height: calc(100% - #{$deviceBarHeight});
