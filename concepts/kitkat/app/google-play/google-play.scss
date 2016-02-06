@@ -1,4 +1,4 @@
-$spaceForSearchBar : 70px;
+$spaceForSearchBar : 75px;
 
 $cardPadding: 20px;
 $middleRowHeight: 100px;
@@ -12,16 +12,18 @@ $middleRowHeight: 100px;
      margin: 0px auto;
      list-style: none;
      padding: 0px;
-
-     overflow: hidden;
    }
 
    ul.swiper > li{
-     transition: height 300ms ease-in;
+     height: 73px;
+     @include transition(height, 100ms);
      transition-delay: 100ms;
      overflow: hidden;
    }
 
+   ul.swiper > li.climate{
+      height: 240px;
+   }
 
    ul.swiper > li.swiped-out > .swipable{
      transition-delay: 0ms;
@@ -56,6 +58,7 @@ $middleRowHeight: 100px;
      color: #707070;
      margin: 0px 10px 10px 10px;
      box-shadow: 0px 2px 2px #D0CFCF;
+     border-radius: $cardRadius;
 
      .header{
        margin: 0px;
