@@ -43,26 +43,17 @@
     @import 'google-play';
   }
 
-  @import 'google-play-window';
-
   .view{
     height: calc(100% - #{$deviceBarHeight});
     width: 100%;
   }
 }
 
+@import 'google-play-window';
+
 #background-image{
   height: 100vh;
   position: fixed;
   z-index: -1;
   top: 10px;
-}
-
-#app:not(.show-google-play){
-  #google-play-window-wrapper{
-    transform: scale(0);
-    .google-play-window{
-      opacity: 0;
-    }
-  }
 }
