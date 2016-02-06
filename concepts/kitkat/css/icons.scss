@@ -1,8 +1,23 @@
 .facebook{
   .icon{
-    line-height: 40px;
     color: #49659F;
     background-color: white;
+    border-radius: 7px;
+    font-size: 50px !important;
+  }
+}
+
+.amazon{
+  .icon{
+    color: black;
+    background-color: rgb(245, 214, 1);
+    border-radius: 7px;
+  }
+}
+.firefox{
+  .icon{
+    color: #E58324;
+    background-color: rgb(245, 214, 1);
     border-radius: 7px;
   }
 }
