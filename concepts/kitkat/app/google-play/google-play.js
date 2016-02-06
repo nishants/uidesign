@@ -45,6 +45,3 @@ var Swiper = function($e){
     new Wrapper($(swipable));
   });
 };
-$(document).ready(function(){
-  new Swiper($(".swiper").first());
-});
