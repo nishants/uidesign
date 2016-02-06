@@ -1,0 +1,33 @@
+$searchHeight : 35px;
+
+.search{
+  overflow: hidden;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.26);
+  height: $searchHeight;
+  overflow: hidden;
+  margin: 10px;
+
+  .input, .voice{
+    box-sizing: border-box;
+    height: $searchHeight;
+    line-height: $searchHeight;
+  }
+  .input{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.26);
+
+    @extend input.default;
+  }
+  .voice{
+    width: 50px;
+    padding-left: 10px;
+    padding-top: 3px;
+    font-size: 20px;
+
+    text-align: center;
+    float: right;
+    position: relative;
+    top: -$searchHeight;
+  }
+}
