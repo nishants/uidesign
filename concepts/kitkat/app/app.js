@@ -12,6 +12,10 @@
 
     var $search = $(".google-play > .search > .input").first();
     $search.on("click", app.showGooglePLay);
+    app.reload = function(state){
+      $app.addClass(state);
+    };
+    app.reload();
     window.app = app;
   })
 }).call(this);
