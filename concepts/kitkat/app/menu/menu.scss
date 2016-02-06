@@ -12,7 +12,20 @@
     height: 100%;
     width: 100%;
     color: white;
+    padding: 10px;
 
+    .app-link{
+      text-align: center;
+      width: 50px;
+      margin: 10px;
+
+      .icon{
+        font-size: 50px;
+      }
+      .name{
+        font-size: 11px;
+      }
+    }
     @include transition(all, 100ms);
   }
 }
