@@ -10,3 +10,9 @@
   background-color: black;
   z-index: 2;
 }
+
+#app:not(.show-menu){
+  #menu-window-wrapper{
+    @include transform(scale(0));
+  }
+}

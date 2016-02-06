@@ -6,7 +6,7 @@
     });
 
     $("#menu-window-wrapper").load("app/menu/menu.html", {}, function(){
-      alert("laoded")
+      console.info("loaded menu");
     });
 
     var $app = $("#app"),
