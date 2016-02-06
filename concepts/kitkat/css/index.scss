@@ -46,3 +46,12 @@
     width: 100%;
   }
 }
+
+#app:not(.show-google-play){
+  #google-play-window-wrapper{
+    transform: scale(0);
+    .google-play-window{
+      opacity: 0;
+    }
+  }
+}
