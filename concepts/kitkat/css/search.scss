@@ -1,10 +1,10 @@
-$searchHeight : 35px;
+$searchHeight : 40px;
 
 .search{
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.26);
   height: $searchHeight;
-  margin: 10px;
+  margin: 5px 10px;
   border-radius: $cardRadius;
 
   .input, .voice{
@@ -25,7 +25,7 @@ $searchHeight : 35px;
     padding-left: 10px;
     padding-top: 3px;
     font-size: 20px;
-
+    color: #f4f4f4;
     text-align: center;
     float: right;
     position: relative;
