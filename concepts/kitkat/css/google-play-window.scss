@@ -5,7 +5,7 @@
   width: 100vw;
 
   #google-play-window {
-    @include transition(opacity, 16ms);
+    @include transition(opacity, 100ms);
   }
     @import '../app/google-play/google-play';
 }
