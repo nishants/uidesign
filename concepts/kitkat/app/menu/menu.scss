@@ -16,14 +16,15 @@
 
     .app-link{
       text-align: center;
-      width: 50px;
+      width: 70px;
       margin: 10px;
 
       .icon{
         font-size: 50px;
       }
       .name{
-        font-size: 11px;
+        font-size: 16px;
+        line-height: 25px;
       }
     }
     @include transition(all, 100ms);
