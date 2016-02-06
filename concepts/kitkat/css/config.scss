@@ -11,6 +11,10 @@ $defaultLineHeight : 30px;
 $calculateAppHeight : calc(100% - 60px);
 $cardRadius : 1px;
 
+#app * {
+  box-sizing: border-box;
+}
+
 input.default{
   padding: 0px;
   margin: 0px;
