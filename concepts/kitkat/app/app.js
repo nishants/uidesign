@@ -14,6 +14,7 @@
     var $search = $(".google-play > .search > .input").first();
     $search.on("click", app.showGooglePLay);
     app.reload = function(state){
+      $app.removeClass();
       $app.addClass(state);
     };
     window.app = app;
