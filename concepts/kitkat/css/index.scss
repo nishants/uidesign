@@ -36,6 +36,10 @@
   }
 
   .google-play{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+
     @import 'google-play';
   }
 

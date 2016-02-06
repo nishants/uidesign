@@ -1,7 +1,10 @@
-$cardPadding: 20px;
+$spaceForSearchBar : 70px;
 
+$cardPadding: 20px;
 $middleRowHeight: 100px;
  #google-play-window{
+   background-color: #EEE;
+   padding-top: $spaceForSearchBar;
 
    ul.swiper{
      margin: 0px auto;
