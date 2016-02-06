@@ -7,6 +7,7 @@
         app = {
         showGooglePLay : function(){
           $app.addClass("show-google-play");
+          window.location.hash = "#/google-play";
         }
     };
 
@@ -15,7 +16,6 @@
     app.reload = function(state){
       $app.addClass(state);
     };
-    app.reload();
     window.app = app;
   })
 }).call(this);
