@@ -39,8 +39,6 @@
     z-index: 1;
     position: fixed;
     width: 100%;
-
-    @import 'search';
   }
 
   .view{
@@ -49,6 +47,7 @@
   }
 }
 
+@import 'search';
 @import 'google-play-window';
 
 #background-image{
