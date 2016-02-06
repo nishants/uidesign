@@ -1,6 +1,6 @@
 (function(){
   "use strict"
   $(document).ready(function(){
-    alert("coming up")
+    $("#google-play-window").load("app/google-play/window.html");
   })
 }).call(this);
