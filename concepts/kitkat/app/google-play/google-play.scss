@@ -5,6 +5,8 @@ $middleRowHeight: 100px;
  #google-play-window{
    background-color: #EEE;
    padding-top: $spaceForSearchBar;
+   height: 100vh;
+   overflow: auto;
 
    ul.swiper{
      margin: 0px auto;
