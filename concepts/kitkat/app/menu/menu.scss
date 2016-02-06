@@ -13,7 +13,7 @@
     width: 100%;
     color: white;
 
-    @include transition(opacity, 100ms);
+    @include transition(all, 100ms);
   }
 }
 
@@ -22,6 +22,7 @@
     @include transform(scale(0));
     #menu-window{
       opacity: 0;
+      @include transform(scale(5));
     }
   }
 }
