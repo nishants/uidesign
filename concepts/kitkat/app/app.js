@@ -1,13 +1,6 @@
 (function(){
   "use strict"
   $(document).ready(function(){
-    $("#google-play-window-wrapper").load("app/google-play/window.html", {}, function(){
-      new Swiper($(".swiper").first());
-    });
-
-    $("#menu-window-wrapper").load("app/menu/menu.html", {}, function(){
-      console.info("loaded menu");
-    });
 
     var $app = $("#app"),
         app = {
@@ -23,6 +16,17 @@
       $app.removeClass();
       $app.addClass(state);
     };
+
+    $("#google-play-window-wrapper").load("app/google-play/window.html", {}, function(){
+      new Swiper($(".swiper").first());
+    });
+
+    $("#menu-window-wrapper").load("app/menu/menu.html", {}, function(){
+      $("#menu-button").on("touchstart", function(){
+        app.reload("show-menu");
+      });
+    });
+
     window.app = app;
   })
 }).call(this);
