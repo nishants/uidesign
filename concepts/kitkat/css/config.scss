@@ -17,3 +17,18 @@ input.default{
   box-sizing: border-box;
   border: none;
 }
+
+@mixin transform( $property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+@mixin transition($time, $property) {
+  -webkit-transition: $property  $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -moz-transition:    $property  $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  -o-transition:      $property  $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
+  transition:         $property  $time cubic-bezier(0.45, 0.515, 0.36, 0.88);
+}
