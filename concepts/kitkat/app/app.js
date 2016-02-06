@@ -5,7 +5,7 @@
     var $app = $("#app"),
         app = {
         showGooglePLay : function(){
-          $app.addClass("show-google-play");
+          app.reload("show-google-play");
           window.location.hash = "#/google-play";
         }
     };
@@ -24,6 +24,7 @@
     $("#menu-window-wrapper").load("app/menu/menu.html", {}, function(){
       $("#menu-button").on("touchstart", function(){
         app.reload("show-menu");
+        window.location.hash = "#/menu";
       });
     });
 

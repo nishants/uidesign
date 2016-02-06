@@ -3,7 +3,8 @@
   $(document).ready(function(){
     var states  = {
         undefined: "",
-        "google-play" : "show-google-play"
+        "google-play" : "show-google-play",
+        "menu"        : "show-menu"
         },
         loadUrl = function (url) {
           var stateName = url.split("/")[1];
