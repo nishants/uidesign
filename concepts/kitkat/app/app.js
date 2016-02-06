@@ -5,6 +5,10 @@
       new Swiper($(".swiper").first());
     });
 
+    $("#menu-window-wrapper").load("app/menu/menu.html", {}, function(){
+      alert("laoded")
+    });
+
     var $app = $("#app"),
         app = {
         showGooglePLay : function(){
