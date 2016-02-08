@@ -1,5 +1,5 @@
 $size : 150px;
-$weight: 10px;
+$weight: 20px;
 
 .x, .x *{
   box-sizing: border-box;
@@ -9,6 +9,8 @@ $weight: 10px;
   width: $size;
   height: 2 * $size;
   text-align: center;
+  margin: auto;
+
   .xx1, .xx2 {
     height: $size;
     width: 2 * $weight;
@@ -19,6 +21,27 @@ $weight: 10px;
       width: $weight;
       float: left;
       background-color: black
+    }
+  }
+  .xx1{
+    .x1{
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    .x2{
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+  }
+  .xx2{
+    .x1{
+      transform: rotate(45deg);
+      transform-origin: 0 0;
+    }
+    .x2{
+      transform: rotate(-45deg);
+      transform-origin: 100% 0;
     }
   }
 }
