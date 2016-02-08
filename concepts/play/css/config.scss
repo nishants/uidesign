@@ -8,6 +8,11 @@ $fixedBannerHeight    : 100vh;
 $menuBarWidth     : 300px;
 $playerPadding:   100px;
 
+*{box-sizing: border-box;  }
+h1{
+  margin: 0px;
+}
+
 .undo-list{
   list-style: none;
   padding: 0px;
