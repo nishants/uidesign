@@ -20,12 +20,13 @@ $weight: 20px;
       height: $size;
       width: $weight;
       float: left;
-      background-color: black
+      background-color: black;
+      border-radius: 5px;
     }
   }
   .xx1{
     .x1{
-      transform: rotate(-45deg);
+      transform: rotate(-45deg) translateX($weight/2) translateY($weight/2);
       transform-origin: 0 100%;
     }
     .x2{
@@ -36,7 +37,7 @@ $weight: 20px;
   }
   .xx2{
     .x1{
-      transform: rotate(45deg);
+      transform: rotate(45deg) translateX($weight/2) translateY(-$weight/2);
       transform-origin: 0 0;
     }
     .x2{
