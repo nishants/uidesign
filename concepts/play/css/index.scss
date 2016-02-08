@@ -2,10 +2,12 @@
 
 #blog{
 
-  #player-frame{
+  #welcome{
     background-color: black;
     border: 5px solid black;
+    height: 100vh;
     #player{
+      height: 500px;
       width: calc(100vw - 10px);
       img{width: 100%;}
     }
