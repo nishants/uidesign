@@ -1,9 +1,15 @@
 @import 'config';
 
 #blog{
-  #player{
-    height: 100vh;
-    width: 100vw;
+
+  #player-frame{
+    background-color: black;
+    border: 5px solid black;
+  }
+
+  .navigation{
+    height: $topBarHeight;
+    background-color: $topBarBgColor;
   }
 }
 *{box-sizing: border-box;  }
