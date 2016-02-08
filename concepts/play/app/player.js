@@ -13,7 +13,10 @@
       sliderWidth = playerWidth * $slides.length;
 
       $slides.width(playerWidth);
+      $slides.height(playerHeight);
+
       $slider.width(sliderWidth);
+      $slider.height(playerHeight);
     };
 
     var reset       = function(){
@@ -42,10 +45,14 @@
         index == $slides.length-1 ? index = 0 : index++;
         $slider.css("transform", "translateX(-" + (index * playerWidth) + "px)");
       },
+      stop    : function(){
+        player.autoplay = false;
+      },
       play    : function(interval){
         var player = this;
-        setInterval(function(){
-          player.next();
+        player.autoplay = true;
+        setInterval(function () {
+          player.autoplay ? player.next() : "";
         }, interval);
       },
       previous: function(){
