@@ -16,6 +16,7 @@
     height: $fixedBannerHeight;
     background-color: $fixedBannerBgColor;
     color: white;
+
   }
   #content{
     position: relative;
@@ -23,7 +24,7 @@
     height: calc(100% - #{$topBarHeight});
     overflow: auto;
     #fixed-banner-placeholder{
-      background: transparent;
+      background: rgba(0,0,0,0.1);
       height: $fixedBannerHeight;
     }
     #showcase{

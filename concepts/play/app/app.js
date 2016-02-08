@@ -3,8 +3,7 @@
 
   var app = {
     init: function(){
-      app.player = app.Player.init($("#player"));
-      app.player.play(2000);
+      $("#loader").hide();
     }
   };
 
