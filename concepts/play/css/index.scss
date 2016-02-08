@@ -1,0 +1,34 @@
+@import 'config';
+
+#app{
+  *{
+    box-sizing: border-box;
+  }
+  > nav{
+    width: $menuBarWidth;
+    float: left;
+    height: 100vh;
+    background-color: $topBarBgColor;
+    overflow: hidden;
+  }
+  > article{
+    height: 100vh;
+    width: calc(100vw - #{$menuBarWidth});
+    float: left;
+
+    #top-bar{
+      height: $topBarHeight;
+      background-color: $topBarBgColor;
+    }
+
+    #player{
+      border: 10px solid white;
+      ul{
+        li {
+          img{width: 100%;}
+        }
+      }
+    }
+  }
+
+}
