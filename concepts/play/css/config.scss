@@ -1,7 +1,9 @@
 // Top bar
-*{
-  box-sizing: border-box;
-}
+$topBarHeight     : 60px;
+$topBarBgColor    : #EEE;
+
+$menuBarWidth     : 300px;
+$playerPadding:   100px;
 
 .undo-list{
   list-style: none;
