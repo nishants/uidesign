@@ -6,6 +6,7 @@
     var playerWidth = $player.width();
     var sliderWidth = playerWidth * $slides.length;
     var index       = 0;
+    var playerHeight= $player.height();
 
     var resize      = function(){
       playerWidth = $player.width();
@@ -18,11 +19,14 @@
     var reset       = function(){
       $player.css("overflow", "hidden");
 
+      $slides.height(playerHeight);
+      $slider.height(playerHeight);
+
       $slider.css("list-style", "none");
       $slider.css("margin", "0");
       $slider.css("padding", "0");
       $slider.css("display", "block");
-      $slider.css("transition", "transform 300ms cubic-bezier(0.285, 0.410, 0.610, 1.000)");
+      $slider.css("transition", "transform 500ms cubic-bezier(0.42, 0, 0.58, 1)");
       $slider.css("transform", "translateX(0px)");
 
       $slides.css("display", "block");
