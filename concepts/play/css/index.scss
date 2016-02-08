@@ -5,7 +5,7 @@
   #welcome{
     background-color: black;
     border: 5px solid black;
-    height: 100vh;
+    height: calc(100vh - 100px);
     #player{
       height: 500px;
       width: calc(100vw - 10px);
@@ -17,6 +17,10 @@
     height: $topBarHeight;
     background-color: $topBarBgColor;
     color: #EEE;
+  }
+
+  article{
+    height: 500vh;
   }
 }
 

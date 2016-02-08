@@ -6,6 +6,7 @@
       app.player = app.Player.init($("#player"));
       app.player.play(2000);
       $("#loader").hide();
+      window.app.NavBar.init();
     }
   };
 
