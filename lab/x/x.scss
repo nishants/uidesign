@@ -6,16 +6,33 @@ $smoothness: 10px;
   box-sizing: border-box;
 }
 
+@mixin transition($property, $time) {
+  -webkit-transition: $property $time ease-in;
+  -moz-transition: $property $time ease-in;
+  -o-transition: $property $time ease-in;
+  transition: $property $time ease-in;
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
 .x{
   width: $size;
   height: 2 * $size;
   text-align: center;
   margin: auto;
-
+  @include transition(transform, 100ms);
+  transition-delay: 100ms;
   .xx1, .xx2 {
     height: $size;
     width: 2 * $weight;
     margin: 0px auto;
+    @include transition(transform, 100ms);
 
     .x1, .x2 {
       height: $size;
@@ -23,6 +40,7 @@ $smoothness: 10px;
       float: left;
       background-color: black;
       border-radius: $smoothness;
+      @include transition(transform, 100ms);
     }
   }
   .xx1{
@@ -49,14 +67,23 @@ $smoothness: 10px;
 }
 
 .x.collapse{
-  opacity: 0;
+  @include transform(rotate(90deg));
+  @include transition(transform, 100ms);
+
   .xx1, .xx2{
-    transform: rotate(90deg);
+    opacity: 0;
+    @include transition(opacity, 100ms);
     .x2{
       transform: scale(1);
+      @include transition(transform, 100ms);
     }
     .x1{
       transform: translateX($weight);
+      @include transition(transform, 100ms);
     }
   }
+}
+
+body:hover > .x{
+  @extend .x.collapse;
 }

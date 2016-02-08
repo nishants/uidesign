@@ -5,17 +5,30 @@
   width: 150px;
   height: 300px;
   text-align: center;
-  margin: auto; }
+  margin: auto;
+  -webkit-transition: transform 100ms ease-in;
+  -moz-transition: transform 100ms ease-in;
+  -o-transition: transform 100ms ease-in;
+  transition: transform 100ms ease-in;
+  transition-delay: 100ms; }
   .x .xx1, .x .xx2 {
     height: 150px;
     width: 40px;
-    margin: 0px auto; }
+    margin: 0px auto;
+    -webkit-transition: transform 100ms ease-in;
+    -moz-transition: transform 100ms ease-in;
+    -o-transition: transform 100ms ease-in;
+    transition: transform 100ms ease-in; }
     .x .xx1 .x1, .x .xx1 .x2, .x .xx2 .x1, .x .xx2 .x2 {
       height: 150px;
       width: 20px;
       float: left;
       background-color: black;
-      border-radius: 10px; }
+      border-radius: 10px;
+      -webkit-transition: transform 100ms ease-in;
+      -moz-transition: transform 100ms ease-in;
+      -o-transition: transform 100ms ease-in;
+      transition: transform 100ms ease-in; }
   .x .xx1 .x1 {
     transform: rotate(-45deg) translateX(10px) translateY(10px);
     transform-origin: 0 100%; }
@@ -29,13 +42,33 @@
     transform: rotate(-45deg);
     transform-origin: 100% 0; }
 
-.x.collapse {
-  opacity: 0; }
-  .x.collapse .xx1, .x.collapse .xx2 {
-    transform: rotate(90deg); }
-    .x.collapse .xx1 .x2, .x.collapse .xx2 .x2 {
-      transform: scale(1); }
-    .x.collapse .xx1 .x1, .x.collapse .xx2 .x1 {
-      transform: translateX(20px); }
+.x.collapse, body:hover > .x {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: transform 100ms ease-in;
+  -moz-transition: transform 100ms ease-in;
+  -o-transition: transform 100ms ease-in;
+  transition: transform 100ms ease-in; }
+  .x.collapse .xx1, body:hover > .x .xx1, .x.collapse .xx2, body:hover > .x .xx2 {
+    opacity: 0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    -o-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in; }
+    .x.collapse .xx1 .x2, body:hover > .x .xx1 .x2, .x.collapse .xx2 .x2, body:hover > .x .xx2 .x2 {
+      transform: scale(1);
+      -webkit-transition: transform 100ms ease-in;
+      -moz-transition: transform 100ms ease-in;
+      -o-transition: transform 100ms ease-in;
+      transition: transform 100ms ease-in; }
+    .x.collapse .xx1 .x1, body:hover > .x .xx1 .x1, .x.collapse .xx2 .x1, body:hover > .x .xx2 .x1 {
+      transform: translateX(20px);
+      -webkit-transition: transform 100ms ease-in;
+      -moz-transition: transform 100ms ease-in;
+      -o-transition: transform 100ms ease-in;
+      transition: transform 100ms ease-in; }
 
 /*# sourceMappingURL=x.css.map */
