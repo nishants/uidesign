@@ -6,7 +6,6 @@
     var playerWidth = $player.width();
     var sliderWidth = playerWidth * $slides.length;
     var index       = 0;
-    var playerHeight= $player.height();
 
     var resize      = function(){
       playerWidth = $player.width();
@@ -18,9 +17,9 @@
 
     var reset       = function(){
       $player.css("overflow", "hidden");
-
-      $slides.height(playerHeight);
-      $slider.height(playerHeight);
+      $player.width(playerWidth);
+      $slides.width(playerWidth);
+      $slider.width(playerWidth);
 
       $slider.css("list-style", "none");
       $slider.css("margin", "0");
