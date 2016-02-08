@@ -85,10 +85,11 @@ $smoothness: 10px;
 }
 
 body:hover > .x{
-  @extend .x.collapse;
+  @extend .plus;
 }
 
 .plus{
   @extend .x;
-  @include transform(rotate(45deg));
+  @include transform(rotate(135deg) translateX(-$weight/2));
+  transform-origin: 50% 50%;
 }
