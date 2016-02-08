@@ -1,22 +1,25 @@
 (function(){
   "use strict"
   var createPlayer = function($player){
-    var $slider     = $player.find("> ul.slider");
-    var $slides     = $slider.find(" > li");
-    var playerWidth = $slides.width();
-    var sliderWidth = playerWidth * $slides.length;
-    var index       = 0;
+    var $slider      = $player.find("> ul.slider");
+    var $slides      = $slider.find(" > li");
+    var playerWidth  = $player.width();
+    var playerHeight = $player.height();
+    var sliderWidth  = playerWidth * $slides.length;
+    var index        = 0;
 
     var resize      = function(){
-      playerWidth = $slides.width();
+      playerWidth = $player.width();
       sliderWidth = playerWidth * $slides.length;
 
+      $slides.width(playerWidth);
       $slider.width(sliderWidth);
     };
 
     var reset       = function(){
       index = 0;
       $player.css("overflow", "hidden");
+      $slides.css("overflow", "hidden");
 
       $slider.css("list-style", "none");
       $slider.css("margin", "0");
