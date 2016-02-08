@@ -15,7 +15,7 @@
       width: 20px;
       float: left;
       background-color: black;
-      border-radius: 5px; }
+      border-radius: 10px; }
   .x .xx1 .x1 {
     transform: rotate(-45deg) translateX(10px) translateY(10px);
     transform-origin: 0 100%; }
@@ -28,5 +28,14 @@
   .x .xx2 .x2 {
     transform: rotate(-45deg);
     transform-origin: 100% 0; }
+
+.x.collapse {
+  opacity: 0; }
+  .x.collapse .xx1, .x.collapse .xx2 {
+    transform: rotate(90deg); }
+    .x.collapse .xx1 .x2, .x.collapse .xx2 .x2 {
+      transform: scale(1); }
+    .x.collapse .xx1 .x1, .x.collapse .xx2 .x1 {
+      transform: translateX(20px); }
 
 /*# sourceMappingURL=x.css.map */

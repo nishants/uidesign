@@ -1,5 +1,6 @@
 $size : 150px;
 $weight: 20px;
+$smoothness: 10px;
 
 .x, .x *{
   box-sizing: border-box;
@@ -21,7 +22,7 @@ $weight: 20px;
       width: $weight;
       float: left;
       background-color: black;
-      border-radius: 5px;
+      border-radius: $smoothness;
     }
   }
   .xx1{
@@ -43,6 +44,19 @@ $weight: 20px;
     .x2{
       transform: rotate(-45deg);
       transform-origin: 100% 0;
+    }
+  }
+}
+
+.x.collapse{
+  opacity: 0;
+  .xx1, .xx2{
+    transform: rotate(90deg);
+    .x2{
+      transform: scale(1);
+    }
+    .x1{
+      transform: translateX($weight);
     }
   }
 }
