@@ -22,6 +22,7 @@
       $slider.css("margin", "0");
       $slider.css("padding", "0");
       $slider.css("display", "block");
+      $slider.css("transition", "transform 300ms cubic-bezier(0.285, 0.410, 0.610, 1.000)");
       $slider.css("transform", "translateX(0px)");
 
       $slides.css("display", "block");
@@ -33,7 +34,8 @@
 
     return {
       next    : function(){
-        $slider.css("transform", "translateX(-" + (++index * playerWidth) + "px)");
+        index == $slides.length-1 ? index = 0 : index++;
+        $slider.css("transform", "translateX(-" + (index * playerWidth) + "px)");
       },
       play    : function(interval){
         var player = this;
@@ -42,7 +44,8 @@
         }, interval);
       },
       previous: function(){
-        $slider.css("transform", "translateX(-" + (--index * playerWidth) + "px)");
+        index == 0 ? index = $slides.length-1 : index--;
+        $slider.css("transform", "translateX(-" + (index * playerWidth) + "px)");
       },
     };
   };
