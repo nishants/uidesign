@@ -74,7 +74,7 @@ $smoothness: 10px;
 }
 
 .quado.collapse{
-  @include transform(rotate(90deg));
+  //@include transform(rotate(90deg));
   @include transition(transform, 100ms);
 
   .xx1, .xx2{
@@ -99,4 +99,24 @@ body:hover > .x{
   @extend .x;
   @include transform(rotate(135deg) translateX(-$weight/2));
   transform-origin: 50% 50%;
+}
+
+.quado.maximize{
+  transform: translateY(-$size/2) scale(1.5);
+  transform-origin: 50% 50%;
+
+  .xx1{
+    .x1{
+      @include transform(rotate(90deg));
+      transform-origin: 0 100%;
+    }
+  }
+  .xx2{
+    @include transform(rotate(-90deg));
+    transform-origin: 0 0;
+    .x2{
+      transform: rotate(-90deg);
+      transform-origin: 0 0;
+    }
+  }
 }
