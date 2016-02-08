@@ -23,9 +23,12 @@
 
     #player{
       border: 10px solid white;
+      height: 500px;
       ul{
         li {
-          img{width: 100%;}
+          img{
+            height: 500px;
+          }
         }
       }
     }
