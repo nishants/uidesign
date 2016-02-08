@@ -8,7 +8,7 @@
     var index       = 0;
 
     var resize      = function(){
-      playerWidth = $player.width();
+      playerWidth = $slides.width();
       sliderWidth = playerWidth * $slides.length;
 
       $slider.width(sliderWidth);
