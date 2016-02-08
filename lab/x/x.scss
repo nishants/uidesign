@@ -1,0 +1,24 @@
+$size : 150px;
+$weight: 10px;
+
+.x, .x *{
+  box-sizing: border-box;
+}
+
+.x{
+  width: $size;
+  height: 2 * $size;
+  text-align: center;
+  .xx1, .xx2 {
+    height: $size;
+    width: 2 * $weight;
+    margin: 0px auto;
+
+    .x1, .x2 {
+      height: $size;
+      width: $weight;
+      float: left;
+      background-color: black
+    }
+  }
+}
