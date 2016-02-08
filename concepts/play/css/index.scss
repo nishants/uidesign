@@ -6,6 +6,8 @@
   }
 
   height: 100vh;
+  overflow: hidden;
+
   #top-bar{
     height: $topBarHeight;
     background-color: $topBarBgColor;
@@ -13,12 +15,20 @@
   #fixed-banner{
     height: $fixedBannerHeight;
     background-color: $fixedBannerBgColor;
+    color: white;
   }
   #content{
+    position: relative;
+    top: -$fixedBannerHeight;
     height: calc(100% - #{$topBarHeight});
     overflow: auto;
+    #fixed-banner-placeholder{
+      background: transparent;
+      height: $fixedBannerHeight;
+    }
     #showcase{
       height: 400vh;
+      background: white;
     }
   }
 }
