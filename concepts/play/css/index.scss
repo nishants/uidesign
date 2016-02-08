@@ -4,34 +4,21 @@
   *{
     box-sizing: border-box;
   }
-  > nav{
-    width: $menuBarWidth;
-    float: left;
-    height: 100vh;
+
+  height: 100vh;
+  #top-bar{
+    height: $topBarHeight;
     background-color: $topBarBgColor;
-    overflow: hidden;
   }
-  > article{
-    height: 100vh;
-    width: calc(100vw - #{$menuBarWidth});
-    float: left;
-
-    #top-bar{
-      height: $topBarHeight;
-      background-color: $topBarBgColor;
-    }
-
-    #player{
-      border: 10px solid white;
-      height: 500px;
-      ul{
-        li {
-          img{
-            height: 500px;
-          }
-        }
-      }
+  #fixed-banner{
+    height: $fixedBannerHeight;
+    background-color: $fixedBannerBgColor;
+  }
+  #content{
+    height: calc(100% - #{$topBarHeight});
+    overflow: auto;
+    #showcase{
+      height: 400vh;
     }
   }
-
 }
