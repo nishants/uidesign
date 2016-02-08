@@ -3,7 +3,7 @@
   var createPlayer = function($player){
     var $slider     = $player.find("> ul.slider");
     var $slides     = $slider.find(" > li");
-    var playerWidth = $player.width();
+    var playerWidth = $slides.width();
     var sliderWidth = playerWidth * $slides.length;
     var index       = 0;
 
@@ -12,14 +12,11 @@
       sliderWidth = playerWidth * $slides.length;
 
       $slider.width(sliderWidth);
-      $slides.width(playerWidth);
     };
 
     var reset       = function(){
+      index = 0;
       $player.css("overflow", "hidden");
-      $player.width(playerWidth);
-      $slides.width(playerWidth);
-      $slider.width(playerWidth);
 
       $slider.css("list-style", "none");
       $slider.css("margin", "0");
@@ -31,10 +28,12 @@
       $slides.css("display", "block");
       $slides.css("float", "left");
     };
-
     reset();
     resize();
-
+    $(window).resize(function(){
+      reset();
+      resize();
+    });
     return {
       next    : function(){
         index == $slides.length-1 ? index = 0 : index++;
