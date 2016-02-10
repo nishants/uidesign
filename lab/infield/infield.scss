@@ -1,24 +1,49 @@
+@import 'config';
 
-$fieldHeight: 60px;
-$padding    : 10px;
+$fieldHeight  : 60px;
+$padding      : 10px;
+$bgColor      : #E8EBED;
+$borderRadius : 5px;
+
+.reset-input{
+  margin : 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+}
 
 .infield {
   height: $fieldHeight;
   line-height: $fieldHeight - 2 * $padding;
   overflow: hidden;
+  background-color: $bgColor;
+  border-radius: $borderRadius;
 
   input, label{
     display: block;
     height: $fieldHeight;
     padding: $padding;
+    border-radius: inherit;
   }
 
   input{
     width: 100%;
+    @include transition(opacity, 100ms);
+    @extend .reset-input;
   }
 
   label{
     position: relative;
     top: -$fieldHeight;
   }
+}
+
+.infield:not(.active){
+  input{
+    opacity: 0;
+  }
+}
+
+.infield:hover{
+  @extend .infield:not(.active);
 }
