@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="infield.css">
 
+    <script src="../../lib/angular-1.4.3.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -27,10 +28,10 @@
     </style>
 </head>
 
-<body>
-    <form>
-        <div class="infield active">
-            <input type="text">
+<body ng-app>
+    <form ng-init="user = {name: 'Mohan'}">
+        <div class="infield " ng-class="{'active' : user.name}">
+            <input type="text" ng-model="user.name">
             <label>name</label>
         </div>
     </form>
