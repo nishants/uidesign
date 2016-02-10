@@ -37,12 +37,12 @@ $inputFontSize  : 16px;
     width: 100%;
     font-size: $inputFontSize;
 
-    padding: $padding;
     // Fix for firefox. border-radius: inherit;
     background: none;
     color:  $inputColor;
 
-    @include transform(translateY($fieldHeight/12));
+    padding: 10px $padding $padding $padding;
+    line-height: $fieldHeight - 10px;
     @extend .reset-input;
   }
 
