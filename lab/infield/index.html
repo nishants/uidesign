@@ -32,7 +32,7 @@
 </head>
 
 <body ng-app="infield">
-    <form ng-init="user = {name: 'Mohan', phone: 8800493717}">
+    <form ng-init="user = {name: 'Mohan', phone: 8800493717, sex: null, genders: [{label: 'male', value: 0}, {label: 'female', value: 1}]}">
         <div class="infield">
             <input type="text" ng-model="user.name" required>
             <label>name</label>
@@ -41,6 +41,13 @@
         <div class="infield">
             <input type="number" ng-model="user.phone" >
             <label>phone</label>
+        </div>
+
+        <div class="infield">
+            <select ng-options="item as item.label for item in user.genders track by item.value"
+                    required
+                    ng-model="user.sex"></select>
+            <label>gender</label>
         </div>
     </form>
 

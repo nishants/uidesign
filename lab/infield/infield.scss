@@ -27,10 +27,10 @@ $inputFontSize  : 16px;
   border: 1px solid $bgColor;
   @include transition-t(backgound-color, 100ms, ease-in);
 
-  input, label{
+  select, input, label{
     display: block;
   }
-  input{
+  select, input{
     position: relative;
     z-index: 1;
     height: $fieldHeight;
@@ -61,7 +61,7 @@ $inputFontSize  : 16px;
 .infield:not(.active){
   background-color: $bgColor;
 
-  input{
+  select, input{
     @include transform(translateY(0px));
   }
   label{

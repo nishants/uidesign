@@ -7,7 +7,10 @@
       scope: false,
       transclude: false,
       link: function(scope, element){
-        var target = element.find("input");
+        var select = element.find("select");
+        var input = element.find("input");
+        var target = input.length ? input : select;
+
         target.attr("required") ? element.addClass("required") : "";
 
         scope.$watch(target.attr("ng-model"), function(val){
