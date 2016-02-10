@@ -10,7 +10,7 @@
       link: function(scope, element){
         var select = element.find("select");
         scope.$watch(select.attr("ng-model"), function(val){
-          scope.select = {value : val[element.attr("display")]};
+          scope.select = {value : val ? val[element.attr("display")] : ""};
         })
       }
     }
