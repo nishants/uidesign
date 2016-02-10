@@ -10,6 +10,7 @@ $labelFontSize  : 10px;
 $labelColor     : rgba(0, 0, 0, 0.4);
 
 $inputColor     : rgba(0, 0, 0, 0.71);
+$inputFontSize  : 16px;
 
 .reset-input{
   margin : 0px;
@@ -33,13 +34,14 @@ $inputColor     : rgba(0, 0, 0, 0.71);
     z-index: 1;
     height: $fieldHeight;
     width: 100%;
+    font-size: $inputFontSize;
 
     padding: $padding;
     border-radius: inherit;
     background: none;
     color:  $inputColor;
 
-    @include transform(translateY(5px));
+    @include transform(translateY($fieldHeight/12));
     @extend .reset-input;
   }
 
@@ -61,7 +63,7 @@ $inputColor     : rgba(0, 0, 0, 0.71);
   }
   label{
     line-height: $fieldHeight;
-    font-size: 15px;
+    font-size: $fieldHeight/4;
     @include transition-t(all, 100ms, ease-out);
   }
 
