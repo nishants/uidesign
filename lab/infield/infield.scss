@@ -71,3 +71,10 @@ $inputFontSize  : 16px;
   }
 
 }
+
+.infield.required{
+  label:after{
+    content: "*";
+    color: #FF5722;
+  }
+}
