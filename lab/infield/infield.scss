@@ -38,7 +38,7 @@ $inputFontSize  : 16px;
     font-size: $inputFontSize;
 
     padding: $padding;
-    border-radius: inherit;
+    // Fix for firefox. border-radius: inherit;
     background: none;
     color:  $inputColor;
 
