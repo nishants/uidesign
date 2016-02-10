@@ -31,11 +31,16 @@
         .infield{
             margin-bottom: 15px;
         }
+        .form-label{
+            position: relative;
+            top: -20px;
+        }
     </style>
 </head>
 
 <body ng-app="demo">
     <form ng-init="user = {name: 'Mohan', phone: 8800493717, sex: null, genders: [ {label: 'male', value: 0}, {label: 'female', value: 1}]}">
+        <label class="form-label">Create User</label>
         <div class="infield">
             <input type="text" ng-model="user.name" required>
             <label>name</label>
@@ -46,12 +51,12 @@
             <label>phone</label>
         </div>
 
-        <div class="infield">
-            <select ng-options="item as item.label for item in user.genders track by item.value"
-                    required
-                    ng-model="user.sex"></select>
-            <label>gender</label>
-        </div>
+        <!--<div class="infield">-->
+            <!--<select ng-options="item as item.label for item in user.genders track by item.value"-->
+                    <!--required-->
+                    <!--ng-model="user.sex"></select>-->
+            <!--<label>gender</label>-->
+        <!--</div>-->
 
         <div class="infield">
             <div class="select" display="label">
