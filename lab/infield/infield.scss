@@ -20,6 +20,7 @@ $inputFontSize  : 16px;
 }
 
 .infield {
+  text-align: inherit;
   height: $fieldHeight;
   line-height: $fieldHeight - 2 * $padding;
   overflow: hidden;
@@ -29,6 +30,7 @@ $inputFontSize  : 16px;
 
   select, input, label{
     display: block;
+    text-align: inherit;
   }
   select, input{
     position: relative;
