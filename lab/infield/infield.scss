@@ -5,6 +5,10 @@ $padding      : 10px;
 $bgColor      : #E8EBED;
 $borderRadius : 5px;
 
+$labelHeight    : 20px;
+$labelFontSize  : 10px;
+$labelColor     : #a7a7a7;
+
 .reset-input{
   margin : 0px;
   padding: 0px;
@@ -21,26 +25,32 @@ $borderRadius : 5px;
 
   input, label{
     display: block;
+  }
+  input{
     height: $fieldHeight;
+    width: 100%;
+
     padding: $padding;
     border-radius: inherit;
-  }
 
-  input{
-    width: 100%;
     @include transition(opacity, 100ms);
     @extend .reset-input;
   }
 
   label{
     position: relative;
+
+    padding: 0px $padding;
     top: -$fieldHeight;
+    line-height: $labelHeight;
+    font-size: $labelFontSize;
+    color: $labelColor;
   }
 }
 
 .infield:not(.active){
   input{
-    opacity: 0;
+    background: none;
   }
 }
 
