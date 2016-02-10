@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="infield.css">
 
     <script src="../../lib/angular-1.4.3.js"></script>
+    <script src="infield.js"></script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -28,14 +30,13 @@
     </style>
 </head>
 
-<body ng-app>
+<body ng-app="infield">
     <form ng-init="user = {name: 'Mohan'}">
-        <div class="infield " ng-class="{'active' : user.name}">
+        <div class="infield ">
             <input type="text" ng-model="user.name">
             <label>name</label>
         </div>
     </form>
 
 </body>
-
 </html>
