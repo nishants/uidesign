@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="infield.css">
+    <link rel="stylesheet" href="select.css">
 
     <script src="../../lib/angular-1.4.3.js"></script>
     <script src="infield.js"></script>
+    <script src="select.js"></script>
 
     <style>
         * {
@@ -24,6 +26,7 @@
         form{
             background: white;
             padding: 50px;
+            /*text-align: center;*/
         }
         .infield{
             margin-bottom: 15px;
@@ -31,7 +34,7 @@
     </style>
 </head>
 
-<body ng-app="infield">
+<body ng-app="demo">
     <form ng-init="user = {name: 'Mohan', phone: 8800493717, sex: null, genders: [ {label: 'male', value: 0}, {label: 'female', value: 1}]}">
         <div class="infield">
             <input type="text" ng-model="user.name" required>
@@ -49,7 +52,19 @@
                     ng-model="user.sex"></select>
             <label>gender</label>
         </div>
+
+        <div class="infield">
+            <div class="select">
+                <select ng-options="item as item.label for item in user.genders track by item.value"
+                        required
+                        ng-model="user.sex"></select>
+            </div>
+            <label>gender</label>
+        </div>
     </form>
+    <script>
+        var app = angular.module("demo", ["select", "infield"]);
+    </script>
 
 </body>
 </html>
