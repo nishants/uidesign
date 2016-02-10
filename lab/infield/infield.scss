@@ -27,11 +27,14 @@ $labelColor     : #a7a7a7;
     display: block;
   }
   input{
+    position: relative;
+    z-index: 1;
     height: $fieldHeight;
     width: 100%;
 
     padding: $padding;
     border-radius: inherit;
+    background: none;
 
     @include transition(opacity, 100ms);
     @extend .reset-input;
@@ -49,9 +52,11 @@ $labelColor     : #a7a7a7;
 }
 
 .infield:not(.active){
-  input{
-    background: none;
+  label{
+    line-height: $fieldHeight;
+    font-size: 15px;
   }
+
 }
 
 .infield:hover{
