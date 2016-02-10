@@ -1,6 +1,9 @@
 @import 'config';
 
 .select{
+  height: $fieldHeight;
+  overflow: hidden;
+
   .mask, .select-cover{
     height: $fieldHeight;
     position: relative;
@@ -11,6 +14,19 @@
   }
   .mask{
     top: -$fieldHeight;
-    background-color: red;
+    .value, .icon{
+      line-height: $fieldHeight;
+      height: $fieldHeight;
+      float: left;
+    }
+    .value{
+      padding-left: $padding;
+      width: calc(100% - 50px);
+    }
+    .icon{
+      display: block;
+      width: 50px;
+      text-align: center;
+    }
   }
 }
