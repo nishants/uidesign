@@ -1,0 +1,24 @@
+
+$fieldHeight: 60px;
+$padding    : 10px;
+
+.infield {
+  height: $fieldHeight;
+  line-height: $fieldHeight - 2 * $padding;
+  overflow: hidden;
+
+  input, label{
+    display: block;
+    height: $fieldHeight;
+    padding: $padding;
+  }
+
+  input{
+    width: 100%;
+  }
+
+  label{
+    position: relative;
+    top: -$fieldHeight;
+  }
+}
