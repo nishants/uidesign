@@ -7,7 +7,9 @@ $borderRadius : 5px;
 
 $labelHeight    : 20px;
 $labelFontSize  : 10px;
-$labelColor     : #a7a7a7;
+$labelColor     : rgba(0, 0, 0, 0.4);
+
+$inputColor     : rgba(0, 0, 0, 0.71);
 
 .reset-input{
   margin : 0px;
@@ -35,8 +37,8 @@ $labelColor     : #a7a7a7;
     padding: $padding;
     border-radius: inherit;
     background: none;
+    color:  $inputColor;
 
-    @include transition(opacity, 100ms);
     @extend .reset-input;
   }
 
@@ -48,6 +50,7 @@ $labelColor     : #a7a7a7;
     line-height: $labelHeight;
     font-size: $labelFontSize;
     color: $labelColor;
+    @include transition-t(all, 100ms, ease-in);
   }
 }
 
@@ -55,6 +58,7 @@ $labelColor     : #a7a7a7;
   label{
     line-height: $fieldHeight;
     font-size: 15px;
+    @include transition-t(all, 100ms, ease-out);
   }
 
 }
