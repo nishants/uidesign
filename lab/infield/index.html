@@ -42,7 +42,7 @@
 </head>
 
 <body ng-app="demo">
-    <form ng-init="ageRange = {from: 17, to: 90};user = {name: 'Mohan', phone: 8800493717, sex: null, genders: [ {label: 'male', value: 0}, {label: 'female', value: 1}]}">
+    <form ng-init="ageRange = {from: {value: 17, label: '13+'}, to: {value: 65, label: '65+'}};user = {name: 'Mohan', phone: 8800493717, sex: null, genders: [ {label: 'male', value: 0}, {label: 'female', value: 1}]}">
         <label class="form-label">Create User</label>
         <div class="infield">
             <input type="text" ng-model="user.name" required>
@@ -54,7 +54,15 @@
             <label>phone</label>
         </div>
 
-        <div class="slider" from="ageRange.from" to="ageRange.to" ng-model="user.age"></div>
+        <div class="slider" from="ageRange.from" to="ageRange.to" ng-model="user.age">
+            <div class="bar">
+                <div class="progress"></div>
+            </div>
+            <ul class="stages">
+                <li ng-bind="ageRange.from.label"></li>
+                <li ng-bind="ageRange.to.label"></li>
+            </ul>
+        </div>
 
         <div class="infield">
             <div class="select" display="label">
