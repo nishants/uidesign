@@ -35,9 +35,9 @@
             this.$page.addClass("closed");
         };
 
-        var Book = function($book){
+        var Book = function($book, $pages){
             var pages = [];
-            $book.find(".page").each(function(index, $page){
+            $pages.each(function(index, $page){
                 pages[index] = new Page($page);
             });
             this.index = 0;
@@ -49,7 +49,10 @@
         };
 
         var Bookish = function($bookish){
-            this.book = new Book($bookish.find(".book").first());
+            var $book   = $bookish.find(" > .book").first(),
+                $pages  = $book.find(" > .page");
+
+            this.book = new Book($book, $pages);
         };
 
         Bookish.prototype.next = function(){
