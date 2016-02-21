@@ -1,0 +1,39 @@
+
+$flipFunction : cubic-bezier(0.45, 0.515, 0.36, 0.88);
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform:    $value;
+  -ms-transform:     $value;
+  -o-transform:      $value;
+  transform:         $value;
+}
+
+@mixin transition($property, $time, $effect){
+  -webkit-transition: $property  $time $effect;
+  -moz-transition:    $property  $time $effect;
+  -o-transition:      $property  $time $effect;
+  transition:         $property  $time $effect;
+}
+
+.bookish{
+  .book, .page{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+  }
+  .book{
+    list-style: none;
+    display: block;
+  }
+  .page{
+    @include transition(transform, 100ms, $flipFunction);
+  }
+
+  .page.closed{
+    @include transform(rotate(180deg));
+  }
+
+  .book > li {
+    @extend .page;
+  }
+}

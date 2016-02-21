@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>bookish</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <div class="bookish">
+        <ul class="book">
+            <li class="page"><h1>Cover</h1><img src="../../images/carousel/carousel-1.jpg"></li>
+            <li class="page"><h1>Page 1</h1><p>The real fun with the translate function is when used with CSS transitions. With the CSS transition, you can then animate the movement of the element, so that it travels across the screen. You’ll learn how to do that on page 345.</p></li>
+            <li class="page"><h1>Page 2</h1><p>The real fun with the translate function is when used with CSS transitions. With the CSS transition, you can then animate the movement of the element, so that it travels across the screen. You’ll learn how to do that on page 345.</p></li>
+            <li class="page"><h1>Page 3</h1><p>The real fun with the translate function is when used with CSS transitions. With the CSS transition, you can then animate the movement of the element, so that it travels across the screen. You’ll learn how to do that on page 345.</p></li>
+            <li class="page"><h1>Page 4</h1><p>The real fun with the translate function is when used with CSS transitions. With the CSS transition, you can then animate the movement of the element, so that it travels across the screen. You’ll learn how to do that on page 345.</p></li>
+        </ul>
+
+        <div>
+            <button onclick="bookish.next()">next</button>
+            <button>previous</button>
+        </div>
+    </div>
+
+    <script>
+        var Page = function($page){
+            this.$page = $($page);
+        };
+
+        Page.prototype.close = function(){
+            this.$page.addClass("closed");
+        };
+
+        var Book = function($book){
+            var pages = [];
+            $book.find(".page").each(function(index, $page){
+                pages[index] = new Page($page);
+            });
+            this.index = 0;
+            this.pages = pages;
+        };
+
+        Book.prototype.next = function(){
+            this.pages[this.index++].close();
+        };
+
+        var Bookish = function($bookish){
+            this.book = new Book($bookish.find(".book").first());
+        };
+
+        Bookish.prototype.next = function(){
+            this.book.next();
+        };
+
+        window.bookish  = new Bookish($(".bookish").first());
+
+    </script>
+
+</body>
+</html>
