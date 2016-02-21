@@ -4,7 +4,7 @@
 <head>
     <title>bookish</title>
     <meta name="viewport"
-          content="width=device-width, maximum-scale=1">
+          content="width=device-width, maximum-scale=1, initial-scale=1">
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css">
@@ -22,7 +22,7 @@
 
         <div>
             <button onclick="bookish.next()">next</button>
-            <button>previous</button>
+            <button onclick="bookish.last()">previous</button>
         </div>
     </div>
 
@@ -58,6 +58,11 @@
             this.pages[0].open();
         };
 
+        Book.prototype.last = function(){
+            this.pages[this.index--].close();
+            this.pages[this.index].open();
+        };
+
         var Bookish = function($bookish){
             var $book   = $bookish.find(" > .book").first(),
                 $pages  = $book.find(" > .page");
@@ -76,6 +81,9 @@
             this.book = new Book($book, $pages);
         };
 
+        Bookish.prototype.last = function(){
+            this.book.last();
+        };
         Bookish.prototype.next = function(){
             this.book.next();
         };
