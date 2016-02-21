@@ -29,16 +29,19 @@ $flipFunction : ease;
     display: block;
   }
   .book{
+    background-color: inherit;
     list-style: none;
     display: block;
   }
   .page{
+    background-color: inherit;
     @include transformOrigin(#{"left, center"});
-    @include transition(transform, 100ms, $flipFunction);
+    @include transition(#{"transform, opacity"}, 100ms, $flipFunction);
   }
 
   .page.closed{
     @include transform(rotateY(180deg));
+    opacity: 0;
   }
 
   .book > li {

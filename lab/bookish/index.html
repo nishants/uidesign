@@ -52,6 +52,17 @@
             var $book   = $bookish.find(" > .book").first(),
                 $pages  = $book.find(" > .page");
 
+            var bookWidth = $book.width();
+            $book.width($pages.length * bookWidth);
+
+            $pages.width(bookWidth);
+            $pages.css("position", "relative");
+            $pages.css("float",     "left");
+            $pages.each(function(index, p){
+                $(p).css("left", (-index * bookWidth) +"px" );
+                $(p).css("z-index", $pages.length-index );
+            });
+
             this.book = new Book($book, $pages);
         };
 
