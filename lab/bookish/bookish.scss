@@ -42,13 +42,13 @@ $flipFunction : cubic-bezier(0.45, 0.515, 0.36, 0.88);
   .page{
     background-color: inherit;
     height: inherit;
-    @include transformOrigin(#{"left center"});
+    @include transformOrigin(#{"-10px  center"});
     @include transformStyle(preserve-3d);
-    @include transition(transform, 500ms, $flipFunction);
+    @include transition(transform, 1200ms, $flipFunction);
   }
 
   .page.closed{
-    @include transform(rotateY(-180deg) skewY(-25deg));
+    @include transform(rotateY(-180deg) skewY(-45deg));
   }
 
   .book > li {
