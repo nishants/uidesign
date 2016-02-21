@@ -1,5 +1,5 @@
 
-$flipFunction : ease;
+$flipFunction : cubic-bezier(0.45, 0.515, 0.36, 0.88);
 
 @mixin transform($value) {
   -webkit-transform: $value;
@@ -7,6 +7,12 @@ $flipFunction : ease;
   -ms-transform:     $value;
   -o-transform:      $value;
   transform:         $value;
+}
+
+@mixin transformStyle($value) {
+  -webkit-transform-style:  $value;
+  -moz-transform-style:     $value;
+  transform-style:          $value;
 }
 
 @mixin transformOrigin($value) {
@@ -35,13 +41,14 @@ $flipFunction : ease;
   }
   .page{
     background-color: inherit;
-    @include transformOrigin(#{"left, center"});
-    @include transition(#{"transform, opacity"}, 100ms, $flipFunction);
+    height: inherit;
+    @include transformOrigin(#{"left center"});
+    @include transformStyle(preserve-3d);
+    @include transition(transform, 500ms, $flipFunction);
   }
 
   .page.closed{
-    @include transform(rotateY(180deg));
-    opacity: 0;
+    @include transform(rotateY(-180deg) skewY(-25deg));
   }
 
   .book > li {
