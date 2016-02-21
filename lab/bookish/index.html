@@ -4,7 +4,7 @@
 <head>
     <title>bookish</title>
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+          content="width=device-width, maximum-scale=1">
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css">
@@ -35,6 +35,11 @@
             this.$page.addClass("closed");
         };
 
+        Page.prototype.open = function(){
+            this.$page.removeClass("closed");
+            this.$page.addClass("opened");
+        };
+
         var Book = function($book, $pages){
             var pages = [];
             $pages.each(function(index, $page){
@@ -46,6 +51,11 @@
 
         Book.prototype.next = function(){
             this.pages[this.index++].close();
+            this.pages[this.index].open();
+        };
+
+        Book.prototype.open = function(){
+            this.pages[0].open();
         };
 
         var Bookish = function($bookish){
@@ -69,8 +79,12 @@
         Bookish.prototype.next = function(){
             this.book.next();
         };
+        Bookish.prototype.open = function(){
+            this.book.open();
+        };
 
         window.bookish  = new Bookish($(".bookish").first());
+        bookish.open();
 
     </script>
 
