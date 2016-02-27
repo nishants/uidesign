@@ -32,7 +32,11 @@
 </head>
 
 <body>
-    <div id="app" ng-controller="UIController" ng-init="ui.loadSession()">
+    <div id="app"
+         ng-controller="UIController"
+         ng-class="ui.state"
+         ng-init="ui.loadSession()">
+
         <h1 ng-bind="ui.user.name"></h1>
         <div id="loader" ng-show="!ui.ready"></div>
     </div>
