@@ -1,9 +1,8 @@
 @import 'config';
 
 #app{
+  h1{margin: 0px auto;}
   *{box-sizing: border-box;};
 }
 
-.no-display{
-  @include transform(scale(0));
-}
+@import 'loader';
