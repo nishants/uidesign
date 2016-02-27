@@ -17,7 +17,7 @@
               ui.ready = true;
             };
 
-        loginService.authenticate().then(sessionFound, noSession);
+        loginService.lastSession().then(sessionFound, noSession);
       },
     };
     $scope.ui = ui;
