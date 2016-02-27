@@ -2,6 +2,7 @@
 
 $inputHeight: 40px;
 $buttonHeight: 50px;
+$secondaryColor: rgba(139, 195, 74, 0.38);
 
 .login.page{
   padding-top: 100px;
@@ -32,6 +33,21 @@ $buttonHeight: 50px;
       color: white;
       border-radius: 5px;
       padding: 10px;
+    }
+    input::-webkit-input-placeholder {
+      color: $secondaryColor ;
+    }
+
+    input:-moz-placeholder { /* Firefox 18- */
+      color: $secondaryColor ;
+    }
+
+    input::-moz-placeholder {  /* Firefox 19+ */
+      color: $secondaryColor ;
+    }
+
+    input:-ms-input-placeholder {
+      color: $secondaryColor ;
     }
   }
 }
