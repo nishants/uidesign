@@ -32,13 +32,16 @@
 </head>
 
 <body>
-    <div id="app">
-        <div id="loader" ng-show="false"></div>
+    <div id="app" ng-controller="UIController" ng-init="ui.loadSession()">
+        <div id="loader" ng-show="!ui.ready"></div>
     </div>
 
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <script src="../../lib/angular-1.4.3.js"></script>
+
     <script src="app/app.js"></script>
+    <script src="app/ui-controller.js"></script>
+    <script src="app/login/login-service.js"></script>
 
     <script>
         angular.bootstrap(
