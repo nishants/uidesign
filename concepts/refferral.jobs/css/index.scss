@@ -3,3 +3,7 @@
 #app{
   *{box-sizing: border-box;};
 }
+
+.no-display{
+  @include transform(scale(0));
+}

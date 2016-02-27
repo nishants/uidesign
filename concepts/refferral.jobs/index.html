@@ -36,11 +36,11 @@
          ng-controller="UIController"
          ng-init="ui.loadSession()">
 
-        <div id="content" ng-show="ui.user">
+        <div id="content" display="ui.user">
             <h1 ng-bind="ui.user.name"></h1>
         </div>
 
-        <div id="login-page" ng-hide="ui.user">
+        <div id="login-page" display="!ui.user">
             <h1>Login</h1>
             <input type="text"     placeholder="company email">
             <input type="password" placeholder="password">
@@ -55,6 +55,8 @@
     <script src="app/app.js"></script>
     <script src="app/ui-controller.js"></script>
     <script src="app/login/login-service.js"></script>
+
+    <script src="app/components/display.js"></script>
 
     <script>
         angular.bootstrap(
