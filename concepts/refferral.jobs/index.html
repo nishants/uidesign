@@ -31,7 +31,7 @@
 
 </head>
 
-<body ng-app>
+<body>
     <div id="app">
         <div id="loader" ng-show="false"></div>
     </div>
@@ -40,5 +40,11 @@
     <script src="../../lib/angular-1.4.3.js"></script>
     <script src="app/app.js"></script>
 
+    <script>
+        angular.bootstrap(
+                document.getElementById("app"),
+                ["referral.jobs"]);
+
+    </script>
 </body>
 </html>
