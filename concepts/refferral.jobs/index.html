@@ -35,16 +35,18 @@
          ng-controller="UIController"
          ng-init="ui.loadSession()">
 
-        <div id="content" display="ui.user">
+        <div id="content" class="page" display="ui.user">
             <h1 >Welcome {{ui.user.name}}</h1>
         </div>
 
-        <div id="login-page" display="!ui.user">
-            <h1>Login</h1>
-            <form class="login-form">
-                <input type="text"     placeholder="company email">
-                <input type="password" placeholder="password">
-            </form>
+        <div id="login-page" class="page" display="!ui.user">
+            <div class="contents">
+                <h1>Login</h1>
+                <form class="login-form">
+                    <input type="text"     placeholder="company email">
+                    <input type="password" placeholder="password">
+                </form>
+            </div>
         </div>
 
         <div id="loader-wrapper" display="!ui.ready">

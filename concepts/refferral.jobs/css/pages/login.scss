@@ -1,19 +1,2 @@
 @import "../config";
 
-$time: 100ms;
-$formTopPadding: 15px;
-
-#login-page.no-display{
-  @include transform(scale(0));
-  .login-form{
-    @include transform(translateY($formTopPadding - 10px));
-  }
-}
-
-#login-page{
-  @include transitionDelay($time);
-  .login-form {
-    padding-top: $formTopPadding;
-    @include transition(transform, $time);
-  }
-}
