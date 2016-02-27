@@ -2,11 +2,15 @@
   "use strict"
 
   app.service("loginService", ["$q", function($q){
+    var user = function(){
+      return localStorage.user && JSON.parse(localStorage.user);
+    };
+
     return {
       authenticate: function(){
         return $q(function(resolve, error){
-          var email = "nishant.singh87@gmail.com";
-          resolve(email);
+          var email = user();
+          email ? resolve(email) : error();
         });
       }
     };
