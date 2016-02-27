@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/index.css">
 
     <style>
-        #loader-wrapper{
+        /* this style applies to loader while app css is loading*/
+        .loader.page{
             position: fixed;
             top:0px;
             left:0px;
@@ -51,8 +52,8 @@
             </div>
         </div>
 
-        <div id="loader-wrapper" display="!ui.ready">
-            <div id="loader">
+        <div class="loader page" display="!ui.ready">
+            <div id="loader" class="content">
                 <h1>Loading...</h1>
             </div>
         </div>

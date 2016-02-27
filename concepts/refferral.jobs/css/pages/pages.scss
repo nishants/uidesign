@@ -7,15 +7,22 @@ $pageTransitionDuration: 100ms;
   left: 0px;
 
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
 
   background-color: white;
+  .content{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// Transitions
+.page{
   @include transitionDelay($pageTransitionDuration);
   .content{
     @include transition(opacity, $pageTransitionDuration);
   }
 }
-
 .page.no-display{
   @include transform(scale(0));
   .content{
