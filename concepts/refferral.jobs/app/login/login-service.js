@@ -1,7 +1,7 @@
 (function(){
   "use strict"
 
-  app.service("loginService", ["$q", function($q){
+  app.service("loginService", ["$q","$timeout", function($q, $timeout){
     var user = function(){
       return localStorage.user && JSON.parse(localStorage.user);
     };
@@ -10,7 +10,9 @@
       authenticate: function(){
         return $q(function(resolve, error){
           var email = user();
-          email ? resolve(email) : error();
+          $timeout(function(){
+            email ? resolve(email) : error();
+          }, 100)
         });
       }
     };
