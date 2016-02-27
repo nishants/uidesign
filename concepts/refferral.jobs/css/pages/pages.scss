@@ -11,14 +11,14 @@ $pageTransitionDuration: 100ms;
 
   background-color: white;
   @include transitionDelay($pageTransitionDuration);
-  .contents{
+  .content{
     @include transition(opacity, $pageTransitionDuration);
   }
 }
 
 .page.no-display{
   @include transform(scale(0));
-  .contents{
+  .content{
     opacity: 0;
   }
 }
