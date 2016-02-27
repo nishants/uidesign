@@ -36,9 +36,10 @@
          ng-controller="UIController"
          ng-init="ui.loadSession()">
 
-        <div class="contents page" display="ui.user">
-            <div class="content">
+        <div class="home page" display="ui.user">
+            <div class="content" ng-controller="homeController">
                 <h1 >Welcome {{ui.user.name}}</h1>
+                <div ng-include="'app/home/mails.html'"></div>
             </div>
         </div>
 
@@ -72,6 +73,7 @@
     <script src="app/ui-controller.js"></script>
     <script src="app/login/login-service.js"></script>
     <script src="app/login/login-form-controller.js"></script>
+    <script src="app/home/home-controller.js"></script>
 
     <script src="app/components/display.js"></script>
 
