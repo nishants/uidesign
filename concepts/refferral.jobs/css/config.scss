@@ -1,6 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
 $defaultTransitionFunction : "cubic-bezier(0.45, 0.515, 0.36, 0.88)";
 
+ul.undo-list{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
 input{
   padding: 0px;
   margin: 0px;
