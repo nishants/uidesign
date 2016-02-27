@@ -36,13 +36,15 @@
          ng-init="ui.loadSession()">
 
         <div id="content" display="ui.user">
-            <h1 ng-bind="ui.user.name"></h1>
+            <h1 >Welcome {{ui.user.name}}</h1>
         </div>
 
         <div id="login-page" display="!ui.user">
             <h1>Login</h1>
-            <input type="text"     placeholder="company email">
-            <input type="password" placeholder="password">
+            <form class="login-form">
+                <input type="text"     placeholder="company email">
+                <input type="password" placeholder="password">
+            </form>
         </div>
 
         <div id="loader-wrapper" display="!ui.ready">
