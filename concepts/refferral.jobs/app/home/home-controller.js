@@ -8,19 +8,15 @@
     var init = function(){
       mailService.mailsFor($scope.ui.user.email).then(
           function (response) {
-            home.referralMails = response.mails;
+            home.referralMails = response.data.referrals;
           },
           function (err) {
             console.error(err)
           });
     };
 
-    $scope.$watch("ui.user.email",function(email){
-      email ? init() : "";
-    });
-
     $scope.home = home;
-
+    init();
   }])
 
 }).call(this);

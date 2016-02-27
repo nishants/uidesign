@@ -37,9 +37,11 @@
          ng-init="ui.loadSession()">
 
         <div class="home page" display="ui.user">
-            <div class="content" ng-controller="homeController">
+            <div class="content">
                 <h1 >Welcome {{ui.user.name}}</h1>
-                <div ng-include="'app/home/mails.html'"></div>
+                <div ng-controller="homeController"
+                     ng-if="ui.user"
+                     ng-include="'app/home/mails.html'"></div>
             </div>
         </div>
 
