@@ -34,16 +34,23 @@
 <body>
     <div id="app"
          ng-controller="UIController"
-         ng-class="ui.state"
          ng-init="ui.loadSession()">
 
-        <h1 ng-bind="ui.user.name"></h1>
+        <div id="content" ng-show="ui.user">
+            <h1 ng-bind="ui.user.name"></h1>
+        </div>
+
+        <div id="login-page" ng-hide="ui.user">
+            <h1>Login</h1>
+            <input type="text"     placeholder="company email">
+            <input type="password" placeholder="password">
+        </div>
+
         <div id="loader" ng-show="!ui.ready"></div>
     </div>
 
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <script src="../../lib/angular-1.4.3.js"></script>
-    <script src="../../lib/angular-local-storage-0.2.5.min.js"></script>
 
     <script src="app/app.js"></script>
     <script src="app/ui-controller.js"></script>

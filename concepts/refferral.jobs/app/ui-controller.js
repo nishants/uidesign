@@ -12,10 +12,9 @@
             sessionFound = function (user) {
               ui.user  = user;
               ui.ready = true;
-              ui.state = "ready";
             },
             noSession = function () {
-              ui.state = "login";
+              ui.ready = true;
             };
 
         loginService.authenticate().then(sessionFound, noSession);
