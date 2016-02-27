@@ -7,6 +7,7 @@
       password: null,
       submit: function(){
         var loginSuccess = function(user){
+              $scope.ui.user = user;
               console.log("logged in as " + user.name);
             },
             loginFailed  = function(){
