@@ -9,6 +9,10 @@
         };
 
     return {
+      logout: function(){
+        loggedInUser = null;
+        localData.resetUser();
+      },
       login: function(email, password){
         return $q(function(resolve, error){
           var success = function(user){

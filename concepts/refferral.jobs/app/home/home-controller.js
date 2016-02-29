@@ -1,9 +1,13 @@
 (function(){
   "use strict"
 
-  app.controller("homeController", ['$scope', "mailService", function($scope, mailService){
+  app.controller("homeController", ['$scope', "mailService", "loginService", function($scope, mailService, loginService){
     var home = {
       referralMails: [],
+      logout : function(){
+        $scope.ui.user = null;
+        loginService.logout();
+      }
     };
     var init = function(){
       mailService.mailsFor($scope.ui.user.email).then(
