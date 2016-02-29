@@ -1,7 +1,7 @@
 (function(){
   "use strict"
 
-  app.service("loginService", ["$q","$timeout", "httpRequestInterceptor", "localData", function($q, $timeout, httpRequestInterceptor, localData){
+  app.service("loginService", ["$q","$timeout", "localData", function($q, $timeout, localData){
     var loggedInUser = localData.getUser(),
         login = function(user){
           loggedInUser = user;
@@ -30,31 +30,5 @@
       }
     };
   }]);
-
-  app.factory('localData', function () {
-
-    return {
-      getUser : function(){
-        return localStorage.user && JSON.parse(localStorage.user);
-      },
-      setUser: function (user) {
-        localStorage.user = JSON.stringify(user);
-      }
-    };
-  })
-
-  app.factory('httpRequestInterceptor', ["localData", function (localData) {
-    return {
-      request: function (config) {
-        config.headers['Authorization'] = localData.getUser().token;
-        config.headers['Accept'] = 'application/json;';
-        return config;
-      }
-    };
-  }]);
-
-  app.config(function ($httpProvider) {
-    $httpProvider.interceptors.push('httpRequestInterceptor');
-  });
 
 }).call(this);
