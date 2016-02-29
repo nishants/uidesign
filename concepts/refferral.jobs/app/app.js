@@ -1,10 +1,14 @@
 (function(){
   "use strict"
 
+  var remote = {
+    "localhost"    : "http://localhost:5000",
+    "amoeba.social": "http://referral-jobs.herokuapp.com",
+  };
+
   var app = angular.module("referral.jobs", []);
-  var production = "http://referral-jobs.herokuapp.com",
-      dev        = "http://localhost:5000";
-  app.value("server", {address: dev});
+
+  app.value("server", {address: remote[window.location.hostname]});
   window.app = app;
 
 }).call(this);
