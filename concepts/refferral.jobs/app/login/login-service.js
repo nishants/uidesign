@@ -1,11 +1,11 @@
 (function(){
   "use strict"
 
-  app.service("loginService", ["$q","$timeout", function($q, $timeout){
-    var loggedInUser = localStorage.user && JSON.parse(localStorage.user),
+  app.service("loginService", ["$q","$timeout", "httpRequestInterceptor", "localData", function($q, $timeout, httpRequestInterceptor, localData){
+    var loggedInUser = localData.getUser(),
         login = function(user){
-          loggedInUser      = user;
-          localStorage.user = JSON.stringify(user);
+          loggedInUser = user;
+          localData.setUser(user);
         };
 
     return {
@@ -16,7 +16,7 @@
                 resolve(user);
               };
           $timeout(function(reponse){
-            reponse = {user: {name: email}}
+            reponse = {user: {name: email, token: email}}
             email ? success(reponse.user) : error();
           }, 100)
         });
@@ -30,5 +30,31 @@
       }
     };
   }]);
+
+  app.factory('localData', function () {
+
+    return {
+      getUser : function(){
+        return localStorage.user && JSON.parse(localStorage.user);
+      },
+      setUser: function (user) {
+        localStorage.user = JSON.stringify(user);
+      }
+    };
+  })
+
+  app.factory('httpRequestInterceptor', ["localData", function (localData) {
+    return {
+      request: function (config) {
+        config.headers['Authorization'] = localData.getUser().token;
+        config.headers['Accept'] = 'application/json;';
+        return config;
+      }
+    };
+  }]);
+
+  app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('httpRequestInterceptor');
+  });
 
 }).call(this);
