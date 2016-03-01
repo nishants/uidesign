@@ -71,6 +71,8 @@ ul.deck{
         font-size: $actionButtonFont;
         button{
           @extend .action-button;
+          border: 1px solid white;
+          box-shadow: 0px 0px 3px white;
           background-color: $actionButtonColor;
           color: $actionButtonFontColor;
           line-height: $actionButtonSize;
