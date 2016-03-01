@@ -1,5 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+.action-button, ul.deck > li .card .action button {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  box-sizing: border-box;
+  outline: none; }
+
 ul.deck > li .card {
   width: 252px;
   height: 270px;
@@ -24,6 +31,19 @@ ul.deck > li .card {
       color: #807E7E;
       font-size: 13px;
       line-height: 30px; }
+  ul.deck > li .card .action {
+    position: relative;
+    top: -77.5px;
+    text-align: right;
+    padding-right: 5px;
+    font-size: 16px; }
+    ul.deck > li .card .action button {
+      background-color: #F4A800;
+      color: white;
+      line-height: 35px;
+      border-radius: 50%;
+      height: 35px;
+      width: 35px; }
 
 ul.undo-list, ul.deck {
   list-style: none;
