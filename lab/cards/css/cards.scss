@@ -1,3 +1,5 @@
+@import '../../../lib/config';
+
 $cardHeight : 270px;
 $cardWidth  : 250px;
 $lineHeight : 20px;
@@ -19,6 +21,7 @@ $actionButtonFont  : 16px;
 $actionButtonColor  : rgb(247, 193, 74);
 $actionButtonFontColor  : white;
 
+$rippleRadius :368px; //card diagonal length
 
 .action-button{
   margin: 0px;
@@ -66,6 +69,7 @@ ul.deck{
       }
       .action{
         position: relative;
+        z-index: 1;
         top: -$captionHeight -$actionButtonSize/2;
         padding-right: 5px;
         font-size: $actionButtonFont;
@@ -86,9 +90,20 @@ ul.deck{
           background-color: $actionButtonColor;
           color: $actionButtonFontColor;
         }
-        div.circle{
+        .ripple{
+          @extend .circle;
+          z-index: -1;
+          pointer-events: none;
+          background-color: #FCE5B1;
+          opacity: 0.5;
           position: relative;
           top: -$actionButtonSize;
+        }
+        .ripple.burst{
+          z-index: 1;
+          opacity: 0;
+          @include transition(all, 500ms, ease-out);
+          transform: scale($rippleRadius/$actionButtonSize*2);
         }
       }
     }

@@ -27,12 +27,28 @@
                </div>
                <div class="action">
                    <button class=" fa fa-plus"></button>
-                   <div class="circle"></div>
+                   <div class="ripple"></div>
                </div>
                <div class="overlay"></div>
            </div>
         </li>
     </ul>
 
+<script>
+    var card = function($card){
+        var action = $card.find(".action"),
+            button = action.find("button"),
+            ripple = action.find(".ripple");
+
+        button.on("mousedown touchstart", function(){
+            ripple.addClass("burst");
+            setTimeout(function(){
+                ripple.removeClass("burst");
+            }, 500);
+        });
+
+    };
+    card($(".card").first());
+</script>
 </body>
 </html>
