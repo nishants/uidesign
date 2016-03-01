@@ -1,0 +1,50 @@
+$cardHeight : 360px;
+$cardWidth  : 270px;
+$lineHeight : 20px;
+
+$borderColor: #E8E6E6;
+$borderWidth: 1px;
+
+$margin: 15px;
+
+$captionHeight: 60px;
+$captionLargeFont: 20px;
+$captionSmallFont: 13px;
+
+ul.deck{
+  @extend .undo-list;
+  > li{
+    .card{
+      width: $cardHeight + 2 * $borderWidth;
+      height: $cardWidth;
+      margin: $margin;
+      overflow: hidden;
+
+      text-align: center;
+      border: $borderWidth solid $borderColor;
+
+      .picture{
+        height: calc(100% - #{$captionHeight});
+        img{
+          height: 100%;
+        }
+      }
+      .caption{
+        border-top: $borderWidth solid $borderColor;
+
+        height: $captionHeight;
+        .title{
+          display: block;
+          font-size: $captionLargeFont;
+          line-height: $captionHeight/2;
+        }
+        .sub-title{
+          display: block;
+          font-size: $captionSmallFont;
+          line-height: $captionHeight/2;
+        }
+
+      }
+    }
+  }
+}

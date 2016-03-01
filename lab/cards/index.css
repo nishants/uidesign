@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+ul.deck > li .card {
+  width: 362px;
+  height: 270px;
+  margin: 15px;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid #E8E6E6; }
+  ul.deck > li .card .picture {
+    height: calc(100% - 60px); }
+    ul.deck > li .card .picture img {
+      height: 100%; }
+  ul.deck > li .card .caption {
+    border-top: 1px solid #E8E6E6;
+    height: 60px; }
+    ul.deck > li .card .caption .title {
+      display: block;
+      font-size: 20px;
+      line-height: 30px; }
+    ul.deck > li .card .caption .sub-title {
+      display: block;
+      font-size: 13px;
+      line-height: 30px; }
+
+ul.undo-list, ul.deck {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: block; }
+
+input {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  box-sizing: border-box;
+  border: none; }
+
+* {
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=index.css.map */
