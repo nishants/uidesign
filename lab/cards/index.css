@@ -35,18 +35,24 @@ ul.deck > li .card {
   ul.deck > li .card .action {
     position: relative;
     top: -77.5px;
-    text-align: right;
     padding-right: 5px;
     font-size: 16px; }
+    ul.deck > li .card .action .circle, ul.deck > li .card .action button {
+      display: block;
+      float: right;
+      clear: both;
+      border-radius: 50%;
+      height: 35px;
+      line-height: 35px;
+      width: 35px; }
     ul.deck > li .card .action button {
       border: 1px solid white;
       box-shadow: 0px 0px 3px white;
       background-color: #f7c14a;
-      color: white;
-      line-height: 35px;
-      border-radius: 50%;
-      height: 35px;
-      width: 35px; }
+      color: white; }
+    ul.deck > li .card .action div.circle {
+      position: relative;
+      top: -35px; }
 
 ul.undo-list, ul.deck {
   list-style: none;
