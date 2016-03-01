@@ -13,7 +13,8 @@ ul.deck > li .card {
   margin: 15px;
   overflow: hidden;
   text-align: center;
-  border: 1px solid #E8E6E6; }
+  border: 1px solid #E8E6E6;
+  border-radius: 2px; }
   ul.deck > li .card .picture {
     height: calc(100% - 60px); }
     ul.deck > li .card .picture img {
@@ -40,7 +41,7 @@ ul.deck > li .card {
     ul.deck > li .card .action button {
       border: 1px solid white;
       box-shadow: 0px 0px 3px white;
-      background-color: #F4A800;
+      background-color: #f7c14a;
       color: white;
       line-height: 35px;
       border-radius: 50%;

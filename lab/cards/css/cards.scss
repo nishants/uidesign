@@ -16,7 +16,7 @@ $captionSubTitleColor: #807E7E;
 
 $actionButtonSize  : 35px;
 $actionButtonFont  : 16px;
-$actionButtonColor  : #F4A800;
+$actionButtonColor  : rgb(247, 193, 74);
 $actionButtonFontColor  : white;
 
 
@@ -38,6 +38,7 @@ ul.deck{
 
       text-align: center;
       border: $borderWidth solid $borderColor;
+      border-radius: 2px;
 
       .picture{
         height: calc(100% - #{$captionHeight});
