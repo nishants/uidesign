@@ -30,9 +30,12 @@ $rippleRadius :368px; //card diagonal length
   box-sizing: border-box;
   outline: none;
 }
+
 ul.deck{
   @extend .undo-list;
+  text-align: center;
   > li{
+    display: inline-block;
     .card:hover{
       .caption{
         background-color: #EEE;
