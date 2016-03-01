@@ -42,10 +42,8 @@ ul.deck{
       width: $cardWidth + 2 * $borderWidth;
       height: $cardHeight;
       margin: $margin;
-
+      display: block;
       overflow: hidden;
-      cursor: pointer;
-
       text-align: center;
       border: $borderWidth solid $borderColor;
       border-radius: 2px;
@@ -92,8 +90,7 @@ ul.deck{
         button{
           @extend .action-button;
           @extend .circle;
-          border: 1px solid white;
-          box-shadow: 0px 0px 3px white;
+          box-shadow: 0px 0px 1px white;
           background-color: $actionButtonColor;
           color: $actionButtonFontColor;
         }
