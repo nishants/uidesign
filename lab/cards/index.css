@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
 ul.deck > li .card {
-  width: 362px;
+  width: 252px;
   height: 270px;
   margin: 15px;
   overflow: hidden;
@@ -15,10 +16,12 @@ ul.deck > li .card {
     height: 60px; }
     ul.deck > li .card .caption .title {
       display: block;
-      font-size: 20px;
+      color: #4E4D4D;
+      font-size: 16px;
       line-height: 30px; }
     ul.deck > li .card .caption .sub-title {
       display: block;
+      color: #807E7E;
       font-size: 13px;
       line-height: 30px; }
 
@@ -34,6 +37,9 @@ input {
   display: block;
   box-sizing: border-box;
   border: none; }
+
+body {
+  font-family: 'Roboto', sans-serif; }
 
 * {
   box-sizing: border-box; }

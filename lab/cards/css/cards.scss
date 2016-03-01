@@ -1,5 +1,5 @@
-$cardHeight : 360px;
-$cardWidth  : 270px;
+$cardHeight : 270px;
+$cardWidth  : 250px;
 $lineHeight : 20px;
 
 $borderColor: #E8E6E6;
@@ -8,15 +8,18 @@ $borderWidth: 1px;
 $margin: 15px;
 
 $captionHeight: 60px;
-$captionLargeFont: 20px;
+$captionLargeFont: 16px;
 $captionSmallFont: 13px;
+
+$captionTitleColor: #4E4D4D;
+$captionSubTitleColor: #807E7E;
 
 ul.deck{
   @extend .undo-list;
   > li{
     .card{
-      width: $cardHeight + 2 * $borderWidth;
-      height: $cardWidth;
+      width: $cardWidth + 2 * $borderWidth;
+      height: $cardHeight;
       margin: $margin;
       overflow: hidden;
 
@@ -35,11 +38,13 @@ ul.deck{
         height: $captionHeight;
         .title{
           display: block;
+          color: $captionTitleColor;
           font-size: $captionLargeFont;
           line-height: $captionHeight/2;
         }
         .sub-title{
           display: block;
+          color: $captionSubTitleColor;
           font-size: $captionSmallFont;
           line-height: $captionHeight/2;
         }
