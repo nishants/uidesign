@@ -88,13 +88,21 @@
                 <div class="indicator"></div>
             </div>
         </div>
-        <div id="view">
-            <div class="page"></div>
-        </div>
+
+        <ul id="views" class="undo-list">
+            <li>
+                <div class="page">
+                    <div class="content">
+                        <h1>Page 1</h1>
+                        <p>Fresh Tilled Soil joined with a team of slightly-unhinged storytellers to craft a transmedia game around a simple premise: what if magic were real? Gamers would duel in the real world with wands and spells, relying on their mobile device as an unobtrusive link to a parallel dimension.MoveableCode’s early prototype stole the show at 2012’s TechCrunch Disrupt expo. They were looking for a partner to help define the gameplay experience, and they engaged with Fresh Tilled Soil in October 2012. That’s where the legend begins.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
 
         <button id="to-top" class="fa fa-chevron-up"></button>
     </article>
-    <img id="seed" src="images/seed.png">
+    <!--<img id="seed" src="images/seed.png">-->
 
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <script src="../../lib/angular-1.4.3.js"></script>
@@ -105,31 +113,38 @@
                 document.getElementById("app"),
                 ["treniq"]);
 
-        var     app = $("#treniq"),
-                reading = function(){
-                    app.addClass("reading");
-                },navigating = function(){
-                    app.removeClass("reading");
-                },
-                scollableContent = $("#view"),
-                lastScrollTop = scollableContent.scrollTop(),
-                readingOffset = 50;
+        var init = function(){
+            var     app = $("#treniq"),
+                    reading = function(){
+                        app.addClass("reading");
+                    },navigating = function(){
+                        app.removeClass("reading");
+                    },
+                    scollableContent = $("#view"),
+                    lastScrollTop = scollableContent.scrollTop(),
+                    readingOffset = 50;
 
-        scollableContent.on("scroll", function(){
-            var scrollTop = scollableContent.scrollTop(),
-                nearTop = scrollTop < readingOffset,
-                scrollingDown = scrollTop - lastScrollTop > 0;
+            var $page = $(".page");
+            $page.on("scroll", function(){
+                var scollableContent = $(this),
+                        scrollTop = scollableContent.scrollTop(),
+                        nearTop = scrollTop < readingOffset,
+                        scrollingDown = scrollTop - lastScrollTop > 0;
 
-            (!nearTop && scrollingDown) ? reading() : navigating();
-            lastScrollTop = scrollTop;
-        });
-
-        var toTop = $("#to-top");
-        toTop.on("mousedown touchstart", function() {
-            app.addClass("scrolling");
-            scollableContent.stop().animate({scrollTop:0}, '500', 'swing', function() {
-                app.removeClass("scrolling");
+                (!nearTop && scrollingDown) ? reading() : navigating();
+                lastScrollTop = scrollTop;
             });
+
+            var toTop = $("#to-top");
+            toTop.on("mousedown touchstart", function() {
+                app.addClass("scrolling");
+                scollableContent.stop().animate({scrollTop:0}, '500', 'swing', function() {
+                    app.removeClass("scrolling");
+                });
+            });
+        };
+        $(document).ready(function(){
+            init();
         });
     </script>
 </body>

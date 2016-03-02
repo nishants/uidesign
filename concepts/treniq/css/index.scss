@@ -9,16 +9,6 @@
 
   h1{margin: 0px auto;}
   *{box-sizing: border-box;};
-  #view{
-    position: relative;
-    top:$appBarHeight;
-    max-height: calc(100vh - #{$appBarHeight});
-    padding-top: $navigationBarHeight;
-    overflow: scroll;
-    .page{
-      height: 300vh;
-    }
-  }
 }
 
 #to-top{
@@ -48,3 +38,4 @@
 }
 
 @import 'top-fixed-bar';
+@import 'views';
