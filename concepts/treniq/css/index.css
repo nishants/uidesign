@@ -72,7 +72,8 @@ input {
           width: 100%; }
     #top-fixed-bar .app.bar .search {
       overflow: hidden;
-      height: 45px; }
+      height: 45px;
+      width: calc(100% - 340px); }
       #top-fixed-bar .app.bar .search input, #top-fixed-bar .app.bar .search span {
         display: block;
         float: left;
@@ -80,17 +81,34 @@ input {
         height: 35px;
         line-height: 33px;
         border-top: 1px solid rgba(222, 220, 220, 0.29);
-        border-bottom: 1px solid rgba(222, 220, 220, 0.29); }
+        border-bottom: 1px solid rgba(222, 220, 220, 0.29);
+        -webkit-transition: border 500ms ease;
+        -moz-transition: border 500ms ease;
+        -o-transition: border 500ms ease;
+        transition: border 500ms ease; }
       #top-fixed-bar .app.bar .search span {
         width: 50px;
         border-right: 1px solid rgba(222, 220, 220, 0.29);
         font-size: 16px;
-        background-color: white; }
+        background-color: white;
+        -webkit-transition: background-color 500ms ease;
+        -moz-transition: background-color 500ms ease;
+        -o-transition: background-color 500ms ease;
+        transition: background-color 500ms ease; }
       #top-fixed-bar .app.bar .search input {
+        outline: none;
+        width: calc(100% - 50px);
+        max-width: 350px;
         padding-left: 10px;
         border-left: 1px solid rgba(222, 220, 220, 0.29); }
+    #top-fixed-bar .app.bar .search.active input, #top-fixed-bar .app.bar .search:hover input {
+      border: 1px solid #4CAF50; }
+    #top-fixed-bar .app.bar .search.active span, #top-fixed-bar .app.bar .search:hover span {
+      background: #4CAF50;
+      color: white; }
     #top-fixed-bar .app.bar .icons {
-      float: right; }
+      float: right;
+      width: 200px; }
       #top-fixed-bar .app.bar .icons > ul > li {
         float: left;
         width: 100px;

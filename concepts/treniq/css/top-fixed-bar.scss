@@ -5,6 +5,7 @@ $barColor: #EEE;
 $searchHeight: 35px;
 $fontSize: 13px;
 $iconSize: 16px;
+$iconsWidth: 200px;
 
 $barTransition: ease;
 $logoWidth: 120px;
@@ -62,6 +63,7 @@ $barShadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.12);
     .search{
       overflow: hidden;
       height: $appBarHeight;
+      width: calc(100% - #{$iconsWidth + $logoWidth + 20px});
       input, span{
         display: block;
         float: left;
@@ -71,21 +73,37 @@ $barShadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.12);
 
         border-top: 1px solid $borderColor;
         border-bottom: 1px solid $borderColor;
+        @include transition(border, 500ms, ease);
       }
       span{
         width: 50px;
         border-right: 1px solid $borderColor;
         font-size: $iconSize;
         background-color: white;
+        @include transition(background-color, 500ms, ease);
       }
       input{
+        outline: none;
+        width: calc(100% - 50px);
+        max-width: 350px;
         padding-left: 10px;
         border-left: 1px solid $borderColor;
       }
     }
+    .search.active{
+      input{
+        border: 1px solid #4CAF50;
+      }
+      span{
+        background: #4CAF50;
+        color: white;
+      }
+    }
+    .search:hover{@extend .active;}
 
     .icons{
       float: right;
+      width: $iconsWidth;
       > ul > li {
         float: left;
         width: 100px;
