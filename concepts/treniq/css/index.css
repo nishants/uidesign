@@ -280,7 +280,7 @@ input {
     -o-transition: transform 500ms ease;
     transition: transform 500ms ease; }
 
-.show, #views > li:nth-child(1) {
+.show, #views > .home {
   -webkit-transform: translateX(100vw);
   -moz-transform: translateX(100vw);
   -ms-transform: translateX(100vw);

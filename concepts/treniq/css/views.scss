@@ -30,7 +30,6 @@ $viewWidth: 100vw;
 
 #views > li:nth-child(1){
   left: -$viewWidth;
-  @extend .show;
 }
 
 #views > li:nth-child(2){
@@ -51,6 +50,10 @@ $viewWidth: 100vw;
 
 #views > li:nth-child(6){
   left: -6 * $viewWidth;
+}
+
+#views > .home{
+  @extend .show;
 }
 
 .page:not(.splash){
