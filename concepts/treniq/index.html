@@ -120,7 +120,6 @@
                     },navigating = function(){
                         app.removeClass("reading");
                     },
-                    scollableContent = $("#view"),
                     lastScrollTop = scollableContent.scrollTop(),
                     readingOffset = 50;
 
@@ -138,7 +137,7 @@
             var toTop = $("#to-top");
             toTop.on("mousedown touchstart", function() {
                 app.addClass("scrolling");
-                scollableContent.stop().animate({scrollTop:0}, '500', 'swing', function() {
+                $page.stop().animate({scrollTop:0}, '500', 'swing', function() {
                     app.removeClass("scrolling");
                 });
             });
