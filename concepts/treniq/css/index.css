@@ -132,7 +132,9 @@ input {
       #top-fixed-bar .app.bar .icons > ul > li {
         float: left;
         width: 70px;
-        text-transform: capitalize; }
+        text-transform: capitalize;
+        border-radius: 5px;
+        border: 1px solid transparent; }
         #top-fixed-bar .app.bar .icons > ul > li .fa {
           -webkit-transition: transform 100ms ease;
           -moz-transition: transform 100ms ease;
@@ -151,18 +153,20 @@ input {
           -moz-transition: transform 100ms ease;
           -o-transition: transform 100ms ease;
           transition: transform 100ms ease; }
-      #top-fixed-bar .app.bar .icons > ul > li:hover label {
-        -webkit-transform: translateX(10px) scale(1.2);
-        -moz-transform: translateX(10px) scale(1.2);
-        -ms-transform: translateX(10px) scale(1.2);
-        -o-transform: translateX(10px) scale(1.2);
-        transform: translateX(10px) scale(1.2); }
-      #top-fixed-bar .app.bar .icons > ul > li:hover .fa {
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        transform: scale(1.2); }
+      #top-fixed-bar .app.bar .icons > ul > li:hover {
+        border-color: rgba(0, 0, 0, 0.05); }
+        #top-fixed-bar .app.bar .icons > ul > li:hover label {
+          -webkit-transform: translateX(10px) scale(1.2);
+          -moz-transform: translateX(10px) scale(1.2);
+          -ms-transform: translateX(10px) scale(1.2);
+          -o-transform: translateX(10px) scale(1.2);
+          transform: translateX(10px) scale(1.2); }
+        #top-fixed-bar .app.bar .icons > ul > li:hover .fa {
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          -o-transform: scale(1.2);
+          transform: scale(1.2); }
   #top-fixed-bar .navigation.bar {
     -webkit-transition: all 500ms ease;
     -moz-transition: all 500ms ease;

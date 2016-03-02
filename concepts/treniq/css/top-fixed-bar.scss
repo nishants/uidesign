@@ -120,6 +120,9 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
         float: left;
         width: $iconsWidth/2;
         text-transform: capitalize;
+        border-radius: 5px;
+        border: 1px solid transparent;
+
         .fa{
           @include transition(transform, 100ms, ease);
           @include transformOrigin(0 0);
@@ -135,6 +138,7 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
       }
 
       > ul > li:hover{
+        border-color: rgba(0,0,0,0.05);
         label{
           @include transform(translateX(10px) scale(1.2));
         }
