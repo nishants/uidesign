@@ -117,6 +117,24 @@
                     </div>
                 </div>
             </li>
+            <li class="decor">
+                <div class="page">
+                    <div class="content">
+                        <h1>Decor</h1>
+                        <h3>Best Collection in Town</h3>
+                        <p>Fresh Tilled Soil joined with a team of slightly-unhinged storytellers to craft a transmedia game around a simple premise: what if magic were real? Gamers would duel in the real world with wands and spells, relying on their mobile device as an unobtrusive link to a parallel dimension.MoveableCode’s early prototype stole the show at 2012’s TechCrunch Disrupt expo. They were looking for a partner to help define the gameplay experience, and they engaged with Fresh Tilled Soil in October 2012. That’s where the legend begins.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="blog">
+                <div class="page">
+                    <div class="content">
+                        <h1>Blog</h1>
+                        <h3>Best Collection in Town</h3>
+                        <p>Fresh Tilled Soil joined with a team of slightly-unhinged storytellers to craft a transmedia game around a simple premise: what if magic were real? Gamers would duel in the real world with wands and spells, relying on their mobile device as an unobtrusive link to a parallel dimension.MoveableCode’s early prototype stole the show at 2012’s TechCrunch Disrupt expo. They were looking for a partner to help define the gameplay experience, and they engaged with Fresh Tilled Soil in October 2012. That’s where the legend begins.</p>
+                    </div>
+                </div>
+            </li>
         </ul>
 
         <button id="to-top" class="fa fa-chevron-up"></button>
@@ -185,6 +203,22 @@
 
             $(".navigation.bar .link.furniture").mouseleave(function(){
                 $("#views > .furniture").removeClass("peek");
+            });
+
+            $(".navigation.bar .link.decor").mouseenter(function(){
+                $("#views > .decor").addClass("peek");
+            });
+
+            $(".navigation.bar .link.decor").mouseleave(function(){
+                $("#views > .decor").removeClass("peek");
+            });
+
+            $(".navigation.bar .link.blog").mouseenter(function(){
+                $("#views > .blog").addClass("peek");
+            });
+
+            $(".navigation.bar .link.blog").mouseleave(function(){
+                $("#views > .blog").removeClass("peek");
             });
         };
         $(document).ready(function(){
