@@ -287,7 +287,7 @@ input {
   -o-transform: translateX(100vw);
   transform: translateX(100vw); }
 
-.peek, #views:hover li:nth-child(1) {
+.peek, #views:hover li:nth-child(2) {
   -webkit-transform: translateX(170vw);
   -moz-transform: translateX(170vw);
   -ms-transform: translateX(170vw);
@@ -316,8 +316,10 @@ input {
   padding-top: 85px;
   height: 100%;
   border-bottom: 1px solid red;
-  overflow: scroll; }
+  overflow: scroll;
+  background-color: white; }
   .page:not(.splash) .content {
+    padding: 20px;
     height: 300vh; }
 
 /*# sourceMappingURL=index.css.map */
