@@ -287,7 +287,7 @@ input {
   -o-transform: translateX(100vw);
   transform: translateX(100vw); }
 
-.peek, #views:hover li:nth-child(2) {
+.peek {
   -webkit-transform: translateX(170vw);
   -moz-transform: translateX(170vw);
   -ms-transform: translateX(170vw);
