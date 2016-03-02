@@ -31,6 +31,10 @@
             width: 100%;
         }
 
+        .page{
+            border: 20px solid green;
+            background: rgba(0, 128, 0, 0.33);
+        }
 
     </style>
 
@@ -79,7 +83,9 @@
                 <div class="indicator"></div>
             </div>
         </div>
-        <div id="view"></div>
+        <div id="view">
+            <div class="page"></div>
+        </div>
 
     </article>
 
@@ -98,11 +104,13 @@
                     app.addClass("reading");
                 },navigating = function(){
                     app.removeClass("reading");
-                },lastScrollTop = $(window).scrollTop(),
+                },
+                scollableContent = $("#view"),
+                lastScrollTop = scollableContent.scrollTop(),
                 readingOffset = 50;
 
-        $(window).on("scroll", function(){
-            var scrollTop = $(window).scrollTop(),
+        scollableContent.on("scroll", function(){
+            var scrollTop = scollableContent.scrollTop(),
                 nearTop = scrollTop < readingOffset,
                 scrollingDown = scrollTop - lastScrollTop > 0;
 

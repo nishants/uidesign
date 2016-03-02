@@ -20,11 +20,18 @@ input {
   #treniq * {
     box-sizing: border-box; }
   #treniq #view {
-    height: 300vh; }
+    position: relative;
+    top: 45px;
+    max-height: calc(100vh - 45px);
+    padding-top: 40px;
+    overflow: scroll; }
+    #treniq #view .page {
+      height: 300vh; }
 
 #top-fixed-bar {
   position: fixed;
   top: 0px;
+  z-index: 1000;
   width: 100%;
   overflow: hidden;
   background-color: #EEE;
