@@ -58,11 +58,11 @@ input {
     -moz-transition: box-shadow 100ms ease;
     -o-transition: box-shadow 100ms ease;
     transition: box-shadow 100ms ease;
-    -webkit-transition-delay: 100ms;
-    -moz-transition-delay: 100ms;
-    -ms-transition-delay: 100ms;
-    -o-transition-delay: 100ms;
-    transition-delay: 100ms; }
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms; }
     #top-fixed-bar .app.bar .logo {
       padding: 10px 20px;
       width: 120px; }
@@ -94,13 +94,17 @@ input {
         -webkit-transition: background-color 500ms ease;
         -moz-transition: background-color 500ms ease;
         -o-transition: background-color 500ms ease;
-        transition: background-color 500ms ease; }
+        transition: background-color 500ms ease;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px; }
       #top-fixed-bar .app.bar .search input {
         outline: none;
         width: calc(100% - 50px);
         max-width: 350px;
         padding-left: 10px;
-        border-left: 1px solid rgba(222, 220, 220, 0.29); }
+        border-left: 1px solid rgba(222, 220, 220, 0.29);
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px; }
     #top-fixed-bar .app.bar .search.active input, #top-fixed-bar .app.bar .search:hover input {
       border: 1px solid #4CAF50; }
     #top-fixed-bar .app.bar .search.active span, #top-fixed-bar .app.bar .search:hover span {
@@ -143,7 +147,7 @@ input {
       background-color: rgba(0, 128, 0, 0.8); }
 
 #treniq.reading > #top-fixed-bar .app.bar {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.12); }
+  box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3); }
 #treniq.reading > #top-fixed-bar .navigation.bar {
   -webkit-transform: translateY(-40px);
   -moz-transform: translateY(-40px);

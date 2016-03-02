@@ -3,6 +3,8 @@ $borderColor: rgba(222, 220, 220, 0.29);
 $barColor: #EEE;
 
 $searchHeight: 35px;
+$searchBorderRadius: 2px;
+
 $fontSize: 13px;
 $iconSize: 16px;
 $iconsWidth: 200px;
@@ -13,7 +15,8 @@ $linkHoverHighlight: rgba(0, 128, 0, 0.2);
 $linkSelectedHighlight: rgba(0, 128, 0, 0.8);
 $navigationLinkWidth: 100px;
 $navigationPadding: 10px;
-$barShadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.12);
+$barShadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
+$barTransitionTime: 250ms;
 
 #top-fixed-bar{
   position: fixed;
@@ -48,7 +51,7 @@ $barShadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.12);
     border-bottom: 1px solid $borderColor;
     line-height: $searchHeight;
     @include transition(box-shadow, 100ms, $barTransition);
-    @include transitionDelay(100ms);
+    @include transitionDelay($barTransitionTime - 100ms);
 
     .logo {
       padding: 10px 20px;
@@ -81,6 +84,8 @@ $barShadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.12);
         font-size: $iconSize;
         background-color: white;
         @include transition(background-color, 500ms, ease);
+        border-top-right-radius: $searchBorderRadius;
+        border-bottom-right-radius: $searchBorderRadius;
       }
       input{
         outline: none;
@@ -88,6 +93,8 @@ $barShadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.12);
         max-width: 350px;
         padding-left: 10px;
         border-left: 1px solid $borderColor;
+        border-top-left-radius: $searchBorderRadius;
+        border-bottom-left-radius: $searchBorderRadius;
       }
     }
     .search.active{
@@ -114,7 +121,7 @@ $barShadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.12);
   }
 
   .navigation.bar{
-    @include transition(transform, 250ms, $barTransition);
+    @include transition(transform, $barTransitionTime, $barTransition);
     height: $navigationBarHeight;
     line-height: $navigationBarHeight - $navigationPadding;
     padding: 5px 5px 5px $logoWidth + 5px;
