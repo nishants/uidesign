@@ -34,9 +34,24 @@ input {
       color: grey; }
   #top-fixed-bar .app.bar {
     height: 60px;
-    line-height: 50px;
     padding: 5px;
-    border-bottom: 1px solid #DEDCDC; }
+    border-bottom: 1px solid #DEDCDC;
+    line-height: 35px; }
+    #top-fixed-bar .app.bar .search input, #top-fixed-bar .app.bar .search span {
+      display: block;
+      float: left;
+      box-sizing: border-box;
+      height: 35px;
+      line-height: 33px;
+      border-top: 1px solid #DEDCDC;
+      border-bottom: 1px solid #DEDCDC; }
+    #top-fixed-bar .app.bar .search span {
+      width: 50px;
+      border-right: 1px solid #DEDCDC; }
+    #top-fixed-bar .app.bar .search input {
+      width: calc(100% - 50px);
+      padding-left: 10px;
+      border-left: 1px solid #DEDCDC; }
   #top-fixed-bar .navigation.bar {
     height: 40px;
     line-height: 30px;

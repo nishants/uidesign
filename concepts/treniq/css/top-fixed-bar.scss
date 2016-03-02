@@ -4,6 +4,9 @@ $navigationBarHeight: $fixedBarHeight - $appBarHeight;
 
 $borderColor: #DEDCDC;
 $barColor: #EEE;
+
+$searchHeight: 35px;
+
 #top-fixed-bar{
   position: fixed;
   top: 0px;
@@ -28,9 +31,31 @@ $barColor: #EEE;
   }
   .app.bar{
     height: $appBarHeight;
-    line-height: $appBarHeight - 10px;
     padding: 5px;
     border-bottom: 1px solid $borderColor;
+    line-height: $searchHeight;
+
+    .search{
+      input, span{
+        display: block;
+        float: left;
+        box-sizing: border-box;
+        height: $searchHeight;
+        line-height: $searchHeight - 2px;
+
+        border-top: 1px solid $borderColor;
+        border-bottom: 1px solid $borderColor;
+      }
+      span{
+        width: 50px;
+        border-right: 1px solid $borderColor;
+      }
+      input{
+        width:  calc(100% - 50px);
+        padding-left: 10px;
+        border-left: 1px solid $borderColor;
+      }
+    }
   }
 
   .navigation.bar{
