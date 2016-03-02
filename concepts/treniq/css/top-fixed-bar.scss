@@ -135,18 +135,22 @@ $barTransitionTime: 500ms;
       }
     }
     .link{
-      text-align: left;
+      @include transition(all, 500ms, ease);
       padding-left: 10px;
+      text-align: left;
+      border-bottom: 2px solid transparent;
+      a{@include transition(transform, 500ms, $barTransition);}
     }
     .link:hover{
-      border-bottom: 2px solid $linkHoverHighlight;
+      border-color: $linkHoverHighlight;
+      a{@include transform(translateX(7.5px));}
     }
     .indicator{
       position: relative;
       top: -$navigationPadding;
       height: 2px;
       pointer-events: none;
-      width: $navigationLinkWidth;
+      width: 10px + $navigationLinkWidth;
       background-color: $linkSelectedHighlight;
     }
   }

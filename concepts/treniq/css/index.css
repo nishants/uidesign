@@ -143,16 +143,32 @@ input {
       #top-fixed-bar .navigation.bar > ul > li:last-child {
         float: right; }
     #top-fixed-bar .navigation.bar .link {
+      -webkit-transition: all 500ms ease;
+      -moz-transition: all 500ms ease;
+      -o-transition: all 500ms ease;
+      transition: all 500ms ease;
+      padding-left: 10px;
       text-align: left;
-      padding-left: 10px; }
+      border-bottom: 2px solid transparent; }
+      #top-fixed-bar .navigation.bar .link a {
+        -webkit-transition: transform 500ms ease;
+        -moz-transition: transform 500ms ease;
+        -o-transition: transform 500ms ease;
+        transition: transform 500ms ease; }
     #top-fixed-bar .navigation.bar .link:hover {
-      border-bottom: 2px solid rgba(0, 128, 0, 0.2); }
+      border-color: rgba(0, 128, 0, 0.2); }
+      #top-fixed-bar .navigation.bar .link:hover a {
+        -webkit-transform: translateX(7.5px);
+        -moz-transform: translateX(7.5px);
+        -ms-transform: translateX(7.5px);
+        -o-transform: translateX(7.5px);
+        transform: translateX(7.5px); }
     #top-fixed-bar .navigation.bar .indicator {
       position: relative;
       top: -10px;
       height: 2px;
       pointer-events: none;
-      width: 100px;
+      width: 110px;
       background-color: rgba(0, 128, 0, 0.8); }
 
 #treniq.reading > #top-fixed-bar .app.bar {
