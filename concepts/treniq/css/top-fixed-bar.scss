@@ -69,11 +69,13 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
       }
     }
     .search{
-      overflow: hidden;
       height: $appBarHeight -10px;
       width: calc(100% - #{$iconsWidth + $logoWidth + 20px});
       border: 1px solid rgba(0, 0, 0, 0.09);
       border-radius: $searchBorderRadius;
+      overflow: hidden;
+      @include transition(all, 500ms, ease);
+      @include transitionDelay(500ms);
       input, span{
         display: block;
         float: left;
@@ -83,32 +85,40 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
 
         border-top: 1px solid $borderColor;
         border-bottom: 1px solid $borderColor;
+        background-color: transparent;
         @include transition(border, 500ms, ease);
       }
       span{
         width: 50px;
         border-right: 1px solid $borderColor;
         font-size: $iconSize;
-        background-color: white;
-        @include transition(background-color, 500ms, ease);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        color: rgba(0,0,0,0.1);
+
+        @include transition(all, 500ms, ease);
+        @include transform(translateX(-10px));
       }
       input{
         outline: none;
-        @include transition(border, 500ms, ease);
+        @include transition(all, 500ms, ease);
+        @include transform(translateX(-20px));
         width: calc(100% - 50px);
-        padding-left: 10px;
         border-top-right-radius: $searchBorderRadius;
         border-bottom-right-radius: $searchBorderRadius;
         border: 1px solid transparent
       }
     }
     .search.active{
-      border-color: transparent;
       input{
-        border-color: rgba(0,0,0,0.1);
+        padding-left: 10px;
+        background-color: white;
+        @include transform(translateX(0px));
       }
       span{
+        color: inherit;
         background: $secondLogoColor;
+        @include transform(translateX(0px));
       }
     }
     .search:hover{@extend .active;}

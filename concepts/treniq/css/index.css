@@ -83,11 +83,20 @@ input {
           vertical-align: middle;
           width: 100%; }
     #top-fixed-bar .app.bar .search {
-      overflow: hidden;
       height: 45px -10px;
       width: calc(100% - 280px);
       border: 1px solid rgba(0, 0, 0, 0.09);
-      border-radius: 5px; }
+      border-radius: 5px;
+      overflow: hidden;
+      -webkit-transition: all 500ms ease;
+      -moz-transition: all 500ms ease;
+      -o-transition: all 500ms ease;
+      transition: all 500ms ease;
+      -webkit-transition-delay: 500ms;
+      -moz-transition-delay: 500ms;
+      -ms-transition-delay: 500ms;
+      -o-transition-delay: 500ms;
+      transition-delay: 500ms; }
       #top-fixed-bar .app.bar .search input, #top-fixed-bar .app.bar .search span {
         display: block;
         float: left;
@@ -96,6 +105,7 @@ input {
         line-height: 28px;
         border-top: 1px solid rgba(0, 0, 0, 0.01);
         border-bottom: 1px solid rgba(0, 0, 0, 0.01);
+        background-color: transparent;
         -webkit-transition: border 500ms ease;
         -moz-transition: border 500ms ease;
         -o-transition: border 500ms ease;
@@ -104,28 +114,49 @@ input {
         width: 50px;
         border-right: 1px solid rgba(0, 0, 0, 0.01);
         font-size: 16px;
-        background-color: white;
-        -webkit-transition: background-color 500ms ease;
-        -moz-transition: background-color 500ms ease;
-        -o-transition: background-color 500ms ease;
-        transition: background-color 500ms ease; }
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        color: rgba(0, 0, 0, 0.1);
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease;
+        -webkit-transform: translateX(-10px);
+        -moz-transform: translateX(-10px);
+        -ms-transform: translateX(-10px);
+        -o-transform: translateX(-10px);
+        transform: translateX(-10px); }
       #top-fixed-bar .app.bar .search input {
         outline: none;
-        -webkit-transition: border 500ms ease;
-        -moz-transition: border 500ms ease;
-        -o-transition: border 500ms ease;
-        transition: border 500ms ease;
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease;
+        -webkit-transform: translateX(-20px);
+        -moz-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        -o-transform: translateX(-20px);
+        transform: translateX(-20px);
         width: calc(100% - 50px);
-        padding-left: 10px;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         border: 1px solid transparent; }
-    #top-fixed-bar .app.bar .search.active, #top-fixed-bar .app.bar .search:hover {
-      border-color: transparent; }
-      #top-fixed-bar .app.bar .search.active input, #top-fixed-bar .app.bar .search:hover input {
-        border-color: rgba(0, 0, 0, 0.1); }
-      #top-fixed-bar .app.bar .search.active span, #top-fixed-bar .app.bar .search:hover span {
-        background: #FBD683; }
+    #top-fixed-bar .app.bar .search.active input, #top-fixed-bar .app.bar .search:hover input {
+      padding-left: 10px;
+      background-color: white;
+      -webkit-transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+      -o-transform: translateX(0px);
+      transform: translateX(0px); }
+    #top-fixed-bar .app.bar .search.active span, #top-fixed-bar .app.bar .search:hover span {
+      color: inherit;
+      background: #FBD683;
+      -webkit-transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+      -o-transform: translateX(0px);
+      transform: translateX(0px); }
     #top-fixed-bar .app.bar .icons {
       float: right;
       width: 140px; }
