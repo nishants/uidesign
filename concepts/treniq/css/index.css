@@ -69,11 +69,11 @@ input {
     -moz-transition: all 100ms ease;
     -o-transition: all 100ms ease;
     transition: all 100ms ease;
-    -webkit-transition-delay: 400ms;
-    -moz-transition-delay: 400ms;
-    -ms-transition-delay: 400ms;
-    -o-transition-delay: 400ms;
-    transition-delay: 400ms; }
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    -ms-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    transition-delay: 100ms; }
     #top-fixed-bar .app.bar .logo {
       padding: 0px 20px;
       width: 120px; }

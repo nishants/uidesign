@@ -54,8 +54,8 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
     line-height: $searchHeight;
     background-color: white;
 
-    @include transition(all, 100ms, $barTransition);
-    @include transitionDelay($barTransitionTime - 100ms);
+    @include transition(all, 100ms, ease);
+    @include transitionDelay(100ms);
 
     .logo {
       padding: 0px 20px;
