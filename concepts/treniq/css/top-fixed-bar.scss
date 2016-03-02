@@ -52,9 +52,9 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
     height: $appBarHeight;
     padding: 5px;
     line-height: $searchHeight;
-    background-color: $appBarColor;
+    background-color: white;
 
-    @include transition(box-shadow, 100ms, $barTransition);
+    @include transition(all, 100ms, $barTransition);
     @include transitionDelay($barTransitionTime - 100ms);
 
     .logo {
@@ -189,6 +189,7 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
 #treniq.reading > #top-fixed-bar{
   .app.bar{
     box-shadow: $barShadow;
+    background-color: $appBarColor;
   }
   .navigation.bar{
     @include transform(translateY(-$navigationBarHeight));
