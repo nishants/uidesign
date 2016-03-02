@@ -3,7 +3,7 @@ $borderColor: rgba(0, 0, 0, 0.01);
 $barColor: #EEE;
 
 $searchHeight: 35px;
-$searchBorderRadius: 2px;
+$searchBorderRadius: 5px;
 
 $fontSize: 13px;
 $iconSize: 16px;
@@ -32,7 +32,7 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
 
   text-align: center;
   font-size: $fontSize;
-  color: rgba(1, 1, 1, 0.9);
+  color: $logoColor;
   pointer-events: none;
 
   .bar{
@@ -74,7 +74,7 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
       width: calc(100% - #{$iconsWidth + $logoWidth + 20px});
       border: 1px solid rgba(0, 0, 0, 0.09);
       max-width: 400px;
-
+      border-radius: $searchBorderRadius;
       input, span{
         display: block;
         float: left;
