@@ -1,0 +1,29 @@
+$fixedBarHeight: 100px;
+$appBarHeight  : 60px;
+$navigationBarHeight: $fixedBarHeight - $appBarHeight;
+
+$borderColor: #DEDCDC;
+$barColor: #EEE;
+#top-fixed-bar{
+  position: fixed;
+  top: 0px;
+
+  width: 100%;
+  height: $fixedBarHeight;
+
+  background-color: $barColor;
+
+  .app.bar{
+    height: $appBarHeight;
+    line-height: $appBarHeight - 10px;
+    padding: 5px;
+    border-bottom: 1px solid $borderColor;
+  }
+
+  .navigation.bar{
+    height: $navigationBarHeight;
+    line-height: $navigationBarHeight - 10px;
+    padding: 5px;
+    border-bottom: 1px solid $borderColor;
+  }
+}
