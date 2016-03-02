@@ -99,7 +99,7 @@ $navigationPadding: 10px;
 
     height: $navigationBarHeight;
     line-height: $navigationBarHeight - $navigationPadding;
-    padding: 5px;
+    padding: 5px 5px 5px $logoWidth + 5px;
     border-bottom: 1px solid $borderColor;
 
     > ul {
@@ -114,7 +114,6 @@ $navigationPadding: 10px;
     .indicator{
       position: relative;
       top: -$navigationPadding;
-      margin-left: $logoWidth;
       height: 2px;
       pointer-events: none;
       width: $navigationLinkWidth;
