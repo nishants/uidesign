@@ -11,7 +11,7 @@ $iconsWidth: 200px;
 
 $barTransition: ease;
 $logoWidth: 120px;
-$linkHoverHighlight: rgba(0, 128, 0, 0.2);
+$linkHoverHighlight: rgba(0, 128, 0, 0.8);
 $linkSelectedHighlight: rgba(0, 128, 0, 0.8);
 $navigationLinkWidth: 100px;
 $navigationPadding: 10px;
@@ -72,6 +72,9 @@ $navigationBarFontColor :rgba(255,255,255,0.8);
       overflow: hidden;
       height: $appBarHeight -10px;
       width: calc(100% - #{$iconsWidth + $logoWidth + 20px});
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      max-width: 400px;
+
       input, span{
         display: block;
         float: left;
@@ -95,7 +98,6 @@ $navigationBarFontColor :rgba(255,255,255,0.8);
       input{
         outline: none;
         width: calc(100% - 50px);
-        max-width: 350px;
         padding-left: 10px;
         border-left: 1px solid $borderColor;
         border-top-left-radius: $searchBorderRadius;
