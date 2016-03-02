@@ -21,13 +21,15 @@ $navigationPadding: 10px;
   width: 100%;
   overflow: hidden;
 
-  background-color: $barColor;
   text-align: center;
   font-size: $fontSize;
   color: grey;
+  pointer-events: none;
   @include transition(transform, 100ms, $barTransition);
 
   .bar{
+    pointer-events: all;
+    background-color: $barColor;
     > ul > li {
       float: left;
       a{
@@ -93,8 +95,7 @@ $navigationPadding: 10px;
   }
 
   .navigation.bar{
-    @include transition(transform, 100ms, $barTransition);
-
+    @include transition(transform, 250ms, $barTransition);
     height: $navigationBarHeight;
     line-height: $navigationBarHeight - $navigationPadding;
     padding: 5px 5px 5px $logoWidth + 5px;
@@ -125,11 +126,7 @@ $navigationPadding: 10px;
 }
 
 #treniq.reading > #top-fixed-bar{
-  @include transform(translateY(-$navigationBarHeight));
-  .app.bar{
-    @include transform(translateY($navigationBarHeight));
-  }
   .navigation.bar{
-    @include transform(translateY($navigationBarHeight));
+    @include transform(translateY(-$navigationBarHeight));
   }
 }
