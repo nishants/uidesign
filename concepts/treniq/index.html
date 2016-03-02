@@ -108,6 +108,15 @@
                     </div>
                 </div>
             </li>
+            <li class="lighting">
+                <div class="page">
+                    <div class="content">
+                        <h1>Lighting</h1>
+                        <h3>Best Collection in Town</h3>
+                        <p>Fresh Tilled Soil joined with a team of slightly-unhinged storytellers to craft a transmedia game around a simple premise: what if magic were real? Gamers would duel in the real world with wands and spells, relying on their mobile device as an unobtrusive link to a parallel dimension.MoveableCode’s early prototype stole the show at 2012’s TechCrunch Disrupt expo. They were looking for a partner to help define the gameplay experience, and they engaged with Fresh Tilled Soil in October 2012. That’s where the legend begins.</p>
+                    </div>
+                </div>
+            </li>
         </ul>
 
         <button id="to-top" class="fa fa-chevron-up"></button>
@@ -150,6 +159,14 @@
                 $page.stop().animate({scrollTop:0}, '500', 'swing', function() {
                     app.removeClass("scrolling");
                 });
+            });
+
+            $(".navigation.bar .link.lighting").mouseenter(function(){
+                $("#views > .lighting").addClass("peek");
+            });
+
+            $(".navigation.bar .link.lighting").mouseleave(function(){
+                $("#views > .lighting").removeClass("peek");
             });
         };
         $(document).ready(function(){
