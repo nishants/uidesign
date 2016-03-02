@@ -179,47 +179,35 @@
                 });
             });
 
-            $(".navigation.bar .link.lighting").mouseenter(function(){
-                $("#views > .lighting").addClass("peek");
+            var navigation = [
+                {
+                    link: $(".navigation.bar .link.home"),
+                    view: $("#views > .home")
+                },                {
+                    link: $(".navigation.bar .link.lighting"),
+                    view: $("#views > .lighting")
+                },
+                {
+                    link: $(".navigation.bar .link.furniture"),
+                    view: $("#views > .furniture")
+                },                {
+                    link: $(".navigation.bar .link.decor"),
+                    view: $("#views > .decor")
+                },              {
+                    link: $(".navigation.bar .link.blog"),
+                    view: $("#views > .blog")
+                }
+            ];
+            navigation.forEach(function(nav){
+                nav.link.mouseenter(function(){
+                    nav.view.addClass("peek");
+                });
+
+                nav.link.mouseleave(function(){
+                    nav.view.removeClass("peek");
+                });
             });
 
-            $(".navigation.bar .link.lighting").mouseleave(function(){
-                $("#views > .lighting").removeClass("peek");
-            });
-
-
-            $(".navigation.bar .link.home").mouseenter(function(){
-                $("#views > .home").addClass("peek");
-            });
-
-            $(".navigation.bar .link.home").mouseleave(function(){
-                $("#views > .home").removeClass("peek");
-            });
-
-
-            $(".navigation.bar .link.furniture").mouseenter(function(){
-                $("#views > .furniture").addClass("peek");
-            });
-
-            $(".navigation.bar .link.furniture").mouseleave(function(){
-                $("#views > .furniture").removeClass("peek");
-            });
-
-            $(".navigation.bar .link.decor").mouseenter(function(){
-                $("#views > .decor").addClass("peek");
-            });
-
-            $(".navigation.bar .link.decor").mouseleave(function(){
-                $("#views > .decor").removeClass("peek");
-            });
-
-            $(".navigation.bar .link.blog").mouseenter(function(){
-                $("#views > .blog").addClass("peek");
-            });
-
-            $(".navigation.bar .link.blog").mouseleave(function(){
-                $("#views > .blog").removeClass("peek");
-            });
         };
         $(document).ready(function(){
             init();
