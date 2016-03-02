@@ -9,6 +9,7 @@ $searchHeight: 35px;
 $fontSize: 13px;
 $iconSize: 16px;
 
+$barTransition: ease;
 #top-fixed-bar{
   position: fixed;
   top: 0px;
@@ -20,7 +21,7 @@ $iconSize: 16px;
   text-align: center;
   font-size: $fontSize;
   color: grey;
-  @include transition(transform, 100ms, ease);
+  @include transition(transform, 100ms, $barTransition);
 
   .bar{
     > ul > li {
@@ -39,8 +40,15 @@ $iconSize: 16px;
     padding: 5px;
     border-bottom: 1px solid $borderColor;
     line-height: $searchHeight;
-    @include transition(transform, 100ms, ease);
+    @include transition(transform, 100ms, $barTransition);
 
+    .logo {
+      padding: 5px 10px;
+      img{
+        width: 80px;
+        margin: 5px;
+      }
+    }
     .search{
       overflow: hidden;
       height: $appBarHeight;
@@ -77,7 +85,7 @@ $iconSize: 16px;
   }
 
   .navigation.bar{
-    @include transition(transform, 100ms, ease);
+    @include transition(transform, 100ms, $barTransition);
 
     height: $navigationBarHeight;
     line-height: $navigationBarHeight - 10px;
@@ -96,6 +104,6 @@ $iconSize: 16px;
     @include transform(translateY($navigationBarHeight));
   }
   .navigation.bar{
-    @include transform(translateY($navigationBarHeight))
+    @include transform(translateY($navigationBarHeight));
   }
 }

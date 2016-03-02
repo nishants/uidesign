@@ -49,6 +49,11 @@ input {
     -moz-transition: transform 100ms ease;
     -o-transition: transform 100ms ease;
     transition: transform 100ms ease; }
+    #top-fixed-bar .app.bar .logo {
+      padding: 5px 10px; }
+      #top-fixed-bar .app.bar .logo img {
+        width: 80px;
+        margin: 5px; }
     #top-fixed-bar .app.bar .search {
       overflow: hidden;
       height: 45px; }

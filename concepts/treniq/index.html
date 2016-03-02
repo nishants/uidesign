@@ -48,7 +48,7 @@
         <div id="top-fixed-bar">
             <div class="app bar">
                 <ul class="undo-list">
-                    <li class="logo"><a>Treniq</a></li>
+                    <li class="logo"><a><img src="images/brand.png"></a></li>
                     <li class="search">
                         <input type="search" placeholder="search">
                         <span class="fa fa-search"></span>
@@ -97,11 +97,15 @@
                     app.addClass("reading");
                 },navigating = function(){
                     app.removeClass("reading");
-                },lastScrollTop = $(window).scrollTop();
+                },lastScrollTop = $(window).scrollTop(),
+                readingOffset = 50;
 
         $(window).on("scroll", function(){
-            var scrollTop = $(window).scrollTop();
-            scrollTop - lastScrollTop > 0 ? reading() : navigating();
+            var scrollTop = $(window).scrollTop(),
+                nearTop = scrollTop < readingOffset,
+                scrollingDown = scrollTop - lastScrollTop > 0;
+
+            (!nearTop && scrollingDown) ? reading() : navigating();
             lastScrollTop = scrollTop;
         });
     </script>
