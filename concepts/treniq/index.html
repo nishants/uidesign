@@ -123,6 +123,14 @@
             (!nearTop && scrollingDown) ? reading() : navigating();
             lastScrollTop = scrollTop;
         });
+
+        var toTop = $("#to-top");
+        toTop.on("mousedown touchstart", function() {
+            app.addClass("scrolling");
+            scollableContent.stop().animate({scrollTop:0}, '500', 'swing', function() {
+                app.removeClass("scrolling");
+            });
+        });
     </script>
 </body>
 </html>
