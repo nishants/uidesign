@@ -280,7 +280,14 @@ input {
     -o-transition: transform 500ms ease;
     transition: transform 500ms ease; }
 
-.show-view, #views:hover li:nth-child(1) {
+.show, #views > li:nth-child(1) {
+  -webkit-transform: translateX(100vw);
+  -moz-transform: translateX(100vw);
+  -ms-transform: translateX(100vw);
+  -o-transform: translateX(100vw);
+  transform: translateX(100vw); }
+
+.peek, #views:hover li:nth-child(1) {
   -webkit-transform: translateX(170vw);
   -moz-transform: translateX(170vw);
   -ms-transform: translateX(170vw);

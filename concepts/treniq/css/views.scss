@@ -15,18 +15,22 @@
 
 $viewWidth: 100vw;
 
-.show-view{
+.show{
+  @include transform(translateX(100vw));
+}
+.peek{
   @include transform(translateX(170vw));
 }
 
 #views:hover{
   li:nth-child(1){
-    @extend .show-view;
+    @extend .peek;
   }
 }
 
 #views > li:nth-child(1){
   left: -$viewWidth;
+  @extend .show;
 }
 
 #views > li:nth-child(2){
