@@ -95,10 +95,20 @@ input {
     line-height: 30px;
     padding: 5px;
     border-bottom: 1px solid rgba(222, 220, 220, 0.29); }
-    #top-fixed-bar .navigation.bar > ul > li:last-child {
-      float: right; }
+    #top-fixed-bar .navigation.bar > ul {
+      height: 40px; }
+      #top-fixed-bar .navigation.bar > ul > li:last-child {
+        float: right; }
     #top-fixed-bar .navigation.bar .link:hover {
       border-bottom: 2px solid rgba(0, 128, 0, 0.2); }
+    #top-fixed-bar .navigation.bar .indicator {
+      position: relative;
+      top: -10px;
+      margin-left: 120px;
+      height: 2px;
+      pointer-events: none;
+      width: 100px;
+      background-color: rgba(0, 128, 0, 0.8); }
 
 #treniq.reading > #top-fixed-bar {
   -webkit-transform: translateY(-40px);

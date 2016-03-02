@@ -12,6 +12,8 @@ $iconSize: 16px;
 $barTransition: ease;
 $logoWidth: 120px;
 $linkHoverHighlight: rgba(0, 128, 0, 0.2);
+$linkSelectedHighlight: rgba(0, 128, 0, 0.8);
+$navigationLinkWidth: 100px;
 
 #top-fixed-bar{
   position: fixed;
@@ -31,7 +33,7 @@ $linkHoverHighlight: rgba(0, 128, 0, 0.2);
       float: left;
       a{
         display: block;
-        width: 100px;
+        width: $navigationLinkWidth;
         text-transform: capitalize;
       }
     }
@@ -99,11 +101,23 @@ $linkHoverHighlight: rgba(0, 128, 0, 0.2);
     padding: 5px;
     border-bottom: 1px solid $borderColor;
 
-    > ul > li:last-child {
-      float: right;
+    > ul {
+      height: $navigationBarHeight;
+      > li:last-child {
+        float: right;
+      }
     }
     .link:hover{
       border-bottom: 2px solid $linkHoverHighlight;
+    }
+    .indicator{
+      position: relative;
+      top: -10px;
+      margin-left: $logoWidth;
+      height: 2px;
+      pointer-events: none;
+      width: $navigationLinkWidth;
+      background-color: $linkSelectedHighlight;
     }
   }
 }
