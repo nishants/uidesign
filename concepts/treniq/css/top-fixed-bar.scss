@@ -1,21 +1,24 @@
-$fixedBarHeight: 100px;
-$appBarHeight  : 60px;
+$fixedBarHeight: 85px;
+$appBarHeight  : 45px;
 $navigationBarHeight: $fixedBarHeight - $appBarHeight;
 
-$borderColor: #DEDCDC;
+$borderColor: rgba(222, 220, 220, 0.29);
 $barColor: #EEE;
 
 $searchHeight: 35px;
+$fontSize: 13px;
+$iconSize: 16px;
 
 #top-fixed-bar{
   position: fixed;
   top: 0px;
 
   width: 100%;
-  height: $fixedBarHeight;
 
   background-color: $barColor;
   text-align: center;
+  font-size: $fontSize;
+  color: grey;
 
   .bar{
     > ul > li {
@@ -23,9 +26,7 @@ $searchHeight: 35px;
       a{
         display: block;
         width: 100px;
-        font-size: 13px;
         text-transform: capitalize;
-        color: grey;
       }
     }
   }
@@ -36,6 +37,8 @@ $searchHeight: 35px;
     line-height: $searchHeight;
 
     .search{
+      overflow: hidden;
+      height: $appBarHeight;
       input, span{
         display: block;
         float: left;
@@ -49,11 +52,21 @@ $searchHeight: 35px;
       span{
         width: 50px;
         border-right: 1px solid $borderColor;
+        font-size: $iconSize;
+        background-color: white;
       }
       input{
-        width:  calc(100% - 50px);
         padding-left: 10px;
         border-left: 1px solid $borderColor;
+      }
+    }
+
+    .icons{
+      float: right;
+      > ul > li {
+        float: left;
+        width: 100px;
+        .fa{font-size: $iconSize;}
       }
     }
   }

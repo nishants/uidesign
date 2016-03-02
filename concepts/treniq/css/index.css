@@ -21,42 +21,52 @@ input {
   position: fixed;
   top: 0px;
   width: 100%;
-  height: 100px;
   background-color: #EEE;
-  text-align: center; }
+  text-align: center;
+  font-size: 13px;
+  color: grey; }
   #top-fixed-bar .bar > ul > li {
     float: left; }
     #top-fixed-bar .bar > ul > li a {
       display: block;
       width: 100px;
-      font-size: 13px;
-      text-transform: capitalize;
-      color: grey; }
+      text-transform: capitalize; }
   #top-fixed-bar .app.bar {
-    height: 60px;
+    height: 45px;
     padding: 5px;
-    border-bottom: 1px solid #DEDCDC;
+    border-bottom: 1px solid rgba(222, 220, 220, 0.29);
     line-height: 35px; }
-    #top-fixed-bar .app.bar .search input, #top-fixed-bar .app.bar .search span {
-      display: block;
-      float: left;
-      box-sizing: border-box;
-      height: 35px;
-      line-height: 33px;
-      border-top: 1px solid #DEDCDC;
-      border-bottom: 1px solid #DEDCDC; }
-    #top-fixed-bar .app.bar .search span {
-      width: 50px;
-      border-right: 1px solid #DEDCDC; }
-    #top-fixed-bar .app.bar .search input {
-      width: calc(100% - 50px);
-      padding-left: 10px;
-      border-left: 1px solid #DEDCDC; }
+    #top-fixed-bar .app.bar .search {
+      overflow: hidden;
+      height: 45px; }
+      #top-fixed-bar .app.bar .search input, #top-fixed-bar .app.bar .search span {
+        display: block;
+        float: left;
+        box-sizing: border-box;
+        height: 35px;
+        line-height: 33px;
+        border-top: 1px solid rgba(222, 220, 220, 0.29);
+        border-bottom: 1px solid rgba(222, 220, 220, 0.29); }
+      #top-fixed-bar .app.bar .search span {
+        width: 50px;
+        border-right: 1px solid rgba(222, 220, 220, 0.29);
+        font-size: 16px;
+        background-color: white; }
+      #top-fixed-bar .app.bar .search input {
+        padding-left: 10px;
+        border-left: 1px solid rgba(222, 220, 220, 0.29); }
+    #top-fixed-bar .app.bar .icons {
+      float: right; }
+      #top-fixed-bar .app.bar .icons > ul > li {
+        float: left;
+        width: 100px; }
+        #top-fixed-bar .app.bar .icons > ul > li .fa {
+          font-size: 16px; }
   #top-fixed-bar .navigation.bar {
     height: 40px;
     line-height: 30px;
     padding: 5px;
-    border-bottom: 1px solid #DEDCDC; }
+    border-bottom: 1px solid rgba(222, 220, 220, 0.29); }
     #top-fixed-bar .navigation.bar > ul > li:last-child {
       float: right; }
 
