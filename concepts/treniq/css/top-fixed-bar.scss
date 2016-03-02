@@ -10,6 +10,7 @@ $fontSize: 13px;
 $iconSize: 16px;
 
 $barTransition: ease;
+$logoWidth: 120px;
 #top-fixed-bar{
   position: fixed;
   top: 0px;
@@ -43,10 +44,13 @@ $barTransition: ease;
     @include transition(transform, 100ms, $barTransition);
 
     .logo {
-      padding: 5px 10px;
-      img{
-        width: 80px;
-        margin: 5px;
+      padding: 10px 20px;
+      width: $logoWidth;
+      a{
+        width: 100%;
+        img{
+          width: 100%;
+        }
       }
     }
     .search{
@@ -79,6 +83,7 @@ $barTransition: ease;
       > ul > li {
         float: left;
         width: 100px;
+        text-transform: capitalize;
         .fa{font-size: $iconSize;}
       }
     }
