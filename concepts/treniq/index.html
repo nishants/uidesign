@@ -78,6 +78,7 @@
                 </ul>
             </div>
         </div>
+        <div id="view"></div>
 
     </article>
 
@@ -91,6 +92,18 @@
                 document.getElementById("app"),
                 ["treniq"]);
 
+        var     app = $("#treniq"),
+                reading = function(){
+                    app.addClass("reading");
+                },navigating = function(){
+                    app.removeClass("reading");
+                },lastScrollTop = 0;
+
+        $(window).on("scroll", function(){
+            var scrollTop = $(window).scrollTop();
+            scrollTop - lastScrollTop > 0 ? reading() : navigating();
+            lastScrollTop = scrollTop;
+        });
     </script>
 </body>
 </html>
