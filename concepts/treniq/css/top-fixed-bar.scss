@@ -121,7 +121,27 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
         float: left;
         width: 100px;
         text-transform: capitalize;
-        .fa{font-size: $iconSize;}
+        .fa{
+          @include transition(transform, 100ms, ease);
+          @include transformOrigin(0 0);
+          font-size: $iconSize;
+          text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.17);
+        }
+        label{
+          display: inline-block;
+          font-weight: 300;
+          font-size: 9px;
+          @include transition(transform, 100ms, ease);
+        }
+      }
+
+      > ul > li:hover{
+        label{
+          @include transform(translateX(10px) scale(1.2));
+        }
+        .fa{
+          @include transform(scale(1.2));
+        }
       }
     }
   }
