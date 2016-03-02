@@ -1,5 +1,5 @@
 
-$borderColor: rgba(222, 220, 220, 0.29);
+$borderColor: rgba(0, 0, 0, 0.01);
 $barColor: #EEE;
 
 $searchHeight: 35px;
@@ -54,11 +54,12 @@ $barTransitionTime: 250ms;
     @include transitionDelay($barTransitionTime - 100ms);
 
     .logo {
-      padding: 10px 20px;
+      padding: 0px 20px;
       width: $logoWidth;
       a{
         width: 100%;
         img{
+          vertical-align: middle;
           width: 100%;
         }
       }

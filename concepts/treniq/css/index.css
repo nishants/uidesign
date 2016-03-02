@@ -52,7 +52,7 @@ input {
     z-index: 1;
     height: 45px;
     padding: 5px;
-    border-bottom: 1px solid rgba(222, 220, 220, 0.29);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.01);
     line-height: 35px;
     -webkit-transition: box-shadow 100ms ease;
     -moz-transition: box-shadow 100ms ease;
@@ -64,11 +64,12 @@ input {
     -o-transition-delay: 150ms;
     transition-delay: 150ms; }
     #top-fixed-bar .app.bar .logo {
-      padding: 10px 20px;
+      padding: 0px 20px;
       width: 120px; }
       #top-fixed-bar .app.bar .logo a {
         width: 100%; }
         #top-fixed-bar .app.bar .logo a img {
+          vertical-align: middle;
           width: 100%; }
     #top-fixed-bar .app.bar .search {
       overflow: hidden;
@@ -80,15 +81,15 @@ input {
         box-sizing: border-box;
         height: 35px;
         line-height: 33px;
-        border-top: 1px solid rgba(222, 220, 220, 0.29);
-        border-bottom: 1px solid rgba(222, 220, 220, 0.29);
+        border-top: 1px solid rgba(0, 0, 0, 0.01);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.01);
         -webkit-transition: border 500ms ease;
         -moz-transition: border 500ms ease;
         -o-transition: border 500ms ease;
         transition: border 500ms ease; }
       #top-fixed-bar .app.bar .search span {
         width: 50px;
-        border-right: 1px solid rgba(222, 220, 220, 0.29);
+        border-right: 1px solid rgba(0, 0, 0, 0.01);
         font-size: 16px;
         background-color: white;
         -webkit-transition: background-color 500ms ease;
@@ -102,7 +103,7 @@ input {
         width: calc(100% - 50px);
         max-width: 350px;
         padding-left: 10px;
-        border-left: 1px solid rgba(222, 220, 220, 0.29);
+        border-left: 1px solid rgba(0, 0, 0, 0.01);
         border-top-left-radius: 2px;
         border-bottom-left-radius: 2px; }
     #top-fixed-bar .app.bar .search.active input, #top-fixed-bar .app.bar .search:hover input {
@@ -127,7 +128,7 @@ input {
     height: 40px;
     line-height: 30px;
     padding: 5px 5px 5px 125px;
-    border-bottom: 1px solid rgba(222, 220, 220, 0.29);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.01);
     background-color: white; }
     #top-fixed-bar .navigation.bar > ul {
       height: 40px; }
