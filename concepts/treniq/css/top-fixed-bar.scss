@@ -2,7 +2,7 @@
 $borderColor: rgba(0, 0, 0, 0.01);
 $barColor: #EEE;
 
-$searchHeight: 35px;
+$searchHeight: 30px;
 $searchBorderRadius: 5px;
 
 $fontSize: 13px;
@@ -92,25 +92,24 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
         font-size: $iconSize;
         background-color: white;
         @include transition(background-color, 500ms, ease);
-        border-top-right-radius: $searchBorderRadius;
-        border-bottom-right-radius: $searchBorderRadius;
       }
       input{
         outline: none;
+        @include transition(border, 500ms, ease);
         width: calc(100% - 50px);
         padding-left: 10px;
-        border-left: 1px solid $borderColor;
-        border-top-left-radius: $searchBorderRadius;
-        border-bottom-left-radius: $searchBorderRadius;
+        border-top-right-radius: $searchBorderRadius;
+        border-bottom-right-radius: $searchBorderRadius;
+        border: 1px solid transparent
       }
     }
     .search.active{
+      border-color: transparent;
       input{
-        border: 1px solid #4CAF50;
+        border-color: rgba(0,0,0,0.1);
       }
       span{
-        background: #4CAF50;
-        color: white;
+        background: $secondLogoColor;
       }
     }
     .search:hover{@extend .active;}
