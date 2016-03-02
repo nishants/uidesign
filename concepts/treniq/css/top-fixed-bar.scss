@@ -12,6 +12,7 @@ $linkHoverHighlight: rgba(0, 128, 0, 0.2);
 $linkSelectedHighlight: rgba(0, 128, 0, 0.8);
 $navigationLinkWidth: 100px;
 $navigationPadding: 10px;
+$barShadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.12);
 
 #top-fixed-bar{
   position: fixed;
@@ -25,7 +26,6 @@ $navigationPadding: 10px;
   font-size: $fontSize;
   color: grey;
   pointer-events: none;
-  @include transition(transform, 100ms, $barTransition);
 
   .bar{
     pointer-events: all;
@@ -46,7 +46,8 @@ $navigationPadding: 10px;
     padding: 5px;
     border-bottom: 1px solid $borderColor;
     line-height: $searchHeight;
-    @include transition(transform, 100ms, $barTransition);
+    @include transition(box-shadow, 100ms, $barTransition);
+    @include transitionDelay(100ms);
 
     .logo {
       padding: 10px 20px;
@@ -125,7 +126,11 @@ $navigationPadding: 10px;
   }
 }
 
+
 #treniq.reading > #top-fixed-bar{
+  .app.bar{
+    box-shadow: $barShadow;
+  }
   .navigation.bar{
     @include transform(translateY(-$navigationBarHeight));
   }
