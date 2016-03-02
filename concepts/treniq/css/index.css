@@ -99,6 +99,9 @@ input {
       height: 40px; }
       #top-fixed-bar .navigation.bar > ul > li:last-child {
         float: right; }
+    #top-fixed-bar .navigation.bar .link {
+      text-align: left;
+      padding-left: 10px; }
     #top-fixed-bar .navigation.bar .link:hover {
       border-bottom: 2px solid rgba(0, 128, 0, 0.2); }
     #top-fixed-bar .navigation.bar .indicator {

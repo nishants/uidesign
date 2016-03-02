@@ -108,6 +108,10 @@ $navigationPadding: 10px;
         float: right;
       }
     }
+    .link{
+      text-align: left;
+      padding-left: 10px;
+    }
     .link:hover{
       border-bottom: 2px solid $linkHoverHighlight;
     }
