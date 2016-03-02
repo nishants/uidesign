@@ -66,11 +66,11 @@ input {
     -moz-transition: box-shadow 100ms ease;
     -o-transition: box-shadow 100ms ease;
     transition: box-shadow 100ms ease;
-    -webkit-transition-delay: 150ms;
-    -moz-transition-delay: 150ms;
-    -ms-transition-delay: 150ms;
-    -o-transition-delay: 150ms;
-    transition-delay: 150ms; }
+    -webkit-transition-delay: 400ms;
+    -moz-transition-delay: 400ms;
+    -ms-transition-delay: 400ms;
+    -o-transition-delay: 400ms;
+    transition-delay: 400ms; }
     #top-fixed-bar .app.bar .logo {
       padding: 0px 20px;
       width: 120px; }
@@ -129,10 +129,10 @@ input {
         #top-fixed-bar .app.bar .icons > ul > li .fa {
           font-size: 16px; }
   #top-fixed-bar .navigation.bar {
-    -webkit-transition: transform 250ms ease;
-    -moz-transition: transform 250ms ease;
-    -o-transition: transform 250ms ease;
-    transition: transform 250ms ease;
+    -webkit-transition: transform 500ms ease;
+    -moz-transition: transform 500ms ease;
+    -o-transition: transform 500ms ease;
+    transition: transform 500ms ease;
     height: 40px;
     line-height: 30px;
     padding: 5px 5px 5px 125px;
