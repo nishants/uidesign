@@ -1,6 +1,10 @@
 @import 'config';
 
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+
 #treniq{
+  font-family: 'Roboto', sans-serif;
+
   h1{margin: 0px auto;}
   *{box-sizing: border-box;};
   #view{
