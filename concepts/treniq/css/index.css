@@ -104,7 +104,8 @@ input {
     height: 40px;
     line-height: 30px;
     padding: 5px 5px 5px 125px;
-    border-bottom: 1px solid rgba(222, 220, 220, 0.29); }
+    border-bottom: 1px solid rgba(222, 220, 220, 0.29);
+    background-color: white; }
     #top-fixed-bar .navigation.bar > ul {
       height: 40px; }
       #top-fixed-bar .navigation.bar > ul > li:last-child {

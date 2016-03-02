@@ -100,7 +100,7 @@ $navigationPadding: 10px;
     line-height: $navigationBarHeight - $navigationPadding;
     padding: 5px 5px 5px $logoWidth + 5px;
     border-bottom: 1px solid $borderColor;
-
+    background-color: white;
     > ul {
       height: $navigationBarHeight;
       > li:last-child {
