@@ -14,11 +14,13 @@ $iconSize: 16px;
   top: 0px;
 
   width: 100%;
+  overflow: hidden;
 
   background-color: $barColor;
   text-align: center;
   font-size: $fontSize;
   color: grey;
+  @include transition(transform, 100ms, ease);
 
   .bar{
     > ul > li {
@@ -31,10 +33,13 @@ $iconSize: 16px;
     }
   }
   .app.bar{
+    position: relative;
+    z-index: 1;
     height: $appBarHeight;
     padding: 5px;
     border-bottom: 1px solid $borderColor;
     line-height: $searchHeight;
+    @include transition(transform, 100ms, ease);
 
     .search{
       overflow: hidden;
@@ -72,6 +77,8 @@ $iconSize: 16px;
   }
 
   .navigation.bar{
+    @include transition(transform, 100ms, ease);
+
     height: $navigationBarHeight;
     line-height: $navigationBarHeight - 10px;
     padding: 5px;
@@ -80,5 +87,15 @@ $iconSize: 16px;
     > ul > li:last-child {
       float: right;
     }
+  }
+}
+
+#treniq.reading > #top-fixed-bar{
+  @include transform(translateY(-$navigationBarHeight));
+  .app.bar{
+    @include transform(translateY($navigationBarHeight));
+  }
+  .navigation.bar{
+    @include transform(translateY($navigationBarHeight))
   }
 }

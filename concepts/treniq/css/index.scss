@@ -3,6 +3,9 @@
 #treniq{
   h1{margin: 0px auto;}
   *{box-sizing: border-box;};
+  #view{
+    height: 300vh;
+  }
 }
 
 @import 'top-fixed-bar';

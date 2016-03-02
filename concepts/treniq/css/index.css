@@ -16,15 +16,22 @@ input {
   margin: 0px auto; }
 #treniq * {
   box-sizing: border-box; }
+#treniq #view {
+  height: 300vh; }
 
 #top-fixed-bar {
   position: fixed;
   top: 0px;
   width: 100%;
+  overflow: hidden;
   background-color: #EEE;
   text-align: center;
   font-size: 13px;
-  color: grey; }
+  color: grey;
+  -webkit-transition: transform 100ms ease;
+  -moz-transition: transform 100ms ease;
+  -o-transition: transform 100ms ease;
+  transition: transform 100ms ease; }
   #top-fixed-bar .bar > ul > li {
     float: left; }
     #top-fixed-bar .bar > ul > li a {
@@ -32,10 +39,16 @@ input {
       width: 100px;
       text-transform: capitalize; }
   #top-fixed-bar .app.bar {
+    position: relative;
+    z-index: 1;
     height: 45px;
     padding: 5px;
     border-bottom: 1px solid rgba(222, 220, 220, 0.29);
-    line-height: 35px; }
+    line-height: 35px;
+    -webkit-transition: transform 100ms ease;
+    -moz-transition: transform 100ms ease;
+    -o-transition: transform 100ms ease;
+    transition: transform 100ms ease; }
     #top-fixed-bar .app.bar .search {
       overflow: hidden;
       height: 45px; }
@@ -63,11 +76,34 @@ input {
         #top-fixed-bar .app.bar .icons > ul > li .fa {
           font-size: 16px; }
   #top-fixed-bar .navigation.bar {
+    -webkit-transition: transform 100ms ease;
+    -moz-transition: transform 100ms ease;
+    -o-transition: transform 100ms ease;
+    transition: transform 100ms ease;
     height: 40px;
     line-height: 30px;
     padding: 5px;
     border-bottom: 1px solid rgba(222, 220, 220, 0.29); }
     #top-fixed-bar .navigation.bar > ul > li:last-child {
       float: right; }
+
+#treniq.reading > #top-fixed-bar {
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px); }
+  #treniq.reading > #top-fixed-bar .app.bar {
+    -webkit-transform: translateY(40px);
+    -moz-transform: translateY(40px);
+    -ms-transform: translateY(40px);
+    -o-transform: translateY(40px);
+    transform: translateY(40px); }
+  #treniq.reading > #top-fixed-bar .navigation.bar {
+    -webkit-transform: translateY(40px);
+    -moz-transform: translateY(40px);
+    -ms-transform: translateY(40px);
+    -o-transform: translateY(40px);
+    transform: translateY(40px); }
 
 /*# sourceMappingURL=index.css.map */
