@@ -11,6 +11,8 @@ $iconSize: 16px;
 
 $barTransition: ease;
 $logoWidth: 120px;
+$linkHoverHighlight: rgba(0, 128, 0, 0.2);
+
 #top-fixed-bar{
   position: fixed;
   top: 0px;
@@ -99,6 +101,9 @@ $logoWidth: 120px;
 
     > ul > li:last-child {
       float: right;
+    }
+    .link:hover{
+      border-bottom: 2px solid $linkHoverHighlight;
     }
   }
 }
