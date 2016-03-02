@@ -97,7 +97,7 @@
                     app.addClass("reading");
                 },navigating = function(){
                     app.removeClass("reading");
-                },lastScrollTop = 0;
+                },lastScrollTop = $(window).scrollTop();
 
         $(window).on("scroll", function(){
             var scrollTop = $(window).scrollTop();
