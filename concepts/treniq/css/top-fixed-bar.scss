@@ -18,6 +18,10 @@ $navigationPadding: 10px;
 $barShadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
 $barTransitionTime: 500ms;
 
+$appBarColor: rgba(255,255,255,0.8);
+$navigationBarColor: rgba(0,0,0,0.8);
+$navigationBarFontColor :rgba(255,255,255,0.8);
+
 #top-fixed-bar{
   position: fixed;
   top: 0px;
@@ -48,7 +52,7 @@ $barTransitionTime: 500ms;
     height: $appBarHeight;
     padding: 5px;
     line-height: $searchHeight;
-    @extend .silver-bg;
+    background-color: $appBarColor;
 
     @include transition(box-shadow, 100ms, $barTransition);
     @include transitionDelay($barTransitionTime - 100ms);
@@ -122,12 +126,13 @@ $barTransitionTime: 500ms;
   }
 
   .navigation.bar{
-    @include transition(transform, $barTransitionTime, $barTransition);
+    @include transition(all, $barTransitionTime, $barTransition);
     height: $navigationBarHeight;
     line-height: $navigationBarHeight - $navigationPadding;
     padding: 5px 5px 5px $logoWidth + 5px;
     border-bottom: 1px solid $borderColor;
-    background-color: white;
+    background-color: $navigationBarColor;
+    color: $navigationBarFontColor;
     > ul {
       height: $navigationBarHeight;
       > li:last-child {
@@ -163,5 +168,6 @@ $barTransitionTime: 500ms;
   }
   .navigation.bar{
     @include transform(translateY(-$navigationBarHeight));
+    opacity: 0;
   }
 }
