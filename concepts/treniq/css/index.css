@@ -180,12 +180,16 @@ input {
         width: 70px;
         text-transform: capitalize;
         border-radius: 5px;
-        border: 1px solid transparent; }
+        border: 1px solid transparent;
+        -webkit-transition: border-color 200ms ease;
+        -moz-transition: border-color 200ms ease;
+        -o-transition: border-color 200ms ease;
+        transition: border-color 200ms ease; }
         #top-fixed-bar .app.bar .icons > ul > li .fa {
-          -webkit-transition: transform 100ms ease;
-          -moz-transition: transform 100ms ease;
-          -o-transition: transform 100ms ease;
-          transition: transform 100ms ease;
+          -webkit-transition: transform 200ms ease;
+          -moz-transition: transform 200ms ease;
+          -o-transition: transform 200ms ease;
+          transition: transform 200ms ease;
           -webkit-transform-origin: 0 0;
           -moz-transform-origin: 0 0;
           transform-origin: 0 0;
@@ -195,16 +199,12 @@ input {
           display: inline-block;
           font-weight: 300;
           font-size: 9px;
-          -webkit-transition: transform 100ms ease;
-          -moz-transition: transform 100ms ease;
-          -o-transition: transform 100ms ease;
-          transition: transform 100ms ease; }
+          -webkit-transition: transform 200ms ease;
+          -moz-transition: transform 200ms ease;
+          -o-transition: transform 200ms ease;
+          transition: transform 200ms ease; }
       #top-fixed-bar .app.bar .icons > ul > li:hover {
-        border-color: rgba(0, 0, 0, 0.05);
-        -webkit-transition: border-color 100ms ease;
-        -moz-transition: border-color 100ms ease;
-        -o-transition: border-color 100ms ease;
-        transition: border-color 100ms ease; }
+        border-color: rgba(0, 0, 0, 0.05); }
         #top-fixed-bar .app.bar .icons > ul > li:hover label {
           -webkit-transform: translateX(10px) scale(1.2);
           -moz-transform: translateX(10px) scale(1.2);
