@@ -154,7 +154,11 @@ input {
           -o-transition: transform 100ms ease;
           transition: transform 100ms ease; }
       #top-fixed-bar .app.bar .icons > ul > li:hover {
-        border-color: rgba(0, 0, 0, 0.05); }
+        border-color: rgba(0, 0, 0, 0.05);
+        -webkit-transition: border-color 100ms ease;
+        -moz-transition: border-color 100ms ease;
+        -o-transition: border-color 100ms ease;
+        transition: border-color 100ms ease; }
         #top-fixed-bar .app.bar .icons > ul > li:hover label {
           -webkit-transform: translateX(10px) scale(1.2);
           -moz-transform: translateX(10px) scale(1.2);

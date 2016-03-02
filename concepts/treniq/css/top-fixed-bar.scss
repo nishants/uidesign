@@ -139,6 +139,7 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
 
       > ul > li:hover{
         border-color: rgba(0,0,0,0.05);
+        @include transition(border-color, 100ms, ease);
         label{
           @include transform(translateX(10px) scale(1.2));
         }
