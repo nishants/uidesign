@@ -36,7 +36,7 @@
 
 </head>
 
-<body id="treniq" ng-app>
+<body ng-app>
     <div class="splash page" ng-show="false">
         <div id="loader" class="content" ng-hide="true">
             <h1>Treniq</h1>
@@ -44,18 +44,29 @@
         </div>
     </div>
 
-    <div id="top-fixed-bar">
-        <div class="app bar">
-            <ul class="undo-list">
-                <li class="logo">Treniq</li>
-                <li class="search"></li>
-                <li class="icons"></li>
-            </ul>
+    <article id="treniq">
+        <div id="top-fixed-bar">
+            <div class="app bar">
+                <ul class="undo-list">
+                    <li class="logo">Treniq</li>
+                    <li class="search"></li>
+                    <li class="icons"></li>
+                </ul>
+            </div>
+            <div class="navigation bar">
+                <ul class="undo-list">
+                    <li class="home"><a>Home</a></li>
+                    <li class="furniture"><a>furniture</a></li>
+                    <li class="lighting"><a>lighting</a></li>
+                    <li class="decor"><a>decor</a></li>
+                    <li class="blog"><a>blog</a></li>
+                    <li class="collections"><a>collections</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="navigation bar">
 
-        </div>
-    </div>
+    </article>
+
 
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <script src="../../lib/angular-1.4.3.js"></script>

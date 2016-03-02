@@ -12,6 +12,7 @@ $barColor: #EEE;
   height: $fixedBarHeight;
 
   background-color: $barColor;
+  text-align: center;
 
   .app.bar{
     height: $appBarHeight;
@@ -25,5 +26,19 @@ $barColor: #EEE;
     line-height: $navigationBarHeight - 10px;
     padding: 5px;
     border-bottom: 1px solid $borderColor;
+
+    > ul > li {
+      float: left;
+      a{
+        display: block;
+        width: 100px;
+        font-size: 13px;
+        text-transform: uppercase;
+        color: grey;
+      }
+    }
+    > ul > li:last-child {
+      float: right;
+    }
   }
 }
