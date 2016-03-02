@@ -24,6 +24,14 @@ input {
   height: 100px;
   background-color: #EEE;
   text-align: center; }
+  #top-fixed-bar .bar > ul > li {
+    float: left; }
+    #top-fixed-bar .bar > ul > li a {
+      display: block;
+      width: 100px;
+      font-size: 13px;
+      text-transform: capitalize;
+      color: grey; }
   #top-fixed-bar .app.bar {
     height: 60px;
     line-height: 50px;
@@ -34,14 +42,6 @@ input {
     line-height: 30px;
     padding: 5px;
     border-bottom: 1px solid #DEDCDC; }
-    #top-fixed-bar .navigation.bar > ul > li {
-      float: left; }
-      #top-fixed-bar .navigation.bar > ul > li a {
-        display: block;
-        width: 100px;
-        font-size: 13px;
-        text-transform: uppercase;
-        color: grey; }
     #top-fixed-bar .navigation.bar > ul > li:last-child {
       float: right; }
 
