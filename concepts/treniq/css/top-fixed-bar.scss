@@ -28,12 +28,11 @@ $barTransitionTime: 250ms;
 
   text-align: center;
   font-size: $fontSize;
-  color: grey;
+  color: rgba(1, 1, 1, 0.9);
   pointer-events: none;
 
   .bar{
     pointer-events: all;
-    background-color: $barColor;
     > ul > li {
       float: left;
       a{
@@ -48,8 +47,9 @@ $barTransitionTime: 250ms;
     z-index: 1;
     height: $appBarHeight;
     padding: 5px;
-    border-bottom: 1px solid $borderColor;
     line-height: $searchHeight;
+    @extend .silver-bg;
+
     @include transition(box-shadow, 100ms, $barTransition);
     @include transitionDelay($barTransitionTime - 100ms);
 
@@ -66,7 +66,7 @@ $barTransitionTime: 250ms;
     }
     .search{
       overflow: hidden;
-      height: $appBarHeight;
+      height: $appBarHeight -10px;
       width: calc(100% - #{$iconsWidth + $logoWidth + 20px});
       input, span{
         display: block;

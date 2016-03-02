@@ -7,6 +7,17 @@ $topBarLayer: 1000;
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
 $defaultTransitionFunction : "cubic-bezier(0.45, 0.515, 0.36, 0.88)";
 
+.silver-bg{
+  background-color: #f7f5f6;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#f7f5f6),to(#ddd));
+  background-image: -webkit-linear-gradient(top,#f7f5f6,#ddd);
+  background-image: -moz-linear-gradient(top,#f7f5f6,#ddd);
+  background-image: -ms-linear-gradient(top,#f7f5f6,#ddd);
+  background-image: -o-linear-gradient(top,#f7f5f6,#ddd);
+  background-image: linear-gradient(to bottom,#f7f5f6,#ddd);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F7F5F6,endColorstr=#DDDDDD);
+}
+
 ul.undo-list{
   list-style: none;
   margin: 0px;

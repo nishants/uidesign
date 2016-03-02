@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+.silver-bg, #top-fixed-bar .app.bar {
+  background-color: #f7f5f6;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f5f6), to(#ddd));
+  background-image: -webkit-linear-gradient(top, #f7f5f6, #ddd);
+  background-image: -moz-linear-gradient(top, #f7f5f6, #ddd);
+  background-image: -ms-linear-gradient(top, #f7f5f6, #ddd);
+  background-image: -o-linear-gradient(top, #f7f5f6, #ddd);
+  background-image: linear-gradient(to bottom, #f7f5f6, #ddd);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F7F5F6,endColorstr=#DDDDDD); }
+
 ul.undo-list {
   list-style: none;
   margin: 0px;
@@ -36,11 +46,10 @@ input {
   overflow: hidden;
   text-align: center;
   font-size: 13px;
-  color: grey;
+  color: rgba(1, 1, 1, 0.9);
   pointer-events: none; }
   #top-fixed-bar .bar {
-    pointer-events: all;
-    background-color: #EEE; }
+    pointer-events: all; }
     #top-fixed-bar .bar > ul > li {
       float: left; }
       #top-fixed-bar .bar > ul > li a {
@@ -52,7 +61,6 @@ input {
     z-index: 1;
     height: 45px;
     padding: 5px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.01);
     line-height: 35px;
     -webkit-transition: box-shadow 100ms ease;
     -moz-transition: box-shadow 100ms ease;
@@ -73,7 +81,7 @@ input {
           width: 100%; }
     #top-fixed-bar .app.bar .search {
       overflow: hidden;
-      height: 45px;
+      height: 45px -10px;
       width: calc(100% - 340px); }
       #top-fixed-bar .app.bar .search input, #top-fixed-bar .app.bar .search span {
         display: block;
