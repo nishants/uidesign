@@ -7,7 +7,7 @@ $searchBorderRadius: 5px;
 
 $fontSize: 13px;
 $iconSize: 16px;
-$iconsWidth: 200px;
+$iconsWidth: 140px;
 
 $barTransition: ease;
 $logoWidth: 120px;
@@ -73,7 +73,6 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
       height: $appBarHeight -10px;
       width: calc(100% - #{$iconsWidth + $logoWidth + 20px});
       border: 1px solid rgba(0, 0, 0, 0.09);
-      max-width: 400px;
       border-radius: $searchBorderRadius;
       input, span{
         display: block;
@@ -119,7 +118,7 @@ $navigationBarFontColor :rgba(255,255,255,0.9);
       width: $iconsWidth;
       > ul > li {
         float: left;
-        width: 100px;
+        width: $iconsWidth/2;
         text-transform: capitalize;
         .fa{
           @include transition(transform, 100ms, ease);

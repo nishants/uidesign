@@ -85,9 +85,8 @@ input {
     #top-fixed-bar .app.bar .search {
       overflow: hidden;
       height: 45px -10px;
-      width: calc(100% - 340px);
+      width: calc(100% - 280px);
       border: 1px solid rgba(0, 0, 0, 0.09);
-      max-width: 400px;
       border-radius: 5px; }
       #top-fixed-bar .app.bar .search input, #top-fixed-bar .app.bar .search span {
         display: block;
@@ -129,10 +128,10 @@ input {
         background: #FBD683; }
     #top-fixed-bar .app.bar .icons {
       float: right;
-      width: 200px; }
+      width: 140px; }
       #top-fixed-bar .app.bar .icons > ul > li {
         float: left;
-        width: 100px;
+        width: 70px;
         text-transform: capitalize; }
         #top-fixed-bar .app.bar .icons > ul > li .fa {
           -webkit-transition: transform 100ms ease;
