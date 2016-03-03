@@ -294,6 +294,9 @@ input {
   -o-transform: translateX(100vw);
   transform: translateX(100vw); }
 
+#views > li:not(.show) {
+  z-index: 1; }
+
 #views > li:nth-child(1) {
   left: -100vw; }
 

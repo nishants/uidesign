@@ -23,6 +23,10 @@ $viewWidth: 100vw;
   @include transform(translateX(100vw));
 }
 
+#views > li:not(.show){
+  z-index: 1;
+}
+
 #views > li:nth-child(1){
   left: -$viewWidth;
 }
