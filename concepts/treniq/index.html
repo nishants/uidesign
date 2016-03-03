@@ -220,6 +220,10 @@
                 });
             });
             current.view.addClass("show");
+
+            $("#top-fixed-bar").on("mousemove", function(){
+                navigating();
+            });
         };
         $(document).ready(function(){
             init();
