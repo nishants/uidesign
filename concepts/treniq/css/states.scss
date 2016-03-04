@@ -3,6 +3,7 @@ $linkWidth: 110px;
 #state.home{
   .navigation.bar{
     .link.home > a{
+      opacity: 0.6;
       transform: none !important;
     }
     .indicator{
@@ -13,6 +14,7 @@ $linkWidth: 110px;
 
 #state.furniture{
   .link.furniture > a{
+    opacity: 0.6;
     transform: none !important;
   }
   .navigation.bar{
@@ -23,6 +25,7 @@ $linkWidth: 110px;
 }
 #state.lighting{
   .link.lighting > a{
+    opacity: 0.6;
     transform: none !important;
   }
   .navigation.bar{
@@ -33,6 +36,7 @@ $linkWidth: 110px;
 }
 #state.decor{
   .link.decor > a{
+    opacity: 0.6;
     transform: none !important;
   }
   .navigation.bar{
@@ -43,6 +47,7 @@ $linkWidth: 110px;
 }
 #state.blog{
   .link.blog > a{
+    opacity: 0.6;
     transform: none !important;
   }
   .navigation.bar{

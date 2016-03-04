@@ -50,6 +50,7 @@ input {
   pointer-events: none; }
 
 #state.home .navigation.bar .link.home > a {
+  opacity: 0.6;
   transform: none !important; }
 #state.home .navigation.bar .indicator {
   -webkit-transform: translateX(0px);
@@ -59,6 +60,7 @@ input {
   transform: translateX(0px); }
 
 #state.furniture .link.furniture > a {
+  opacity: 0.6;
   transform: none !important; }
 #state.furniture .navigation.bar .indicator {
   -webkit-transform: translateX(110px);
@@ -68,6 +70,7 @@ input {
   transform: translateX(110px); }
 
 #state.lighting .link.lighting > a {
+  opacity: 0.6;
   transform: none !important; }
 #state.lighting .navigation.bar .indicator {
   -webkit-transform: translateX(220px);
@@ -77,6 +80,7 @@ input {
   transform: translateX(220px); }
 
 #state.decor .link.decor > a {
+  opacity: 0.6;
   transform: none !important; }
 #state.decor .navigation.bar .indicator {
   -webkit-transform: translateX(330px);
@@ -86,6 +90,7 @@ input {
   transform: translateX(330px); }
 
 #state.blog .link.blog > a {
+  opacity: 0.6;
   transform: none !important; }
 #state.blog .navigation.bar .indicator {
   -webkit-transform: translateX(440px);
@@ -278,10 +283,10 @@ input {
       text-align: left;
       border-bottom: 2px solid transparent; }
       #top-fixed-bar .navigation.bar .link a {
-        -webkit-transition: transform 500ms ease;
-        -moz-transition: transform 500ms ease;
-        -o-transition: transform 500ms ease;
-        transition: transform 500ms ease; }
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease; }
     #top-fixed-bar .navigation.bar .link:hover {
       border-color: rgba(0, 128, 0, 0.3); }
       #top-fixed-bar .navigation.bar .link:hover a {

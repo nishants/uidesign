@@ -178,7 +178,7 @@ $iconsTransitionTime: 200ms;
       padding-left: 10px;
       text-align: left;
       border-bottom: 2px solid transparent;
-      a{@include transition(transform, 500ms, $barTransition);}
+      a{@include transition(all, 500ms, $barTransition);}
     }
     .link:hover{
       border-color: $linkSelectedHighlight;
