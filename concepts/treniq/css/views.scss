@@ -87,7 +87,7 @@ $viewWidth: 100vw;
   }
 }
 
-#views > .drift{
+#treniq > #views > li.drift{
   .page{
     @include transform(translateX(-30vw));
   }

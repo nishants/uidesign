@@ -457,7 +457,7 @@ input {
     -o-transform: translateX(0px);
     transform: translateX(0px); }
 
-#views > .drift .page {
+#treniq > #views > li.drift .page {
   -webkit-transform: translateX(-30vw);
   -moz-transform: translateX(-30vw);
   -ms-transform: translateX(-30vw);
