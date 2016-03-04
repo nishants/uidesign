@@ -59,7 +59,7 @@ $viewWidth: 100vw;
    > li:not(.show):not(.peek) {
      .page{
        opacity: 0;
-       @include transform(translateX(50px));
+       @include transform(translateX(30vw));
      }
    }
 }
@@ -83,5 +83,11 @@ $viewWidth: 100vw;
   @include transform(translateX(100vw));
   .page{
     @include transform(translateX(0px));
+  }
+}
+
+#views > .drift{
+  .page{
+    @include transform(translateX(-30vw));
   }
 }

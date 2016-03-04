@@ -366,11 +366,11 @@ input {
 
 #views > li:not(.show):not(.peek) .page {
   opacity: 0;
-  -webkit-transform: translateX(50px);
-  -moz-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  -o-transform: translateX(50px);
-  transform: translateX(50px); }
+  -webkit-transform: translateX(30vw);
+  -moz-transform: translateX(30vw);
+  -ms-transform: translateX(30vw);
+  -o-transform: translateX(30vw);
+  transform: translateX(30vw); }
 
 #views > .peek {
   transition: none;
@@ -413,6 +413,13 @@ input {
     -ms-transform: translateX(0px);
     -o-transform: translateX(0px);
     transform: translateX(0px); }
+
+#views > .drift .page {
+  -webkit-transform: translateX(-30vw);
+  -moz-transform: translateX(-30vw);
+  -ms-transform: translateX(-30vw);
+  -o-transform: translateX(-30vw);
+  transform: translateX(-30vw); }
 
 ul.undo-list, ul.deck {
   list-style: none;

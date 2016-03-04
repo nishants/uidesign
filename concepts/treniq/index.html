@@ -233,13 +233,16 @@
                 nav.link.mouseenter(function(){
                     nav.view.removeClass("no-show");
                     nav.view.addClass("peek");
+                    current.view.addClass("drift");
                 });
 
                 nav.link.mouseleave(function(){
                     nav.view.removeClass("peek");
+                    current.view.removeClass("drift");
                 });
 
                 nav.link.click(function(){
+                    current.view.removeClass("drift");
                     current.view.addClass("no-show");
                     current.view.removeClass("show");
                     current= nav;
