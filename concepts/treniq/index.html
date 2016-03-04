@@ -228,6 +228,7 @@
 
             navigation.forEach(function(nav){
                 nav.link.mouseenter(function(){
+                    nav.view.removeClass("no-show");
                     nav.view.addClass("peek");
                 });
 
@@ -236,8 +237,10 @@
                 });
 
                 nav.link.click(function(){
+                    current.view.addClass("no-show");
                     current.view.removeClass("show");
                     current= nav;
+                    current.view.removeClass("no-show");
                     nav.view.addClass("show");
                     setState(current.name);
                     navigating();

@@ -323,25 +323,7 @@ input {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    box-shadow: -2px 0px 10px 1px rgba(1, 1, 1, 0.5);
-    -webkit-transition: transform 500ms ease;
-    -moz-transition: transform 500ms ease;
-    -o-transition: transform 500ms ease;
-    transition: transform 500ms ease; }
-
-#views > .peek {
-  -webkit-transform: translateX(170vw);
-  -moz-transform: translateX(170vw);
-  -ms-transform: translateX(170vw);
-  -o-transform: translateX(170vw);
-  transform: translateX(170vw); }
-
-#views > .show {
-  -webkit-transform: translateX(100vw);
-  -moz-transform: translateX(100vw);
-  -ms-transform: translateX(100vw);
-  -o-transform: translateX(100vw);
-  transform: translateX(100vw); }
+    box-shadow: -2px 0px 10px 1px rgba(1, 1, 1, 0.5); }
 
 #views > li:not(.show) {
   z-index: 1; }
@@ -373,6 +355,31 @@ input {
   .page:not(.splash) .content {
     padding: 20px;
     height: 300vh; }
+
+#views > .peek {
+  transition: none;
+  -webkit-transform: translateX(170vw);
+  -moz-transform: translateX(170vw);
+  -ms-transform: translateX(170vw);
+  -o-transform: translateX(170vw);
+  transform: translateX(170vw); }
+
+#views > .no-show {
+  -webkit-transition: transform 500ms ease;
+  -moz-transition: transform 500ms ease;
+  -o-transition: transform 500ms ease;
+  transition: transform 500ms ease; }
+
+#views > .show {
+  -webkit-transition: transform 500ms ease;
+  -moz-transition: transform 500ms ease;
+  -o-transition: transform 500ms ease;
+  transition: transform 500ms ease;
+  -webkit-transform: translateX(100vw);
+  -moz-transform: translateX(100vw);
+  -ms-transform: translateX(100vw);
+  -o-transform: translateX(100vw);
+  transform: translateX(100vw); }
 
 ul.undo-list, ul.deck {
   list-style: none;

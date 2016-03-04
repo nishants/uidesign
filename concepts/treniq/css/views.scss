@@ -10,19 +10,10 @@
     width:100vw;
     overflow: hidden;
     box-shadow: -2px 0px 10px 1px rgba(1, 1, 1, 0.5);
-    @include transition(transform, 500ms, ease );
   }
 }
 
 $viewWidth: 100vw;
-
-#views > .peek{
-  @include transform(translateX(170vw));
-}
-
-#views > .show{
-  @include transform(translateX(100vw));
-}
 
 #views > li:not(.show){
   z-index: 1;
@@ -62,4 +53,17 @@ $viewWidth: 100vw;
     padding: 20px;
     height: 300vh;
   }
+}
+
+#views > .peek{
+  transition: none;
+  @include transform(translateX(170vw));
+}
+
+#views > .no-show{
+  @include transition(transform, 500ms, ease );
+}
+#views > .show{
+  @include transition(transform, 500ms, ease );
+  @include transform(translateX(100vw));
 }
