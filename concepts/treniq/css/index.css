@@ -285,11 +285,11 @@ input {
     #top-fixed-bar .navigation.bar .link:hover {
       border-color: rgba(0, 128, 0, 0.3); }
       #top-fixed-bar .navigation.bar .link:hover a {
-        -webkit-transform: translateX(25px);
-        -moz-transform: translateX(25px);
-        -ms-transform: translateX(25px);
-        -o-transform: translateX(25px);
-        transform: translateX(25px); }
+        -webkit-transform: translateX(15px);
+        -moz-transform: translateX(15px);
+        -ms-transform: translateX(15px);
+        -o-transform: translateX(15px);
+        transform: translateX(15px); }
     #top-fixed-bar .navigation.bar .indicator {
       position: relative;
       top: -10px;
