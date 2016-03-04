@@ -322,8 +322,7 @@ input {
     float: left;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
-    box-shadow: -2px 0px 10px 1px rgba(1, 1, 1, 0.5); }
+    overflow: hidden; }
 
 #views > li:not(.show) {
   z-index: 1; }
@@ -352,16 +351,21 @@ input {
   border-bottom: 1px solid red;
   overflow: scroll;
   background-color: white;
-  -webkit-transition: opacity 500ms ease;
-  -moz-transition: opacity 500ms ease;
-  -o-transition: opacity 500ms ease;
-  transition: opacity 500ms ease; }
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease; }
   .page:not(.splash) .content {
     padding: 20px;
     height: 300vh; }
 
 #views > li:not(.show):not(.peek) .page {
-  opacity: 0; }
+  opacity: 0;
+  -webkit-transform: translateX(50px);
+  -moz-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  -o-transform: translateX(50px);
+  transform: translateX(50px); }
 
 #views > .peek {
   transition: none;
@@ -374,6 +378,13 @@ input {
   -ms-transform: translateX(170vw);
   -o-transform: translateX(170vw);
   transform: translateX(170vw); }
+  #views > .peek .page {
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    transform: translateX(10px);
+    box-shadow: -2px 0px 10px 1px rgba(1, 1, 1, 0.5); }
 
 #views > .no-show {
   -webkit-transition: transform 500ms ease;
@@ -391,6 +402,12 @@ input {
   -ms-transform: translateX(100vw);
   -o-transform: translateX(100vw);
   transform: translateX(100vw); }
+  #views > .show .page {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px); }
 
 ul.undo-list, ul.deck {
   list-style: none;
