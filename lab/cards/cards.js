@@ -21,7 +21,7 @@
 
   window.Cards = {
     bind: function($card){
-      bindCard(this.$card);
+      bindCard($card);
     },
     read: function($deck){
       $deck.find(" > li > .card").each(function(index, card){
