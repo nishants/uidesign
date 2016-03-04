@@ -49,6 +49,11 @@ ul.deck{
           @include transform(translateY(-10px));
         }
       }
+      .action{
+        button{
+          box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+      }
     }
     .card{
       width: $cardWidth + 2 * $borderWidth;
@@ -113,6 +118,8 @@ ul.deck{
           box-shadow: 0px 0px 1px white;
           background-color: $actionButtonColor;
           color: $actionButtonFontColor;
+          @include transition(all, 200ms, ease-out);
+
         }
         .ripple{
           @extend .circle;

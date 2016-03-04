@@ -454,6 +454,8 @@ ul.deck {
           -ms-transform: translateY(-10px);
           -o-transform: translateY(-10px);
           transform: translateY(-10px); }
+      ul.deck > li .card:hover .action button {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
     ul.deck > li .card {
       width: 252px;
       height: 270px;
@@ -520,7 +522,11 @@ ul.deck {
         ul.deck > li .card .action button {
           box-shadow: 0px 0px 1px white;
           background-color: #f7c14a;
-          color: white; }
+          color: white;
+          -webkit-transition: all 200ms ease-out;
+          -moz-transition: all 200ms ease-out;
+          -o-transition: all 200ms ease-out;
+          transition: all 200ms ease-out; }
         ul.deck > li .card .action .ripple {
           z-index: -1;
           pointer-events: none;

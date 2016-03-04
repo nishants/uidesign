@@ -8,8 +8,10 @@
 
         button.on("mousedown touchstart", function () {
           ripple.addClass("burst");
+          button.css("transform","scale(0)")
           setTimeout(function () {
             ripple.removeClass("burst");
+            button.css("transform","scale(1)")
           }, 500);
         });
 
