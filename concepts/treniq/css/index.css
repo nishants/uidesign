@@ -273,7 +273,7 @@ input {
         -o-transition: transform 500ms ease;
         transition: transform 500ms ease; }
     #top-fixed-bar .navigation.bar .link:hover {
-      border-color: rgba(0, 128, 0, 0.8); }
+      border-color: rgba(0, 128, 0, 0.3); }
       #top-fixed-bar .navigation.bar .link:hover a {
         -webkit-transform: translateX(7.5px);
         -moz-transform: translateX(7.5px);
@@ -286,7 +286,11 @@ input {
       height: 2px;
       pointer-events: none;
       width: 110px;
-      background-color: rgba(0, 128, 0, 0.8); }
+      background-color: rgba(0, 128, 0, 0.8);
+      -webkit-transition: transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      -moz-transition: transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      -o-transition: transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      transition: transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88); }
 
 #treniq.reading > #top-fixed-bar .app.bar {
   box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);

@@ -12,7 +12,7 @@ $iconsWidth: 140px;
 $barTransition: ease;
 $logoWidth: 120px;
 $linkHoverHighlight: rgba(0, 128, 0, 0.8);
-$linkSelectedHighlight: rgba(0, 128, 0, 0.8);
+$linkSelectedHighlight: rgba(0, 128, 0, 0.3);
 $navigationLinkWidth: 100px;
 $navigationPadding: 10px;
 $barShadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
@@ -181,7 +181,7 @@ $iconsTransitionTime: 200ms;
       a{@include transition(transform, 500ms, $barTransition);}
     }
     .link:hover{
-      border-color: $linkHoverHighlight;
+      border-color: $linkSelectedHighlight;
       a{@include transform(translateX(7.5px));}
     }
     .indicator{
@@ -190,7 +190,9 @@ $iconsTransitionTime: 200ms;
       height: 2px;
       pointer-events: none;
       width: 10px + $navigationLinkWidth;
-      background-color: $linkSelectedHighlight;
+      background-color: $linkHoverHighlight;
+
+      @include transition(transform, 500ms);
     }
   }
 }
