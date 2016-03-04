@@ -13,9 +13,6 @@
           }, 500);
         });
 
-      },
-      cardsFrom = function ($deck) {
-        return $deck.find(" > li > .card");
       };
 
 
