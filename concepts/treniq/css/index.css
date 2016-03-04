@@ -95,7 +95,7 @@ input {
       height: 45px -10px;
       width: calc(100% - 280px);
       border: 1px solid rgba(0, 0, 0, 0.09);
-      border-radius: 5px;
+      border-radius: 1px;
       overflow: hidden;
       -webkit-transition: all 500ms ease;
       -moz-transition: all 500ms ease;
@@ -147,8 +147,8 @@ input {
         -o-transform: translateX(-20px);
         transform: translateX(-20px);
         width: calc(100% - 50px);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-right-radius: 1px;
+        border-bottom-right-radius: 1px;
         border: 1px solid transparent; }
     #top-fixed-bar .app.bar .search.active input, #top-fixed-bar .app.bar .search:hover input {
       padding-left: 10px;
