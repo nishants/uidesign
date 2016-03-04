@@ -93,8 +93,6 @@ $iconsTransitionTime: 200ms;
         width: 50px;
         border-right: 1px solid $borderColor;
         font-size: $iconSize;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
         color: rgba(0,0,0,0.1);
 
         @include transition(all, 500ms, ease);

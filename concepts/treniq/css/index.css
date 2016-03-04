@@ -123,8 +123,6 @@ input {
         width: 50px;
         border-right: 1px solid rgba(0, 0, 0, 0.01);
         font-size: 16px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
         color: rgba(0, 0, 0, 0.1);
         -webkit-transition: all 500ms ease;
         -moz-transition: all 500ms ease;
