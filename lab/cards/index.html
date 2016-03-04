@@ -31,24 +31,66 @@
                </div>
                <div class="overlay"></div>
            </a>
+        </li><li>
+           <a class="card">
+               <div class="picture">
+                   <img src="../../images/wall-lamp.jpg">
+               </div>
+               <div class="caption">
+                   <span class="title">Spider III Wall Lamp</span>
+                   <span class="sub-title">Mambo Unlimited Ideas</span>
+               </div>
+               <div class="action">
+                   <button class=" fa fa-plus"></button>
+                   <div class="ripple"></div>
+               </div>
+               <div class="overlay"></div>
+           </a>
+        </li><li>
+           <a class="card">
+               <div class="picture">
+                   <img src="../../images/wall-lamp.jpg">
+               </div>
+               <div class="caption">
+                   <span class="title">Spider III Wall Lamp</span>
+                   <span class="sub-title">Mambo Unlimited Ideas</span>
+               </div>
+               <div class="action">
+                   <button class=" fa fa-plus"></button>
+                   <div class="ripple"></div>
+               </div>
+               <div class="overlay"></div>
+           </a>
+        </li><li>
+           <a class="card">
+               <div class="picture">
+                   <img src="../../images/wall-lamp.jpg">
+               </div>
+               <div class="caption">
+                   <span class="title">Spider III Wall Lamp</span>
+                   <span class="sub-title">Mambo Unlimited Ideas</span>
+               </div>
+               <div class="action">
+                   <button class=" fa fa-plus"></button>
+                   <div class="ripple"></div>
+               </div>
+               <div class="overlay"></div>
+           </a>
         </li>
     </ul>
 
+    <script src="cards.js"></script>
+
 <script>
-    var card = function($card){
-        var action = $card.find(".action"),
-            button = action.find("button"),
-            ripple = action.find(".ripple");
+    $(document).ready(function(){
+        var decks = $(".deck"),
+            cardsFrom = function($deck){
+                return $deck.find(" > li > .card");
+            };
 
-        button.on("mousedown touchstart", function(){
-            ripple.addClass("burst");
-            setTimeout(function(){
-                ripple.removeClass("burst");
-            }, 500);
-        });
-
-    };
-    card($(".card").first());
+        Cards.read(decks);
+    });
 </script>
+
 </body>
 </html>
