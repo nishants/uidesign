@@ -2,9 +2,12 @@ $linkWidth: 110px;
 
 #state.home{
   .navigation.bar{
-    .link.home > a{
-      opacity: 0.6;
-      transform: none !important;
+    .link.home{
+      cursor: default;
+      > a{
+        opacity: 0.6;
+        transform: none !important;
+      }
     }
     .indicator{
       @include transform(translateX(0px));
@@ -16,11 +19,14 @@ $linkWidth: 110px;
 }
 
 #state.furniture{
-  .link.furniture > a{
-    opacity: 0.6;
-    transform: none !important;
-  }
   .navigation.bar{
+    .link.furniture {
+      cursor: default;
+      > a{
+        opacity: 0.6;
+        transform: none !important;
+      }
+    }
     .indicator{
       @include transform(translateX($linkWidth));
     }
@@ -30,11 +36,14 @@ $linkWidth: 110px;
   }
 }
 #state.lighting{
-  .link.lighting > a{
-    opacity: 0.6;
-    transform: none !important;
-  }
   .navigation.bar{
+    .link.lighting {
+      cursor: default;
+      > a{
+        opacity: 0.6;
+        transform: none !important;
+      }
+    }
     .indicator{
       @include transform(translateX(2 * $linkWidth));
     }
@@ -44,11 +53,14 @@ $linkWidth: 110px;
   }
 }
 #state.decor{
-  .link.decor > a{
-    opacity: 0.6;
-    transform: none !important;
-  }
   .navigation.bar{
+    .link.decor{
+      cursor: default;
+      > a{
+        opacity: 0.6;
+        transform: none !important;
+      }
+    }
     .indicator{
       @include transform(translateX(3 * $linkWidth));
     }
@@ -57,12 +69,16 @@ $linkWidth: 110px;
     @include transform(translateX(0px));
   }
 }
+
 #state.blog{
-  .link.blog > a{
-    opacity: 0.6;
-    transform: none !important;
-  }
   .navigation.bar{
+    .link.blog{
+      cursor: default;
+      > a{
+        opacity: 0.6;
+        transform: none !important;
+      }
+    }
     .indicator{
       @include transform(translateX(4 * $linkWidth));
     }

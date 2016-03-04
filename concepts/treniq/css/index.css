@@ -49,9 +49,11 @@ input {
   opacity: 0;
   pointer-events: none; }
 
-#state.home .navigation.bar .link.home > a {
-  opacity: 0.6;
-  transform: none !important; }
+#state.home .navigation.bar .link.home {
+  cursor: default; }
+  #state.home .navigation.bar .link.home > a {
+    opacity: 0.6;
+    transform: none !important; }
 #state.home .navigation.bar .indicator {
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
@@ -65,9 +67,11 @@ input {
   -o-transform: translateX(0px);
   transform: translateX(0px); }
 
-#state.furniture .link.furniture > a {
-  opacity: 0.6;
-  transform: none !important; }
+#state.furniture .navigation.bar .link.furniture {
+  cursor: default; }
+  #state.furniture .navigation.bar .link.furniture > a {
+    opacity: 0.6;
+    transform: none !important; }
 #state.furniture .navigation.bar .indicator {
   -webkit-transform: translateX(110px);
   -moz-transform: translateX(110px);
@@ -81,9 +85,11 @@ input {
   -o-transform: translateX(0px);
   transform: translateX(0px); }
 
-#state.lighting .link.lighting > a {
-  opacity: 0.6;
-  transform: none !important; }
+#state.lighting .navigation.bar .link.lighting {
+  cursor: default; }
+  #state.lighting .navigation.bar .link.lighting > a {
+    opacity: 0.6;
+    transform: none !important; }
 #state.lighting .navigation.bar .indicator {
   -webkit-transform: translateX(220px);
   -moz-transform: translateX(220px);
@@ -97,9 +103,11 @@ input {
   -o-transform: translateX(0px);
   transform: translateX(0px); }
 
-#state.decor .link.decor > a {
-  opacity: 0.6;
-  transform: none !important; }
+#state.decor .navigation.bar .link.decor {
+  cursor: default; }
+  #state.decor .navigation.bar .link.decor > a {
+    opacity: 0.6;
+    transform: none !important; }
 #state.decor .navigation.bar .indicator {
   -webkit-transform: translateX(330px);
   -moz-transform: translateX(330px);
@@ -113,9 +121,11 @@ input {
   -o-transform: translateX(0px);
   transform: translateX(0px); }
 
-#state.blog .link.blog > a {
-  opacity: 0.6;
-  transform: none !important; }
+#state.blog .navigation.bar .link.blog {
+  cursor: default; }
+  #state.blog .navigation.bar .link.blog > a {
+    opacity: 0.6;
+    transform: none !important; }
 #state.blog .navigation.bar .indicator {
   -webkit-transform: translateX(440px);
   -moz-transform: translateX(440px);
