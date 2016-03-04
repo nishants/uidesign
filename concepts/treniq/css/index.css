@@ -351,13 +351,24 @@ input {
   height: 100vh;
   border-bottom: 1px solid red;
   overflow: scroll;
-  background-color: white; }
+  background-color: white;
+  -webkit-transition: opacity 500ms ease;
+  -moz-transition: opacity 500ms ease;
+  -o-transition: opacity 500ms ease;
+  transition: opacity 500ms ease; }
   .page:not(.splash) .content {
     padding: 20px;
     height: 300vh; }
 
+#views > li:not(.show):not(.peek) .page {
+  opacity: 0; }
+
 #views > .peek {
   transition: none;
+  -webkit-transition: opacity 500ms ease;
+  -moz-transition: opacity 500ms ease;
+  -o-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
   -webkit-transform: translateX(170vw);
   -moz-transform: translateX(170vw);
   -ms-transform: translateX(170vw);

@@ -49,20 +49,31 @@ $viewWidth: 100vw;
   border-bottom: 1px solid red;
   overflow: scroll;
   background-color: white;
+  @include transition(opacity, 500ms, ease );
+
   .content{
     padding: 20px;
     height: 300vh;
   }
 }
+#views{
+   > li:not(.show):not(.peek) {
+     .page{
+       opacity: 0;
+     }
+   }
+}
 
 #views > .peek{
   transition: none;
+  @include transition(opacity, 500ms, ease );
   @include transform(translateX(170vw));
 }
 
 #views > .no-show{
   @include transition(transform, 500ms, ease );
 }
+
 #views > .show{
   @include transition(transform, 500ms, ease );
   @include transform(translateX(100vw));
