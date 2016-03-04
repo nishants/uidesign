@@ -182,7 +182,7 @@ $iconsTransitionTime: 200ms;
     }
     .link:hover{
       border-color: $linkSelectedHighlight;
-      a{@include transform(translateX(7.5px));}
+      a{@include transform(translateX(25px));}
     }
     .indicator{
       position: relative;
