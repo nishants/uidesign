@@ -10,6 +10,9 @@ $linkWidth: 110px;
       @include transform(translateX(0px));
     }
   }
+  #views > li.home.drift > .page{
+    @include transform(translateX(0px));
+  }
 }
 
 #state.furniture{
@@ -22,6 +25,9 @@ $linkWidth: 110px;
       @include transform(translateX($linkWidth));
     }
   }
+  #views > li.furniture.drift > .page{
+    @include transform(translateX(0px));
+  }
 }
 #state.lighting{
   .link.lighting > a{
@@ -32,6 +38,9 @@ $linkWidth: 110px;
     .indicator{
       @include transform(translateX(2 * $linkWidth));
     }
+  }
+  #views > li.lighting.drift > .page{
+    @include transform(translateX(0px));
   }
 }
 #state.decor{
@@ -44,6 +53,9 @@ $linkWidth: 110px;
       @include transform(translateX(3 * $linkWidth));
     }
   }
+  #views > li.decor.drift > .page{
+    @include transform(translateX(0px));
+  }
 }
 #state.blog{
   .link.blog > a{
@@ -54,5 +66,8 @@ $linkWidth: 110px;
     .indicator{
       @include transform(translateX(4 * $linkWidth));
     }
+  }
+  #views > li.blog.drift > .page{
+    @include transform(translateX(0px));
   }
 }

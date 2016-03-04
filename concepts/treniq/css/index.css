@@ -58,6 +58,12 @@ input {
   -ms-transform: translateX(0px);
   -o-transform: translateX(0px);
   transform: translateX(0px); }
+#state.home #views > li.home.drift > .page {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px); }
 
 #state.furniture .link.furniture > a {
   opacity: 0.6;
@@ -68,6 +74,12 @@ input {
   -ms-transform: translateX(110px);
   -o-transform: translateX(110px);
   transform: translateX(110px); }
+#state.furniture #views > li.furniture.drift > .page {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px); }
 
 #state.lighting .link.lighting > a {
   opacity: 0.6;
@@ -78,6 +90,12 @@ input {
   -ms-transform: translateX(220px);
   -o-transform: translateX(220px);
   transform: translateX(220px); }
+#state.lighting #views > li.lighting.drift > .page {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px); }
 
 #state.decor .link.decor > a {
   opacity: 0.6;
@@ -88,6 +106,12 @@ input {
   -ms-transform: translateX(330px);
   -o-transform: translateX(330px);
   transform: translateX(330px); }
+#state.decor #views > li.decor.drift > .page {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px); }
 
 #state.blog .link.blog > a {
   opacity: 0.6;
@@ -98,6 +122,12 @@ input {
   -ms-transform: translateX(440px);
   -o-transform: translateX(440px);
   transform: translateX(440px); }
+#state.blog #views > li.blog.drift > .page {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px); }
 
 #top-fixed-bar {
   position: fixed;
