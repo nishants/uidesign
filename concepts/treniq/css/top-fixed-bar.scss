@@ -192,7 +192,7 @@ $iconsTransitionTime: 200ms;
       width: 10px + $navigationLinkWidth;
       background-color: $linkHoverHighlight;
 
-      @include transition(transform, 500ms);
+      @include transition(transform, 250ms);
     }
   }
 }
