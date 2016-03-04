@@ -281,7 +281,8 @@ input {
       transition: all 500ms ease;
       padding-left: 10px;
       text-align: left;
-      border-bottom: 2px solid transparent; }
+      border-bottom: 2px solid transparent;
+      cursor: pointer; }
       #top-fixed-bar .navigation.bar .link a {
         -webkit-transition: all 500ms ease;
         -moz-transition: all 500ms ease;
@@ -364,13 +365,15 @@ input {
     padding: 20px;
     height: 300vh; }
 
-#views > li:not(.show):not(.peek) .page {
-  opacity: 0;
-  -webkit-transform: translateX(30vw);
-  -moz-transform: translateX(30vw);
-  -ms-transform: translateX(30vw);
-  -o-transform: translateX(30vw);
-  transform: translateX(30vw); }
+#views > li:not(.show):not(.peek) {
+  pointer-events: none; }
+  #views > li:not(.show):not(.peek) .page {
+    opacity: 0;
+    -webkit-transform: translateX(30vw);
+    -moz-transform: translateX(30vw);
+    -ms-transform: translateX(30vw);
+    -o-transform: translateX(30vw);
+    transform: translateX(30vw); }
 
 #views > .peek {
   transition: none;

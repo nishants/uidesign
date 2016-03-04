@@ -57,6 +57,7 @@ $viewWidth: 100vw;
 }
 #views{
    > li:not(.show):not(.peek) {
+     pointer-events: none;
      .page{
        opacity: 0;
        @include transform(translateX(30vw));
