@@ -1,0 +1,38 @@
+$linkWidth: 110px;
+
+#state.home{
+  .navigation.bar{
+    .indicator{
+      @include transform(translateX(0px));
+    }
+  }
+}
+
+#state.furniture{
+  .navigation.bar{
+    .indicator{
+      @include transform(translateX($linkWidth));
+    }
+  }
+}
+#state.lighting{
+  .navigation.bar{
+    .indicator{
+      @include transform(translateX(2 * $linkWidth));
+    }
+  }
+}
+#state.decor{
+  .navigation.bar{
+    .indicator{
+      @include transform(translateX(3 * $linkWidth));
+    }
+  }
+}
+#state.blog{
+  .navigation.bar{
+    .indicator{
+      @include transform(translateX(4 * $linkWidth));
+    }
+  }
+}

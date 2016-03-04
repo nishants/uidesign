@@ -49,6 +49,41 @@ input {
   opacity: 0;
   pointer-events: none; }
 
+#state.home .navigation.bar .indicator {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px); }
+
+#state.furniture .navigation.bar .indicator {
+  -webkit-transform: translateX(110px);
+  -moz-transform: translateX(110px);
+  -ms-transform: translateX(110px);
+  -o-transform: translateX(110px);
+  transform: translateX(110px); }
+
+#state.lighting .navigation.bar .indicator {
+  -webkit-transform: translateX(220px);
+  -moz-transform: translateX(220px);
+  -ms-transform: translateX(220px);
+  -o-transform: translateX(220px);
+  transform: translateX(220px); }
+
+#state.decor .navigation.bar .indicator {
+  -webkit-transform: translateX(330px);
+  -moz-transform: translateX(330px);
+  -ms-transform: translateX(330px);
+  -o-transform: translateX(330px);
+  transform: translateX(330px); }
+
+#state.blog .navigation.bar .indicator {
+  -webkit-transform: translateX(440px);
+  -moz-transform: translateX(440px);
+  -ms-transform: translateX(440px);
+  -o-transform: translateX(440px);
+  transform: translateX(440px); }
+
 #top-fixed-bar {
   position: fixed;
   top: 0px;
