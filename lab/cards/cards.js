@@ -8,10 +8,10 @@
 
         button.on("mousedown touchstart", function () {
           ripple.addClass("burst");
-          button.css("transform","scale(0)")
+          button.css("transform","scale(0) rotate(720deg)")
           setTimeout(function () {
             ripple.removeClass("burst");
-            button.css("transform","scale(1)")
+            button.css("transform","scale(1) rotate(0deg)")
           }, 500);
         });
 
