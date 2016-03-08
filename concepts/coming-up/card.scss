@@ -5,17 +5,22 @@ $cardHeight: auto;
 $cardBorder : 1px;
 
 $cardWidth: $imageWidth + 10px;
+$cardPadding : 5px;
+
+$captionHeight: 60px;
+$buttonHeight: 45px;
 
 .card{
   display: block;
-
   box-sizing: border-box;
+
   height: $cardHeight;
   width: $cardWidth;
+  overflow: hidden;
 
   text-align: center;
-  border: 1px solid green;
-  padding: 5px;
+  border: 1px solid rgba(1, 1, 1, 0.1);
+  padding: $cardPadding;
 
   .picture{
     img{
@@ -25,7 +30,7 @@ $cardWidth: $imageWidth + 10px;
     }
   }
   .caption{
-    height: 60px;
+    height: $captionHeight;
     .title{
       font-size: 2em;
       display: block;
@@ -33,6 +38,6 @@ $cardWidth: $imageWidth + 10px;
   }
   button.open{
     width: 80%;
-    height: 45px;
+    height: $buttonHeight;
   }
 }
