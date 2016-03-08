@@ -1,13 +1,28 @@
-
-
+$sideBarMargin: 20px;
+$sideBarPadding: 10px;
+$sideBarWidth  : 300px;
 #content-modal{
   position: fixed;
   top: 0px;
   left: 0px;
+  pointer-events: none;
 
-  width: 100vw;
-  height: 100vh;
-
-  background-color: rgba(1, 1, 1, 0.3);
-  //pointer-events: none;
+  #view-card{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(1, 1, 1, 0.3);
+    padding: $sideBarMargin;
+    .side-bar,.content{
+      float: left;
+      height: 100%;
+    }
+    .side-bar{
+      padding: $sideBarPadding;
+      .card{
+        border: 1px solid rgba(255, 255, 255, .8);
+        width: $sideBarWidth;
+        height: 500px;
+      }
+    }
+  }
 }

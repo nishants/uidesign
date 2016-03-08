@@ -271,8 +271,8 @@
                                        + page.scrollTop();
 
                     page.animate({scrollTop: scrollOffset}, function(){
-                        var sideBarMargin = 5,
-                            sideBarPadding = 5,
+                        var sideBarMargin = 0,
+                            sideBarPadding = 0,
                             maskOffset = sideBarMargin + sideBarPadding,
                             targetOffset = target.getBoundingClientRect().left - maskOffset;
 
@@ -287,7 +287,15 @@
 
 
     </script>
-    <div id="content-modal"></div>
+    <div id="content-modal">
+        <div id="view-card">
+            <div class="side-bar">
+                <div class="card"></div>
+            </div>
+            <div class="content"></div>
+        </div>
+
+    </div>
     <p id="copyright">Copyright &copy; 2016 Nishant Singh. All Rights Reserved.</p>
 </body>
 </html>
