@@ -260,31 +260,34 @@
             $("#top-fixed-bar").on("mousemove", function(){
                 navigating();
             });
-        };
-        $(document).ready(function(){
-            init();
             setTimeout(function(){
                 $(".home >.page .card").on("click", function(){
                     var page = $(".home > .page");
                     var target = this.parentElement;
                     var topBarOffset = 60
                     var scrollOffset = target.getBoundingClientRect().top
-                                       + page.scrollTop();
+                            + page.scrollTop();
+                    page.css("pointer-events", "none");
 
                     page.animate({scrollTop: scrollOffset - topBarOffset}, function(){
                         var sideBarMargin = 20,
-                            sideBarPadding = 10,
-                            maskOffset = sideBarMargin + sideBarPadding,
-                            targetOffset = target.getBoundingClientRect().left - maskOffset;
+                                sideBarPadding = 10,
+                                maskOffset = sideBarMargin + sideBarPadding,
+                                targetOffset = maskOffset - target.getBoundingClientRect().left ;
 
+                        reading();
                         $(target).addClass("moving-target");
                         $(".card-container:not(.moving-target)").css("opacity", 0);
-                        $(target).css("transform", "translateX(-"+targetOffset+"px)");
+                        $(target).css("transform", "translateX("+targetOffset+"px)");
                     });
                 });
                 console.log("ok");
 
             }, 2000)
+        };
+        $(document).ready(function(){
+            init();
+
         });
 
 
@@ -298,6 +301,5 @@
         </div>
 
     </div>
-    <p id="copyright">Copyright &copy; 2016 Nishant Singh. All Rights Reserved.</p>
 </body>
 </html>

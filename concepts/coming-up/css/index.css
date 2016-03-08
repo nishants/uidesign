@@ -603,7 +603,8 @@ ul.deck {
     width: 100vw;
     height: 100vh;
     background-color: rgba(1, 1, 1, 0.3);
-    padding: 20px; }
+    padding: 20px;
+    padding-top: 60px; }
     #content-modal #view-card .side-bar, #content-modal #view-card .content {
       float: left;
       height: 100%; }
