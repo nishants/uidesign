@@ -269,7 +269,13 @@
                     var target = this.parentElement;
                     var scrollOffset = target.getBoundingClientRect().top
                                        + page.scrollTop();
+
                     page.animate({scrollTop: scrollOffset}, function(){
+                        var sideBarMargin = 5,
+                            sideBarPadding = 5,
+                            maskOffset = sideBarMargin + sideBarPadding,
+                            targetOffset = target.getBoundingClientRect().left - maskOffset;
+
                         $(target).addClass("moving-target");
                         $(target).css("transform", "translateX(-"+target.getBoundingClientRect().left+"px)");
                     });
@@ -281,6 +287,7 @@
 
 
     </script>
+    <div id="content-modal"></div>
     <p id="copyright">Copyright &copy; 2016 Nishant Singh. All Rights Reserved.</p>
 </body>
 </html>

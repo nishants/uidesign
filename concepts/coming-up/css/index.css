@@ -594,4 +594,12 @@ ul.deck {
           transition: all 500ms ease-out;
           transform: scale(21.02857); }
 
+#content-modal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(1, 1, 1, 0.3); }
+
 /*# sourceMappingURL=index.css.map */
