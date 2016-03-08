@@ -1,0 +1,38 @@
+$imageWidth: 250px;
+$imageHeight: 250px;
+
+$cardHeight: auto;
+$cardBorder : 1px;
+
+$cardWidth: $imageWidth + 10px;
+
+.card{
+  display: block;
+
+  box-sizing: border-box;
+  height: $cardHeight;
+  width: $cardWidth;
+
+  text-align: center;
+  border: 1px solid green;
+  padding: 5px;
+
+  .picture{
+    img{
+      width: $imageWidth;
+      height: $imageHeight;
+      box-sizing: border-box;
+    }
+  }
+  .caption{
+    height: 60px;
+    .title{
+      font-size: 2em;
+      display: block;
+    }
+  }
+  button.open{
+    width: 80%;
+    height: 45px;
+  }
+}
