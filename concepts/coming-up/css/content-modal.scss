@@ -25,6 +25,12 @@ $cardHeight   : 270px;
         border: 1px solid rgba(255, 255, 255, .8);
         width: $cardWidth;
         height: $cardHeight;
+        img{
+          height: calc(100% - 60px);
+        }
+        .caption{
+          height: 60px;
+        }
       }
     }
   }
