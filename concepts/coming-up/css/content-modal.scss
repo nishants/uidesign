@@ -1,6 +1,7 @@
 $sideBarMargin: 20px;
 $sideBarPadding: 10px;
-$sideBarWidth  : 282px;
+$cardWidth  : 250px;
+$cardHeight   : 270px;
 
 #content-modal{
   position: fixed;
@@ -22,8 +23,8 @@ $sideBarWidth  : 282px;
       padding: $sideBarPadding;
       .card{
         border: 1px solid rgba(255, 255, 255, .8);
-        width: $sideBarWidth;
-        height: 500px;
+        width: $cardWidth;
+        height: $cardHeight;
       }
     }
   }

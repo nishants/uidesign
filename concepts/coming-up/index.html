@@ -124,6 +124,7 @@
                                     </a>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                 </li>
@@ -241,14 +242,14 @@
                 $(".home >.page .card").on("click", function(){
                     var page = $(".home > .page");
                     var target = this.parentElement;
-                    var topBarOffset = 60
+                    var topBarOffset = 55
                     var scrollOffset = target.getBoundingClientRect().top
                             + page.scrollTop();
                     page.css("pointer-events", "none");
 
                     page.animate({scrollTop: scrollOffset - topBarOffset}, function(){
-                        var sideBarMargin = 20,
-                                sideBarPadding = 10,
+                        var sideBarMargin = 15,
+                                sideBarPadding = 0,
                                 maskOffset = sideBarMargin + sideBarPadding,
                                 targetOffset = maskOffset - target.getBoundingClientRect().left ;
 
