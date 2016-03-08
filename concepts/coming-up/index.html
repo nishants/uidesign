@@ -277,6 +277,7 @@
                             targetOffset = target.getBoundingClientRect().left - maskOffset;
 
                         $(target).addClass("moving-target");
+                        $(".card-container:not(.moving-target)").css("opacity", 0);
                         $(target).css("transform", "translateX(-"+target.getBoundingClientRect().left+"px)");
                     });
                 });
