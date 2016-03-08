@@ -477,7 +477,7 @@ input {
   box-sizing: border-box;
   border: none; }
 
-.action-button, .card-container .card .action button {
+.action-button, .card-container .card .action button, #content-modal #view-card .side-bar .card .action button {
   margin: 0px;
   padding: 0px;
   border: none;
@@ -486,38 +486,39 @@ input {
 
 ul.deck {
   text-align: left; }
+  ul.deck .card {
+    margin: 15px; }
 
-.card-container {
+.card-container, #content-modal #view-card .side-bar {
   transition: all 500ms ease; }
 
-.card-container {
+.card-container, #content-modal #view-card .side-bar {
   display: inline-block;
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease; }
-  .card-container .card:hover {
+  .card-container .card:hover, #content-modal #view-card .side-bar .card:hover {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-    .card-container .card:hover .picture img {
+    .card-container .card:hover .picture img, #content-modal #view-card .side-bar .card:hover .picture img {
       -webkit-transform: scale(1.05) translateX(15px);
       -moz-transform: scale(1.05) translateX(15px);
       -ms-transform: scale(1.05) translateX(15px);
       -o-transform: scale(1.05) translateX(15px);
       transform: scale(1.05) translateX(15px); }
-    .card-container .card:hover .caption {
+    .card-container .card:hover .caption, #content-modal #view-card .side-bar .card:hover .caption {
       background-color: #EEE; }
-      .card-container .card:hover .caption .sub-title {
+      .card-container .card:hover .caption .sub-title, #content-modal #view-card .side-bar .card:hover .caption .sub-title {
         -webkit-transform: translateY(-10px);
         -moz-transform: translateY(-10px);
         -ms-transform: translateY(-10px);
         -o-transform: translateY(-10px);
         transform: translateY(-10px); }
-    .card-container .card:hover .action button {
+    .card-container .card:hover .action button, #content-modal #view-card .side-bar .card:hover .action button {
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
-  .card-container .card {
+  .card-container .card, #content-modal #view-card .side-bar .card {
     width: 252px;
     height: 270px;
-    margin: 15px;
     display: block;
     overflow: hidden;
     text-align: center;
@@ -527,10 +528,10 @@ ul.deck {
     -moz-transition: all 200ms ease-out;
     -o-transition: all 200ms ease-out;
     transition: all 200ms ease-out; }
-    .card-container .card .picture {
+    .card-container .card .picture, #content-modal #view-card .side-bar .card .picture {
       height: calc(100% - 60px);
       overflow: hidden; }
-      .card-container .card .picture img {
+      .card-container .card .picture img, #content-modal #view-card .side-bar .card .picture img {
         -webkit-transition: transform 250ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
         -moz-transition: transform 250ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
         -o-transition: transform 250ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
@@ -539,17 +540,17 @@ ul.deck {
         -moz-transform-origin: 100% 100%;
         transform-origin: 100% 100%;
         height: 100%; }
-    .card-container .card .caption {
+    .card-container .card .caption, #content-modal #view-card .side-bar .card .caption {
       border-top: 1px solid #E8E6E6;
       text-align: left;
       padding-left: 10px;
       height: 60px; }
-      .card-container .card .caption .title {
+      .card-container .card .caption .title, #content-modal #view-card .side-bar .card .caption .title {
         display: block;
         color: #4E4D4D;
         font-size: 16px;
         line-height: 30px; }
-      .card-container .card .caption .sub-title {
+      .card-container .card .caption .sub-title, #content-modal #view-card .side-bar .card .caption .sub-title {
         display: block;
         color: #807E7E;
         font-size: 13px;
@@ -563,13 +564,13 @@ ul.deck {
         -moz-transition: transform 500ms ease;
         -o-transition: transform 500ms ease;
         transition: transform 500ms ease; }
-    .card-container .card .action {
+    .card-container .card .action, #content-modal #view-card .side-bar .card .action {
       position: relative;
       z-index: 1;
       top: -77.5px;
       padding-right: 5px;
       font-size: 16px; }
-      .card-container .card .action .circle, .card-container .card .action button, .card-container .card .action .ripple {
+      .card-container .card .action .circle, #content-modal #view-card .side-bar .card .action .circle, .card-container .card .action button, #content-modal #view-card .side-bar .card .action button, .card-container .card .action .ripple, #content-modal #view-card .side-bar .card .action .ripple {
         display: block;
         float: right;
         clear: both;
@@ -577,7 +578,7 @@ ul.deck {
         height: 35px;
         line-height: 35px;
         width: 35px; }
-      .card-container .card .action button {
+      .card-container .card .action button, #content-modal #view-card .side-bar .card .action button {
         box-shadow: 0px 0px 1px white;
         background-color: #f7c14a;
         color: white;
@@ -585,7 +586,7 @@ ul.deck {
         -moz-transition: all 200ms ease-out;
         -o-transition: all 200ms ease-out;
         transition: all 200ms ease-out; }
-      .card-container .card .action .ripple {
+      .card-container .card .action .ripple, #content-modal #view-card .side-bar .card .action .ripple {
         z-index: -1;
         pointer-events: none;
         background-color: #FCE5B1;
@@ -593,7 +594,7 @@ ul.deck {
         position: relative;
         top: -35px;
         transform: scale(0); }
-      .card-container .card .action .ripple.burst {
+      .card-container .card .action .ripple.burst, #content-modal #view-card .side-bar .card .action .ripple.burst {
         z-index: 1;
         opacity: 0;
         -webkit-transition: all 500ms ease-out;
@@ -610,7 +611,7 @@ ul.deck {
   #content-modal #view-card {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(1, 1, 1, 0.3);
+    background-color: transparent;
     padding: 20px;
     padding-top: 60px; }
     #content-modal #view-card .side-bar, #content-modal #view-card .content {
@@ -619,12 +620,13 @@ ul.deck {
     #content-modal #view-card .side-bar {
       padding: 10px; }
       #content-modal #view-card .side-bar .card {
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        width: 250px;
-        height: 270px; }
-        #content-modal #view-card .side-bar .card img {
-          height: calc(100% - 60px); }
-        #content-modal #view-card .side-bar .card .caption {
-          height: 60px; }
+        opacity: 0; }
+      #content-modal #view-card .side-bar .side-pad {
+        height: 100vh;
+        background-color: white; }
+    #content-modal #view-card .content {
+      width: calc(100% - 274px);
+      background-color: transparent;
+      height: 100vh; }
 
 /*# sourceMappingURL=index.css.map */

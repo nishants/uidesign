@@ -34,6 +34,9 @@ $rippleRadius :368px; //card diagonal length
 ul.deck {
   @extend .undo-list;
   text-align: left;
+  .card{
+    margin: $margin;
+  }
 }
 
 .card-container{
@@ -65,7 +68,6 @@ ul.deck {
   .card{
     width: $cardWidth + 2 * $borderWidth;
     height: $cardHeight;
-    margin: $margin;
     display: block;
     overflow: hidden;
     text-align: center;

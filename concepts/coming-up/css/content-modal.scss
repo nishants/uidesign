@@ -12,7 +12,7 @@ $cardHeight   : 270px;
   #view-card{
     width: 100vw;
     height: 100vh;
-    background-color: rgba(1, 1, 1, 0.3);
+    background-color: transparent;
     padding: $sideBarMargin;
     padding-top: 60px;
     .side-bar,.content{
@@ -20,18 +20,20 @@ $cardHeight   : 270px;
       height: 100%;
     }
     .side-bar{
-      padding: $sideBarPadding;
+      @extend .card-container;
+      padding: 10px;
       .card{
-        border: 1px solid rgba(255, 255, 255, .8);
-        width: $cardWidth;
-        height: $cardHeight;
-        img{
-          height: calc(100% - 60px);
-        }
-        .caption{
-          height: 60px;
-        }
+        opacity: 0;
       }
+      .side-pad{
+        height: 100vh;
+        background-color: white;
+      }
+    }
+    .content{
+      width: calc(100% - 274px);
+      background-color: transparent;
+      height: 100vh;
     }
   }
 }
