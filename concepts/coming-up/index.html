@@ -271,14 +271,14 @@
                                        + page.scrollTop();
 
                     page.animate({scrollTop: scrollOffset}, function(){
-                        var sideBarMargin = 0,
-                            sideBarPadding = 0,
+                        var sideBarMargin = 20,
+                            sideBarPadding = 10,
                             maskOffset = sideBarMargin + sideBarPadding,
                             targetOffset = target.getBoundingClientRect().left - maskOffset;
 
                         $(target).addClass("moving-target");
                         $(".card-container:not(.moving-target)").css("opacity", 0);
-                        $(target).css("transform", "translateX(-"+target.getBoundingClientRect().left+"px)");
+                        $(target).css("transform", "translateX(-"+targetOffset+"px)");
                     });
                 });
                 console.log("ok");
