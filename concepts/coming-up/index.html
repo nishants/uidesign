@@ -267,10 +267,11 @@
                 $(".home >.page .card").on("click", function(){
                     var page = $(".home > .page");
                     var target = this.parentElement;
+                    var topBarOffset = 60
                     var scrollOffset = target.getBoundingClientRect().top
                                        + page.scrollTop();
 
-                    page.animate({scrollTop: scrollOffset}, function(){
+                    page.animate({scrollTop: scrollOffset - topBarOffset}, function(){
                         var sideBarMargin = 20,
                             sideBarPadding = 10,
                             maskOffset = sideBarMargin + sideBarPadding,
