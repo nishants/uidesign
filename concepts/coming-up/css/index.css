@@ -623,10 +623,27 @@ ul.deck {
         opacity: 0; }
       #content-modal #view-card .side-bar .side-pad {
         height: 100vh;
-        background-color: white; }
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease; }
     #content-modal #view-card .content {
-      width: calc(100% - 274px);
-      background-color: transparent;
-      height: 100vh; }
+      width: calc(100% - 276px);
+      height: 100vh;
+      -webkit-transition: all 500ms ease;
+      -moz-transition: all 500ms ease;
+      -o-transition: all 500ms ease;
+      transition: all 500ms ease; }
+
+#content-modal.show .side-bar .side-pad {
+  background-color: white;
+  border: 1px solid green; }
+#content-modal.show #view-card .content {
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -ms-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  transition-delay: 500ms;
+  border: 1px solid green; }
 
 /*# sourceMappingURL=index.css.map */

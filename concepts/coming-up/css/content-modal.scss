@@ -27,13 +27,28 @@ $cardHeight   : 270px;
       }
       .side-pad{
         height: 100vh;
-        background-color: white;
+        @include transition(all, 500ms, ease);
       }
     }
     .content{
-      width: calc(100% - 274px);
-      background-color: transparent;
+      width: calc(100% - 276px);
       height: 100vh;
+      @include transition(all, 500ms, ease);
+    }
+  }
+}
+
+#content-modal.show{
+  .side-bar{
+    .side-pad{
+      background-color: white;
+      border: 1px solid green;
+    }
+  }
+  #view-card{
+    .content{
+      @include transitionDelay(500ms);
+      border: 1px solid green;
     }
   }
 }
