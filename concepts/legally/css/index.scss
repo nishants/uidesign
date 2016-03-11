@@ -1,12 +1,31 @@
 @import 'base';
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+
 
 $topBarHeight : 100px;
 $topBarBg : rgba(1, 1, 1, 0.3);
+$logoColor: rgba(255, 255, 255, 0.7);
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
 
 #top-bar{
   height: $topBarHeight;
   background-color: $topBarBg;
-  .navigation{
+  ul.buttons{
     @extend .undo-list;
+    line-height: $topBarHeight - 10px;
+    .logo{
+      width: $leftWindowWidth;
+      font-size: 2em;
+      font-weight: 700;
+      color: $logoColor;
+      img.icon{
+        vertical-align: middle;
+        height: 50px;
+        width: 50px;
+      }
+    }
   }
 }
