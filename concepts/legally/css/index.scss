@@ -1,0 +1,12 @@
+@import 'base';
+
+$topBarHeight : 100px;
+$topBarBg : rgba(1, 1, 1, 0.3);
+
+#top-bar{
+  height: $topBarHeight;
+  background-color: $topBarBg;
+  .navigation{
+    @extend .undo-list;
+  }
+}
