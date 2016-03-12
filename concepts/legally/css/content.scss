@@ -6,11 +6,26 @@ $bodyHeight: calc(100vh - 200px);
   padding: 0px 50px;
   .window{
     height: $bodyHeight;
-    display: inline-block;
+    //display: inline-block;
+    float: left;
     background-color: rgba(33, 150, 243, 0.1);
+    margin-left: 10px;
     .bar{
       height: 50px;
       background-color: white;
+
+      > li{
+        display: inline-block;
+        height: 50px;
+        line-height: 48px;
+      }
+      .icon{
+        width: 50px;
+        text-align: center;
+      }
+      .more{
+        float: right;
+      }
     }
   }
   .right.window{
