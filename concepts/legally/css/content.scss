@@ -4,17 +4,16 @@ $bodyHeight: calc(100vh - 200px);
 
 #content{
   padding: 0px 50px;
-  #right-window{
-    width: $rightWindowWidth;
+  .window{
     height: $bodyHeight;
     border: 1px solid black;
     display: inline-block;
   }
-  #left-window{
+  .right.window{
+    width: $rightWindowWidth;
+  }
+  .left.window{
     width: $leftWindowWidth;
-    height: $bodyHeight;
-    border: 1px solid black;
-    display: inline-block;
   }
 }
 
