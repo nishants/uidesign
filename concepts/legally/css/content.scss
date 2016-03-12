@@ -49,6 +49,11 @@ $borderRadius: 1px;
   }
   .right.window{
     width: $rightWindowWidth;
+    .bar{
+      .title{
+        padding-left: 15px;
+      }
+    }
   }
   .left.window{
     width: $leftWindowWidth;
