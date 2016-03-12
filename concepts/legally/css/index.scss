@@ -1,5 +1,5 @@
 @import 'base';
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,500,700);
 
 
 $topBarHeight : 100px;
@@ -16,6 +16,7 @@ body{
 #top-bar{
   height: $topBarHeight;
   background-color: $topBarBg;
+  @include transition(all 500ms ease);
 
   ul.buttons{
     @extend .undo-list;
@@ -64,6 +65,7 @@ body{
         border-radius: 50%;
 
         color: rgba(33, 150, 243, 0.72);
+        @include transition(all 100ms ease);
       }
       label{
         display: block;
@@ -71,6 +73,7 @@ body{
         font-size: 13px;
         color: rgba(0,0,0,0.5 );
         line-height: 25px;
+        @include transition(all 100ms ease);
       }
     }
     .login{
@@ -94,6 +97,9 @@ body{
     .button.active{
       .circle{
         border: 1px solid rgba(33, 150, 243, 0.72);
+      }
+      label{
+        color: rgba(0,0,0,0.6 );
       }
     }
     .button:hover{
