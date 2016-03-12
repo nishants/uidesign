@@ -8,7 +8,7 @@ $circularButtonSize : 50px;
   height: $topBarHeight;
   background-color: $topBarBg;
   @include transition(all 500ms ease);
-  padding: 0px 20px;
+  padding: 0px 20px 0px 60px;
 
   ul.buttons{
     @extend .undo-list;
@@ -32,7 +32,7 @@ $circularButtonSize : 50px;
     }
     .navigation{
       width: $rightWindowWidth;
-      text-align: center;
+      text-align: right;
       > ul{
         > li{
           width: $navigationButtonWidth;
