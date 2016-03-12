@@ -38,11 +38,12 @@ body{
       }
     }
     .navigation{
-      width: calc(100% - #{$leftWindowWidth});
+      width: $rightWindowWidth;
+      text-align: center;
       > ul{
         > li{
           width: $navigationButtonWidth;
-          float: left;
+          display: inline-block;
         }
         .button{
           text-align: center;
@@ -59,7 +60,7 @@ body{
             border: 1px solid $logoColor;
             border-radius: 50%;
 
-            color: #2196F3;
+            color: rgba(33, 150, 243, 0.72);
           }
           label{
             display: block;
