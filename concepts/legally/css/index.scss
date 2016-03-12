@@ -83,12 +83,21 @@ body{
           color: #B3B3B3;
           border: none;
           margin-right: 10px;
+          font-size: 25px;
         }
         label:before{
           float: right;
           font-weight: 300;
         }
       };
+    }
+    .button.active{
+      .circle{
+        border: 1px solid rgba(33, 150, 243, 0.72);
+      }
+    }
+    .button:hover{
+      @extend .active;
     }
   }
 }
