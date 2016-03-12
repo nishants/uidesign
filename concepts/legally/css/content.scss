@@ -3,7 +3,7 @@
 $bodyHeight: calc(100vh - 200px);
 
 #content{
-  padding: 50px;
+  padding: 0px 50px;
   #right-window{
     width: $rightWindowWidth;
     height: $bodyHeight;
@@ -15,5 +15,12 @@ $bodyHeight: calc(100vh - 200px);
     height: $bodyHeight;
     border: 1px solid black;
     display: inline-block;
+  }
+}
+
+.high{
+  #content{
+    position: relative;
+    top: -50px;
   }
 }

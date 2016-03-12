@@ -99,9 +99,10 @@ $circularButtonSize : 50px;
   }
 }
 
-#top-bar.high{
-  height: 150px;
+.high #top-bar{
+  height: 200px;
   padding-top: 50px;
+  padding-bottom: 50px;
   .login{
     position: relative;
     top: -50px;
