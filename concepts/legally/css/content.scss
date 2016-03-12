@@ -5,6 +5,7 @@ $barColor: $barLabelColor;
 $bodyColor: rgba(33, 150, 243, 0.1);
 $borderColor: rgba(119, 147, 169, 0.18);
 $barHeight: 50px;
+$borderRadius: 1px;
 
 #content{
   padding: 0px 50px;
@@ -14,6 +15,7 @@ $barHeight: 50px;
     background-color: $bodyColor;
     margin-left: 10px;
     border: 1px solid $borderColor;
+    border-radius: $borderRadius;
 
     .pane{
       height: calc(100% - #{$barHeight});
@@ -25,6 +27,8 @@ $barHeight: 50px;
       background-color: rgba(255, 255, 255, 0.95);
       color: $barColor;
       border-bottom: 1px solid rgba(209, 235, 255, 0.7);
+      border-top-right-radius: $borderRadius;
+      border-top-left-radius: $borderRadius;
 
       > li{
         display: inline-block;
