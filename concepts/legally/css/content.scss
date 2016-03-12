@@ -2,14 +2,14 @@
 
 $bodyHeight: calc(100vh - 200px);
 $barColor: $barLabelColor;
+$bodyColor: rgba(33, 150, 243, 0.1);
 
 #content{
   padding: 0px 50px;
   .window{
     height: $bodyHeight;
-    //display: inline-block;
     float: left;
-    background-color: rgba(33, 150, 243, 0.1);
+    background-color: $bodyColor;
     margin-left: 10px;
     .bar{
       height: 50px;
@@ -28,6 +28,8 @@ $barColor: $barLabelColor;
       .more{
         float: right;
         padding-top: 5px;
+        border-left: 1px solid $bodyColor;
+        color: rgba(0,0,0,0.2);
       }
     }
   }
