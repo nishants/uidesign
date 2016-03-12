@@ -3,6 +3,8 @@
 $bodyHeight: calc(100vh - 200px);
 $barColor: $barLabelColor;
 $bodyColor: rgba(33, 150, 243, 0.1);
+$borderColor: rgba(119, 147, 169, 0.18);
+$barHeight: 50px;
 
 #content{
   padding: 0px 50px;
@@ -11,11 +13,19 @@ $bodyColor: rgba(33, 150, 243, 0.1);
     float: left;
     background-color: $bodyColor;
     margin-left: 10px;
+    border: 1px solid $borderColor;
+
+    .pane{
+      height: calc(100% - #{$barHeight});
+      overflow: hidden;
+    }
+
     .bar{
       height: 50px;
-      background-color: white;
-      box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+      background-color: rgba(255, 255, 255, 0.95);
       color: $barColor;
+      border-bottom: 1px solid rgba(209, 235, 255, 0.7);
+
       > li{
         display: inline-block;
         height: 50px;
@@ -28,7 +38,7 @@ $bodyColor: rgba(33, 150, 243, 0.1);
       .more{
         float: right;
         padding-top: 5px;
-        border-left: 1px solid $bodyColor;
+        border-left: 1px solid $borderColor;
         color: rgba(0,0,0,0.2);
       }
     }
