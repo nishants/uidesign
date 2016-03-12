@@ -82,3 +82,12 @@ body{
     }
   }
 }
+
+#top-bar.high{
+  height: 150px;
+  padding-top: 50px;
+  .login{
+    position: relative;
+    top: -50px;
+  }
+}
