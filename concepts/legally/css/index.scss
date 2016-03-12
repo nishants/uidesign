@@ -53,7 +53,8 @@ body{
       padding-top: 15px;
 
       .circle{
-        display: block;
+        text-align: center;
+        display: inline-block;
         margin: 0 auto;
 
         height: $circularButtonSize;
@@ -74,7 +75,10 @@ body{
     }
     .login{
       width: calc(100% - #{$rightWindowWidth + $leftWindowWidth});
-      text-align: right;
+      .user.button{
+        text-align: right;
+        padding-right: 20px;
+      };
     }
   }
 }
