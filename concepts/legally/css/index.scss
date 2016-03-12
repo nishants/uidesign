@@ -17,6 +17,7 @@ body{
   height: $topBarHeight;
   background-color: $topBarBg;
   @include transition(all 500ms ease);
+  padding: 0px 20px;
 
   ul.buttons{
     @extend .undo-list;
@@ -80,7 +81,6 @@ body{
       width: calc(100% - #{$rightWindowWidth + $leftWindowWidth});
       .user.button{
         text-align: right;
-        padding-right: 20px;
         .circle {
           background: rgba(255, 255, 255, 0.68);
           color: #B3B3B3;
