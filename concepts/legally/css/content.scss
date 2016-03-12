@@ -6,8 +6,12 @@ $bodyHeight: calc(100vh - 200px);
   padding: 0px 50px;
   .window{
     height: $bodyHeight;
-    border: 1px solid black;
     display: inline-block;
+    background-color: rgba(33, 150, 243, 0.1);
+    .bar{
+      height: 50px;
+      background-color: white;
+    }
   }
   .right.window{
     width: $rightWindowWidth;
