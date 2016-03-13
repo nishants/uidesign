@@ -7,7 +7,7 @@ body:not(.high){
       color: rgba(116, 6, 3, 0.69) !important;
     }
 
-    .button{
+    .button:not(.active){
       .circle{
         border: 1px solid #03a9f4 !important;
         color: $themeColor !important;

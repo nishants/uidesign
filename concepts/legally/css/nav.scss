@@ -88,7 +88,9 @@ $circularButtonSize : 50px;
     }
     .button.active{
       .circle{
+        color:  white;
         border: 1px solid rgba(33, 150, 243, 0.72);
+        background-color:  rgba(33, 150, 243, 0.72);
       }
       label{
         color: $barLabelColor;

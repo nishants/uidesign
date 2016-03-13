@@ -91,7 +91,9 @@ body {
         float: right;
         font-weight: 300; }
   #top-bar > ul .button.active .circle, #top-bar > ul .button:hover .circle {
-    border: 1px solid rgba(33, 150, 243, 0.72); }
+    color: white;
+    border: 1px solid rgba(33, 150, 243, 0.72);
+    background-color: rgba(33, 150, 243, 0.72); }
   #top-bar > ul .button.active label, #top-bar > ul .button:hover label {
     color: rgba(0, 0, 0, 0.6); }
 
@@ -197,7 +199,7 @@ body:not(.high) #top-bar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.09); }
   body:not(.high) #top-bar .logo {
     color: rgba(116, 6, 3, 0.69) !important; }
-  body:not(.high) #top-bar .button .circle {
+  body:not(.high) #top-bar .button:not(.active) .circle {
     border: 1px solid #03a9f4 !important;
     color: #03a9f4 !important; }
   body:not(.high) #top-bar .button:hover .circle {
