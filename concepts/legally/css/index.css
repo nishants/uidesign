@@ -196,7 +196,7 @@ body:not(.high) #top-bar {
   background-color: #EEE !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.09); }
   body:not(.high) #top-bar .logo {
-    color: #03a9f4 !important; }
+    color: rgba(116, 6, 3, 0.69) !important; }
   body:not(.high) #top-bar .button .circle {
     border: 1px solid #03a9f4 !important;
     color: #03a9f4 !important; }
