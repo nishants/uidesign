@@ -52,7 +52,8 @@ body {
   #top-bar > ul .button {
     text-align: center;
     height: 100px;
-    padding-top: 15px; }
+    padding-top: 15px;
+    cursor: pointer; }
     #top-bar > ul .button .circle {
       text-align: center;
       display: inline-block;
