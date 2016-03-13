@@ -106,7 +106,7 @@ body {
     transition: all 100ms ease; }
   .high #top-bar .login {
     position: relative;
-    top: -50px; }
+    top: -45px; }
 
 ul.undo-list, #top-bar > ul {
   list-style: none;
@@ -136,9 +136,10 @@ input {
       height: 50px;
       background-color: rgba(255, 255, 255, 0.95);
       color: rgba(0, 0, 0, 0.6);
-      border-bottom: 1px solid rgba(162, 205, 239, 0.22);
+      border: 1px solid white;
       border-top-right-radius: 5px;
-      border-top-left-radius: 5px; }
+      border-top-left-radius: 5px;
+      box-shadow: 0 1px 5px -2px rgba(0, 0, 0, 0.1); }
       #content .window .bar > li {
         display: inline-block;
         height: 50px;
@@ -149,7 +150,7 @@ input {
       #content .window .bar .more {
         float: right;
         padding-top: 5px;
-        border-left: 1px solid rgba(162, 205, 239, 0.05);
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
         color: rgba(0, 0, 0, 0.2); }
   #content .right.window {
     width: calc(100% - 370px);
@@ -161,7 +162,7 @@ input {
 
 .high #content {
   position: relative;
-  top: -50px; }
+  top: -45px; }
 
 .right.window .messages > li {
   padding: 0px 10px;
