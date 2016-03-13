@@ -22,8 +22,14 @@ body:not(.high){
     height: calc(100vh - 120px) !important;
     margin-bottom: 10px;
     background-color: white !important;
+    overflow: hidden !important;
     .bar{
       background-color: #EEE !important;
+      border: 1px solid rgba(0, 0, 0, 0)  !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+      border-radius: 0px !important;
+      box-shadow: 0 1px 5px -2px rgba(0, 0, 0, 0.5) !important;
+
       .pane{
         border: 1px solid rgba(0, 0, 0, 0.09)  !important;
       }
