@@ -131,6 +131,7 @@ input {
     box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.2); }
     #content .window .pane {
       height: calc(100% - 50px);
+      width: 100%;
       overflow: auto; }
     #content .window .bar {
       height: 50px;
