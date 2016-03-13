@@ -31,6 +31,7 @@ $borderRadius: 2px;
       border-top-right-radius: $borderRadius;
       border-top-left-radius: $borderRadius;
       //box-shadow: 0 1px 5px -2px rgba(0,0,0,0.1);
+      overflow: hidden;
 
       > li{
         display: inline-block;
