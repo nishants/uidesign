@@ -31,8 +31,9 @@ $circularButtonSize : 50px;
       }
     }
     .navigation{
-      width: $rightWindowWidth;
-      text-align: right;
+      width: calc(100% - #{$leftWindowWidth + $windowsGap});
+      padding-right: 30px;
+      text-align: left;
       > ul{
         > li{
           width: $navigationButtonWidth;
@@ -69,7 +70,7 @@ $circularButtonSize : 50px;
       }
     }
     .login{
-      width: calc(100% - #{$rightWindowWidth + $leftWindowWidth});
+      float: right;
       .user.button{
         text-align: right;
         .circle {
