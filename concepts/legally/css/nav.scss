@@ -10,7 +10,7 @@ $circularButtonSize : 50px;
   @include transition(all 500ms ease);
   padding: 0px 20px 0px 60px;
 
-  ul.buttons{
+  > ul{
     @extend .undo-list;
     > li{
       display: block;
