@@ -1,7 +1,8 @@
 body:not(.high){
+  * {@include transition(all 100ms ease)};
+
   #top-bar{
-    * {@include transition(all 100ms ease)};
-    background-color: white;
+    background-color: #EEE !important;
     .logo{
       color: $themeColor !important;
     }
@@ -12,13 +13,20 @@ body:not(.high){
         color: $themeColor !important;
       }
     }
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
   }
 
   .window{
     margin-top: 10px;
-    border: 1px solid #EEE !important;
+    border: 1px solid rgba(0, 0, 0, 0.09)  !important;
     height: calc(100vh - 120px) !important;
     margin-bottom: 10px;
+    background-color: white !important;
+    .bar{
+      background-color: #EEE !important;
+      .pane{
+        border: 1px solid rgba(0, 0, 0, 0.09)  !important;
+      }
+    }
   }
 }
