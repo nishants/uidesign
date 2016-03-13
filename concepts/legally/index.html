@@ -30,6 +30,19 @@
             height: 100%;
             width: 100%;
         }
+        #mocky{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            background: #FFC107;
+            outline: none;
+        }
     </style>
 
 </head>
@@ -95,6 +108,19 @@
             </div>
         </section>
     </article>
+
+    <button id="mocky" class="fa fa-power-off"></button>
+
     <script src="../../lib/angular-1.4.3.js"></script>
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var app = $("body");
+            $("#mocky").click(function(){
+                app.hasClass("high") ? app.removeClass("high") : app.addClass("high");
+
+            });
+        });
+    </script>
 </body>
 </html>
