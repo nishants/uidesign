@@ -13,6 +13,12 @@ body:not(.high){
         color: $themeColor !important;
       }
     }
+    .button:hover{
+      .circle{
+        background-color: $themeColor;
+        color: white !important;
+      }
+    }
     border-bottom: 1px solid rgba(0, 0, 0, 0.09);
   }
 

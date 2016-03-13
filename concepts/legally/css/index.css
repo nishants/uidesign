@@ -199,6 +199,9 @@ body:not(.high) #top-bar {
   body:not(.high) #top-bar .button .circle {
     border: 1px solid #03a9f4 !important;
     color: #03a9f4 !important; }
+  body:not(.high) #top-bar .button:hover .circle {
+    background-color: #03a9f4;
+    color: white !important; }
 body:not(.high) .window {
   margin-top: 10px;
   border: 1px solid rgba(0, 0, 0, 0.09) !important;
