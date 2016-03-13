@@ -6,7 +6,7 @@ $bodyColor: rgba(162, 205, 239, 0.1);
 $borderColor: rgba(162, 205, 239, 0.05);
 $borderDarkerColor: rgba(162, 205, 239, 0.22);
 $barHeight: 50px;
-$borderRadius: 1px;
+$borderRadius: 5px;
 
 #content{
   padding: 0px 50px;
@@ -15,7 +15,7 @@ $borderRadius: 1px;
     float: left;
     background-color: $bodyColor;
     border-radius: $borderRadius;
-
+    box-shadow: 2px 1px 5px rgba(0,0,0,0.2);
     .pane{
       height: calc(100% - #{$barHeight});
       overflow: auto;
