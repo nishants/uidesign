@@ -1,5 +1,12 @@
 
 .pane > {
+
+}
+
+$iconSize: 60px;
+$messageHeight: 100px;
+
+.right.window{
   .messages{
     > li{
       padding: 0px 10px;
@@ -12,5 +19,22 @@
       margin: 0px 10px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05) ;
     }
+    .message{
+      padding: 5px;
+      height: $messageHeight;
+      .icon > img{
+        width: 100%;
+        border-radius: 50%;
+      }
+      .icon, .text{
+        float: left;
+        height: $messageHeight;
+        padding: ($messageHeight - $iconSize) / 2 5px;
+      }
+      .icon{
+        width: $iconSize;
+      }
+    }
   }
+
 }
