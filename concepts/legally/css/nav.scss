@@ -101,6 +101,8 @@ $circularButtonSize : 50px;
 }
 
 .high #top-bar{
+  * {@include transition(all 100ms ease)};
+
   height: 200px;
   padding-top: 50px;
   padding-bottom: 50px;

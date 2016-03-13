@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,500,700);
-ul.undo-list, #top-bar ul.buttons {
+ul.undo-list, #top-bar > ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -27,32 +27,32 @@ body {
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
   padding: 0px 20px 0px 60px; }
-  #top-bar ul.buttons > li {
+  #top-bar > ul > li {
     display: block;
     float: left;
     height: 100px; }
-  #top-bar ul.buttons .logo {
+  #top-bar > ul .logo {
     width: 350px;
     font-size: 2em;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.7);
     line-height: 90px; }
-    #top-bar ul.buttons .logo img.icon {
+    #top-bar > ul .logo img.icon {
       vertical-align: middle;
       height: 50px;
       width: 50px; }
-  #top-bar ul.buttons .navigation {
+  #top-bar > ul .navigation {
     width: calc(100% - 370px);
     padding-right: 30px;
     text-align: left; }
-    #top-bar ul.buttons .navigation > ul > li {
+    #top-bar > ul .navigation > ul > li {
       width: 100px;
       display: inline-block; }
-  #top-bar ul.buttons .button {
+  #top-bar > ul .button {
     text-align: center;
     height: 100px;
     padding-top: 15px; }
-    #top-bar ul.buttons .button .circle {
+    #top-bar > ul .button .circle {
       text-align: center;
       display: inline-block;
       margin: 0 auto;
@@ -66,7 +66,7 @@ body {
       -moz-transition: all 100ms ease;
       -o-transition: all 100ms ease;
       transition: all 100ms ease; }
-    #top-bar ul.buttons .button label {
+    #top-bar > ul .button label {
       display: block;
       font-weight: 700;
       font-size: 13px;
@@ -76,33 +76,38 @@ body {
       -moz-transition: all 100ms ease;
       -o-transition: all 100ms ease;
       transition: all 100ms ease; }
-  #top-bar ul.buttons .login {
+  #top-bar > ul .login {
     float: right; }
-    #top-bar ul.buttons .login .user.button {
+    #top-bar > ul .login .user.button {
       text-align: right; }
-      #top-bar ul.buttons .login .user.button .circle {
+      #top-bar > ul .login .user.button .circle {
         background: rgba(255, 255, 255, 0.68);
         color: #B3B3B3;
         border: none;
         margin-right: 10px;
         font-size: 25px; }
-      #top-bar ul.buttons .login .user.button label:before {
+      #top-bar > ul .login .user.button label:before {
         float: right;
         font-weight: 300; }
-  #top-bar ul.buttons .button.active .circle, #top-bar ul.buttons .button:hover .circle {
+  #top-bar > ul .button.active .circle, #top-bar > ul .button:hover .circle {
     border: 1px solid rgba(33, 150, 243, 0.72); }
-  #top-bar ul.buttons .button.active label, #top-bar ul.buttons .button:hover label {
+  #top-bar > ul .button.active label, #top-bar > ul .button:hover label {
     color: rgba(0, 0, 0, 0.6); }
 
 .high #top-bar {
   height: 200px;
   padding-top: 50px;
   padding-bottom: 50px; }
+  .high #top-bar * {
+    -webkit-transition: all 100ms ease;
+    -moz-transition: all 100ms ease;
+    -o-transition: all 100ms ease;
+    transition: all 100ms ease; }
   .high #top-bar .login {
     position: relative;
     top: -50px; }
 
-ul.undo-list, #top-bar ul.buttons {
+ul.undo-list, #top-bar > ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -177,5 +182,24 @@ input {
     padding: 20px 5px; }
   .right.window .messages .message .icon {
     width: 60px; }
+
+body:not(.high) #top-bar {
+  background-color: white;
+  border-bottom: 1px solid #EEE; }
+  body:not(.high) #top-bar * {
+    -webkit-transition: all 100ms ease;
+    -moz-transition: all 100ms ease;
+    -o-transition: all 100ms ease;
+    transition: all 100ms ease; }
+  body:not(.high) #top-bar .logo {
+    color: #03a9f4 !important; }
+  body:not(.high) #top-bar .button .circle {
+    border: 1px solid #03a9f4 !important;
+    color: #03a9f4 !important; }
+body:not(.high) .window {
+  margin-top: 10px;
+  border: 1px solid #EEE !important;
+  height: calc(100vh - 120px) !important;
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=index.css.map */

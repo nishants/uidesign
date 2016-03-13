@@ -1,0 +1,24 @@
+body:not(.high){
+  #top-bar{
+    * {@include transition(all 100ms ease)};
+    background-color: white;
+    .logo{
+      color: $themeColor !important;
+    }
+
+    .button{
+      .circle{
+        border: 1px solid #03a9f4 !important;
+        color: $themeColor !important;
+      }
+    }
+    border-bottom: 1px solid #EEE;
+  }
+
+  .window{
+    margin-top: 10px;
+    border: 1px solid #EEE !important;
+    height: calc(100vh - 120px) !important;
+    margin-bottom: 10px;
+  }
+}
