@@ -1,0 +1,34 @@
+@import '../../../lib/config';
+
+$imageHeight : 50px;
+
+$rightSize: 100px;
+$timeColor: #EEE;
+
+.chat{
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .message{
+    .right, .left{
+      float: left;
+      height: 100%;
+    }
+
+    .right{
+      width: $rightSize;
+      img{
+        height: $imageHeight;
+      }
+    }
+    .left{
+      width: calc(100% - #{$rightSize});
+      .time{
+        text-align: right;
+        color: $timeColor;
+      }
+    }
+  }
+}

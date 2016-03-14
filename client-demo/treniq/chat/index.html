@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="chat.css">
+
+    <style>
+        /* this style applies to loader while app css is loading*/
+        .splash.page{
+            position: fixed;
+            top:0px;
+            left:0px;
+            z-index: 9999;
+
+            height: 100vh;
+            width: 100vw;
+        }
+        .splash.page > .content{}
+        .splash.page > .content > h1, .splash.page > .content > h5{
+            margin: 0 auto;
+        }
+        .splash.page > .content{
+            background-color: black;
+            color: white;
+            text-align : center;
+            height: 100%;
+            width: 100%;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .page{
+            width: 700px;
+        }
+    </style>
+
+</head>
+
+<body ng-app>
+    <div class="splash page" ng-show="false">
+        <div id="loader" class="content" ng-hide="true">
+            <h1></h1>
+            <h5>loading...</h5>
+        </div>
+    </div>
+
+
+        <div class="page">
+            <ul class="chat">
+                <li class="message">
+                    <div class="right">
+                        <img src="../../../images/carousel/carousel-1.jpg">
+                    </div>
+                    <div class="left">
+                        <div class="text">A mere stone’s throw to the north and northeast of capital Zagreb, the region is dotted with romantic medieval towns such as Koprivnica or Varaždin, countryside manors such as Trakošćan Castle and thermal spas perfect for restoring your energies, leaving you revitalised and full of life.</div>
+                        <div class="time">3:25 PM</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    <!--<img id="seed" src="images/seed.png">-->
+
+    <script src="../../../lib/jquery-2.1.4.min.js"></script>
+    <script src="../../../lib/angular-1.4.3.js"></script>
+
+    <script></script>
+
+</body>
+</html>
