@@ -4,6 +4,13 @@ $imageHeight : 50px;
 
 $rightSize: 100px;
 $timeColor: #EEE;
+$lineColor: rgba(0,0,0,0.05);
+
+.message:after {
+  content:"";
+  display:table;
+  clear:both;
+}
 
 .chat{
   display: block;
@@ -12,6 +19,9 @@ $timeColor: #EEE;
   list-style: none;
 
   .message{
+    padding: 20px;
+    padding-bottom: 10px;
+
     .right, .left{
       float: left;
       height: 100%;
@@ -29,6 +39,10 @@ $timeColor: #EEE;
         text-align: right;
         color: $timeColor;
       }
+      .text{
+        padding-bottom: 15px;
+      }
     }
+    border-bottom: 1px solid $lineColor;
   }
 }
