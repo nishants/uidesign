@@ -41,7 +41,7 @@
 
 </head>
 
-<body ng-app>
+<body ng-app="chat">
     <div class="splash page" ng-show="false">
         <div id="loader" class="content" ng-hide="true">
             <h1></h1>
@@ -51,14 +51,14 @@
 
 
         <div class="page">
-            <ul class="chat">
-                <li class="message" ng-repeat="i in [1,2,3,4,5]">
+            <ul class="chat" ng-controller="ChatController">
+                <li class="message" ng-repeat="message in thread.messages">
                     <div class="right">
-                        <img src="../../../images/carousel/carousel-1.jpg">
+                        <img ng-src="{{message.from.icon}}">
                     </div>
                     <div class="left">
-                        <div class="text">A mere stone’s throw to the north and northeast of capital Zagreb, the region is dotted with romantic medieval towns such as Koprivnica or Varaždin, countryside manors such as Trakošćan Castle and thermal spas perfect for restoring your energies, leaving you revitalised and full of life.</div>
-                        <div class="time">3:25 PM</div>
+                        <div class="text" ng-bind="message.text"></div>
+                        <div class="time" ng-bind="message.time"></div>
                     </div>
                 </li>
             </ul>
@@ -70,7 +70,17 @@
     <script src="../../../lib/jquery-2.1.4.min.js"></script>
     <script src="../../../lib/angular-1.4.3.js"></script>
 
-    <script></script>
+    <script>
+        var app = angular.module("chat", []);
+        app.controller("ChatController", function($scope){
+            $scope.thread = {messages:[
+                {from: {name: "Serip", icon: "../../../images/carousel/carousel-1.jpg"}, time: "3:25", text: "Hi I would like to know about it more."},
+                {from: {name: "You",   icon: "../../../images/carousel/carousel-2.jpg"}, time: "3:25", text: "Hi I would like to know about it more."},
+            ]};
+
+        })
+
+    </script>
 
 </body>
 </html>
