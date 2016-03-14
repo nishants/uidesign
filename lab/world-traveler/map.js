@@ -8,7 +8,8 @@
 
     this.land =  inland.length ? inland : coast;
     this.position = country.position;
-    var self = this;
+    this.land.css("fill", "blue");
+    this.land.children().css("fill", "blue");//required of island countries like Philllipines
   };
 
   Country.prototype.highlight = function(){
