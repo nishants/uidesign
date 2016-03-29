@@ -4,6 +4,7 @@ $cardWidth: 250px;
 $cardHeight: 250px;
 $rotate : 0deg;
 $cleanupDuration: 250ms;
+$cleanupFunction: ease;
 
 ul.deck {
   margin: 0;
@@ -16,7 +17,7 @@ ul.deck {
   > li{
     padding: $margin;
     display: inline-block;
-    @include transition(#{opacity $cleanupDuration ease, transform $cleanupDuration ease});
+    @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
 
     .card{
       height: $cardHeight;
