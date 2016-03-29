@@ -31,7 +31,7 @@ input {
 
 ul.deck {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   display: block;
   list-style: none;
   text-align: left;
@@ -40,9 +40,12 @@ ul.deck {
   ul.deck > li {
     padding: 10px;
     display: inline-block; }
-    ul.deck > li > .card {
+    ul.deck > li .card {
       height: 350px;
       width: 350px;
       border: 1px solid grey; }
+
+.deck.focus .card:not(.selected) {
+  opacity: 0; }
 
 /*# sourceMappingURL=index.css.map */

@@ -5,7 +5,7 @@ $cardHeight: 350px;
 
 ul.deck {
   margin: 0;
-  padding: 0;
+  padding: $margin;
   display: block;
   list-style: none;
   text-align: left;
@@ -14,10 +14,17 @@ ul.deck {
   > li{
     padding: $margin;
     display: inline-block;
-    > .card{
+    .card{
       height: $cardHeight;
       width: $cardWidth;
       border: 1px solid grey;
     }
+
+  }
+}
+
+.deck.focus{
+  .card:not(.selected){
+    opacity: 0;
   }
 }
