@@ -49,7 +49,7 @@ ul.deck {
 
 .deck.focus {
   pointer-events: none; }
-  .deck.focus .card {
+  .deck.focus .card.selected {
     pointer-events: all; }
   .deck.focus .card:not(.selected) {
     opacity: 0; }

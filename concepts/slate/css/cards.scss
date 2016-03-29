@@ -26,7 +26,7 @@ ul.deck {
 
 .deck.focus{
   pointer-events: none;
-  .card{
+  .card.selected{
     pointer-events: all;
   }
   .card:not(.selected){
