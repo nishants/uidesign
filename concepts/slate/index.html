@@ -46,7 +46,7 @@
 
     <ul class="deck"
         ng-class="{'focus' : deck.current}">
-        <li ng-repeat="i in [1,2, 3, 4, 5,6,7, 8,9]" ng-class="{'selected' : deck.current == i, 'selected-head' : deck.current == i - 1, 'selected-tail' : deck.current == i + 1}">
+        <li ng-repeat="i in [1,2, 3, 4, 5,6,7, 8,9, 10, 11,12,13, 14, 15 ,16,17,18,19,20,21,22]" ng-class="{'selected' : deck.current == i, 'selected-head' : deck.current < i - 1, 'selected-tail' : deck.current > i + 1, 'selected-pre' : deck.current == i - 1,'selected-post' : deck.current == i + 1}">
             <div class="card"
                  ng-click="deck.current = deck.current == i ? null : i">
                 <img src="../../images/carousel/carousel-1.jpg">

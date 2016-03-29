@@ -14,7 +14,7 @@ ul.deck {
   > li{
     padding: $margin;
     display: inline-block;
-    @include transition(#{opacity 250ms ease, transform 250ms ease});
+    @include transition(#{opacity 500ms ease, transform 250ms ease});
 
     .card{
       height: $cardHeight;
@@ -33,13 +33,19 @@ ul.deck {
   }
 
   li.selected-head{
-    @include transform(translateX(50px));
+    @include transform(translateY(50px));
   }
 
   li.selected-tail{
-    @include transform(translateX(-50px));
+    @include transform(translateY(-50px));
+  }
+  li.selected-pre{
+    @include transform(translateX(50px));
   }
 
+  li.selected-post{
+    @include transform(translateX(-50px));
+  }
   li:not(.selected){
     opacity: 0;
   }
