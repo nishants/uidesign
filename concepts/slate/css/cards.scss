@@ -1,7 +1,7 @@
 $margin: 10px;
 $duration: 500ms;
-$cardWidth: 350px;
-$cardHeight: 350px;
+$cardWidth: 150px;
+$cardHeight: 150px;
 
 ul.deck {
   margin: 0;
@@ -14,10 +14,12 @@ ul.deck {
   > li{
     padding: $margin;
     display: inline-block;
+    @include transition(#{opacity 250ms ease, transform 250ms ease});
+
     .card{
       height: $cardHeight;
       width: $cardWidth;
-      border: 1px solid grey;
+      border: 1px solid rgba(128, 128, 128, 0.14);
       img{width: 100%;}
     }
 
@@ -26,10 +28,19 @@ ul.deck {
 
 .deck.focus{
   pointer-events: none;
-  .card.selected{
+  li.selected{
     pointer-events: all;
   }
-  .card:not(.selected){
+
+  li.selected-head{
+    @include transform(translateX(50px));
+  }
+
+  li.selected-tail{
+    @include transform(translateX(-50px));
+  }
+
+  li:not(.selected){
     opacity: 0;
   }
 }

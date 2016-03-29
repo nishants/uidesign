@@ -57,9 +57,9 @@ input{
   transition-delay: $time;
 }
 
-@mixin transition($property, $time, $effect:$defaultTransitionFunction){
-  -webkit-transition: $property  $time #{$effect};
-  -moz-transition:    $property  $time #{$effect};
-  -o-transition:      $property  $time #{$effect};
-  transition:         $property  $time #{$effect};
+@mixin transition($value){
+  -webkit-transition: $value;
+  -moz-transition:    $value;
+  -o-transition:      $value;
+  transition:         $value;
 }

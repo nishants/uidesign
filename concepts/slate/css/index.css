@@ -39,19 +39,35 @@ ul.deck {
   overflow: auto; }
   ul.deck > li {
     padding: 10px;
-    display: inline-block; }
+    display: inline-block;
+    -webkit-transition: opacity 250ms ease, transform 250ms ease;
+    -moz-transition: opacity 250ms ease, transform 250ms ease;
+    -o-transition: opacity 250ms ease, transform 250ms ease;
+    transition: opacity 250ms ease, transform 250ms ease; }
     ul.deck > li .card {
-      height: 350px;
-      width: 350px;
-      border: 1px solid grey; }
+      height: 150px;
+      width: 150px;
+      border: 1px solid rgba(128, 128, 128, 0.14); }
       ul.deck > li .card img {
         width: 100%; }
 
 .deck.focus {
   pointer-events: none; }
-  .deck.focus .card.selected {
+  .deck.focus li.selected {
     pointer-events: all; }
-  .deck.focus .card:not(.selected) {
+  .deck.focus li.selected-head {
+    -webkit-transform: translateX(50px);
+    -moz-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    -o-transform: translateX(50px);
+    transform: translateX(50px); }
+  .deck.focus li.selected-tail {
+    -webkit-transform: translateX(-50px);
+    -moz-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    -o-transform: translateX(-50px);
+    transform: translateX(-50px); }
+  .deck.focus li:not(.selected) {
     opacity: 0; }
 
 /*# sourceMappingURL=index.css.map */
