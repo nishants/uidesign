@@ -1,0 +1,23 @@
+$margin: 10px;
+$duration: 500ms;
+$cardWidth: 350px;
+$cardHeight: 350px;
+
+ul.deck {
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  overflow: auto;
+  > li{
+    padding: $margin;
+    display: inline-block;
+    > .card{
+      height: $cardHeight;
+      width: $cardWidth;
+      border: 1px solid grey;
+    }
+  }
+}

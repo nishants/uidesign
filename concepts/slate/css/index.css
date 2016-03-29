@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300);
+ul.undo-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: block; }
+
+input {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  box-sizing: border-box;
+  border: none; }
+
+#treniq {
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  height: 100vh; }
+  #treniq h1 {
+    margin: 0px auto; }
+  #treniq * {
+    box-sizing: border-box; }
+  #treniq nav {
+    height: 60px;
+    background-color: black;
+    width: 100%; }
+  #treniq .deck {
+    height: calc(100% - 60px); }
+
+ul.deck {
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  overflow: auto; }
+  ul.deck > li {
+    padding: 10px;
+    display: inline-block; }
+    ul.deck > li > .card {
+      height: 350px;
+      width: 350px;
+      border: 1px solid grey; }
+
+/*# sourceMappingURL=index.css.map */
