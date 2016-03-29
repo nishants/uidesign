@@ -18,6 +18,7 @@ ul.deck {
       height: $cardHeight;
       width: $cardWidth;
       border: 1px solid grey;
+      img{width: 100%;}
     }
 
   }
