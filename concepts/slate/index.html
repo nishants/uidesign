@@ -60,6 +60,12 @@
 
         var app = angular.module("slate", []);
         app.directive("deck", [function(){
+            var select = function(index){
+                        console.log("now : " + index);
+                    },
+                unSelect = function(index){
+                    console.log("last : " + index);
+                };
             return {
                 restrict: "C",
                 scope: true,
@@ -68,8 +74,9 @@
                     scope.deck = {
                         current: undefined
                     };
-                    scope.$watch("deck.current", function(){
-                        console.log("go to : " + scope.deck.current);
+                    scope.$watch("deck.current", function(now, previous){
+                        unSelect(previous);
+                        select(now);
                     });
                 }
             };
