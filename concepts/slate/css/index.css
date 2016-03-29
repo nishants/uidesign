@@ -47,7 +47,11 @@ ul.deck {
       ul.deck > li .card img {
         width: 100%; }
 
-.deck.focus .card:not(.selected) {
-  opacity: 0; }
+.deck.focus {
+  pointer-events: none; }
+  .deck.focus .card {
+    pointer-events: all; }
+  .deck.focus .card:not(.selected) {
+    opacity: 0; }
 
 /*# sourceMappingURL=index.css.map */

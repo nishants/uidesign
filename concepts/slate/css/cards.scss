@@ -25,6 +25,10 @@ ul.deck {
 }
 
 .deck.focus{
+  pointer-events: none;
+  .card{
+    pointer-events: all;
+  }
   .card:not(.selected){
     opacity: 0;
   }
