@@ -40,13 +40,13 @@ ul.deck {
   ul.deck > li {
     padding: 10px;
     display: inline-block;
-    -webkit-transition: opacity 500ms ease, transform 250ms ease;
-    -moz-transition: opacity 500ms ease, transform 250ms ease;
-    -o-transition: opacity 500ms ease, transform 250ms ease;
-    transition: opacity 500ms ease, transform 250ms ease; }
+    -webkit-transition: opacity 250ms ease, transform 250ms ease;
+    -moz-transition: opacity 250ms ease, transform 250ms ease;
+    -o-transition: opacity 250ms ease, transform 250ms ease;
+    transition: opacity 250ms ease, transform 250ms ease; }
     ul.deck > li .card {
-      height: 150px;
-      width: 150px;
+      height: 250px;
+      width: 250px;
       border: 1px solid rgba(128, 128, 128, 0.14); }
       ul.deck > li .card img {
         width: 100%; }
@@ -56,29 +56,29 @@ ul.deck {
   .deck.focus li.selected {
     pointer-events: all; }
   .deck.focus li.selected-head {
-    -webkit-transform: translateY(50px);
-    -moz-transform: translateY(50px);
-    -ms-transform: translateY(50px);
-    -o-transform: translateY(50px);
-    transform: translateY(50px); }
+    -webkit-transform: translateY(50px) rotate(0deg);
+    -moz-transform: translateY(50px) rotate(0deg);
+    -ms-transform: translateY(50px) rotate(0deg);
+    -o-transform: translateY(50px) rotate(0deg);
+    transform: translateY(50px) rotate(0deg); }
   .deck.focus li.selected-tail {
-    -webkit-transform: translateY(-50px);
-    -moz-transform: translateY(-50px);
-    -ms-transform: translateY(-50px);
-    -o-transform: translateY(-50px);
-    transform: translateY(-50px); }
+    -webkit-transform: translateY(-50px) rotate(0deg);
+    -moz-transform: translateY(-50px) rotate(0deg);
+    -ms-transform: translateY(-50px) rotate(0deg);
+    -o-transform: translateY(-50px) rotate(0deg);
+    transform: translateY(-50px) rotate(0deg); }
   .deck.focus li.selected-pre {
-    -webkit-transform: translateX(50px);
-    -moz-transform: translateX(50px);
-    -ms-transform: translateX(50px);
-    -o-transform: translateX(50px);
-    transform: translateX(50px); }
+    -webkit-transform: translateX(50px) rotate(0deg);
+    -moz-transform: translateX(50px) rotate(0deg);
+    -ms-transform: translateX(50px) rotate(0deg);
+    -o-transform: translateX(50px) rotate(0deg);
+    transform: translateX(50px) rotate(0deg); }
   .deck.focus li.selected-post {
-    -webkit-transform: translateX(-50px);
-    -moz-transform: translateX(-50px);
-    -ms-transform: translateX(-50px);
-    -o-transform: translateX(-50px);
-    transform: translateX(-50px); }
+    -webkit-transform: translateX(-50px) rotate(0deg);
+    -moz-transform: translateX(-50px) rotate(0deg);
+    -ms-transform: translateX(-50px) rotate(0deg);
+    -o-transform: translateX(-50px) rotate(0deg);
+    transform: translateX(-50px) rotate(0deg); }
   .deck.focus li:not(.selected) {
     opacity: 0; }
 

@@ -1,7 +1,9 @@
 $margin: 10px;
 $duration: 500ms;
-$cardWidth: 150px;
-$cardHeight: 150px;
+$cardWidth: 250px;
+$cardHeight: 250px;
+$rotate : 0deg;
+$cleanupDuration: 250ms;
 
 ul.deck {
   margin: 0;
@@ -14,7 +16,7 @@ ul.deck {
   > li{
     padding: $margin;
     display: inline-block;
-    @include transition(#{opacity 500ms ease, transform 250ms ease});
+    @include transition(#{opacity $cleanupDuration ease, transform $cleanupDuration ease});
 
     .card{
       height: $cardHeight;
@@ -33,18 +35,18 @@ ul.deck {
   }
 
   li.selected-head{
-    @include transform(translateY(50px));
+    @include transform(translateY(50px) rotate($rotate));
   }
 
   li.selected-tail{
-    @include transform(translateY(-50px));
+    @include transform(translateY(-50px) rotate(-$rotate));
   }
   li.selected-pre{
-    @include transform(translateX(50px));
+    @include transform(translateX(50px) rotate($rotate));
   }
 
   li.selected-post{
-    @include transform(translateX(-50px));
+    @include transform(translateX(-50px) rotate(-$rotate));
   }
   li:not(.selected){
     opacity: 0;
