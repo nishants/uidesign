@@ -14,19 +14,19 @@ input {
   box-sizing: border-box;
   border: none; }
 
-#treniq {
+#slate {
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
   height: 100vh; }
-  #treniq h1 {
+  #slate h1 {
     margin: 0px auto; }
-  #treniq * {
+  #slate * {
     box-sizing: border-box; }
-  #treniq nav {
+  #slate nav {
     height: 60px;
     background-color: black;
     width: 100%; }
-  #treniq .deck {
+  #slate .deck {
     height: calc(100% - 60px); }
 
 ul.deck {
