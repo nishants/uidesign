@@ -1,6 +1,6 @@
 $duration: 500ms;
 $rotate : 0deg;
-$cleanupDuration: 250ms;
+$cleanupDuration: $transitionDuration;
 $cleanupFunction: ease;
 
 ul.deck {

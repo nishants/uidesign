@@ -32,14 +32,21 @@ input {
     background-color: transparent;
     padding: 10px;
     pointer-events: none; }
-    #slate .modal .overview {
+    #slate .modal .content, #slate .modal .overview {
       padding: 10px;
       height: 100%;
       float: left; }
-      #slate .modal .overview .card-space {
-        width: 250px;
-        height: 250px;
-        border: 1px solid rgba(0, 0, 0, 0.5); }
+    #slate .modal .overview .card-space {
+      width: 250px;
+      height: 250px;
+      border: 1px solid rgba(0, 0, 0, 0.5); }
+    #slate .modal .content {
+      -webkit-transition: transform 250ms 250ms ease, opacity 250ms 250ms ease;
+      -moz-transition: transform 250ms 250ms ease, opacity 250ms 250ms ease;
+      -o-transition: transform 250ms 250ms ease, opacity 250ms 250ms ease;
+      transition: transform 250ms 250ms ease, opacity 250ms 250ms ease;
+      background-color: rgba(0, 128, 0, 0.23);
+      width: calc(100% - 270px); }
 
 #slate:not(.show-modal) .modal {
   -webkit-transform: scale(0);
@@ -47,6 +54,12 @@ input {
   -ms-transform: scale(0);
   -o-transform: scale(0);
   transform: scale(0); }
+  #slate:not(.show-modal) .modal .content {
+    -webkit-transform: translateX(100vw);
+    -moz-transform: translateX(100vw);
+    -ms-transform: translateX(100vw);
+    -o-transform: translateX(100vw);
+    transform: translateX(100vw); }
 
 ul.deck {
   margin: 0;
