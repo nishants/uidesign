@@ -24,6 +24,22 @@ input {
     width: 100%; }
   #slate .deck {
     height: calc(100% - 60px); }
+  #slate .modal {
+    position: relative;
+    top: calc(-100vh + 60px);
+    height: calc(100% - 60px);
+    min-width: 100vw;
+    background-color: transparent;
+    padding: 10px;
+    pointer-events: none; }
+    #slate .modal .overview {
+      padding: 10px;
+      height: 100%;
+      float: left; }
+      #slate .modal .overview .card-space {
+        width: 250px;
+        height: 250px;
+        border: 1px solid rgba(0, 0, 0, 0.5); }
 
 ul.deck {
   margin: 0;
