@@ -39,6 +39,20 @@ input {
     #slate .modal .overview .card-space {
       width: 250px;
       height: 250px; }
+    #slate .modal .overview .card-actions {
+      -webkit-transition: transform 250ms ease;
+      -moz-transition: transform 250ms ease;
+      -o-transition: transform 250ms ease;
+      transition: transform 250ms ease;
+      width: 250px;
+      height: 300px;
+      pointer-events: all;
+      padding: 10px; }
+      #slate .modal .overview .card-actions button {
+        width: 100%;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.075);
+        border: 1px solid rgba(0, 0, 0, 0.05); }
     #slate .modal .content {
       -webkit-transition: transform 350ms ease, opacity 350ms ease;
       -moz-transition: transform 350ms ease, opacity 350ms ease;
@@ -59,6 +73,12 @@ input {
   -ms-transform: scale(0);
   -o-transform: scale(0);
   transform: scale(0); }
+  #slate:not(.show-modal) .modal .overview .card-actions {
+    -webkit-transform: translateY(100vh);
+    -moz-transform: translateY(100vh);
+    -ms-transform: translateY(100vh);
+    -o-transform: translateY(100vh);
+    transform: translateY(100vh); }
   #slate:not(.show-modal) .modal .content {
     -webkit-transform: translateX(100vw);
     -moz-transform: translateX(100vw);
@@ -91,7 +111,7 @@ ul.deck {
 .deck.focus {
   pointer-events: none; }
   .deck.focus li.selected {
-    pointer-events: all; }
+    pointer-events: none; }
   .deck.focus li.selected-head {
     -webkit-transform: translateY(50px) rotate(0deg);
     -moz-transform: translateY(50px) rotate(0deg);

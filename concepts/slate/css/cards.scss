@@ -29,7 +29,7 @@ ul.deck {
 .deck.focus{
   pointer-events: none;
   li.selected{
-    pointer-events: all;
+    pointer-events: none; //TODO : enables scroll on firefox
   }
 
   li.selected-head{
