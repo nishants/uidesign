@@ -30,7 +30,7 @@ ul.deck {
   padding: 10px;
   display: block;
   list-style: none;
-  text-align: center;
+  text-align: left;
   width: 100%;
   overflow: auto; }
   ul.deck > li {
