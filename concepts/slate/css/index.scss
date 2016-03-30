@@ -69,6 +69,8 @@ $contentTransitionDuration : $transitionDuration + 100;
 #slate:not(.show-modal){
   .modal{
     @include transform(scale(0));
+    @include transitionDelay($transitionDuration);
+
     .overview{
       .card-actions{
         @include transform(translateY(100vh));
@@ -76,7 +78,6 @@ $contentTransitionDuration : $transitionDuration + 100;
     }
     .content{
       @include transform(translateX(100vw));
-      //opacity: 0;
     }
   }
 }

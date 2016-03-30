@@ -72,7 +72,12 @@ input {
   -moz-transform: scale(0);
   -ms-transform: scale(0);
   -o-transform: scale(0);
-  transform: scale(0); }
+  transform: scale(0);
+  -webkit-transition-delay: 250ms;
+  -moz-transition-delay: 250ms;
+  -ms-transition-delay: 250ms;
+  -o-transition-delay: 250ms;
+  transition-delay: 250ms; }
   #slate:not(.show-modal) .modal .overview .card-actions {
     -webkit-transform: translateY(100vh);
     -moz-transform: translateY(100vh);
