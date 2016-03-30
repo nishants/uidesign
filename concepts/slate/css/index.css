@@ -38,15 +38,20 @@ input {
       float: left; }
     #slate .modal .overview .card-space {
       width: 250px;
-      height: 250px;
-      border: 1px solid rgba(0, 0, 0, 0.5); }
+      height: 250px; }
     #slate .modal .content {
-      -webkit-transition: transform 250ms 250ms ease, opacity 250ms 250ms ease;
-      -moz-transition: transform 250ms 250ms ease, opacity 250ms 250ms ease;
-      -o-transition: transform 250ms 250ms ease, opacity 250ms 250ms ease;
-      transition: transform 250ms 250ms ease, opacity 250ms 250ms ease;
-      background-color: rgba(0, 128, 0, 0.23);
+      -webkit-transition: transform 350ms ease, opacity 350ms ease;
+      -moz-transition: transform 350ms ease, opacity 350ms ease;
+      -o-transition: transform 350ms ease, opacity 350ms ease;
+      transition: transform 350ms ease, opacity 350ms ease;
       width: calc(100% - 270px); }
+      #slate .modal .content .frame {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        background-color: rgba(0, 128, 0, 0.23);
+        border: none;
+        pointer-events: all; }
 
 #slate:not(.show-modal) .modal {
   -webkit-transform: scale(0);
