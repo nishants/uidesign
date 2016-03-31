@@ -54,10 +54,10 @@ input {
         background-color: rgba(0, 0, 0, 0.075);
         border: 1px solid rgba(0, 0, 0, 0.05); }
     #slate .modal .content {
-      -webkit-transition: transform 350ms ease, opacity 350ms ease;
-      -moz-transition: transform 350ms ease, opacity 350ms ease;
-      -o-transition: transform 350ms ease, opacity 350ms ease;
-      transition: transform 350ms ease, opacity 350ms ease;
+      -webkit-transition: transform 350ms ease, opacity 700ms ease;
+      -moz-transition: transform 350ms ease, opacity 700ms ease;
+      -o-transition: transform 350ms ease, opacity 700ms ease;
+      transition: transform 350ms ease, opacity 700ms ease;
       width: calc(100% - 270px); }
       #slate .modal .content .frame {
         height: 100%;
@@ -89,7 +89,8 @@ input {
     -moz-transform: translateX(100vw);
     -ms-transform: translateX(100vw);
     -o-transform: translateX(100vw);
-    transform: translateX(100vw); }
+    transform: translateX(100vw);
+    opacity: 0; }
 
 ul.deck {
   margin: 0;
