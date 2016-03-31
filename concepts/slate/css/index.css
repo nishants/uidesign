@@ -63,7 +63,7 @@ input {
         height: 100%;
         width: 100%;
         overflow: auto;
-        background-color: rgba(0, 128, 0, 0.23);
+        background-color: white;
         border: none;
         pointer-events: all; }
 
