@@ -64,7 +64,7 @@
             <div class="content">
                 <iframe  class="frame"
                          ng-src="http://localhost:3001/2.0/concepts/slate/index.html"
-                         ng-show="deck.cards[deck.current].type == 'link'"></iframe>
+                         ng-if="deck.cards[deck.current].type == 'link'"></iframe>
 
                 <div class="editor frame"
                      ng-if="deck.cards[deck.current].type == 'code'">
@@ -84,6 +84,12 @@
     <script>
          $(document).ready(function(){
              angular.bootstrap(document.getElementsByTagName("body"), ["slate"]);
+             var frameContainer = $(".content");
+             frameContainer.on("DOMNodeInserted", function(e){
+                 var iframe = frameContainer.find("iframe");
+                 iframe && iframe.load(function(){console.log("iframe ready")});
+                 console.log("dom updated" +e);
+             })
          });
     </script>
 </body>
