@@ -61,7 +61,7 @@
                     <button ng-click="deck.current = -1">Close</button>
                 </div>
             </div>
-            <div class="content">
+            <div class="content frame-container">
                 <iframe  class="frame"
                          ng-src="http://localhost:3001/2.0/concepts/slate/index.html"
                          ng-if="deck.cards[deck.current].type == 'link'"></iframe>
@@ -71,7 +71,7 @@
                     <p data-height="500" data-theme-id="0" data-slug-hash="{{deck.cards[deck.current].ref}}" data-default-tab="result" data-user="tamashi" data-preview="false" class='codepen'></p>
                     <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
                 </div>
-                <div class="loader">
+                <div class="loader" ng-show="!frameContainer.ready">
                     <div class="blipper">
                         <div class="bar"></div>
                         <div class="bar"></div>
@@ -87,6 +87,7 @@
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <script src="../../lib/angular-1.4.3.js"></script>
     <script src="app.js"></script>
+    <script src="frame-container.js"></script>
     <script>
          $(document).ready(function(){
              angular.bootstrap(document.getElementsByTagName("body"), ["slate"]);
