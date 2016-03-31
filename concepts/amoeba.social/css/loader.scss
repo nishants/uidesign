@@ -9,13 +9,16 @@
     font-size: 10px;
   }
 
-  .blipper > div {
-    background-color: #333;
+  .blipper > .bar {
     height: 100%;
     width: 12px;
     display: inline-block;
+
     -webkit-animation: blip 1.2s infinite ease-in-out;
     animation: blip 1.2s infinite ease-in-out;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(51, 51, 51, 0.1);
   }
 
   .blipper .bar:nth-child(2) {
