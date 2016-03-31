@@ -67,8 +67,8 @@
                          ng-show="deck.cards[deck.current].type == 'link'"></iframe>
 
                 <div class="editor frame"
-                     ng-show="deck.cards[deck.current].type == 'code'">
-                    <p data-height="500" data-theme-id="0" data-slug-hash="jWVomQ" data-default-tab="result" data-user="tamashi" data-preview="false" class='codepen'></p>
+                     ng-if="deck.cards[deck.current].type == 'code'">
+                    <p data-height="500" data-theme-id="0" data-slug-hash="{{deck.cards[deck.current].ref}}" data-default-tab="result" data-user="tamashi" data-preview="false" class='codepen'></p>
                     <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
                 </div>
 
