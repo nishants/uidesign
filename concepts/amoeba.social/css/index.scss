@@ -64,20 +64,15 @@ $contentTransitionDuration : $transitionDuration + 100;
 
       .loader{
         top: calc(-100% - 5px);
-        pointer-events: all;
         position: relative;
+        pointer-events: all;
+
         height: 100%;
         width: 100%;
+
         background-color: #f5f5f5;
         text-align: center;
         padding: 100px;
-        @include transform(scale(0));
-        .spinner{
-          font-size: 100px;
-          display: block;
-          margin: auto;
-          color: rgba(0,0,0,0.1);
-        }
       }
     }
 
@@ -102,3 +97,4 @@ $contentTransitionDuration : $transitionDuration + 100;
 }
 
 @import 'cards';
+@import 'loader';

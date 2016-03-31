@@ -56,24 +56,3 @@ input{
   -o-transition:      $value;
   transition:         $value;
 }
-
-.spinner{
-  animation: spinning 1s infinite ease;
-  -webkit-animation: spinning 1s infinite ease;
-  -moz-animation: spinning 1s infinite ease;
-  -o-animation: spinning 1s infinite ease;
-  @include transformOrigin(50% 50%);
-}
-
-@-webkit-keyframes spinning {
-  from { -webkit-transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); }
-}
-@-moz-keyframes spinning {
-  from { -moz-transform: rotate(0deg); }
-  to { -moz-transform: rotate(360deg); }
-}
-@-o-keyframes spinning {
-  from { -o-transform: rotate(0deg); }
-  to { -o-transform: rotate(360deg); }
-}
