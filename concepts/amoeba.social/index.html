@@ -63,7 +63,7 @@
             </div>
             <div class="content frame-container">
                 <iframe  class="frame"
-                         ng-src="http://localhost:3001/2.0/concepts/slate/index.html"
+                         ng-src="http://amoeba.social/concepts/legally/"
                          ng-if="deck.cards[deck.current].type == 'link'"></iframe>
 
                 <div class="editor frame"
@@ -71,7 +71,7 @@
                     <p data-height="500" data-theme-id="0" data-slug-hash="{{deck.cards[deck.current].ref}}" data-default-tab="result" data-user="tamashi" data-preview="false" class='codepen'></p>
                     <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
                 </div>
-                <div class="loader" ng-show="!frameContainer.ready">
+                <div class="loader" ng-class="{'no-display' : frameContainer.ready}">
                     <div class="blipper">
                         <div class="bar"></div>
                         <div class="bar"></div>
