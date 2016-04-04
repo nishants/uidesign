@@ -58,7 +58,12 @@ input {
       -moz-transition: transform 350ms ease, opacity 700ms ease;
       -o-transition: transform 350ms ease, opacity 700ms ease;
       transition: transform 350ms ease, opacity 700ms ease;
-      width: calc(100% - 270px); }
+      width: calc(100% - 270px);
+      position: relative; }
+      #slate .modal .content .frame, #slate .modal .content .loader {
+        position: absolute;
+        top: 0;
+        left: 0; }
       #slate .modal .content .frame {
         height: 100%;
         width: 100%;
@@ -67,7 +72,7 @@ input {
         border: none;
         pointer-events: all; }
       #slate .modal .content .loader {
-        top: calc(-100% - 5px);
+        display: none;
         position: relative;
         pointer-events: all;
         height: 100%;
@@ -100,6 +105,12 @@ input {
     -o-transform: translateX(100vw);
     transform: translateX(100vw);
     opacity: 0; }
+    #slate:not(.show-modal) .modal .content .frame:not(.show) {
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0); }
 
 ul.deck {
   margin: 0;
@@ -112,11 +123,13 @@ ul.deck {
   ul.deck > li {
     padding: 10px;
     display: inline-block;
+    will-change: transform;
     -webkit-transition: opacity 250ms ease, transform 250ms ease;
     -moz-transition: opacity 250ms ease, transform 250ms ease;
     -o-transition: opacity 250ms ease, transform 250ms ease;
     transition: opacity 250ms ease, transform 250ms ease; }
     ul.deck > li .card {
+      will-change: transform;
       height: 250px;
       width: 250px;
       border: 1px solid rgba(128, 128, 128, 0.14); }

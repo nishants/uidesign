@@ -63,8 +63,11 @@
             </div>
             <div class="content frame-container">
                 <iframe  class="frame"
+                         ng-repeat="card in deck.cards"
                          ng-src="http://amoeba.social/concepts/legally/"
-                         ng-if="deck.cards[deck.current].type == 'link'"></iframe>
+                         ng-class="{'show': deck.current == $index}"
+                         ng-if="card.type == 'link'">
+                </iframe>
 
                 <div class="editor frame"
                      ng-if="deck.cards[deck.current].type == 'code'">

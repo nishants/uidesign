@@ -53,6 +53,13 @@ $contentTransitionDuration : $transitionDuration + 100;
     .content{
       @include transition(#{transform $contentTransitionDuration ease, opacity #{2*$contentTransitionDuration} ease});
       width: calc(100% - #{$cardWidth + 2 * $containerPadding});
+      position: relative;
+
+      .frame, .loader{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
       .frame{
         height: 100%;
         width: 100%;
@@ -63,7 +70,7 @@ $contentTransitionDuration : $transitionDuration + 100;
       }
 
       .loader{
-        top: calc(-100% - 5px);
+        display: none;
         position: relative;
         pointer-events: all;
 
@@ -92,6 +99,9 @@ $contentTransitionDuration : $transitionDuration + 100;
     .content{
       @include transform(translateX(100vw));
       opacity: 0;
+      .frame:not(.show){
+        @include transform(scale(0));
+      }
     }
   }
 }
