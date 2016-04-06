@@ -3,9 +3,9 @@ $topBarHeight : 75px;
 $collapseLogoHeight: 50px;
 $collapseLogoWidth : 175px;
 
-$expandLogoHeight: 74px;
+$expandLogoHeight: 75px;
 $expandLogoWidth : 305px;
-
+$expandOffset: 15px;
 $transitionTime : 250ms;
 $collapsedSearchWidth: 220px;
 $minNavigationWidth:  740px;
@@ -21,9 +21,11 @@ $minNavigationWidth:  740px;
     z-index: -1;
     position: relative;
     top: -$collapseLogoHeight;
-    height: $collapseLogoHeight;
+    height: $expandLogoHeight;
     background-color: #F2F2F2;
     @include transition(transform, $transitionTime, ease);
+    @include transform(translateY(-$collapseLogoHeight/2));
+
   }
 
   .content{
@@ -65,10 +67,11 @@ $minNavigationWidth:  740px;
         @extend .resize-container;
         width: calc(100% - #{$collapsedSearchWidth});
         text-align: right;
+        @include transition(transform, $transitionTime, ease);
         > li{
            display: inline;
            padding: 0px 10px;
-           font-size: large;
+           font-size: 16px;
          }
       }
     }
@@ -80,7 +83,9 @@ $minNavigationWidth:  740px;
     @include transform(scale(1.5));
   }
   .bg{
-    @include transform(scale(1.5) translateY(8px));
-
+    @include transform(translateY(0px));
+  }
+  .navigation > .links{
+    @include transform(translateY($collapseLogoHeight - $expandOffset) translateX($collapsedSearchWidth));
   }
 }
