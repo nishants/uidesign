@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="top-fixed-bar.css">
 
     <style>
         #app{
@@ -23,6 +24,9 @@
 <body>
 
 <div id="app">
+    <nav id="top-fixed-bar">
+
+    </nav>
     <div id="video-sticky">
         <div class="video-wrapper">
             <video width="100%" autoplay="autoplay" controls="controls" 	loop="loop">
@@ -48,7 +52,7 @@
             $sticky             = $(sticky),
             $video              = $sticky.find(".video-wrapper").first(),
             video               = new StickyVideo($sticky, $video),
-            positionFromTop     = 10,
+            positionFromTop     = 70,
 
             applyScrollPosition = function () {
                 var bounds = sticky.getBoundingClientRect(),

@@ -1,4 +1,6 @@
-$positionFromTop: 10px;
+$positionFromTop: 70px;
+$topPadding: 10px;
+
 $videoHeight: 299px;
 $videoWidth: 500px;
 
@@ -12,7 +14,7 @@ $transitionDuration: 500ms;
   background-color: rgba(0,0,0,0.02);
 
   .video-wrapper{
-    padding: $positionFromTop;
+    padding: $topPadding;
     width: $videoWidth;
     height: $videoHeight;
     @include transition(transform, $transitionDuration, ease);
@@ -28,7 +30,7 @@ $transitionDuration: 500ms;
 #video-sticky.fixed{
   .video-wrapper{
     position: fixed;
-    top: 0px;
+    top: $positionFromTop - $topPadding;
   }
 }
 

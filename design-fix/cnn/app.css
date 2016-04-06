@@ -38,7 +38,7 @@ input {
 
 #video-sticky.fixed .video-wrapper {
   position: fixed;
-  top: 0px; }
+  top: 60px; }
 
 #video-sticky.resize .video-wrapper video {
   -webkit-transform: scale(0.5);

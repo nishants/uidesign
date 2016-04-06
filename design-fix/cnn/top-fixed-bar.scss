@@ -1,0 +1,10 @@
+$topBarHeight : 60px;
+
+#top-fixed-bar{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: $topBarHeight;
+  background-color: black;
+}
