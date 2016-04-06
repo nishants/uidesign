@@ -15,8 +15,13 @@ $transitionDuration: 250ms;
     padding: $positionFromTop;
     width: $videoWidth;
     height: $videoHeight;
-    @include transformOrigin(0 0);
     @include transition(transform, $transitionDuration, ease);
+    @include transformOrigin(0 0);
+
+    video{
+      @include transformOrigin(0 0);
+      @include transition(transform, $transitionDuration, ease);
+    }
   }
 }
 
@@ -29,6 +34,6 @@ $transitionDuration: 250ms;
 
 #video-sticky.resize{
   .video-wrapper{
-    @include transform(scale(0.5));
+    video{@include transform(scale(0.5));}
   }
 }
