@@ -69,18 +69,18 @@
 
 
     $(document).ready(function(){
-        var stickyElement       = document.getElementById("video-sticky"),
-            $stickyElement      = $(stickyElement),
-            $video              = $stickyElement.find(".video-wrapper").first(),
-            stickyVideo         = new StickyVideo($stickyElement, $video),
+        var sticky              = document.getElementById("video-sticky"),
+            $sticky             = $(sticky),
+            $video              = $sticky.find(".video-wrapper").first(),
+            video               = new StickyVideo($sticky, $video),
             positionFromTop     = 10;
 
         var applyScrollPosition = function () {
-            var bounds      = stickyElement.getBoundingClientRect(),
+            var bounds      = sticky.getBoundingClientRect(),
                 outViewed   = bounds.top <= positionFromTop;
 
-            outViewed && stickyVideo.stick();
-            outViewed || stickyVideo.unstick();
+            outViewed && video.stick();
+            outViewed || video.unstick();
         };
 
         $(document).on("scroll", applyScrollPosition);
