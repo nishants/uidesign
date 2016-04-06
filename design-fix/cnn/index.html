@@ -77,7 +77,7 @@
             stickyVideo        = new StickyVideo($(stickyElement)),
             positionFromTop = 10;
 
-        var resizeByScrollPosition = function () {
+        var applyScrollPosition = function () {
             var bounds = stickyElement.getBoundingClientRect(),
                     outViewed = bounds.top <= positionFromTop;
 
@@ -86,8 +86,8 @@
             console.log("resize");
         };
 
-        $(document).on("scroll", resizeByScrollPosition);
-        $(window).on("resize", resizeByScrollPosition);
+        $(document).on("scroll", applyScrollPosition);
+        $(window).on("resize", applyScrollPosition);
 
     });
 </script>
