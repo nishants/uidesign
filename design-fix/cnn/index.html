@@ -40,48 +40,22 @@
 
 
 <script src="../../lib/jquery-2.1.4.min.js"></script>
-<!--<script src="app.js"></script>-->
+<script src="sticky-video.js"></script>
 
 <script>
-    var     leftOffset = function(){
-                var  collapseWidth      = 250,
-                     initialLeftOffset  =  10;
-
-                return $(window).width() - collapseWidth - initialLeftOffset;
-            },
-            StickyVideo = function($container, $video){
-                this.$container = $container;
-                this.$video     = $video;
-            };
-
-    StickyVideo.prototype.stick = function(){
-        this.$container.addClass("fixed");
-        this.$container.addClass("resize");
-        this.$video.css("transform", "translateX("+leftOffset()+"px)");
-    };
-
-
-    StickyVideo.prototype.unstick = function(){
-        this.$container.removeClass("fixed");
-        this.$container.removeClass("resize");
-        this.$video.css("transform", "");
-    };
-
-
     $(document).ready(function(){
         var sticky              = document.getElementById("video-sticky"),
             $sticky             = $(sticky),
             $video              = $sticky.find(".video-wrapper").first(),
             video               = new StickyVideo($sticky, $video),
-            positionFromTop     = 10;
+            positionFromTop     = 10,
 
-        var applyScrollPosition = function () {
-            var bounds      = sticky.getBoundingClientRect(),
-                outViewed   = bounds.top <= positionFromTop;
-
-            outViewed && video.stick();
-            outViewed || video.unstick();
-        };
+            applyScrollPosition = function () {
+                var bounds = sticky.getBoundingClientRect(),
+                    outViewed = bounds.top <= positionFromTop;
+                outViewed && video.stick();
+                outViewed || video.unstick();
+            };
 
         $(document).on("scroll", applyScrollPosition);
         $(window).on("resize", applyScrollPosition);
