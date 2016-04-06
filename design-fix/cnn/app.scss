@@ -1,13 +1,21 @@
 $positionFromTop: 10px;
+$videoHeight: 299px;
+$videoWidth: 500px;
+
+$transitionDuration: 250ms;
+
 @import '../../lib/config';
 
 #video-sticky{
+  width: $videoWidth;
+  height: $videoHeight;
   .video-wrapper{
     padding: $positionFromTop;
-    width: 500px;
-    height: 299px;
+    width: $videoWidth;
+    height: $videoHeight;
+    @include transformOrigin(0 0);
+    @include transition(transform, $transitionDuration, ease);
   }
-  @include transition(transform, 100ms, ease);
 }
 
 #video-sticky.fixed{
@@ -18,5 +26,7 @@ $positionFromTop: 10px;
 }
 
 #video-sticky.resize{
-  //@include transform(scale(0.5));
+  .video-wrapper{
+    @include transform(scale(0.5));
+  }
 }
