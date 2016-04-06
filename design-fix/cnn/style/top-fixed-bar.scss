@@ -7,6 +7,8 @@ $expandLogoHeight: 74px;
 $expandLogoWidth : 305px;
 
 $transitionTime : 250ms;
+$collapsedSearchWidth: 220px;
+$minNavigationWidth:  740px;
 
 #top-fixed-bar{
   position: fixed;
@@ -23,13 +25,53 @@ $transitionTime : 250ms;
     background-color: #F2F2F2;
     @include transition(transform, $transitionTime, ease);
   }
-  .logo{
-    display: block;
+
+  .content{
+    @extend .resize-container;
     height: $collapseLogoHeight;
-    width:  $collapseLogoWidth;
-    will-change: transform;
-    @include transition(transform, $transitionTime, ease);
-    @include transformOrigin(0 0);
+    min-width: $minNavigationWidth + $collapsedSearchWidth;
+
+    .logo{
+      float: left;
+      display: block;
+      height: $collapseLogoHeight;
+      width:  $collapseLogoWidth;
+      will-change: transform;
+      @include transition(transform, $transitionTime, ease);
+      @include transformOrigin(0 0);
+    }
+    .navigation{
+      @extend .resize-container;
+      float: left;
+      width: calc(100% - #{$collapseLogoWidth});
+
+      .search-widget, .links{
+        height: $collapseLogoHeight;
+        line-height: $collapseLogoHeight;
+        float: left;
+      }
+      .search-widget{
+        width: $collapsedSearchWidth;
+        padding: 10px;
+        input {
+          box-sizing: border-box;
+          padding: 5px;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .links{
+        @extend .undo-list;
+        @extend .resize-container;
+        width: calc(100% - #{$collapsedSearchWidth});
+        text-align: right;
+        > li{
+           display: inline;
+           padding: 0px 10px;
+           font-size: large;
+         }
+      }
+    }
   }
 }
 

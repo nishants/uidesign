@@ -8,6 +8,12 @@ ul.undo-list{
   display: block;
 }
 
+.resize-container:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
 input{
   padding: 0px;
   margin: 0px;
