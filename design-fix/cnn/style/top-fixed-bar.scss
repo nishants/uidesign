@@ -6,6 +6,7 @@ $collapseLogoWidth : 175px;
 $expandLogoHeight: 74px;
 $expandLogoWidth : 305px;
 
+$transitionTime : 250ms;
 
 #top-fixed-bar{
   position: fixed;
@@ -20,14 +21,14 @@ $expandLogoWidth : 305px;
     top: -$collapseLogoHeight;
     height: $collapseLogoHeight;
     background-color: #F2F2F2;
-    @include transition(transform, 250ms, ease);
+    @include transition(transform, $transitionTime, ease);
   }
   .logo{
     display: block;
     height: $collapseLogoHeight;
     width:  $collapseLogoWidth;
     will-change: transform;
-    @include transition(transform, 250ms, ease);
+    @include transition(transform, $transitionTime, ease);
     @include transformOrigin(0 0);
   }
 }
