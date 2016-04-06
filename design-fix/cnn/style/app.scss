@@ -1,4 +1,4 @@
-$positionFromTop: 70px;
+$positionFromTop: $collapsedBarHeight;
 $topPadding: 10px;
 
 $videoHeight: 299px;
@@ -29,7 +29,7 @@ $transitionDuration: 300ms;
 #video-sticky.fixed{
   .video-wrapper{
     position: fixed;
-    top: $positionFromTop - $topPadding;
+    top: $positionFromTop;
   }
 }
 

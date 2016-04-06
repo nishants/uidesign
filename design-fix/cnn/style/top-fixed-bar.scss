@@ -1,4 +1,4 @@
-$topBarHeight : 50px;
+$topBarHeight : 75px;
 
 $collapseLogoHeight: 50px;
 $collapseLogoWidth : 175px;
@@ -13,15 +13,31 @@ $expandLogoWidth : 305px;
   left: 0px;
   width: 100%;
   height: $topBarHeight;
-  background-color: #F2F2F2;
-  padding-left: $documentPadding;
-  padding-right: $documentPadding;
+
+  .bg{
+    z-index: -1;
+    position: relative;
+    top: -$collapseLogoHeight;
+    height: $collapseLogoHeight;
+    background-color: #F2F2F2;
+    @include transition(transform, 250ms, ease);
+  }
   .logo{
+    display: block;
     height: $collapseLogoHeight;
     width:  $collapseLogoWidth;
+    will-change: transform;
+    @include transition(transform, 250ms, ease);
+    @include transformOrigin(0 0);
   }
 }
 
-#top-fixed-bar.collapse{
-  opacity: 0;
+#top-fixed-bar:not(.collapse){
+  .logo{
+    @include transform(scale(1.5));
+  }
+  .bg{
+    @include transform(scale(1.5) translateY(8px));
+
+  }
 }
