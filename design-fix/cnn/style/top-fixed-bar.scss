@@ -25,6 +25,7 @@ $minNavigationWidth:  740px;
     background-color: #F2F2F2;
     @include transition(transform, $transitionTime, ease);
     @include transform(translateY(-$collapseLogoHeight/2));
+    @include transitionDelay($transitionTime);
 
   }
 
@@ -39,7 +40,7 @@ $minNavigationWidth:  740px;
       height: $collapseLogoHeight;
       width:  $collapseLogoWidth;
       will-change: transform;
-      @include transition(transform, $transitionTime, ease);
+      @include transition(transform, 2*$transitionTime, ease);
       @include transformOrigin(0 0);
     }
     .navigation{
@@ -68,10 +69,13 @@ $minNavigationWidth:  740px;
         width: calc(100% - #{$collapsedSearchWidth});
         text-align: right;
         @include transition(transform, $transitionTime, ease);
+        @include transitionDelay($transitionTime);
+
         > li{
-           display: inline;
-           padding: 0px 10px;
-           font-size: 16px;
+          @include transition(transform, $transitionTime, ease);
+          display: inline-block;
+          padding: 0px 10px;
+          font-size: 16px;
          }
       }
     }
@@ -82,10 +86,19 @@ $minNavigationWidth:  740px;
   .logo{
     @include transform(scale(1.5));
   }
+  .content{
+    .navigation > ul.links{
+      @include transform(translateY($collapseLogoHeight - $expandOffset));
+      @include transitionDelay(0);
+
+      > li{
+        @include transitionDelay($transitionTime);
+        @include transform(translateX($collapsedSearchWidth));
+      }
+    }
+  }
   .bg{
     @include transform(translateY(0px));
-  }
-  .navigation > .links{
-    @include transform(translateY($collapseLogoHeight - $expandOffset) translateX($collapsedSearchWidth));
+    @include transitionDelay(0);
   }
 }
