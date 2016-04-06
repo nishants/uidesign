@@ -1,0 +1,19 @@
+$positionFromTop: 10px;
+@import '../../lib/config';
+
+#video-sticky{
+  padding: $positionFromTop;
+  @include transition(transform, 100ms, ease);
+}
+
+#app.reading{
+  #video-sticky{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+  }
+}
+
+#app:hover{
+  @extend .reading;
+}
