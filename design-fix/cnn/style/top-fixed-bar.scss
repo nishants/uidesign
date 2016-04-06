@@ -1,4 +1,11 @@
-$topBarHeight : 60px;
+$topBarHeight : 50px;
+
+$collapseLogoHeight: 50px;
+$collapseLogoWidth : 175px;
+
+$expandLogoHeight: 74px;
+$expandLogoWidth : 305px;
+
 
 #top-fixed-bar{
   position: fixed;
@@ -6,5 +13,11 @@ $topBarHeight : 60px;
   left: 0px;
   width: 100%;
   height: $topBarHeight;
-  background-color: black;
+  background-color: #F2F2F2;
+  padding-left: $documentPadding;
+  padding-right: $documentPadding;
+  .logo{
+    height: $collapseLogoHeight;
+    width:  $collapseLogoWidth;
+  }
 }
