@@ -22,10 +22,12 @@
 
 <div id="app">
     <div id="video-sticky">
-        <video width="100%" controls>
-            <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
+        <div class="video-wrapper">
+            <video width="100%" controls>
+                <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
     </div>
     <p>
         Video courtesy of
@@ -39,7 +41,57 @@
 <!--<script src="app.js"></script>-->
 
 <script>
+    var StickyVideo = function($container){
+        this.$container = $container;
+    };
+
+    StickyVideo.prototype.stick = function(){
+        this.$container.addClass("fixed");
+        this.$container.addClass("resize");
+    };
+
+
+    StickyVideo.prototype.unstick = function(){
+        this.$container.removeClass("fixed");
+        this.$container.removeClass("resize");
+    };
+
+    var $stickyContainer = $("video-sticky"),
+            sticky
+    var StickyVideo = function($container){
+        this.$container = $container;
+    };
+
+    StickyVideo.prototype.stick = function(){
+        this.$container.addClass("fixed");
+        this.$container.addClass("resize");
+    };
+
+
+    StickyVideo.prototype.unstick = function(){
+        this.$container.removeClass("fixed");
+        this.$container.removeClass("resize");
+    };
+
+    var $stickyContainer = $("video-sticky"),
+            sticky = new StickyVideo($stickyContainer);
+
+
     $(document).ready(function(){
+        var stickyElement = document.getElementById("video-sticky"),
+            stickyVideo        = new StickyVideo($(stickyElement)),
+            positionFromTop = 10;
+
+        $(document).on("scroll", function(){
+            var bounds = stickyElement.getBoundingClientRect(),
+                outViewed = bounds.top <= positionFromTop;
+
+            outViewed && stickyVideo.stick();
+            outViewed || stickyVideo.unstick();
+
+//            console.log("outViewed : " + outViewed);
+            console.log("bounds.top : " + bounds.top);
+        });
 
     });
 </script>

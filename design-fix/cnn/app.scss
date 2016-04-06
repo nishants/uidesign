@@ -2,18 +2,21 @@ $positionFromTop: 10px;
 @import '../../lib/config';
 
 #video-sticky{
-  padding: $positionFromTop;
+  .video-wrapper{
+    padding: $positionFromTop;
+    width: 500px;
+    height: 299px;
+  }
   @include transition(transform, 100ms, ease);
 }
 
-#app.reading{
-  #video-sticky{
+#video-sticky.fixed{
+  .video-wrapper{
     position: fixed;
     top: 0px;
-    right: 0px;
   }
 }
 
-#app:hover{
-  @extend .reading;
+#video-sticky.resize{
+  //@include transform(scale(0.5));
 }
