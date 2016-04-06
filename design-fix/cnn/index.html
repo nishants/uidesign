@@ -49,9 +49,9 @@
 
                 return $(window).width() - collapseWidth - initialLeftOffset;
             },
-            StickyVideo = function($container){
+            StickyVideo = function($container, $video){
                 this.$container = $container;
-                this.$video     = $container.find(".video-wrapper").first();
+                this.$video     = $video;
             };
 
     StickyVideo.prototype.stick = function(){
@@ -70,14 +70,14 @@
 
     $(document).ready(function(){
         var stickyElement       = document.getElementById("video-sticky"),
-            stickyVideo         = new StickyVideo($(stickyElement)),
-            $stickyContainer    = $("video-sticky"),
-            sticky              = new StickyVideo($stickyContainer),
+            $stickyElement      = $(stickyElement),
+            $video              = $stickyElement.find(".video-wrapper").first(),
+            stickyVideo         = new StickyVideo($stickyElement, $video),
             positionFromTop     = 10;
 
         var applyScrollPosition = function () {
-            var bounds = stickyElement.getBoundingClientRect(),
-                    outViewed = bounds.top <= positionFromTop;
+            var bounds      = stickyElement.getBoundingClientRect(),
+                outViewed   = bounds.top <= positionFromTop;
 
             outViewed && stickyVideo.stick();
             outViewed || stickyVideo.unstick();
