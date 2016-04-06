@@ -40,18 +40,35 @@
 <script src="sticky-video.js"></script>
 
 <script>
+    var TopBar = function($nav){
+        this.$nav = $nav;
+
+    };
+
+    TopBar.prototype.collapse = function(){
+        this.$nav.addClass("collapse");
+    };
+    TopBar.prototype.expand = function(){
+        this.$nav.removeClass("collapse");
+    };
+
     $(document).ready(function(){
         var sticky              = document.getElementById("video-sticky"),
             $sticky             = $(sticky),
             $video              = $sticky.find(".video-wrapper").first(),
             video               = new StickyVideo($sticky, $video),
             positionFromTop     = 70,
+            topBar              = new TopBar($("#top-fixed-bar")),
 
             applyScrollPosition = function () {
                 var bounds = sticky.getBoundingClientRect(),
                     outViewed = bounds.top <= positionFromTop;
                 outViewed && video.stick();
                 outViewed || video.unstick();
+
+                outViewed && topBar.collapse();
+                outViewed || topBar.expand();
+
             };
 
         $(document).on("scroll", applyScrollPosition);
