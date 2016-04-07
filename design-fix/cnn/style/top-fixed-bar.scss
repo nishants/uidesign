@@ -33,6 +33,7 @@ $minNavigationWidth:  740px;
     @extend .resize-container;
     height: $collapseLogoHeight;
     min-width: $minNavigationWidth + $collapsedSearchWidth;
+    padding: 0px 50px;
 
     .logo{
       float: left;
