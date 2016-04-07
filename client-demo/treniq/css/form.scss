@@ -1,6 +1,6 @@
 $labelWidth     : 150px;
 $inputWidth     : 350px;
-$helpIconWidth  : 50px;
+$iconSize: 50px;
 $rowHeight      : 40px;
 
 $padding        : 10px;
@@ -10,7 +10,7 @@ form{
   height: $rowHeight;
   @extend .resize-container;
 
-  .label, .input, .help-icon, .message{
+  .label, .input, .help-icon, .overlay{
     float: left;
     display: block;
     height: $rowHeight;
@@ -30,13 +30,33 @@ form{
   }
 
   .help-icon{
-    width: $helpIconWidth;
+    width: $iconSize;
     text-align: center;
     font-size: 25px;
     color: rgba(0,0,0,0.1);
   }
-  .message{
-    width: calc(100% - #{$labelWidth + $inputWidth + $helpIconWidth});
+  .overlay{
+    width: calc(100% - #{$labelWidth + $inputWidth + $iconSize});
+    overflow: visible;
+    position: relative;
+    .icon{
+      position: absolute;
+      top: 0;
+      left: -$iconSize;
+      border: 1px solid black;
+      height: $iconSize;
+      width: $iconSize;
+
+      line-height: $iconSize - 2px;
+      text-align: center;
+      font-size: 25px;
+      color: rgba(0,0,0,0.1);
+    }
+    .message{
+      background-color: #008000;
+      height: 350px;
+      width: 100%;
+    }
   }
 
   .fieldset{

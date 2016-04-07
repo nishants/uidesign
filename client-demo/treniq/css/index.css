@@ -471,7 +471,7 @@ input {
 
 form {
   height: 40px; }
-  form .label, form > fieldset > label, form .input, form > fieldset > input, form .help-icon, form > fieldset > span, form .message {
+  form .label, form > fieldset > label, form .input, form > fieldset > input, form .help-icon, form > fieldset > span, form .overlay {
     float: left;
     display: block;
     height: 40px;
@@ -491,8 +491,25 @@ form {
     text-align: center;
     font-size: 25px;
     color: rgba(0, 0, 0, 0.1); }
-  form .message {
-    width: calc(100% - 550px); }
+  form .overlay {
+    width: calc(100% - 550px);
+    overflow: visible;
+    position: relative; }
+    form .overlay .icon {
+      position: absolute;
+      top: 0;
+      left: -50px;
+      border: 1px solid black;
+      height: 50px;
+      width: 50px;
+      line-height: 48px;
+      text-align: center;
+      font-size: 25px;
+      color: rgba(0, 0, 0, 0.1); }
+    form .overlay .message {
+      background-color: #008000;
+      height: 350px;
+      width: 100%; }
   form .fieldset, form > fieldset {
     width: 100%;
     box-sizing: border-box; }
