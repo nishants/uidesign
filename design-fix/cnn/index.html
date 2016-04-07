@@ -72,17 +72,20 @@
             $sticky             = $(sticky),
             $video              = $sticky.find(".video-wrapper").first(),
             video               = new StickyVideo($sticky, $video),
-            positionFromTop     = 70,
+            positionFromTop     = 60,
             topBar              = new TopBar($("#top-fixed-bar")),
+            collapseTopBarOffset= 10,
 
             applyScrollPosition = function () {
                 var bounds = sticky.getBoundingClientRect(),
-                    outViewed = bounds.top <= positionFromTop;
+                    outViewed = bounds.top <= positionFromTop,
+                    collapseTopBar = $(window).scrollTop() >  collapseTopBarOffset;
+
                 outViewed && video.stick();
                 outViewed || video.unstick();
 
-                outViewed && topBar.collapse();
-                outViewed || topBar.expand();
+                collapseTopBar && topBar.collapse();
+                collapseTopBar || topBar.expand();
 
             };
 
