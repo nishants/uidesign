@@ -40,8 +40,10 @@ $minNavigationWidth:  740px;
       height: $collapseLogoHeight;
       width:  $collapseLogoWidth;
       will-change: transform;
-      @include transition(transform, 2*$transitionTime, ease);
+      @include transition(transform, $transitionTime, ease);
       @include transformOrigin(0 0);
+      @include transitionDelay($transitionTime);
+
     }
     .navigation{
       @extend .resize-container;
