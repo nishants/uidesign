@@ -1,0 +1,61 @@
+$labelWidth     : 150px;
+$inputWidth     : 350px;
+$helpIconWidth  : 50px;
+$rowHeight      : 40px;
+
+$padding        : 10px;
+$borderRadius   : 5px;
+
+form{
+  height: $rowHeight;
+  @extend .resize-container;
+
+  .label, .input, .help-icon, .message{
+    float: left;
+    display: block;
+    height: $rowHeight;
+    line-height: $rowHeight - 2px;
+    box-sizing: border-box;
+  }
+  .label{
+    width: $labelWidth;
+    text-align: right;
+    padding-right: $padding;
+  }
+  .input{
+    width: $inputWidth;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: $borderRadius;
+    padding: 0px $padding;
+  }
+
+  .help-icon{
+    width: $helpIconWidth;
+    text-align: center;
+    font-size: 25px;
+    color: rgba(0,0,0,0.1);
+  }
+  .message{
+    width: calc(100% - #{$labelWidth + $inputWidth + $helpIconWidth});
+  }
+
+  .fieldset{
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  > fieldset{
+    @extend .fieldset;
+    > label {
+      @extend .label;
+    }
+    > input {
+      @extend .input;
+      outline: none;
+    }
+    > span  {
+      @extend .help-icon;
+    }
+  }
+
+}

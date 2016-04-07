@@ -28,6 +28,12 @@ input{
   border: none;
 }
 
+.resize-container:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
 @mixin transform( $property) {
   -webkit-transform: $property;
   -moz-transform: $property;

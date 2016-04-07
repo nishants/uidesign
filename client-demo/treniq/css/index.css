@@ -15,6 +15,11 @@ input {
   box-sizing: border-box;
   border: none; }
 
+.resize-container:after, form:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 #treniq {
   font-family: 'Roboto', sans-serif;
   font-family: 'Raleway', sans-serif;
@@ -464,13 +469,43 @@ input {
   -o-transform: translateX(-30vw);
   transform: translateX(-30vw); }
 
+form {
+  height: 40px; }
+  form .label, form > fieldset > label, form .input, form > fieldset > input, form .help-icon, form > fieldset > span, form .message {
+    float: left;
+    display: block;
+    height: 40px;
+    line-height: 38px;
+    box-sizing: border-box; }
+  form .label, form > fieldset > label {
+    width: 150px;
+    text-align: right;
+    padding-right: 10px; }
+  form .input, form > fieldset > input {
+    width: 350px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 0px 10px; }
+  form .help-icon, form > fieldset > span {
+    width: 50px;
+    text-align: center;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.1); }
+  form .message {
+    width: calc(100% - 550px); }
+  form .fieldset, form > fieldset {
+    width: 100%;
+    box-sizing: border-box; }
+  form > fieldset > input {
+    outline: none; }
+
 ul.undo-list, ul.deck {
   list-style: none;
   margin: 0px;
   padding: 0px;
   display: block; }
 
-.resize-container:after {
+.resize-container:after, form:after {
   content: "";
   display: table;
   clear: both; }
