@@ -12,7 +12,7 @@ $transitionDuration: 300ms;
   height: $videoHeight;
 
   .video-wrapper{
-    padding: $topPadding;
+    padding: $topPadding 0px;
     width: $videoWidth;
     height: $videoHeight;
     @include transition(transform, $transitionDuration, ease);

@@ -2,7 +2,7 @@
   "use strict"
   var leftOffset = function () {
         var collapseWidth     = 250,
-            initialLeftOffset = 10;
+            initialLeftOffset = 110;
         return $(window).width() - collapseWidth - initialLeftOffset;
       },
       StickyVideo = function ($container, $video) {
