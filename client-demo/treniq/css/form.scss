@@ -59,14 +59,14 @@ form{
       border-right: $triangleSize solid $overlayColor;
     }
     .message{
+      position: absolute;
+
       background-color: $overlayColor;
       color: $helpFontColor;
       border-radius: $borderRadius;
-      text-align: center;
-      padding: 0px $padding;
-      line-height: $rowHeight;
+      padding: $padding;
+      line-height: $padding*2;
       font-size: small;
-      display: inline-block;
     }
   }
 
