@@ -506,7 +506,11 @@ form {
     position: relative;
     left: -30px;
     pointer-events: none;
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transition: opacity 250ms ease;
+    -moz-transition: opacity 250ms ease;
+    -o-transition: opacity 250ms ease;
+    transition: opacity 250ms ease; }
     form .overlay .icon {
       position: absolute;
       top: 7.5px;

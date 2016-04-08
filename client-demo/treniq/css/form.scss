@@ -12,6 +12,13 @@ $helpFontSize   : 13px;
 
 $solidBorder    : 1px solid rgba(0,0,0,0.1);
 
+@mixin transition-f($property){
+  -webkit-transition: $property;
+  -moz-transition:    $property;
+  -o-transition:      $property;
+  transition:         $property;
+}
+
 form{
   height: $rowHeight;
   font-size: 14px;
@@ -62,6 +69,7 @@ form{
     left: -$iconSize + $padding;
     pointer-events: none;
     opacity: 0;
+    @include transition-f(opacity 250ms ease);
 
     .icon{
       position: absolute;
