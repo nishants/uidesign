@@ -14,6 +14,8 @@ $solidBorder    : 1px solid rgba(0,0,0,0.1);
 
 form{
   height: $rowHeight;
+  font-size: 14px;
+
   @extend .resize-container;
 
   .clickable{
@@ -64,7 +66,7 @@ form{
     .icon{
       position: absolute;
       top: $triangleSize;
-      left: -$triangleSize;
+      left: -$triangleSize + 1px;
       border-top: $triangleSize solid transparent;
       border-bottom: $triangleSize solid transparent;
       border-right: $triangleSize solid $overlayColor;

@@ -469,7 +469,8 @@ input {
   transform: translateX(-30vw); }
 
 form {
-  height: 40px; }
+  height: 40px;
+  font-size: 14px; }
   form .clickable {
     cursor: pointer; }
   form .label, form > fieldset > label, form .input, form > fieldset > input, form .help-icon, form > fieldset > span, form .overlay {
@@ -509,7 +510,7 @@ form {
     form .overlay .icon {
       position: absolute;
       top: 7.5px;
-      left: -7.5px;
+      left: -6.5px;
       border-top: 7.5px solid transparent;
       border-bottom: 7.5px solid transparent;
       border-right: 7.5px solid rgba(0, 0, 0, 0.7); }
