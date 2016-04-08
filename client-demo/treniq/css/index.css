@@ -484,7 +484,7 @@ form {
   form .input, form > fieldset > input {
     width: 350px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 0px 10px; }
   form .help-icon, form > fieldset > span {
     width: 50px;
@@ -506,18 +506,21 @@ form {
       left: -7.5px;
       border-top: 7.5px solid transparent;
       border-bottom: 7.5px solid transparent;
-      border-right: 7.5px solid rgba(0, 0, 0, 0.7);
-      display: none; }
+      border-right: 7.5px solid rgba(0, 0, 0, 0.7); }
     form .overlay .message {
       background-color: rgba(0, 0, 0, 0.7);
-      height: 350px;
-      width: 100%;
-      border-radius: 2px; }
+      color: rgba(255, 255, 255, 0.9);
+      border-radius: 5px;
+      text-align: center;
+      padding: 5px;
+      font-size: small; }
   form .fieldset, form > fieldset {
     width: 100%;
     box-sizing: border-box; }
-  form > fieldset > input {
-    outline: none; }
+  form > fieldset {
+    border: none; }
+    form > fieldset > input {
+      outline: none; }
 
 ul.undo-list, ul.deck {
   list-style: none;

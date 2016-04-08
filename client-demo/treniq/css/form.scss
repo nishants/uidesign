@@ -4,9 +4,11 @@ $iconSize       : 50px;
 $rowHeight      : 40px;
 
 $padding        : 10px;
-$borderRadius   : 2px;
+$borderRadius   : 5px;
 $triangleSize   : 7.5px;
 $overlayColor   : rgba(0,0,0,0.7);
+$helpFontColor  : rgba(255, 255, 255, 0.9);
+$helpFontSize   : 13px;
 
 form{
   height: $rowHeight;
@@ -55,13 +57,14 @@ form{
       border-top: $triangleSize solid transparent;
       border-bottom: $triangleSize solid transparent;
       border-right: $triangleSize solid $overlayColor;
-      display: none;
     }
     .message{
       background-color: $overlayColor;
-      height: 350px;
-      width: 100%;
+      color: $helpFontColor;
       border-radius: $borderRadius;
+      text-align: center;
+      padding: 5px;
+      font-size: small;
     }
   }
 
@@ -72,6 +75,7 @@ form{
 
   > fieldset{
     @extend .fieldset;
+    border: none;
     > label {
       @extend .label;
     }

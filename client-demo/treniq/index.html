@@ -107,7 +107,17 @@
                                     <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>
                                     <div class="overlay" ng-class="{'show' : __showOverlay}">
                                         <div class="icon"></div>
-                                        <div class="message"></div>
+                                        <div class="message">Some help message</div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
+                                    <label>Title</label>
+                                    <input>
+                                    <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>
+                                    <div class="overlay" ng-class="{'show' : __showOverlay}">
+                                        <div class="icon"></div>
+                                        <div class="message">Some help message</div>
                                     </div>
                                 </fieldset>
 
