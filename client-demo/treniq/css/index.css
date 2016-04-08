@@ -575,8 +575,7 @@ form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input
       font-size: 20px;
       color: rgba(0, 0, 0, 0.1); }
     form.sourcing-request .input.urls .add .icon:hover, form.sourcing-request form > fieldset > input.urls .add .icon:hover, form.sourcing-request .input.urls .remove .icon:hover, form.sourcing-request form > fieldset > input.urls .remove .icon:hover {
-      color: rgba(0, 0, 0, 0.5);
-      border-left: 1px solid rgba(0, 0, 0, 0.1); }
+      color: rgba(0, 0, 0, 0.5); }
     form.sourcing-request .input.urls .add input, form.sourcing-request form > fieldset > input.urls .add input, form.sourcing-request .input.urls .remove input, form.sourcing-request form > fieldset > input.urls .remove input {
       float: left;
       padding: 10px;
@@ -588,6 +587,11 @@ form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input
     position: relative; }
     form.sourcing-request .input.urls .remove input, form.sourcing-request form > fieldset > input.urls .remove input {
       color: rgba(0, 0, 0, 0.5); }
+    form.sourcing-request .input.urls .remove .icon, form.sourcing-request form > fieldset > input.urls .remove .icon {
+      color: rgba(255, 0, 0, 0.05); }
+    form.sourcing-request .input.urls .remove .icon:hover, form.sourcing-request form > fieldset > input.urls .remove .icon:hover {
+      color: rgba(255, 0, 0, 0.5);
+      border-left: 1px solid rgba(0, 0, 0, 0.1); }
     form.sourcing-request .input.urls .remove .preview, form.sourcing-request form > fieldset > input.urls .remove .preview {
       position: absolute;
       display: block;
