@@ -44,7 +44,7 @@ form{
   .help-icon{
     width: $iconSize;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     color: rgba(0,0,0,0.1);
   }
   .overlay.show{
@@ -164,7 +164,19 @@ form.sourcing-request{
       border-bottom: $solidBorder;
     }
     .remove{
+      position: relative;
       input{color: rgba(0,0,0,0.5);}
+      .preview{
+        position: absolute;
+        display: block;
+        right: -$iconSize;
+        height: $rowHeight;
+        width: $iconSize;
+        line-height: $rowHeight;
+        text-align: center;
+        color: rgba(0,0,0,0.1);
+        text-decoration: none;
+      }
     }
   }
 }

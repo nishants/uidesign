@@ -101,15 +101,6 @@
                     <div class="page">
                         <div class="content">
                             <form class="sourcing-request">
-                                <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
-                                    <label>Title</label>
-                                    <input>
-                                    <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>
-                                    <div class="overlay" ng-class="{'show' : __showOverlay}">
-                                        <div class="icon"></div>
-                                        <div class="message">Some help message</div>
-                                    </div>
-                                </fieldset>
 
                                 <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
                                     <label>Title</label>
@@ -134,6 +125,7 @@
                                         <div class="remove">
                                             <input disabled="disabled" value="https://www.treniq.com/">
                                             <span class="icon fa fa-remove"></span>
+                                            <a class="preview fa fa-eye" href="https://www.treniq.com/" target="_blank"></a>
                                         </div>
                                     </div>
                                     <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>

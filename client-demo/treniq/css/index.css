@@ -493,7 +493,7 @@ form {
   form .help-icon, form > fieldset > span {
     width: 50px;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     color: rgba(0, 0, 0, 0.1); }
   form .overlay.show {
     opacity: 1; }
@@ -572,8 +572,20 @@ form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input
       width: 299px; }
   form.sourcing-request .input.urls .add, form.sourcing-request form > fieldset > input.urls .add {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-  form.sourcing-request .input.urls .remove input, form.sourcing-request form > fieldset > input.urls .remove input {
-    color: rgba(0, 0, 0, 0.5); }
+  form.sourcing-request .input.urls .remove, form.sourcing-request form > fieldset > input.urls .remove {
+    position: relative; }
+    form.sourcing-request .input.urls .remove input, form.sourcing-request form > fieldset > input.urls .remove input {
+      color: rgba(0, 0, 0, 0.5); }
+    form.sourcing-request .input.urls .remove .preview, form.sourcing-request form > fieldset > input.urls .remove .preview {
+      position: absolute;
+      display: block;
+      right: -50px;
+      height: 40px;
+      width: 50px;
+      line-height: 40px;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.1);
+      text-decoration: none; }
 
 ul.undo-list, ul.deck {
   list-style: none;
