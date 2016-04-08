@@ -4,9 +4,9 @@ $iconSize       : 40px;
 $rowHeight      : 40px;
 
 $padding        : 10px;
-$borderRadius   : 2px;
+$borderRadius   : 4px;
 $triangleSize   : 7.5px;
-$overlayColor   : rgba(0,0,0,0.7);
+$overlayColor   : #4C4C4C;
 $helpFontColor  : rgba(255, 255, 255, 0.9);
 $helpFontSize   : 13px;
 
@@ -66,7 +66,7 @@ form{
     .icon{
       position: absolute;
       top: $triangleSize;
-      left: -$triangleSize + 1px;
+      left: -$triangleSize + 2px;
       border-top: $triangleSize solid transparent;
       border-bottom: $triangleSize solid transparent;
       border-right: $triangleSize solid $overlayColor;
@@ -86,6 +86,8 @@ form{
   .fieldset{
     width: 100%;
     box-sizing: border-box;
+    padding: 0px;
+    padding-bottom: $padding;
   }
 
   > fieldset{
@@ -153,7 +155,6 @@ form.sourcing-request{
     .add, .remove{
       @extend .resize-container;
       padding-right: 0px;
-      margin-bottom: 1px;
 
       .icon{
         float: right;
@@ -180,9 +181,15 @@ form.sourcing-request{
     }
     .remove{
       position: relative;
-      input{color: rgba(0,0,0,0.5);}
+      background-color: rgb(243, 243, 243);
+
+      input{
+        color: rgba(0,0,0,0.5);
+        background-color: rgba(0,0,0,0);
+      }
       .icon{
         color: rgba(255,0,0,0.05);
+        background-color: rgba(0,0,0,0);
       }
       .icon:hover{
         color: rgba(255,0,0,0.5);
