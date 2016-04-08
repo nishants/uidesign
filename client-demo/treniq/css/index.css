@@ -484,7 +484,7 @@ form {
   form .input, form > fieldset > input {
     width: 350px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 0px 10px; }
   form .help-icon, form > fieldset > span {
     width: 50px;
@@ -497,19 +497,22 @@ form {
     width: calc(100% - 550px);
     overflow: visible;
     position: relative;
+    left: -40px;
+    pointer-events: none;
     opacity: 0; }
     form .overlay .icon {
       position: absolute;
-      top: 0;
-      left: -5px;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-right: 10px solid green; }
+      top: 7.5px;
+      left: -7.5px;
+      border-top: 7.5px solid transparent;
+      border-bottom: 7.5px solid transparent;
+      border-right: 7.5px solid rgba(0, 0, 0, 0.7);
+      display: none; }
     form .overlay .message {
-      background-color: #008000;
+      background-color: rgba(0, 0, 0, 0.7);
       height: 350px;
       width: 100%;
-      border-radius: 5px; }
+      border-radius: 2px; }
   form .fieldset, form > fieldset {
     width: 100%;
     box-sizing: border-box; }
