@@ -544,7 +544,16 @@ form.sourcing-request .input.images, form.sourcing-request form > fieldset > inp
       width: 100%;
       height: 100%; }
   form.sourcing-request .input.images .added, form.sourcing-request form > fieldset > input.images .added {
+    position: relative;
     border: 1px solid rgba(0, 0, 0, 0.1); }
+    form.sourcing-request .input.images .added .icon, form.sourcing-request form > fieldset > input.images .added .icon {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 20px;
+      color: rgba(255, 0, 0, 0.05); }
+    form.sourcing-request .input.images .added .icon:hover, form.sourcing-request form > fieldset > input.images .added .icon:hover {
+      color: rgba(255, 0, 0, 0.5); }
   form.sourcing-request .input.images .upload, form.sourcing-request form > fieldset > input.images .upload {
     line-height: 100px;
     text-align: center;

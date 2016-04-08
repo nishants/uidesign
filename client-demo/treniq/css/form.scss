@@ -124,7 +124,18 @@ form.sourcing-request{
       border: $solidBorder;
     }
     .added{
+      position: relative;
       border: $solidBorder;
+      .icon{
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        font-size: 20px;
+        color: rgba(255,0,0,0.05);
+      }
+      .icon:hover{
+        color: rgba(255, 0, 0, 0.5);
+      }
     }
 
     .upload{
