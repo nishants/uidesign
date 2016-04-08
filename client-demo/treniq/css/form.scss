@@ -163,5 +163,8 @@ form.sourcing-request{
     .add{
       border-bottom: $solidBorder;
     }
+    .remove{
+      input{color: rgba(0,0,0,0.5);}
+    }
   }
 }
