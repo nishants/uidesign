@@ -512,8 +512,10 @@ form {
       color: rgba(255, 255, 255, 0.9);
       border-radius: 5px;
       text-align: center;
-      padding: 5px;
-      font-size: small; }
+      padding: 0px 10px;
+      line-height: 40px;
+      font-size: small;
+      display: inline-block; }
   form .fieldset, form > fieldset {
     width: 100%;
     box-sizing: border-box; }

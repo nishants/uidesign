@@ -63,8 +63,10 @@ form{
       color: $helpFontColor;
       border-radius: $borderRadius;
       text-align: center;
-      padding: 5px;
+      padding: 0px $padding;
+      line-height: $rowHeight;
       font-size: small;
+      display: inline-block;
     }
   }
 
