@@ -16,6 +16,9 @@ form{
   height: $rowHeight;
   @extend .resize-container;
 
+  .clickable{
+    cursor: pointer;
+  }
   .label, .input, .help-icon, .overlay{
     float: left;
     display: block;

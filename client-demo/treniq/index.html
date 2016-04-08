@@ -115,20 +115,20 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
+                                <fieldset class="fieldset" >
                                     <label>Reference URLs</label>
                                     <div class="input urls">
                                         <div class="add">
                                             <input >
-                                            <span class="icon fa fa-plus"></span>
+                                            <span class="icon clickable fa fa-plus"></span>
                                         </div>
                                         <div class="remove">
                                             <input disabled="disabled" value="https://www.treniq.com/">
-                                            <span class="icon fa fa-remove"></span>
-                                            <a class="preview fa fa-eye" href="https://www.treniq.com/" target="_blank"></a>
+                                            <span class="icon clickable fa fa-remove"></span>
+                                            <a class="preview clickable fa fa-eye" href="https://www.treniq.com/" target="_blank"></a>
                                         </div>
                                     </div>
-                                    <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>
+                                    <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true" ng-mouseleave="__showOverlay = false"></span>
                                     <div class="overlay" ng-class="{'show' : __showOverlay}">
                                         <div class="icon"></div>
                                         <div class="message">You asked, Font Awesome delivers with 20 shiny new icons in version 4.5. Want to request new icons? Here's how. Need vectors or want to use on the desktop? Check the cheatsheet.
@@ -139,7 +139,7 @@
                                 <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
                                     <label>Reference Images</label>
                                     <div class="input images">
-                                        <div class="upload">+Upload</div>
+                                        <div class="upload clickable">+Upload</div>
                                         <div class="added"><img src="../../images/wall-lamp.jpg"></div>
                                         <div class="added"><img src="images/seed.png"></div>
                                         <div class="added"><img src="../../images/wall-lamp.jpg"></div>

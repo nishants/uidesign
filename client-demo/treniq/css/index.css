@@ -470,6 +470,8 @@ input {
 
 form {
   height: 40px; }
+  form .clickable {
+    cursor: pointer; }
   form .label, form > fieldset > label, form .input, form > fieldset > input, form .help-icon, form > fieldset > span, form .overlay {
     float: left;
     display: block;
