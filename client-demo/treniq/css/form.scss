@@ -10,6 +10,8 @@ $overlayColor   : rgba(0,0,0,0.7);
 $helpFontColor  : rgba(255, 255, 255, 0.9);
 $helpFontSize   : 13px;
 
+$solidBorder    : 1px solid rgba(0,0,0,0.1);
+
 form{
   height: $rowHeight;
   @extend .resize-container;
@@ -28,7 +30,7 @@ form{
   }
   .input{
     width: $inputWidth;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: $solidBorder;
     border-radius: $borderRadius;
     input{
       width: 100%;
@@ -97,4 +99,37 @@ form{
     }
   }
 
+}
+
+form.sourcing-request{
+  .input.urls{
+    height: auto;
+    padding: 0px;
+    .add, .remove{
+      @extend .resize-container;
+      padding-right: 0px;
+      margin-bottom: 1px;
+
+      .icon{
+        float: right;
+        width: $iconSize - 1px;
+        text-align: center;
+        padding-right: $padding;
+        height: $rowHeight - 2px;
+        line-height: $rowHeight;
+        font-size: 20px;
+        color: rgba(0,0,0,0.1);
+      }
+
+      input{
+        float: left;
+        padding:$padding;
+        height: $rowHeight - 2px;
+        width: $inputWidth - $iconSize - 1px;
+      }
+    }
+    .add{
+      border-bottom: $solidBorder;
+    }
+  }
 }

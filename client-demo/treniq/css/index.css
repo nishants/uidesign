@@ -15,7 +15,7 @@ input {
   box-sizing: border-box;
   border: none; }
 
-.resize-container:after, form:after {
+.resize-container:after, form:after, form.sourcing-request .input.urls .add:after, form.sourcing-request form > fieldset > input.urls .add:after, form.sourcing-request .input.urls .remove:after, form.sourcing-request form > fieldset > input.urls .remove:after {
   content: "";
   display: table;
   clear: both; }
@@ -529,13 +529,36 @@ form {
       outline: none;
       padding: 0px 10px; }
 
+form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input.urls {
+  height: auto;
+  padding: 0px; }
+  form.sourcing-request .input.urls .add, form.sourcing-request form > fieldset > input.urls .add, form.sourcing-request .input.urls .remove, form.sourcing-request form > fieldset > input.urls .remove {
+    padding-right: 0px;
+    margin-bottom: 1px; }
+    form.sourcing-request .input.urls .add .icon, form.sourcing-request form > fieldset > input.urls .add .icon, form.sourcing-request .input.urls .remove .icon, form.sourcing-request form > fieldset > input.urls .remove .icon {
+      float: right;
+      width: 49px;
+      text-align: center;
+      padding-right: 10px;
+      height: 38px;
+      line-height: 40px;
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.1); }
+    form.sourcing-request .input.urls .add input, form.sourcing-request form > fieldset > input.urls .add input, form.sourcing-request .input.urls .remove input, form.sourcing-request form > fieldset > input.urls .remove input {
+      float: left;
+      padding: 10px;
+      height: 38px;
+      width: 299px; }
+  form.sourcing-request .input.urls .add, form.sourcing-request form > fieldset > input.urls .add {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
 ul.undo-list, ul.deck {
   list-style: none;
   margin: 0px;
   padding: 0px;
   display: block; }
 
-.resize-container:after, form:after {
+.resize-container:after, form:after, form.sourcing-request .input.urls .add:after, form.sourcing-request form > fieldset > input.urls .add:after, form.sourcing-request .input.urls .remove:after, form.sourcing-request form > fieldset > input.urls .remove:after {
   content: "";
   display: table;
   clear: both; }
