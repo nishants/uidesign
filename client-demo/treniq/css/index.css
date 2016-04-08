@@ -502,13 +502,21 @@ form {
     line-height: 40px;
     background-color: rgba(0, 0, 0, 0.07);
     border-radius: 50%;
+    -webkit-transform-origin: 100% 50%;
+    -moz-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
     -webkit-transform: scale(0.7);
     -moz-transform: scale(0.7);
     -ms-transform: scale(0.7);
     -o-transform: scale(0.7);
     transform: scale(0.7); }
   form .overlay.show {
-    opacity: 1; }
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px); }
   form .overlay {
     width: calc(100% - 540px);
     overflow: visible;
@@ -516,10 +524,15 @@ form {
     left: -30px;
     pointer-events: none;
     opacity: 0;
-    -webkit-transition: opacity 250ms ease;
-    -moz-transition: opacity 250ms ease;
-    -o-transition: opacity 250ms ease;
-    transition: opacity 250ms ease; }
+    -webkit-transition: opacity 250ms ease, transform 250ms ease;
+    -moz-transition: opacity 250ms ease, transform 250ms ease;
+    -o-transition: opacity 250ms ease, transform 250ms ease;
+    transition: opacity 250ms ease, transform 250ms ease;
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    -ms-transform: translateX(-5px);
+    -o-transform: translateX(-5px);
+    transform: translateX(-5px); }
     form .overlay .icon {
       position: absolute;
       top: 7.5px;
