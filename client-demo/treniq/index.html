@@ -101,33 +101,16 @@
                     <div class="page">
                         <div class="content">
                             <form>
-                                <fieldset class="fieldset">
+                                <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
                                     <label>Title</label>
                                     <input>
-                                    <span class="help-icon fa fa-question"></span>
-                                    <div class="overlay">
+                                    <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>
+                                    <div class="overlay" ng-class="{'show' : __showOverlay}">
                                         <div class="icon"></div>
                                         <div class="message"></div>
                                     </div>
                                 </fieldset>
-                                <fieldset class="fieldset">
-                                    <label>Title</label>
-                                    <input>
-                                    <span class="help-icon fa fa-question"></span>
-                                    <div class="overlay">
-                                        <div class="icon"></div>
-                                        <div class="message"></div>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset">
-                                    <label>Title</label>
-                                    <input>
-                                    <span class="help-icon fa fa-question"></span>
-                                    <div class="overlay">
-                                        <div class="icon"></div>
-                                        <div class="message"></div>
-                                    </div>
-                                </fieldset>
+
                             </form>
 
                         </div>
@@ -284,6 +267,7 @@
                 navigating();
             });
         };
+
         $(document).ready(function(){
             init();
         });

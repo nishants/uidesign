@@ -17,4 +17,16 @@
   }
   ]);
 
+  treniq.app.directive("fieldset" , [function(){
+
+    return {
+      restrict: "C",
+      transclude: false,
+      scope: true,
+      link: function(scope, element){
+      }
+    };
+  }
+  ]);
+
 }).call(this);
