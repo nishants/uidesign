@@ -57,7 +57,12 @@ form{
     width: $iconSize;
     text-align: center;
     font-size: 20px;
-    color: rgba(0,0,0,0.1);
+    color: rgba(255,255,255,0.9);
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(0,0,0,0.07);
+    border-radius: 50%;
+    @include transform(scale(0.7));
   }
   .overlay.show{
     opacity: 1;
