@@ -1,6 +1,6 @@
 $labelWidth     : 150px;
 $inputWidth     : 350px;
-$iconSize       : 50px;
+$iconSize       : 40px;
 $rowHeight      : 40px;
 
 $padding        : 10px;
@@ -179,6 +179,7 @@ form.sourcing-request{
         text-align: center;
         color: rgba(0,0,0,0.1);
         text-decoration: none;
+        font-size: small;
       }
     }
   }
