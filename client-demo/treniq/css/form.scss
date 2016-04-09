@@ -130,41 +130,45 @@ $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($th
 
 form.sourcing-request{
   .input.images{
+    @extend .resize-container;
     height: auto;
     padding: $imageMargin;
-    .upload, .added{
+    .image-card{
+      position: relative;
+      float: left;
       height: $thumbnailSize;
       width: $thumbnailSize;
-      display: block;
-      float: left;
+      overflow: hidden;
+      border: $solidBorder;
       margin: $imageMargin;
+      box-sizing: border-box;
+
       img{
-        width: 100%;
-        height: 100%;
+        height: $thumbnailSize;
+        width: $thumbnailSize;
+        display: block;
       }
-      border: $solidBorder;
-    }
-    .added{
-      position: relative;
-      border: $solidBorder;
-      .icon{
+      .icon.remove{
         position: absolute;
-        bottom: 5px;
-        right: 5px;
-        font-size: 20px;
-        color: rgba(255,0,0,0.05);
-      }
-      .icon:hover{
-        color: rgba(255, 0, 0, 0.5);
+        top: 0;
+        right: 0;
+        margin: 5px;
+        color: rgba(255, 0, 0, 0.57);
+        opacity: 0.1
       }
     }
 
-    .upload{
+    .image-card.upload{
       line-height: $thumbnailSize;
       text-align: center;
       color: rgba(0,0,0,0.5);
       background-color: rgba(0,0,0,0.05);
-      border-radius: $borderRadius;
+    }
+
+    .image-card:hover{
+      .icon.remove{
+        opacity: 1;
+      }
     }
   }
 

@@ -15,7 +15,7 @@ input {
   box-sizing: border-box;
   border: none; }
 
-.resize-container:after, form:after, form.sourcing-request .input.urls .add:after, form.sourcing-request form > fieldset > input.urls .add:after, form.sourcing-request .input.urls .remove:after, form.sourcing-request form > fieldset > input.urls .remove:after {
+.resize-container:after, form:after, form.sourcing-request .input.images:after, form.sourcing-request form > fieldset > input.images:after, form.sourcing-request .input.urls .add:after, form.sourcing-request form > fieldset > input.urls .add:after, form.sourcing-request .input.urls .remove:after, form.sourcing-request form > fieldset > input.urls .remove:after {
   content: "";
   display: table;
   clear: both; }
@@ -562,33 +562,33 @@ form {
 form.sourcing-request .input.images, form.sourcing-request form > fieldset > input.images {
   height: auto;
   padding: 6px; }
-  form.sourcing-request .input.images .upload, form.sourcing-request form > fieldset > input.images .upload, form.sourcing-request .input.images .added, form.sourcing-request form > fieldset > input.images .added {
+  form.sourcing-request .input.images .image-card, form.sourcing-request form > fieldset > input.images .image-card {
+    position: relative;
+    float: left;
     height: 100px;
     width: 100px;
-    display: block;
-    float: left;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     margin: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.1); }
-    form.sourcing-request .input.images .upload img, form.sourcing-request form > fieldset > input.images .upload img, form.sourcing-request .input.images .added img, form.sourcing-request form > fieldset > input.images .added img {
-      width: 100%;
-      height: 100%; }
-  form.sourcing-request .input.images .added, form.sourcing-request form > fieldset > input.images .added {
-    position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.1); }
-    form.sourcing-request .input.images .added .icon, form.sourcing-request form > fieldset > input.images .added .icon {
+    box-sizing: border-box; }
+    form.sourcing-request .input.images .image-card img, form.sourcing-request form > fieldset > input.images .image-card img {
+      height: 100px;
+      width: 100px;
+      display: block; }
+    form.sourcing-request .input.images .image-card .icon.remove, form.sourcing-request form > fieldset > input.images .image-card .icon.remove {
       position: absolute;
-      bottom: 5px;
-      right: 5px;
-      font-size: 20px;
-      color: rgba(255, 0, 0, 0.05); }
-    form.sourcing-request .input.images .added .icon:hover, form.sourcing-request form > fieldset > input.images .added .icon:hover {
-      color: rgba(255, 0, 0, 0.5); }
-  form.sourcing-request .input.images .upload, form.sourcing-request form > fieldset > input.images .upload {
+      top: 0;
+      right: 0;
+      margin: 5px;
+      color: rgba(255, 0, 0, 0.57);
+      opacity: 0.1; }
+  form.sourcing-request .input.images .image-card.upload, form.sourcing-request form > fieldset > input.images .image-card.upload {
     line-height: 100px;
     text-align: center;
     color: rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 4px; }
+    background-color: rgba(0, 0, 0, 0.05); }
+  form.sourcing-request .input.images .image-card:hover .icon.remove, form.sourcing-request form > fieldset > input.images .image-card:hover .icon.remove {
+    opacity: 1; }
 form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input.urls {
   height: auto;
   padding: 0px; }
@@ -630,7 +630,7 @@ ul.undo-list, ul.deck {
   padding: 0px;
   display: block; }
 
-.resize-container:after, form:after, form.sourcing-request .input.urls .add:after, form.sourcing-request form > fieldset > input.urls .add:after, form.sourcing-request .input.urls .remove:after, form.sourcing-request form > fieldset > input.urls .remove:after {
+.resize-container:after, form:after, form.sourcing-request .input.images:after, form.sourcing-request form > fieldset > input.images:after, form.sourcing-request .input.urls .add:after, form.sourcing-request form > fieldset > input.urls .add:after, form.sourcing-request .input.urls .remove:after, form.sourcing-request form > fieldset > input.urls .remove:after {
   content: "";
   display: table;
   clear: both; }
