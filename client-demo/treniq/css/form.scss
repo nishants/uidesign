@@ -24,7 +24,7 @@ $mobileAt       : 650px;
 form{
   height: $rowHeight;
   font-size: 14px;
-  min-width: 400px;
+  min-width: $inputWidth + $iconSize;
 
   @extend .resize-container;
 

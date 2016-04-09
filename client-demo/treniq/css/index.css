@@ -471,7 +471,7 @@ input {
 form {
   height: 40px;
   font-size: 14px;
-  min-width: 400px; }
+  min-width: 390px; }
   form .clickable {
     cursor: pointer; }
   form .label, form > fieldset > label, form .input, form > fieldset > input, form .help-icon, form > fieldset > span, form .overlay {
