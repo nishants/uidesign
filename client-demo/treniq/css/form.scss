@@ -202,9 +202,10 @@ form.sourcing-request{
       position: relative;
       background-color: rgb(243, 243, 243);
 
-      input{
+      a{
         color: rgba(0,0,0,0.5);
         background-color: rgba(0,0,0,0);
+        padding: $padding;
       }
       .icon{
         color: rgba(255,0,0,0.05);

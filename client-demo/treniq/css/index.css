@@ -614,9 +614,10 @@ form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input
   form.sourcing-request .input.urls .remove, form.sourcing-request form > fieldset > input.urls .remove {
     position: relative;
     background-color: #f3f3f3; }
-    form.sourcing-request .input.urls .remove input, form.sourcing-request form > fieldset > input.urls .remove input {
+    form.sourcing-request .input.urls .remove a, form.sourcing-request form > fieldset > input.urls .remove a {
       color: rgba(0, 0, 0, 0.5);
-      background-color: transparent; }
+      background-color: transparent;
+      padding: 10px; }
     form.sourcing-request .input.urls .remove .icon, form.sourcing-request form > fieldset > input.urls .remove .icon {
       color: rgba(255, 0, 0, 0.05);
       background-color: transparent; }
