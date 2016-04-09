@@ -560,13 +560,14 @@ form {
       padding: 0px 10px; }
 
 form.sourcing-request .input.images, form.sourcing-request form > fieldset > input.images {
-  height: auto; }
+  height: auto;
+  padding: 6px; }
   form.sourcing-request .input.images .upload, form.sourcing-request form > fieldset > input.images .upload, form.sourcing-request .input.images .added, form.sourcing-request form > fieldset > input.images .added {
     height: 100px;
     width: 100px;
     display: block;
     float: left;
-    margin: 8px;
+    margin: 6px;
     border: 1px solid rgba(0, 0, 0, 0.1); }
     form.sourcing-request .input.images .upload img, form.sourcing-request form > fieldset > input.images .upload img, form.sourcing-request .input.images .added img, form.sourcing-request form > fieldset > input.images .added img {
       width: 100%;

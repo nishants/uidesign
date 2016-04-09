@@ -124,17 +124,20 @@ form{
 
 }
 
-$thumbnailSize : 100px;
+$thumbnailSize    : 100px;
+$thumbnailPerRow  : 3;
+$imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($thumbnailPerRow * 2 + 2));
 
 form.sourcing-request{
   .input.images{
     height: auto;
+    padding: $imageMargin;
     .upload, .added{
       height: $thumbnailSize;
       width: $thumbnailSize;
       display: block;
       float: left;
-      margin: 8px;
+      margin: $imageMargin;
       img{
         width: 100%;
         height: 100%;
