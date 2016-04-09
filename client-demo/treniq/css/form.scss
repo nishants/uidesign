@@ -214,18 +214,6 @@ form.sourcing-request{
       .icon:hover{
         color: rgba(255,0,0,0.5);
       }
-      .preview{
-        position: absolute;
-        display: block;
-        right: -$iconSize;
-        height: $rowHeight;
-        width: $iconSize;
-        line-height: $rowHeight;
-        text-align: center;
-        color: rgba(0,0,0,0.1);
-        text-decoration: none;
-        font-size: small;
-      }
     }
   }
 }

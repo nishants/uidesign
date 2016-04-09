@@ -115,7 +115,7 @@
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="fieldset" >
+                                <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
                                     <label>Reference URLs</label>
                                     <div class="input urls">
                                         <div class="add">
@@ -127,7 +127,7 @@
                                             <span class="icon clickable fa fa-remove"></span>
                                         </div>
                                     </div>
-                                    <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true" ng-mouseleave="__showOverlay = false"></span>
+                                    <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>
                                     <div class="overlay" ng-class="{'show' : __showOverlay}">
                                         <div class="icon"></div>
                                         <div class="message">You asked, Font Awesome delivers with 20 shiny new icons in version 4.5. Want to request new icons? Here's how. Need vectors or want to use on the desktop? Check the cheatsheet.

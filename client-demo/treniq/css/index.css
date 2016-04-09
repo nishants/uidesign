@@ -623,17 +623,6 @@ form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input
       background-color: transparent; }
     form.sourcing-request .input.urls .remove .icon:hover, form.sourcing-request form > fieldset > input.urls .remove .icon:hover {
       color: rgba(255, 0, 0, 0.5); }
-    form.sourcing-request .input.urls .remove .preview, form.sourcing-request form > fieldset > input.urls .remove .preview {
-      position: absolute;
-      display: block;
-      right: -40px;
-      height: 40px;
-      width: 40px;
-      line-height: 40px;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      font-size: small; }
 
 ul.undo-list, ul.deck {
   list-style: none;
