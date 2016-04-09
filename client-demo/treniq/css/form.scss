@@ -76,7 +76,7 @@ form{
     left: -$iconSize + $padding;
     pointer-events: none;
     opacity: 0;
-    @include transition-f(#{opacity 250ms ease, transform 250ms ease});
+    @include transition-f(#{opacity 500ms ease, transform 250ms ease});
     @include transform(translateX(-5px));
 
     .icon{
