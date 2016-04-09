@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+
+    <style>
+        /* this style applies to loader while app css is loading*/
+        .splash.page{
+            position: fixed;
+            top:0px;
+            left:0px;
+            z-index: 9999;
+
+            height: 100vh;
+            width: 100vw;
+        }
+        .splash.page > .content{}
+        .splash.page > .content > h1, .splash.page > .content > h5{
+            margin: 0 auto;
+        }
+        .splash.page > .content{
+            background-color: black;
+            color: white;
+            text-align : center;
+            height: 100%;
+            width: 100%;
+        }
+
+        #copyright{
+            text-align: center;
+        }
+        body{
+            height: 500vh;;
+        }
+    </style>
+
+</head>
+
+<body ng-app="treniq">
+    <form class="sourcing-request">
+        <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
+            <label>Title</label>
+            <div class="input">
+                <input>
+            </div>
+            <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>
+            <div class="overlay" ng-class="{'show' : __showOverlay}">
+                <div class="icon"></div>
+                <div class="message">You asked, Font Awesome delivers with 20 shiny new icons in version 4.5. Want to request new icons? Here's how. Need vectors or want to use on the desktop? Check the cheatsheet.
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
+            <label>Reference URLs</label>
+            <div class="input urls">
+                <div class="add">
+                    <input >
+                    <span class="icon clickable fa fa-plus"></span>
+                </div>
+                <div class="remove">
+                    <a href="https://www.treniq.com/" target="_blank">https://www.treniq.com/</a>
+                    <span class="icon clickable fa fa-remove"></span>
+                </div>
+            </div>
+            <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>
+            <div class="overlay" ng-class="{'show' : __showOverlay}">
+                <div class="icon"></div>
+                <div class="message">You asked, Font Awesome delivers with 20 shiny new icons in version 4.5. Want to request new icons? Here's how. Need vectors or want to use on the desktop? Check the cheatsheet.
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
+            <label>Reference Images</label>
+            <div class="input images">
+                <div class="upload clickable">+Upload</div>
+                <div class="added"><img src="../../../images/wall-lamp.jpg">  <div class="icon clickable fa fa-remove"></div> </div>
+                <div class="added"><img src="../images/seed.png">             <div class="icon clickable fa fa-remove"></div> </div>
+                <div class="added"><img src="../../../images/wall-lamp.jpg">  <div class="icon clickable fa fa-remove"></div> </div>
+                <div class="added"><img src="../images/seed.png">             <div class="icon clickable fa fa-remove"></div> </div>
+                <div class="added"><img src="../../../images/wall-lamp.jpg">  <div class="icon clickable fa fa-remove"></div> </div>
+                <div class="added"><img src="../images/seed.png">             <div class="icon clickable fa fa-remove"></div> </div>
+            </div>
+            <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true"></span>
+            <div class="overlay" ng-class="{'show' : __showOverlay}">
+                <div class="icon"></div>
+                <div class="message">You asked, Font Awesome delivers with 20 shiny new icons in version 4.5. Want to request new icons? Here's how. Need vectors or want to use on the desktop? Check the cheatsheet.
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <script src="../../../lib/jquery-2.1.4.min.js"></script>
+    <script src="../../../lib/angular-1.4.3.js"></script>
+
+    <script>
+        angular.module("treniq", []).directive("fieldset" , [function(){
+            return {
+                restrict: "C",
+                transclude: false,
+                scope: true,
+                link: function(scope, element){
+                }
+            };
+        }
+        ])
+    </script>
+
+</body>
+</html>
