@@ -12,6 +12,8 @@ $helpFontSize   : 13px;
 
 $solidBorder    : 1px solid rgba(0,0,0,0.1);
 
+$mobileAt       : 650px;
+
 @mixin transition-f($property){
   -webkit-transition: $property;
   -moz-transition:    $property;
@@ -70,6 +72,7 @@ form{
     @include transform(translateX(0px));
   }
   .overlay{
+    z-index: 1;
     width: calc(100% - #{$labelWidth + $inputWidth + $iconSize});
     overflow: visible;
     position: relative;
@@ -124,3 +127,33 @@ form{
 
 }
 
+@media (max-width:$mobileAt){
+  .fieldset{
+    padding-bottom: 20px;
+    position: relative;
+    .label{
+      width: $inputWidth;
+      text-align: left;
+      padding-left: 5px;
+      padding-top: 5px;
+    }
+    .overlay{
+      width: $inputWidth;
+      position: absolute;
+      left: $iconSize - $padding;
+      top: 2 *$rowHeight + $padding - 5px;
+      bottom: 40px;
+      @include transform(translateY(-5px));
+
+      .icon{
+        top: -$padding;
+        left: 330px;
+        transform: rotate(90deg);
+      }
+    }
+    .overlay.show{
+      opacity: 1;
+      @include transform(translateY(0px));
+    }
+  }
+}

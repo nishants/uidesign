@@ -518,6 +518,7 @@ form {
     -o-transform: translateX(0px);
     transform: translateX(0px); }
   form .overlay {
+    z-index: 1;
     width: calc(100% - 540px);
     overflow: visible;
     position: relative;
@@ -559,6 +560,37 @@ form {
       outline: none;
       padding: 0px 10px; }
 
+@media (max-width: 650px) {
+  .fieldset, form > fieldset {
+    padding-bottom: 20px;
+    position: relative; }
+    .fieldset .label, form > fieldset .label, .fieldset form > fieldset > label, form > fieldset > label {
+      width: 350px;
+      text-align: left;
+      padding-left: 5px;
+      padding-top: 5px; }
+    .fieldset .overlay, form > fieldset .overlay {
+      width: 350px;
+      position: absolute;
+      left: 30px;
+      top: 85px;
+      bottom: 40px;
+      -webkit-transform: translateY(-5px);
+      -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      -o-transform: translateY(-5px);
+      transform: translateY(-5px); }
+      .fieldset .overlay .icon, form > fieldset .overlay .icon {
+        top: -10px;
+        left: 330px;
+        transform: rotate(90deg); }
+    .fieldset .overlay.show, form > fieldset .overlay.show {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+      -o-transform: translateY(0px);
+      transform: translateY(0px); } }
 form.sourcing-request .input.images, form.sourcing-request form > fieldset > input.images {
   height: auto;
   padding: 6px; }
