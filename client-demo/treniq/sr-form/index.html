@@ -101,12 +101,14 @@
                     <li class="tag" ng-repeat="tag in form.tags.list">
                         {{tag.name}} <span class="remove fa fa-remove"></span>
                     </li>
-                    <li class="tag search">
+                    <li class="tag search" >
                         <input class="search" ng-model="__searchTag" ng-change="form.tags.filter(__searchTag)">
                         <div class="dropdown">
                           <ul class="undo-list">
-                              <li ng-repeat="suggetion in form.tags.suggestions"
-                                  ng-click= "form.tags.list.push(suggetion)">{{suggetion.name}}</li>
+                              <li class="suggested-tag"
+                                  ng-repeat="suggetion in form.tags.suggestions"
+                                  ng-class="{'selected' : form.tags.selectedIndex == $index}"
+                                  ng-click= "form.tags.push(suggetion)">{{suggetion.name}}</li>
                           </ul>
                         </div>
                     </li>
@@ -142,6 +144,14 @@
                 tags: {
                     list        : [{name: "table"}],
                     suggestions : tags,
+                    selectedIndex : 0,
+                    reset       : function(){
+                        this.suggestions    = tags;
+                        this.selectedIndex  = 0;
+                    },
+                    push      : function(tag){
+                        this.list.push(tag);
+                    },
                     filter      : function(input){
                         this.suggestions = [];
                         for(var i = 0; i < tags.length; i++){
@@ -173,7 +183,15 @@
 
             (isTag || isRemoveTag) ? noDropDown() : showDropDown();
         });
-
+        $tagInput.on("keydown", function(e){
+            var hotKeys = {
+                40 : "down",
+                38 : "up",
+                37 : "left",
+                39 : "right",
+            };
+            console.log("Key : " + (hotKeys[e.keyCode] || e.keyCode));
+        })
         $tagInput.on("mouseleave", noDropDown);
     </script>
 
