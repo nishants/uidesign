@@ -660,6 +660,22 @@ form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input
       color: rgba(255, 0, 0, 0.5); }
 form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input.tags {
   height: auto; }
+  form.sourcing-request .input.tags ul.tags .tag.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search {
+    overflow: hidden;
+    border: 1px solid transparent;
+    min-width: 200px;
+    overflow: visible; }
+    form.sourcing-request .input.tags ul.tags .tag.search input.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search input.search {
+      width: 100%;
+      height: 100%;
+      padding: 5px; }
+    form.sourcing-request .input.tags ul.tags .tag.search .dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown {
+      width: 100%;
+      height: 350px;
+      background-color: white;
+      border: 1px solid rgba(0, 0, 0, 0.1); }
+  form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown {
+    overflow: visible; }
   form.sourcing-request .input.tags ul.tags .tag, form.sourcing-request form > fieldset > input.tags ul.tags .tag {
     display: block;
     float: left;
