@@ -1,4 +1,4 @@
-@import '../css/config';
+@import 'config';
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300);
@@ -9,4 +9,4 @@ body{
   *{box-sizing: border-box;};
 }
 
-@import '../css/sr-form';
+@import 'sr-form';
