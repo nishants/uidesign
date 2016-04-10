@@ -108,10 +108,9 @@ form.sourcing-request{
       @extend .undo-list;
 
       .tag.search{
-        overflow: hidden;
+        overflow: visible;
         border: 1px solid transparent;
         min-width: $tagSearchWidth;
-        overflow: visible;
 
         input.search{
           width: 100%;
@@ -120,14 +119,19 @@ form.sourcing-request{
         }
         .dropdown{
           width: 100%;
-          height: 350px;
+          height: 100px;
           background-color: white;
           border: $solidBorder;
+
+          @include transition(transoform , 500ms , ease);
+          @include transform(scale(0));
         }
       }
 
       .tag.search.show-dropdown{
-        overflow: visible;
+        .dropdown{
+          @include transform(scale(1));
+        };
       }
 
       .tag{
