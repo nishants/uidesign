@@ -123,13 +123,19 @@ form.sourcing-request{
           width: 100%;
           max-height: 200px;
           overflow: auto;
-          padding: 0px $padding $padding $padding;
 
           background-color: white;
           border: $solidBorder;
 
           @include transition(transoform , 500ms , ease);
           @include transform(scale(0));
+          .suggested-tag{
+            padding: 0px 5px;
+          }
+          .suggested-tag.selected{
+            background-color: rgba(33, 150, 243, 0.5);
+            color: white;
+          }
         }
       }
 

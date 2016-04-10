@@ -674,7 +674,6 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
       width: 100%;
       max-height: 200px;
       overflow: auto;
-      padding: 0px 10px 10px 10px;
       background-color: white;
       border: 1px solid rgba(0, 0, 0, 0.1);
       -webkit-transition: transoform 500ms ease;
@@ -686,6 +685,11 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
       -ms-transform: scale(0);
       -o-transform: scale(0);
       transform: scale(0); }
+      form.sourcing-request .input.tags ul.tags .tag.search .dropdown .suggested-tag, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown .suggested-tag {
+        padding: 0px 5px; }
+      form.sourcing-request .input.tags ul.tags .tag.search .dropdown .suggested-tag.selected, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown .suggested-tag.selected {
+        background-color: rgba(33, 150, 243, 0.5);
+        color: white; }
   form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown input.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown input.search {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid transparent; }
