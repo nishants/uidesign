@@ -232,7 +232,6 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
       border: 1px solid transparent; }
     form.sourcing-request .input.tags ul.tags .tag.search .dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown {
       width: 100%;
-      max-height: 200px;
       overflow: auto;
       background-color: white;
       border: 1px solid rgba(0, 0, 0, 0.1);

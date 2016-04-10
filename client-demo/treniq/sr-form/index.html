@@ -170,7 +170,7 @@
             var tags = [{name: "table"},{name: "chair"},{name: "lamp"},{name: "wood"},{name: "metal"},{name: "platinum"},];
             scope.form = {
                 tags: {
-                    list        : [{name: "table"}],
+                    list        : [{name: "table"},{name: "table"},{name: "table"},{name: "table"},],
                     suggestions : tags,
                     selectedIndex : 0,
                     reset       : function(){
@@ -192,13 +192,14 @@
                     },
                     hotkeys: function(hotkey){
                         var next    = function () {
-                                        console.log("next")
+                                        scope.form.tags.selectedIndex = (scope.form.tags.selectedIndex+1)%(scope.form.tags.suggestions.length);
                                       },
                             prev    = function () {
-                                console.log("prev")
+                                scope.form.tags.selectedIndex = scope.form.tags.selectedIndex == 0 ? scope.form.tags.suggestions.length - 1 :  scope.form.tags.selectedIndex = (scope.form.tags.selectedIndex - 1)%(scope.form.tags.suggestions.length);
                             },
                             select  = function () {
-                                console.log("select")
+                                scope.form.tags.push(scope.form.tags.suggestions[scope.form.tags.selectedIndex]);
+                                scope.form.tags.reset();
                             },
                             cancel  = function () {
                                 console.log("cancel")
