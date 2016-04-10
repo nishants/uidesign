@@ -110,7 +110,6 @@
                         <input class="search">
                         <div class="dropdown">
                           <ul class="undo-list">
-                              <li>metal</li>
                               <li>black</li>
                               <li>golden</li>
                               <li>dining table</li>
@@ -152,6 +151,7 @@
                 $tagSearchInput = $tagSearch.find("input").first(),
                 noDropDown      = function(){
                     $tagSearch.removeClass("show-dropdown");
+                    $tagSearchInput.blur();
                 },
                 showDropDown      = function(){
                     $tagSearch.addClass("show-dropdown");

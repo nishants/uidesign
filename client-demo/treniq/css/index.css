@@ -667,11 +667,12 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
     form.sourcing-request .input.tags ul.tags .tag.search input.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search input.search {
       width: 100%;
       height: 100%;
-      padding: 5px;
-      border-radius: 0px; }
+      padding: 10px;
+      border-radius: 0px;
+      border: 1px solid transparent; }
     form.sourcing-request .input.tags ul.tags .tag.search .dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown {
       width: 100%;
-      height: 100px;
+      max-height: 200px;
       overflow: auto;
       padding: 0px 10px 10px 10px;
       background-color: white;
@@ -687,7 +688,7 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
       transform: scale(0); }
   form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown input.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown input.search {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: none; }
+    border-bottom: 1px solid transparent; }
   form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown .dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown .dropdown {
     border-top: none;
     -webkit-transform: scale(1);

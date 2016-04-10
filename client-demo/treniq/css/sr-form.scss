@@ -115,12 +115,13 @@ form.sourcing-request{
         input.search{
           width: 100%;
           height: 100%;
-          padding: 5px;
+          padding: $padding;
           border-radius: 0px;
+          border: 1px solid transparent;
         }
         .dropdown{
           width: 100%;
-          height: 100px;
+          max-height: 200px;
           overflow: auto;
           padding: 0px $padding $padding $padding;
 
@@ -135,7 +136,7 @@ form.sourcing-request{
       .tag.search.show-dropdown{
         input.search{
           border: $solidBorder;
-          border-bottom: none;
+          border-bottom: 1px solid transparent;
         }
         .dropdown{
           border-top: none;
