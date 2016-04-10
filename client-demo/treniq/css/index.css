@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-ul.undo-list, ul.deck {
+ul.undo-list, form.sourcing-request .input.tags ul.tags, form.sourcing-request form > fieldset > input.tags ul.tags, ul.deck {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -581,6 +581,8 @@ form {
       -ms-transform: translateY(-5px);
       -o-transform: translateY(-5px);
       transform: translateY(-5px); }
+      .fieldset .overlay .message, form > fieldset .overlay .message {
+        width: 100%; }
       .fieldset .overlay .icon, form > fieldset .overlay .icon {
         top: -10px;
         left: 330px;
@@ -656,8 +658,16 @@ form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input
       background-color: transparent; }
     form.sourcing-request .input.urls .remove .icon:hover, form.sourcing-request form > fieldset > input.urls .remove .icon:hover {
       color: rgba(255, 0, 0, 0.5); }
+form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input.tags {
+  height: auto; }
+  form.sourcing-request .input.tags ul.tags .tag, form.sourcing-request form > fieldset > input.tags ul.tags .tag {
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 5px; }
 
-ul.undo-list, ul.deck {
+ul.undo-list, form.sourcing-request .input.tags ul.tags, form.sourcing-request form > fieldset > input.tags ul.tags, ul.deck {
   list-style: none;
   margin: 0px;
   padding: 0px;

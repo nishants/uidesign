@@ -91,8 +91,27 @@
             <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true" ng-click="__showOverlay = !__showOverlay"></span>
             <div class="overlay" ng-class="{'show' : __showOverlay}">
                 <div class="icon"></div>
-                <div class="message">You asked, Font Awesome delivers with 20 shiny new icons in version 4.5. Want to request new icons? Here's how. Need vectors or want to use on the desktop? Check the cheatsheet.
-                </div>
+                <div class="message">Urls to refer</div>
+            </div>
+        </fieldset>
+        <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
+            <label>Tags</label>
+            <div class="input tags">
+                <ul class="tags">
+                    <li class="tag">wood <span class="remove fa fa-remove"></span> </li>
+                    <li class="tag">teak <span class="remove fa fa-remove"></span> </li>
+                    <li class="tag">table <span class="remove fa fa-remove"></span></li>
+
+                    <li class="tag">vintage <span class="remove fa fa-remove"></span> </li>
+                    <li class="tag">furniture <span class="remove fa fa-remove"></span></li>
+                    <li class="tag">white <span class="remove fa fa-remove"></span> </li>
+                    <li class="tag">round <span class="remove fa fa-remove"></span></li>
+                </ul>
+            </div>
+            <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true" ng-click="__showOverlay = !__showOverlay"></span>
+            <div class="overlay" ng-class="{'show' : __showOverlay}">
+                <div class="icon"></div>
+                <div class="message">Add as many tags as you like.</div>
             </div>
         </fieldset>
     </form>

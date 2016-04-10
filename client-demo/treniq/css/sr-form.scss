@@ -5,6 +5,8 @@ $thumbnailSize    : 100px;
 $thumbnailPerRow  : 3;
 $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($thumbnailPerRow * 2 + 2));
 
+$tagHeight        : 20px;
+
 form.sourcing-request{
   .input.images{
     @extend .resize-container;
@@ -94,6 +96,22 @@ form.sourcing-request{
       }
       .icon:hover{
         color: rgba(255,0,0,0.5);
+      }
+    }
+  }
+
+  .input.tags{
+    height: auto;
+
+    ul.tags{
+      @extend .undo-list;
+
+      .tag{
+        display: block;
+        float: left;
+        height: $tagHeight;
+        line-height: $tagHeight;
+        padding: 0px 5px;
       }
     }
   }
