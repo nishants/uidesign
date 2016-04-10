@@ -43,7 +43,7 @@
 </head>
 
 <body ng-app="treniq">
-    <form class="sourcing-request">
+    <form class="sourcing-request" ng-controller="sourcingRequestFormCtrl">
         <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
             <label>Title</label>
             <div class="input">
@@ -98,25 +98,15 @@
             <label>Tags</label>
             <div class="input tags">
                 <ul class="tags">
-                    <li class="tag">wood <span class="remove fa fa-remove"></span> </li>
-                    <li class="tag">teak <span class="remove fa fa-remove"></span> </li>
-                    <li class="tag">table <span class="remove fa fa-remove"></span></li>
-
-                    <li class="tag">vintage <span class="remove fa fa-remove"></span> </li>
-                    <li class="tag">furniture <span class="remove fa fa-remove"></span></li>
-                    <li class="tag">white <span class="remove fa fa-remove"></span> </li>
-                    <li class="tag">round <span class="remove fa fa-remove"></span></li>
+                    <li class="tag" ng-repeat="tag in form.tags.list">
+                        {{tag.name}} <span class="remove fa fa-remove"></span>
+                    </li>
                     <li class="tag search">
-                        <input class="search">
+                        <input class="search" ng-model="__searchTag" ng-change="form.tags.filter(__searchTag)">
                         <div class="dropdown">
                           <ul class="undo-list">
-                              <li>black</li>
-                              <li>golden</li>
-                              <li>dining table</li>
-                              <li>office table</li>
-                              <li>golden</li>
-                              <li>silver</li>
-                              <li>glass</li>
+                              <li ng-repeat="suggetion in form.tags.suggestions"
+                                  ng-click= "form.tags.list.push(suggetion)">{{suggetion.name}}</li>
                           </ul>
                         </div>
                     </li>
@@ -135,7 +125,8 @@
     <script src="../../../lib/angular-1.4.3.js"></script>
 
     <script>
-        angular.module("treniq", []).directive("fieldset" , [function(){
+        var app = angular.module("treniq", []);
+        app.directive("fieldset" , [function(){
             return {
                 restrict: "C",
                 transclude: false,
@@ -143,6 +134,23 @@
                 link: function(scope, element){
                 }
             };
+        }
+        ]);
+        app.controller("sourcingRequestFormCtrl" , ["$scope", function(scope){
+            var tags = [{name: "table"},{name: "chair"},{name: "lamp"},{name: "wood"},{name: "metal"},{name: "platinum"},];
+            scope.form = {
+                tags: {
+                    list        : [{name: "table"}],
+                    suggestions : tags,
+                    filter      : function(input){
+                        this.suggestions = [];
+                        for(var i = 0; i < tags.length; i++){
+                            var tag = tags[i];
+                            tag.name.startsWith(input)  && this.suggestions.push(tag);
+                        }
+                    },
+                }
+            }
         }
         ]);
 
