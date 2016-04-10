@@ -146,6 +146,7 @@
                 39 : "right",
                 32 : "space",
                 13 : "enter",
+                27 : "escape",
             };
 
             return {
@@ -196,6 +197,9 @@
                             select  = function () {
                                 console.log("select")
                             },
+                            cancel  = function () {
+                                console.log("cancel")
+                            },
                             actions =  {
                                 "down"  : next,
                                 "right" : next,
@@ -203,6 +207,7 @@
                                 "left"  : prev,
                                 "space" : select,
                                 "enter" : select,
+                                "escape" : cancel,
                             };
                         return actions[hotkey];
                     }
