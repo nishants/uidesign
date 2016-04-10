@@ -102,7 +102,7 @@
                         {{tag.name}} <span class="remove fa fa-remove"></span>
                     </li>
                     <li class="tag search" >
-                        <input class="search" ng-model="__searchTag" ng-change="form.tags.filter(__searchTag)">
+                        <input class="search" ng-model="__searchTag" ng-change="form.tags.filter(__searchTag)" hotkeys="form.tags.hotkeys">
                         <div class="dropdown">
                           <ul class="undo-list">
                               <li class="suggested-tag"
@@ -138,6 +138,33 @@
             };
         }
         ]);
+        app.directive("hotkeys" , ["$parse", "$timeout", function($parse, $timeout){
+            var hotKeys = {
+                40 : "down",
+                38 : "up",
+                37 : "left",
+                39 : "right",
+                32 : "space",
+                13 : "enter",
+            };
+
+            return {
+                restrict: "A",
+                transclude: false,
+                scope: false,
+                link: function(scope, element, attrs){
+                    element.on("keydown", function(e){
+                        var key         = hotKeys[e.keyCode],
+                            actionFor   = $parse(attrs["hotkeys"])(scope);
+
+                        hotKeys[e.keyCode] && $timeout(function(){
+                            actionFor(key)();
+                        });
+                    });
+                }
+            };
+        }
+        ]);
         app.controller("sourcingRequestFormCtrl" , ["$scope", function(scope){
             var tags = [{name: "table"},{name: "chair"},{name: "lamp"},{name: "wood"},{name: "metal"},{name: "platinum"},];
             scope.form = {
@@ -159,6 +186,26 @@
                             tag.name.startsWith(input)  && this.suggestions.push(tag);
                         }
                     },
+                    hotkeys: function(hotkey){
+                        var next    = function () {
+                                        console.log("next")
+                                      },
+                            prev    = function () {
+                                console.log("prev")
+                            },
+                            select  = function () {
+                                console.log("select")
+                            },
+                            actions =  {
+                                "down"  : next,
+                                "right" : next,
+                                "up"    : prev,
+                                "left"  : prev,
+                                "space" : select,
+                                "enter" : select,
+                            };
+                        return actions[hotkey];
+                    }
                 }
             }
         }
@@ -183,15 +230,6 @@
 
             (isTag || isRemoveTag) ? noDropDown() : showDropDown();
         });
-        $tagInput.on("keydown", function(e){
-            var hotKeys = {
-                40 : "down",
-                38 : "up",
-                37 : "left",
-                39 : "right",
-            };
-            console.log("Key : " + (hotKeys[e.keyCode] || e.keyCode));
-        })
         $tagInput.on("mouseleave", noDropDown);
     </script>
 
