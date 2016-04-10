@@ -697,7 +697,8 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin: 4px;
     border-radius: 2px;
-    color: rgba(0, 0, 0, 0.7); }
+    color: rgba(0, 0, 0, 0.7);
+    font-size: small; }
     form.sourcing-request .input.tags ul.tags .tag .remove, form.sourcing-request form > fieldset > input.tags ul.tags .tag .remove {
       font-size: small;
       color: rgba(0, 0, 0, 0.1); }
