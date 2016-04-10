@@ -99,7 +99,7 @@
             <div class="input tags">
                 <ul class="tags">
                     <li class="tag" ng-repeat="tag in form.tags.list">
-                        {{tag.name}} <span class="remove fa fa-remove"></span>
+                        {{tag.name}} <span class="remove fa fa-remove" ng-click= "form.tags.remove($index)"></span>
                     </li>
                     <li class="tag search" >
                         <input class="search" ng-model="__searchTag" ng-change="form.tags.filter(__searchTag)" hotkeys="form.tags.hotkeys">
@@ -177,8 +177,11 @@
                         this.suggestions    = tags;
                         this.selectedIndex  = 0;
                     },
-                    push      : function(tag){
+                    push        : function(tag){
                         this.list.push(tag);
+                    },
+                    remove      : function(index){
+                        this.list.splice(index, 1);
                     },
                     filter      : function(input){
                         this.suggestions = [];

@@ -103,7 +103,7 @@ form.sourcing-request{
 
   .input.tags{
     height: auto;
-
+    min-height: $rowHeight;
     ul.tags{
       @extend .undo-list;
 
@@ -111,7 +111,7 @@ form.sourcing-request{
         overflow: visible;
         border: 1px solid transparent;
         min-width: $tagSearchWidth;
-
+        display: none;
         input.search{
           width: 100%;
           height: 100%;
@@ -140,6 +140,8 @@ form.sourcing-request{
       }
 
       .tag.search.show-dropdown{
+        display: block;
+
         input.search{
           border: $solidBorder;
           border-bottom: 1px solid transparent;
