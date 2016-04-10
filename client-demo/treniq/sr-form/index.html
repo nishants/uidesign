@@ -170,7 +170,7 @@
             var tags = [{name: "table"},{name: "chair"},{name: "lamp"},{name: "wood"},{name: "metal"},{name: "platinum"},];
             scope.form = {
                 tags: {
-                    list        : [{name: "table"},{name: "table"},{name: "table"},{name: "table"},],
+                    list        : [],
                     suggestions : tags,
                     selectedIndex : 0,
                     reset       : function(){
@@ -179,6 +179,7 @@
                     },
                     push        : function(tag){
                         this.list.push(tag);
+                        this.reset();
                     },
                     remove      : function(index){
                         this.list.splice(index, 1);
@@ -199,7 +200,6 @@
                             },
                             select  = function () {
                                 scope.form.tags.push(scope.form.tags.suggestions[scope.form.tags.selectedIndex]);
-                                scope.form.tags.reset();
                             },
                             cancel  = function () {
                                 console.log("cancel")
