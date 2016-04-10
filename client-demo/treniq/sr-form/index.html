@@ -209,7 +209,13 @@
                                 scope.form.tags.selectedIndex = scope.form.tags.selectedIndex == 0 ? scope.form.tags.suggestions.length - 1 :  scope.form.tags.selectedIndex = (scope.form.tags.selectedIndex - 1)%(scope.form.tags.suggestions.length);
                             },
                             select  = function () {
-                                scope.form.tags.push(scope.form.tags.suggestions[scope.form.tags.selectedIndex]);
+                                var createTag = function(name){
+                                    return {name: name};
+                                };
+                                var newTag = scope.form.tags.suggestions.length ?
+                                                scope.form.tags.suggestions[scope.form.tags.selectedIndex] :
+                                                createTag(scope.form.tags.searchFor);
+                                scope.form.tags.push(newTag)
                             },
                             cancel  = function () {
                                 console.log("cancel")
