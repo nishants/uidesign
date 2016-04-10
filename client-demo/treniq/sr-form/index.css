@@ -265,8 +265,8 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
   form.sourcing-request .input.tags ul.tags .tag, form.sourcing-request form > fieldset > input.tags ul.tags .tag {
     display: block;
     float: left;
-    height: 25px;
-    line-height: 25px;
+    height: 30px;
+    line-height: 30px;
     padding: 0px 5px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin: 4px;

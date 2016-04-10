@@ -5,7 +5,7 @@ $thumbnailSize    : 100px;
 $thumbnailPerRow  : 3;
 $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($thumbnailPerRow * 2 + 2));
 
-$tagHeight        : 25px;
+$tagHeight        : 30px;
 $tagSearchWidth   : 200px;
 
 form.sourcing-request{
