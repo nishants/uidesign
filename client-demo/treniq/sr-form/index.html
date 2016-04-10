@@ -106,7 +106,7 @@
                     <li class="tag">furniture <span class="remove fa fa-remove"></span></li>
                     <li class="tag">white <span class="remove fa fa-remove"></span> </li>
                     <li class="tag">round <span class="remove fa fa-remove"></span></li>
-                    <li class="tag search show-dropdown">
+                    <li class="tag search">
                         <input class="search">
                         <div class="dropdown"></div>
                     </li>
@@ -134,7 +134,28 @@
                 }
             };
         }
-        ])
+        ]);
+
+        var     $tagInput       = $(".input.tags").first(),
+                $tagSearch      = $tagInput.find(".tag.search").first(),
+                $tagSearchInput = $tagSearch.find("input").first(),
+                noDropDown      = function(){
+                    $tagSearch.removeClass("show-dropdown");
+                },
+                showDropDown      = function(){
+                    $tagSearch.addClass("show-dropdown");
+                    $tagSearchInput.focus();
+                };
+
+        $tagInput.on("click", function(e){
+            var target          = e.target,
+                isTag           = target.classList.contains("tag") && !target.classList.contains("search"),
+                isRemoveTag     = target.classList.contains("remove");
+
+            (isTag || isRemoveTag) ? noDropDown() : showDropDown();
+        });
+
+        $tagInput.on("mouseleave", noDropDown);
     </script>
 
 </body>
