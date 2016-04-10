@@ -5,7 +5,7 @@ $thumbnailSize    : 100px;
 $thumbnailPerRow  : 3;
 $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($thumbnailPerRow * 2 + 2));
 
-$tagHeight        : 20px;
+$tagHeight        : 25px;
 
 form.sourcing-request{
   .input.images{
@@ -112,6 +112,16 @@ form.sourcing-request{
         height: $tagHeight;
         line-height: $tagHeight;
         padding: 0px 5px;
+
+        border: $solidBorder;
+        margin: 4px;
+        border-radius: 2px;
+        color: rgba(0,0,0,0.7);
+
+        .remove{
+          font-size: small;
+          color: rgba(0,0,0,0.1);
+        }
       }
     }
   }

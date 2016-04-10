@@ -663,9 +663,16 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
   form.sourcing-request .input.tags ul.tags .tag, form.sourcing-request form > fieldset > input.tags ul.tags .tag {
     display: block;
     float: left;
-    height: 20px;
-    line-height: 20px;
-    padding: 0px 5px; }
+    height: 25px;
+    line-height: 25px;
+    padding: 0px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 4px;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.7); }
+    form.sourcing-request .input.tags ul.tags .tag .remove, form.sourcing-request form > fieldset > input.tags ul.tags .tag .remove {
+      font-size: small;
+      color: rgba(0, 0, 0, 0.1); }
 
 ul.undo-list, form.sourcing-request .input.tags ul.tags, form.sourcing-request form > fieldset > input.tags ul.tags, ul.deck {
   list-style: none;
