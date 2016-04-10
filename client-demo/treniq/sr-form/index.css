@@ -222,7 +222,6 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
   form.sourcing-request .input.tags ul.tags .tag.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search {
     overflow: visible;
     border: 1px solid transparent;
-    min-width: 200px;
     display: none; }
     form.sourcing-request .input.tags ul.tags .tag.search input.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search input.search {
       width: 100%;

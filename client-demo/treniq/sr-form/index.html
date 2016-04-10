@@ -102,7 +102,7 @@
                         {{tag.name}} <span class="remove fa fa-remove" ng-click= "form.tags.remove($index)"></span>
                     </li>
                     <li class="tag search" >
-                        <input class="search" ng-model="__searchTag" ng-change="form.tags.filter(__searchTag)" hotkeys="form.tags.hotkeys">
+                        <input class="search" ng-model="form.tags.searchFor" ng-change="form.tags.filter()" hotkeys="form.tags.hotkeys">
                         <div class="dropdown">
                           <ul class="undo-list">
                               <li class="suggested-tag"
@@ -173,9 +173,11 @@
                     list        : [],
                     suggestions : tags,
                     selectedIndex : 0,
+                    searchFor   : "",
                     reset       : function(){
-                        this.suggestions    = tags;
+                        this.searchFor = "" ;
                         this.selectedIndex  = 0;
+                        this.filter() ;
                     },
                     push        : function(tag){
                         this.list.push(tag);
@@ -184,11 +186,19 @@
                     remove      : function(index){
                         this.list.splice(index, 1);
                     },
-                    filter      : function(input){
+                    filter      : function(){
+                        var input = scope.form.tags.searchFor,
+                            hasTag = function(tag) {
+                            var existing = scope.form.tags.list;
+                            for(var i =0; i < existing.length; i++){
+                                if(tag.name == existing[i].name) return true;
+                            }
+                            return false;
+                        };
                         this.suggestions = [];
                         for(var i = 0; i < tags.length; i++){
                             var tag = tags[i];
-                            tag.name.startsWith(input)  && this.suggestions.push(tag);
+                            tag.name.startsWith(input)  && !hasTag(tag) && this.suggestions.push(tag);
                         }
                     },
                     hotkeys: function(hotkey){
