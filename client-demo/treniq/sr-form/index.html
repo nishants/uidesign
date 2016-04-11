@@ -43,6 +43,12 @@
 </head>
 
 <body ng-app="treniq">
+    <div class="splash page" ng-show="false">
+        <div id="loader" class="content" ng-hide="true">
+            <h1></h1>
+            <h5>loading...</h5>
+        </div>
+    </div>
     <form class="sourcing-request" ng-controller="sourcingRequestFormCtrl">
         <fieldset class="fieldset" ng-mouseleave="__showOverlay = false">
             <label>Title</label>
