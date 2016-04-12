@@ -61,7 +61,7 @@ form.sourcing-request{
 
       .icon{
         float: right;
-        width: $iconSize - 1px;
+        width: $helpIconWidth - 1px;
         text-align: center;
         height: $rowHeight - 2px;
         line-height: $rowHeight;
@@ -76,7 +76,7 @@ form.sourcing-request{
         float: left;
         padding:$padding;
         height: $rowHeight - 2px;
-        width: $inputWidth - $iconSize - 1px;
+        width: $inputWidth - $helpIconWidth - 1px;
       }
     }
     .add{

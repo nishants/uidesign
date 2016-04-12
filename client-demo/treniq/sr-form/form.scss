@@ -1,6 +1,6 @@
 $labelWidth     : 150px;
 $inputWidth     : 350px;
-$iconSize       : 40px;
+$helpIconWidth  : 40px;
 $rowHeight      : 40px;
 
 $padding        : 10px;
@@ -24,7 +24,7 @@ $mobileAt       : 650px;
 form{
   height: $rowHeight;
   font-size: 14px;
-  min-width: $inputWidth + $iconSize;
+  min-width: $inputWidth + $helpIconWidth;
   margin: auto;
   @extend .resize-container;
 
@@ -57,7 +57,7 @@ form{
   }
 
   .help-icon{
-    width: $iconSize;
+    width: $helpIconWidth;
     text-align: center;
     font-size: 20px;
     color: rgba(255,255,255,0.9);
@@ -74,10 +74,10 @@ form{
   }
   .overlay{
     z-index: 1;
-    width: calc(100% - #{$labelWidth + $inputWidth + $iconSize});
+    width: calc(100% - #{$labelWidth + $inputWidth + $helpIconWidth});
     overflow: visible;
     position: relative;
-    left: -$iconSize + $padding;
+    left: -$helpIconWidth + $padding;
     pointer-events: none;
     opacity: 0;
     @include transition-f(#{opacity 500ms ease, transform 250ms ease});
@@ -141,7 +141,7 @@ form{
     .overlay{
       width: $inputWidth;
       position: absolute;
-      left: $iconSize - $padding;
+      left: $helpIconWidth - $padding;
       top: 2 *$rowHeight + $padding - 5px;
       bottom: 40px;
       @include transform(translateY(-5px));
