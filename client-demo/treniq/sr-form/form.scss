@@ -16,6 +16,7 @@ $helpFontColor  : rgba(255, 255, 255, 0.9);
 $helpFontSize   : 13px;
 
 $solidBorder    : 1px solid rgba(0,0,0,0.1);
+$activeShadow   : 0 0 5px rgba(0, 0, 0, 0.2);
 
 $mobileAt       : 650px;
 $fontSize       : 14px;
@@ -82,6 +83,9 @@ form{
 
       font-size: 20px;
       color: rgba(255,255,255,0.7);
+
+      box-shadow: $activeShadow;
+      textshadow: $activeShadow ;
 
       @include transformOrigin(100% 50%);
       @include transform(scale(0.7));

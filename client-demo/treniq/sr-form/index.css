@@ -67,6 +67,8 @@ form {
       background-color: rgba(249, 174, 8, 0.5);
       font-size: 20px;
       color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      textshadow: 0 0 5px rgba(0, 0, 0, 0.2);
       -webkit-transform-origin: 100% 50%;
       -moz-transform-origin: 100% 50%;
       transform-origin: 100% 50%;
