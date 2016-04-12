@@ -26,6 +26,13 @@ body {
   body * {
     box-sizing: border-box; }
 
+@media (min-width: 650px) {
+  html {
+    background-color: #EEE; }
+    html body {
+      margin: 50px auto;
+      background: white;
+      width: 80%; } }
 form {
   height: 35px;
   font-size: 14px;

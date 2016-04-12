@@ -8,5 +8,19 @@ body{
   h1{margin: 0px auto;}
   *{box-sizing: border-box;};
 }
+$mobileAt       : 650px;
+
+@media (min-width:$mobileAt){
+  html{
+    background-color: #EEE;
+
+    body{
+      margin: 50px auto;
+      background: white;
+      width: 80%;
+    }
+
+  }
+}
 
 @import 'sr-form';
