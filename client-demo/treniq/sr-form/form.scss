@@ -15,6 +15,7 @@ $helpFontSize   : 13px;
 $solidBorder    : 1px solid rgba(0,0,0,0.1);
 
 $mobileAt       : 650px;
+$fontSize       : 14px;
 
 @mixin transition-f($property){
   -webkit-transition: $property;
@@ -25,8 +26,8 @@ $mobileAt       : 650px;
 
 form{
   height: $rowHeight;
-  font-size: 14px;
-  max-width: $inputWidth + $helpIconWidth +$messageWidth + 300px;
+  font-size: $fontSize;
+  width: 100% ;
   padding: $padding;
   @extend .resize-container;
 
@@ -132,6 +133,8 @@ form{
 
 @media (max-width:$mobileAt){
   form{
+    width: auto;
+
     .field{
       padding-bottom: 20px;
       position: relative;
