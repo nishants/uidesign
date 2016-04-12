@@ -1,11 +1,12 @@
-$labelWidth     : 150px;
+$labelWidth     : 110px;
 $inputWidth     : 350px;
 $helpIconWidth  : 40px;
 $rowHeight      : 40px;
 $inputAddonWidth: 40px;
+$messageWidth   : 150px;
 
 $padding        : 10px;
-$borderRadius   : 4px;
+$borderRadius   : 2px;
 $triangleSize   : 7.5px;
 $overlayColor   : #4C4C4C;
 $helpFontColor  : rgba(255, 255, 255, 0.9);
@@ -25,8 +26,7 @@ $mobileAt       : 650px;
 form{
   height: $rowHeight;
   font-size: 14px;
-  max-width: $inputWidth + $helpIconWidth + 300px;
-  margin: auto;
+  max-width: $inputWidth + $helpIconWidth +$messageWidth + 300px;
   padding: $padding;
   @extend .resize-container;
 
@@ -52,7 +52,7 @@ form{
       padding-right: $padding;
     }
     .input{
-      width: calc(100% - #{$helpIconWidth + $labelWidth});
+      width: calc(100% - #{$helpIconWidth + $labelWidth + $messageWidth});
       border: $solidBorder;
       border-radius: $borderRadius;
       input{
@@ -87,6 +87,7 @@ form{
       left: -$helpIconWidth + $padding;
       pointer-events: none;
       opacity: 0;
+      width: $messageWidth;
       @include transition-f(#{opacity 500ms ease, transform 250ms ease});
       @include transform(translateX(-5px));
 
