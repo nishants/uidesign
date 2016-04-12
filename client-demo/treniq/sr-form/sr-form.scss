@@ -76,7 +76,7 @@ form.sourcing-request{
         float: left;
         padding:$padding;
         height: $rowHeight - 2px;
-        width: $inputWidth - $helpIconWidth - 1px;
+        width: calc(100% - #{$inputAddonWidth});
       }
     }
     .add{

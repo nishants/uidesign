@@ -2,6 +2,7 @@ $labelWidth     : 150px;
 $inputWidth     : 350px;
 $helpIconWidth  : 40px;
 $rowHeight      : 40px;
+$inputAddonWidth: 40px;
 
 $padding        : 10px;
 $borderRadius   : 4px;
@@ -26,6 +27,7 @@ form{
   font-size: 14px;
   max-width: $inputWidth + $helpIconWidth + 300px;
   margin: auto;
+  padding: $padding;
   @extend .resize-container;
 
   .clickable{
