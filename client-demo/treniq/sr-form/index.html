@@ -78,7 +78,12 @@
                     <span class="icon clickable fa fa-remove"></span>
                 </div>
             </div>
-            <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true" ng-click="__showOverlay = !__showOverlay"></span>
+
+            <span class="help-icon fa fa-question"
+                  ng-mouseenter="__showOverlay = true; "
+                  ng-class="{'active': __showOverlay}"
+                  ng-click="__showOverlay = !__showOverlay"></span>
+
             <div class="overlay" ng-class="{'show' : __showOverlay}">
                 <div class="icon"></div>
                 <div class="message">You asked, Font Awesome delivers with 20 shiny new icons in version 4.5. Want to request new icons? Here's how. Need vectors or want to use on the desktop? Check the cheatsheet.
@@ -97,7 +102,11 @@
                 <div class="image-card"><img src="../../../images/wall-lamp.jpg">  <div class="remove icon  clickable fa fa-remove"></div> </div>
                 <div class="image-card"><img src="../images/seed.png">             <div class="remove icon  clickable fa fa-remove"></div> </div>
             </div>
-            <span class="help-icon fa fa-question" ng-mouseenter="__showOverlay = true" ng-click="__showOverlay = !__showOverlay"></span>
+
+            <span class="help-icon fa fa-question"
+                  ng-mouseenter="__showOverlay = true; "
+                  ng-class="{'active': __showOverlay}"
+                  ng-click="__showOverlay = !__showOverlay"></span>
             <div class="overlay" ng-class="{'show' : __showOverlay}">
                 <div class="icon"></div>
                 <div class="message">Urls to refer</div>
