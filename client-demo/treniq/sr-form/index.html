@@ -153,6 +153,7 @@
                 32 : "space",
                 13 : "enter",
                 27 : "escape",
+                8 :  "backspace",
             };
 
             return {
@@ -226,6 +227,9 @@
                             cancel  = function () {
                                 console.log("cancel")
                             },
+                            erase  = function () {
+                                scope.form.tags.searchFor.length ? "" : console.log("erase");
+                            },
                             actions =  {
                                 "down"  : next,
                                 "right" : next,
@@ -234,6 +238,7 @@
                                 "space" : select,
                                 "enter" : select,
                                 "escape" : cancel,
+                                "backspace" : erase,
                             };
                         return actions[hotkey];
                     }
