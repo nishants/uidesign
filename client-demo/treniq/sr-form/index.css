@@ -77,6 +77,8 @@ form {
       -ms-transform: scale(0.7);
       -o-transform: scale(0.7);
       transform: scale(0.7); }
+    form .field .help-icon.active, form > fieldset .help-icon.active, form .field form > fieldset > span.active, form > fieldset > span.active {
+      opacity: 0.5; }
     form .field .overlay.show, form > fieldset .overlay.show {
       opacity: 1;
       -webkit-transform: translateX(0px);
