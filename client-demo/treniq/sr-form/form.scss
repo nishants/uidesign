@@ -1,13 +1,14 @@
-$labelWidth     : 110px;
+$labelWidth     : 150px;
 $inputWidth     : 350px;
-$helpIconWidth  : 40px;
-$rowHeight      : 40px;
+$helpIconWidth  : 35px;
+$rowHeight      : 35px;
 $inputAddonWidth: 40px;
 $messageWidth   : 150px;
 
 $padding        : 10px;
 $borderRadius   : 2px;
 $triangleSize   : 7.5px;
+$labelFrontColor: rgba(0,0,0,0.7);
 $overlayColor   : #4C4C4C;
 $helpFontColor  : rgba(255, 255, 255, 0.9);
 $helpFontSize   : 13px;
@@ -38,14 +39,17 @@ form{
   .field{
     width: 100%;
     box-sizing: border-box;
-    padding: 0px;
-    padding-bottom: $padding;
+    padding: 0px 0px 2 * $padding;
+
     .label, .input, .help-icon, .overlay{
       float: left;
       display: block;
+
       height: $rowHeight;
       line-height: $rowHeight - 2px;
       box-sizing: border-box;
+
+      color: $labelFrontColor;
     }
     .label{
       width: $labelWidth;
@@ -67,13 +71,16 @@ form{
 
     .help-icon{
       width: $helpIconWidth;
+      height: $helpIconWidth;
+      line-height: $helpIconWidth;
+
       text-align: center;
+      border-radius: 50%;
+
       font-size: 20px;
       color: rgba(255,255,255,0.9);
-      height: 40px;
-      line-height: 40px;
       background-color: rgba(0,0,0,0.07);
-      border-radius: 50%;
+
       @include transformOrigin(100% 50%);
       @include transform(scale(0.7));
     }
@@ -136,7 +143,6 @@ form{
     width: auto;
 
     .field{
-      padding-bottom: 20px;
       position: relative;
       .label{
         width: 100%;

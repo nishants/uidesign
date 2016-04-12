@@ -5,7 +5,7 @@ $thumbnailSize    : 75px;
 $thumbnailPerRow  : 3;
 $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($thumbnailPerRow * 2 + 2));
 
-$tagHeight        : 30px;
+$tagHeight        : $rowHeight - $padding;
 $tagSearchWidth   : 100px;
 $tagBgColor       : rgba(249, 174, 8, 0.5);
 $tagFontColor     : rgba(255, 255, 255, 0.8);
@@ -116,7 +116,7 @@ form.sourcing-request{
         padding: 0px 5px;
 
         border: 1px solid transparent;
-        margin: 4px;
+        margin: $padding / 2;
         border-radius: 2px;
         color: rgba(0,0,0,0.7);
         font-size: small;
