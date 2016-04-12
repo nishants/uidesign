@@ -25,7 +25,7 @@ form{
   height: $rowHeight;
   font-size: 14px;
   min-width: $inputWidth + $iconSize;
-
+  margin: auto;
   @extend .resize-container;
 
   .clickable{
