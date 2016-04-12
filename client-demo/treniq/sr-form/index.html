@@ -114,6 +114,7 @@
                               <li class="suggested-tag"
                                   ng-repeat="suggetion in form.tags.suggestions"
                                   ng-class="{'selected' : form.tags.selectedIndex == $index}"
+                                  ng-mouseenter="form.tags.selectedIndex = $index"
                                   ng-click= "form.tags.push(suggetion)">{{suggetion.name}}</li>
                           </ul>
                         </div>

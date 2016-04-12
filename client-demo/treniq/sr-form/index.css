@@ -237,7 +237,10 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
     font-size: small; }
     form.sourcing-request .input.tags ul.tags .tag .remove, form.sourcing-request form > fieldset > input.tags ul.tags .tag .remove {
       font-size: small;
-      color: rgba(0, 0, 0, 0.1); }
+      color: rgba(255, 255, 255, 0.8); }
+  form.sourcing-request .input.tags ul.tags .tag:not(.search), form.sourcing-request form > fieldset > input.tags ul.tags .tag:not(.search) {
+    background-color: rgba(249, 174, 8, 0.76);
+    color: rgba(255, 255, 255, 0.8); }
   form.sourcing-request .input.tags ul.tags .tag.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search {
     overflow: visible;
     border: 1px solid transparent;
@@ -253,7 +256,6 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
       width: 100%;
       overflow: auto;
       background-color: white;
-      border: 1px solid rgba(0, 0, 0, 0.1);
       -webkit-transition: transoform 500ms ease;
       -moz-transition: transoform 500ms ease;
       -o-transition: transoform 500ms ease;
@@ -263,16 +265,19 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
       -ms-transform: scale(0);
       -o-transform: scale(0);
       transform: scale(0); }
+      form.sourcing-request .input.tags ul.tags .tag.search .dropdown .suggested-tag:last-child, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown .suggested-tag:last-child {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
       form.sourcing-request .input.tags ul.tags .tag.search .dropdown .suggested-tag, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown .suggested-tag {
-        padding: 0px 5px; }
+        padding: 0px 5px;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 1px solid rgba(0, 0, 0, 0.1); }
       form.sourcing-request .input.tags ul.tags .tag.search .dropdown .suggested-tag.selected, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown .suggested-tag.selected {
-        background-color: rgba(33, 150, 243, 0.5);
-        color: white; }
+        background-color: rgba(249, 174, 8, 0.76);
+        color: rgba(255, 255, 255, 0.8); }
   form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown {
     display: block; }
     form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown input.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown input.search {
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid transparent; }
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
     form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown .dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown .dropdown {
       border-top: none;
       -webkit-transform: scale(1);

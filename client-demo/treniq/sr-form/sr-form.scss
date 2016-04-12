@@ -7,6 +7,8 @@ $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($th
 
 $tagHeight        : 30px;
 $tagSearchWidth   : 100px;
+$tagBgColor       : rgba(249, 174, 8, 0.76);
+$tagFontColor     : rgba(255, 255, 255, 0.8);
 
 form.sourcing-request{
   .input.images{
@@ -121,10 +123,14 @@ form.sourcing-request{
         font-size: small;
         .remove{
           font-size: small;
-          color: rgba(0,0,0,0.1);
+          color: $tagFontColor;
         }
       }
 
+      .tag:not(.search){
+        background-color: $tagBgColor;
+        color: $tagFontColor;
+      }
       .tag.search{
         overflow: visible;
         border: 1px solid transparent;
@@ -143,16 +149,22 @@ form.sourcing-request{
           overflow: auto;
 
           background-color: white;
-          border: $solidBorder;
 
           @include transition(transoform 500ms ease);
           @include transform(scale(0));
+
+          .suggested-tag:last-child{
+            border-bottom: $solidBorder;
+          }
+
           .suggested-tag{
             padding: 0px 5px;
+            border-left: $solidBorder;
+            border-right: $solidBorder;
           }
           .suggested-tag.selected{
-            background-color: rgba(33, 150, 243, 0.5);
-            color: white;
+            background-color: $tagBgColor;
+            color: $tagFontColor;
           }
         }
       }
@@ -161,8 +173,7 @@ form.sourcing-request{
         display: block;
 
         input.search{
-          border: $solidBorder;
-          border-bottom: 1px solid transparent;
+          border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .dropdown{
           border-top: none;
