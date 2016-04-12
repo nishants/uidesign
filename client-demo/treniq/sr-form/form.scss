@@ -6,7 +6,7 @@ $helpIconWidth  : 35px;
 $rowHeight      : 35px;
 $inputAddonWidth: 40px;
 $messageWidth   : 150px;
-
+$maxFormWidth   : 750px;
 $padding        : 10px;
 $borderRadius   : 2px;
 $triangleSize   : 7.5px;
@@ -32,6 +32,7 @@ form{
   height: $rowHeight;
   font-size: $fontSize;
   width: 100% ;
+  max-width: $maxFormWidth;
   padding: $padding;
   @extend .resize-container;
 
