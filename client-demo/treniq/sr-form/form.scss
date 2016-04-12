@@ -1,3 +1,5 @@
+$themeHighlightColor: rgba(249, 174, 8, 0.5);
+
 $labelWidth     : 150px;
 $inputWidth     : 350px;
 $helpIconWidth  : 35px;
@@ -76,10 +78,10 @@ form{
 
       text-align: center;
       border-radius: 50%;
+      background-color: $themeHighlightColor;
 
       font-size: 20px;
-      color: rgba(255,255,255,0.9);
-      background-color: rgba(0,0,0,0.07);
+      color: rgba(255,255,255,0.7);
 
       @include transformOrigin(100% 50%);
       @include transform(scale(0.7));

@@ -7,7 +7,7 @@ $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($th
 
 $tagHeight        : $rowHeight - $padding;
 $tagSearchWidth   : 100px;
-$tagBgColor       : rgba(249, 174, 8, 0.5);
+$tagBgColor       : $themeHighlightColor;
 $tagFontColor     : rgba(255, 255, 255, 0.8);
 
 form.sourcing-request{

@@ -64,9 +64,9 @@ form {
       line-height: 35px;
       text-align: center;
       border-radius: 50%;
+      background-color: rgba(249, 174, 8, 0.5);
       font-size: 20px;
-      color: rgba(255, 255, 255, 0.9);
-      background-color: rgba(0, 0, 0, 0.07);
+      color: rgba(255, 255, 255, 0.7);
       -webkit-transform-origin: 100% 50%;
       -moz-transform-origin: 100% 50%;
       transform-origin: 100% 50%;
