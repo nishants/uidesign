@@ -1,7 +1,7 @@
 @import 'form';
 
 $inputWidth       : 350px;
-$thumbnailSize    : 100px;
+$thumbnailSize    : 75px;
 $thumbnailPerRow  : 3;
 $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($thumbnailPerRow * 2 + 2));
 
@@ -14,7 +14,6 @@ form.sourcing-request{
   .input.images{
     @extend .resize-container;
     height: auto;
-    padding: $imageMargin;
     .image-card{
       position: relative;
       float: left;
@@ -22,12 +21,12 @@ form.sourcing-request{
       width: $thumbnailSize;
       overflow: hidden;
       border: $solidBorder;
-      margin: $imageMargin;
+      margin: $padding/2;
       box-sizing: border-box;
 
       img{
-        height: $thumbnailSize;
-        width: $thumbnailSize;
+        height: 100%;
+        width: 100%;
         display: block;
       }
       .icon.remove{
