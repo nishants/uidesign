@@ -230,7 +230,7 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
     height: 30px;
     line-height: 30px;
     padding: 0px 5px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
     margin: 4px;
     border-radius: 2px;
     color: rgba(0, 0, 0, 0.7);
@@ -239,19 +239,20 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
       font-size: small;
       color: rgba(255, 255, 255, 0.8); }
   form.sourcing-request .input.tags ul.tags .tag:not(.search), form.sourcing-request form > fieldset > input.tags ul.tags .tag:not(.search) {
-    background-color: rgba(249, 174, 8, 0.76);
+    background-color: rgba(249, 174, 8, 0.5);
     color: rgba(255, 255, 255, 0.8); }
   form.sourcing-request .input.tags ul.tags .tag.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search {
     overflow: visible;
     border: 1px solid transparent;
-    display: none;
-    width: 100px; }
+    width: 100px;
+    opacity: 0; }
     form.sourcing-request .input.tags ul.tags .tag.search input.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search input.search {
       width: 100%;
       height: 100%;
       padding: 10px;
       border-radius: 0px;
-      border: 1px solid transparent; }
+      border: 1px solid transparent;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
     form.sourcing-request .input.tags ul.tags .tag.search .dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown {
       width: 100%;
       overflow: auto;
@@ -272,12 +273,10 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
         border-left: 1px solid rgba(0, 0, 0, 0.1);
         border-right: 1px solid rgba(0, 0, 0, 0.1); }
       form.sourcing-request .input.tags ul.tags .tag.search .dropdown .suggested-tag.selected, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search .dropdown .suggested-tag.selected {
-        background-color: rgba(249, 174, 8, 0.76);
+        background-color: rgba(249, 174, 8, 0.5);
         color: rgba(255, 255, 255, 0.8); }
   form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown {
-    display: block; }
-    form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown input.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown input.search {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+    opacity: 1; }
     form.sourcing-request .input.tags ul.tags .tag.search.show-dropdown .dropdown, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search.show-dropdown .dropdown {
       border-top: none;
       -webkit-transform: scale(1);

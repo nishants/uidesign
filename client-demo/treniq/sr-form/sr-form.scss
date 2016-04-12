@@ -7,7 +7,7 @@ $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($th
 
 $tagHeight        : 30px;
 $tagSearchWidth   : 100px;
-$tagBgColor       : rgba(249, 174, 8, 0.76);
+$tagBgColor       : rgba(249, 174, 8, 0.5);
 $tagFontColor     : rgba(255, 255, 255, 0.8);
 
 form.sourcing-request{
@@ -116,7 +116,7 @@ form.sourcing-request{
         line-height: $tagHeight;
         padding: 0px 5px;
 
-        border: $solidBorder;
+        border: 1px solid transparent;
         margin: 4px;
         border-radius: 2px;
         color: rgba(0,0,0,0.7);
@@ -134,8 +134,8 @@ form.sourcing-request{
       .tag.search{
         overflow: visible;
         border: 1px solid transparent;
-        display: none;
         width: $tagSearchWidth;
+        opacity: 0;
 
         input.search{
           width: 100%;
@@ -143,6 +143,7 @@ form.sourcing-request{
           padding: $padding;
           border-radius: 0px;
           border: 1px solid transparent;
+          border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .dropdown{
           width: 100%;
@@ -170,11 +171,7 @@ form.sourcing-request{
       }
 
       .tag.search.show-dropdown{
-        display: block;
-
-        input.search{
-          border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
+        opacity: 1;
         .dropdown{
           border-top: none;
           @include transform(scale(1));
