@@ -224,10 +224,25 @@ form.sourcing-request .input.urls, form.sourcing-request form > fieldset > input
 form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input.tags {
   height: auto;
   min-height: 40px; }
+  form.sourcing-request .input.tags ul.tags .tag, form.sourcing-request form > fieldset > input.tags ul.tags .tag {
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 4px;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: small; }
+    form.sourcing-request .input.tags ul.tags .tag .remove, form.sourcing-request form > fieldset > input.tags ul.tags .tag .remove {
+      font-size: small;
+      color: rgba(0, 0, 0, 0.1); }
   form.sourcing-request .input.tags ul.tags .tag.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search {
     overflow: visible;
     border: 1px solid transparent;
-    display: none; }
+    display: none;
+    width: 100px; }
     form.sourcing-request .input.tags ul.tags .tag.search input.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search input.search {
       width: 100%;
       height: 100%;
@@ -265,19 +280,5 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
-  form.sourcing-request .input.tags ul.tags .tag, form.sourcing-request form > fieldset > input.tags ul.tags .tag {
-    display: block;
-    float: left;
-    height: 30px;
-    line-height: 30px;
-    padding: 0px 5px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 4px;
-    border-radius: 2px;
-    color: rgba(0, 0, 0, 0.7);
-    font-size: small; }
-    form.sourcing-request .input.tags ul.tags .tag .remove, form.sourcing-request form > fieldset > input.tags ul.tags .tag .remove {
-      font-size: small;
-      color: rgba(0, 0, 0, 0.1); }
 
 /*# sourceMappingURL=index.css.map */

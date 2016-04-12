@@ -6,7 +6,7 @@ $thumbnailPerRow  : 3;
 $imageMargin      : floor(($inputWidth - $thumbnailPerRow * $thumbnailSize)/($thumbnailPerRow * 2 + 2));
 
 $tagHeight        : 30px;
-$tagSearchWidth   : 200px;
+$tagSearchWidth   : 100px;
 
 form.sourcing-request{
   .input.images{
@@ -107,10 +107,30 @@ form.sourcing-request{
     ul.tags{
       @extend .undo-list;
 
+      .tag{
+        display: block;
+        float: left;
+        height: $tagHeight;
+        line-height: $tagHeight;
+        padding: 0px 5px;
+
+        border: $solidBorder;
+        margin: 4px;
+        border-radius: 2px;
+        color: rgba(0,0,0,0.7);
+        font-size: small;
+        .remove{
+          font-size: small;
+          color: rgba(0,0,0,0.1);
+        }
+      }
+
       .tag.search{
         overflow: visible;
         border: 1px solid transparent;
         display: none;
+        width: $tagSearchWidth;
+
         input.search{
           width: 100%;
           height: 100%;
@@ -150,23 +170,7 @@ form.sourcing-request{
         };
       }
 
-      .tag{
-        display: block;
-        float: left;
-        height: $tagHeight;
-        line-height: $tagHeight;
-        padding: 0px 5px;
 
-        border: $solidBorder;
-        margin: 4px;
-        border-radius: 2px;
-        color: rgba(0,0,0,0.7);
-        font-size: small;
-        .remove{
-          font-size: small;
-          color: rgba(0,0,0,0.1);
-        }
-      }
     }
   }
 }
