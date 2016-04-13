@@ -40,6 +40,8 @@ form{
   }
 
   .field{
+    @extend .resize-container;
+
     width: 100%;
     box-sizing: border-box;
     padding: 0px 0px 2 * $padding;
@@ -130,9 +132,7 @@ form{
     }
   }
 
-  > fieldset{
-    @extend .field;
-    border: none;
+  > .field{
     > label {
       @extend .label;
     }
