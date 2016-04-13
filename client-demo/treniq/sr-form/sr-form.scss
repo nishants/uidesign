@@ -129,6 +129,7 @@ form.sourcing-request{
       .tag:not(.search){
         background-color: $tagBgColor;
         color: $tagFontColor;
+        border-radius: 5px;
       }
       .tag.search{
         overflow: visible;

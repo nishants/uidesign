@@ -252,7 +252,8 @@ form.sourcing-request .input.tags, form.sourcing-request form > fieldset > input
       color: rgba(255, 255, 255, 0.8); }
   form.sourcing-request .input.tags ul.tags .tag:not(.search), form.sourcing-request form > fieldset > input.tags ul.tags .tag:not(.search) {
     background-color: rgba(249, 174, 8, 0.5);
-    color: rgba(255, 255, 255, 0.8); }
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px; }
   form.sourcing-request .input.tags ul.tags .tag.search, form.sourcing-request form > fieldset > input.tags ul.tags .tag.search {
     overflow: visible;
     border: 1px solid transparent;
