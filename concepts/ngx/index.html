@@ -21,12 +21,12 @@
     <h3 >Age in days : <span ngx-bind="ngx.myApp.myForm.age"></span></h3>
 </body>
 
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <script src="ngx.js"></script>
     <script>
-        var ngx = {};
-        ngx.module("myApp", []);
-
+        var myApp = ngx.module("myApp", []);
         // injected by same name as the scope name
-        ngx.myApp.scope("myForm", ["loginService",function(loginService){
+        myApp.scope("myForm", ["loginService",function(loginService){
             return {
                 name: null,
                 age : undefined,
@@ -38,6 +38,5 @@
                 }
             };
         }]);
-
     </script>
 </html>
