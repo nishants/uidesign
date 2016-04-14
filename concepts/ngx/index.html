@@ -12,6 +12,7 @@
 
         <!-- from ref in scope -->
         <label ngx-bind="myForm.name"></label>
+        <button onclick="myForm.submit()"></button>
     </form>
 
     <!--From global scope-->
@@ -31,9 +32,12 @@
                 age : undefined,
                 getAge : function(){
                     return this.age * 365;
+                },
+                submit: function(){
+                    alert("form submitter")
                 }
             };
         }]);
-        
+
     </script>
 </html>
