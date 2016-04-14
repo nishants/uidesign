@@ -24,6 +24,7 @@
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <script src="ngx.js"></script>
     <script>
+    $(document).ready(function(){
         var myApp = ngx.module("myApp", []);
         // injected by same name as the scope name
         myApp.scope("myForm", ["loginService",function(loginService){
@@ -38,5 +39,6 @@
                 }
             };
         }]);
+    });
     </script>
 </html>
