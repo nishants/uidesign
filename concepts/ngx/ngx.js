@@ -1,5 +1,12 @@
 (function(){
     "use strict"
+
+    var helper = {
+        setterFor : function (string) {
+            var capitalized = string.charAt(0).toUpperCase() + string.slice(1);
+            return "set" + capitalized;
+        }
+    };
     var findScopesIn = function($target){
         var elements = $target.find("[ngx-scope]"),
             scopes  = [];
@@ -10,31 +17,43 @@
             scopes.push({name: name, $target: $e});
         }
         return scopes;
-    }, findModelsIn = function($target){
-        var elements = $target.find("[ngx-model]"),
+    }, findModelsIn = function(scope){
+        var elements = scope.$target.find("[ngx-model]"),
             models  = [];
         for(var i =0; i < elements.length; i ++){
             var $e        = $(elements[i]),
-                name      = $e.attr("ngx-model");
+                name      = $e.attr("ngx-model").replace(scope.name + ".", "");
 
             models.push({name: name, $target: $e});
         }
         return models;
 
 
-        return {name: $target.find("[ngx-model]"), $target: $target, app : undefined};
+        return {name: $target.find("[ngx-model]"), $target: $target, models : {}};
     };
 
     var ngx = {
         $modules: {},
         parse: function($e){
-            this.$modules[$e.attr("ngx-app")]  = $e;
+            this.$modules[$e.attr("ngx-app")]  = {$target: $e};
         },
         module: function(name, params){
-            var newModule = {scope: function () {}}, self = this;
+            var newModule = {
+                    scopes: {},
+                    scope: function (name, params) {
+                        this.scopes[name] = params[params.length - 1]();
+                    }
+                },
+                self = this;
             if(params != undefined){
-                findScopesIn(self.$modules[name]).forEach(function(scope){
-                    findModelsIn(self.$modules[name]).forEach(function(model){
+                findScopesIn(self.$modules[name].$target).forEach(function(scope){
+                    findModelsIn(scope).forEach(function(model){
+                        model.$target.on("input", function(){
+                            var setterName = helper.setterFor(model.name);
+                            var ngxScope = newModule.scopes[scope.name];
+                            var setterFunction = ngxScope[setterName];
+                            setterFunction.call(ngxScope);
+                        });
                         console.log(model.name);
                     });
                 });
