@@ -4,14 +4,25 @@
         var elements = $target.find("[ngx-scope]"),
             scopes  = [];
         for(var i =0; i < elements.length; i ++){
-            var $e        = $(elements[i]),
-                modelName = $e.find("[ngx-scope]");
+            var $e   = $(elements[i]),
+                name = $e.attr("ngx-scope");
 
-            scopes.push({name: modelName, $target: $e});
+            scopes.push({name: name, $target: $e});
         }
         return scopes;
-    }, findModels = function($target){
-        return {name: $target.find("[ngx-model]"), $target: $target};
+    }, findModelsIn = function($target){
+        var elements = $target.find("[ngx-model]"),
+            models  = [];
+        for(var i =0; i < elements.length; i ++){
+            var $e        = $(elements[i]),
+                name      = $e.attr("ngx-model");
+
+            models.push({name: name, $target: $e});
+        }
+        return models;
+
+
+        return {name: $target.find("[ngx-model]"), $target: $target, app : undefined};
     };
 
     var ngx = {
@@ -20,11 +31,13 @@
             this.$modules[$e.attr("ngx-app")]  = $e;
         },
         module: function(name, params){
-            var newModule = {scope: function () {}};
+            var newModule = {scope: function () {}}, self = this;
             if(params != undefined){
-                findScopesIn(this.$modules[name]).forEach(function(){
-
-                })
+                findScopesIn(self.$modules[name]).forEach(function(scope){
+                    findModelsIn(self.$modules[name]).forEach(function(model){
+                        console.log(model.name);
+                    });
+                });
             }
 
             return newModule;
