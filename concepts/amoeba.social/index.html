@@ -47,7 +47,7 @@
         <nav></nav>
         <ul class="grid"
             ng-class="{'focus' : deck.current != -1}">
-            <li ng-repeat="card in deck.cards" ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
+            <li class="grid-box" ng-repeat="card in deck.cards" ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
                 <div class="card"
                      ng-click="deck.current = deck.current == $index ? -1 : $index">
                     <img src="../../images/carousel/carousel-1.jpg">

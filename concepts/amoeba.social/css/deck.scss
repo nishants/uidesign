@@ -11,7 +11,7 @@ ul.grid {
   text-align: left;
   width: 100%;
   overflow: auto;
-  > li{
+  > .grid-box{
     padding: $containerPadding;
     display: inline-block;
     will-change: transform;
@@ -21,25 +21,25 @@ ul.grid {
 
 .grid.focus{
   pointer-events: none;
-  li.selected{
+  .grid-box.selected{
     pointer-events: none; //TODO : enables scroll on firefox
   }
 
-  li.selected-head{
+  .grid-box.selected-head{
     @include transform(translateY(50px) rotate($rotate));
   }
 
-  li.selected-tail{
+  .grid-box.selected-tail{
     @include transform(translateY(-50px) rotate(-$rotate));
   }
-  li.selected-pre{
+  .grid-box.selected-pre{
     @include transform(translateX(50px) rotate($rotate));
   }
 
-  li.selected-post{
+  .grid-box.selected-post{
     @include transform(translateX(-50px) rotate(-$rotate));
   }
-  li:not(.selected){
+  .grid-box:not(.selected){
     opacity: 0;
   }
 }

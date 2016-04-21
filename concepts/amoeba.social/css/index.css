@@ -33,7 +33,7 @@ ul.grid {
   text-align: left;
   width: 100%;
   overflow: auto; }
-  ul.grid > li {
+  ul.grid > .grid-box {
     padding: 10px;
     display: inline-block;
     will-change: transform;
@@ -44,33 +44,33 @@ ul.grid {
 
 .grid.focus {
   pointer-events: none; }
-  .grid.focus li.selected {
+  .grid.focus .grid-box.selected {
     pointer-events: none; }
-  .grid.focus li.selected-head {
+  .grid.focus .grid-box.selected-head {
     -webkit-transform: translateY(50px) rotate(0deg);
     -moz-transform: translateY(50px) rotate(0deg);
     -ms-transform: translateY(50px) rotate(0deg);
     -o-transform: translateY(50px) rotate(0deg);
     transform: translateY(50px) rotate(0deg); }
-  .grid.focus li.selected-tail {
+  .grid.focus .grid-box.selected-tail {
     -webkit-transform: translateY(-50px) rotate(0deg);
     -moz-transform: translateY(-50px) rotate(0deg);
     -ms-transform: translateY(-50px) rotate(0deg);
     -o-transform: translateY(-50px) rotate(0deg);
     transform: translateY(-50px) rotate(0deg); }
-  .grid.focus li.selected-pre {
+  .grid.focus .grid-box.selected-pre {
     -webkit-transform: translateX(50px) rotate(0deg);
     -moz-transform: translateX(50px) rotate(0deg);
     -ms-transform: translateX(50px) rotate(0deg);
     -o-transform: translateX(50px) rotate(0deg);
     transform: translateX(50px) rotate(0deg); }
-  .grid.focus li.selected-post {
+  .grid.focus .grid-box.selected-post {
     -webkit-transform: translateX(-50px) rotate(0deg);
     -moz-transform: translateX(-50px) rotate(0deg);
     -ms-transform: translateX(-50px) rotate(0deg);
     -o-transform: translateX(-50px) rotate(0deg);
     transform: translateX(-50px) rotate(0deg); }
-  .grid.focus li:not(.selected) {
+  .grid.focus .grid-box:not(.selected) {
     opacity: 0; }
 
 .card {

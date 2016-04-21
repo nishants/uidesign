@@ -12,7 +12,7 @@
           card.css("transform", "translateY(" + (offsetY + offsetPadding) + "px)" + "translateX(" + (offsetX + offsetPadding) + "px)");
         },
         unSelect = function (index) {
-          var card = $($(".grid > li")[index]);
+          var card = $($(".grid > .grid-box")[index]);
           card.css("transform", "");
         };
     return {
