@@ -1,6 +1,6 @@
-describe("url listener", function(){
+describe("States", function(){
 
-  it("should callback with stateId on url change", function(){
+  it("should load states, and return on parse", function(){
 
     var stateId = "state-id-x",
         url = "#/" + stateId + "/abc/?someparam=some%20val";
