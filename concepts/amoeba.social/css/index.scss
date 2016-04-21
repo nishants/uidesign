@@ -13,7 +13,6 @@ $contentTransitionDuration : $transitionDuration + 100;
     background-color: black;
     width: 100%;
   }
-
   .deck{
     height: calc(100% - #{$navigationBarHeight});
   }
