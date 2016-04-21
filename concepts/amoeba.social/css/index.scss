@@ -106,5 +106,6 @@ $contentTransitionDuration : $transitionDuration + 100;
   }
 }
 
+@import 'deck';
 @import 'cards';
 @import 'loader';

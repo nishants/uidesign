@@ -40,10 +40,10 @@ input {
       width: 250px;
       height: 250px; }
     #slate .modal .overview .card-actions {
-      -webkit-transition: transform 250ms ease;
-      -moz-transition: transform 250ms ease;
-      -o-transition: transform 250ms ease;
-      transition: transform 250ms ease;
+      -webkit-transition: transform 400ms ease;
+      -moz-transition: transform 400ms ease;
+      -o-transition: transform 400ms ease;
+      transition: transform 400ms ease;
       width: 250px;
       height: 300px;
       pointer-events: all;
@@ -54,10 +54,10 @@ input {
         background-color: rgba(0, 0, 0, 0.075);
         border: 1px solid rgba(0, 0, 0, 0.05); }
     #slate .modal .content {
-      -webkit-transition: transform 350ms ease, opacity 700ms ease;
-      -moz-transition: transform 350ms ease, opacity 700ms ease;
-      -o-transition: transform 350ms ease, opacity 700ms ease;
-      transition: transform 350ms ease, opacity 700ms ease;
+      -webkit-transition: transform 500ms ease, opacity 1000ms ease;
+      -moz-transition: transform 500ms ease, opacity 1000ms ease;
+      -o-transition: transform 500ms ease, opacity 1000ms ease;
+      transition: transform 500ms ease, opacity 1000ms ease;
       width: calc(100% - 270px);
       position: relative; }
       #slate .modal .content .frame, #slate .modal .content .loader {
@@ -87,11 +87,11 @@ input {
   -ms-transform: scale(0);
   -o-transform: scale(0);
   transform: scale(0);
-  -webkit-transition-delay: 250ms;
-  -moz-transition-delay: 250ms;
-  -ms-transition-delay: 250ms;
-  -o-transition-delay: 250ms;
-  transition-delay: 250ms; }
+  -webkit-transition-delay: 400ms;
+  -moz-transition-delay: 400ms;
+  -ms-transition-delay: 400ms;
+  -o-transition-delay: 400ms;
+  transition-delay: 400ms; }
   #slate:not(.show-modal) .modal .overview .card-actions {
     -webkit-transform: translateY(100vh);
     -moz-transform: translateY(100vh);
@@ -124,17 +124,10 @@ ul.deck {
     padding: 10px;
     display: inline-block;
     will-change: transform;
-    -webkit-transition: opacity 250ms ease, transform 250ms ease;
-    -moz-transition: opacity 250ms ease, transform 250ms ease;
-    -o-transition: opacity 250ms ease, transform 250ms ease;
-    transition: opacity 250ms ease, transform 250ms ease; }
-    ul.deck > li .card {
-      will-change: transform;
-      height: 250px;
-      width: 250px;
-      border: 1px solid rgba(128, 128, 128, 0.14); }
-      ul.deck > li .card img {
-        width: 100%; }
+    -webkit-transition: opacity 400ms ease, transform 400ms ease;
+    -moz-transition: opacity 400ms ease, transform 400ms ease;
+    -o-transition: opacity 400ms ease, transform 400ms ease;
+    transition: opacity 400ms ease, transform 400ms ease; }
 
 .deck.focus {
   pointer-events: none; }
@@ -167,11 +160,19 @@ ul.deck {
   .deck.focus li:not(.selected) {
     opacity: 0; }
 
+.card {
+  will-change: transform;
+  height: 250px;
+  width: 250px;
+  border: 1px solid rgba(128, 128, 128, 0.14); }
+  .card img {
+    width: 100%; }
+
 .loader .blipper {
-  -webkit-transition: opacity 250ms ease;
-  -moz-transition: opacity 250ms ease;
-  -o-transition: opacity 250ms ease;
-  transition: opacity 250ms ease;
+  -webkit-transition: opacity 400ms ease;
+  -moz-transition: opacity 400ms ease;
+  -o-transition: opacity 400ms ease;
+  transition: opacity 400ms ease;
   margin: 100px auto;
   height: 60px;
   text-align: center;
