@@ -35,56 +35,60 @@
 
 </head>
 
-<body>
+<body id="app">
     <div class="splash page" ng-show="false">
         <div id="loader" class="content" ng-hide="true">
             <h1></h1>
             <h5>loading...</h5>
         </div>
     </div>
+    <div class="state">
+        <div id="slate" class="slate" ng-class="{'show-modal' : deck.current != -1}">
+            <nav></nav>
+            <ul class="grid"
+                ng-class="{'focus' : deck.current != -1}">
+                <li class="grid-box" ng-repeat="card in deck.cards" ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
+                    <div class="card"
+                         ng-click="deck.current = deck.current == $index ? -1 : $index">
+                        <img src="../../images/carousel/carousel-1.jpg">
+                    </div>
+                </li>
+            </ul>
+            <div class="modal">
+                <div class="overview">
+                    <div class="card-space"></div>
+                    <div class="card-actions">
+                        <button ng-click="deck.current = -1">Close</button>
+                    </div>
+                </div>
+                <div class="content frame-container">
+                    <iframe  class="frame"
+                             ng-repeat="card in deck.cards"
+                             ng-src="http://amoeba.social/concepts/legally/"
+                             ng-class="{'show': deck.current == $index}"
+                             ng-if="card.type == 'link'">
+                    </iframe>
 
-    <div id="slate" class="slate" ng-class="{'show-modal' : deck.current != -1}">
-        <nav></nav>
-        <ul class="grid"
-            ng-class="{'focus' : deck.current != -1}">
-            <li class="grid-box" ng-repeat="card in deck.cards" ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
-                <div class="card"
-                     ng-click="deck.current = deck.current == $index ? -1 : $index">
-                    <img src="../../images/carousel/carousel-1.jpg">
-                </div>
-            </li>
-        </ul>
-        <div class="modal">
-            <div class="overview">
-                <div class="card-space"></div>
-                <div class="card-actions">
-                    <button ng-click="deck.current = -1">Close</button>
-                </div>
-            </div>
-            <div class="content frame-container">
-                <iframe  class="frame"
-                         ng-repeat="card in deck.cards"
-                         ng-src="http://amoeba.social/concepts/legally/"
-                         ng-class="{'show': deck.current == $index}"
-                         ng-if="card.type == 'link'">
-                </iframe>
-
-                <div class="editor frame"
-                     ng-if="deck.cards[deck.current].type == 'code'">
-                    <p data-height="500" data-theme-id="0" data-slug-hash="{{deck.cards[deck.current].ref}}" data-default-tab="result" data-user="tamashi" data-preview="false" class='codepen'></p>
-                    <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-                </div>
-                <div class="loader" ng-class="{'no-display' : frameContainer.ready}">
-                    <div class="blipper">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
+                    <div class="editor frame"
+                         ng-if="deck.cards[deck.current].type == 'code'">
+                        <p data-height="500" data-theme-id="0" data-slug-hash="{{deck.cards[deck.current].ref}}" data-default-tab="result" data-user="tamashi" data-preview="false" class='codepen'></p>
+                        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+                    </div>
+                    <div class="loader" ng-class="{'no-display' : frameContainer.ready}">
+                        <div class="blipper">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
+    </div>
+
     </div>
 
     <script src="../../lib/jquery-2.1.4.min.js"></script>
