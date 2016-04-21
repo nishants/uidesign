@@ -5,6 +5,8 @@ describe("url listener", function(){
     var stateId = "state-id-x",
         url = "#/" + stateId + "/abc/?someparam=some%20val";
 
-    expect(State.parse(url).id).toBe(stateId);
+    States.load([{id: stateId}]);
+
+    expect(States.parse(url).id).toBe(stateId);
   })
 });
