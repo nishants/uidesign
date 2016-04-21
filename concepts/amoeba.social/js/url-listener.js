@@ -1,11 +1,10 @@
 (function () {
   "use strict"
 
-  var onStateChange = function () {
-    var url = $location.url();
-
-
+  var State = function(){};
+  State.prototype.parse = function(){
+    return {id: "state-id-x"};
   };
 
-  $(window).on("hashchange", onStateChange);
+  window.State = new State();
 }).call(this);
