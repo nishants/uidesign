@@ -4,15 +4,15 @@
   var app = angular.module("slate", []);
   app.directive("slate", [function () {
     var select = function (index) {
-          var card = $($(".deck > li")[index]),
+          var card = $($(".grid > li")[index]),
               offsetPadding = 10,
-              offsetY = $(".deck").offset().top - card.offset().top,
-              offsetX = $(".deck").offset().left - card.offset().left;
+              offsetY = $(".grid").offset().top - card.offset().top,
+              offsetX = $(".grid").offset().left - card.offset().left;
 
           card.css("transform", "translateY(" + (offsetY + offsetPadding) + "px)" + "translateX(" + (offsetX + offsetPadding) + "px)");
         },
         unSelect = function (index) {
-          var card = $($(".deck > li")[index]);
+          var card = $($(".grid > li")[index]);
           card.css("transform", "");
         };
     return {

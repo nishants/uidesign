@@ -13,7 +13,7 @@ $contentTransitionDuration : $transitionDuration + 100;
     background-color: black;
     width: 100%;
   }
-  .deck{
+  .grid{
     height: calc(100% - #{$navigationBarHeight});
   }
 }

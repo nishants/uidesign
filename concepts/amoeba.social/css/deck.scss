@@ -3,7 +3,7 @@ $rotate : 0deg;
 $cleanupDuration: $transitionDuration;
 $cleanupFunction: ease;
 
-ul.deck {
+ul.grid {
   margin: 0;
   padding: $containerPadding;
   display: block;
@@ -19,7 +19,7 @@ ul.deck {
   }
 }
 
-.deck.focus{
+.grid.focus{
   pointer-events: none;
   li.selected{
     pointer-events: none; //TODO : enables scroll on firefox

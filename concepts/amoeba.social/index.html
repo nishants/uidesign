@@ -45,7 +45,7 @@
 
     <div id="slate" class="slate" ng-class="{'show-modal' : deck.current != -1}">
         <nav></nav>
-        <ul class="deck"
+        <ul class="grid"
             ng-class="{'focus' : deck.current != -1}">
             <li ng-repeat="card in deck.cards" ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
                 <div class="card"
