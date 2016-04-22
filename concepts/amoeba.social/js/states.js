@@ -3,6 +3,7 @@
 
   var States = function(){
     this.__states = {};
+    this.__defaultState = null;
   };
 
   States.prototype.load = function(list){
