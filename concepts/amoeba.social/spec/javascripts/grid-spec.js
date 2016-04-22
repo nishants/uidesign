@@ -26,7 +26,8 @@ describe("Grid", function(){
         stateName       = "current-state",
         $container      = $containerOfWidth(containerWidth),
         gridBoxes       = [gridBoxMock(20, stateName), gridBoxMock(25, stateName), gridBoxMock(36, stateName),
-                           gridBoxMock(35, stateName), gridBoxMock(25, stateName), gridBoxMock(20, stateName)],
+                           gridBoxMock(35, stateName), gridBoxMock(25, stateName), gridBoxMock(20, stateName),
+                           gridBoxMock(99, "box-to-ignore"), gridBoxMock(21, "box-to-ignore")],
         grid            = new Grid($container, gridBoxes, colWidth);
 
 
