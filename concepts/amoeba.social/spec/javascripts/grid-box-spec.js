@@ -1,5 +1,12 @@
 describe("GridBox", function(){
 
+  it("should return height of box", function(){
+    var $gridBox  = {height: function(){return 103;}},
+        gridBox   = new GridBox($gridBox);
+
+    expect(gridBox.height()).toEqual(103);
+  });
+
   it("should set and apply position", function(){
     var $gridBox  = {css: function(){}},
         gridBox   = new GridBox($gridBox);
