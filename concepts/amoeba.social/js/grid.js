@@ -23,13 +23,16 @@
     }
 
     viewableBoxes.forEach(function(box){
-      var x = nextColumn * grid.colWidth,
-          y = grid.columns[nextColumn].nexPosition;
+      var
+          column = grid.columns[nextColumn],
+          x = nextColumn * grid.colWidth,
+          y = column.nexPosition;
 
       box.setPosition(x, y);
-      grid.columns[nextColumn].nexPosition += box.height();
-      gridHeight = Math.max(gridHeight, grid.columns[nextColumn].nexPosition);
-      nextColumn = (nextColumn +1)%columnCount;
+
+      column.nexPosition += box.height();
+      gridHeight          = Math.max(gridHeight, column.nexPosition);
+      nextColumn          = (nextColumn + 1) % columnCount;
     });
 
     grid.height = gridHeight;
