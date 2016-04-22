@@ -7,6 +7,15 @@ describe("GridBox", function(){
     expect(gridBox.height()).toEqual(103);
   });
 
+  it("should be visible if element is marked with state name", function(){
+    var stateName = "show-grid",
+        $gridBox  = {hasClass: function(name){return name === stateName;}},
+        gridBox   = new GridBox($gridBox);
+
+    expect(gridBox.visibleFor(stateName)).toBeTruthy();
+    expect(gridBox.visibleFor("some-other")).toBeFalsy();
+  });
+
   it("should set and apply position", function(){
     var $gridBox  = {css: function(){}},
         gridBox   = new GridBox($gridBox);

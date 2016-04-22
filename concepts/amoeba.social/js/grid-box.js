@@ -14,6 +14,10 @@
     return this.$gridbox.height();
   };
 
+  GridBox.prototype.visibleFor = function(stateName){
+    return this.$gridbox.hasClass(stateName);
+  };
+
   GridBox.prototype.applyPosition = function(){
     this.$gridbox.css("transform", "translateX("+this.xPosition+")" + " translateY("+this.yPosition+")")
   };
