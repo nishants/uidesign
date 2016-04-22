@@ -22,18 +22,26 @@ describe("Grid", function(){
         colWidth        = 30,
         containerWidth  = 90,
         expectedColumns = containerWidth/colWidth,
-        expectedHeight  = Math.max(20 + 35, 25 + 25, 36 + 20 ),
+        expectedHeight  = 56,
+        stateName       = "current-state",
         $container      = $containerOfWidth(containerWidth),
-        gridBoxes       = [gridBoxMock(20), gridBoxMock(25), gridBoxMock(36),
-                           gridBoxMock(35), gridBoxMock(25), gridBoxMock(20)],
+        gridBoxes       = [gridBoxMock(20, stateName), gridBoxMock(25, stateName), gridBoxMock(36, stateName),
+                           gridBoxMock(35, stateName), gridBoxMock(25, stateName), gridBoxMock(20, stateName)],
         grid            = new Grid($container, gridBoxes, colWidth);
 
-    grid.collect();
+
+    grid.collect(stateName);
 
     expect(grid.columns.length).toBe(expectedColumns);
 
     expect(gridBoxes[0].setPosition).toHaveBeenCalledWith(0,0);
+    expect(gridBoxes[1].setPosition).toHaveBeenCalledWith(colWidth,0);
+    expect(gridBoxes[2].setPosition).toHaveBeenCalledWith(2 * colWidth,0);
 
-    //expect(grid.height).toBe(expectedHeight);
+    expect(gridBoxes[3].setPosition).toHaveBeenCalledWith(0,            gridBoxes[0].height());
+    expect(gridBoxes[4].setPosition).toHaveBeenCalledWith(colWidth,     gridBoxes[1].height());
+    expect(gridBoxes[5].setPosition).toHaveBeenCalledWith(2 * colWidth, gridBoxes[2].height());
+
+    expect(grid.height).toBe(expectedHeight);
   });
 });
