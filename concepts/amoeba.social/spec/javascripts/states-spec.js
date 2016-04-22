@@ -8,5 +8,15 @@ describe("States", function(){
     States.load([{id: stateId}]);
 
     expect(States.parse(url).id).toBe(stateId);
-  })
+  });
+
+  it("should load default state (first loaded), if no hash url", function(){
+
+    var stateId = "state-id-x";
+    States.load([{id: stateId}, {id: "non-default-state"}]);
+
+    expect(States.parse("").id).toBe(stateId);
+    expect(States.parse("#").id).toBe(stateId);
+    expect(States.parse("#/").id).toBe(stateId);
+  });
 });
