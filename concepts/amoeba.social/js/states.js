@@ -1,16 +1,12 @@
 (function () {
   "use strict"
 
-  var States = function(){
+  var States = function(list){
+    this.__defaultState = list[0];
     this.__states = {};
-    this.__defaultState = null;
-  };
-
-  States.prototype.load = function(list){
     for(var i=0; i < list.length; i++){
       this.__states[list[i].id] = list[i];
     }
-    this.__defaultState = list[0];
   };
 
   States.prototype.parse = function(url){
@@ -20,5 +16,5 @@
     return stateByUrl || this.__defaultState;
   };
 
-  window.States = new States();
+  window.States = States;
 }).call(this);
