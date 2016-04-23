@@ -5,7 +5,10 @@
       var gridUpdated = $grid === event.delegateTarget,
           gridAdded   = $(event.target).hasClass("grid-box");
 
-      gridAdded && gridUpdated && grid.collect();
+      if(gridAdded && gridUpdated){
+        grid.setGridBoxes() ;
+        grid.collect();
+      }
     });
   };
 

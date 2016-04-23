@@ -3,6 +3,7 @@ describe("Grid", function(){
       stateName,
       domelement,
       $newBox ,
+      expectedBoxes,
       grid ;
 
   beforeEach(function(){
@@ -10,11 +11,18 @@ describe("Grid", function(){
     stateName   = "current-show-state";
     domelement  = {id: "domeNoe"};
     $newBox     = $(domelement);
-    grid        = {collect: function(){}};
+    expectedBoxes= [];
+    grid        = {collect: function(){}, setGridBoxes : function(boxes){
+      boxes.forEach(function(box, index){
+        expect(box).toBe(expectedBoxes[index]);
+      });
+    }};
+
   });
 
   it("should update grid when new grid-box is inserted", function(){
     spyOn(grid, "collect");
+    spyOn(grid, "setGridBoxes");
 
     new GridKeeper($grid, grid);
 
@@ -22,6 +30,7 @@ describe("Grid", function(){
     $newBox.addClass("grid-box");
 
     $grid.trigger("DOMNodeInserted", {delegateTarget: $grid, target: domelement});
+    expect(grid.setGridBoxes).toHaveBeenCalled();
     expect(grid.collect).toHaveBeenCalled();
   });
 
