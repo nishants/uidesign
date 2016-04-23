@@ -16,6 +16,7 @@
 
     this.$state.removeClass();
     this.$state.addClass(state.name);
+    this.grid.showState(state);
     this.grid.collect(state.name);
     this.grid.arrange();
   };
