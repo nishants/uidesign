@@ -32,7 +32,8 @@
             return this.__classes[name] = true;
           },
           removeClass: function (name) {
-            return this.__classes[name] = false;
+            name || (this.__classes = {});
+            name && (this.__classes[name] = false);
           }
         };
 
