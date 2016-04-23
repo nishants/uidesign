@@ -1,7 +1,7 @@
 describe("GridBox", function(){
 
   it("should return height of box", function(){
-    var $gridBox  = {height: function(){return 103;}},
+    var $gridBox  = $mock({height : 103}),
         gridBox   = new GridBox($gridBox);
 
     expect(gridBox.height()).toEqual(103);
@@ -9,7 +9,7 @@ describe("GridBox", function(){
 
   it("should be visible if element is marked with state name", function(){
     var stateName = "show-grid",
-        $gridBox  = {hasClass: function(name){return name === stateName;}},
+        $gridBox  = $mock({classes : [stateName]}),
         gridBox   = new GridBox($gridBox);
 
     expect(gridBox.visibleFor(stateName)).toBeTruthy();
@@ -17,7 +17,7 @@ describe("GridBox", function(){
   });
 
   it("should set and apply position", function(){
-    var $gridBox  = {css: function(){}},
+    var $gridBox  = $mock(),
         gridBox   = new GridBox($gridBox);
 
     spyOn($gridBox, "css");
