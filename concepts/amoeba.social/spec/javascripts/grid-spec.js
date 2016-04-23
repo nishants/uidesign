@@ -2,33 +2,12 @@ describe("Grid", function(){
   var gridBoxMock = function(height, stateName){
         var $gridBox  = $mock({height : height, classes: [stateName]}),
             gridBox = new GridBox($gridBox);
+
         spyOn(gridBox, "setPosition");
         spyOn(gridBox, "applyPosition");
 
         return gridBox;
       },
-
-      $containerOfWidth = function(width){
-        var failure = function(message){throw new Error(message);},
-            $container = {
-          events: [],
-          trigger: function(event){
-            this.events[event] ? this.events[event]() : failure("No listener subscribed for " + event );
-          },
-          on: function(event, callback){
-            this.events[event] = callback;
-          },
-          width: function () {
-            return width;
-          },
-          height: function () {
-          }
-        };
-        spyOn($container, "height");
-
-        return $container;
-      },
-
       colWidth        = 30,
       containerWidth  = 95,
       expectedColumns = 3,
@@ -40,7 +19,7 @@ describe("Grid", function(){
 
 
   beforeEach(function(){
-    $container      = $containerOfWidth(containerWidth);
+    $container      = $mock({width: containerWidth});
     gridBoxes       = [gridBoxMock(20, stateName), gridBoxMock(25, stateName), gridBoxMock(36, stateName),
                        gridBoxMock(35, stateName), gridBoxMock(25, stateName), gridBoxMock(20, stateName),
                        gridBoxMock(99, "box-to-ignore"), gridBoxMock(21, "box-to-ignore")];

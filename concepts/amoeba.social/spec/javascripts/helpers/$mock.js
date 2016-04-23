@@ -8,11 +8,22 @@
         width     = params.width  || 0,
         classes   = {},
         mockable  = function(){return function(){}},
-        $mock = {
+        failure   = function(message){throw new Error(message);},
+        mock     = {
           __classes: classes,
           css: mockable(),
+          events: [],
+          trigger: function(event){
+            this.events[event] ? this.events[event]() : failure("No listener subscribed for " + event );
+          },
+          on: function(event, callback){
+            this.events[event] = callback;
+          },
           height: function () {
             return height;
+          },
+          width: function () {
+            return width;
           },
           hasClass: function (name) {
             return this.__classes[name];
@@ -29,6 +40,8 @@
       classes[clas] = true;
     });
 
-    return $mock;
+    spyOn(mock, "height").and.callThrough();
+
+    return mock;
   };
 }).call(this);
