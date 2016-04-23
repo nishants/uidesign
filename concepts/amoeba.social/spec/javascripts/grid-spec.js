@@ -51,9 +51,6 @@ describe("Grid", function(){
     expect(gridBoxes[5].applyPosition).toHaveBeenCalled();
 
     expect($container.height).toHaveBeenCalledWith(expectedHeight);
-
-    expect(grid.height).toBe(expectedHeight);
-
   });
 
   it("should collect and arrange state, on adding new box to grid", function(){
@@ -74,5 +71,15 @@ describe("Grid", function(){
     expect(gridBoxes[5].setPosition).toHaveBeenCalledWith(2 * colWidth, gridBoxes[2].height());
 
     expect(grid.height).toBe(expectedHeight);
+
+    grid.collect(stateName);
+
+    expect(gridBoxes[0].applyPosition).not.toHaveBeenCalled();
+    expect(gridBoxes[1].applyPosition).not.toHaveBeenCalled();
+    expect(gridBoxes[2].applyPosition).not.toHaveBeenCalled();
+    expect(gridBoxes[3].applyPosition).not.toHaveBeenCalled();
+    expect(gridBoxes[4].applyPosition).not.toHaveBeenCalled();
+    expect(gridBoxes[5].applyPosition).not.toHaveBeenCalled();
+    expect($container.height).not.toHaveBeenCalled();
   });
 });
