@@ -13,6 +13,7 @@
               __classes: classes,
               css: mockable(),
               events: {},
+              children: {},
               trigger: function(eventName, eventObj){
                 expect($(window) == $(window)).toBeTruthy();
                 this.events[eventName] ? this.events[eventName](eventObj) : failure("No listener subscribed for " + eventName );
@@ -35,6 +36,10 @@
               removeClass: function (name) {
                 name || (this.__classes = {});
                 name && (this.__classes[name] = false);
+              },
+              find: function(query, $elements){
+                $elements && (this.children[query] = $elements);
+                return this.children[query];
               }
             };
 
