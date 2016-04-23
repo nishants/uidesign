@@ -1,49 +1,57 @@
 (function(){
   "use strict"
 
-  window.$mock = function(params){
-    params = params || {};
+  var failure   = function(message){throw new Error(message);},
+      mockable  = function(){return function(){}},
+      $mock = function(params){
+        params = params || {};
 
-    var height    = params.height || 0,
-        width     = params.width  || 0,
-        classes   = {},
-        mockable  = function(){return function(){}},
-        failure   = function(message){throw new Error(message);},
-        mock     = {
-          __classes: classes,
-          css: mockable(),
-          events: [],
-          trigger: function(event){
-            this.events[event] ? this.events[event]() : failure("No listener subscribed for " + event );
-          },
-          on: function(event, callback){
-            this.events[event] = callback;
-          },
-          height: function () {
-            return height;
-          },
-          width: function () {
-            return width;
-          },
-          hasClass: function (name) {
-            return this.__classes[name];
-          },
-          addClass: function (name) {
-            return this.__classes[name] = true;
-          },
-          removeClass: function (name) {
-            name || (this.__classes = {});
-            name && (this.__classes[name] = false);
-          }
-        };
+        var height    = params.height || 0,
+            width     = params.width  || 0,
+            classes   = {},
+            mock      = {
+              __classes: classes,
+              css: mockable(),
+              events: [],
+              trigger: function(eventName, eventObj){
+                this.events[eventName] ? this.events[eventName](eventObj) : failure("No listener subscribed for " + eventName );
+              },
+              on: function(event, callback){
+                this.events[event] = callback;
+              },
+              height: function () {
+                return height;
+              },
+              width: function () {
+                return width;
+              },
+              hasClass: function (name) {
+                return this.__classes[name];
+              },
+              addClass: function (name) {
+                return this.__classes[name] = true;
+              },
+              removeClass: function (name) {
+                name || (this.__classes = {});
+                name && (this.__classes[name] = false);
+              }
+            };
 
-    params.classes && params.classes.forEach(function(clas){
-      classes[clas] = true;
-    });
+        params.classes && params.classes.forEach(function(clas){
+          classes[clas] = true;
+        });
 
-    spyOn(mock, "height").and.callThrough();
-    spyOn(mock, "css").and.callThrough();
+        spyOn(mock, "height").and.callThrough();
+        spyOn(mock, "css").and.callThrough();
 
-    return mock;
-  };
+        return mock;
+      },
+      sectorTargets = {},
+      $ = function(selector){
+        var target = sectorTargets[selector];
+        return target || (sectorTargets[selector] = $mock());
+      };
+
+  window.$mock = $mock;
+  window.$ = $;
 }).call(this);
