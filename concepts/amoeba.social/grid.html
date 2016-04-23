@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/normalize-3.0.2.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css">
+
+    <style>
+        body{
+            background: rgba(0,0,0,0.05);
+        }
+        .card{
+            background: white;
+            margin: 10px;;
+            border: 1px solid rgba(0,0,0,0.5);
+            height: calc(100% - 20px);
+        }
+        .card img{
+            width: 100%;
+        }
+        .grid{
+            position: relative;
+            display: block;
+            list-style: none;
+        }
+        .grid>li{
+            width: 300px;
+            box-sizing: border-box;
+            display: block;
+            float: left;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transition: transform 300ms ease;
+            -moz-transition: transform 300ms ease ;
+            -ms-transition: transform 300ms ease ;
+            -o-transition: transform 300ms ease ;
+            transition: transform 300ms ease ;
+        }
+
+        .grid>li:nth-child(2){  height: 350px ;  }
+        .grid>li:nth-child(4){  height: 370px ;  }
+        .grid>li:nth-child(5){  height: 450px ;  }
+
+        .grid > li > .card{
+            border: none;
+        }
+
+    </style>
+
+</head>
+
+<body id="app">
+
+    <div class="state">
+        <div id="slate" class="slate" ng-class="{'show-modal' : deck.current != -1}">
+            <nav></nav>
+
+            <ul class="grid"
+                ng-class="{'focus' : deck.current != -1}">
+                <li class="grid-box home" >
+                    <div class="card"
+                         ng-click="deck.current = deck.current == $index ? -1 : $index">
+                        <img src="../../images/carousel/carousel-1.jpg">
+                    </div>
+                </li>
+                <li class="grid-box home" >
+                    <div class="card"
+                         ng-click="deck.current = deck.current == $index ? -1 : $index">
+                        <img src="../../images/carousel/carousel-1.jpg">
+                    </div>
+                </li>
+
+                <li class="grid-box home" >
+                    <div class="card three"
+                         ng-click="deck.current = deck.current == $index ? -1 : $index">
+                        <img src="../../images/carousel/carousel-3.jpg">
+                    </div>
+                </li>
+                <li class="grid-box home" >
+                    <div class="card"
+                         ng-click="deck.current = deck.current == $index ? -1 : $index">
+                        <img src="../../images/carousel/carousel-1.jpg">
+                    </div>
+                </li>
+
+                <li class="grid-box home" >
+                    <div class="card two"
+                         ng-click="deck.current = deck.current == $index ? -1 : $index">
+                        <img src="../../images/carousel/carousel-2.jpg">
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+    </div>
+
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/states.js"></script>
+    <script src="js/grid.js"></script>
+    <script src="js/grid-box.js"></script>
+
+    <script>
+         $(document).ready(function(){
+             var    gridBoxes    = function(){
+                         var boxes = $(".grid-box"), result = [];
+                         for(i = 0; i < boxes.length; i++){
+                             result.push(new GridBox($(boxes[i])));
+                         }
+                        return result;
+                     },
+                    $gridContainer  = $(".grid").first(),
+                    grid = new Grid($gridContainer, gridBoxes(), 300),
+                    states = new States([{name: "home", id: "home"}]),
+                    $state = $(".state").first(),
+                    app = new App($state, states, grid);
+
+             $(window).on("resize", function(){
+                 setTimeout(function(){
+                     app.loadUrl("");
+                 }, 100);
+             });
+             $(window).trigger("resize");
+         });
+    </script>
+</body>
+</html>

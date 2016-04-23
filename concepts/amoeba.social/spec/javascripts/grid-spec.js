@@ -20,8 +20,8 @@ describe("Grid", function(){
   it("should calculate grid dimensions on grid.calculate", function(){
     var
         colWidth        = 30,
-        containerWidth  = 90,
-        expectedColumns = containerWidth/colWidth,
+        containerWidth  = 95,
+        expectedColumns = 3,
         expectedHeight  = 56,
         stateName       = "current-state",
         $container      = $containerOfWidth(containerWidth),

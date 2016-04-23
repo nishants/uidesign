@@ -9,10 +9,17 @@
     this.height     = 0;
   };
 
+  Grid.prototype.arrange = function(){
+    this.__viewableBoxes.forEach(function(box){
+      box.applyPosition();
+    });
+    this.$container.height(this.height);
+  };
+
   Grid.prototype.collect = function(stateName){
     var
         grid          = this,
-        columnCount   = grid.$container.width()/grid.colWidth,
+        columnCount   = Math.floor(grid.$container.width()/grid.colWidth),
         gridHeight    = 0,
         nextColumn    = 0,
         viewableBoxes = grid.gridBoxes.filter(function(box){return box.visibleFor(stateName);});
@@ -36,6 +43,7 @@
     });
 
     grid.height = gridHeight;
+    this.__viewableBoxes = viewableBoxes;
   };
 
   window.Grid = Grid;

@@ -26,6 +26,6 @@ describe("GridBox", function(){
     expect($gridBox.css).not.toHaveBeenCalled();
 
     gridBox.applyPosition();
-    expect($gridBox.css).toHaveBeenCalledWith("transform", "translateX(21) translateY(45)");
+    expect($gridBox.css).toHaveBeenCalledWith("transform", "translateX(21px) translateY(45px)");
   });
 });

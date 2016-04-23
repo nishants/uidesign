@@ -19,7 +19,7 @@
   };
 
   GridBox.prototype.applyPosition = function(){
-    this.$gridbox.css("transform", "translateX("+this.xPosition+")" + " translateY("+this.yPosition+")")
+    this.$gridbox.css("transform", "translateX("+this.xPosition+"px)" + " translateY("+this.yPosition+"px)")
   };
 
   window.GridBox = GridBox;
