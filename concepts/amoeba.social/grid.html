@@ -106,21 +106,15 @@
     <script src="js/app.js"></script>
     <script src="js/states.js"></script>
     <script src="js/grid.js"></script>
+    <script src="js/grid-keeper.js"></script>
     <script src="js/grid-box.js"></script>
 
     <script>
          $(document).ready(function(){
-             var    gridBoxes    = function(){
-                         var boxes = $(".grid-box"), result = [];
-                         for(i = 0; i < boxes.length; i++){
-                             result.push(new GridBox($(boxes[i])));
-                         }
-                        return result;
-                     },
-                    $gridContainer  = $(".grid").first(),
-                    grid = new Grid($gridContainer, gridBoxes(), 300),
+             var    grid = new Grid($(".grid").first(), 300),
                     states = new States([{name: "home", id: "home"}]),
                     $state = $(".state").first(),
+
                     app = new App($state, states, grid);
 
              $(window).on("resize", function(){
@@ -129,12 +123,6 @@
                  }, 100);
              });
              $(window).trigger("resize");
-             $(".grid").on("DOMNodeInserted DOMNodeRemoved", function(event){
-                 var gridUpdated = this == event.delegateTarget,
-                     gridAdded   = $(event.target).hasClass("grid-box");
-
-                 gridAdded && gridUpdated && app.loadUrl("");
-             });
          });
     </script>
 </body>

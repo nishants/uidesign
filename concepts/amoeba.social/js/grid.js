@@ -1,12 +1,13 @@
 (function () {
   "use strict"
 
-  var Grid = function($grid, gridBoxes, colWidth){
+  var Grid = function($grid, colWidth){
     this.$grid      = $grid;
-    this.gridBoxes  = gridBoxes;
+    this.gridBoxes  = [];
     this.colWidth   = colWidth;
     this.columns    = [];
     this.height     = 0;
+    this.keeper     = null;
     var self        = this ;
     this.$grid.on("DOMNodeInserted", function(){
       self.__collect(self, self.__showState.name);
@@ -14,8 +15,13 @@
     });
   };
 
+  Grid.prototype.setGridBoxes = function(boxes){
+    this.gridBoxes = boxes;
+  }
+
   Grid.prototype.showState = function(state){
     this.__showState  = state;
+    this.keeper || (this.keeper = new GridKeeper(this.$grid, this)) ;
   }
 
   Grid.prototype.arrange = function(){
