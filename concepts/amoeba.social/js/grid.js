@@ -1,8 +1,8 @@
 (function () {
   "use strict"
 
-  var Grid = function($container, gridBoxes, colWidth){
-    this.$container = $container;
+  var Grid = function($grid, gridBoxes, colWidth){
+    this.$grid      = $grid;
     this.gridBoxes  = gridBoxes;
     this.colWidth   = colWidth;
     this.columns    = [];
@@ -13,13 +13,13 @@
     this.__viewableBoxes.forEach(function(box){
       box.applyPosition();
     });
-    this.$container.height(this.height);
+    this.$grid.height(this.height);
   };
 
   Grid.prototype.collect = function(stateName){
     var
         grid          = this,
-        columnCount   = Math.floor(grid.$container.width()/grid.colWidth),
+        columnCount   = Math.floor(grid.$grid.width()/grid.colWidth),
         gridHeight    = 0,
         nextColumn    = 0,
         viewableBoxes = grid.gridBoxes.filter(function(box){return box.visibleFor(stateName);});
