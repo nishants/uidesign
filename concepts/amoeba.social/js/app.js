@@ -1,12 +1,15 @@
 (function () {
   "use strict"
 
-  var App = function($state, grid){
+  var App = function($state, states, grid){
     this.$state = $state;
-    this.grid  = grid;
+    this.states = states;
+    this.grid   = grid;
   };
 
-  App.prototype.apply = function(state){
+  App.prototype.loadUrl = function(url){
+    var state = this.states.parse(url);
+
     this.$state.removeClass();
     this.$state.addClass(state.name);
     this.grid.collect(state.name);
