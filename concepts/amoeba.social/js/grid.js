@@ -7,7 +7,16 @@
     this.colWidth   = colWidth;
     this.columns    = [];
     this.height     = 0;
+    var self        = this ;
+    this.$grid.on("DOMNodeInserted", function(){
+      self.__collect(self, self.__showState.name);
+      self.arrange();
+    });
   };
+
+  Grid.prototype.showState = function(state){
+    this.__showState  = state;
+  }
 
   Grid.prototype.arrange = function(){
     this.__viewableBoxes.forEach(function(box){
@@ -16,9 +25,8 @@
     this.$grid.height(this.height);
   };
 
-  Grid.prototype.collect = function(stateName){
+  Grid.prototype.__collect = function(grid, stateName){
     var
-        grid          = this,
         columnCount   = Math.floor(grid.$grid.width()/grid.colWidth),
         gridHeight    = 0,
         nextColumn    = 0,
@@ -44,6 +52,11 @@
 
     grid.height = gridHeight;
     this.__viewableBoxes = viewableBoxes;
+
+  };
+
+  Grid.prototype.collect = function(){
+    this.__collect(this, this.__showState.name);
   };
 
   window.Grid = Grid;
