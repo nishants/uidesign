@@ -10,11 +10,11 @@ describe("Grid", function(){
     stateName   = "current-show-state";
     domelement  = {id: "domeNoe"};
     $newBox     = $(domelement);
-    grid        ={collect: function(){}};
+    grid        = {collect: function(){}};
   });
 
   it("should update grid when new grid-box is inserted", function(){
-    spyOn(grid, "collect").and.callThrough();
+    spyOn(grid, "collect");
 
     new GridKeeper($grid, grid);
 
@@ -26,7 +26,7 @@ describe("Grid", function(){
   });
 
   it("should ignore dom update if new element is not a grid-box", function(){
-    spyOn(grid, "collect").and.callThrough();
+    spyOn(grid, "collect");
 
     new GridKeeper($grid, grid);
 
