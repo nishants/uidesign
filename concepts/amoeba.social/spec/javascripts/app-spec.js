@@ -1,6 +1,6 @@
 describe("App", function(){
 
-  it("Should load a url and rearrange grid", function(){
+  it("Should load url and apply state", function(){
     var $state  = {addClass: function(){ if(!this.removed) throw "should clear state";}, removeClass: function(){this.removed = true; }},
         states  = {parse: function(){}},
         grid    = {collect: function(){this.collected = true;}, arrange: function(){if(!this.collected) throw "should collect before arrange";}}
