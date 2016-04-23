@@ -5,6 +5,10 @@
     this.$state = $state;
     this.states = states;
     this.grid   = grid;
+    var app = this;
+    $(window).on("hashchange", function(e){
+      app.loadUrl(e.originalEvent.newUrl);
+    })
   };
 
   App.prototype.loadUrl = function(url){

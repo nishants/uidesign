@@ -48,6 +48,7 @@
       },
       sectorTargets = {},
       $ = function(selector){
+        selector = (selector == window) ? "[3.14]" : selector;
         var target = sectorTargets[selector];
         return target || (sectorTargets[selector] = $mock());
       };
