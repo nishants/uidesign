@@ -15,7 +15,7 @@
         };
 
     $grid.on("DOMNodeInserted", function(event){
-      var gridUpdated = $grid === event.delegateTarget,
+      var gridUpdated = $grid[0] === event.delegateTarget,
           gridAdded   = $(event.target).hasClass("grid-box");
 
       if(gridAdded && gridUpdated){

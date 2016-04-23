@@ -49,45 +49,42 @@
             border: none;
         }
 
+        *{
+            box-sizing: border-box;
+        }
+        #app{
+            margin: 0px;
+            padding: 10px;
+        }
     </style>
 
 </head>
 
-<body id="app">
+<body id="app" ng-app ng-init="app = {cards: [1]}">
 
     <div class="state">
         <div id="slate" class="slate" ng-class="{'show-modal' : deck.current != -1}">
-            <nav></nav>
+            <nav>
+                <button ng-click="app.cards.push(app.cards.length + 1)">More : {{app.cards.join()}}</button>
+            </nav>
 
             <ul class="grid"
                 ng-class="{'focus' : deck.current != -1}">
-                <li class="grid-box home" >
-                    <div class="card"
-                         ng-click="deck.current = deck.current == $index ? -1 : $index">
-                        <img src="../../images/carousel/carousel-1.jpg">
-                    </div>
-                </li>
-                <li class="grid-box home" >
+                <li class="grid-box home" ng-repeat="a in app.cards">
                     <div class="card"
                          ng-click="deck.current = deck.current == $index ? -1 : $index">
                         <img src="../../images/carousel/carousel-1.jpg">
                     </div>
                 </li>
 
-                <li class="grid-box home" >
+                <li class="grid-box home" ng-repeat="a in app.cards">
                     <div class="card three"
                          ng-click="deck.current = deck.current == $index ? -1 : $index">
                         <img src="../../images/carousel/carousel-3.jpg">
                     </div>
                 </li>
-                <li class="grid-box home" >
-                    <div class="card"
-                         ng-click="deck.current = deck.current == $index ? -1 : $index">
-                        <img src="../../images/carousel/carousel-1.jpg">
-                    </div>
-                </li>
 
-                <li class="grid-box home" >
+                <li class="grid-box home" ng-repeat="a in app.cards">
                     <div class="card two"
                          ng-click="deck.current = deck.current == $index ? -1 : $index">
                         <img src="../../images/carousel/carousel-2.jpg">
@@ -102,6 +99,7 @@
     </div>
 
     <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <script src="../../lib/angular-1.4.3.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/states.js"></script>
