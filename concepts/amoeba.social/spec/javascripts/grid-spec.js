@@ -1,10 +1,6 @@
 describe("Grid", function(){
   var gridBoxMock = function(height, stateName){
-        var $gridBox  = {
-              height: function(){return height;},
-              css: function(){},
-              hasClass: function(name){return name === stateName;}
-            },
+        var $gridBox  = $mock({height : height, classes: [stateName]}),
             gridBox = new GridBox($gridBox);
         spyOn(gridBox, "setPosition");
         spyOn(gridBox, "applyPosition");
