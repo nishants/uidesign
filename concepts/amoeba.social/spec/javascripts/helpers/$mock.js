@@ -12,8 +12,9 @@
             mock      = {
               __classes: classes,
               css: mockable(),
-              events: [],
+              events: {},
               trigger: function(eventName, eventObj){
+                expect($(window) == $(window)).toBeTruthy();
                 this.events[eventName] ? this.events[eventName](eventObj) : failure("No listener subscribed for " + eventName );
               },
               on: function(event, callback){
@@ -55,4 +56,7 @@
 
   window.$mock = $mock;
   window.$ = $;
+  beforeEach(function(){
+    sectorTargets = {};
+  });
 }).call(this);
