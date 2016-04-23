@@ -41,6 +41,7 @@
     });
 
     spyOn(mock, "height").and.callThrough();
+    spyOn(mock, "css").and.callThrough();
 
     return mock;
   };

@@ -20,8 +20,6 @@ describe("GridBox", function(){
     var $gridBox  = $mock(),
         gridBox   = new GridBox($gridBox);
 
-    spyOn($gridBox, "css");
-
     gridBox.setPosition(21, 45);
     expect($gridBox.css).not.toHaveBeenCalled();
 
