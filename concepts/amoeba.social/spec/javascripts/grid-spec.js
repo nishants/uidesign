@@ -7,13 +7,15 @@ describe("Grid", function(){
             },
             gridBox = new GridBox($gridBox);
         spyOn(gridBox, "setPosition");
+        spyOn(gridBox, "applyPosition");
 
         return gridBox;
       },
 
       $containerOfWidth = function(width){
         return {
-          width : function(){return width;}
+          width : function(){return width;},
+          height : function(){}
         };
       };
 
@@ -30,6 +32,7 @@ describe("Grid", function(){
                            gridBoxMock(99, "box-to-ignore"), gridBoxMock(21, "box-to-ignore")],
         grid            = new Grid($container, gridBoxes, colWidth);
 
+    spyOn($container, "height");
 
     grid.collect(stateName);
 
@@ -44,5 +47,20 @@ describe("Grid", function(){
     expect(gridBoxes[5].setPosition).toHaveBeenCalledWith(2 * colWidth, gridBoxes[2].height());
 
     expect(grid.height).toBe(expectedHeight);
+
+    grid.arrange();
+
+    expect(gridBoxes[0].applyPosition).toHaveBeenCalled();
+    expect(gridBoxes[1].applyPosition).toHaveBeenCalled();
+    expect(gridBoxes[2].applyPosition).toHaveBeenCalled();
+
+    expect(gridBoxes[3].applyPosition).toHaveBeenCalled();
+    expect(gridBoxes[4].applyPosition).toHaveBeenCalled();
+    expect(gridBoxes[5].applyPosition).toHaveBeenCalled();
+
+    expect($container.height).toHaveBeenCalledWith(expectedHeight);
+
+    expect(grid.height).toBe(expectedHeight);
+
   });
 });
