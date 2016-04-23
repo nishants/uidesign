@@ -13,9 +13,9 @@
         }
         .card{
             background: white;
-            margin: 10px;;
+            margin: 5px;;
             border: 1px solid rgba(0,0,0,0.5);
-            height: calc(100% - 20px);
+            height: calc(100% - 10px);
         }
         .card img{
             width: 100%;
@@ -34,11 +34,11 @@
             position: absolute;
             top: 0;
             left: 0;
-            -webkit-transition: transform 300ms ease;
-            -moz-transition: transform 300ms ease ;
-            -ms-transition: transform 300ms ease ;
-            -o-transition: transform 300ms ease ;
-            transition: transform 300ms ease ;
+            -webkit-transition: transform   500ms ease;
+            -moz-transition: transform      500ms ease ;
+            -ms-transition: transform       500ms ease ;
+            -o-transition: transform        500ms ease ;
+            transition: transform           500ms ease ;
         }
 
         .grid>li:nth-child(2){  height: 350px ;  }
@@ -129,6 +129,12 @@
                  }, 100);
              });
              $(window).trigger("resize");
+             $(".grid").on("DOMNodeInserted DOMNodeRemoved", function(event){
+                 var gridUpdated = this == event.delegateTarget,
+                     gridAdded   = $(event.target).hasClass("grid-box");
+
+                 gridAdded && gridUpdated && app.loadUrl("");
+             });
          });
     </script>
 </body>
