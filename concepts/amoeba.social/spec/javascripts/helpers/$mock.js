@@ -10,6 +10,7 @@
             width     = params.width  || 0,
             classes   = {},
             mock      = {
+              __$mock: (99999 * Math.random()),
               __classes: classes,
               css: mockable(),
               events: {},
@@ -54,6 +55,7 @@
       },
       sectorTargets = {},
       $ = function(selector){
+        if(selector.__$mock) return selector;
         selector = (selector == window) ? "[3.14]" : selector;
         var target = sectorTargets[selector];
         return target || (sectorTargets[selector] = $mock());
