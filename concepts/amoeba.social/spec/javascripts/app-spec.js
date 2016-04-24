@@ -9,7 +9,7 @@ describe("App", function(){
     states = {parse: function(){}}
     $state = $mock({classes: ["some-other-state"]});
     grid   = {showState: function(){}, collect: function(){this.collected = true;}, arrange: function(){if(!this.collected) throw "should collect before arrange";}}
-    state = {name: stateName};
+    state =  {name: stateName};
 
     spyOn(states,     "parse").and.returnValue(state);
     spyOn(grid,    "collect").and.callThrough();
@@ -20,24 +20,27 @@ describe("App", function(){
   it("Should load url on hashchange", function(){
     new App($state, states, grid);
 
-    $(window).trigger("hashchange", {originalEvent: {newUrl: "#/state-id"}});
+    $(window).trigger("hashchange", {originalEvent: {newURL: "#/"+stateName}});
 
-    expect($state.hasClass("state-name")).toBeTruthy();
+    expect($state.hasClass(stateName)).toBeTruthy();
     expect($state.hasClass("some-other-state")).toBeFalsy();
-    expect(grid.collect).toHaveBeenCalledWith("state-name");
-    expect(states.parse).toHaveBeenCalledWith("#/state-id");
+
+    expect(states.parse).toHaveBeenCalledWith("/"+stateName);
+    expect(grid.collect).toHaveBeenCalled();
     expect(grid.arrange).toHaveBeenCalled();
   });
 
   it("Should load url and apply state", function(){
     var app     = new App($state, states, grid);
 
-    app.loadUrl("#/state-id");
+    app.loadUrl("#/state-name");
 
     expect($state.hasClass("state-name")).toBeTruthy();
     expect($state.hasClass("some-other-state")).toBeFalsy();
+
     expect(grid.showState).toHaveBeenCalledWith(state);
-    expect(grid.collect).toHaveBeenCalledWith("state-name");
+
+    expect(grid.collect).toHaveBeenCalledWith();
     expect(grid.arrange).toHaveBeenCalled();
   });
 
