@@ -9,7 +9,17 @@
     this.height     = 0;
     this.keeper     = null;
     var self        = this ;
+    this.$grid.css("overflow", "hidden");
     this.$grid.on("DOMNodeInserted", function(){
+      var         gridBoxes = function () {
+        var boxes = $grid.find(".grid-box"), result = [];
+        for (var i = 0; i < boxes.length; i++) {
+          result.push(new GridBox($(boxes[i])));
+        }
+        return result;
+      };
+
+      self.setGridBoxes(gridBoxes());
       self.__collect(self, self.__showState.name);
       self.arrange();
     });
@@ -21,7 +31,7 @@
 
   Grid.prototype.showState = function(state){
     this.__showState  = state;
-    this.keeper || (this.keeper = new GridKeeper(this.$grid, this)) ;
+    this.$grid.trigger("DOMNodeInserted");
   }
 
   Grid.prototype.arrange = function(){
