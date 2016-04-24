@@ -21,9 +21,22 @@ describe("GridBox", function(){
         gridBox   = new GridBox($gridBox);
 
     gridBox.setPosition(21, 45);
-    expect($gridBox.css).not.toHaveBeenCalled();
-
     gridBox.applyPosition();
-    expect($gridBox.css).toHaveBeenCalledWith("transform", "translateX(21px) translateY(45px)");
+    expect($gridBox.css("transform")).toBe("translateX(21px) translateY(45px)");
+  });
+
+  it("should calculate offset for top,left", function(){
+    var leftOffset = 45;
+    var topOffset = 21;
+    var $gridBox  = $mock(),
+        gridBox;
+
+    $gridBox.css("left", leftOffset);
+    $gridBox.css("top", topOffset);
+
+    gridBox   = new GridBox($gridBox)
+    gridBox.setPosition(145, 321);
+    gridBox.applyPosition();
+    expect($gridBox.css("transform")).toBe("translateX(100px) translateY(300px)");
   });
 });

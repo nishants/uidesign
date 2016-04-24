@@ -3,6 +3,11 @@
 
   var GridBox = function($gridbox){
     this.$gridbox = $gridbox;
+    var offsetX = parseInt($gridbox.css("left"));
+    var offsetY = parseInt($gridbox.css("top"));
+    this.offset = {
+      x: offsetX ||0 ,
+      y: offsetY ||0}
   };
 
   GridBox.prototype.setPosition = function(x,y){
@@ -19,7 +24,10 @@
   };
 
   GridBox.prototype.applyPosition = function(){
-    this.$gridbox.css("transform", "translateX("+this.xPosition+"px)" + " translateY("+this.yPosition+"px)")
+    var x = this.xPosition - this.offset.x,
+        y = this.yPosition - this.offset.y;
+
+    this.$gridbox.css("transform", "translateX("+x+"px)" + " translateY("+y+"px)")
   };
 
   window.GridBox = GridBox;

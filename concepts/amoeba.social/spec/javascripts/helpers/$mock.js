@@ -12,7 +12,11 @@
             mock      = {
               __$mock: (99999 * Math.random()),
               __classes: classes,
-              css: mockable(),
+              __css: {},
+              css: function(field, value){
+                this.__css[field] || (this.__css[field] = value);
+                return this.__css[field];
+              },
               events: {},
               children: {},
               trigger: function(eventName, eventObj){
