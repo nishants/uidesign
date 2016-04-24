@@ -71,9 +71,5 @@
 
   };
 
-  Grid.prototype.collect = function(){
-    this.__collect(this, this.__showState.name);
-  };
-
   window.Grid = Grid;
 }).call(this);

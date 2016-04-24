@@ -19,8 +19,6 @@
     this.$state.addClass(state.name);
 
     this.grid.showState(state);
-    this.grid.collect();
-    this.grid.arrange();
   };
 
   window.App = App;

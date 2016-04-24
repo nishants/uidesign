@@ -8,12 +8,10 @@ describe("App", function(){
   beforeEach(function(){
     states = {parse: function(){}}
     $state = $mock({classes: ["some-other-state"]});
-    grid   = {showState: function(){}, collect: function(){this.collected = true;}, arrange: function(){if(!this.collected) throw "should collect before arrange";}}
+    grid   = {showState: function(){}}
     state =  {name: stateName};
 
     spyOn(states,     "parse").and.returnValue(state);
-    spyOn(grid,    "collect").and.callThrough();
-    spyOn(grid,    "arrange").and.callThrough();
     spyOn(grid,    "showState").and.callThrough();
   });
 
@@ -26,8 +24,7 @@ describe("App", function(){
     expect($state.hasClass("some-other-state")).toBeFalsy();
 
     expect(states.parse).toHaveBeenCalledWith("/"+stateName);
-    expect(grid.collect).toHaveBeenCalled();
-    expect(grid.arrange).toHaveBeenCalled();
+    expect(grid.showState).toHaveBeenCalledWith(state);
   });
 
   it("Should load url and apply state", function(){
@@ -39,9 +36,6 @@ describe("App", function(){
     expect($state.hasClass("some-other-state")).toBeFalsy();
 
     expect(grid.showState).toHaveBeenCalledWith(state);
-
-    expect(grid.collect).toHaveBeenCalledWith();
-    expect(grid.arrange).toHaveBeenCalled();
   });
 
 });
