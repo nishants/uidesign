@@ -38,6 +38,7 @@
     this.__viewableBoxes.forEach(function(box){
       box.applyPosition();
     });
+    this.$grid.height(0);
     this.$grid.height(this.height);
   };
 

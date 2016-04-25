@@ -1,8 +1,15 @@
 section.lab{
   height: calc(100vh - #{$topBarHeight});
   overflow: hidden;
+
+  .grid-container{
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 #app.show-labs section.lab{
-  overflow: auto;
+  .grid-container{
+    overflow: auto;
+  }
 }

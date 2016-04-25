@@ -111,8 +111,11 @@ input, button {
 section.lab {
   height: calc(100vh - 75px);
   overflow: hidden; }
+  section.lab .grid-container {
+    height: 100%;
+    overflow: hidden; }
 
-#app.show-labs section.lab {
+#app.show-labs section.lab .grid-container {
   overflow: auto; }
 
 #app:not(.show-labs) nav.top-bar {
