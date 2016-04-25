@@ -1,3 +1,4 @@
 section.lab{
   height: calc(100vh - #{$topBarHeight});
+  overflow: hidden;
 }

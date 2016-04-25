@@ -1,0 +1,24 @@
+<ul class="grid"
+    ng-class="{'focus' : deck.current != -1}">
+    <li class="grid-box all home" ng-repeat="a in app.cards">
+        <div class="card"
+             ng-click="deck.current = deck.current == $index ? -1 : $index">
+            <img src="../images/carousel/carousel-1.jpg">
+        </div>
+    </li>
+
+    <li class="grid-box all dashboard" ng-repeat="a in app.cards">
+        <div class="card three"
+             ng-click="deck.current = deck.current == $index ? -1 : $index">
+            <img src="../images/carousel/carousel-3.jpg">
+        </div>
+    </li>
+
+    <li class="grid-box all home" ng-repeat="a in app.cards">
+        <div class="card two"
+             ng-click="deck.current = deck.current == $index ? -1 : $index">
+            <img src="../images/carousel/carousel-2.jpg">
+        </div>
+    </li>
+
+</ul>

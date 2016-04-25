@@ -99,7 +99,11 @@
                 </div>
                 <div class="nav-bar">css3 | html5 </div>
             </section>
-            <section class="lab"></section>
+            <section class="lab">
+                <div class="grid-container">
+
+                </div>
+            </section>
             <nav class="top-bar">
                 <div class="title-bar">amoeba.social</div>
             </nav>
@@ -117,6 +121,11 @@
     <link rel="stylesheet" href="index.css">
 
     <script src="../lib/jquery-2.1.4.min.js"></script>
+
+    <script src="app/grid/app.js"></script>
+    <script src="app/grid/states.js"></script>
+    <script src="app/grid/grid.js"></script>
+    <script src="app/grid/grid-box.js"></script>
     <script>
          $(document).ready(function(){
              setTimeout(function(){
@@ -148,6 +157,15 @@
                      showLabs ? $app.addClass("show-labs"): $app.removeClass("show-labs");
                  });
              },1000);
+
+             $.get("app/grid/_grid.html", function(template){
+                 $("section.lab .grid-container").first().html(template);
+                 var     grid = new Grid($(".grid").first(), 300),
+                         states = new States([{name: "all", id: "all"},{name: "home", id: "home"}, {name: "dashboard", id: "dashboard"}]),
+                         $state = $(".state").first(),
+                         app = new App($state, states, grid);
+                 app.loadUrl(window.location.hash);
+             });
          });
     </script>
 </body>
