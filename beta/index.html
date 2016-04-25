@@ -4,13 +4,10 @@
 <head>
     <title>creatively simple</title>
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0"><style>
-
-    </style>
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <style>
-        #app * {
-            box-sizing: border-box;
-        }
+        body{overflow: hidden;}
+        #app * {box-sizing: border-box;}
 
         #app.loading {
             height: 100vh;
@@ -45,6 +42,12 @@
             display: inline-block;
         }
 
+        @media screen and (max-width: 480px) {
+            #app > section.home > h1.title{ font-size: 40px}
+            #app > section.home > .sub-title {margin-top: -30px;}
+            #app > section.home > .sub-title > .line {width: 50px; margin-bottom: 3.25px;  }
+            #app > section.home > .sub-title > h3.punch-line{font-size: 13px;}
+        }
     </style>
 </head>
 
