@@ -164,7 +164,10 @@
                          states = new States([{name: "all", id: "all"},{name: "home", id: "home"}, {name: "dashboard", id: "dashboard"}]),
                          $state = $(".state").first(),
                          app = new App($state, states, grid);
-                 app.loadUrl(window.location.hash);
+                 $(window).on("resize", function(){
+                     app.loadUrl(window.location.hash);
+                 });
+                 $(window).trigger("resize");
              });
          });
     </script>
