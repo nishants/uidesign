@@ -14,4 +14,20 @@ nav.top-bar{
   background-color: $white;
   color: $black;
   @include transition($transitionDuration opacity $transition);
+
+  .title-bar{
+    background: $white;
+    height: $titleBarHeight;
+    line-height: $titleBarHeight;
+    padding: 0px $padding;
+  }
+  .nav-bar{
+    background: $black;
+    height: $navBarHeight;
+    line-height: $navBarHeight;
+    padding: 0px $padding;
+
+    color: $white;
+    text-align: right;
+  }
 }

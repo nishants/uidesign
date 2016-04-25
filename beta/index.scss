@@ -1,11 +1,15 @@
 @import "app/css/config";
 
-$topBarHeight: 70px;
+$titleBarHeight : 40px;
+$navBarHeight   : 30px;
+$topBarHeight   : $titleBarHeight + $navBarHeight;
+
 $padding : 10px;
 
 #app{
   height: 100vh;
   overflow: auto;
+  font-family: 'Metrophobic', Arial, serif;
 }
 
 @import "app/css/home";
