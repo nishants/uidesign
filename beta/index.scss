@@ -1,10 +1,12 @@
-$topBarHeight: 85px;
+@import "app/css/config";
+
+$topBarHeight: 70px;
 
 #app{
   height: 100vh;
   overflow: auto;
 }
 
-@import "app/css/config";
 @import "app/css/home";
 @import "app/css/lab";
+@import "app/css/top-bar";

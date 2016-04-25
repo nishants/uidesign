@@ -1,0 +1,17 @@
+#app:not(.show-labs) > nav.top-bar{
+  opacity: 0;
+  pointer-events: none;
+}
+
+nav.top-bar{
+  position: fixed;
+  top:0;
+  left:0;
+
+  height: $topBarHeight;
+  width: 100vw;
+
+  background-color: $white;
+  color: $black;
+  @include transition($transitionDuration opacity $transition);
+}
