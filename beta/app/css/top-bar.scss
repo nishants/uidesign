@@ -37,13 +37,18 @@ nav.top-bar{
 
   background: $black;
   height: $navBarHeight;
-  line-height: $navBarHeight;
-  padding: 0px $padding;
+  padding-right: $padding;
+  a{
+    float: right;
+    line-height: $navBarHeight;
+    padding: 0px 5px;
 
-  color: $white;
-  text-align: right;
-  font-weight: $boldFontWeight;
-  text-shadow: $glowyWhiteText;
+    color: $white;
+    text-align: right;
+    font-weight: $boldFontWeight;
+    text-shadow: $glowyWhiteText;
 
+    text-decoration: none;
+  }
   @include transition(#{transform $shutterDuration  $transition, opacity $shutterDuration  $transition});
 }

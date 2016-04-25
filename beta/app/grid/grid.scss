@@ -59,7 +59,7 @@ $colWidth: 200px;
   opacity: 0;
   pointer-events: none;
 }
-.state.home  .grid-box.home, .state.dashboard  .grid-box.dashboard{
+.state.concepts  .grid-box.concepts, .state.interactions  .grid-box.interactions{
   opacity: 1;
   pointer-events: all;
 }
@@ -69,6 +69,6 @@ $colWidth: 200px;
   pointer-events: all;
 }
 
-.state.home  .grid-box:not(.home) .card, .state.dashboard  .grid-box:not(.dashboard) .card{
+.state.concepts  .grid-box:not(.concepts) .card, .state.interactions  .grid-box:not(.interactions) .card{
   transform: translateY(100vh);
 }

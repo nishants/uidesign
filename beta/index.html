@@ -97,7 +97,11 @@
                     <h3 class="punch-line">creative simplicity</h3>
                     <span class="line"></span>
                 </div>
-                <div class="nav-bar">css3 | html5 </div>
+                <div class="nav-bar">
+                    <a href="#/all">all</a>
+                    <a href="#/interactions">interactions</a>
+                    <a href="#/concepts">concepts</a>
+                </div>
             </section>
             <section class="lab">
                 <div class="grid-container">
@@ -161,7 +165,7 @@
              $.get("app/grid/_grid.html", function(template){
                  $("section.lab .grid-container").first().html(template);
                  var     grid = new Grid($(".grid").first(), 200),
-                         states = new States([{name: "all", id: "all"},{name: "home", id: "home"}, {name: "dashboard", id: "dashboard"}]),
+                         states = new States([{name: "all", id: "all"},{name: "concepts", id: "concepts"}, {name: "interactions", id: "interactions"}]),
                          $state = $(".state").first(),
                          app = new App($state, states, grid);
                  $(window).on("resize", function(){
