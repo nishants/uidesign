@@ -1,27 +1,40 @@
 #app > section.home{
   height: 100vh;
 
-  > a.contact{
+  > span.contact{
+    display: block;
     position: relative;
     z-index: 1;
     float: right;
     margin: 10px;
 
-    height: 30px;
-    line-height: 30px;
-    padding: 0px 15px;
 
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.87);
-    font-size: 20px;
+    @include transform(rotateY(180deg) rotateZ(90deg));
+    @include transition(#{opacity 500ms, transform 500ms});
+    >a{
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      padding: 0px 15px;
+      text-decoration: none;
+      font-size: 20px;
+      color: $white;
+      border: 1px solid transparent;
 
-    border: 1px solid rgba(255, 255, 255, 0.46);
-    border-radius: 5px;
+      @include transition(#{all 500ms});
+      @include transitionDelay(0ms);
+    }
+  }
+}
 
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+#app.scrolled > section.home{
+  > span.contact{
+    transform: translateX(calc(70px - 100vw)) translateY(calc(100vh - 45px));
 
-    @include transition(opacity 500ms);
+    a{
+      border-radius: 2px;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+      @include transitionDelay(250ms);
+    }
   }
 }
