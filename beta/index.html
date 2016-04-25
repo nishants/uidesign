@@ -28,6 +28,16 @@
             font-size: 66px;
             height: 50vh;
             padding-top: calc(50vh - 70px);
+
+            -webkit-animation-delay: 0.25s;
+            -moz-animation-delay: 0.25s;
+            animation-delay: 0.25s;
+        }
+
+        #app > section.home > .sub-title {
+            -webkit-animation-delay: 0.5s;
+            -moz-animation-delay: 0.5s;
+            animation-delay: 0.5s;
         }
 
         #app > section.home > .sub-title > .line{
@@ -48,15 +58,32 @@
             #app > section.home > .sub-title > .line {width: 50px; margin-bottom: 3.25px;  }
             #app > section.home > .sub-title > h3.punch-line{font-size: 13px;}
         }
+        .fade-in {
+            opacity:0;  /* make things invisible upon start */
+            -webkit-animation:fadeIn ease-in 500ms;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+            -moz-animation:fadeIn ease-in 500ms;
+            animation:fadeIn ease-in 500ms;
+
+            -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+            -moz-animation-fill-mode:forwards;
+            animation-fill-mode:forwards;
+
+            -webkit-animation-duration: 500ms;
+            -moz-animation-duration: 500ms;
+            animation-duration: 500ms;
+        }
+        @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
     </style>
 </head>
 
 <body>
 
-    <article id="app" class="loading">
+    <article id="app" class="loading fade-in">
         <section class="home">
-            <h1 class="title">amoeba.social</h1>
-            <div class="sub-title">
+            <h1 class="title fade-in">amoeba.social</h1>
+            <div class="sub-title fade-in">
                 <span class="line"></span>
                 <h3 class="punch-line">creative simplicity</h3>
                 <span class="line"></span>
