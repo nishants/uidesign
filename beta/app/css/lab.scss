@@ -2,3 +2,7 @@ section.lab{
   height: calc(100vh - #{$topBarHeight});
   overflow: hidden;
 }
+
+#app.show-labs section.lab{
+  overflow: auto;
+}

@@ -1,3 +1,5 @@
+$colWidth: 200px;
+
 .card{
   background: white;
   margin: 5px;;
@@ -34,7 +36,7 @@
 
 
 .grid>li{
-  width: 300px;
+  width: $colWidth;
   box-sizing: border-box;
   display: block;
   float: left;

@@ -160,7 +160,7 @@
 
              $.get("app/grid/_grid.html", function(template){
                  $("section.lab .grid-container").first().html(template);
-                 var     grid = new Grid($(".grid").first(), 300),
+                 var     grid = new Grid($(".grid").first(), 200),
                          states = new States([{name: "all", id: "all"},{name: "home", id: "home"}, {name: "dashboard", id: "dashboard"}]),
                          $state = $(".state").first(),
                          app = new App($state, states, grid);
