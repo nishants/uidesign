@@ -126,7 +126,16 @@
                      $navBar        = $(".nav-bar"),
                      homeHeight     = $home.height(),
                      topBarHeight   = $topBar.height() + $navBar.height(),
-                     showLabsOffset = (homeHeight - topBarHeight - 5);
+                     showLabsOffset = (homeHeight - topBarHeight - 5),
+                     scrollTo       = function(position){
+                         $app.animate({
+                             scrollTop: position
+                         }, 500);
+                     };
+
+                 $navBar.click(function(){
+                     scrollTo(homeHeight - topBarHeight);
+                 });
 
                  $app.on("scroll", function(e){
                      var scrollTop = this.scrollTop,
