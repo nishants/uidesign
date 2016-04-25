@@ -57,11 +57,11 @@
             display: inline-block;
         }
 
-        @media screen and (max-width: 480px) {
-            #app > section.home > h1.title{ font-size: 40px}
-            #app > section.home > .sub-title {margin-top: -30px;}
-            #app > section.home > .sub-title > .line {width: 50px; margin-bottom: 3.25px;  }
-            #app > section.home > .sub-title > h3.punch-line{font-size: 13px;}
+        @media screen and (max-width: 700px) {
+            #app section.home > h1.title{ font-size: 40px}
+            #app section.home > .sub-title {margin-top: -30px;}
+            #app section.home > .sub-title > .line {width: 50px; margin-bottom: 3.25px;  }
+            #app section.home > .sub-title > h3.punch-line{font-size: 13px;}
         }
         .fade-in {
             opacity:0;  /* make things invisible upon start */
@@ -141,7 +141,7 @@
                      $navBar        = $(".nav-bar"),
                      homeHeight     = $home.height(),
                      topBarHeight   = $topBar.height() + $navBar.height(),
-                     showLabsOffset = (homeHeight - topBarHeight - 5),
+                     showLabsOffset = (homeHeight - topBarHeight),
                      scrollTo       = function(position){
                          $app.animate({
                              scrollTop: position
@@ -155,7 +155,7 @@
                  $app.on("scroll", function(e){
                      var scrollTop = this.scrollTop,
                          scrolled  = scrollTop > 20,
-                         showLabs  = scrollTop > showLabsOffset;
+                         showLabs  = scrollTop >= showLabsOffset;
 
                      scrolled ? $app.addClass("scrolled") : $app.removeClass("scrolled");
                      showLabs ? $app.addClass("show-labs"): $app.removeClass("show-labs");
