@@ -1,0 +1,60 @@
+$flyDownDuration :500ms;
+$contactHeight : 30px;
+$conactIconSize: 20px;
+
+#app > section.home{
+  height: 100vh;
+
+  > a.contact{
+    display   : block;
+    position  : relative;
+    z-index   : 1;
+    float     : right;
+    margin    : $padding;
+    overflow  : hidden;
+
+    height      : $contactHeight;
+    line-height : $contactHeight;
+    padding     : 0px $conactIconSize;
+
+    border-radius  : 2px;
+    text-decoration: none;
+
+    @include transition(#{opacity $flyDownDuration, transform $flyDownDuration});
+    >span{
+      display    : block;
+      height     : 100%;
+      line-height: inherit;
+
+      font-size   : $conactIconSize;
+      color       : $white;
+      text-shadow : 1px 1px 1px rgba(0,0,0,0.3);
+
+      @include transition(#{all $flyDownDuration});
+      @include transform(rotateY(180deg) rotateZ(90deg));
+    }
+  }
+
+  > a.contact:hover{
+    > span{
+      color: $black;
+      @include transform(scale(0.8));
+    };
+    background: $white;
+  }
+}
+
+#app.scrolled > section.home{
+  > a.contact{
+    transform: translateX(calc(70px - 100vw)) translateY(calc(100vh - 45px));
+    span{
+      @include transform(scale(1));
+    }
+  }
+  > a.contact:hover{
+    > span{
+      color: $black;
+      @include transform(scale(0.8) rotateY(180deg) rotateZ(90deg));
+    };
+  }
+}
