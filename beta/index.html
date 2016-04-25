@@ -26,7 +26,7 @@
         }
 
         /* wait for font-awesome to load, before displaying contact icon*/
-        #app.loading > section.home > span.contact{opacity: 0;}
+        #app.loading > section.home > a.contact{opacity: 0;}
 
         #app > section.home > h1.title{
             margin: 0px auto;
@@ -87,7 +87,9 @@
 
     <article id="app" class="loading fade-in">
         <section class="home">
-            <span class="contact"><a class="fa fa-paper-plane  fade-in" href="mailto:inbox@amoeba.social?Subject=Lets%20talk"></a></span>
+            <a class="contact" href="mailto:inbox@amoeba.social?Subject=Lets%20talk">
+                <span class="fa fa-paper-plane  fade-in"></span>
+            </a>
             <h1 class="title fade-in">amoeba.social</h1>
             <div class="sub-title fade-in">
                 <span class="line"></span>
@@ -102,7 +104,7 @@
     <link rel="stylesheet" href="../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <style>
         /* wait for font-awesome to load, before displaying contact icon*/
-        #app.loading > section.home > span.contact{opacity: 1; !important}
+        #app.loading > section.home > a.contact{opacity: 1; !important}
     </style>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
 

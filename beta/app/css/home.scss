@@ -1,40 +1,57 @@
 #app > section.home{
   height: 100vh;
 
-  > span.contact{
+  > a.contact{
     display: block;
     position: relative;
     z-index: 1;
     float: right;
     margin: 10px;
+    overflow: hidden;
 
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 25px;
 
-    @include transform(rotateY(180deg) rotateZ(90deg));
+    border-radius: 2px;
+    text-decoration: none;
+
     @include transition(#{opacity 500ms, transform 500ms});
-    >a{
+    >span{
       display: block;
-      height: 30px;
-      line-height: 30px;
-      padding: 0px 15px;
-      text-decoration: none;
+      height: 100%;
+      line-height: inherit;
+
       font-size: 20px;
       color: $white;
-      border: 1px solid transparent;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 
       @include transition(#{all 500ms});
       @include transitionDelay(0ms);
+      @include transform(rotateY(180deg) rotateZ(90deg));
     }
+  }
+
+  > a.contact:hover{
+    > span{
+      color: $black;
+      @include transform(scale(0.8));
+    };
+    background: $white;
   }
 }
 
 #app.scrolled > section.home{
-  > span.contact{
+  > a.contact{
     transform: translateX(calc(70px - 100vw)) translateY(calc(100vh - 45px));
-
-    a{
-      border-radius: 2px;
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-      @include transitionDelay(250ms);
+    span{
+      @include transform(scale(1));
     }
+  }
+  > a.contact:hover{
+    > span{
+      color: $black;
+      @include transform(scale(0.8) rotateY(180deg) rotateZ(90deg));
+    };
   }
 }
