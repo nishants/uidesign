@@ -1,33 +1,36 @@
+$flyDownDuration :500ms;
+$contactHeight : 30px;
+$conactIconSize: 20px;
+
 #app > section.home{
   height: 100vh;
 
   > a.contact{
-    display: block;
-    position: relative;
-    z-index: 1;
-    float: right;
-    margin: 10px;
-    overflow: hidden;
+    display   : block;
+    position  : relative;
+    z-index   : 1;
+    float     : right;
+    margin    : $padding;
+    overflow  : hidden;
 
-    height: 30px;
-    line-height: 30px;
-    padding: 0px 25px;
+    height      : $contactHeight;
+    line-height : $contactHeight;
+    padding     : 0px $conactIconSize;
 
-    border-radius: 2px;
+    border-radius  : 2px;
     text-decoration: none;
 
-    @include transition(#{opacity 500ms, transform 500ms});
+    @include transition(#{opacity $flyDownDuration, transform $flyDownDuration});
     >span{
-      display: block;
-      height: 100%;
+      display    : block;
+      height     : 100%;
       line-height: inherit;
 
-      font-size: 20px;
-      color: $white;
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+      font-size   : $conactIconSize;
+      color       : $white;
+      text-shadow : 1px 1px 1px rgba(0,0,0,0.3);
 
-      @include transition(#{all 500ms});
-      @include transitionDelay(0ms);
+      @include transition(#{all $flyDownDuration});
       @include transform(rotateY(180deg) rotateZ(90deg));
     }
   }
