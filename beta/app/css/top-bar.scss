@@ -26,7 +26,7 @@ nav.top-bar{
     height: $titleBarHeight;
     line-height: $titleBarHeight;
     padding: 0px $padding;
-    @include transition(#{transform $shutterDuration  $transition, opacity $shutterDuration  $transition});
+    @include transition(#{transform $shutterDuration  $transition, opacity 500ms  $transition});
   }
 }
 
