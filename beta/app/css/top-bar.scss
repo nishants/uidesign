@@ -42,6 +42,8 @@ nav.top-bar{
 
   color: $white;
   text-align: right;
+  font-weight: $boldFontWeight;
+  text-shadow: $glowyWhiteText;
 
   @include transition(#{transform $shutterDuration  $transition, opacity $shutterDuration  $transition});
 }

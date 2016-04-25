@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700,600,400');
 @import "app/css/config";
 
 $titleBarHeight : 40px;
@@ -5,11 +6,18 @@ $navBarHeight   : 30px;
 $topBarHeight   : $titleBarHeight + $navBarHeight;
 
 $padding : 10px;
+$veryBoldFontWeight : 700;
+$boldFontWeight     : 500;
+$normalFontWeight   : 400;
+
+$glowyWhiteText: 1px 1px 1px rgba(255, 255, 255, 0.5);
+$shadyBlackText: 1px 1px 1px rgba(1, 2, 1, 0.5);
 
 #app{
   height: 100vh;
   overflow: auto;
   font-family: 'Metrophobic', Arial, serif;
+  font-weight: $normalFontWeight;
 }
 
 @import "app/css/home";

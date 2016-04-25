@@ -28,7 +28,7 @@ $conactIconSize: 20px;
 
       font-size   : $conactIconSize;
       color       : $white;
-      text-shadow : 1px 1px 1px rgba(0,0,0,0.3);
+      text-shadow : $glowyWhiteText;
 
       @include transition(#{all $flyDownDuration});
       @include transform(rotateY(180deg) rotateZ(90deg));
@@ -66,6 +66,7 @@ $conactIconSize: 20px;
     > span{
       @include transform(scale(0.8));
       color: $black;
+      text-shadow: $shadyBlackText;
     }
   }
 
