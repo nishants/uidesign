@@ -149,7 +149,7 @@
                      };
 
                  $navBar.click(function(){
-                     scrollTo(homeHeight - topBarHeight);
+                     $app.hasClass("show-labs") || scrollTo(homeHeight - topBarHeight);
                  });
 
                  $app.on("scroll", function(e){
