@@ -61,10 +61,10 @@ $conactIconSize: 20px;
 
 #app.scrolled.show-labs section.home {
   > a.contact {
-    @include transform(translateX(calc(170px - 100vw)) translateY(calc(100vh - #{$topBarHeight + 5})));
+    @include transform(translateX(calc(#{$topBarLogoWidth} + 100% - 100vw)) translateY(calc(100vh - #{$topBarHeight + 5})));
     background: transparent;
     > span{
-      @include transform(scale(0.8));
+      @include transform(scale(0.6));
       color: $black;
       text-shadow: $shadyBlackText;
     }
@@ -73,7 +73,7 @@ $conactIconSize: 20px;
   >a.contact:hover{
     >span{
       color: rgba(0,0,0,0.5);
-      @include transform(scale(0.8));
+      @include transform(scale(0.5));
     }
   }
 }

@@ -83,27 +83,27 @@ input, button {
   transform: scale(0.8) rotateY(180deg) rotateZ(90deg); }
 
 #app.scrolled.show-labs section.home > a.contact {
-  -webkit-transform: translateX(calc(170px - 100vw)) translateY(calc(100vh - 80px));
-  -moz-transform: translateX(calc(170px - 100vw)) translateY(calc(100vh - 80px));
-  -ms-transform: translateX(calc(170px - 100vw)) translateY(calc(100vh - 80px));
-  -o-transform: translateX(calc(170px - 100vw)) translateY(calc(100vh - 80px));
-  transform: translateX(calc(170px - 100vw)) translateY(calc(100vh - 80px));
+  -webkit-transform: translateX(calc(110px + 100% - 100vw)) translateY(calc(100vh - 80px));
+  -moz-transform: translateX(calc(110px + 100% - 100vw)) translateY(calc(100vh - 80px));
+  -ms-transform: translateX(calc(110px + 100% - 100vw)) translateY(calc(100vh - 80px));
+  -o-transform: translateX(calc(110px + 100% - 100vw)) translateY(calc(100vh - 80px));
+  transform: translateX(calc(110px + 100% - 100vw)) translateY(calc(100vh - 80px));
   background: transparent; }
   #app.scrolled.show-labs section.home > a.contact > span {
-    -webkit-transform: scale(0.8);
-    -moz-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    -o-transform: scale(0.8);
-    transform: scale(0.8);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    transform: scale(0.6);
     color: rgba(0, 0, 0, 0.9);
     text-shadow: 1px 1px 1px rgba(1, 2, 1, 0.5); }
 #app.scrolled.show-labs section.home > a.contact:hover > span {
   color: rgba(0, 0, 0, 0.5);
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  -o-transform: scale(0.8);
-  transform: scale(0.8); }
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5); }
 
 .home {
   position: relative; }
@@ -151,6 +151,8 @@ nav.top-bar {
     -moz-transition: transform 250ms ease, opacity 500ms ease;
     -o-transition: transform 250ms ease, opacity 500ms ease;
     transition: transform 250ms ease, opacity 500ms ease; }
+    nav.top-bar .title-bar .logo {
+      width: 110px; }
 
 .nav-bar {
   position: absolute;

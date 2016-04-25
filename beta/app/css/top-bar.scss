@@ -27,6 +27,9 @@ nav.top-bar{
     line-height: $titleBarHeight;
     padding: 0px $padding;
     font-family: $ralewayFont;
+    .logo{
+      width: $topBarLogoWidth;
+    }
 
     @include transition(#{transform $shutterDuration  $transition, opacity 500ms  $transition});
   }
