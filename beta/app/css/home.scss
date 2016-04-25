@@ -1,0 +1,25 @@
+#app > section.home{
+  > a.contact{
+    position: relative;
+    z-index: 1;
+    float: right;
+    margin: 10px;
+
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 15px;
+
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.46);
+    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+
+    @include transition(opacity 500ms);
+  }
+}

@@ -1,0 +1,8 @@
+@import "app/css/config";
+@import "app/css/home";
+
+$topBarHeight: 110px;
+
+#app{
+  height: calc(200vh - #{$topBarHeight});
+}
