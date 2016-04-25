@@ -2,7 +2,7 @@ $flyDownDuration :500ms;
 $contactHeight : 30px;
 $conactIconSize: 20px;
 
-#app > section.home{
+#app section.home{
   height: 100vh;
 
   > a.contact{
@@ -44,7 +44,7 @@ $conactIconSize: 20px;
   }
 }
 
-#app.scrolled > section.home{
+#app.scrolled section.home{
   > a.contact{
     transform: translateX(calc(70px - 100vw)) translateY(calc(100vh - 45px));
     span{
@@ -59,7 +59,7 @@ $conactIconSize: 20px;
   }
 }
 
-#app.scrolled.show-labs > section.home {
+#app.scrolled.show-labs section.home {
   > a.contact {
     @include transform(translateX(calc(170px - 100vw)) translateY(calc(100vh - 75px)));
     background: transparent;

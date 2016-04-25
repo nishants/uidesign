@@ -15,7 +15,7 @@
             overflow: hidden;
         }
 
-        #app > section.home {
+        #app section.home {
             height: 100vh;
             width: 100%;
             background-color: rgba(0,0,0,1);
@@ -26,9 +26,9 @@
         }
 
         /* wait for font-awesome to load, before displaying contact icon*/
-        #app.loading > section.home > a.contact{opacity: 0;}
+        #app.loading section.home > a.contact{opacity: 0;}
 
-        #app > section.home > h1.title{
+        #app section.home > h1.title{
             margin: 0px auto;
             font-size: 66px;
             height: 50vh;
@@ -39,13 +39,13 @@
             animation-delay: 0.25s;
         }
 
-        #app > section.home > .sub-title {
+        #app section.home > .sub-title {
             -webkit-animation-delay: 0.5s;
             -moz-animation-delay: 0.5s;
             animation-delay: 0.5s;
         }
 
-        #app > section.home > .sub-title > .line{
+        #app section.home > .sub-title > .line{
             display: inline-block;
             height: 0px;
             width: 100px;
@@ -53,7 +53,7 @@
             margin-bottom: 5px;
 
         }
-        #app > section.home > .sub-title > h3.punch-line{
+        #app section.home > .sub-title > h3.punch-line{
             display: inline-block;
         }
 
@@ -86,22 +86,25 @@
 <body>
 
     <article id="app" class="loading fade-in">
-        <section class="home">
-            <a class="contact" href="mailto:inbox@amoeba.social?Subject=Lets%20talk">
-                <span class="fa fa-paper-plane  fade-in"></span>
-            </a>
-            <h1 class="title fade-in">amoeba.social</h1>
-            <div class="sub-title fade-in">
-                <span class="line"></span>
-                <h3 class="punch-line">creative simplicity</h3>
-                <span class="line"></span>
-            </div>
-            <div class="nav-bar">css3 | html5 </div>
-        </section>
-        <section class="lab"></section>
-        <nav class="top-bar">
-            <div class="title-bar">amoeba.social</div>
-        </nav>
+        <div class="state">
+            <section class="home">
+                <a class="contact" href="mailto:inbox@amoeba.social?Subject=Lets%20talk">
+                    <span class="fa fa-paper-plane  fade-in"></span>
+                </a>
+                <h1 class="title fade-in">amoeba.social</h1>
+                <div class="sub-title fade-in">
+                    <span class="line"></span>
+                    <h3 class="punch-line">creative simplicity</h3>
+                    <span class="line"></span>
+                </div>
+                <div class="nav-bar">css3 | html5 </div>
+            </section>
+            <section class="lab"></section>
+            <nav class="top-bar">
+                <div class="title-bar">amoeba.social</div>
+            </nav>
+        </div>
+
     </article>
 
     <link rel="stylesheet" href="../lib/font-awesome-4.5.0/css/font-awesome.min.css">

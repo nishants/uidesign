@@ -1,6 +1,6 @@
 $shutterDuration : 250ms;
 
-#app:not(.show-labs) > nav.top-bar{
+#app:not(.show-labs) nav.top-bar{
   pointer-events: none;
   .title-bar{
     @include transform(translateY(-$titleBarHeight));
