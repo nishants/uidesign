@@ -123,8 +123,9 @@
                  var $app           = $("#app"),
                      $home          = $(".home"),
                      $topBar        = $("nav.top-bar"),
+                     $navBar        = $(".nav-bar"),
                      homeHeight     = $home.height(),
-                     topBarHeight   = $topBar.height(),
+                     topBarHeight   = $topBar.height() + $navBar.height(),
                      showLabsOffset = (homeHeight - topBarHeight - 5);
 
                  $app.on("scroll", function(e){
