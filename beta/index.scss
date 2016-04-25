@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700,600,400');
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
 @import "app/css/config";
 
 $titleBarHeight : 40px;
@@ -12,6 +14,8 @@ $normalFontWeight   : 400;
 
 $glowyWhiteText: 1px 1px 1px rgba(255, 255, 255, 0.5);
 $shadyBlackText: 1px 1px 1px rgba(1, 2, 1, 0.5);
+
+$ralewayFont : 'Raleway', sans-serif;
 
 #app{
   height: 100vh;

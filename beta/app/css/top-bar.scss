@@ -26,6 +26,8 @@ nav.top-bar{
     height: $titleBarHeight;
     line-height: $titleBarHeight;
     padding: 0px $padding;
+    font-family: $ralewayFont;
+
     @include transition(#{transform $shutterDuration  $transition, opacity 500ms  $transition});
   }
 }
@@ -41,14 +43,19 @@ nav.top-bar{
   a{
     float: right;
     line-height: $navBarHeight;
-    padding: 0px 5px;
 
+    font-size: 13px;
     color: $white;
     text-align: right;
     font-weight: $boldFontWeight;
     text-shadow: $glowyWhiteText;
 
     text-decoration: none;
+    font-family: $ralewayFont;
+  }
+  a:after{
+    padding: 0px 5px;
+    content: "|"
   }
   @include transition(#{transform $shutterDuration  $transition, opacity $shutterDuration  $transition});
 }
