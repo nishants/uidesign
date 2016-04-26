@@ -1,5 +1,6 @@
 @import 'home/contact';
 
-.home{
+#app > .state > section.home{
   position: relative;
+  height: $homePageHeight;
 }

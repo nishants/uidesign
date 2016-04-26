@@ -22,53 +22,51 @@ input, button {
   font-family: 'Metrophobic', Arial, serif;
   font-weight: 400; }
 
-#app section.home {
-  height: 100vh; }
-  #app section.home > a.contact {
-    display: none;
-    position: relative;
-    z-index: 1;
-    float: right;
-    margin: 10px;
-    overflow: hidden;
-    height: 30px;
-    line-height: 30px;
-    padding: 0px 20px;
-    border-radius: 2px;
-    text-decoration: none;
-    -webkit-transition: opacity 500ms, transform 500ms;
-    -moz-transition: opacity 500ms, transform 500ms;
-    -o-transition: opacity 500ms, transform 500ms;
-    transition: opacity 500ms, transform 500ms; }
-    #app section.home > a.contact > span {
-      display: block;
-      height: 100%;
-      line-height: inherit;
-      font-size: 20px;
-      color: rgba(255, 255, 255, 0.9);
-      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
-      -webkit-transition: transform 500ms;
-      -moz-transition: transform 500ms;
-      -o-transition: transform 500ms;
-      transition: transform 500ms;
-      -webkit-transform: rotateY(180deg) rotateZ(90deg);
-      -moz-transform: rotateY(180deg) rotateZ(90deg);
-      -ms-transform: rotateY(180deg) rotateZ(90deg);
-      -o-transform: rotateY(180deg) rotateZ(90deg);
-      transform: rotateY(180deg) rotateZ(90deg); }
-    #app section.home > a.contact .white, #app section.home > a.contact .black {
-      position: absolute;
-      top: 0;
-      left: 0; }
-  #app section.home > a.contact:hover {
-    background: rgba(255, 255, 255, 0.9); }
-    #app section.home > a.contact:hover > span {
-      color: rgba(0, 0, 0, 0.9);
-      -webkit-transform: scale(0.8);
-      -moz-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-      -o-transform: scale(0.8);
-      transform: scale(0.8); }
+#app section.home > a.contact {
+  display: none;
+  position: relative;
+  z-index: 1;
+  float: right;
+  margin: 10px;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+  padding: 0px 20px;
+  border-radius: 2px;
+  text-decoration: none;
+  -webkit-transition: opacity 500ms, transform 500ms;
+  -moz-transition: opacity 500ms, transform 500ms;
+  -o-transition: opacity 500ms, transform 500ms;
+  transition: opacity 500ms, transform 500ms; }
+  #app section.home > a.contact > span {
+    display: block;
+    height: 100%;
+    line-height: inherit;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    -webkit-transition: transform 500ms;
+    -moz-transition: transform 500ms;
+    -o-transition: transform 500ms;
+    transition: transform 500ms;
+    -webkit-transform: rotateY(180deg) rotateZ(90deg);
+    -moz-transform: rotateY(180deg) rotateZ(90deg);
+    -ms-transform: rotateY(180deg) rotateZ(90deg);
+    -o-transform: rotateY(180deg) rotateZ(90deg);
+    transform: rotateY(180deg) rotateZ(90deg); }
+  #app section.home > a.contact .white, #app section.home > a.contact .black {
+    position: absolute;
+    top: 0;
+    left: 0; }
+#app section.home > a.contact:hover {
+  background: rgba(255, 255, 255, 0.9); }
+  #app section.home > a.contact:hover > span {
+    color: rgba(0, 0, 0, 0.9);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8); }
 
 #app.scrolled section.home > a.contact {
   transform: translateX(calc(70px - 100vw)) translateY(calc(100vh - 45px)); }
@@ -109,8 +107,9 @@ input, button {
   -o-transform: scale(0.5);
   transform: scale(0.5); }
 
-.home {
-  position: relative; }
+#app > .state > section.home {
+  position: relative;
+  height: calc(100vh - 20px); }
 
 section.lab {
   height: calc(100vh - 75px);
