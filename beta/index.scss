@@ -16,7 +16,7 @@ $glowyWhiteText: 1px 1px 1px rgba(255, 255, 255, 0.5);
 $shadyBlackText: 1px 1px 1px rgba(1, 2, 1, 0.5);
 
 $padding : 10px;
-$homePageBottomOffset: 0px;
+$homePageBottomOffset: $navBarHeight;
 $mobileAt : 700px;
 
 #app{

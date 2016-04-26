@@ -111,7 +111,7 @@ input, button {
 
 #app > .state > section.home {
   position: relative;
-  height: calc(100vh - 0px); }
+  height: calc(100vh - 45px); }
 
 section.lab {
   height: calc(100vh - 15px );
