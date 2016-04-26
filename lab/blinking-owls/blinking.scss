@@ -1,0 +1,31 @@
+$sceneWidth         : 1000px;
+$lampWidth          : 90px;
+$lampTopMinOffset   : -100px;
+$lampTopMaxOffset   : -60px;
+$lampLeftOffset     : 100px;
+$lampSpacing        : 2 * $lampLeftOffset;
+
+@mixin lamp($index, $topOffset) {
+  $index: $index;
+  $topOffset: $lampTopMinOffset + ($lampTopMaxOffset - $lampTopMinOffset)/($index+1);
+  position: absolute;
+  top: $topOffset;
+  left: $lampLeftOffset + ($lampSpacing * $index);
+  width: $lampWidth;
+}
+
+
+.scene{
+  position: relative;
+  overflow: hidden;
+  width: $sceneWidth;
+
+  img.hanging:nth-child(1){@include lamp(0, $lampTopMinOffset);}
+  img.hanging:nth-child(2){@include lamp(1, $lampTopMinOffset);}
+  img.hanging:nth-child(3){@include lamp(2, $lampTopMaxOffset);}
+  img.hanging:nth-child(4){@include lamp(3, $lampTopMaxOffset);}
+
+  img.background{
+    width: 100%;
+  }
+}

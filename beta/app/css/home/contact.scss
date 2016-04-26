@@ -6,7 +6,7 @@ $conactIconSize: 20px;
   height: 100vh;
 
   > a.contact{
-    display   : block;
+    display   : none;
     position  : relative;
     z-index   : 1;
     float     : right;
@@ -21,7 +21,7 @@ $conactIconSize: 20px;
     text-decoration: none;
 
     @include transition(#{opacity $flyDownDuration, transform $flyDownDuration});
-    >span{
+    > span{
       display    : block;
       height     : 100%;
       line-height: inherit;
@@ -30,8 +30,13 @@ $conactIconSize: 20px;
       color       : $white;
       text-shadow : $glowyWhiteText;
 
-      @include transition(#{all $flyDownDuration});
+      @include transition(#{transform $flyDownDuration});
       @include transform(rotateY(180deg) rotateZ(90deg));
+    }
+    .white, .black{
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 
