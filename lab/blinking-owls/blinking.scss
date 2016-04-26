@@ -1,11 +1,15 @@
 $sceneWidth         : 1000px;
-$lampWidth          : 90px;
-$lampTopMinOffset   : -100px;
-$lampTopMaxOffset   : -60px;
-$lampLeftOffset     : 100px;
+$lampWidth          : (90/1000) * $sceneWidth;
+$lampTopMinOffset   : -(100/1000) * $sceneWidth;
+$lampTopMaxOffset   : -(60/1000) * $sceneWidth;
+$lampLeftOffset     : (100/1000) * $sceneWidth;
 $lampSpacing        : 2 * $lampLeftOffset;
 
-$eye1Size : 10px;
+$eye1Left       : 700px;
+$eye1Size       : 10px;
+$eye1Bottom     : 450px;
+$eye1-1-left       : 5px;
+$eye1-2-left       : 30px;
 
 @mixin lamp($index, $topOffset) {
   $index: $index;
@@ -15,6 +19,8 @@ $eye1Size : 10px;
   left: $lampLeftOffset + ($lampSpacing * $index);
   width: $lampWidth;
 }
+
+*{box-sizing: border-box;}
 
 
 .scene{
@@ -29,9 +35,9 @@ $eye1Size : 10px;
 
   .owl-eyes{
     position: absolute;
-    left: 700px;
+    left: $eye1Left;
+    bottom: $eye1Bottom;
     width: 2*$eye1Size;
-    bottom: 450px;
 
     .eye{
       height: $eye1Size;
@@ -43,10 +49,10 @@ $eye1Size : 10px;
     }
 
     .eye:nth-child(1){
-      left: 5px;
+      left: $eye1-1-left;
     }
     .eye:nth-child(2){
-      left: 30px;
+      left: $eye1-2-left;
     }
   }
   img.background{
