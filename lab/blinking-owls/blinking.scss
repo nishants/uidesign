@@ -5,6 +5,8 @@ $lampTopMaxOffset   : -60px;
 $lampLeftOffset     : 100px;
 $lampSpacing        : 2 * $lampLeftOffset;
 
+$eye1Size : 10px;
+
 @mixin lamp($index, $topOffset) {
   $index: $index;
   $topOffset: $lampTopMinOffset + ($lampTopMaxOffset - $lampTopMinOffset)/($index+1);
@@ -25,6 +27,28 @@ $lampSpacing        : 2 * $lampLeftOffset;
   img.hanging:nth-child(3){@include lamp(2, $lampTopMaxOffset);}
   img.hanging:nth-child(4){@include lamp(3, $lampTopMaxOffset);}
 
+  .owl-eyes{
+    position: absolute;
+    left: 700px;
+    width: 2*$eye1Size;
+    bottom: 450px;
+
+    .eye{
+      height: $eye1Size;
+      width: $eye1Size;
+      background: red;
+      border-radius: 50%;
+      float: left;
+      position: relative;
+    }
+
+    .eye:nth-child(1){
+      left: 5px;
+    }
+    .eye:nth-child(2){
+      left: 30px;
+    }
+  }
   img.background{
     width: 100%;
   }
