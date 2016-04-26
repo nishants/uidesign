@@ -143,7 +143,7 @@
                      $navBar        = $(".nav-bar"),
                      homeHeight     = $home.height(),
                      topBarHeight   = $navBar.height(),
-                     showLabsOffset = (homeHeight - topBarHeight - 5),
+                     showLabsOffset = (homeHeight),
                      scrollTo       = function(position){
                          $app.animate({
                              scrollTop: position
@@ -151,7 +151,7 @@
                      };
 
                  $navBar.click(function(){
-                     $app.hasClass("show-labs") || scrollTo(homeHeight - topBarHeight);
+                     $app.hasClass("show-labs") || scrollTo(homeHeight);
                  });
 
                  $app.on("scroll", function(e){
