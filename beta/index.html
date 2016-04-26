@@ -141,9 +141,6 @@
                  var $app           = $("#app"),
                      $home          = $(".home"),
                      $navBar        = $(".nav-bar"),
-                     homeHeight     = $home.height(),
-                     topBarHeight   = $navBar.height(),
-                     showLabsOffset = (homeHeight),
                      scrollTo       = function(position){
                          $app.animate({
                              scrollTop: position
@@ -151,13 +148,13 @@
                      };
 
                  $navBar.click(function(){
-                     $app.hasClass("show-labs") || scrollTo(homeHeight);
+                     $app.hasClass("show-labs") || scrollTo($home.height());
                  });
 
                  $app.on("scroll", function(e){
                      var scrollTop = this.scrollTop,
                          scrolled  = scrollTop > 20,
-                         showLabs  = scrollTop >= showLabsOffset;
+                         showLabs  = scrollTop >= $home.height();
 
                      scrolled ? $app.addClass("scrolled") : $app.removeClass("scrolled");
                      showLabs ? $app.addClass("show-labs"): $app.removeClass("show-labs");
