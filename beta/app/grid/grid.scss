@@ -3,7 +3,7 @@ $colWidth: 200px;
 .card{
   background: white;
   margin: 5px;;
-  border: 1px solid rgba(0,0,0,0.5);
+  border: 1px solid rgba(1,1,1,0.05);
   height: calc(100% - 10px);
 }
 .card img{
@@ -44,16 +44,11 @@ $colWidth: 200px;
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid rgba(0,0,0,0.1);
 }
 
 .grid>li:nth-child(2n+1){  height: 450px ;  }
 .grid>li:nth-child(2n){  height: 350px ;  }
 .grid>li:nth-child(3n){  height: 370px ;  }
-
-.grid > li > .card{
-  border: none;
-}
 
 .grid-box{
   opacity: 0;

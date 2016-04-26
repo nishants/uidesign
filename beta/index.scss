@@ -3,10 +3,8 @@
 
 @import "app/css/config";
 
-$titleBarHeight : 40px;
 $navBarHeight   : 35px;
 $topBarHeight   : $navBarHeight;
-$topBarLogoWidth: 110px;
 
 $veryBoldFontWeight : 700;
 $boldFontWeight     : 500;
@@ -18,13 +16,15 @@ $glowyWhiteText: 1px 1px 1px rgba(255, 255, 255, 0.5);
 $shadyBlackText: 1px 1px 1px rgba(1, 2, 1, 0.5);
 
 $padding : 10px;
-$homePageBottomOffset: 20px;
+$homePageBottomOffset: 5px;
 
 #app{
   height: 100vh;
   overflow: auto;
   font-family: 'Metrophobic', Arial, serif;
   font-weight: $normalFontWeight;
+
+  *{box-sizing: border-box;}
 }
 
 @import "app/css/home";

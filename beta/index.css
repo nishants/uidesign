@@ -21,6 +21,8 @@ input, button {
   overflow: auto;
   font-family: 'Metrophobic', Arial, serif;
   font-weight: 400; }
+  #app * {
+    box-sizing: border-box; }
 
 #app section.home > a.contact {
   display: none;
@@ -109,7 +111,7 @@ input, button {
 
 #app > .state > section.home {
   position: relative;
-  height: calc(100vh - 20px); }
+  height: calc(100vh - 5px); }
 
 section.lab {
   height: calc(100vh - 55px );
@@ -125,9 +127,10 @@ section.lab {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.9);
   height: 35px;
   padding-right: 10px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.09);
   -webkit-transition: transform 250ms ease, opacity 250ms ease;
   -moz-transition: transform 250ms ease, opacity 250ms ease;
   -o-transition: transform 250ms ease, opacity 250ms ease;
@@ -136,7 +139,7 @@ section.lab {
     float: right;
     line-height: 35px;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9);
     text-align: right;
     font-weight: 500;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
@@ -149,7 +152,7 @@ section.lab {
 .card {
   background: white;
   margin: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(1, 1, 1, 0.05);
   height: calc(100% - 10px); }
 
 .card img {
@@ -182,8 +185,7 @@ section.lab {
   float: left;
   position: absolute;
   top: 0;
-  left: 0;
-  border: 1px solid rgba(0, 0, 0, 0.1); }
+  left: 0; }
 
 .grid > li:nth-child(2n+1) {
   height: 450px; }
@@ -193,9 +195,6 @@ section.lab {
 
 .grid > li:nth-child(3n) {
   height: 370px; }
-
-.grid > li > .card {
-  border: none; }
 
 .grid-box {
   opacity: 0;

@@ -1,5 +1,8 @@
+$footerSpace: 15px;
+
 section.lab{
-  height: calc(100vh - #{$topBarHeight + $homePageBottomOffset} );
+  height: calc(100vh - #{$topBarHeight + $homePageBottomOffset + $footerSpace} );
+  //padding: $padding;
   overflow: hidden;
 
   .grid-container{

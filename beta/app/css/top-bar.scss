@@ -5,15 +5,18 @@ $shutterDuration : 250ms;
   bottom: 0;
   width: 100%;
 
-  background: $black;
   height: $navBarHeight;
   padding-right: $padding;
+
+  background: white;
+  border: $subtleBorder;
+
   a{
     float: right;
     line-height: $navBarHeight;
 
     font-size: 13px;
-    color: $white;
+    color: $black;
     text-align: right;
     font-weight: $boldFontWeight;
     text-shadow: $glowyWhiteText;
