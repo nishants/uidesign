@@ -1,5 +1,5 @@
 section.lab{
-  height: calc(100vh - #{$topBarHeight});
+  height: calc(100vh - #{$topBarHeight + $homePageBottomOffset} );
   overflow: hidden;
 
   .grid-container{

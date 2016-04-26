@@ -1,40 +1,5 @@
 $shutterDuration : 250ms;
 
-#app:not(.show-labs) nav.top-bar{
-  pointer-events: none;
-  .title-bar{
-    @include transform(translateY(-$titleBarHeight));
-    opacity: 0;
-  }
-}
-
-nav.top-bar{
-  position: fixed;
-  top:0;
-  left:0;
-
-  height: $titleBarHeight;
-  width: 100vw;
-
-  background-color: transparent;
-  color: $black;
-  @include transition(opacity $shutterDuration  $transition);
-  overflow: hidden;
-
-  .title-bar{
-    background: rgba(255, 255, 255, 0.97);
-    height: $titleBarHeight;
-    line-height: $titleBarHeight;
-    padding: 0px $padding;
-    font-family: $ralewayFont;
-    .logo{
-      width: $topBarLogoWidth;
-    }
-
-    @include transition(#{transform $shutterDuration  $transition, opacity 500ms  $transition});
-  }
-}
-
 .nav-bar{
   position: absolute;
   bottom: 0;

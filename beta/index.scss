@@ -5,7 +5,7 @@
 
 $titleBarHeight : 40px;
 $navBarHeight   : 35px;
-$topBarHeight   : $titleBarHeight + $navBarHeight;
+$topBarHeight   : $navBarHeight;
 $topBarLogoWidth: 110px;
 
 $veryBoldFontWeight : 700;
@@ -18,8 +18,7 @@ $glowyWhiteText: 1px 1px 1px rgba(255, 255, 255, 0.5);
 $shadyBlackText: 1px 1px 1px rgba(1, 2, 1, 0.5);
 
 $padding : 10px;
-
-$homePageHeight: calc(100vh - 20px);
+$homePageBottomOffset: 20px;
 
 #app{
   height: 100vh;
