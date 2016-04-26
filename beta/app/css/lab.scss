@@ -2,12 +2,11 @@ $footerSpace: 15px;
 
 section.lab{
   height: calc(100vh - #{$footerSpace} );
-  //padding: $padding;
   overflow: hidden;
 
   .grid-container{
     height: 100%;
-    padding-top: $navBarHeight;
+    padding: $navBarHeight + $padding $padding $padding;
     overflow: hidden;
   }
 }

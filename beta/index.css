@@ -118,7 +118,7 @@ section.lab {
   overflow: hidden; }
   section.lab .grid-container {
     height: 100%;
-    padding-top: 45px;
+    padding: 55px 10px 10px;
     overflow: hidden; }
 
 #app.show-labs section.lab .grid-container {
@@ -146,8 +146,7 @@ section.lab {
     text-align: right;
     font-weight: 500;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    font-family: "Raleway", sans-serif; }
+    text-decoration: none; }
   .nav-bar a:after {
     padding: 0px 5px;
     content: "|"; }
