@@ -1,4 +1,5 @@
-$sceneWidth         : 1900px;
+@import '../../lib/config';
+$sceneWidth         : 900px;
 $lampWidth          : (90/1000) * $sceneWidth;
 $lampTopMinOffset   : -(100/1000) * $sceneWidth;
 $lampTopMaxOffset   : -(60/1000) * $sceneWidth;
@@ -11,6 +12,10 @@ $eye1Bottom         : (450/1000) * $sceneWidth;
 $eye1-1-left        : (5/1000) * $sceneWidth;
 $eye1-2-left        : (30/1000) * $sceneWidth;
 
+$blinkRate: 2s;
+$shakeRate: 5s;
+
+
 @mixin lamp($index, $topOffset) {
   $index: $index;
   $topOffset: $lampTopMinOffset + ($lampTopMaxOffset - $lampTopMinOffset)/($index+1);
@@ -18,6 +23,8 @@ $eye1-2-left        : (30/1000) * $sceneWidth;
   top: $topOffset;
   left: $lampLeftOffset + ($lampSpacing * $index);
   width: $lampWidth;
+  animation-duration: ($shakeRate * $index/2);
+  @extend .oscilatting;
 }
 
 *{box-sizing: border-box;}
@@ -42,10 +49,11 @@ $eye1-2-left        : (30/1000) * $sceneWidth;
     .eye{
       height: $eye1Size;
       width: $eye1Size;
-      background: red;
+      background: black;
       border-radius: 50%;
       float: left;
       position: relative;
+      @extend .blink;
     }
 
     .eye:nth-child(1){
@@ -58,4 +66,37 @@ $eye1-2-left        : (30/1000) * $sceneWidth;
   img.background{
     width: 100%;
   }
+}
+
+
+.blink{
+  animation-name: blinking;
+  animation-duration: $blinkRate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinking {
+  0%   {@include transform(scale(1));}
+  40%  {@include transform(scale(1));}
+  50%  {@include transform(scale(0));}
+  60%  {@include transform(scale(1));}
+  100% {@include transform(scale(1));}
+}
+
+.oscilatting{
+  animation-name: hanging;
+  animation-iteration-count: infinite;
+}
+
+.oscilatting:nth-child(1){
+  animation-duration: $shakeRate;
+}
+
+
+@keyframes hanging {
+  0%   {@include transform(rotate(0deg));}
+  40%  {@include transform(rotate(-3deg));}
+  50%  {@include transform(rotate(0deg));}
+  60%  {@include transform(rotate(-4deg));}
+  100% {@include transform(rotate(0deg));}
 }
