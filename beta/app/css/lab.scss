@@ -1,7 +1,7 @@
-$footerSpace: 15px;
+$footerSpace: 0px;
 
 section.lab{
-  height: calc(100vh - #{$footerSpace} );
+  height: 100vh;
   overflow: hidden;
 
   .grid-container{

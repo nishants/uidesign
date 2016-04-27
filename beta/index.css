@@ -113,7 +113,7 @@ input, button {
   height: calc(100vh - 45px); }
 
 section.lab {
-  height: calc(100vh - 15px );
+  height: 100vh;
   overflow: hidden; }
   section.lab .grid-container {
     height: 100%;
