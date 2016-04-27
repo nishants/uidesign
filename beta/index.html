@@ -137,7 +137,7 @@
                      $home          = $(".home"),
                      $navBar        = $(".nav-bar"),
                      scrollTo       = function(position){
-                         $app.animate({
+                         $app.stop().animate({
                              scrollTop: position
                          }, 500);
                      };
