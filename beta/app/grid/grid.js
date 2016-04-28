@@ -4,7 +4,7 @@
   var Grid = function($grid, colWidth){
     this.$grid      = $grid;
     this.gridBoxes  = [];
-    this.colWidth   = colWidth;
+    this.colWidth   = colWidth || $grid.find(".phantom.grid-box").width();
     this.columns    = [];
     this.height     = 0;
     this.keeper     = null;
