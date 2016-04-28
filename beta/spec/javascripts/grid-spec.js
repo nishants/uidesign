@@ -41,6 +41,27 @@ describe("Grid", function(){
     expect($gridBoxes[7].css).not.toHaveBeenCalledWith();
   });
 
+  it("should center align boxes, if grid is center aligned", function(){
+    var expectedOffset = (containerWidth%colWidth)/2; /* elements must be at this left offset*/
+    grid = new Grid($container, colWidth);
+
+    $container.css("text-align", "center");
+    grid.showState({name: stateName});
+
+    expect(expectedOffset).not.toBe(0);
+    expect($container.height).toHaveBeenCalledWith(expectedHeight);
+
+    expect($gridBoxes[0].css).toHaveBeenCalledWith("transform", appliedPosition(expectedOffset + 0,0));
+    expect($gridBoxes[1].css).toHaveBeenCalledWith("transform", appliedPosition(expectedOffset + colWidth,0));
+    expect($gridBoxes[2].css).toHaveBeenCalledWith("transform", appliedPosition(expectedOffset + 2* colWidth,0));
+    expect($gridBoxes[3].css).toHaveBeenCalledWith("transform", appliedPosition(expectedOffset + 0, $gridBoxes[0].height()));
+    expect($gridBoxes[4].css).toHaveBeenCalledWith("transform", appliedPosition(expectedOffset + colWidth, $gridBoxes[1].height()));
+    expect($gridBoxes[5].css).toHaveBeenCalledWith("transform", appliedPosition(expectedOffset + 2*colWidth, $gridBoxes[2].height()));
+
+    expect($gridBoxes[6].css).not.toHaveBeenCalledWith();
+    expect($gridBoxes[7].css).not.toHaveBeenCalledWith();
+  });
+
 
 });
 

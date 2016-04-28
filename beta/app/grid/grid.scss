@@ -1,5 +1,11 @@
 $colWidth: 200px;
 
+@media (max-width: $mobileAt) {
+  .grid{
+    text-align: center;
+  }
+}
+
 .card{
   background: white;
   margin: 5px;;
