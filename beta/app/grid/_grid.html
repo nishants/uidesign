@@ -1,5 +1,14 @@
 <ul class="grid undo-list"
     ng-class="{'focus' : deck.current != -1}">
+
+    <!-- This remaings invisible, but allows js to know what shoul be width of each gridbox-->
+    <li class="grid-box phantom">
+        <div class="card"
+             ng-click="deck.current = deck.current == $index ? -1 : $index">
+            <img src="../images/carousel/carousel-1.jpg">
+        </div>
+    </li>
+
     <li class="grid-box all concepts" ng-repeat="a in app.cards">
         <div class="card"
              ng-click="deck.current = deck.current == $index ? -1 : $index">

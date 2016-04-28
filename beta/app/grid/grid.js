@@ -44,11 +44,13 @@
 
   Grid.prototype.__collect = function(grid, stateName){
     var
-        columnCount   = Math.floor(grid.$grid.width()/grid.colWidth),
+        boxWidth      = grid.$grid.find(".phantom.grid-box").width(),
+        colWidth      = (boxWidth && boxWidth != grid.colWidth) ? (grid.colWidth = boxWidth) : grid.colWidth,
+        columnCount   = Math.floor(grid.$grid.width()/ colWidth),
         gridHeight    = 0,
         nextColumn    = 0,
-        leftOffset    = (grid.$grid.css("text-align") === "center")  ?  grid.$grid.width()%grid.colWidth/2 : 0,
-        viewableBoxes = grid.gridBoxes.filter(function(box){return box.visibleFor(stateName);});
+        leftOffset    = (grid.$grid.css("text-align") === "center")  ?  grid.$grid.width()%colWidth/2 : 0,
+        viewableBoxes = grid.gridBoxes.filter(function(box){return box.visibleFor(stateName);}) ;
 
 
     for(var i = 0; i < columnCount; i++){

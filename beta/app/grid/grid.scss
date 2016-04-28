@@ -1,9 +1,8 @@
-$colWidth: 200px;
+$colWidth: 30%;
 
-@media (max-width: $mobileAt) {
-  .grid{
-    text-align: center;
-  }
+
+.grid-box.phantom{
+  display: none;
 }
 
 .card{
@@ -19,6 +18,7 @@ $colWidth: 200px;
   position: relative;
   display: block;
   list-style: none;
+  text-align: center;
 }
 .grid>li, .card{
   transition: transform 500ms ease, opacity 500ms ease ;

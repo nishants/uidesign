@@ -156,9 +156,9 @@ section.lab {
 @media (max-width: 700px) {
   .nav-bar {
     text-align: center; } }
-@media (max-width: 700px) {
-  .grid {
-    text-align: center; } }
+.grid-box.phantom {
+  display: none; }
+
 .card {
   background: white;
   margin: 5px;
@@ -171,7 +171,8 @@ section.lab {
 .grid {
   position: relative;
   display: block;
-  list-style: none; }
+  list-style: none;
+  text-align: center; }
 
 .grid > li, .card {
   transition: transform 500ms ease, opacity 500ms ease; }
@@ -189,7 +190,7 @@ section.lab {
   transition-delay: 0ms; }
 
 .grid > li {
-  width: 200px;
+  width: 30%;
   box-sizing: border-box;
   display: block;
   float: left;
