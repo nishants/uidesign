@@ -105,8 +105,8 @@
                     }
 
                     scope.$watch("loader.progress", function(value){
-                        update(value);
-                    })
+                        update(value || 5);
+                    });
 
                     element.append(canvas)
                     render();
