@@ -48,6 +48,7 @@
 <div class="circular-loader chart"
      id="graph"
      progress="loader.progress"
+     weight="5"
      size="65">
     <span > {{loader.progress}}%</span>
 </div>
@@ -73,8 +74,8 @@
                     var element = element,
                         options = {
                             percent:     0,
-                            size:        attrs.size         || 65,
-                            lineWidth:   attrs.width        || 5,
+                            size:        attrs.size         || 110,
+                            lineWidth:   attrs.weight       || 10,
                             rotate:      attrs.rotate       || 0
                         },
                         canvas = document.createElement('canvas'),
