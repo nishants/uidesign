@@ -14,7 +14,7 @@
         div {
             position:relative;
             margin:80px;
-            width:220px; height:220px;
+            width:65px; height:65px;
         }
         canvas {
             display: block;
@@ -25,11 +25,11 @@
         span {
             color:#555;
             display:block;
-            line-height:220px;
+            line-height:65px;
             text-align:center;
-            width:220px;
+            width:65px;
             font-family:sans-serif;
-            font-size:40px;
+            font-size:10px;
             font-weight:100;
             margin-left:5px;
         }
@@ -48,7 +48,7 @@
 <div class="circular-loader chart"
      id="graph"
      progress="loader.progress"
-     size="220">
+     size="65">
     <span > {{loader.progress}}%</span>
 </div>
 
@@ -61,8 +61,7 @@
             scope.loader = {progress: 0};
             var progression = function () {
                 scope.loader.progress += 5;
-                scope.$apply();
-                $timeout(progression, 500);
+                scope.loader.progress < 100 && $timeout(progression, 500);
             };
             $timeout(progression, 500);
         }]);
@@ -74,8 +73,8 @@
                     var element = element,
                         options = {
                             percent:     0,
-                            size:        attrs.size         || 220,
-                            lineWidth:   attrs.width        || 15,
+                            size:        attrs.size         || 65,
+                            lineWidth:   attrs.width        || 5,
                             rotate:      attrs.rotate       || 0
                         },
                         canvas = document.createElement('canvas'),
