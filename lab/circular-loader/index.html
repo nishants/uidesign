@@ -45,8 +45,11 @@
 
 </head>
 <body ng-app="app" ng-controller="loader">
-<div class="circular-loader chart" id="graph" porgress="20">
-    <span > {{porgress}}%</span>
+<div class="circular-loader chart"
+     id="graph"
+     progress="loader.progress"
+     size="220">
+    <span > {{loader.progress}}%</span>
 </div>
 
 
@@ -55,26 +58,29 @@
     <script>
         var app = angular.module("app", []);
         app.controller("loader", ["$scope", "$timeout", function(scope, $timeout){
-            scope.porgress = 0;
+            scope.loader = {progress: 0};
             var progression = function () {
-                scope.porgress += 10;
-                $timeout(progression, 250);
+                scope.loader.progress += 5;
+                scope.$apply();
+                $timeout(progression, 500);
             };
-            $timeout(progression, 250);
+            $timeout(progression, 500);
         }]);
         app.directive("circularLoader", [function(){
             return {
                 restrict: "C",
+                scope: false,
                 link :function(scope, element, attrs){
                     var element = element,
                         options = {
-                            percent:     attrs.porgress     || 25,
+                            percent:     0,
                             size:        attrs.size         || 220,
                             lineWidth:   attrs.width        || 15,
                             rotate:      attrs.rotate       || 0
                         },
                         canvas = document.createElement('canvas'),
                         ctx = canvas.getContext('2d'),
+                        radius = (options.size - options.lineWidth) / 2,
                         drawCircle = function(radius, color, lineWidth, percent) {
                             percent = Math.min(Math.max(0, percent || 1), 1);
                             ctx.beginPath();
@@ -87,10 +93,9 @@
                         render = function(){
                             ctx.translate(options.size / 2, options.size / 2);
                             ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI);
-                            var radius = (options.size - options.lineWidth) / 2;
-
                             drawCircle(radius, '#efefef', options.lineWidth, 100 / 100);
-                            drawCircle(radius, '#555555', options.lineWidth, options.percent / 100);
+                        }, update = function(progress){
+                                drawCircle(radius, '#555555', options.lineWidth, progress % 100);
                         };
 
                         canvas.width = canvas.height = options.size
@@ -99,9 +104,11 @@
                         G_vmlCanvasManager.initElement(canvas);
                     }
 
+                    scope.$watch("loader.progress", function(value){
+                        update(value);
+                    })
 
-                    var el = document.getElementById('graph');
-                    el.appendChild(canvas);
+                    element.append(canvas)
                     render();
                 }
             };
