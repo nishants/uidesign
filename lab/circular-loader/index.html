@@ -95,7 +95,7 @@
                             ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI);
                             drawCircle(radius, '#efefef', options.lineWidth, 100 / 100);
                         }, update = function(progress){
-                                drawCircle(radius, '#555555', options.lineWidth, progress % 100);
+                                drawCircle(radius, '#555555', options.lineWidth, progress / 100);
                         };
 
                         canvas.width = canvas.height = options.size
