@@ -28,7 +28,7 @@ var gulp = require('gulp'),
     };
 
 gulp.task('clean', function () {
-  del([
+  return del([
     cssDestination,
     jsDestination,
     indexDestination,
