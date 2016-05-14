@@ -1,4 +1,4 @@
-@import "home/home";
+@import "style/config";
 $bodyBgColor: #080808;
 $blackTint  : rgba(0, 0, 0, 0.1);
 
@@ -6,7 +6,7 @@ body{
   margin: 0;
   padding: 0;
   background-color: $bodyBgColor;
-
+  *{box-sizing: border-box  };
   #app{
     .contents{
       margin-top : 100vh;
@@ -29,6 +29,7 @@ body{
         background-color: $blackTint;
 
         h1{
+          margin: 0px;
           position: absolute;
           top: 0;
           width: 100%;
@@ -42,4 +43,6 @@ body{
   }
 }
 
+@import "home/home";
 @import "style/scroll-hack";
+@import "top-bar/top-fixed-bar";
