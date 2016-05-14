@@ -14,17 +14,20 @@
         };
 
 
-    $(window).on("scroll", function(){
-      var scollable    = $(this),
-          scrollTop     = scollable.scrollTop(),
-          nearTop       = scrollTop < readingOffset,
-          doneIntro     = introOutAt < scrollTop,
+    var handleScroll = function (scollable) {
+      var scrollTop = scollable.scrollTop(),
+          nearTop = scrollTop < readingOffset,
+          doneIntro = introOutAt < scrollTop,
           scrollingDown = scrollTop - lastScrollTop > 0;
 
       doneIntro ? app.removeClass("intro") : app.addClass("intro");
 
       (!nearTop && scrollingDown) ? reading() : navigating();
       lastScrollTop = scrollTop;
+    };
+
+    $(window).on("scroll", function(){
+      handleScroll($(this));
     });
   };
 

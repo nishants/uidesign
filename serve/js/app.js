@@ -14,17 +14,20 @@
         };
 
 
-    $(window).on("scroll", function(){
-      var scollable    = $(this),
-          scrollTop     = scollable.scrollTop(),
-          nearTop       = scrollTop < readingOffset,
-          doneIntro     = introOutAt < scrollTop,
+    var handleScroll = function (scollable) {
+      var scrollTop = scollable.scrollTop(),
+          nearTop = scrollTop < readingOffset,
+          doneIntro = introOutAt < scrollTop,
           scrollingDown = scrollTop - lastScrollTop > 0;
 
       doneIntro ? app.removeClass("intro") : app.addClass("intro");
 
       (!nearTop && scrollingDown) ? reading() : navigating();
       lastScrollTop = scrollTop;
+    };
+
+    $(window).on("scroll", function(){
+      handleScroll($(this));
     });
   };
 
@@ -36,4 +39,22 @@
 (function(){
   "use strict"
 console.log("routes")
+}).call(this);
+(function(){
+  "use strict"
+  var Throttle = function(speed){
+    this.speed = speed;
+    this.timer = undefined;
+  };
+
+  Throttle.prototype.push = function(taskFunction){
+    clearTimeout(this.timer);
+    this.timer = setTimeout(taskFunction, this.speed);
+  };
+
+  window.Throttle = {
+      at: function(speed){
+        return new Throttle(speed);
+      },
+  };
 }).call(this);
