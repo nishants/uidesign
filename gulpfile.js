@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 
     indexHtmlComponents = [
       './index/before.html',
-      './index/loader.html',
+      './index/view.html',
       './index/after.html'
     ],
 
@@ -35,8 +35,7 @@ var gulp = require('gulp'),
       'assemble-html',
       'assemble-app-css',
       'assemble-app-html',
-      'assemble-app-js',
-      'run'
+      'assemble-app-js'
     ],
 
     cleanupFiles = [
