@@ -18,7 +18,7 @@ $navigationPadding: 10px;
 $barShadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
 $barTransitionTime: 500ms;
 
-$appBarColor: rgba(255,255,255,0.85);
+$appBarColor: rgba(255,255,255,0.95);
 $navigationBarColor: rgba(0,0,0,0.8);
 $navigationBarFontColor :rgba(255,255,255,0.9);
 $iconsTransitionTime: 200ms;
@@ -223,3 +223,36 @@ $iconsTransitionTime: 200ms;
     opacity: 0;
   }
 }
+
+//#app.intro> #top-fixed-bar{
+//  .app.bar{
+//    .logo{
+//      opacity: 0;
+//    }
+//    .search{
+//      border: 1px solid rgba(255, 255, 255, 0.1);
+//      span, input{
+//        color: rgba(255, 255, 255, 0.1);
+//      }
+//      ::-webkit-input-placeholder {
+//        color: rgba(255, 255, 255, 0.1);
+//      }
+//
+//      :-moz-placeholder { /* Firefox 18- */
+//        color: rgba(255, 255, 255, 0.1);
+//      }
+//
+//      ::-moz-placeholder {  /* Firefox 19+ */
+//        color: rgba(255, 255, 255, 0.1);
+//      }
+//
+//      :-ms-input-placeholder {
+//        color: rgba(255, 255, 255, 0.1);
+//      }
+//    }
+//    background-color: rgba(255, 255, 255, 0);
+//  }
+//  .navigation.bar{
+//    background-color: rgba(0,0,0,0);
+//  }
+//  }
