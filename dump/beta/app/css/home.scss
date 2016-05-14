@@ -1,7 +1,0 @@
-@import 'home/contact';
-$homePageHeight: calc(100vh - #{$homePageBottomOffset});
-
-#app > .state > section.home{
-  position: relative;
-  height: $homePageHeight;
-}
