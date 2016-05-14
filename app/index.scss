@@ -8,7 +8,7 @@ body{
   *{box-sizing: border-box  };
   #app{
     .intro-padding{
-      height: 100vh;
+      height: calc(100vh - #{$navigationBarHeight});
       pointer-events: none;
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+100,45484d+100,000000+100&0+0,0+91,0.5+100 */
       background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 91%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */

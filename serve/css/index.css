@@ -18,7 +18,7 @@ body {
   body * {
     box-sizing: border-box; }
   body #app .intro-padding {
-    height: 100vh;
+    height: calc(100vh - 40px);
     pointer-events: none;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+100,45484d+100,000000+100&0+0,0+91,0.5+100 */
     background: -moz-linear-gradient(top, transparent 0%, transparent 91%, rgba(0, 0, 0, 0.5) 100%);

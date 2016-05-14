@@ -1,10 +1,10 @@
 (function(){
   "use strict"
   var init = function(){
-    var lastScrollTop = 0,
-        readingOffset = 100,
-        topBarHeight = 85,
-        introOutAt = $(window).height() - topBarHeight - 60,
+    var lastScrollTop   = 0,
+        readingOffset   = 100,
+        topBarHeight    = 85,
+        introOutAt      = $(window).height() - topBarHeight - 60,
         app = $("#app"),
         reading = function(){
           app.addClass("reading");
