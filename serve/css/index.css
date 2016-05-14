@@ -27,22 +27,18 @@ body {
     left: 0;
     position: fixed;
     z-index: -1; }
-    body #app #home-fixed-bg img, body #app #home-fixed-bg .overlay {
+    body #app #home-fixed-bg > img, body #app #home-fixed-bg .overlay {
       width: 100vw;
       height: 100vh; }
     body #app #home-fixed-bg .overlay {
       position: relative;
       top: -100vh;
-      background-color: rgba(0, 0, 0, 0.1); }
-      body #app #home-fixed-bg .overlay h1 {
-        margin: 0px;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        line-height: 100vh;
-        text-align: center;
-        color: #CDCDCD;
-        font-size: 60px; }
+      background-color: rgba(0, 0, 0, 0.1);
+      line-height: 100vh;
+      text-align: center; }
+      body #app #home-fixed-bg .overlay img {
+        display: inline-block;
+        box-shadow: 5px 5px 5px black; }
 
 h1 {
   color: blue; }

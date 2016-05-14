@@ -19,7 +19,7 @@ body{
       left: 0;
       position: fixed;
       z-index: -1;
-      img, .overlay{
+      > img, .overlay{
         width: 100vw;
         height: 100vh;
       }
@@ -28,16 +28,23 @@ body{
         top: -100vh;
         background-color: $blackTint;
 
-        h1{
-          margin: 0px;
-          position: absolute;
-          top: 0;
-          width: 100%;
-          line-height: 100vh;
-          text-align: center;
-          color: #CDCDCD;
-          font-size: 60px;
+        line-height: 100vh;
+        text-align: center;
+        img{
+          display: inline-block;
+          box-shadow: 5px 5px 5px black;
         }
+
+        //h1{
+        //  margin: 0px;
+        //  position: absolute;
+        //  top: 0;
+        //  width: 100%;
+        //  line-height: 100vh;
+        //  text-align: center;
+        //  color: #CDCDCD;
+        //  font-size: 60px;
+        //}
       }
     }
   }
