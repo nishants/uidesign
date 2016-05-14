@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     del = require('del'),
     sass = require('gulp-sass'),
+    jade = require('gulp-jade')
 
     cssDestination = "./serve/css",
     jsDestination = "./serve/js/app.js",
@@ -43,11 +44,16 @@ gulp.task('compile-js', function () {
   return compile(appJsComponents, jsDestination, './');
 });
 
+gulp.task('compile-jade', function() {
+  return gulp.src('app/**/*.jade')
+      .pipe(jade()) // pip to jade plugin
+      .pipe(gulp.dest('index/view')); // tell gulp our output folder
+});
 
 gulp.task('compile-index.html', function () {
   return compile([
     './index/before.html',
-    './index/view.html',
+    './index/view/**/*.html',
     './index/after.html'
   ], indexDestination, './');
 });
@@ -59,6 +65,7 @@ gulp.task('sass:watch', function () {
 gulp.task('compile', [
   'compile-scss',
   'compile-js',
+  'compile-jade',
   'compile-index.html',
 ]);
 
