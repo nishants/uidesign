@@ -7,5 +7,9 @@ html.hide-scroll-hack{
     margin-right: -$scrollBarWidth;
     overflow: auto;
     height: 100vh;
+    width: calc(100vw + #{$scrollBarWidth});
+    #app{
+       margin-right: 5px;
+    }
   }
 }

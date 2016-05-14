@@ -35,4 +35,7 @@ html.hide-scroll-hack {
   html.hide-scroll-hack body {
     margin-right: -20px;
     overflow: auto;
-    height: 100vh; }
+    height: 100vh;
+    width: calc(100vw + 20px); }
+    html.hide-scroll-hack body #app {
+      margin-right: 5px; }
