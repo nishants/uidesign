@@ -17,8 +17,19 @@ body {
   padding: 0; }
   body * {
     box-sizing: border-box; }
+  body #app .intro-padding {
+    height: 100vh;
+    pointer-events: none;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+100,45484d+100,000000+100&0+0,0+91,0.5+100 */
+    background: -moz-linear-gradient(top, transparent 0%, transparent 91%, rgba(0, 0, 0, 0.5) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, transparent 0%, transparent 91%, rgba(0, 0, 0, 0.5) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, transparent 0%, transparent 91%, rgba(0, 0, 0, 0.5) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 );
+    /* IE6-9 */ }
   body #app .contents {
-    margin-top: 100vh;
     height: 200vh;
     background-color: white; }
   body #app #home-fixed-bg {
@@ -95,7 +106,10 @@ html.hide-scroll-hack {
         width: 100%; }
         #top-fixed-bar .app.bar .logo a img {
           vertical-align: middle;
-          width: 100%; }
+          width: 100%;
+          padding-bottom: 2px;
+          margin-top: 10px;
+          border-bottom: 1px solid #FBD683; }
     #top-fixed-bar .app.bar .search {
       height: 45px -10px;
       width: calc(100% - 280px);
