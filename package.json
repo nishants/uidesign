@@ -7,6 +7,7 @@
     "del": "^1.2.1",
     "gulp-concat": "^2.6.0",
     "gulp-continuous-concat": "^0.1.1",
+    "gulp-sass": "^2.3.1",
     "gulp-shell": "^0.4.2",
     "gulp-watch": "^4.3.5"
   }

@@ -3,11 +3,7 @@ var gulp = require('gulp'),
     shell = require('gulp-shell'),
     watch = require('gulp-watch'),
     del = require('del'),
-
-    homeCssComponents = [
-      './style/loader.css',
-      './style/properties.css'
-    ],
+    sass = require('gulp-sass');
 
     indexHtmlComponents = [
       './index/before.html',
@@ -15,38 +11,29 @@ var gulp = require('gulp'),
       './index/after.html'
     ],
 
-    appHtmlComponents = [
-      "./app/search/*.html",
-      "./app/**/*.html"
-    ],
-
-    appCSSComponents = [
-      "./app/**/*.css"
-    ],
+    cssDestination = "./",
 
     appJsComponents = [
-      "./app/init.js",
+      "./app/app.js",
       "./app/**/*.js"
     ],
 
     defaultTasks = [
       'clean',
-      'assemble-css',
-      'assemble-html',
-      'assemble-app-css',
-      'assemble-app-html',
-      'assemble-app-js'
+      'compile-scss',
+      'compile-js',
+      'compile-index.html',
+      'run',
+      'sass:watch'
     ],
 
     cleanupFiles = [
       'index.html',
-      'home.css',
-      'app.js',
-      'app.html',
-      'app.css',
+      'index.css',
+      'index.js',
     ],
 
-    assemble = function(components, file, dir){
+    compile = function(components, file, dir){
       return gulp.src(components)
           .pipe(watch(components))
           .pipe(concat(file))
@@ -61,24 +48,23 @@ gulp.task('run', shell.task([
   'node runner.js'
 ]));
 
-gulp.task('assemble-app-css', function () {
-  return assemble(appCSSComponents, 'app.css', './');
+gulp.task('compile-scss', function () {
+  return gulp.src('./style/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest(cssDestination));
 });
 
-gulp.task('assemble-app-html', function () {
-  return assemble(appHtmlComponents, 'app.html', './');
+gulp.task('compile-js', function () {
+  return compile(appJsComponents, 'index.js', './');
 });
 
-gulp.task('assemble-css', function () {
-  return assemble(homeCssComponents, 'home.css', './');
+
+gulp.task('compile-index.html', function () {
+  return compile(indexHtmlComponents, 'index.html', './');
 });
 
-gulp.task('assemble-html', function () {
-  return assemble(indexHtmlComponents, 'index.html', './');
-});
-
-gulp.task('assemble-app-js', function () {
-  return assemble(appJsComponents, 'app.js', './');
+gulp.task('sass:watch', function () {
+  gulp.watch('./sass/**/*.scss', ['compile-scss']);
 });
 
 gulp.task('default', defaultTasks);
