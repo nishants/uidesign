@@ -1,8 +1,11 @@
 @import "home/home";
+$bodyBgColor: #080808;
+$blackTint  : rgba(0, 0, 0, 0.1);
 
 body{
   margin: 0;
   padding: 0;
+  background-color: $bodyBgColor;
 
   #app{
     .contents{
@@ -23,7 +26,7 @@ body{
       .overlay{
         position: relative;
         top: -100vh;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: $blackTint;
 
         h1{
           position: absolute;
@@ -31,9 +34,12 @@ body{
           width: 100%;
           line-height: 100vh;
           text-align: center;
+          color: #CDCDCD;
           font-size: 60px;
         }
       }
     }
   }
 }
+
+@import "style/scroll-hack";

@@ -1,0 +1,11 @@
+
+html.hide-scroll-hack{
+  $scrollBarWidth: 20px;
+  overflow: hidden;
+
+  body{
+    margin-right: -$scrollBarWidth;
+    overflow: auto;
+    height: 100vh;
+  }
+}
