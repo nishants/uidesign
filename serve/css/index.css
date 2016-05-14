@@ -14,8 +14,7 @@ input {
 
 body {
   margin: 0;
-  padding: 0;
-  background-color: #080808; }
+  padding: 0; }
   body * {
     box-sizing: border-box; }
   body #app .contents {
@@ -38,7 +37,7 @@ body {
       text-align: center; }
       body #app #home-fixed-bg .overlay img {
         display: inline-block;
-        box-shadow: 5px 5px 5px black; }
+        max-width: 100%; }
 
 h1 {
   color: blue; }
