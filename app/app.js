@@ -1,5 +1,4 @@
 (function(){
   "use strict"
-  console.log("coming up...");
-
+  window.app = angular.module("amoeba", []);
 }).call(this);

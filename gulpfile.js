@@ -3,34 +3,15 @@ var gulp = require('gulp'),
     shell = require('gulp-shell'),
     watch = require('gulp-watch'),
     del = require('del'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
 
-    indexHtmlComponents = [
-      './index/before.html',
-      './index/view.html',
-      './index/after.html'
-    ],
-
-    cssDestination = "./",
+    cssDestination = "./serve/css",
+    jsDestination = "./serve/js/app.js",
+    indexDestination = "./serve/index.html",
 
     appJsComponents = [
       "./app/app.js",
       "./app/**/*.js"
-    ],
-
-    defaultTasks = [
-      'clean',
-      'compile-scss',
-      'compile-js',
-      'compile-index.html',
-      'run',
-      'sass:watch'
-    ],
-
-    cleanupFiles = [
-      'index.html',
-      'index.css',
-      'index.js',
     ],
 
     compile = function(components, file, dir){
@@ -41,7 +22,11 @@ var gulp = require('gulp'),
     };
 
 gulp.task('clean', function () {
-  del(cleanupFiles);
+  del([
+    cssDestination,
+    jsDestination,
+    indexDestination,
+  ]);
 });
 
 gulp.task('run', shell.task([
@@ -55,16 +40,31 @@ gulp.task('compile-scss', function () {
 });
 
 gulp.task('compile-js', function () {
-  return compile(appJsComponents, 'index.js', './');
+  return compile(appJsComponents, jsDestination, './');
 });
 
 
 gulp.task('compile-index.html', function () {
-  return compile(indexHtmlComponents, 'index.html', './');
+  return compile([
+    './index/before.html',
+    './index/view.html',
+    './index/after.html'
+  ], indexDestination, './');
 });
 
 gulp.task('sass:watch', function () {
   gulp.watch('./sass/**/*.scss', ['compile-scss']);
 });
 
-gulp.task('default', defaultTasks);
+gulp.task('compile', [
+  'compile-scss',
+  'compile-js',
+  'compile-index.html',
+]);
+
+gulp.task('default', [
+  'clean',
+  'compile',
+  'sass:watch'
+  //'run',
+]);
