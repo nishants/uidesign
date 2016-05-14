@@ -199,10 +199,21 @@ $iconsTransitionTime: 200ms;
 }
 
 
-#treniq.reading > #top-fixed-bar{
+#app.intro > #top-fixed-bar{
+  .navigation.bar{
+    background-color: transparent;
+  }
+}
+
+#app.reading:not(.intro) > #top-fixed-bar{
+  .app.bar{
+    background-color: $appBarColor;
+  }
+}
+
+#app.reading > #top-fixed-bar{
   .app.bar{
     box-shadow: $barShadow;
-    background-color: $appBarColor;
   }
   .navigation.bar{
     @include transform(translateY(-$navigationBarHeight));
