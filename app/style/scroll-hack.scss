@@ -1,15 +1,18 @@
 
-html.hide-scroll-hack{
+html.hide-scroll-hack {
   $scrollBarWidth: 20px;
   overflow: hidden;
 
-  body{
+  body {
     margin-right: -$scrollBarWidth;
     overflow: auto;
     height: 100vh;
     width: calc(100vw + #{$scrollBarWidth});
-    #app{
-       margin-right: 5px;
+    #app {
+      margin-right: 5px;
+      article {
+        border: 1px solid red;
+      }
     }
   }
 }
