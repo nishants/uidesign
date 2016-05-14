@@ -6,9 +6,14 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     jade = require('gulp-jade')
 
+    cssSource     = './app/index.scss',
+    jsSource      = [ "./app/app.js", "./app/**/*.js"],
+    templatesSournce = [],
+
     cssDestination = "./serve/css",
     jsDestination = "./serve/js/app.js",
     indexDestination = "./serve/index.html",
+    templatesDestination = "./serve/templates/",
 
     appJsComponents = [
       "./app/app.js",
@@ -27,6 +32,7 @@ gulp.task('clean', function () {
     cssDestination,
     jsDestination,
     indexDestination,
+    templatesDestination +"**/*.html"
   ]);
 });
 
@@ -35,31 +41,31 @@ gulp.task('run', shell.task([
 ]));
 
 gulp.task('compile-scss', function () {
-  return gulp.src('./style/*.scss')
+  return gulp.src(cssSource)
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest(cssDestination));
 });
 
 gulp.task('compile-js', function () {
-  return compile(appJsComponents, jsDestination, './');
+  return compile(jsSource, jsDestination, './');
 });
 
 gulp.task('compile-jade', function() {
   return gulp.src('app/**/*.jade')
       .pipe(jade()) // pip to jade plugin
-      .pipe(gulp.dest('index/view')); // tell gulp our output folder
+      .pipe(gulp.dest(templatesDestination)); // tell gulp our output folder
 });
 
 gulp.task('compile-index.html', function () {
   return compile([
     './index/before.html',
-    './index/view/**/*.html',
+    './index/view.html',
     './index/after.html'
   ], indexDestination, './');
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['compile-scss']);
+  return gulp.watch('./app/**/*.scss', ['compile-scss']);
 });
 
 gulp.task('compile', [
