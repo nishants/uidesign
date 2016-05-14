@@ -1,0 +1,38 @@
+h1 {
+  color: blue; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #080808; }
+  body #app .contents {
+    margin-top: 100vh;
+    height: 200vh;
+    background-color: white; }
+  body #app #home-fixed-bg {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1; }
+    body #app #home-fixed-bg img, body #app #home-fixed-bg .overlay {
+      width: 100vw;
+      height: 100vh; }
+    body #app #home-fixed-bg .overlay {
+      position: relative;
+      top: -100vh;
+      background-color: rgba(0, 0, 0, 0.1); }
+      body #app #home-fixed-bg .overlay h1 {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        line-height: 100vh;
+        text-align: center;
+        color: #CDCDCD;
+        font-size: 60px; }
+
+html.hide-scroll-hack {
+  overflow: hidden; }
+  html.hide-scroll-hack body {
+    margin-right: -20px;
+    overflow: auto;
+    height: 100vh; }
