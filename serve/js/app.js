@@ -26,6 +26,8 @@
       lastScrollTop = scrollTop;
     };
 
+    $("#top-fixed-bar").on("mouseenter",navigating);
+
     $(window).on("scroll", function(){
       handleScroll($(this));
     });
