@@ -5,7 +5,7 @@
         readingOffset   = 100,
         topBarHeight    = 85,
         introOutAt      = $(window).height() - topBarHeight - 60,
-        app = $("#app"),
+        app             = $("#app"),
         reading = function(){
           app.addClass("reading");
         },

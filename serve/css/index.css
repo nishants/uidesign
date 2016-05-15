@@ -29,6 +29,11 @@ body {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 );
     /* IE6-9 */ }
+  body #app .psudeo-shadow {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAYCAQAAAB68uRSAAAAKElEQVR4AWNhcGdgYGH4CyL+wVkI4g8W4jcuiT9YDPgHJ/7DiP9AAgBhORhg+gPD+AAAAABJRU5ErkJggg==");
+    background-repeat: repeat-x;
+    background-size: 1px 12px;
+    height: 12px; }
   body #app .contents {
     height: 200vh;
     background-color: white; }
