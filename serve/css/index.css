@@ -83,7 +83,7 @@ ul.deck {
 .deck.focus {
   pointer-events: none; }
   .deck.focus li.selected {
-    pointer-events: none; }
+    pointer-events: all; }
   .deck.focus li.selected-head {
     -webkit-transform: translateY(50px) rotate(0deg);
     -moz-transform: translateY(50px) rotate(0deg);
