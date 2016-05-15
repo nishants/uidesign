@@ -22,6 +22,7 @@ body{
       background-repeat: repeat-x;
       background-size: 1px 12px;
       height: 12px;
+      margin-bottom: $navigationBarHeight;
     }
     .contents{
       min-height: 100vh;
