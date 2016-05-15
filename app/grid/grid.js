@@ -1,5 +1,12 @@
 (function () {
   "use strict"
+  var readFrom = function ($grid) {
+    var boxes = $grid.find(".grid-box"), result = [];
+    for (var i = 0; i < boxes.length; i++) {
+      result.push(new GridBox($(boxes[i])));
+    }
+    return result;
+  };
 
   var Grid = function($grid, colWidth){
     this.$grid      = $grid;
@@ -11,15 +18,7 @@
     var self        = this ;
     this.$grid.css("overflow", "hidden");
     this.$grid.on("DOMNodeInserted", function(){
-      var         gridBoxes = function () {
-        var boxes = $grid.find(".grid-box"), result = [];
-        for (var i = 0; i < boxes.length; i++) {
-          result.push(new GridBox($(boxes[i])));
-        }
-        return result;
-      };
-
-      self.__setGridBoxes(gridBoxes());
+      self.__setGridBoxes(readFrom($grid));
       self.__collect(self, self.__showState.name);
       self._arrange();
     });
