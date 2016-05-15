@@ -1,4 +1,4 @@
-<div id="app" class="intro" ng-app>
+<div id="app" class="intro" ng-app="amoeba">
     <div id="top-fixed-bar">
         <div class="app bar">
             <ul class="undo-list">
@@ -55,7 +55,7 @@
                 ng-class="{'focus' : deck.current != -1}">
                 <li ng-repeat="card in deck.cards" ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
                     <div class="card"
-                         ng-click="deck.current = deck.current == $index ? -1 : $index">
+                         ng-click="deck.current = (deck.current === $index) ? -1 : $index">
                         <img src="../dump/images/carousel/carousel-1.jpg">
                     </div>
                 </li>
