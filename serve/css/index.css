@@ -35,7 +35,7 @@ body {
     background-size: 1px 12px;
     height: 12px; }
   body #app .contents {
-    height: 200vh;
+    min-height: 100vh;
     background-color: white; }
   body #app #home-fixed-bg {
     top: 0;
@@ -58,6 +58,35 @@ body {
 h1 {
   color: blue; }
 
+.grid {
+  position: relative;
+  display: block;
+  list-style: none; }
+
+.grid > li {
+  width: 300px;
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.grid-box {
+  opacity: 0;
+  pointer-events: none; }
+
+.state.home .grid-box.home, .state.dashboard .grid-box.dashboard {
+  opacity: 1;
+  pointer-events: all; }
+
+.state.all .grid-box.all {
+  opacity: 1;
+  pointer-events: all; }
+
+.state.home .grid-box:not(.home), .state.dashboard .grid-box:not(.dashboard), .state.all .grid-box:not(.all) {
+  transform: translateY(100vh); }
+
 ul.deck {
   margin: 0;
   padding: 10px;
@@ -74,6 +103,7 @@ ul.deck {
     -o-transition: opacity 250ms ease, transform 250ms ease;
     transition: opacity 250ms ease, transform 250ms ease; }
     ul.deck > li .card {
+      margin: 5px auto;
       height: 250px;
       width: 250px;
       border: 1px solid rgba(128, 128, 128, 0.14); }

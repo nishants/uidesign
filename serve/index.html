@@ -36,9 +36,9 @@
         </div>
         <div class="navigation bar">
             <ul class="undo-list">
-                <li class="link home"        ><a >All</a></li>
-                <li class="link furniture"   ><a >Agility</a></li>
-                <li class="link lighting"    ><a >AngularJS</a></li>
+                <li class="link home"        ><a href="#/all">All</a></li>
+                <li class="link furniture"   ><a href="#/home" >Agility</a></li>
+                <li class="link lighting"    ><a href="#/dashboard">AngularJS</a></li>
                 <li class="link decor"       ><a >UI / UX</a></li>
                 <li class="link blog"        ><a >Blog</a></li>
                 <li class="link collections" style="display: none"><a>My collections</a></li>
@@ -57,21 +57,44 @@
     <div class="intro-padding"></div>
     <article class="contents">
         <div class="psudeo-shadow"></div>
+        <div class="state">
 
         <div id="slate" class="slate" ng-class="{'show-modal' : deck.current != -1}">
-            <nav></nav>
-
-            <ul class="deck"
+            <ul class="deck grid"
                 ng-init="deck = {cards: [1,2,3,4,5,6,7,8,9,10], current: -1}"
                 ng-class="{'focus' : deck.current != -1}">
-                <li ng-repeat="card in deck.cards" ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
+
+                <li class="grid-box all"
+                    ng-repeat="card in deck.cards"
+                    ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
                     <div class="card"
-                         ng-click="deck.current = (deck.current === $index) ? -1 : $index">
+                         ng-click="deck.current = deck.current == $index ? -1 : $index">
                         <img src="../dump/images/carousel/carousel-1.jpg">
                     </div>
                 </li>
+
+                <li class="grid-box all home"
+                    ng-repeat="card in deck.cards"
+                    ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
+                    <div class="card"
+                         ng-click="deck.current = deck.current == $index ? -1 : $index">
+                        <img src="../dump/images/carousel/carousel-2.jpg">
+                    </div>
+                </li>
+
+                <li class="grid-box all dashboard"
+                    ng-repeat="card in deck.cards"
+                    ng-class="{'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
+                    <div class="card"
+                         ng-click="deck.current = deck.current == $index ? -1 : $index">
+                        <img src="../dump/images/carousel/carousel-3.jpg">
+                    </div>
+                </li>
+
             </ul>
         </div>
+        </div>
+
     </article>
 
 </div>

@@ -25,9 +25,9 @@
         </div>
         <div class="navigation bar">
             <ul class="undo-list">
-                <li class="link home"        ><a >All</a></li>
-                <li class="link furniture"   ><a >Agility</a></li>
-                <li class="link lighting"    ><a >AngularJS</a></li>
+                <li class="link home"        ><a href="#/all">All</a></li>
+                <li class="link furniture"   ><a href="#/home" >Agility</a></li>
+                <li class="link lighting"    ><a href="#/dashboard">AngularJS</a></li>
                 <li class="link decor"       ><a >UI / UX</a></li>
                 <li class="link blog"        ><a >Blog</a></li>
                 <li class="link collections" style="display: none"><a>My collections</a></li>
@@ -49,11 +49,6 @@
         <div class="state">
 
         <div id="slate" class="slate" ng-class="{'show-modal' : deck.current != -1}">
-            <nav>
-                <a href="#/all">all</a>
-                <a href="#/home">home</a>
-                <a href="#/dashboard">dashboard</a>
-            </nav>
             <ul class="deck grid"
                 ng-init="deck = {cards: [1,2,3,4,5,6,7,8,9,10], current: -1}"
                 ng-class="{'focus' : deck.current != -1}">

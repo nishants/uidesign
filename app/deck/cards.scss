@@ -24,6 +24,7 @@ ul.deck {
     @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
 
     .card{
+      margin: $padding/2 auto;
       height: $cardHeight;
       width: $cardWidth;
       border: 1px solid rgba(128, 128, 128, 0.14);

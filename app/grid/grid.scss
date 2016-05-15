@@ -3,27 +3,6 @@
   display: block;
   list-style: none;
 }
-.grid>li, .card{
-  transition: transform 500ms ease, opacity 500ms ease ;
-}
-
-.grid-box:nth-child(n+1) .card{
-  transition-delay: 50ms;;
-}
-
-.grid-box:nth-child(2n+1) .card{
-  transition-delay: 90ms;;
-}
-
-.grid-box:nth-child(3n) .card{
-  transition-delay: 110ms;;
-}
-
-.grid-box:nth-child(5n) .card{
-  transition-delay: 0ms;;
-}
-
-
 .grid>li{
   width: 300px;
   box-sizing: border-box;
@@ -35,29 +14,12 @@
   left: 0;
 }
 
-.grid>li:nth-child(2n+1){  height: 450px ;  }
-.grid>li:nth-child(2n){  height: 350px ;  }
-.grid>li:nth-child(3n){  height: 370px ;  }
 
-
-*{
-  box-sizing: border-box;
-}
-#app{
-  margin: 0px;
-  padding: 10px;
-}
-nav{
-  height: 40px;
-}
-nav button, nav a{
-  height: 40px;
-  padding: 10px 20px;
-}
 .grid-box{
   opacity: 0;
   pointer-events: none;
 }
+
 .state.home  .grid-box.home, .state.dashboard  .grid-box.dashboard{
   opacity: 1;
   pointer-events: all;
@@ -68,6 +30,6 @@ nav button, nav a{
   pointer-events: all;
 }
 
-.state.home  .grid-box:not(.home), .state.dashboard  .grid-box:not(.dashboard){
+.state.home  .grid-box:not(.home), .state.dashboard  .grid-box:not(.dashboard), .state.all  .grid-box:not(.all),{
   transform: translateY(100vh);
 }
