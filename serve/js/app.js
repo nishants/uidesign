@@ -10,33 +10,11 @@ console.log("routes")
 (function(){
   "use strict"
   app.directive("slate", [function () {
-    var select = function (index) {
-          var cardContainer = $($(".deck > li")[index]),
-              card          = cardContainer.find(".card").first(),
-              offsetPadding = 10,
-              offsetY = $(".deck").offset().top - cardContainer.offset().top,
-              offsetX = $(".deck").offset().left - cardContainer.offset().left;
-
-          card.css("transform", "translateY(" + (offsetY + offsetPadding) + "px)" + "translateX(" + (offsetX + offsetPadding) + "px)");
-          $("body").css("overflow", "hidden")
-        },
-        unSelect = function (index) {
-          var card = $($(".deck > li")[index]);
-          card.css("transform", "");
-          $("body").css("overflow", "auto")
-        };
     return {
       restrict: "C",
       scope: true,
       transclude: false,
       link: function (scope, element, attrs) {
-        scope.$watch("deck.current", function (now, previous) {
-          now != -1 && select(now);
-          previous != -1 && unSelect(previous);
-          setTimeout(function(){
-            $("body").stop().animate({scrollTop:$(element).offset().top}, '500', 'swing');
-          },100);
-        });
       }
     };
   }]);
@@ -77,18 +55,41 @@ console.log("routes")
 (function () {
   "use strict"
 
-  var GridBox = function($gridbox){
+  var GridBox = function($grid, $gridbox){
+    this.$grid    = $grid;
     this.$gridbox = $gridbox;
     var offsetX = parseInt($gridbox.css("left"));
     var offsetY = parseInt($gridbox.css("top"));
     this.offset = {
       x: offsetX ||0 ,
       y: offsetY ||0}
+
+    var self      = this,
+        toggleSelect = function(box){
+          self.$gridbox.attr("data-grid-selected") ? self.unselect() : self.select()
+        };
+
+    $gridbox.click(toggleSelect);
+  };
+
+  GridBox.prototype.unselect = function(){
+    this.applyPosition();
+    this.$gridbox.attr("data-grid-selected", null);
+    $("body").css("overflow", "auto")
+  };
+
+  GridBox.prototype.select = function(){
+    $("body").css("overflow", "hidden")
+    var y = (this.yPosition - this.offset.y) - (this.$gridbox.offset().top - $(window).scrollTop()),
+        x = 0;
+    this.__applyPosition(x,y);
+    this.$gridbox.attr("data-grid-selected","true");
   };
 
   GridBox.prototype.setPosition = function(x,y){
     this.xPosition = x;
     this.yPosition = y;
+    this.__selected = true;
   };
 
   GridBox.prototype.height = function(){
@@ -99,11 +100,14 @@ console.log("routes")
     return this.$gridbox.hasClass(stateName);
   };
 
+  GridBox.prototype.__applyPosition = function(x,y){
+    this.$gridbox.css("transform", "translateX("+x+"px)" + " translateY("+y+"px)")
+  }
+
   GridBox.prototype.applyPosition = function(){
     var x = this.xPosition - this.offset.x,
         y = this.yPosition - this.offset.y;
-
-    this.$gridbox.css("transform", "translateX("+x+"px)" + " translateY("+y+"px)")
+    this.__applyPosition(x,y);
   };
 
   window.GridBox = GridBox;
@@ -123,7 +127,7 @@ console.log("routes")
           $box.attr("data-grid-id") || function(){
             var id = ids++;
             $box.attr("data-grid-id", id);
-            map[id] = new GridBox($box)
+            map[id] = new GridBox($grid, $box)
           }();
         }
 

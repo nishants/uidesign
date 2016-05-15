@@ -13,7 +13,7 @@
           $box.attr("data-grid-id") || function(){
             var id = ids++;
             $box.attr("data-grid-id", id);
-            map[id] = new GridBox($box)
+            map[id] = new GridBox($grid, $box)
           }();
         }
 
