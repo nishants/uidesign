@@ -55,6 +55,12 @@ body {
       body #app #home-fixed-bg .overlay img {
         display: inline-block;
         max-width: 100%; }
+  body #footer {
+    height: 80px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.19);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.23); }
 
 h1 {
   color: blue; }

@@ -63,6 +63,14 @@ body{
       }
     }
   }
+
+  #footer{
+    height: 80px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.19);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.23);
+  }
 }
 
 @import "home/home";
