@@ -1,12 +1,27 @@
 (function () {
   "use strict"
-  var readFrom = function ($grid) {
-    var boxes = $grid.find(".grid-box"), result = [];
-    for (var i = 0; i < boxes.length; i++) {
-      result.push(new GridBox($(boxes[i])));
-    }
-    return result;
-  };
+  // if element has data-grid-id, ignore,
+  // if it doesn't, create gidbox for it, and add to map
+
+  var ids = 0,
+      readFrom = function ($grid, map) {
+        var boxes = $grid.find(".grid-box"),
+            result = [];
+
+        for (var i = 0; i < boxes.length; i++) {
+          var $box = $(boxes[i]);
+          $box.attr("data-grid-id") || function(){
+            var id = ids++;
+            $box.attr("data-grid-id", id);
+            map[id] = new GridBox($box)
+          }();
+        }
+
+        for(var id in map){
+          result.push(map[id]);
+        }
+        return result;
+      };
 
   var Grid = function($grid, colWidth){
     this.$grid      = $grid;
@@ -14,11 +29,11 @@
     this.colWidth   = colWidth;
     this.columns    = [];
     this.height     = 0;
-    this.keeper     = null;
+    this.gridBoxMap = {};
     var self        = this ;
     this.$grid.css("overflow", "hidden");
     this.$grid.on("DOMNodeInserted", function(){
-      self.__setGridBoxes(readFrom($grid));
+      self.__setGridBoxes(readFrom($grid, self.gridBoxMap));
       self.__collect(self, self.__showState.name);
       self._arrange();
     });
