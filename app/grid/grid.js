@@ -19,13 +19,13 @@
         return result;
       };
 
-      self.setGridBoxes(gridBoxes());
+      self.__setGridBoxes(gridBoxes());
       self.__collect(self, self.__showState.name);
-      self.arrange();
+      self._arrange();
     });
   };
 
-  Grid.prototype.setGridBoxes = function(boxes){
+  Grid.prototype.__setGridBoxes = function(boxes){
     this.gridBoxes = boxes;
   }
 
@@ -34,7 +34,7 @@
     this.$grid.trigger("DOMNodeInserted");
   }
 
-  Grid.prototype.arrange = function(){
+  Grid.prototype._arrange = function(){
     this.__viewableBoxes.forEach(function(box){
       box.applyPosition();
     });
