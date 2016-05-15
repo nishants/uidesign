@@ -24,6 +24,7 @@ ul.deck {
     @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
 
     .card{
+      @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
       margin: $padding/2 auto;
       height: $cardHeight;
       width: $cardWidth;
@@ -40,21 +41,21 @@ ul.deck {
     pointer-events: all; //TODO : enables scroll on firefox
   }
 
-  li.selected-head{
+  li.selected-head > .card{
     @include transform(translateY(50px) rotate($rotate));
   }
 
-  li.selected-tail{
+  li.selected-tail > .card{
     @include transform(translateY(-50px) rotate(-$rotate));
   }
-  li.selected-pre{
+  li.selected-pre > .card{
     @include transform(translateX(50px) rotate($rotate));
   }
 
-  li.selected-post{
+  li.selected-post > .card{
     @include transform(translateX(-50px) rotate(-$rotate));
   }
-  li:not(.selected){
+  li:not(.selected) > .card{
     opacity: 0;
   }
 }

@@ -104,6 +104,10 @@ ul.deck {
     -o-transition: opacity 250ms ease, transform 250ms ease;
     transition: opacity 250ms ease, transform 250ms ease; }
     ul.deck > li .card {
+      -webkit-transition: opacity 250ms ease, transform 250ms ease;
+      -moz-transition: opacity 250ms ease, transform 250ms ease;
+      -o-transition: opacity 250ms ease, transform 250ms ease;
+      transition: opacity 250ms ease, transform 250ms ease;
       margin: 5px auto;
       height: 250px;
       width: 250px;
@@ -115,31 +119,31 @@ ul.deck {
   pointer-events: none; }
   .deck.focus li.selected {
     pointer-events: all; }
-  .deck.focus li.selected-head {
+  .deck.focus li.selected-head > .card {
     -webkit-transform: translateY(50px) rotate(0deg);
     -moz-transform: translateY(50px) rotate(0deg);
     -ms-transform: translateY(50px) rotate(0deg);
     -o-transform: translateY(50px) rotate(0deg);
     transform: translateY(50px) rotate(0deg); }
-  .deck.focus li.selected-tail {
+  .deck.focus li.selected-tail > .card {
     -webkit-transform: translateY(-50px) rotate(0deg);
     -moz-transform: translateY(-50px) rotate(0deg);
     -ms-transform: translateY(-50px) rotate(0deg);
     -o-transform: translateY(-50px) rotate(0deg);
     transform: translateY(-50px) rotate(0deg); }
-  .deck.focus li.selected-pre {
+  .deck.focus li.selected-pre > .card {
     -webkit-transform: translateX(50px) rotate(0deg);
     -moz-transform: translateX(50px) rotate(0deg);
     -ms-transform: translateX(50px) rotate(0deg);
     -o-transform: translateX(50px) rotate(0deg);
     transform: translateX(50px) rotate(0deg); }
-  .deck.focus li.selected-post {
+  .deck.focus li.selected-post > .card {
     -webkit-transform: translateX(-50px) rotate(0deg);
     -moz-transform: translateX(-50px) rotate(0deg);
     -ms-transform: translateX(-50px) rotate(0deg);
     -o-transform: translateX(-50px) rotate(0deg);
     transform: translateX(-50px) rotate(0deg); }
-  .deck.focus li:not(.selected) {
+  .deck.focus li:not(.selected) > .card {
     opacity: 0; }
 
 html.hide-scroll-hack {
