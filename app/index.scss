@@ -24,7 +24,6 @@ body{
       height: 12px;
     }
     .contents{
-      height: 200vh;
       background-color: white;
     }
 
@@ -66,5 +65,6 @@ body{
 
 @import "home/home";
 @import "deck/cards";
+@import "grid/grid";
 @import "style/scroll-hack";
 @import "top-bar/top-fixed-bar";
