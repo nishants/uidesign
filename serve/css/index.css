@@ -277,10 +277,10 @@ html.hide-scroll-hack {
       pointer-events: none;
       width: 110px;
       background-color: rgba(0, 128, 0, 0.8);
-      -webkit-transition: transform 250ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-      -moz-transition: transform 250ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-      -o-transition: transform 250ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-      transition: transform 250ms cubic-bezier(0.45, 0.515, 0.36, 0.88); }
+      -webkit-transition: transform 250ms;
+      -moz-transition: transform 250ms;
+      -o-transition: transform 250ms;
+      transition: transform 250ms; }
 
 #app.intro > #top-fixed-bar .navigation.bar {
   background-color: transparent; }

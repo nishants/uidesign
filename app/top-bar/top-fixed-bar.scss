@@ -55,7 +55,7 @@ $iconsTransitionTime: 200ms;
     line-height: $searchHeight;
     background-color: white;
 
-    @include transition(all, 100ms, ease);
+    @include transition(all 100ms ease);
     @include transitionDelay(100ms);
 
     .logo {
@@ -78,7 +78,7 @@ $iconsTransitionTime: 200ms;
       border: 1px solid rgba(0, 0, 0, 0.09);
       border-radius: $searchBorderRadius;
       overflow: hidden;
-      @include transition(all, 500ms, ease);
+      @include transition(all 500ms ease);
       @include transitionDelay(500ms);
       input, span{
         display: block;
@@ -90,7 +90,7 @@ $iconsTransitionTime: 200ms;
         border-top: 1px solid $borderColor;
         border-bottom: 1px solid $borderColor;
         background-color: transparent;
-        @include transition(border, 500ms, ease);
+        @include transition(border 500ms ease);
       }
       span{
         width: 50px;
@@ -98,12 +98,12 @@ $iconsTransitionTime: 200ms;
         font-size: $iconSize;
         color: rgba(0,0,0,0.1);
 
-        @include transition(all, 500ms, ease);
+        @include transition(all 500ms ease);
         @include transform(translateX(-10px));
       }
       input{
         outline: none;
-        @include transition(all, 500ms, ease);
+        @include transition(all 500ms ease);
         @include transform(translateX(-20px));
         width: calc(100% - 50px);
         border-top-right-radius: $searchBorderRadius;
@@ -134,10 +134,10 @@ $iconsTransitionTime: 200ms;
         text-transform: capitalize;
         border-radius: 5px;
         border: 1px solid transparent;
-        @include transition(border-color, $iconsTransitionTime, ease);
+        @include transition(border-color #{$iconsTransitionTime} ease);
 
         .fa{
-          @include transition(transform, $iconsTransitionTime, ease);
+          @include transition(transform #{$iconsTransitionTime} ease);
           @include transformOrigin(0 0);
           font-size: $iconSize;
           text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.17);
@@ -146,7 +146,7 @@ $iconsTransitionTime: 200ms;
           display: inline-block;
           font-weight: 300;
           font-size: 9px;
-          @include transition(transform, $iconsTransitionTime, ease);
+          @include transition(transform #{$iconsTransitionTime} ease);
         }
       }
 
@@ -163,7 +163,7 @@ $iconsTransitionTime: 200ms;
   }
 
   .navigation.bar{
-    @include transition(all, $barTransitionTime, $barTransition);
+    @include transition(all #{$barTransitionTime} #{$barTransition});
     height: $navigationBarHeight;
     line-height: $navigationBarHeight - $navigationPadding;
     padding: 5px 5px 5px $logoWidth + 5px;
@@ -177,12 +177,12 @@ $iconsTransitionTime: 200ms;
       }
     }
     .link{
-      @include transition(all, 500ms, ease);
+      @include transition(all 500ms ease);
       padding-left: 10px;
       text-align: left;
       border-bottom: 2px solid transparent;
       cursor: pointer;
-      a{@include transition(all, 500ms, $barTransition);}
+      a{@include transition(all 500ms #{$barTransition});}
     }
     .link:hover{
       border-color: $linkSelectedHighlight;
@@ -196,7 +196,7 @@ $iconsTransitionTime: 200ms;
       width: 10px + $navigationLinkWidth;
       background-color: $linkHoverHighlight;
 
-      @include transition(transform, 250ms);
+      @include transition(transform 250ms);
     }
   }
 }
