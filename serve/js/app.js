@@ -75,7 +75,7 @@ console.log("routes")
   GridBox.prototype.unselect = function(){
     this.applyPosition();
     this.$gridbox.attr("data-grid-selected", null);
-    $("body").css("overflow", "auto")
+    $("body").css("overflow", "auto");
   };
 
   GridBox.prototype.select = function(){

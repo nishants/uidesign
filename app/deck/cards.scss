@@ -11,6 +11,14 @@ $cleanupDuration: $transitionDuration;
 $cleanupFunction: ease;
 
 ul.deck {
+  > li.home > .card{
+    height: 450px;
+  }
+  > li.dashboard >.card{
+    height: 350px;
+  }
+}
+ul.deck {
   margin: 0;
   padding: $padding;
   display: block;

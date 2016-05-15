@@ -94,6 +94,12 @@ h1 {
 .state.home .grid-box:not(.home), .state.dashboard .grid-box:not(.dashboard), .state.all .grid-box:not(.all) {
   transform: translateY(100vh); }
 
+ul.deck > li.home > .card {
+  height: 450px; }
+
+ul.deck > li.dashboard > .card {
+  height: 350px; }
+
 ul.deck {
   margin: 0;
   padding: 10px;
@@ -173,7 +179,11 @@ html.hide-scroll-hack {
   text-align: center;
   font-size: 13px;
   color: #2F2F2F;
-  pointer-events: none; }
+  pointer-events: none;
+  -webkit-transition: opacity 500ms ease;
+  -moz-transition: opacity 500ms ease;
+  -o-transition: opacity 500ms ease;
+  transition: opacity 500ms ease; }
   #top-fixed-bar .bar {
     pointer-events: all; }
     #top-fixed-bar .bar > ul > li {
@@ -391,4 +401,7 @@ html.hide-scroll-hack {
   -ms-transform: translateY(-40px);
   -o-transform: translateY(-40px);
   transform: translateY(-40px);
+  opacity: 0; }
+
+#app.intro > #top-fixed-bar {
   opacity: 0; }
