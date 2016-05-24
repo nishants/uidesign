@@ -29,7 +29,7 @@ console.log("routes")
         this.selected = null;
       },
       get: function (name) {
-        return _cache[name];
+        return this._cache[name];
       },
       all: function () {
         return [
@@ -68,7 +68,7 @@ console.log("routes")
     };
 
     service.all().forEach(function(snippet){
-      service._cache[snippet.id] = $http.get("../code/<name>".replace("<name>", snippet.id));
+      service._cache[snippet.id] = $http.get("../code/<name>".replace("<name>", snippet.id)).then(function(response){return response.data;});
     });
 
     return service;
@@ -77,7 +77,7 @@ console.log("routes")
 }).call(this);
 (function(){
   "use strict"
-  app.directive("code", [function($log){
+  app.directive("code", ["$log", "snippetService", function($log, snippetService){
     var
         defaultOptions = {
           //remove default red dots for unknown character(linefeed, etc)
@@ -112,6 +112,13 @@ console.log("routes")
         editorOptions.mode = attrs.mode || editorOptions.mode;
 
         var editor = initializeCodeMirror(element[0], editorOptions);
+
+        scope.$watch(function(){return snippetService.selected && snippetService.selected.id;}, function(value){
+          snippetService.selected && snippetService.get(snippetService.selected.id).then(function(data){
+            console.log(data);
+          });
+
+        });
         editor.on("change", function(){
           editor.save();
         })

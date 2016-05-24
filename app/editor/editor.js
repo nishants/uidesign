@@ -1,6 +1,6 @@
 (function(){
   "use strict"
-  app.directive("code", [function($log){
+  app.directive("code", ["$log", "snippetService", function($log, snippetService){
     var
         defaultOptions = {
           //remove default red dots for unknown character(linefeed, etc)
@@ -35,6 +35,13 @@
         editorOptions.mode = attrs.mode || editorOptions.mode;
 
         var editor = initializeCodeMirror(element[0], editorOptions);
+
+        scope.$watch(function(){return snippetService.selected && snippetService.selected.id;}, function(value){
+          snippetService.selected && snippetService.get(snippetService.selected.id).then(function(data){
+            console.log(data);
+          });
+
+        });
         editor.on("change", function(){
           editor.save();
         })

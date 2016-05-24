@@ -17,7 +17,7 @@
         this.selected = null;
       },
       get: function (name) {
-        return _cache[name];
+        return this._cache[name];
       },
       all: function () {
         return [
@@ -56,7 +56,7 @@
     };
 
     service.all().forEach(function(snippet){
-      service._cache[snippet.id] = $http.get("../code/<name>".replace("<name>", snippet.id));
+      service._cache[snippet.id] = $http.get("../code/<name>".replace("<name>", snippet.id)).then(function(response){return response.data;});
     });
 
     return service;
