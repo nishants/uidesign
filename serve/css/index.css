@@ -134,6 +134,24 @@ ul.deck > li .card {
       transform: scale(0); }
     ul.deck > li .card .card-footer .bar.green {
       background-color: #8BC34A; }
+  ul.deck > li .card .card-action {
+    position: relative;
+    height: 30px;
+    margin-left: -11px;
+    width: calc(100% + 22px); }
+    ul.deck > li .card .card-action button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid transparent; }
+    ul.deck > li .card .card-action button.open {
+      background-color: #8BC34A; }
+    ul.deck > li .card .card-action button.close {
+      background-color: #2196F3; }
 
 ul.deck > li .card.active .bar.red, ul.deck > li .card:hover .bar.red, ul.deck > li #top-fixed-bar .app.bar .card.search:hover .bar.red, #top-fixed-bar .app.bar ul.deck > li .card.search:hover .bar.red {
   -webkit-transform: scale(1);
