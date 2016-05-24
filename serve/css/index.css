@@ -100,8 +100,8 @@ body {
   margin: 10px 50px 50px 50px; }
   .introduction h1 {
     font-size: 3.13em;
-    color: black;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.75); }
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75); }
   .introduction h3 {
     font-size: 30px;
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.75);
@@ -272,36 +272,37 @@ ul.deck {
     -o-transition: opacity 500ms ease, transform 500ms ease;
     transition: opacity 500ms ease, transform 500ms ease; }
 
-.deck.focus {
+#app.show-modal .deck {
   pointer-events: none; }
-  .deck.focus li.selected {
+  #app.show-modal .deck li.selected {
     pointer-events: all; }
-  .deck.focus li.selected-head > .card {
+  #app.show-modal .deck li.selected-head > .card {
     -webkit-transform: translateY(50px) rotate(0deg);
     -moz-transform: translateY(50px) rotate(0deg);
     -ms-transform: translateY(50px) rotate(0deg);
     -o-transform: translateY(50px) rotate(0deg);
     transform: translateY(50px) rotate(0deg); }
-  .deck.focus li.selected-tail > .card {
+  #app.show-modal .deck li.selected-tail > .card {
     -webkit-transform: translateY(-50px) rotate(0deg);
     -moz-transform: translateY(-50px) rotate(0deg);
     -ms-transform: translateY(-50px) rotate(0deg);
     -o-transform: translateY(-50px) rotate(0deg);
     transform: translateY(-50px) rotate(0deg); }
-  .deck.focus li.selected-pre > .card {
+  #app.show-modal .deck li.selected-pre > .card {
     -webkit-transform: translateX(50px) rotate(0deg);
     -moz-transform: translateX(50px) rotate(0deg);
     -ms-transform: translateX(50px) rotate(0deg);
     -o-transform: translateX(50px) rotate(0deg);
     transform: translateX(50px) rotate(0deg); }
-  .deck.focus li.selected-post > .card {
+  #app.show-modal .deck li.selected-post > .card {
     -webkit-transform: translateX(-50px) rotate(0deg);
     -moz-transform: translateX(-50px) rotate(0deg);
     -ms-transform: translateX(-50px) rotate(0deg);
     -o-transform: translateX(-50px) rotate(0deg);
     transform: translateX(-50px) rotate(0deg); }
-  .deck.focus li:not(.selected) > .card {
-    opacity: 0; }
+  #app.show-modal .deck li:not(.selected), #app.show-modal .deck li:not(.selected) > .card {
+    opacity: 0;
+    pointer-events: none; }
 
 #modal {
   position: fixed;

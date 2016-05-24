@@ -25,7 +25,7 @@ ul.deck {
   }
 }
 
-.deck.focus{
+#app.show-modal .deck{
   pointer-events: none;
   li.selected{
     pointer-events: all; //TODO : enables scroll on firefox
@@ -45,7 +45,9 @@ ul.deck {
   li.selected-post > .card{
     @include transform(translateX(-50px) rotate(-$rotate));
   }
-  li:not(.selected) > .card{
+
+  li:not(.selected), li:not(.selected) > .card {
     opacity: 0;
+    pointer-events: none;
   }
 }
