@@ -171,10 +171,10 @@ ul.deck > li .card {
       display: none; }
     ul.deck > li .card .card-footer .bar.blue, ul.deck > li .card .card-footer .bar.red {
       opacity: 0;
-      -webkit-transition: opacity 100ms ease, transform 100ms ease;
-      -moz-transition: opacity 100ms ease, transform 100ms ease;
-      -o-transition: opacity 100ms ease, transform 100ms ease;
-      transition: opacity 100ms ease, transform 100ms ease;
+      -webkit-transition: opacity 250ms ease, transform 250ms ease;
+      -moz-transition: opacity 250ms ease, transform 250ms ease;
+      -o-transition: opacity 250ms ease, transform 250ms ease;
+      transition: opacity 250ms ease, transform 250ms ease;
       -webkit-transform-origin: 50% 50%;
       -moz-transform-origin: 50% 50%;
       transform-origin: 50% 50%;
@@ -209,18 +209,23 @@ ul.deck > li .card {
       background-color: #8BC34A; }
     ul.deck > li .card .card-action button.close {
       background-color: #2196F3;
-      -webkit-transition: opacity 500ms eaese, transform 500ms ease;
-      -moz-transition: opacity 500ms eaese, transform 500ms ease;
-      -o-transition: opacity 500ms eaese, transform 500ms ease;
-      transition: opacity 500ms eaese, transform 500ms ease;
+      -webkit-transition-delay: 500ms;
+      -moz-transition-delay: 500ms;
+      -ms-transition-delay: 500ms;
+      -o-transition-delay: 500ms;
+      transition-delay: 500ms;
+      -webkit-transition: opacity 250ms ease, transform 250ms ease;
+      -moz-transition: opacity 250ms ease, transform 250ms ease;
+      -o-transition: opacity 250ms ease, transform 250ms ease;
+      transition: opacity 250ms ease, transform 250ms ease;
       -webkit-transform-origin: 50% 50%;
       -moz-transform-origin: 50% 50%;
       transform-origin: 50% 50%;
-      -webkit-transform: translateY(-100%);
-      -moz-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-      -o-transform: translateY(-100%);
-      transform: translateY(-100%); }
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+      -o-transform: translateY(100%);
+      transform: translateY(100%); }
 
 ul.deck > li .card:hover .card-footer .bar.blue {
   -webkit-transform: scale(1);
@@ -321,6 +326,23 @@ ul.deck {
       #modal .modal-body ul.code-demo li {
         display: inline-block;
         padding: 10px; }
+        #modal .modal-body ul.code-demo li .snippet {
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          background-color: #f7f7f7; }
+          #modal .modal-body ul.code-demo li .snippet .label {
+            position: relative;
+            top: 0px;
+            right: 0px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.02);
+            pointer-events: none;
+            line-height: 35px;
+            padding: 0px 10px;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.29); }
 
 #app.show-modal #modal {
   -webkit-transform: translateX(0px);
@@ -332,18 +354,23 @@ ul.deck {
 #app .CodeMirror {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 13px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  background-color: #f7f7f7;
   height: auto;
   width: auto;
   padding: 10px;
   line-height: 17px;
-  letter-spacing: 0.05em; }
+  letter-spacing: 0.05em;
+  background-color: transparent !important; }
 
 #app .CodeMirror-gutter-elt {
   /* text align in gutter(line numbers) */
-  text-align: center;
-  width: 30px; }
+  text-align: center; }
+
+#app .CodeMirror-linenumber {
+  color: rgba(0, 0, 0, 0.1); }
+
+#app .CodeMirror-gutters {
+  background-color: transparent;
+  border: none; }
 
 html.hide-scroll-hack {
   overflow: hidden; }

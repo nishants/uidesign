@@ -95,7 +95,23 @@
                 <div class="modal-body">
                     <ul class="code-demo" >
                         <li class="request">
-                            <textarea class="code" mode="application/ld+json">
+                            <div class="snippet">
+                                <textarea class="code" mode="application/ld+json">
+{
+    "message"   : "hello",
+    "sum"       : "{{0 + 1 }}",
+    "boolean"   : "{{1 == 2}}",
+    "list"      : "{{ 'one,two,three,four,five'.split(',') }}",
+    "repeater"  : {"@repeat" : "count in [1,2,3,4,5]", "id": "{{$index + count}}"
+}
+                            </textarea>
+                                <div class="label">request body</div>
+                            </div>
+                        </li>
+
+                        <li class="request">
+                            <div class="snippet">
+                                <textarea class="code" mode="application/ld+json">
 {
   "headers" : {"My-Header" : "Hello World!"},
   "body": {
@@ -107,42 +123,27 @@
   }
 }
                             </textarea>
+                                <div class="label">template.json</div>
+                            </div>
                         </li>
-                        <li class="controller">
-<textarea class="code" mode="css">
-ul{
-    list-style-type: none; /* Remove list style*/
-    display: table-row;
-}
-ul > li {
-    display: table-cell;
+
+                        <li class="request">
+                            <div class="snippet">
+                                <textarea class="code" mode="application/ld+json">
+{
+  "headers" : {"My-Header" : "Hello World!"},
+  "body": {
+    "message"   : "hello",
+    "sum"       : "{{0 + 1 }}",
+    "boolean"   : "{{1 == 2}}",
+    "list"      : "{{ 'one,two,three,four,five'.split(',') }}",
+    "repeater"  : {"@repeat" : "count in [1,2,3,4,5]", "id": "{{$index + count}}"}
+  }
 }
                             </textarea>
+                                <div class="label">response.json</div>
+                            </div>
                         </li>
-                        <li class="directive">
-<textarea class="code" mode="css">
-ul{
-    list-style-type: none; /* Remove list style*/
-    display: table-row;
-}
-ul > li {
-    display: table-cell;
-}
-                            </textarea>
-                            </p>
-                        </li>
-                        <li class="temlpate">
-<textarea class="code" mode="css">
-
-ul{
-    list-style-type: none; /* Remove list style*/
-    display: table-row;
-}
-ul > li {
-    display: table-cell;
-}
-
-                            </textarea>                        </li>
                     </ul>
                 </div>
             </div>

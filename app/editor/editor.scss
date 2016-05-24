@@ -4,17 +4,33 @@
   .CodeMirror{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 13px;
-    border: 1px solid rgba(0,0,0,0.05);
-    background-color: #f7f7f7;
     height: auto;
     width: auto;
     padding: $padding;
 
     line-height: 17px;
     letter-spacing: 0.05em;
+    background-color: transparent !important;
   }
   .CodeMirror-gutter-elt {/* text align in gutter(line numbers) */
     text-align: center;
-    width: 30px;
+  }
+
+  .CodeMirror-linenumber{
+    color: rgba(0, 0, 0, 0.1);
+  }
+  .CodeMirror-gutters{
+    background-color: transparent;
+    border: none;
+  }
+
+
+  .CodeMirror pre{
+    // Code
+    // line-height: 20px;
+
+    .cm-property{
+
+    }
   }
 }

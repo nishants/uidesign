@@ -43,7 +43,7 @@ ul.deck > li{
 
       .bar.blue, .bar.red{
         opacity: 0;
-        @include transition(#{opacity 100ms $transition, transform 100ms $transition});
+        @include transition(#{opacity 250ms $transition, transform 250ms $transition});
         @include transformOrigin(50% 50%);
         @include transform(scale(0));
       }
@@ -87,9 +87,10 @@ ul.deck > li{
       }
       button.close{
         background-color: #2196F3;
-        @include transition(#{opacity 500ms eaese, transform 500ms $transition});
+        @include transitionDelay(500ms);
+        @include transition(#{opacity 250ms $transition, transform 250ms $transition});
         @include transformOrigin(50% 50%);
-        @include transform(translateY(-100%));
+        @include transform(translateY(100%));
       }
     }
     @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
