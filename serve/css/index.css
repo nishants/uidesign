@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300);
 ul.undo-list, #modal .modal-body ul.code-demo {
   list-style: none;
   margin: 0px;
@@ -352,7 +351,7 @@ ul.deck {
   transform: translateX(0px); }
 
 #app .CodeMirror {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-size: 13px;
   height: auto;
   width: auto;
