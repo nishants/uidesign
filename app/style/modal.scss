@@ -6,7 +6,7 @@ $duration: 500ms;
   left: 0px;
   height: 100vh;
   width: 100vw;
-  padding: $padding $padding $padding $gridBoxWidth;
+  padding: 0px 0px 0px $gridBoxWidth;
   pointer-events: none;
 
   .modal-body{
@@ -16,7 +16,14 @@ $duration: 500ms;
     background-color: white;
     pointer-events: all;
 
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    ul.code-demo{
+      $demoWidth: $gridBoxWidth;
+      @extend .undo-list;
+      text-align: left;
+      li{
+        display: inline-block;
+      }
+    }
   }
 
   @include transition(transform $duration ease);

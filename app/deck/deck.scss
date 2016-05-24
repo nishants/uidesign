@@ -19,7 +19,6 @@ ul.deck {
   width: 100%;
   overflow: auto;
   > li{
-    padding: $padding;
     display: inline-block;
     width: $gridBoxWidth;
     @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});

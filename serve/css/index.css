@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-ul.undo-list {
+ul.undo-list, #modal .modal-body ul.code-demo {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -253,7 +253,6 @@ ul.deck {
   width: 100%;
   overflow: auto; }
   ul.deck > li {
-    padding: 10px;
     display: inline-block;
     width: 300px;
     -webkit-transition: opacity 500ms ease, transform 500ms ease;
@@ -298,7 +297,7 @@ ul.deck {
   left: 0px;
   height: 100vh;
   width: 100vw;
-  padding: 10px 10px 10px 300px;
+  padding: 0px 0px 0px 300px;
   pointer-events: none;
   -webkit-transition: transform 500ms ease;
   -moz-transition: transform 500ms ease;
@@ -314,8 +313,11 @@ ul.deck {
     width: 100%;
     height: 100%;
     background-color: white;
-    pointer-events: all;
-    border: 1px solid rgba(0, 0, 0, 0.05); }
+    pointer-events: all; }
+    #modal .modal-body ul.code-demo {
+      text-align: left; }
+      #modal .modal-body ul.code-demo li {
+        display: inline-block; }
 
 #app.show-modal #modal {
   -webkit-transform: translateX(0px);
