@@ -1,6 +1,7 @@
 @import "style/config";
 $bodyBgColor: #080808;
 $blackTint  : rgba(0, 0, 0, 0.1);
+$homePeek: 300px;
 
 body{
   margin: 0;
@@ -9,7 +10,7 @@ body{
 
   #app{
     .intro-padding{
-      height: calc(100vh - #{$navigationBarHeight});
+      height: calc(100vh - #{$homePeek});
       pointer-events: none;
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+100,45484d+100,000000+100&0+0,0+91,0.5+100 */
       background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 91%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
@@ -36,14 +37,14 @@ body{
       z-index: -1;
       > img, .overlay{
         width: 100vw;
-        height: 100vh;
+        height: calc(100vh - #{$homePeek});
       }
       .overlay{
         position: relative;
-        top: -100vh;
+        top: calc(-100vh + #{$homePeek});
         background-color: $blackTint;
 
-        line-height: 100vh;
+        line-height: calc(100vh - #{$homePeek});
         text-align: center;
         img{
           display: inline-block;
@@ -55,8 +56,9 @@ body{
 
   #footer{
     height: 80px;
+    margin-top: 80px;
     line-height: 35px;
-    background: rgba(0, 0, 0, 0.19);
+    background: rgba(0, 0, 0, 0.9);
     text-align: center;
     color: rgba(255, 255, 255, 0.23);
   }
