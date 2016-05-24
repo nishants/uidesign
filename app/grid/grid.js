@@ -60,6 +60,7 @@
         columnCount   = Math.floor(grid.$grid.width()/grid.colWidth),
         gridHeight    = 0,
         nextColumn    = 0,
+        leftOffset    = (grid.$grid.width() - (columnCount * this.colWidth))/ 2,
         viewableBoxes = grid.gridBoxes.filter(function(box){return box.visibleFor(stateName);});
 
 
@@ -73,7 +74,7 @@
           x = nextColumn * grid.colWidth,
           y = column.nexPosition;
 
-      box.setPosition(x, y);
+      box.setPosition( leftOffset + x, y);
 
       column.nexPosition += box.height();
       gridHeight          = Math.max(gridHeight, column.nexPosition);
