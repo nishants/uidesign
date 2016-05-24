@@ -1,6 +1,7 @@
 $cardBg: #F4F4F4;
 $cardColor: #646464;
 $borderRadius: 2px;
+$barHeight: 3px;
 
 ul.deck > li{
   .card{
@@ -19,7 +20,6 @@ ul.deck > li{
     img{width: 100%;}
 
     .card-footer{
-      $barHeight: 3px;
 
       position: relative;
       height: $barHeight;
@@ -36,6 +36,7 @@ ul.deck > li{
       }
       .bar.red{
         background-color: #FF5722;
+        display: none;
       }
 
       .bar.blue, .bar.red{
@@ -58,6 +59,8 @@ ul.deck > li{
       margin-left: -$sideMargin;
       width: calc(100% + #{ 2 * $sideMargin});
 
+      overflow: hidden;
+
       button{
         position: absolute;
         top: 0;
@@ -68,6 +71,9 @@ ul.deck > li{
         height: $buttonHeight;
         line-height: $buttonHeight;
 
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.86);
+
         border: 1px solid transparent;
       }
       button.open{
@@ -75,18 +81,12 @@ ul.deck > li{
       }
       button.close{
         background-color: #2196F3;
+        @include transition(#{opacity $cleanupDuration $defaultTransitionFunction, transform $cleanupDuration $defaultTransitionFunction});
+        @include transformOrigin(50% 50%);
+        @include transform(translateY(-100%));
       }
     }
     @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
-  }
-  .card.active {
-    .bar.red{
-      @include transform(scale(1));
-      opacity: 1;
-    }
-  }
-  .card:hover{
-    @extend .active;
   }
 }
 
@@ -94,6 +94,12 @@ ul.deck > li.selected{
   .card{
     .card-footer {
       .bar.blue {
+        @include transform(scale(1));
+        opacity: 1;
+      }
+    }
+    .card-action{
+      button.close{
         @include transform(scale(1));
         opacity: 1;
       }
