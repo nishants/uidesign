@@ -60,9 +60,18 @@
                     <div class="card"
                          ng-click="deck.current = deck.current == $index ? -1 : $index">
                         <h1>Elements</h1>
-                        <p>The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript. The original font, Helvetica, was designed in 1957 by Max Miedinger in cooperation with Eduard Hoffman at the Haas type foundry. The constituent 8 faces (4 standard and 4 condensed) contain nearly 1250 glyphs each.
+                        <p>The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.
 
                         </p>
+                        <div class="card-action">
+                            <button class="open">Open</button>
+                            <button class="close">Close</button>
+                        </div>
+                        <div class="card-footer">
+                            <div class="green bar"></div>
+                            <div class="red bar"></div>
+                            <div class="blue bar"></div>
+                        </div>
                     </div>
                 </li>
                 <li class="grid-box all {{type}}"
@@ -71,7 +80,6 @@
                     ng-class="{'home': $index % 2 == 0,'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
                     <div class="card"
                          ng-click="deck.current = deck.current == $index ? -1 : $index">
-                        <img src="../dump/images/carousel/carousel-3.jpg">
                         <h1>Elements</h1>
                         <p>The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript. The original font, Helvetica, was designed in 1957 by Max Miedinger in cooperation with Eduard Hoffman at the Haas type foundry. The constituent 8 faces (4 standard and 4 condensed) contain nearly 1250 glyphs each.
 

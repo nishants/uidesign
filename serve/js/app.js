@@ -7,19 +7,6 @@
   "use strict"
 console.log("routes")
 }).call(this);
-(function(){
-  "use strict"
-  app.directive("slate", [function () {
-    return {
-      restrict: "C",
-      scope: true,
-      transclude: false,
-      link: function (scope, element, attrs) {
-      }
-    };
-  }]);
-
-}).call(this);
 (function () {
   "use strict"
 
@@ -228,6 +215,19 @@ console.log("routes")
   };
 
   window.States = States;
+}).call(this);
+(function(){
+  "use strict"
+  app.directive("slate", [function () {
+    return {
+      restrict: "C",
+      scope: true,
+      transclude: false,
+      link: function (scope, element, attrs) {
+      }
+    };
+  }]);
+
 }).call(this);
 (function(){
   "use strict"

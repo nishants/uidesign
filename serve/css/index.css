@@ -92,6 +92,7 @@ body {
   transform: translateY(100vh); }
 
 ul.deck > li .card {
+  margin: 10px;
   font-family: 'Roboto', sans-serif;
   background-color: #F4F4F4;
   color: #646464;
