@@ -16,8 +16,8 @@
       cache[name] = {};
       fileNames.forEach(function(file){
             var fileUrl = fileTemplate.replace("<file>", file);
-            $http.get(fileUrl).then(function(response){
-              cache[name][file] = response.data;
+            cache[name][file] = $http.get(fileUrl).then(function(response){
+              return response;
             }, function(err){
               console.error("File not found : " + err);
             });
@@ -28,6 +28,9 @@
     return {
       load: function(){
 
+      },
+      get: function(sample, file){
+        return cache[sample][file];
       }
     };
   }]);
