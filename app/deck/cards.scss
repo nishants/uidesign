@@ -1,5 +1,5 @@
 $cardBg: #F4F4F4;
-$cardColor: #646464;
+$cardColor: $pencilBlack;
 $borderRadius: 2px;
 $barHeight: 3px;
 $transition: ease;
@@ -84,7 +84,7 @@ ul.deck > li{
       }
       button.close{
         background-color: #2196F3;
-        @include transition(#{opacity $cleanupDuration eaese, transform $cleanupDuration $transition});
+        @include transition(#{opacity 500ms eaese, transform 500ms $transition});
         @include transformOrigin(50% 50%);
         @include transform(translateY(-100%));
       }

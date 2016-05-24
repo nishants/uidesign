@@ -49,6 +49,9 @@
         <div class="state">
 
         <div id="slate" class="slate" ng-class="{'show-modal' : deck.current != -1}">
+            <div class="introduction">
+                <h1>JSONG</h1>
+            </div>
             <ul class="deck grid"
                 ng-init="deck = {cards: [1,2,3,4,5,6], current: -1}"
                 ng-class="{'focus' : deck.current != -1}">
