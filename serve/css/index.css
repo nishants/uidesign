@@ -192,6 +192,8 @@ html.hide-scroll-hack {
         display: block;
         width: 100px;
         text-transform: capitalize; }
+      #top-fixed-bar .bar > ul > li a:link, #top-fixed-bar .bar > ul > li a:active, #top-fixed-bar .bar > ul > li a:visited, #top-fixed-bar .bar > ul > li a:visited, #top-fixed-bar .bar > ul > li a:hover, #top-fixed-bar .bar > ul > li a:active {
+        color: inherit; }
   #top-fixed-bar .app.bar {
     position: relative;
     z-index: 1;

@@ -46,6 +46,9 @@ $iconsTransitionTime: 200ms;
         width: $navigationLinkWidth;
         text-transform: capitalize;
       }
+      a:link, a:active, a:visited,a:visited,a:hover, a:active {
+        color: inherit;
+      }
     }
   }
   .app.bar{
