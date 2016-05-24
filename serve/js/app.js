@@ -141,6 +141,10 @@ console.log("routes")
     this.gridBoxMap = {};
     var self        = this ;
     this.$grid.css("overflow", "hidden");
+    $(window).on("resize", function(){
+      self.__collect(self, self.__showState.name);
+      self._arrange();
+    });
     this.$grid.on("DOMNodeInserted", function(){
       self.__setGridBoxes(readFrom($grid, self.gridBoxMap));
       self.__collect(self, self.__showState.name);
