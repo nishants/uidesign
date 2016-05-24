@@ -96,6 +96,7 @@ console.log("routes")
 
           // show line numbers in editor
           lineNumbers: true,
+          smartIndent: true,
 
           // renders whole document at once (else only part in view is rendered, and text searches wont work)
           //viewportMargin: Infinity,
@@ -122,17 +123,14 @@ console.log("routes")
         editorOptions.mode = attrs.mode || editorOptions.mode;
 
         var editor = initializeCodeMirror(element[0], editorOptions);
-
-        scope.$watch(function(){return snippetService.selected && snippetService.selected.id;}, function(value){
-          snippetService.selected && snippetService.get(snippetService.selected.id).then(function(data){
-            console.log(data);
-          });
-
-        });
         editor.on("change", function(){
           editor.save();
-        })
-        ;
+        });
+
+        scope.$watch(attrs.snippet, function(value){
+          value && editor.setValue(value);
+          value || editor.setValue("");
+        });
       }
     };
   }])
@@ -429,6 +427,18 @@ console.log("routes")
     $scope.$watch("deck.current", function(now, last){
       last != -1 && console.log("closing :  " + snippetSerive.unselect($scope.deck.cards[now]));
       now  != -1 && console.log("closing :  " + snippetSerive.select($scope.deck.cards[now]));
+    });
+
+  }]);
+}).call(this);
+(function () {
+  "use strict"
+  app.controller("snippetController", ["$scope", "snippetService", function(scope, snippetService){
+
+    scope.$watch(function(){return snippetService.selected && snippetService.selected.id;}, function(value){
+      snippetService.selected && snippetService.get(snippetService.selected.id).then(function(data){
+        scope.snippet = data;
+      });
     });
 
   }]);

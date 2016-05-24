@@ -90,18 +90,12 @@
             </ul>
             <div id="modal">
                 <div class="modal-body">
-                    <ul class="code-demo" >
-                        <li class="request">
+                    <ul class="code-demo" ng-controller="snippetController">
+                        <li class="request" ng-show="snippet.request">
                             <div class="snippet card">
-                                <textarea class="code" mode="application/ld+json">
-{
-    "message"   : "hello",
-    "sum"       : "{{0 + 1 }}",
-    "boolean"   : "{{1 == 2}}",
-    "list"      : "{{ 'one,two,three,four,five'.split(',') }}",
-    "repeater"  : {"@repeat" : "count in [1,2,3,4,5]", "id": "{{$index + count}}"
-}
-                            </textarea>
+                                <textarea class="code"
+                                          snippet="snippet.request"
+                                          mode="application/ld+json"></textarea>
                                 <div class="card-action">
                                     <button class="blue">request body</button>
                                 </div>
@@ -111,20 +105,11 @@
                             </div>
                         </li>
 
-                        <li class="request">
+                        <li class="request" ng-show="snippet.template">
                             <div class="snippet card">
-                                <textarea class="code" mode="application/ld+json">
-{
-  "headers" : {"My-Header" : "Hello World!"},
-  "body": {
-    "message"   : "hello",
-    "sum"       : "{{0 + 1 }}",
-    "boolean"   : "{{1 == 2}}",
-    "list"      : "{{ 'one,two,three,four,five'.split(',') }}",
-    "repeater"  : {"@repeat" : "count in [1,2,3,4,5]", "id": "{{$index + count}}"}
-  }
-}
-                            </textarea>
+                                <textarea class="code"
+                                          snippet="snippet.template"
+                                          mode="application/ld+json"></textarea>
 
                                 <div class="card-action">
                                     <button class="blue">template.json</button>
@@ -135,20 +120,11 @@
                             </div>
                         </li>
 
-                        <li class="request">
+                        <li class="request" ng-show="snippet.response">
                             <div class="snippet card">
-                                <textarea class="code" mode="application/ld+json">
-{
-  "headers" : {"My-Header" : "Hello World!"},
-  "body": {
-    "message"   : "hello",
-    "sum"       : "{{0 + 1 }}",
-    "boolean"   : "{{1 == 2}}",
-    "list"      : "{{ 'one,two,three,four,five'.split(',') }}",
-    "repeater"  : {"@repeat" : "count in [1,2,3,4,5]", "id": "{{$index + count}}"}
-  }
-}
-                            </textarea>
+                                <textarea class="code"
+                                          snippet="snippet.response"
+                                          mode="application/ld+json"></textarea>
                                 <div class="card-action">
                                     <button class="blue">response.json</button>
                                 </div>
