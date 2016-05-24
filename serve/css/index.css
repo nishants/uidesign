@@ -62,9 +62,6 @@ body {
     text-align: center;
     color: rgba(255, 255, 255, 0.23); }
 
-h1 {
-  color: blue; }
-
 .grid {
   position: relative;
   display: block;
@@ -94,55 +91,65 @@ h1 {
 .state.home .grid-box:not(.home), .state.dashboard .grid-box:not(.dashboard), .state.all .grid-box:not(.all) {
   transform: translateY(100vh); }
 
-ul.deck > li {
-  padding: 10px; }
-  ul.deck > li .card {
-    font-family: 'Roboto', sans-serif;
-    background-color: #F4F4F4;
-    color: #646464;
-    text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    -webkit-transition: opacity 250ms ease, transform 250ms ease;
-    -moz-transition: opacity 250ms ease, transform 250ms ease;
-    -o-transition: opacity 250ms ease, transform 250ms ease;
-    transition: opacity 250ms ease, transform 250ms ease; }
-    ul.deck > li .card img {
-      width: 100%; }
+ul.deck > li .card {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F4F4F4;
+  color: #646464;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: none;
+  padding: 10px 10px 0px 10px;
+  -webkit-transition: opacity 500ms ease, transform 500ms ease;
+  -moz-transition: opacity 500ms ease, transform 500ms ease;
+  -o-transition: opacity 500ms ease, transform 500ms ease;
+  transition: opacity 500ms ease, transform 500ms ease; }
+  ul.deck > li .card img {
+    width: 100%; }
+  ul.deck > li .card .card-footer {
+    position: relative;
+    height: 3px;
+    border-radius: 2px; }
+    ul.deck > li .card .card-footer .bar {
+      position: absolute;
+      height: 3px;
+      margin-left: -11px;
+      width: calc(100% + 22px); }
+    ul.deck > li .card .card-footer .bar.blue {
+      background-color: #2196F3; }
+    ul.deck > li .card .card-footer .bar.red {
+      background-color: #FF5722; }
+    ul.deck > li .card .card-footer .bar.blue, ul.deck > li .card .card-footer .bar.red {
+      opacity: 0;
+      -webkit-transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      -moz-transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      -o-transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      -webkit-transform-origin: 50% 50%;
+      -moz-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0); }
+    ul.deck > li .card .card-footer .bar.green {
+      background-color: #8BC34A; }
 
-.deck.focus li.selected {
-  pointer-events: all; }
+ul.deck > li .card.active .bar.red, ul.deck > li .card:hover .bar.red, ul.deck > li #top-fixed-bar .app.bar .card.search:hover .bar.red, #top-fixed-bar .app.bar ul.deck > li .card.search:hover .bar.red {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
 
-.deck.focus li.selected-head > .card {
-  -webkit-transform: translateY(50px) rotate(0deg);
-  -moz-transform: translateY(50px) rotate(0deg);
-  -ms-transform: translateY(50px) rotate(0deg);
-  -o-transform: translateY(50px) rotate(0deg);
-  transform: translateY(50px) rotate(0deg); }
-
-.deck.focus li.selected-tail > .card {
-  -webkit-transform: translateY(-50px) rotate(0deg);
-  -moz-transform: translateY(-50px) rotate(0deg);
-  -ms-transform: translateY(-50px) rotate(0deg);
-  -o-transform: translateY(-50px) rotate(0deg);
-  transform: translateY(-50px) rotate(0deg); }
-
-.deck.focus li.selected-pre > .card {
-  -webkit-transform: translateX(50px) rotate(0deg);
-  -moz-transform: translateX(50px) rotate(0deg);
-  -ms-transform: translateX(50px) rotate(0deg);
-  -o-transform: translateX(50px) rotate(0deg);
-  transform: translateX(50px) rotate(0deg); }
-
-.deck.focus li.selected-post > .card {
-  -webkit-transform: translateX(-50px) rotate(0deg);
-  -moz-transform: translateX(-50px) rotate(0deg);
-  -ms-transform: translateX(-50px) rotate(0deg);
-  -o-transform: translateX(-50px) rotate(0deg);
-  transform: translateX(-50px) rotate(0deg); }
-
-.deck.focus li:not(.selected) > .card {
-  opacity: 0; }
+ul.deck > li.selected .card .card-footer .bar.blue {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
 
 ul.deck {
   margin: 0;
@@ -155,10 +162,10 @@ ul.deck {
   ul.deck > li {
     padding: 10px;
     display: inline-block;
-    -webkit-transition: opacity 250ms ease, transform 250ms ease;
-    -moz-transition: opacity 250ms ease, transform 250ms ease;
-    -o-transition: opacity 250ms ease, transform 250ms ease;
-    transition: opacity 250ms ease, transform 250ms ease; }
+    -webkit-transition: opacity 500ms ease, transform 500ms ease;
+    -moz-transition: opacity 500ms ease, transform 500ms ease;
+    -o-transition: opacity 500ms ease, transform 500ms ease;
+    transition: opacity 500ms ease, transform 500ms ease; }
 
 .deck.focus {
   pointer-events: none; }

@@ -1,9 +1,8 @@
 $cardBg: #F4F4F4;
 $cardColor: #646464;
+$borderRadius: 2px;
 
 ul.deck > li{
-  padding: $padding;
-
   .card{
     font-family: 'Roboto', sans-serif;
 
@@ -12,39 +11,63 @@ ul.deck > li{
 
     text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: $padding;
+    border-bottom: none;
+    padding: $padding $padding 0px $padding;
 
     img{width: 100%;}
-    .image, .body{
-    }
-    .body{
-      h3{}
-      p{}
+
+    .card-footer{
+      $barHeight: 3px;
+      $sideMargin: 11px;
+
+      position: relative;
+      height: $barHeight;
+      border-radius: $borderRadius;
+
+      .bar{
+        position: absolute;
+        height: $barHeight;
+        margin-left: -$sideMargin;
+        width: calc(100% + #{ 2 * $sideMargin});
+      }
+      .bar.blue{
+        background-color: #2196F3;
+      }
+      .bar.red{
+        background-color: #FF5722;
+      }
+
+      .bar.blue, .bar.red{
+        opacity: 0;
+        @include transition(#{opacity $cleanupDuration $defaultTransitionFunction, transform $cleanupDuration $defaultTransitionFunction});
+        @include transformOrigin(50% 50%);
+        @include transform(scale(0));
+      }
+
+      .bar.green{
+        background-color: #8BC34A;
+      }
     }
     @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
   }
+  .card.active {
+    .bar.red{
+      @include transform(scale(1));
+      opacity: 1;
+    }
+  }
+  .card:hover{
+    @extend .active;
+  }
 }
 
-.deck.focus{
-  li.selected{
-    pointer-events: all; //TODO : enables scroll on firefox
-  }
-
-  li.selected-head > .card{
-    @include transform(translateY(50px) rotate($rotate));
-  }
-
-  li.selected-tail > .card{
-    @include transform(translateY(-50px) rotate(-$rotate));
-  }
-  li.selected-pre > .card{
-    @include transform(translateX(50px) rotate($rotate));
-  }
-
-  li.selected-post > .card{
-    @include transform(translateX(-50px) rotate(-$rotate));
-  }
-  li:not(.selected) > .card{
-    opacity: 0;
+ul.deck > li.selected{
+  .card{
+    .card-footer {
+      .bar.blue {
+        @include transform(scale(1));
+        opacity: 1;
+      }
+    }
   }
 }
