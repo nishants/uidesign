@@ -56,7 +56,7 @@
             <ul class="deck grid"
                 ng-init="deck = {cards: [1,2,3,4,5,6], current: -1}"
                 ng-class="{'focus' : deck.current != -1}">
-                <li class="grid-box all {{type}}"
+                <li class="grid-box all"
                     ng-repeat="card in deck.cards"
                     ng-init="type =  ($index % 2 == 0) ? 'home' : (($index % 3 == 0 ? 'dashboard' : ''))"
                     ng-class="{'home': $index % 2 == 0,'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
