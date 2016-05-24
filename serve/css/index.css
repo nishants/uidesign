@@ -177,14 +177,6 @@ ul.deck > li.selected .card .card-action button.close {
   transform: scale(1);
   opacity: 1; }
 
-.card:hover .card-footer .bar.active, .card:hover .card-footer #top-fixed-bar .app.bar .bar.search:hover, #top-fixed-bar .app.bar .card:hover .card-footer .bar.search:hover {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  opacity: 1; }
-
 .card .card-action {
   position: relative;
   height: 30px;

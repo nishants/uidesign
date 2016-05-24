@@ -52,14 +52,6 @@ ul.deck > li.selected{
   }
 }
 
-.card:hover{
-  .card-footer{
-    .bar.active {
-      @include transform(scale(1));
-      opacity: 1;
-    }
-  }
-}
 
 .card{
   .card-action{
