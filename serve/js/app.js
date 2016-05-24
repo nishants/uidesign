@@ -3,7 +3,7 @@
   var app = angular.module("amoeba", ['editor']);
   window.app = app;
   app.run(["snippetService", function(snippetService){
-    console.log("hoyaa");
+  //  load snippets
   }])
 }).call(this);
 (function(){
@@ -388,9 +388,6 @@ console.log("routes")
     }
 
     return {
-      load: function(){
-
-      },
       get: function(sample, file){
         return cache[sample][file];
       }

@@ -26,9 +26,6 @@
     }
 
     return {
-      load: function(){
-
-      },
       get: function(sample, file){
         return cache[sample][file];
       }
