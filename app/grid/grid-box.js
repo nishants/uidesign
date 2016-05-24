@@ -26,7 +26,8 @@
     this.$gridbox.attr("data-grid-selected", null);
     $("body").css("overflow", "auto");
     $("#app").removeClass("show-modal");
-    var self = this
+    $(window).trigger("resize");
+    var self = this;
     setTimeout(function(){
       self.$grid.css("pointer-events", "all");
       self.$gridbox.css("pointer-events", "all");
