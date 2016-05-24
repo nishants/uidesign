@@ -21,6 +21,7 @@ body {
   body #app {
     text-align: center; }
     body #app .intro-padding {
+      display: none;
       height: calc(100vh - 500px);
       pointer-events: none;
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+100,45484d+100,000000+100&0+0,0+91,0.5+100 */
@@ -33,6 +34,7 @@ body {
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 );
       /* IE6-9 */ }
     body #app .psudeo-shadow {
+      display: none;
       background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAYCAQAAAB68uRSAAAAKElEQVR4AWNhcGdgYGH4CyL+wVkI4g8W4jcuiT9YDPgHJ/7DiP9AAgBhORhg+gPD+AAAAABJRU5ErkJggg==");
       background-repeat: repeat-x;
       background-size: 1px 12px;
@@ -42,6 +44,7 @@ body {
       min-height: 100vh;
       background-color: white; }
     body #app #home-fixed-bg {
+      display: none;
       top: 0;
       left: 0;
       position: fixed;
@@ -67,7 +70,9 @@ body {
     color: rgba(255, 255, 255, 0.23); }
 
 .introduction {
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Raleway', sans-serif;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 10px 50px 50px 50px; }
   .introduction h1 {
     font-size: 3.13em;
     color: black;

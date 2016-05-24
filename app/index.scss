@@ -13,6 +13,7 @@ body{
     text-align: center;
 
     .intro-padding{
+      display: none;
       height: calc(100vh - #{$homePeek});
       pointer-events: none;
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+100,45484d+100,000000+100&0+0,0+91,0.5+100 */
@@ -22,6 +23,7 @@ body{
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
     }
     .psudeo-shadow{
+      display: none;
       background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAYCAQAAAB68uRSAAAAKElEQVR4AWNhcGdgYGH4CyL+wVkI4g8W4jcuiT9YDPgHJ/7DiP9AAgBhORhg+gPD+AAAAABJRU5ErkJggg==");
       background-repeat: repeat-x;
       background-size: 1px 12px;
@@ -34,6 +36,8 @@ body{
     }
 
     #home-fixed-bg{
+      display: none;
+
       top: 0;
       left: 0;
       position: fixed;
