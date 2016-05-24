@@ -1,7 +1,6 @@
 (function(){
   "use strict"
-  var app = angular.module("editor", []);
-  app.directive("code", function($log){
+  app.directive("code", [function($log){
     var
         defaultOptions = {
           //remove default red dots for unknown character(linefeed, etc)
@@ -42,5 +41,5 @@
         ;
       }
     };
-  })
+  }])
 })();

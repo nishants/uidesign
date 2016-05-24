@@ -8,8 +8,9 @@
     };
 
     $scope.$watch("deck.current", function(now, last){
-      last != -1 && console.log("closing :  " + $scope.deck.cards[last].title);
-      now  != -1 && console.log("closing :  " + $scope.deck.cards[now].title);
-    })
+      last != -1 && snippetSerive.unselect($scope.deck.cards[now]);
+      now  != -1 && snippetSerive.select($scope.deck.cards[now]);
+    });
+
   }]);
 }).call(this);

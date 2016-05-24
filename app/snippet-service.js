@@ -8,7 +8,14 @@
   app.service("snippetService", ["$http", function($http){
 
     var service = {
-      _cache : {},
+      _cache  : {},
+      selected: null,
+      select: function(card){
+        this.selected = card;
+      },
+      unselect: function(){
+        this.selected = null;
+      },
       get: function (name) {
         return _cache[name];
       },

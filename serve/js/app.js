@@ -1,6 +1,6 @@
 (function(){
   "use strict"
-  var app = angular.module("amoeba", ['editor']);
+  var app = angular.module("amoeba", []);
   window.app = app;
   app.run(["snippetService", function(snippetService){
   //  load snippets
@@ -20,7 +20,14 @@ console.log("routes")
   app.service("snippetService", ["$http", function($http){
 
     var service = {
-      _cache : {},
+      _cache  : {},
+      selected: null,
+      select: function(card){
+        this.selected = card;
+      },
+      unselect: function(){
+        this.selected = null;
+      },
       get: function (name) {
         return _cache[name];
       },
@@ -70,8 +77,7 @@ console.log("routes")
 }).call(this);
 (function(){
   "use strict"
-  var app = angular.module("editor", []);
-  app.directive("code", function($log){
+  app.directive("code", [function($log){
     var
         defaultOptions = {
           //remove default red dots for unknown character(linefeed, etc)
@@ -112,7 +118,7 @@ console.log("routes")
         ;
       }
     };
-  })
+  }])
 })();
 (function(){
   "use strict"
@@ -219,9 +225,10 @@ console.log("routes")
     };
 
     $scope.$watch("deck.current", function(now, last){
-      last != -1 && console.log("closing :  " + $scope.deck.cards[last].title);
-      now  != -1 && console.log("closing :  " + $scope.deck.cards[now].title);
-    })
+      last != -1 && snippetSerive.unselect($scope.deck.cards[now]);
+      now  != -1 && snippetSerive.select($scope.deck.cards[now]);
+    });
+
   }]);
 }).call(this);
 (function(){
@@ -392,4 +399,20 @@ console.log("routes")
     init();
   });
 
+}).call(this);
+(function () {
+  "use strict"
+  app.controller("deckController", ["$scope", "snippetService", function($scope, snippetSerive){
+
+    $scope.deck = {
+      current: -1,
+      cards : snippetSerive.all()
+    };
+
+    $scope.$watch("deck.current", function(now, last){
+      last != -1 && console.log("closing :  " + snippetSerive.unselect($scope.deck.cards[now]));
+      now  != -1 && console.log("closing :  " + snippetSerive.select($scope.deck.cards[now]));
+    });
+
+  }]);
 }).call(this);
