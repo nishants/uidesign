@@ -67,13 +67,12 @@
 
                         </p>
                         <div class="card-action">
-                            <button class="open">Open</button>
-                            <button class="close">Close</button>
+                            <button class="green open">Open</button>
+                            <button class="blue close">Close</button>
                         </div>
                         <div class="card-footer">
                             <div class="green bar"></div>
-                            <div class="red bar"></div>
-                            <div class="blue bar"></div>
+                            <div class="active blue bar"></div>
                         </div>
                     </div>
                 </li>
@@ -84,7 +83,7 @@
                 <div class="modal-body">
                     <ul class="code-demo" >
                         <li class="request">
-                            <div class="snippet">
+                            <div class="snippet card">
                                 <textarea class="code" mode="application/ld+json">
 {
     "message"   : "hello",
@@ -94,7 +93,12 @@
     "repeater"  : {"@repeat" : "count in [1,2,3,4,5]", "id": "{{$index + count}}"
 }
                             </textarea>
-                                <div class="label">request body</div>
+                                <div class="card-action">
+                                    <button class="blue">request body</button>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="blue bar"></div>
+                                </div>
                             </div>
                         </li>
 

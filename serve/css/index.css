@@ -154,85 +154,12 @@ ul.deck > li .card {
   transition: opacity 500ms ease, transform 500ms ease; }
   ul.deck > li .card img {
     width: 100%; }
-  ul.deck > li .card .card-footer {
-    position: relative;
-    height: 3px;
-    border-radius: 2px; }
-    ul.deck > li .card .card-footer .bar {
-      position: absolute;
-      height: 3px;
-      margin-left: -11px;
-      width: calc(100% + 22px); }
-    ul.deck > li .card .card-footer .bar.blue {
-      background-color: #2196F3; }
-    ul.deck > li .card .card-footer .bar.red {
-      background-color: #FF5722;
-      display: none; }
-    ul.deck > li .card .card-footer .bar.blue, ul.deck > li .card .card-footer .bar.red {
-      opacity: 0;
-      -webkit-transition: opacity 250ms ease, transform 250ms ease;
-      -moz-transition: opacity 250ms ease, transform 250ms ease;
-      -o-transition: opacity 250ms ease, transform 250ms ease;
-      transition: opacity 250ms ease, transform 250ms ease;
-      -webkit-transform-origin: 50% 50%;
-      -moz-transform-origin: 50% 50%;
-      transform-origin: 50% 50%;
-      -webkit-transform: scale(0);
-      -moz-transform: scale(0);
-      -ms-transform: scale(0);
-      -o-transform: scale(0);
-      transform: scale(0); }
-    ul.deck > li .card .card-footer .bar.green {
-      background-color: #8BC34A; }
   ul.deck > li .card .card-action {
-    position: relative;
-    height: 30px;
     margin-left: -11px;
-    width: calc(100% + 22px);
-    overflow: hidden;
-    top: 1px;
-    z-index: 1; }
-    ul.deck > li .card .card-action button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      display: block;
-      width: 80px;
-      height: 30px;
-      line-height: 30px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.86);
-      border: 1px solid transparent;
-      outline: none; }
-    ul.deck > li .card .card-action button.open {
-      background-color: #8BC34A; }
-    ul.deck > li .card .card-action button.close {
-      background-color: #2196F3;
-      -webkit-transition-delay: 500ms;
-      -moz-transition-delay: 500ms;
-      -ms-transition-delay: 500ms;
-      -o-transition-delay: 500ms;
-      transition-delay: 500ms;
-      -webkit-transition: opacity 250ms ease, transform 250ms ease;
-      -moz-transition: opacity 250ms ease, transform 250ms ease;
-      -o-transition: opacity 250ms ease, transform 250ms ease;
-      transition: opacity 250ms ease, transform 250ms ease;
-      -webkit-transform-origin: 50% 50%;
-      -moz-transform-origin: 50% 50%;
-      transform-origin: 50% 50%;
-      -webkit-transform: translateY(100%);
-      -moz-transform: translateY(100%);
-      -ms-transform: translateY(100%);
-      -o-transform: translateY(100%);
-      transform: translateY(100%); }
-
-ul.deck > li .card:hover .card-footer .bar.blue {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  opacity: 1; }
+    width: calc(100% + 22px); }
+  ul.deck > li .card .card-footer .bar {
+    margin-left: -11px;
+    width: calc(100% + 22px); }
 
 ul.deck > li.selected .card .card-footer .bar.blue {
   -webkit-transform: scale(1);
@@ -249,6 +176,85 @@ ul.deck > li.selected .card .card-action button.close {
   -o-transform: scale(1);
   transform: scale(1);
   opacity: 1; }
+
+.card:hover .card-footer .bar.active, .card:hover .card-footer #top-fixed-bar .app.bar .bar.search:hover, #top-fixed-bar .app.bar .card:hover .card-footer .bar.search:hover {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
+
+.card .card-action {
+  position: relative;
+  height: 30px;
+  overflow: hidden;
+  top: 1px;
+  z-index: 1; }
+  .card .card-action button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.86);
+    border: 1px solid transparent;
+    outline: none; }
+  .card .card-action button.green {
+    background-color: #8BC34A; }
+  .card .card-action button.blue {
+    background-color: #2196F3; }
+  .card .card-action button.close {
+    -webkit-transition-delay: 500ms;
+    -moz-transition-delay: 500ms;
+    -ms-transition-delay: 500ms;
+    -o-transition-delay: 500ms;
+    transition-delay: 500ms;
+    -webkit-transition: opacity 250ms ease, transform 250ms ease;
+    -moz-transition: opacity 250ms ease, transform 250ms ease;
+    -o-transition: opacity 250ms ease, transform 250ms ease;
+    transition: opacity 250ms ease, transform 250ms ease;
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%); }
+
+.card .card-footer {
+  position: relative;
+  height: 3px;
+  border-radius: 2px; }
+  .card .card-footer .bar {
+    position: absolute;
+    height: 3px;
+    width: 100%; }
+  .card .card-footer .bar.blue {
+    background-color: #2196F3; }
+  .card .card-footer .bar.red {
+    background-color: #FF5722;
+    display: none; }
+  .card .card-footer .bar.active, .card .card-footer #top-fixed-bar .app.bar .bar.search:hover, #top-fixed-bar .app.bar .card .card-footer .bar.search:hover {
+    opacity: 0;
+    -webkit-transition: opacity 250ms ease, transform 250ms ease;
+    -moz-transition: opacity 250ms ease, transform 250ms ease;
+    -o-transition: opacity 250ms ease, transform 250ms ease;
+    transition: opacity 250ms ease, transform 250ms ease;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0); }
+  .card .card-footer .bar.green {
+    background-color: #8BC34A; }
 
 ul.deck {
   margin: 0;

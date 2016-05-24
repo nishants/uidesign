@@ -3,10 +3,10 @@ $cardColor: $pencilBlack;
 $borderRadius: 2px;
 $barHeight: 3px;
 $transition: ease;
+$sideMargin: 11px;
 
 ul.deck > li{
   .card{
-    $sideMargin: 11px;
     margin: $padding;
 
     font-family: 'Roboto', sans-serif;
@@ -21,85 +21,15 @@ ul.deck > li{
 
     img{width: 100%;}
 
-    .card-footer{
-
-      position: relative;
-      height: $barHeight;
-      border-radius: $borderRadius;
-
-      .bar{
-        position: absolute;
-        height: $barHeight;
-        margin-left: -$sideMargin;
-        width: calc(100% + #{ 2 * $sideMargin});
-      }
-      .bar.blue{
-        background-color: #2196F3;
-      }
-      .bar.red{
-        background-color: #FF5722;
-        display: none;
-      }
-
-      .bar.blue, .bar.red{
-        opacity: 0;
-        @include transition(#{opacity 250ms $transition, transform 250ms $transition});
-        @include transformOrigin(50% 50%);
-        @include transform(scale(0));
-      }
-
-      .bar.green{
-        background-color: #8BC34A;
-      }
-    }
-
+    @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
     .card-action{
-      position: relative;
-      $buttonHeight: 30px;
-      $buttonWidth : 80px;
-      height: $buttonHeight;
       margin-left: -$sideMargin;
       width: calc(100% + #{ 2 * $sideMargin});
-
-      overflow: hidden;
-
-      top: 1px;  // overlap 1px gap with footer
-      z-index: 1;
-
-      button{
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        display: block;
-        width : $buttonWidth;
-        height: $buttonHeight;
-        line-height: $buttonHeight;
-
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.86);
-
-        border: 1px solid transparent;
-        outline: none;
-      }
-      button.open{
-        background-color: #8BC34A;
-      }
-      button.close{
-        background-color: #2196F3;
-        @include transitionDelay(500ms);
-        @include transition(#{opacity 250ms $transition, transform 250ms $transition});
-        @include transformOrigin(50% 50%);
-        @include transform(translateY(100%));
-      }
     }
-    @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
-  }
-  .card:hover{
     .card-footer{
-      .bar.blue {
-        @include transform(scale(1));
-        opacity: 1;
+      .bar{
+        margin-left: -$sideMargin;
+        width: calc(100% + #{ 2 * $sideMargin});
       }
     }
   }
@@ -118,6 +48,88 @@ ul.deck > li.selected{
         @include transform(scale(1));
         opacity: 1;
       }
+    }
+  }
+}
+
+.card:hover{
+  .card-footer{
+    .bar.active {
+      @include transform(scale(1));
+      opacity: 1;
+    }
+  }
+}
+
+.card{
+  .card-action{
+    position: relative;
+    $buttonHeight: 30px;
+    $buttonWidth : 80px;
+    height: $buttonHeight;
+
+    overflow: hidden;
+
+    top: 1px;  // overlap 1px gap with footer
+    z-index: 1;
+
+    button{
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      display: block;
+      width : $buttonWidth;
+      height: $buttonHeight;
+      line-height: $buttonHeight;
+
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.86);
+
+      border: 1px solid transparent;
+      outline: none;
+    }
+    button.green{
+      background-color: #8BC34A;
+    }
+    button.blue{
+      background-color: #2196F3;
+    }
+    button.close{
+      @include transitionDelay(500ms);
+      @include transition(#{opacity 250ms $transition, transform 250ms $transition});
+      @include transformOrigin(100% 100%);
+      @include transform(translateY(100%));
+    }
+  }
+
+  .card-footer{
+    position: relative;
+    height: $barHeight;
+    border-radius: $borderRadius;
+
+    .bar{
+      position: absolute;
+      height: $barHeight;
+      width: 100%;
+    }
+    .bar.blue{
+      background-color: #2196F3;
+    }
+    .bar.red{
+      background-color: #FF5722;
+      display: none;
+    }
+
+    .bar.active{
+      opacity: 0;
+      @include transition(#{opacity 250ms $transition, transform 250ms $transition});
+      @include transformOrigin(50% 50%);
+      @include transform(scale(0));
+    }
+
+    .bar.green{
+      background-color: #8BC34A;
     }
   }
 }
