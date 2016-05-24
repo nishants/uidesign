@@ -82,17 +82,56 @@
             </ul>
             <div id="modal">
                 <div class="modal-body">
-                    <ul class="code-demo deck" >
-                        <li class="request">    <p class="card">
-                            The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.
-                        </p>
+                    <ul class="code-demo" >
+                        <li class="request">
+                            <textarea class="code" mode="application/ld+json">
+{
+  "headers" : {"My-Header" : "Hello World!"},
+  "body": {
+    "message"   : "hello",
+    "sum"       : "{{0 + 1 }}",
+    "boolean"   : "{{1 == 2}}",
+    "list"      : "{{ 'one,two,three,four,five'.split(',') }}",
+    "repeater"  : {"@repeat" : "count in [1,2,3,4,5]", "id": "{{$index + count}}"}
+  }
+}
+                            </textarea>
                         </li>
-                        <li class="controller"> <p class="card">The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.</p>
+                        <li class="controller">
+<textarea class="code" mode="css">
+ul{
+    list-style-type: none; /* Remove list style*/
+    display: table-row;
+}
+ul > li {
+    display: table-cell;
+}
+                            </textarea>
                         </li>
-                        <li class="directive">  <p class="card">The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.
-                        </p></li>
-                        <li class="temlpate">   <p class="card">The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.</p>
+                        <li class="directive">
+<textarea class="code" mode="css">
+ul{
+    list-style-type: none; /* Remove list style*/
+    display: table-row;
+}
+ul > li {
+    display: table-cell;
+}
+                            </textarea>
+                            </p>
                         </li>
+                        <li class="temlpate">
+<textarea class="code" mode="css">
+
+ul{
+    list-style-type: none; /* Remove list style*/
+    display: table-row;
+}
+ul > li {
+    display: table-cell;
+}
+
+                            </textarea>                        </li>
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300);
 ul.undo-list, #modal .modal-body ul.code-demo {
   list-style: none;
   margin: 0px;
@@ -317,7 +318,8 @@ ul.deck {
     #modal .modal-body ul.code-demo {
       text-align: left; }
       #modal .modal-body ul.code-demo li {
-        display: inline-block; }
+        display: inline-block;
+        padding: 10px; }
 
 #app.show-modal #modal {
   -webkit-transform: translateX(0px);
@@ -325,6 +327,22 @@ ul.deck {
   -ms-transform: translateX(0px);
   -o-transform: translateX(0px);
   transform: translateX(0px); }
+
+#app .CodeMirror {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #f7f7f7;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  line-height: 17px;
+  letter-spacing: 0.05em; }
+
+#app .CodeMirror-gutter-elt {
+  /* text align in gutter(line numbers) */
+  text-align: center;
+  width: 30px; }
 
 html.hide-scroll-hack {
   overflow: hidden; }

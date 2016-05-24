@@ -93,17 +93,56 @@
             </ul>
             <div id="modal">
                 <div class="modal-body">
-                    <ul class="code-demo deck" >
-                        <li class="request">    <p class="card">
-                            The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.
-                        </p>
+                    <ul class="code-demo" >
+                        <li class="request">
+                            <textarea class="code" mode="application/ld+json">
+{
+  "headers" : {"My-Header" : "Hello World!"},
+  "body": {
+    "message"   : "hello",
+    "sum"       : "{{0 + 1 }}",
+    "boolean"   : "{{1 == 2}}",
+    "list"      : "{{ 'one,two,three,four,five'.split(',') }}",
+    "repeater"  : {"@repeat" : "count in [1,2,3,4,5]", "id": "{{$index + count}}"}
+  }
+}
+                            </textarea>
                         </li>
-                        <li class="controller"> <p class="card">The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.</p>
+                        <li class="controller">
+<textarea class="code" mode="css">
+ul{
+    list-style-type: none; /* Remove list style*/
+    display: table-row;
+}
+ul > li {
+    display: table-cell;
+}
+                            </textarea>
                         </li>
-                        <li class="directive">  <p class="card">The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.
-                        </p></li>
-                        <li class="temlpate">   <p class="card">The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.</p>
+                        <li class="directive">
+<textarea class="code" mode="css">
+ul{
+    list-style-type: none; /* Remove list style*/
+    display: table-row;
+}
+ul > li {
+    display: table-cell;
+}
+                            </textarea>
+                            </p>
                         </li>
+                        <li class="temlpate">
+<textarea class="code" mode="css">
+
+ul{
+    list-style-type: none; /* Remove list style*/
+    display: table-row;
+}
+ul > li {
+    display: table-cell;
+}
+
+                            </textarea>                        </li>
                     </ul>
                 </div>
             </div>
@@ -122,5 +161,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
 
 <script src="js/app.js"></script>
+
+<link rel="stylesheet" href="../dump/lib/code-mirror/codemirror.css"/>
+<script src="../dump/lib/code-mirror/codemirror.js"></script>
+
+<!-- code mirror modes for mixed html(dependent on xml, css and js modes -->
+<script src="../dump/lib/code-mirror/xml-mode.js"></script>
+<script src="../dump/lib/code-mirror/js-mode.js"></script>
+<script src="../dump/lib/code-mirror/css-mode.js"></script>
+<script src="../dump/lib/code-mirror/html-mixed-mode.js"></script>
+
 </body>
 </html>

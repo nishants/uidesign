@@ -1,0 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300);
+
+#app{
+  .CodeMirror{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 13px;
+    border: 1px solid rgba(0,0,0,0.05);
+    background-color: #f7f7f7;
+    height: auto;
+    width: auto;
+    padding: $padding;
+
+    line-height: 17px;
+    letter-spacing: 0.05em;
+  }
+  .CodeMirror-gutter-elt {/* text align in gutter(line numbers) */
+    text-align: center;
+    width: 30px;
+  }
+}
