@@ -27,7 +27,7 @@ $iconsTransitionTime: 200ms;
   position: fixed;
   top: 0px;
   z-index: $topBarLayer;
-
+  display: none;
   width: 100%;
   overflow: hidden;
 

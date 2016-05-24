@@ -1,33 +1,31 @@
-$transitionDuration: 250ms;
+$cardBg: #F4F4F4;
+$cardColor: #646464;
 
-$padding: 10px;
-
-$cardWidth: 250px;
-$cardHeight: 250px;
-
-$duration: 500ms;
-$rotate : 0deg;
-$cleanupDuration: $transitionDuration;
-$cleanupFunction: ease;
-@import "deck/cards";
-
-ul.deck {
-  margin: 0;
+ul.deck > li{
   padding: $padding;
-  display: block;
-  list-style: none;
-  text-align: left;
-  width: 100%;
-  overflow: auto;
-  > li{
+
+  .card{
+    font-family: 'Roboto', sans-serif;
+
+    background-color: $cardBg;
+    color: $cardColor;
+
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: $padding;
-    display: inline-block;
+
+    img{width: 100%;}
+    .image, .body{
+    }
+    .body{
+      h3{}
+      p{}
+    }
     @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
   }
 }
 
 .deck.focus{
-  pointer-events: none;
   li.selected{
     pointer-events: all; //TODO : enables scroll on firefox
   }
