@@ -157,10 +157,16 @@ console.log("routes")
   };
 
   GridBox.prototype.unselect = function(){
+    this.$gridbox.css("pointer-events", "none");
+
     this.applyPosition();
     this.$gridbox.attr("data-grid-selected", null);
     $("body").css("overflow", "auto");
     $("#app").removeClass("show-modal");
+    var self = this
+    setTimeout(function(){
+      self.$gridbox.css("pointer-events", "all");
+    },500);
   };
 
   GridBox.prototype.select = function(){
@@ -174,8 +180,9 @@ console.log("routes")
           self.__applyPosition(x,y);
           self.$gridbox.attr("data-grid-selected","true");
           $("#app").addClass("show-modal");
+          self.$gridbox.css("pointer-events", "all");
         };
-
+        self.$gridbox.css("pointer-events", "none");
         scroll && $('html, body').animate({scrollTop : this.$gridbox.offset().top}, 250, selectBox);
         scroll || selectBox();
   };
