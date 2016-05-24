@@ -83,11 +83,14 @@ body{
     background: rgba(0, 0, 0, 0.9);
     text-align: center;
     color: rgba(255, 255, 255, 0.23);
-    @include transition(opacity 500ms ease);
+    @include transition(#{opacity 500ms ease, transform 500ms ease});
   }
 }
 #app.show-modal{
-  #footer{opacity: 0;}
+  #footer{
+    opacity: 0;
+    @include transform(translateY(100%));
+  }
 }
 
 @import "home/home";

@@ -80,13 +80,18 @@ body {
     background: rgba(0, 0, 0, 0.9);
     text-align: center;
     color: rgba(255, 255, 255, 0.23);
-    -webkit-transition: opacity 500ms ease;
-    -moz-transition: opacity 500ms ease;
-    -o-transition: opacity 500ms ease;
-    transition: opacity 500ms ease; }
+    -webkit-transition: opacity 500ms ease, transform 500ms ease;
+    -moz-transition: opacity 500ms ease, transform 500ms ease;
+    -o-transition: opacity 500ms ease, transform 500ms ease;
+    transition: opacity 500ms ease, transform 500ms ease; }
 
 #app.show-modal #footer {
-  opacity: 0; }
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%); }
 
 .introduction {
   font-family: 'Raleway', sans-serif;
