@@ -28,7 +28,7 @@ console.log("routes")
         defaultOptions = {
           //remove default red dots for unknown character(linefeed, etc)
           specialCharPlaceholder: function(){return document.createElement("span")},
-          readOnly: true,
+          readOnly: false,
 
           // show line numbers in editor
           lineNumbers: true,
@@ -46,7 +46,7 @@ console.log("routes")
         },
 
         initializeCodeMirror = function (textArea, editorOptions) {
-          CodeMirror.fromTextArea(textArea, editorOptions);
+          return CodeMirror.fromTextArea(textArea, editorOptions);
         };
 
     return {
@@ -57,7 +57,11 @@ console.log("routes")
         var editorOptions = angular.extend(defaultOptions, {});
         editorOptions.mode = attrs.mode || editorOptions.mode;
 
-        initializeCodeMirror(element[0], editorOptions);
+        var editor = initializeCodeMirror(element[0], editorOptions);
+        editor.on("change", function(){
+          editor.save();
+        })
+        ;
       }
     };
   })

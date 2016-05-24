@@ -24,6 +24,7 @@ $duration: 500ms;
       li{
         display: inline-block;
         padding: $padding;
+        width: 100%;
 
         .snippet{
           border: 1px solid rgba(0,0,0,0.05);

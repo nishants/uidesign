@@ -332,7 +332,8 @@ ul.deck {
       text-align: left; }
       #modal .modal-body ul.code-demo li {
         display: inline-block;
-        padding: 10px; }
+        padding: 10px;
+        width: 100%; }
         #modal .modal-body ul.code-demo li .snippet {
           border: 1px solid rgba(0, 0, 0, 0.05);
           background-color: #f7f7f7; }
@@ -375,7 +376,6 @@ ul.deck {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-size: 13px;
   height: auto;
-  width: auto;
   padding: 10px;
   line-height: 17px;
   letter-spacing: 0.05em;
