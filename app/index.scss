@@ -12,6 +12,15 @@ body{
   #app{
     text-align: center;
 
+    #logo{
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      color: rgba(0, 0, 0, 0.05);
+      margin: 10px;
+      text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.02);
+      font-size: 16px;
+    }
     .intro-padding{
       display: none;
       height: calc(100vh - #{$homePeek});
