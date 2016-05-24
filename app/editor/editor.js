@@ -24,7 +24,7 @@
         },
 
         initializeCodeMirror = function (textArea, editorOptions) {
-          CodeMirror.fromTextArea(textArea, editorOptions);
+          return CodeMirror.fromTextArea(textArea, editorOptions);
         };
 
     return {
@@ -35,7 +35,11 @@
         var editorOptions = angular.extend(defaultOptions, {});
         editorOptions.mode = attrs.mode || editorOptions.mode;
 
-        initializeCodeMirror(element[0], editorOptions);
+        var editor = initializeCodeMirror(element[0], editorOptions);
+        editor.on("change", function(){
+          editor.save();
+        })
+        ;
       }
     };
   })
