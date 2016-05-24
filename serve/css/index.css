@@ -325,7 +325,8 @@ ul.deck {
     width: 100%;
     height: 100%;
     background-color: white;
-    pointer-events: all; }
+    pointer-events: all;
+    padding-bottom: 50px; }
     #modal .modal-body ul.code-demo {
       text-align: left; }
       #modal .modal-body ul.code-demo li {
