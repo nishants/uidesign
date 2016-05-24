@@ -27,6 +27,7 @@ $duration: 500ms;
         .snippet{
           border: 1px solid rgba(0,0,0,0.05);
           background-color: #f7f7f7;
+
           .label{
             position: relative;
             top: 0px;
@@ -43,6 +44,24 @@ $duration: 500ms;
             padding: 0px 10px;
             text-align: center;
             color: rgba(0, 0, 0, 0.29);
+          }
+
+          .card-footer, .card-action{
+            opacity: 0.4;
+            button{
+              top: -1px;
+              width: auto;
+              background: transparent;
+              color: #2196F3;
+            }
+            border-bottom: 1px solid #2196F3;
+          }
+          .card-footer{
+            display: none;
+            .bar{
+              width: calc(100% + 1px);
+              margin-left: -1px;
+            }
           }
         }
       }

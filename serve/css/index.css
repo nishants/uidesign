@@ -348,6 +348,19 @@ ul.deck {
             padding: 0px 10px;
             text-align: center;
             color: rgba(0, 0, 0, 0.29); }
+          #modal .modal-body ul.code-demo li .snippet .card-footer, #modal .modal-body ul.code-demo li .snippet .card-action {
+            opacity: 0.4;
+            border-bottom: 1px solid #2196F3; }
+            #modal .modal-body ul.code-demo li .snippet .card-footer button, #modal .modal-body ul.code-demo li .snippet .card-action button {
+              top: -1px;
+              width: auto;
+              background: transparent;
+              color: #2196F3; }
+          #modal .modal-body ul.code-demo li .snippet .card-footer {
+            display: none; }
+            #modal .modal-body ul.code-demo li .snippet .card-footer .bar {
+              width: calc(100% + 1px);
+              margin-left: -1px; }
 
 #app.show-modal #modal {
   -webkit-transform: translateX(0px);
