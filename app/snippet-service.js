@@ -51,6 +51,11 @@
             id: "query",
             title: "URL Parameters",
             description: "Access request query parameters from template."
+          },
+          {
+            id: "routes",
+            title: "Define Routes",
+            description: "Quickly define routes with/without path parameters"
           }
         ];
       }
@@ -60,11 +65,12 @@
       service._cache[snippet.id] = $http.get("../code/<name>".replace("<name>", snippet.id)).then(
           function(response){
             var data = response.data.split(SEPARATOR);
+            snippet.id
             return {
-              request   : data[0],
-              controller: data[1],
-              template  : data[2],
-              response  : data[3]
+              request   : data[0].trim(),
+              controller: data[1].trim(),
+              template  : data[2].trim(),
+              response  : data[3].trim()
             };
           });
     });

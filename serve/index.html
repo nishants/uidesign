@@ -91,6 +91,7 @@
             <div id="modal">
                 <div class="modal-body">
                     <ul class="code-demo" ng-controller="snippetController">
+
                         <li class="request" ng-show="snippet.request">
                             <div class="snippet card">
                                 <textarea class="code"
@@ -98,6 +99,20 @@
                                           mode="application/ld+json"></textarea>
                                 <div class="card-action">
                                     <button class="blue">request body</button>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="blue bar"></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="request" ng-show="snippet.controller">
+                            <div class="snippet card">
+                                <textarea class="code"
+                                          snippet="snippet.controller"
+                                          mode="application/ld+json"></textarea>
+                                <div class="card-action">
+                                    <button class="blue">script.js</button>
                                 </div>
                                 <div class="card-footer">
                                     <div class="blue bar"></div>
@@ -120,7 +135,7 @@
                             </div>
                         </li>
 
-                        <li class="request" ng-show="snippet.response">
+                        <li class="response" ng-show="snippet.response">
                             <div class="snippet card">
                                 <textarea class="code"
                                           snippet="snippet.response"

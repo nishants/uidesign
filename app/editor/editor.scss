@@ -1,12 +1,11 @@
 #app{
   .CodeMirror{
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    font-size: 13px;
     height: auto;
     padding: $padding;
 
-    line-height: 17px;
-    letter-spacing: 0.05em;
+    line-height: 20px;
+    font-size: 16px; 
     background-color: transparent !important;
   }
   .CodeMirror-gutter-elt {/* text align in gutter(line numbers) */

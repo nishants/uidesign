@@ -63,6 +63,11 @@ console.log("routes")
             id: "query",
             title: "URL Parameters",
             description: "Access request query parameters from template."
+          },
+          {
+            id: "routes",
+            title: "Define Routes",
+            description: "Quickly define routes with/without path parameters"
           }
         ];
       }
@@ -72,16 +77,30 @@ console.log("routes")
       service._cache[snippet.id] = $http.get("../code/<name>".replace("<name>", snippet.id)).then(
           function(response){
             var data = response.data.split(SEPARATOR);
+            snippet.id
             return {
-              request   : data[0],
-              controller: data[1],
-              template  : data[2],
-              response  : data[3]
+              request   : data[0].trim(),
+              controller: data[1].trim(),
+              template  : data[2].trim(),
+              response  : data[3].trim()
             };
           });
     });
 
     return service;
+  }]);
+
+}).call(this);
+(function(){
+  "use strict"
+  app.directive("slate", [function () {
+    return {
+      restrict: "C",
+      scope: true,
+      transclude: false,
+      link: function (scope, element, attrs) {
+      }
+    };
   }]);
 
 }).call(this);
@@ -138,18 +157,17 @@ console.log("routes")
     };
   }])
 })();
-(function(){
+(function () {
   "use strict"
-  app.directive("slate", [function () {
-    return {
-      restrict: "C",
-      scope: true,
-      transclude: false,
-      link: function (scope, element, attrs) {
-      }
-    };
-  }]);
+  app.controller("snippetController", ["$scope", "snippetService", function(scope, snippetService){
 
+    scope.$watch(function(){return snippetService.selected && snippetService.selected.id;}, function(value){
+      snippetService.selected && snippetService.get(snippetService.selected.id).then(function(data){
+        scope.snippet = data;
+      });
+    });
+
+  }]);
 }).call(this);
 (function () {
   "use strict"
@@ -417,32 +435,4 @@ console.log("routes")
     init();
   });
 
-}).call(this);
-(function () {
-  "use strict"
-  app.controller("deckController", ["$scope", "snippetService", function($scope, snippetSerive){
-
-    $scope.deck = {
-      current: -1,
-      cards : snippetSerive.all()
-    };
-
-    $scope.$watch("deck.current", function(now, last){
-      last != -1 && console.log("closing :  " + snippetSerive.unselect($scope.deck.cards[now]));
-      now  != -1 && console.log("closing :  " + snippetSerive.select($scope.deck.cards[now]));
-    });
-
-  }]);
-}).call(this);
-(function () {
-  "use strict"
-  app.controller("snippetController", ["$scope", "snippetService", function(scope, snippetService){
-
-    scope.$watch(function(){return snippetService.selected && snippetService.selected.id;}, function(value){
-      snippetService.selected && snippetService.get(snippetService.selected.id).then(function(data){
-        scope.snippet = data;
-      });
-    });
-
-  }]);
 }).call(this);
