@@ -3,6 +3,7 @@ $bodyBgColor: #080808;
 $blackTint  : rgba(0, 0, 0, 0.1);
 $homePeek: 500px;
 $pencilBlack : #646464;
+$gridBoxWidth: 300px;
 
 body{
   margin: 0;
@@ -11,6 +12,11 @@ body{
 
   #app{
     text-align: center;
+    #slate{
+      position: relative;
+      height: 100vh;
+      overflow: auto;
+    }
 
     #logo{
       position: fixed;
@@ -77,12 +83,17 @@ body{
     background: rgba(0, 0, 0, 0.9);
     text-align: center;
     color: rgba(255, 255, 255, 0.23);
+    @include transition(opacity 500ms ease);
   }
+}
+#app.show-modal{
+  #footer{opacity: 0;}
 }
 
 @import "home/home";
 @import "style/introduction";
 @import "grid/grid";
 @import "deck/deck";
+@import "style/modal";
 @import "style/scroll-hack";
 @import "top-bar/top-fixed-bar";

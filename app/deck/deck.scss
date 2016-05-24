@@ -2,7 +2,6 @@ $transitionDuration: 500ms;
 
 $padding: 10px;
 
-$cardWidth: 250px;
 $cardHeight: 250px;
 
 $duration: 500ms;
@@ -22,6 +21,7 @@ ul.deck {
   > li{
     padding: $padding;
     display: inline-block;
+    width: $gridBoxWidth;
     @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
   }
 }

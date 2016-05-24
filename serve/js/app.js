@@ -76,6 +76,7 @@ console.log("routes")
     this.applyPosition();
     this.$gridbox.attr("data-grid-selected", null);
     $("body").css("overflow", "auto");
+    $("#app").removeClass("show-modal");
   };
 
   GridBox.prototype.select = function(){
@@ -88,6 +89,7 @@ console.log("routes")
               x = 0;
           self.__applyPosition(x,y);
           self.$gridbox.attr("data-grid-selected","true");
+          $("#app").addClass("show-modal");
         };
 
         scroll && $('html, body').animate({scrollTop : this.$gridbox.offset().top}, 250, selectBox);

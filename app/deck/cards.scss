@@ -63,6 +63,9 @@ ul.deck > li{
 
       overflow: hidden;
 
+      top: 1px;  // overlap 1px gap with footer
+      z-index: 1;
+
       button{
         position: absolute;
         top: 0;
