@@ -1,8 +1,16 @@
-request
+{
+  "name" : "You"
+}
 -------------------------
 controller
 -------------------------
-template
+{
+  "body": {
+    "message" : "{{message}}"
+  }
+}
 -------------------------
-response
+{
+  "message": "Controllified !"
+}
 -------------------------
