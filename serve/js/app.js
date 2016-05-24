@@ -8,6 +8,10 @@
 }).call(this);
 (function(){
   "use strict"
+console.log("routes")
+}).call(this);
+(function(){
+  "use strict"
 
   var files = {
     "controller" : ["request"]
@@ -24,8 +28,8 @@
       cache[name] = {};
       fileNames.forEach(function(file){
             var fileUrl = fileTemplate.replace("<file>", file);
-            $http.get(fileUrl).then(function(response){
-              cache[name][file] = response.data;
+            cache[name][file] = $http.get(fileUrl).then(function(response){
+              return response;
             }, function(err){
               console.error("File not found : " + err);
             });
@@ -34,25 +38,42 @@
     }
 
     return {
-      load: function(){
-
-      }
-    };
-  }]);
-
-}).call(this);
-(function(){
-  "use strict"
-console.log("routes")
-}).call(this);
-(function(){
-  "use strict"
-  app.directive("slate", [function () {
-    return {
-      restrict: "C",
-      scope: true,
-      transclude: false,
-      link: function (scope, element, attrs) {
+      get: function(sample, file){
+        return cache[sample][file];
+      },
+      all: function(){
+        return [
+          {
+            id: "repeater",
+            title: "@repeat",
+            description: "Create list dynamically with @repeat"
+          },
+          {
+            id: "controller",
+            title: "Controllers",
+            description: "Add values to template scopes with controllers."
+          },
+          {
+            id: "request",
+            title: "Request Body",
+            description: "Access request body right from template"
+          },
+          {
+            id: "headers",
+            title: "Header",
+            description: "Access request headers and set response headers from template"
+          },
+          {
+            id: "path",
+            title: "Path",
+            description: "Access request path parameters template"
+          },
+          {
+            id: "path",
+            title: "URL Parameters",
+            description: "Access request query parameters from template."
+          }
+        ];
       }
     };
   }]);
@@ -104,38 +125,19 @@ console.log("routes")
     };
   })
 })();
-//(function () {
-//  "use strict"
-//
-//  var App = function($state, states, grid){
-//    this.$state = $state;
-//    this.states = states;
-//    this.grid   = grid;
-//    var app = this;
-//    $(window).on("hashchange", function(e){
-//      app.loadUrl(e.originalEvent.newURL.split("#")[1]);
-//    });
-//  };
-//
-//  App.prototype.loadUrl = function(url){
-//    var state = this.states.parse(url);
-//
-//    this.$state.removeClass();
-//    this.$state.addClass("state");
-//    this.$state.addClass(state.name);
-//
-//    this.grid.showState(state);
-//  };
-//
-//  $(document).ready(function(){
-//    var grid    = new Grid($(".grid").first(), 300),
-//        states  = new States([{name: "all", id: "all"},{name: "home", id: "home"}, {name: "dashboard", id: "dashboard"}]),
-//        $state  = $(".state").first(),
-//        app = new App($state, states, grid);
-//    app.loadUrl(window.location.hash);
-//  });
-//
-//}).call(this);
+(function(){
+  "use strict"
+  app.directive("slate", [function () {
+    return {
+      restrict: "C",
+      scope: true,
+      transclude: false,
+      link: function (scope, element, attrs) {
+      }
+    };
+  }]);
+
+}).call(this);
 (function () {
   "use strict"
 
@@ -158,13 +160,16 @@ console.log("routes")
 
   GridBox.prototype.unselect = function(){
     this.$gridbox.css("pointer-events", "none");
+    this.$grid.css("pointer-events", "none");
 
     this.applyPosition();
     this.$gridbox.attr("data-grid-selected", null);
     $("body").css("overflow", "auto");
     $("#app").removeClass("show-modal");
-    var self = this
+    $(window).trigger("resize");
+    var self = this;
     setTimeout(function(){
+      self.$grid.css("pointer-events", "all");
       self.$gridbox.css("pointer-events", "all");
     },500);
   };
@@ -181,8 +186,10 @@ console.log("routes")
           self.$gridbox.attr("data-grid-selected","true");
           $("#app").addClass("show-modal");
           self.$gridbox.css("pointer-events", "all");
+          self.$grid.css("pointer-events", "all");
         };
         self.$gridbox.css("pointer-events", "none");
+        self.$grid.css("pointer-events", "none");
         scroll && $('html, body').animate({scrollTop : this.$gridbox.offset().top}, 250, selectBox);
         scroll || selectBox();
   };
@@ -212,6 +219,32 @@ console.log("routes")
   };
 
   window.GridBox = GridBox;
+}).call(this);
+(function () {
+  "use strict"
+  app.controller("deckController", ["$scope", "snippetService", function($scope, snippetSerive){
+
+    $scope.deck = {
+      current: -1,
+      cards : snippetSerive.all()
+    }
+
+  }]);
+}).call(this);
+(function(){
+  "use strict"
+
+  app.directive("grid", [ function(){
+
+    return {
+      restrict: "C",
+      link: function(scope, element) {
+        $(".state").addClass("all");
+        new Grid($(element), 300).showState({name: "all", id: "all"});
+      }
+    };
+  }]);
+
 }).call(this);
 (function () {
   "use strict"
@@ -365,55 +398,5 @@ console.log("routes")
   $(document).ready(function(){
     init();
   });
-
-}).call(this);
-(function(){
-  "use strict"
-
-  var files = {
-    "controller" : ["request"]
-  }
-
-  app.service("snippetService", ["$http", function($http){
-    var
-        template = "../code/<name>/<file>",
-        cache = {};
-
-    for(var name in files){
-      var fileNames     = files[name],
-          fileTemplate  = template.replace("<name>", name);
-      cache[name] = {};
-      fileNames.forEach(function(file){
-            var fileUrl = fileTemplate.replace("<file>", file);
-            cache[name][file] = $http.get(fileUrl).then(function(response){
-              return response;
-            }, function(err){
-              console.error("File not found : " + err);
-            });
-          }
-      );
-    }
-
-    return {
-      get: function(sample, file){
-        return cache[sample][file];
-      }
-    };
-  }]);
-
-}).call(this);
-(function(){
-  "use strict"
-
-  app.directive("grid", [ function(){
-
-    return {
-      restrict: "C",
-      link: function(scope, element) {
-        $(".state").addClass("all");
-        new Grid($(element), 300).showState({name: "all", id: "all"});
-      }
-    };
-  }]);
 
 }).call(this);

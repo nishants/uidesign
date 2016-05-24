@@ -65,7 +65,7 @@
 
         <div id="slate" class="slate">
             <ul class="deck grid"
-                ng-init="deck = {cards: [1,2,3,4,5,6], current: -1}"
+                ng-controller="deckController"
                 ng-class="{'focus' : deck.current != -1}">
                 <li class="grid-box all"
                     ng-repeat="card in deck.cards"
@@ -73,10 +73,8 @@
                     ng-init="type =  ($index % 2 == 0) ? 'home' : (($index % 3 == 0 ? 'dashboard' : ''))"
                     ng-class="{'home': $index % 2 == 0,'selected' : deck.current == $index, 'selected-head' : deck.current < $index - 1, 'selected-tail' : deck.current > $index + 1, 'selected-pre' : deck.current == $index - 1,'selected-post' : deck.current == $index + 1}">
                     <div class="card">
-                        <h1>Elements</h1>
-                        <p>The TeX Gyre Heros family of sansserif fonts is based on the URW Nimbus Sans L family distributed with Ghostscript.
-
-                        </p>
+                        <h1 ng-bind="card.title"></h1>
+                        <p ng-bind="card.description"></p>
                         <div class="card-action">
                             <button class="green open">Open</button>
                             <button class="blue close">Close</button>
