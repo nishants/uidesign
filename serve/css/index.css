@@ -123,10 +123,10 @@ ul.deck > li .card {
       display: none; }
     ul.deck > li .card .card-footer .bar.blue, ul.deck > li .card .card-footer .bar.red {
       opacity: 0;
-      -webkit-transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-      -moz-transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-      -o-transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-      transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      -webkit-transition: opacity 100ms ease, transform 100ms ease;
+      -moz-transition: opacity 100ms ease, transform 100ms ease;
+      -o-transition: opacity 100ms ease, transform 100ms ease;
+      transition: opacity 100ms ease, transform 100ms ease;
       -webkit-transform-origin: 50% 50%;
       -moz-transform-origin: 50% 50%;
       transform-origin: 50% 50%;
@@ -153,15 +153,16 @@ ul.deck > li .card {
       line-height: 30px;
       font-weight: 500;
       color: rgba(255, 255, 255, 0.86);
-      border: 1px solid transparent; }
+      border: 1px solid transparent;
+      outline: none; }
     ul.deck > li .card .card-action button.open {
       background-color: #8BC34A; }
     ul.deck > li .card .card-action button.close {
       background-color: #2196F3;
-      -webkit-transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-      -moz-transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-      -o-transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
-      transition: opacity 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88), transform 500ms cubic-bezier(0.45, 0.515, 0.36, 0.88);
+      -webkit-transition: opacity 500ms eaese, transform 500ms ease;
+      -moz-transition: opacity 500ms eaese, transform 500ms ease;
+      -o-transition: opacity 500ms eaese, transform 500ms ease;
+      transition: opacity 500ms eaese, transform 500ms ease;
       -webkit-transform-origin: 50% 50%;
       -moz-transform-origin: 50% 50%;
       transform-origin: 50% 50%;
@@ -170,6 +171,14 @@ ul.deck > li .card {
       -ms-transform: translateY(-100%);
       -o-transform: translateY(-100%);
       transform: translateY(-100%); }
+
+ul.deck > li .card:hover .card-footer .bar.blue {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
 
 ul.deck > li.selected .card .card-footer .bar.blue {
   -webkit-transform: scale(1);

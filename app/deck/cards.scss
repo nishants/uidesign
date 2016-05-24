@@ -2,6 +2,7 @@ $cardBg: #F4F4F4;
 $cardColor: #646464;
 $borderRadius: 2px;
 $barHeight: 3px;
+$transition: ease;
 
 ul.deck > li{
   .card{
@@ -42,7 +43,7 @@ ul.deck > li{
 
       .bar.blue, .bar.red{
         opacity: 0;
-        @include transition(#{opacity $cleanupDuration $defaultTransitionFunction, transform $cleanupDuration $defaultTransitionFunction});
+        @include transition(#{opacity 100ms $transition, transform 100ms $transition});
         @include transformOrigin(50% 50%);
         @include transform(scale(0));
       }
@@ -76,18 +77,27 @@ ul.deck > li{
         color: rgba(255, 255, 255, 0.86);
 
         border: 1px solid transparent;
+        outline: none;
       }
       button.open{
         background-color: #8BC34A;
       }
       button.close{
         background-color: #2196F3;
-        @include transition(#{opacity $cleanupDuration $defaultTransitionFunction, transform $cleanupDuration $defaultTransitionFunction});
+        @include transition(#{opacity $cleanupDuration eaese, transform $cleanupDuration $transition});
         @include transformOrigin(50% 50%);
         @include transform(translateY(-100%));
       }
     }
     @include transition(#{opacity $cleanupDuration $cleanupFunction, transform $cleanupDuration $cleanupFunction});
+  }
+  .card:hover{
+    .card-footer{
+      .bar.blue {
+        @include transform(scale(1));
+        opacity: 1;
+      }
+    }
   }
 }
 
