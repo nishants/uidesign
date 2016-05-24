@@ -204,7 +204,8 @@ ul.deck > li.selected .card .card-action button.close {
     border: 1px solid transparent;
     outline: none; }
   .card .card-action button.green {
-    background-color: #8BC34A; }
+    background-color: #8BC34A;
+    box-shadow: 0px 1px 5px rgba(139, 195, 74, 0.26); }
   .card .card-action button.blue {
     background-color: #2196F3; }
   .card .card-action button.close {

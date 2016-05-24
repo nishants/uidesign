@@ -18,30 +18,13 @@ console.log("routes")
   }
 
   app.service("snippetService", ["$http", function($http){
-    var
-        template = "../code/<name>/<file>",
-        cache = {};
 
-    for(var name in files){
-      var fileNames     = files[name],
-          fileTemplate  = template.replace("<name>", name);
-      cache[name] = {};
-      fileNames.forEach(function(file){
-            var fileUrl = fileTemplate.replace("<file>", file);
-            cache[name][file] = $http.get(fileUrl).then(function(response){
-              return response;
-            }, function(err){
-              console.error("File not found : " + err);
-            });
-          }
-      );
-    }
-
-    return {
-      get: function(sample, file){
-        return cache[sample][file];
+    var service = {
+      _cache : {},
+      get: function (name) {
+        return _cache[name];
       },
-      all: function(){
+      all: function () {
         return [
           {
             id: "repeater",
@@ -69,13 +52,19 @@ console.log("routes")
             description: "Access request path parameters template"
           },
           {
-            id: "path",
+            id: "query",
             title: "URL Parameters",
             description: "Access request query parameters from template."
           }
         ];
       }
     };
+
+    service.all().forEach(function(snippet){
+      service._cache[snippet.id] = $http.get("../code/<name>".replace("<name>", snippet.id));
+    });
+
+    return service;
   }]);
 
 }).call(this);
