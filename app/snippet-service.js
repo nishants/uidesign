@@ -7,7 +7,8 @@
 
   app.service("snippetService", ["$http", function($http){
 
-    var service = {
+    var SEPARATOR = "-------------------------",
+        service = {
       _cache  : {},
       selected: null,
       select: function(card){
@@ -56,7 +57,16 @@
     };
 
     service.all().forEach(function(snippet){
-      service._cache[snippet.id] = $http.get("../code/<name>".replace("<name>", snippet.id)).then(function(response){return response.data;});
+      service._cache[snippet.id] = $http.get("../code/<name>".replace("<name>", snippet.id)).then(
+          function(response){
+            var data = response.data.split(SEPARATOR);
+            return {
+              request   : data[0],
+              controller: data[1],
+              template  : data[2],
+              response  : data[3]
+            };
+          });
     });
 
     return service;
