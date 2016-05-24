@@ -130,6 +130,9 @@ console.log("routes")
         scope.$watch(attrs.snippet, function(value){
           value && editor.setValue(value);
           value || editor.setValue("");
+          setTimeout(function(){
+            editor.refresh();
+          }, 100);
         });
       }
     };
