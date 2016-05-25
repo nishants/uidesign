@@ -1,16 +1,14 @@
 -------------------------
 -------------------------
 {
+  "headers" : {"My-Header" : "Hello World!"},
+
   "body": {
-    "id"      : "1",
-    "list"   : {
-      "@repeat" : "outer in list",
-      "id" : "{{$index + 1}}",
-      "value" :{
-        "@repeat" : "inner in outer",
-        "id" : "{{inner}}"
-      }
-    }
+    "message"   : "hello",
+    "sum"       : "{{0 + 1 }}",
+    "boolean"   : "{{1 == 2}}",
+    "list"      : "{{ 'one,two,three,four,five'.split(',') }}",
+    "repeater"  : {"@repeat" : "count in [1,2,3,4,5]", "id": "{{$index + count}}"}
   }
 }
 -------------------------

@@ -1,8 +1,12 @@
-request
 -------------------------
-controller
+
 -------------------------
-template
+{
+  "body": {
+    "search" : "{{request.query.search}}",
+    "page"   : "{{request.query.page}}",
+    "size"   : "{{request.query.size}}"
+  }
+}
 -------------------------
-response
 -------------------------

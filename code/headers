@@ -1,8 +1,12 @@
-request
 -------------------------
-controller
+
 -------------------------
-template
+{
+  "headers" : {"My-Header" : "{{request.headers['My-Header']}}"},
+  "body": {
+    "message": "hello",
+    "id"     : "{{0 + 1 }}"
+  }
+}
 -------------------------
-response
 -------------------------
