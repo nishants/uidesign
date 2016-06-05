@@ -1,0 +1,44 @@
+@import '../../lib/config';
+
+body{
+  padding: 150px;
+  text-align: center;
+}
+.switch{
+  $buttonSpace: 50px;
+  $onColor    : #4CAF50;
+  $offColor   : grey;
+  $height     : 35px;
+
+  text-align: left;
+  display: inline-block;
+
+  ul{
+    @extend .undo-list;
+    @extend .resize-container;
+    width: calc(200% + #{$buttonSpace});
+    position: relative;
+    li{
+      float: left;
+      height: $height;
+      text-align: center;
+      line-height: $height;
+    }
+
+    li.on{
+      width: 50%;
+      background-color: $onColor;
+    }
+    li.button{
+      width: $buttonSpace;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      left: calc(50% - #{$buttonSpace}/2);
+    }
+    li.off{
+      width: 50%;
+      background-color: $offColor;
+    }
+  }
+}
