@@ -5,10 +5,10 @@
     <title>Toggle Button</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body ng-app>
 
 <div>
-    <div class="switch ">
+    <div class="switch" ng-init="on = false" ng-class="{'off' : !on}" ng-click="on = !on">
         <ul>
             <li class="on">active</li>
             <li class="off">inactive</li>
@@ -17,6 +17,7 @@
     </div>
 </div>
 
+<script src="../../lib/angular-1.4.3.js"></script>
 
 </body>
 </html>

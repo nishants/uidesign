@@ -63,8 +63,11 @@ body{
 }
 
 .switch.transit{
+  ul{
+    @include transform(translateX(-$width/2));
+  }
   li.button{
-    @include transform(translateX($width/4));
+    @include transform(translateX(($width * 2 - $buttonSpace)/2));
   }
 }
 
@@ -75,9 +78,4 @@ body{
   li.button{
     @include transform(translateX($width * 2 - $buttonSpace));
   }
-}
-
-
-.switch:hover{
-  @extend .off;
 }
