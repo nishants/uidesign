@@ -1,17 +1,23 @@
 @import '../../lib/config';
+$buttonSpace: 50px;
+$onColor    : #4CAF50;
+$offColor   : grey;
+$height     : 35px;
+$width      : 100px;
 
 body{
   padding: 150px;
   text-align: center;
+  background-color: #ededed;
+  *{box-sizing: border-box;}
 }
 .switch{
-  $buttonSpace: 50px;
-  $onColor    : #4CAF50;
-  $offColor   : grey;
-  $height     : 35px;
 
   text-align: left;
   display: inline-block;
+  border-radius: $height/2;
+  overflow: hidden;
+  width: $width;
 
   ul{
     @extend .undo-list;
@@ -30,15 +36,34 @@ body{
       background-color: $onColor;
     }
     li.button{
-      width: $buttonSpace;
-      border-radius: 50%;
-      background-color: white;
       position: absolute;
-      left: calc(50% - #{$buttonSpace}/2);
+      left: 0;
+
+      width: $buttonSpace;
+      border-radius: $height/2;
+
+      background-color: white;
+      @include transition(transform, 500ms, ease);
     }
     li.off{
       width: 50%;
       background-color: $offColor;
     }
   }
+}
+
+.switch.on{
+  li.button{
+    @include transform(translateX($width/2));
+  }
+}
+
+.switch.transit{
+  li.button{
+    @include transform(translateX($width/4));
+  }
+}
+
+.switch:hover{
+  @extend .transit;
 }
