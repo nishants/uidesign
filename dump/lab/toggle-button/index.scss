@@ -2,8 +2,9 @@
 $buttonSpace: 50px;
 $onColor    : #4CAF50;
 $offColor   : grey;
-$height     : 35px;
-$width      : 100px;
+$height     : 30px;
+$width      : 150px;
+$padding    : 10px;
 
 body{
   padding: 150px;
@@ -18,43 +19,46 @@ body{
   border-radius: $height/2;
   overflow: hidden;
   width: $width;
+  @include transform(scale(1));
 
   ul{
+    position: relative;
+    width: calc(200% + #{$buttonSpace});
+    border-radius: $height/2;
+
     @extend .undo-list;
     @extend .resize-container;
-    width: calc(200% + #{$buttonSpace});
-    position: relative;
+    @include transition(transform, 500ms, ease);
+
     li{
       float: left;
       height: $height;
       text-align: center;
       line-height: $height;
+      @include transition(transform, 500ms, ease);
     }
 
     li.on{
-      width: 50%;
+      width: $width;
       background-color: $onColor;
+      padding-left: $buttonSpace + $padding;
+      text-align: left;
     }
     li.button{
       position: absolute;
-      left: 0;
+      left: -1px;
 
       width: $buttonSpace;
       border-radius: $height/2;
 
       background-color: white;
-      @include transition(transform, 500ms, ease);
     }
     li.off{
-      width: 50%;
+      width: $width;
       background-color: $offColor;
+      padding-right: $buttonSpace + $padding;
+      text-align: right;
     }
-  }
-}
-
-.switch.on{
-  li.button{
-    @include transform(translateX($width/2));
   }
 }
 
@@ -64,6 +68,16 @@ body{
   }
 }
 
+.switch.off{
+  ul{
+    @include transform(translateX(-$width));
+  }
+  li.button{
+    @include transform(translateX($width * 2 - $buttonSpace));
+  }
+}
+
+
 .switch:hover{
-  @extend .transit;
+  @extend .off;
 }
