@@ -58,6 +58,13 @@ input{
   -ms-animation     : $expr;
 }
 
+@mixin animationFunction($expr){
+  -webkit-animation-timing-function: $expr;
+  -moz-animation-timing-function: $expr;
+  -o-animation-timing-function: $expr;
+  animation-timing-function: $expr;
+}
+
 @mixin animationIterationCount($count){
   animation-iteration-count         : $count;
   -webkit-animation-iteration-count : $count;
