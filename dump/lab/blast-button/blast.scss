@@ -2,6 +2,6 @@
 @import 'blast-frames';
 @import 'blast-away-frames';
 
-.blast{
+.blast.animate{
   @extend .blast-animate;
 }

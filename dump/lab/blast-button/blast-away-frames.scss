@@ -1,8 +1,8 @@
 $finalOpacity: 0;
-$initialOpacity: 0.5;
+$initialOpacity: 0.1;
 
-$initialSize  : 1;
-$finalSize    : 1.5;
+$initialSize  : $expandsTo;
+$finalSize    : 10;
 
 @keyframes blast-away-frames{
   0% {

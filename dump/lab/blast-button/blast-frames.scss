@@ -1,6 +1,8 @@
-$blastDuration : 1s;
-$rippleDuration : 1s;
+$blastDuration : 0.25s;
+$rippleDuration : 0.5s;
 
+$shrinksTo : 0.95;
+$expandsTo : 1.05;
 .ripple{
   $offset: 5px;
   position: absolute;
@@ -17,8 +19,8 @@ $rippleDuration : 1s;
 
   @include transformOrigin(50% 50%);
   @include animation(blast-away-frames $rippleDuration);
-  @include animationFunction(ease);
-  @include animationDelay($blastDuration/2);
+  @include animationFunction(cubic-bezier(0.250, 0.460, 0.450, 0.940));
+  @include animationDelay(0);
 }
 
 .blast-animate{
@@ -28,6 +30,7 @@ $rippleDuration : 1s;
   @include transformOrigin(50% 50%);
   @include animation(blast-frames $blastDuration);
   @include animationFunction(ease);
+  @include animationDelay(0s);
 }
 .blast-animate:after{
   @extend .ripple;
@@ -39,10 +42,10 @@ $rippleDuration : 1s;
     transform:  scaleX(1.00) scaleY(1.00) ;
   }
   25% {
-    transform:  scaleX(0.49) scaleY(0.49) ;
+    transform:  scaleX($shrinksTo) scaleY($shrinksTo) ;
   }
   50% {
-    transform:  scaleX(1.50) scaleY(1.50) ;
+    transform:  scaleX($expandsTo) scaleY($expandsTo) ;
   }
   100% {
     transform:  scaleX(1.00) scaleY(1.00) ;
@@ -54,10 +57,10 @@ $rippleDuration : 1s;
     -moz-transform:  scaleX(1.00) scaleY(1.00) ;
   }
   25% {
-    -moz-transform:  scaleX(0.49) scaleY(0.49) ;
+    -moz-transform:  scaleX($shrinksTo) scaleY($shrinksTo) ;
   }
   50% {
-    -moz-transform:  scaleX(1.50) scaleY(1.50) ;
+    -moz-transform:  scaleX($expandsTo) scaleY($expandsTo) ;
   }
   100% {
     -moz-transform:  scaleX(1.00) scaleY(1.00) ;
@@ -69,10 +72,10 @@ $rippleDuration : 1s;
     -webkit-transform:  scaleX(1.00) scaleY(1.00) ;
   }
   25% {
-    -webkit-transform:  scaleX(0.49) scaleY(0.49) ;
+    -webkit-transform:  scaleX($shrinksTo) scaleY($shrinksTo) ;
   }
   50% {
-    -webkit-transform:  scaleX(1.50) scaleY(1.50) ;
+    -webkit-transform:  scaleX($expandsTo) scaleY($expandsTo) ;
   }
   100% {
     -webkit-transform:  scaleX(1.00) scaleY(1.00) ;
@@ -84,10 +87,10 @@ $rippleDuration : 1s;
     -o-transform:  scaleX(1.00) scaleY(1.00) ;
   }
   25% {
-    -o-transform:  scaleX(0.49) scaleY(0.49) ;
+    -o-transform:  scaleX($shrinksTo) scaleY($shrinksTo) ;
   }
   50% {
-    -o-transform:  scaleX(1.50) scaleY(1.50) ;
+    -o-transform:  scaleX($expandsTo) scaleY($expandsTo) ;
   }
   100% {
     -o-transform:  scaleX(1.00) scaleY(1.00) ;
@@ -99,10 +102,10 @@ $rippleDuration : 1s;
     -ms-transform:  scaleX(1.00) scaleY(1.00) ;
   }
   25% {
-    -ms-transform:  scaleX(0.49) scaleY(0.49) ;
+    -ms-transform:  scaleX($shrinksTo) scaleY($shrinksTo) ;
   }
   50% {
-    -ms-transform:  scaleX(1.50) scaleY(1.50) ;
+    -ms-transform:  scaleX($expandsTo) scaleY($expandsTo) ;
   }
   100% {
     -ms-transform:  scaleX(1.00) scaleY(1.00) ;

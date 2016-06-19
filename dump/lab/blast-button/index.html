@@ -9,13 +9,14 @@
             padding: 100px;
         }
         .blast:after{
-            background-color: rgb(88, 88, 255) !important;
-            border-color: rgb(88, 88, 255) !important;
+            background-color: rgba(33, 150, 243, 0.5) !important;
+            border-color: rgba(33, 150, 243, 0.5) !important;
         }
         .blast{
             border: none;
-            background-color: blue;
+            background-color: #2196f3;
             outline: none;
+            padding: 30px;
         }
     </style>
     <link rel="stylesheet" href="blast.css">
@@ -26,14 +27,14 @@
 </body>
 
 <script>
-    $(".blast").click(function(){
-        var $e = $(this),
-            display = $e.css("display");
-        $e.stop();
-        $e.css("display", "none");
-        setTimeout(function(){
-            $e.css("display", display);
-        })
+    $(".blast").on("mousedown touchstart", function(e){
+        $(this).removeClass("animate");
+        e.preventDefault();
+    });
+
+    $(".blast").on("mouseup touchend", function(e){
+        $(this).addClass("animate");
+        e.preventDefault();
     });
 </script>
 </html>
