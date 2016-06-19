@@ -1,0 +1,80 @@
+.blast-animate{
+  @include transformOrigin(50% 50%);
+  @include animation(blast-frames ease 1s);
+  @include animationIterationCount(3);
+}
+
+@keyframes blast-frames{
+  0% {
+    transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+  25% {
+    transform:  scaleX(0.49) scaleY(0.49) ;
+  }
+  50% {
+    transform:  scaleX(1.50) scaleY(1.50) ;
+  }
+  100% {
+    transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+}
+
+@-moz-keyframes blast-frames{
+  0% {
+    -moz-transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+  25% {
+    -moz-transform:  scaleX(0.49) scaleY(0.49) ;
+  }
+  50% {
+    -moz-transform:  scaleX(1.50) scaleY(1.50) ;
+  }
+  100% {
+    -moz-transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+}
+
+@-webkit-keyframes blast-frames {
+  0% {
+    -webkit-transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+  25% {
+    -webkit-transform:  scaleX(0.49) scaleY(0.49) ;
+  }
+  50% {
+    -webkit-transform:  scaleX(1.50) scaleY(1.50) ;
+  }
+  100% {
+    -webkit-transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+}
+
+@-o-keyframes blast-frames {
+  0% {
+    -o-transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+  25% {
+    -o-transform:  scaleX(0.49) scaleY(0.49) ;
+  }
+  50% {
+    -o-transform:  scaleX(1.50) scaleY(1.50) ;
+  }
+  100% {
+    -o-transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+}
+
+@-ms-keyframes blast-frames {
+  0% {
+    -ms-transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+  25% {
+    -ms-transform:  scaleX(0.49) scaleY(0.49) ;
+  }
+  50% {
+    -ms-transform:  scaleX(1.50) scaleY(1.50) ;
+  }
+  100% {
+    -ms-transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+}

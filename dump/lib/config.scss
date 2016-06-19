@@ -50,6 +50,22 @@ input{
   transform-origin: $value;
 }
 
+@mixin animation($expr){
+  animation         : $expr;
+  -webkit-animation : $expr;
+  -moz-animation    : $expr;
+  -o-animation      : $expr;
+  -ms-animation     : $expr;
+}
+
+@mixin animationIterationCount($count){
+  animation-iteration-count         : $count;
+  -webkit-animation-iteration-count : $count;
+  -moz-animation-iteration-count    : $count;
+  -o-animation-iteration-count      : $count;
+  -ms-animation-iteration-count     : $count;
+}
+
 @mixin transitionDelay($time){
   -webkit-transition-delay: $time;
   -moz-transition-delay: $time;
