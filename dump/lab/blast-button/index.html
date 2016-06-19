@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Blast Button</title>
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
     <style>
         body{
             padding: 100px;
         }
+        .blast:after{
+            background-color: rgb(88, 88, 255) !important;
+            border-color: rgb(88, 88, 255) !important;
+        }
         .blast{
             border: none;
             background-color: blue;
+            outline: none;
         }
     </style>
     <link rel="stylesheet" href="blast.css">
@@ -18,4 +24,16 @@
 
     <button class="blast">Blast Button</button>
 </body>
+
+<script>
+    $(".blast").click(function(){
+        var $e = $(this),
+            display = $e.css("display");
+        $e.stop();
+        $e.css("display", "none");
+        setTimeout(function(){
+            $e.css("display", display);
+        })
+    });
+</script>
 </html>

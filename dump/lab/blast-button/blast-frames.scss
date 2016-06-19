@@ -1,7 +1,37 @@
-.blast-animate{
+$blastDuration : 1s;
+$rippleDuration : 1s;
+
+.ripple{
+  $offset: 5px;
+  position: absolute;
+  z-index: -1;
+  left: -$offset;
+  top: -$offset;
+
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+
+  pointer-events: none;
+  border: $offset solid;
+
   @include transformOrigin(50% 50%);
-  @include animation(blast-frames ease 1s);
-  @include animationIterationCount(3);
+  @include animation(blast-away-frames $rippleDuration);
+  @include animationFunction(ease);
+  @include animationDelay($blastDuration/2);
+}
+
+.blast-animate{
+  position: relative;
+  overflow: visible;
+
+  @include transformOrigin(50% 50%);
+  @include animation(blast-frames $blastDuration);
+  @include animationFunction(ease);
+}
+.blast-animate:after{
+  @extend .ripple;
+  content: " ";
 }
 
 @keyframes blast-frames{

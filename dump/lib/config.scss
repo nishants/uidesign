@@ -65,6 +65,13 @@ input{
   animation-timing-function: $expr;
 }
 
+@mixin animationDelay($value){
+  -webkit-animation-delay: $value;
+  -moz-animation-delay: $value;
+  -o-animation-delay: $value;
+  animation-delay: $value;;
+}
+
 @mixin animationIterationCount($count){
   animation-iteration-count         : $count;
   -webkit-animation-iteration-count : $count;
