@@ -7,6 +7,8 @@ $padding : 10px;
 $fixedHeight: 40px;
 $fontColor : rgba(0, 0, 0, 0.8);
 
+$floatingHeight: 75px;
+
 .undo-link{
   display: block;
   text-decoration: none;
@@ -32,6 +34,27 @@ a.menu-link{
       height: $fixedHeight - $padding;
       line-height: $fixedHeight - $padding;
       margin: $padding/2 0px;
+    }
+  }
+
+  .floating{
+    @extend .resize-container;
+    .icon, .description{
+      float: left;
+      width: $linkWidth/2;
+      padding: $padding;
+      height: $floatingHeight;
+    }
+
+    .icon{
+      img{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .description{
+      line-height: ($floatingHeight - $padding)/3;
     }
   }
 }
