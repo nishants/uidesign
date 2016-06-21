@@ -21,10 +21,10 @@
         <li class="background"></li>
         <li ng-repeat="section in bar.sections.all">
             <div class="menu-link">
-                <a class="fixed" href="#/fixed">
+                <a class="fixed" href="{{section.target}}">
                     <label ng-bind="section.label"></label>
                 </a>
-                <a class="floating" href="#/floating">
+                <a class="floating" href="{{section.target}}">
             <span class="icon">
                 <img ng-src="{{section.icon}}">
             </span>
@@ -41,12 +41,18 @@
     var expando = angular.module("expando", []);
     expando.value("sections", [
         {
-            name : "furnitures",
-            label: "Furniture",
-            link : "#/furnitures",
-            icon : "icon.png",
+            name    : "furnitures",
+            label   : "Furniture",
+            target  : "#/furnitures",
+            icon    : "icon.png",
             description : "Best Furniture Here",
-        }
+        },{
+            name   : "lighting",
+            label  : "Lighting",
+            target : "#/lighting",
+            icon   : "icon.png",
+            description : "Best Lighting Here",
+        },
     ]);
     expando.controller("BarController", ["$scope","sections", function(scope, sections){
         scope.bar = {
