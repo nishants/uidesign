@@ -70,3 +70,9 @@ $iconHeight    : 40px;
     }
   }
 }
+
+.menu-link{
+  .floating{
+    @include transition(transform, $collapseDuration, $collapseFunction);
+  }
+}

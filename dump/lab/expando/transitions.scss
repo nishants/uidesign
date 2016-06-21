@@ -1,7 +1,0 @@
-
-.menu-link{
-  .floating{
-    @include transition(transform, $collapseDuration, $collapseFunction);
-  }
-}
-

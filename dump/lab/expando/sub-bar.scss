@@ -38,11 +38,19 @@ ul.sub-bar{
       @include transform(translateY(-100%));
     }
   }
+  .hover-padding{
+    pointer-events: none;
+  }
 }
 
 .sub-bar.sections{
+  float: right;
   z-index: -1;
   @include transition( transform, $collapseDuration, $collapseFunction);
+}
+
+.sub-bar.navigation{
+  pointer-events: all; //prevents menu from collapsing, when leaving menu bar.
 }
 
 .collapse-sections .sub-bar.sections,
@@ -52,4 +60,19 @@ ul.sub-bar{
 
 .fixed-bar:not(.collapse-navigation) .sub-bar.sections{
   @include transform(translateY($barExpandedHeight - $barHeight));
+}
+
+.sub-bar{
+  .hover-padding {
+    position: absolute;
+    top: 0;
+    left: -$pointerOffsetForHover;
+    z-index: -1;
+
+    height: $barExpandedHeight + $pointerOffsetForHover;
+    width: calc(100% + #{$pointerOffsetForHover});
+
+    pointer-events: all;
+    opactiy: 0;
+  }
 }
