@@ -45,6 +45,13 @@ ul.sub-bar{
 }
 
 .sub-bar.collapse{
+  .menu-link{
+    .fixed{
+      .no-background{
+        opacity: 1;
+      }
+    }
+  }
  > .background{
    @include transform(translateY(-$barExpandedHeight + $barHeight));
  }
