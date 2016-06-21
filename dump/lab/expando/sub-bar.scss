@@ -1,4 +1,4 @@
-ul.section-bar{
+ul.sub-bar{
   @extend .undo-list;
   @extend .resize-container;
   position: relative;
@@ -13,7 +13,7 @@ ul.section-bar{
   }
 }
 
-.section-bar{
+.sub-bar{
   .background {
     position: absolute;
     bottom: 0;
@@ -29,7 +29,7 @@ ul.section-bar{
   }
 }
 
-.section-bar.collapse{
+.sub-bar.collapse{
  .background{
    @include transform(translateY(-$barExpandedHeight + $barHeight));
  }
