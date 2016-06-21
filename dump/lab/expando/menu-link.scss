@@ -17,10 +17,10 @@ $iconHeight    : 40px;
 }
 
 .menu-link{
-  @extend .undo-link;
   width: $linkWidth;
   text-align: center;
   pointer-events: none;
+  overflow: hidden;
 
   *{
     cursor: pointer;
@@ -31,8 +31,9 @@ $iconHeight    : 40px;
 
   .fixed{
     @extend .undo-link;
-
     @extend .resize-container;
+    position: relative;
+    z-index: 1;
     label{
       display: inline-block;
       width: 100%;
@@ -43,6 +44,7 @@ $iconHeight    : 40px;
   }
 
   .floating{
+    @extend .undo-link;
     @extend .resize-container;
     .icon, .description{
       float: left;

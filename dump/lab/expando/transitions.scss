@@ -1,3 +1,16 @@
-.menu-link{
+$collapseDuration: 250ms;
+$collapseFunction: ease;
 
+.menu-link{
+  .floating{
+    @include transition(transform, $collapseDuration, $collapseFunction);
+  }
+}
+
+.collapse{
+  .menu-link{
+    .floating{
+      @include transform(translateY(-100%));
+    }
+  }
 }

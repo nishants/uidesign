@@ -8,9 +8,14 @@
         body{
             padding: 100px;
         }
-        .menu-link{
+        .fixed{
             border: 1px solid rgba(0, 0, 0, 0.1);
-            background-color: rgba(0, 0, 0, 0.05);
+            border-bottom: none;
+            background-color: white;
+        }
+        .floating{
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: none;
         }
     </style>
     <link rel="stylesheet" href="menu-link.css">
@@ -34,13 +39,12 @@
 
 <script>
     $(".switch").on("mousedown touchstart", function(e){
-        $(this).removeClass("animate");
+        var parent = $("body");
+        parent.hasClass("collapse")
+                                ? parent.removeClass("collapse")
+                                : parent.addClass("collapse");
         e.preventDefault();
     });
 
-    $(".switch").on("mouseup touchend", function(e){
-        $(this).addClass("animate");
-        e.preventDefault();
-    });
 </script>
 </html>
