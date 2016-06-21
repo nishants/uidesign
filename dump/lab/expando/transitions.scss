@@ -5,16 +5,3 @@
   }
 }
 
-.collapse{
-  .menu-link{
-    .floating{
-      @include transform(translateY(-100%));
-    }
-  }
-}
-
-
-.collapse-sections .sub-bar.sections,
-.collapse-navigation .sub-bar.navigation{
-    @extend .collapse;
-}

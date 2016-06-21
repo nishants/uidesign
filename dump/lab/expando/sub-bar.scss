@@ -33,4 +33,18 @@ ul.sub-bar{
  .background{
    @include transform(translateY(-$barExpandedHeight + $barHeight));
  }
+ .menu-link{
+    .floating{
+      @include transform(translateY(-100%));
+    }
+  }
+}
+
+.sub-bar.sections{
+  z-index: -1;
+}
+
+.collapse-sections .sub-bar.sections,
+.collapse-navigation .sub-bar.navigation{
+  @extend .collapse;
 }

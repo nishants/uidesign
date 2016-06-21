@@ -15,13 +15,11 @@
 <body ng-app="expando" ng-controller="BarController">
 
 <div class="fixed-bar" ng-class="{'collapse-navigation' : bar.navigation.collapse, 'collapse-sections' : bar.sections.collapse}">
-    <ul class="navigation sub-bar"
-        ng-mouseenter="bar.navigation.collapse = false"
-        ng-mouseleave="bar.navigation.collapse = true">
+    <ul class="navigation sub-bar" ng-mouseleave="bar.navigation.collapse = true">
         <li class="background"></li>
         <li ng-repeat="section in bar.sections.all">
             <div class="menu-link">
-                <a class="fixed" href="{{section.target}}">
+                <a class="fixed" href="{{section.target}}" ng-mouseenter="bar.navigation.collapse = false">
                     <label ng-bind="section.label"></label></a>
 
                 <a class="floating" href="{{section.target}}">
