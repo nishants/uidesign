@@ -7,7 +7,9 @@ $padding : 10px;
 $fixedHeight: 40px;
 $fontColor : rgba(0, 0, 0, 0.8);
 
-$floatingHeight: 75px;
+$floatingHeight: 60px;
+$iconWidth     : 40px;
+$iconHeight    : 40px;
 
 .undo-link{
   display: block;
@@ -41,12 +43,14 @@ a.menu-link{
     @extend .resize-container;
     .icon, .description{
       float: left;
-      width: $linkWidth/2;
-      padding: $padding;
       height: $floatingHeight;
     }
 
     .icon{
+      padding-top: ($floatingHeight - $iconHeight)/2;
+      padding-left: $padding;
+      width: $iconWidth;
+      height: $iconHeight;
       img{
         display: block;
         width: 100%;
@@ -54,7 +58,10 @@ a.menu-link{
       }
     }
     .description{
+      width: calc(100% - #{$iconWidth});
       line-height: ($floatingHeight - $padding)/3;
+
+      padding: $padding;
     }
   }
 }
