@@ -12,13 +12,12 @@
     </style>
     <link rel="stylesheet" href="expando.css">
 </head>
-<body ng-app>
+<body ng-app="expando" ng-controller="BarController">
 
     <ul class="section-bar"
-        ng-mouseenter="_collapseSectionBar = false"
-        ng-mouseleave="_collapseSectionBar = true"
-        ng-class="{'collapse' : _collapseSectionBar}"
-        ng-init="_collapseSectionBar = true;">
+        ng-mouseenter="bar.sections.collapse = false"
+        ng-mouseleave="bar.sections.collapse = true"
+        ng-class="{'collapse' : bar.sections.collapse}">
         <li class="background"></li>
         <li>
             <div class="menu-link"  onclick="console.log('hi')">
@@ -39,13 +38,13 @@
 </body>
 
 <script>
-//    $(".switch").on("mousedown touchstart", function(e){
-//        var parent = $("body");
-//        parent.hasClass("collapse")
-//                                ? parent.removeClass("collapse")
-//                                : parent.addClass("collapse");
-//        e.preventDefault();
-//    });
-
+    var expando = angular.module("expando", []);
+    expando.controller("BarController", ["$scope", function(scope){
+        scope.bar = {
+            sections: {
+                collapse: true
+            }
+        };
+    }]);
 </script>
 </html>
