@@ -5,19 +5,17 @@
 
   .menu-link{
     .fixed{
-      display: block;
+      display : block;
       overflow: hidden;
       label{
         background-color: transparent;
       }
+
       .background{
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
+        background-color: $fillColor;
+      }
+      .no-background{
         background-color: white;
-        height: 100%;
-        width: 100%;
       }
     }
   }
@@ -25,6 +23,13 @@
 
 .collapse-sections .sub-bar.sections{
   @extend .collapse;
+  .menu-link{
+    .fixed{
+      .no-background{
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .fixed-bar:not(.collapse-navigation) .sub-bar.sections{
