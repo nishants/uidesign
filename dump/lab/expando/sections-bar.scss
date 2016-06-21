@@ -2,6 +2,25 @@
   float: right;
   z-index: -1;
   @include transition( transform, $collapseDuration, $collapseFunction);
+
+  .menu-link{
+    .fixed{
+      display: block;
+      overflow: hidden;
+      label{
+        background-color: transparent;
+      }
+      .background{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
 }
 
 .collapse-sections .sub-bar.sections{

@@ -14,7 +14,7 @@ ul.sub-bar{
 }
 
 .sub-bar{
-  .background {
+  > .background {
     position: absolute;
     bottom: 0;
     top: 0;
@@ -45,7 +45,7 @@ ul.sub-bar{
 }
 
 .sub-bar.collapse{
- .background{
+ > .background{
    @include transform(translateY(-$barExpandedHeight + $barHeight));
  }
  .menu-link{
