@@ -42,9 +42,14 @@ ul.sub-bar{
 
 .sub-bar.sections{
   z-index: -1;
+  @include transition( transform, $collapseDuration, $collapseFunction);
 }
 
 .collapse-sections .sub-bar.sections,
 .collapse-navigation .sub-bar.navigation{
   @extend .collapse;
+}
+
+.fixed-bar:not(.collapse-navigation) .sub-bar.sections{
+  @include transform(translateY($barExpandedHeight - $barHeight));
 }
