@@ -1,0 +1,37 @@
+@import '../../lib/config';
+@import 'transitions';
+
+$linkWidth: 150px;
+$padding : 10px;
+
+$fixedHeight: 40px;
+$fontColor : rgba(0, 0, 0, 0.8);
+
+.undo-link{
+  display: block;
+  text-decoration: none;
+}
+
+a.menu-link{
+  @extend .undo-link;
+  width: $linkWidth;
+  text-align: center;
+  cursor: pointer;
+
+  *{
+    cursor: pointer;
+    color: $fontColor;
+    box-sizing: border-box;
+  }
+
+  .fixed{
+    @extend .resize-container;
+    label{
+      display: inline-block;
+      width: 100%;
+      height: $fixedHeight - $padding;
+      line-height: $fixedHeight - $padding;
+      margin: $padding/2 0px;
+    }
+  }
+}
