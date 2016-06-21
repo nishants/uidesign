@@ -12,6 +12,7 @@ $collapseFunction: cubic-bezier(0.45, 0.515, 0.36, 0.88);
 body{
   margin: 0px;
 }
+@import 'fixed-bar';
 @import 'menu-link';
 @import 'section-bar';
 @import 'transitions';

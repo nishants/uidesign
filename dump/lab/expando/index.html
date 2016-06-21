@@ -14,6 +14,7 @@
 </head>
 <body ng-app="expando" ng-controller="BarController">
 
+<div class="fixed-bar">
     <ul class="section-bar"
         ng-mouseenter="bar.sections.collapse = false"
         ng-mouseleave="bar.sections.collapse = true"
@@ -33,6 +34,7 @@
             </div>
         </li>
     </ul>
+</div>
 
     <button class="switch">Toggle</button>
 </body>
