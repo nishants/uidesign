@@ -4,7 +4,7 @@ $padding : 10px;
 $fixedHeight: $barHeight;
 $fontColor : rgba(0, 0, 0, 0.8);
 
-$floatingHeight: 60px;
+$floatingHeight: $barExpandedHeight - $barHeight;
 $iconWidth     : 40px;
 $iconHeight    : 40px;
 
@@ -34,9 +34,9 @@ $iconHeight    : 40px;
     label{
       display: inline-block;
       width: 100%;
-      height: $fixedHeight - $padding;
-      line-height: $fixedHeight - $padding;
-      margin: $padding/2 0px;
+      height: $fixedHeight;
+      line-height: $fixedHeight;
+      background-color: $fillColor;
     }
   }
 

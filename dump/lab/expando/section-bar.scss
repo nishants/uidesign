@@ -1,7 +1,7 @@
 ul.section-bar{
   @extend .undo-list;
   @extend .resize-container;
-  border-bottom: 1px solid $borderColor;
+  position: relative;
 
   li{
     position: relative;
@@ -11,4 +11,26 @@ ul.section-bar{
     height: $barHeight;
     overflow: visible;
   }
+}
+
+.section-bar{
+  .background {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+
+    height: $barExpandedHeight;
+    width: 100%;
+
+    background-color: $fillColor;
+    border-bottom: 1px solid $borderColor;
+
+    @include transition( transform, $collapseDuration, $collapseFunction);
+  }
+}
+
+.section-bar.collapse{
+ .background{
+   @include transform(translateY(-$barExpandedHeight + $barHeight));
+ }
 }

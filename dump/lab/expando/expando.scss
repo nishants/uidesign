@@ -1,8 +1,17 @@
 @import '../../lib/config';
 
 $borderColor: rgba(0, 0, 0, 0.1);
-$barHeight : 40px;
+$fillColor: #f3f3f3;
 
+$barHeight : 40px;
+$barExpandedHeight: 100px;
+
+$collapseDuration: 250ms;
+$collapseFunction: cubic-bezier(0.45, 0.515, 0.36, 0.88);
+
+body{
+  margin: 0px;
+}
 @import 'menu-link';
 @import 'section-bar';
 @import 'transitions';
