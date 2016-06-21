@@ -5,9 +5,6 @@
     <title>Blast Button</title>
     <script src="../../lib/jquery-2.1.4.min.js"></script>
     <style>
-        body{
-            padding: 100px;
-        }
         .fixed{
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-bottom: none;
@@ -25,17 +22,23 @@
 </head>
 <body>
 
-    <div class="menu-link"  onclick="console.log('hi')">
-        <a class="fixed" href="#/fixed">
-            <label>Messages</label>
-        </a>
-        <a class="floating" href="#/floating">
+    <ul class="section-bar">
+        <li>
+            <div class="menu-link"  onclick="console.log('hi')">
+                <a class="fixed" href="#/fixed">
+                    <label>Messages</label>
+                </a>
+                <a class="floating" href="#/floating">
             <span class="icon">
                 <img src="icon.png">
             </span>
-            <span class="description">Your Enquiry Inbox</span>
-        </a>
-    </div>
+                    <span class="description">Your Enquiry Inbox</span>
+                </a>
+            </div>
+        </li>
+    </ul>
+
+
 
     <button class="switch">Toggle</button>
 </body>
