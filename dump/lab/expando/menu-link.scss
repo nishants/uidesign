@@ -16,19 +16,22 @@ $iconHeight    : 40px;
   text-decoration: none;
 }
 
-a.menu-link{
+.menu-link{
   @extend .undo-link;
   width: $linkWidth;
   text-align: center;
-  cursor: pointer;
+  pointer-events: none;
 
   *{
     cursor: pointer;
     color: $fontColor;
     box-sizing: border-box;
+    pointer-events: all;
   }
 
   .fixed{
+    @extend .undo-link;
+
     @extend .resize-container;
     label{
       display: inline-block;
