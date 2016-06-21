@@ -14,7 +14,6 @@ $iconHeight    : 40px;
 }
 
 .menu-link{
-  border: 1px solid transparent;
   width: $linkWidth;
   pointer-events: none;
   overflow: hidden;
@@ -45,6 +44,8 @@ $iconHeight    : 40px;
   .floating{
     @extend .undo-link;
     @extend .resize-container;
+    background-color: $fillColor;
+
     .icon, .description{
       float: left;
       height: $floatingHeight;
@@ -68,8 +69,4 @@ $iconHeight    : 40px;
       padding: $padding;
     }
   }
-}
-
-.menu-link:hover{
-  border: 1px solid $borderColor;
 }
