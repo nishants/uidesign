@@ -29,39 +29,6 @@ ul.sub-bar{
   }
 }
 
-.sub-bar.collapse{
- .background{
-   @include transform(translateY(-$barExpandedHeight + $barHeight));
- }
- .menu-link{
-    .floating{
-      @include transform(translateY(-100%));
-    }
-  }
-  .hover-padding{
-    pointer-events: none;
-  }
-}
-
-.sub-bar.sections{
-  float: right;
-  z-index: -1;
-  @include transition( transform, $collapseDuration, $collapseFunction);
-}
-
-.sub-bar.navigation{
-  pointer-events: all; //prevents menu from collapsing, when leaving menu bar.
-}
-
-.collapse-sections .sub-bar.sections,
-.collapse-navigation .sub-bar.navigation{
-  @extend .collapse;
-}
-
-.fixed-bar:not(.collapse-navigation) .sub-bar.sections{
-  @include transform(translateY($barExpandedHeight - $barHeight));
-}
-
 .sub-bar{
   .hover-padding {
     position: absolute;
@@ -74,5 +41,19 @@ ul.sub-bar{
 
     pointer-events: all;
     opactiy: 0;
+  }
+}
+
+.sub-bar.collapse{
+ .background{
+   @include transform(translateY(-$barExpandedHeight + $barHeight));
+ }
+ .menu-link{
+    .floating{
+      @include transform(translateY(-100%));
+    }
+  }
+  .hover-padding{
+    pointer-events: none;
   }
 }
