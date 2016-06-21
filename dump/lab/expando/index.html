@@ -19,16 +19,16 @@
         ng-mouseleave="bar.sections.collapse = true"
         ng-class="{'collapse' : bar.sections.collapse}">
         <li class="background"></li>
-        <li>
-            <div class="menu-link"  onclick="console.log('hi')">
+        <li ng-repeat="section in bar.sections.all">
+            <div class="menu-link">
                 <a class="fixed" href="#/fixed">
-                    <label>Messages</label>
+                    <label ng-bind="section.label"></label>
                 </a>
                 <a class="floating" href="#/floating">
             <span class="icon">
-                <img src="icon.png">
+                <img ng-src="{{section.icon}}">
             </span>
-                    <span class="description">Your Enquiry Inbox</span>
+                    <span class="description" ng-bind="section.description"></span>
                 </a>
             </div>
         </li>
@@ -39,10 +39,20 @@
 
 <script>
     var expando = angular.module("expando", []);
-    expando.controller("BarController", ["$scope", function(scope){
+    expando.value("sections", [
+        {
+            name : "furnitures",
+            label: "Furniture",
+            link : "#/furnitures",
+            icon : "icon.png",
+            description : "Best Furniture Here",
+        }
+    ]);
+    expando.controller("BarController", ["$scope","sections", function(scope, sections){
         scope.bar = {
             sections: {
-                collapse: true
+                collapse: true,
+                all: sections
             }
         };
     }]);
