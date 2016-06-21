@@ -47,8 +47,8 @@ ul.sub-bar{
 .sub-bar.collapse{
   .menu-link{
     .fixed{
-      .no-background{
-        opacity: 1;
+      .background{
+        opacity: 0;
       }
     }
   }
@@ -57,7 +57,7 @@ ul.sub-bar{
  }
  .menu-link{
     .floating{
-      @include transform(translateY(-100%));
+      @include transform(translateY(calc(-100% - #{$barExpandedHeight - $barHeight})));
     }
   }
   .hover-padding{
