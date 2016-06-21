@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Blast Button</title>
     <script src="../../lib/jquery-2.1.4.min.js"></script>
+    <script src="../../lib/angular-1.4.3.js"></script>
     <style>
         .fixed{
             border: 1px solid rgba(0, 0, 0, 0.1);
@@ -20,9 +21,13 @@
     </style>
     <link rel="stylesheet" href="expando.css">
 </head>
-<body>
+<body ng-app>
 
-    <ul class="section-bar">
+    <ul class="section-bar"
+        ng-mouseenter="_collapseSectionBar = false"
+        ng-mouseleave="_collapseSectionBar = true"
+        ng-class="{'collapse' : _collapseSectionBar}"
+        ng-init="_collapseSectionBar = true;">
         <li>
             <div class="menu-link"  onclick="console.log('hi')">
                 <a class="fixed" href="#/fixed">
@@ -37,8 +42,6 @@
             </div>
         </li>
     </ul>
-
-
 
     <button class="switch">Toggle</button>
 </body>

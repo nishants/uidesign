@@ -1,8 +1,9 @@
 ul.section-bar{
   @extend .undo-list;
   @extend .resize-container;
-
   li{
     float: right;
+    height: $barHeight;
+    overflow: visible;
   }
 }
