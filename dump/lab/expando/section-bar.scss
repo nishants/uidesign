@@ -1,7 +1,12 @@
 ul.section-bar{
   @extend .undo-list;
   @extend .resize-container;
+  border-bottom: 1px solid $borderColor;
+
   li{
+    position: relative;
+    top: -1px;
+
     float: right;
     height: $barHeight;
     overflow: visible;
