@@ -4,8 +4,7 @@
   @include transition( transform, $collapseDuration, $collapseFunction);
 }
 
-.collapse-sections .sub-bar.sections,
-.collapse-navigation .sub-bar.navigation{
+.collapse-sections .sub-bar.sections{
   @extend .collapse;
 }
 
@@ -13,6 +12,3 @@
   @include transform(translateY($barExpandedHeight - $barHeight));
 }
 
-.sub-bar.navigation{
-  pointer-events: all; //prevents menu from collapsing, when leaving menu bar.
-}
