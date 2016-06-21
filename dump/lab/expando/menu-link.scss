@@ -15,7 +15,6 @@ $iconHeight    : 40px;
 
 .menu-link{
   width: $linkWidth;
-  text-align: center;
   pointer-events: none;
   overflow: hidden;
 
@@ -37,6 +36,8 @@ $iconHeight    : 40px;
       height: $fixedHeight;
       line-height: $fixedHeight;
       background-color: $fillColor;
+      text-align: left;
+      padding-left: $iconWidth;
     }
   }
 
@@ -62,7 +63,7 @@ $iconHeight    : 40px;
     .description{
       width: calc(100% - #{$iconWidth});
       line-height: ($floatingHeight - $padding)/3;
-
+      text-align: left;
       padding: $padding;
     }
   }
