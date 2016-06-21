@@ -22,13 +22,13 @@
         <li ng-repeat="section in bar.sections.all">
             <div class="menu-link">
                 <a class="fixed" href="{{section.target}}">
-                    <label ng-bind="section.label"></label>
-                </a>
+                    <label ng-bind="section.label"></label></a>
+
                 <a class="floating" href="{{section.target}}">
-            <span class="icon">
-                <img ng-src="{{section.icon}}">
-            </span>
-                    <span class="description" ng-bind="section.description"></span>
+                    <span class="icon">
+                        <img ng-src="{{section.icon}}"></span>
+                    <span class="description"
+                          ng-bind="section.description"></span>
                 </a>
             </div>
         </li>
