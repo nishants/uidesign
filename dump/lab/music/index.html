@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Music</title>
     <script src="../../lib/wavesurfer-1.0.52.min.js"></script>
+    <script src="../../lib/jquery-2.1.4.min.js"></script>
     <div id="waveform"></div>
 
     <style></style>
@@ -12,31 +13,42 @@
 
 
 <script>
-    window.onload = function(){
-        var heightPx    = 256,
-            useWaveformAsTimeline = true,
-            wavesurfer  = WaveSurfer.create({
-                container       : '#waveform',
-                scrollParent    : false,
-                cursorColor     : "#bd4147",
-                cursorWidth     : 1,
-                fillParent      : true,
-                height          : heightPx,
-                interact        : useWaveformAsTimeline
-
-        });
-        wavesurfer.load('tracks/dawn.mp3');
-        wavesurfer.on('ready', function () {
-            wavesurfer.play();
-        });
-
-        window.player = {
-            play : function(){},
-            skipForward: function(){},
-            toggleMute: function(){},
-            pause: function(){},
-        };
+    var Console = function(config){
+        this.$e     = $(config.container).first();
+        this.player = WaveSurfer.create(config);
     };
+    Console.prototype.ready =  function (track) {
+
+    };
+    Console.prototype.play =  function (track) {
+        player  = this.player;
+        player.load(track);
+        player.on('ready', function () {
+            player.play();
+        });
+        $("#waveform").show();
+    };
+
+    var heightPx                = 100,
+        useWaveformAsTimeline   = true,
+        config =                 {
+            container       : '#waveform',
+            scrollParent    : false,
+
+            fillParent      : true,
+            height          : heightPx,
+            interact        : useWaveformAsTimeline,
+
+            cursorColor     : "#bd4147",
+            progressColor   : "#bd4147",
+            cursorWidth     : 1
+        },
+        console = new Console(config);
+
+    window.onload = function(){
+        console.play('tracks/dawn.mp3');
+    };
+
 </script>
 </body>
 </html>
