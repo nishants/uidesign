@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music</title>
+    <script src="../../lib/wavesurfer-1.0.52.min.js"></script>
+    <div id="waveform"></div>
+
+    <style></style>
+</head>
+<body>
+
+
+<script>
+    window.onload = function(){
+        var heightPx    = 256,
+            useWaveformAsTimeline = true,
+            wavesurfer  = WaveSurfer.create({
+                container       : '#waveform',
+                scrollParent    : false,
+                cursorColor     : "#bd4147",
+                cursorWidth     : 1,
+                fillParent      : true,
+                height          : heightPx,
+                interact        : useWaveformAsTimeline
+
+        });
+        wavesurfer.load('tracks/dawn.mp3');
+        wavesurfer.on('ready', function () {
+            wavesurfer.play();
+        });
+
+        window.player = {
+            play : function(){},
+            skipForward: function(){},
+            toggleMute: function(){},
+            pause: function(){},
+        };
+    };
+</script>
+</body>
+</html>
