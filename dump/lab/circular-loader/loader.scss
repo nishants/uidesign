@@ -1,0 +1,29 @@
+$loaderSize  : 200px;
+$color       : #ff0000;
+$circleBorder: 10px;
+
+$loaderHeight: $loaderSize;
+$loaderWidth : $loaderSize;
+
+.circle{
+  display: block;
+  height : 100%;
+  width  : 100%;
+  border-radius: 50%;
+}
+
+.loader{
+  position : relative;
+  height  : $loaderSize;
+  width   : $loaderSize;
+  .progress{
+    position          : absolute;
+    @extend .circle;
+  }
+  .progress::before{
+    content: "";
+    border : $circleBorder solid $color;
+    background-color  : transparent;
+    @extend .circle;
+  }
+}
