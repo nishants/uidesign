@@ -1,12 +1,3 @@
-$transitionDuration: 400ms;
-
-$navigationBarHeight: 60px;
-$topBarLayer: 1000;
-$containerPadding: 10px;
-
-$cardWidth: 250px;
-$cardHeight: 250px;
-
 ul.undo-list{
   list-style: none;
   margin: 0px;
@@ -20,6 +11,20 @@ input{
   display: block;
   box-sizing: border-box;
   border: none;
+}
+
+.resize-container:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+@mixin transform( $property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
 }
 
 @mixin transform($value) {
@@ -49,6 +54,7 @@ input{
   -o-transition-delay: $time;
   transition-delay: $time;
 }
+
 
 @mixin transition($value){
   -webkit-transition: $value;
