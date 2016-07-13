@@ -1,13 +1,12 @@
-
-$paddingSide: 10px;
+$padding      : 10px;
 
 $logoWidth    : 100px;
 $mediaWidth   : 100px;
 $sessionWidth : 100px;
 $searchWidth  : calc(100% - #{$logoWidth + $mediaWidth + $sessionWidth});
+
 $searchMinWidth  : 500px;
 $barMinWidth     : $logoWidth + $mediaWidth + $sessionWidth + $searchMinWidth;
-
 
 nav.navigation{
   min-width: $barMinWidth;
@@ -18,11 +17,21 @@ nav.navigation{
   .navigation-link{
     float: left;
     display: block;
-    padding: 0px $paddingSide;
+    padding: 0px $padding;
   }
 
   .logo, .search-and-menu, .select-media, .user-session{
     @extend .navigation-link;
+  }
+
+  .navigation-link:not(.logo){
+    position: relative;
+    left: 1px;
+    margin: 10px 0px;
+    height: $barHeight - 2*$padding;
+    background-color: #EEE;
+    line-height: $barHeight - 2*$padding;
+    border: 1px solid black;
   }
 
   .logo{
@@ -31,7 +40,6 @@ nav.navigation{
   .search-and-menu{
     text-align: center;
     width: $searchWidth;
-
   }
   .select-media{
     width: $mediaWidth;

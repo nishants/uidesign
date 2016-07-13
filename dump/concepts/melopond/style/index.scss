@@ -1,4 +1,10 @@
 @import 'base';
-@import 'nav/top-bar';
 
+$barHeight    : 60px;
+@import 'nav/top-bar';
+@import 'nav/logo';
+
+body{
+  margin: 0px;
+}
 
