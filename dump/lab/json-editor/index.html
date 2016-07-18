@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../lib/jsoneditor.css">
+    <link rel="stylesheet" href="../../lib/bootstrap.min.css">
     <script src="../../lib/angular-1.4.3.js"></script>
     <script src="../../lib/jsoneditor.min.js"></script>
     <script src="../../lib/ng-jsoneditor.min.js"></script>
@@ -10,11 +11,22 @@
 </head>
 <body ng-app="jazz">
 <div ng-app="ngApp" ng-controller="ngCtrl">
-    <div ng-jsoneditor="onLoad" ng-model="obj.data" options="obj.options"></div>
 
-    <button type="button" class="btn btn-primary" ng-click="changeData()"><i class="fa fa-check-circle"></i> change data</button>
+    <div ng-jsoneditor="onLoad"
+         ng-model="obj.data"
+         options="obj.options"></div>
 
-    <button type="button" class="btn btn-primary" ng-click="changeOptions()"><i class="fa fa-check-circle"></i> change options</button>
+    <button type="button"
+            class="btn btn-primary"
+            ng-click="changeData()">
+        <i class="fa fa-check-circle"></i> change data
+    </button>
+
+    <button type="button"
+            class="btn btn-primary"
+            ng-click="changeOptions()">
+        <i class="fa fa-check-circle"></i> change options
+    </button>
 
     <pre>{{pretty(obj.data)}}</pre>
 
