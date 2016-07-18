@@ -42,7 +42,15 @@
     };
 
     angular.module('jazz', ['ng.jsoneditor']).controller('ngCtrl', function ($scope) {
-        $scope.obj = {data: json, options: {mode: 'tree'}};
+        $scope.obj = {
+            data: json,
+            options: {
+                mode: 'tree',
+                change: function(arg, arg){
+                    console.log("something changed");
+                }
+            }
+        };
         $scope.onLoad = function (instance) {
             instance.expandAll();
         };
