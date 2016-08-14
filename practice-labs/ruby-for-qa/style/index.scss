@@ -2,6 +2,7 @@ $editorDarkColor: #171814;
 $padding: 10px;
 $topBarHeight: 50px;
 
+@import "../../../lib/config.scss";
 *{
   box-sizing: border-box;
 }
@@ -30,6 +31,11 @@ $topBarHeight: 50px;
   line-height: 30px;
 }
 
+.console:not(.show){
+  opacity: 0;
+  @include transform(translateX(500px));
+}
+
 .console{
   position: absolute;
   z-index: 10;
@@ -38,9 +44,12 @@ $topBarHeight: 50px;
   width: 500px;
   right: 0;
   height: calc(100vh - #{$topBarHeight});
+  @include transition(all 250ms ease);
+
   .title{
     line-height: 30px;
     background-color: #EEE;
+    padding-left: 10px;
   }
   .output{
     display: block;
