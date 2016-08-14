@@ -3,6 +3,7 @@
 <head>
     <link rel="icon" href="../favicon.gif" type="image/gif" sizes="16x16">
 
+    <link href="style/index.css" rel="stylesheet" >
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="../../lib/ace/ace.js"></script>
     <script src="../../lib/ace/theme-monokai.js"></script>
@@ -14,38 +15,25 @@
     <title>amoeba social labs</title>
 </head>
 <style>
-    #editor {
-        /** Setting height is also important, otherwise editor wont showup**/
-        height: calc(100vh - 60px);
-        width: 100%;
-    }
-    #top-bar{
-        height: 30px;
-        line-height: 30px;
-        padding-left: 10px;
-        width: 100%;
-    }
-    #run-button > a{
-        width: 200px;
-    }
-    #run-button{
-        float: right;
-        padding: 5px 10px;
-    }
-    #section-name{
-        display: inline-block;
-        line-height: 30px;
-    }
+
 </style>
-<body ng-app="ruby-for-qa">
+<body ng-app="ruby-for-qa" ng-controller="editorController">
 
 <div id="top-bar">
-    <div id="section-name">Exercise One</div>
-    <div id="run-button"><a class="btn btn-default">run</a></div>
+    <div id="section-name">ruby for qa &gt; exercise-one</div>
+    <div id="run-button"><a class="btn btn-default" ng-click="editor.run()">run</a></div>
 </div>
 <div class="main-container">
-    <div class="editor-view" ng-controller="editorController">
-        <pre id="editor"></pre>
+    <div class="editor-view">
+        <div id="editor"></div>
+    </div>
+</div>
+
+<div class="console"
+     ng-class="{'show' : editor.console.show}">
+    <div class="output"
+         ng-bind="editor.console.output">
+
     </div>
 </div>
 
@@ -62,7 +50,11 @@
 
         //Remove the header containing XMLHttpRequest used to identify ajax call
         //that would prevent CORS from working
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        $httpProvider.defaults.headers.common = {};
+        $httpProvider.defaults.headers.post = {};
+        $httpProvider.defaults.headers.put = {};
+        $httpProvider.defaults.headers.patch = {};
+        $httpProvider.defaults.headers.options = {};
     });
 
     app.service("taskService", ["$http", "compileServers", function($http, compileServers){
@@ -70,16 +62,30 @@
 
         return {
             getAssignment : function(id){
-                return $http.get(remote.url+"/task/:id/worksheet".replace(":id", id)).then(function(response){
+                return $http.get(remote.url+"/tasks/:id/worksheet".replace(":id", id)).then(function(response){
+                    return response.data;
+                })
+            },
+            evaluateAssignment : function(taskId, solutionText){
+                return $http.put(remote.url+"/tasks/:id/evaluate".replace(":id", taskId), solutionText).then(function(response){
                     return response.data;
                 })
             }
         }
     }]);
-    app.controller("editorController", ["$scope", "taskService", "compileServers", function($scope, taskService, compileServers){
+    app.controller("editorController", ["$scope", "taskService", function($scope, taskService){
         var editor = {
                 content: null,
-                ace: ace.edit("editor")
+                console  : {
+                    show: false,
+                },
+                ace: ace.edit("editor"),
+                run: function(){
+                    taskService.evaluateAssignment("exercise-one", editor.ace.getValue()).then(function(result){
+                        editor.console.output = result;
+                        editor.console.show = true;
+                    });
+                }
             };
 
         taskService.getAssignment("exercise-one").then(function(worksheet){
@@ -89,6 +95,7 @@
         editor.ace.setTheme("ace/theme/monokai");
         editor.ace.getSession().setMode("ace/mode/ruby");
         editor.ace.getSession().setMode("ace/mode/ruby");
+        $scope.editor = editor;
     }]);
 </script>
 </body>

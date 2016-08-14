@@ -1,0 +1,30 @@
+$editorDarkColor: #171814;
+
+
+*{
+  box-sizing: border-box;
+}
+
+#editor {
+  /** Setting height is also important, otherwise editor wont showup**/
+  height: calc(100vh - 60px);
+  width: 100%;
+}
+#top-bar{
+  height: 50px;
+  padding-left: 10px;
+  width: 100%;
+  background-color: $editorDarkColor;
+}
+#run-button > a{
+  width: 200px;
+  line-height: 25px
+}
+#run-button{
+  float: right;
+  padding: 5px 10px;
+}
+#section-name{
+  display: inline-block;
+  line-height: 30px;
+}
