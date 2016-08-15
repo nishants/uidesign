@@ -6,6 +6,9 @@
       autoRun: {
         pending: null,
         interval: 1000,
+        execute: function(){
+          editor.run();
+        }
       },
       console  : {
         show: false,
@@ -35,9 +38,7 @@
     editor.ace.getSession().setMode("ace/mode/ruby");
     editor.ace.getSession().on('change', function(e) {
       editor.autoRun.pending ? $timeout.cancel(editor.autoRun.pending) : "";
-      editor.autoRun.pending = $timeout(function () {
-        editor.contentChanged(e);
-      }, editor.autoRun.interval);
+      editor.autoRun.pending = $timeout(editor.autoRun.execute, editor.autoRun.interval);
     });
     $scope.editor = editor;
   }]);
