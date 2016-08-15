@@ -1,11 +1,12 @@
 <div class="console"
      ng-class="{'show' : editor.console.show}">
     <div class="title">
-        <div class="status">
-            Success <span>{{editor.console.output.scenarios | passingCount}}/{{editor.console.output.scenarios.length}}</span>
-        </div>
         <div class="run">
             <button class="btn btn-success fa fa-play" ng-click="editor.run()"></button>
+        </div>
+
+        <div class="status">
+            Success <span>{{editor.console.output.scenarios | passingCount}}/{{editor.console.output.scenarios.length}}</span>
         </div>
     </div>
 

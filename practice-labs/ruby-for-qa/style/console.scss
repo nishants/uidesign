@@ -1,4 +1,4 @@
-$runButtonWidth: 150px;
+$runButtonWidth: 37px;
 
 .console{
   position: absolute;
@@ -21,12 +21,12 @@ $runButtonWidth: 150px;
     @extend .resize-container;
     .run{
       float: left;
-      a{
-        width: $runButtonWidth
-      }
+      width: $runButtonWidth
+      button{  width: 100%}
     }
     .status{
-      float: right
+      float: right;
+      width: calc(100% - #{$runButtonWidth + 2 * $padding});
     }
   }
   .output{
