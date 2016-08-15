@@ -2118,6 +2118,16 @@ body.full-screen-editor {
       height: 100%;
       width: calc(100% - 500px);
       font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
+      .task-editor .editor-section #worksheet .ace_search.right {
+        margin: 20px;
+        color: white;
+        border: none;
+        background: rgba(0, 0, 0, 0.52);
+        border-radius: 0px; }
+        .task-editor .editor-section #worksheet .ace_search.right .ace_button {
+          color: rgba(255, 255, 255, 0.72); }
+        .task-editor .editor-section #worksheet .ace_search.right .ace_search_field {
+          color: black; }
       .task-editor .editor-section #worksheet .ace_gutter {
         background: transparent;
         border-right: 1px solid rgba(0, 0, 0, 0.1);
