@@ -2119,7 +2119,8 @@ body.full-screen-editor {
     .task-editor .editor-section #worksheet {
       height: 100%;
       width: calc(100% - 500px);
-      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
+      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+      border-radius: 4px; }
       .task-editor .editor-section #worksheet .ace_search.right {
         margin: 20px;
         color: white;
@@ -2138,7 +2139,8 @@ body.full-screen-editor {
       height: 100%;
       position: relative;
       top: -2px;
-      width: 500px; }
+      margin-left: 10px;
+      width: 490px; }
   .task-editor .editor-bar {
     height: 40px;
     line-height: 40px;
@@ -2200,6 +2202,7 @@ body.full-screen-editor {
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: white;
+  border-radius: 4px;
   -webkit-transition: all 250ms ease;
   -moz-transition: all 250ms ease;
   -o-transition: all 250ms ease;

@@ -8,6 +8,7 @@ $consoleWidth: 500px;
   overflow    : hidden;
   border      : 1px solid $lightBorderColor;
   background-color: white;
+  border-radius: $borderRadius;
 
   @include transition(all 250ms ease);
 
