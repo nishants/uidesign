@@ -1,7 +1,7 @@
 (function(){
   "use strict"
 
-  var app = angular.module("ruby-for-qa", []);
+  var app = angular.module("ruby-for-qa", ["ngSanitize"]);
   app.value("compileServers",[{
     name: "default",
     url: "http://amoeba-social-rubylab.herokuapp.com"

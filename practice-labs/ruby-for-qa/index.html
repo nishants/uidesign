@@ -12,10 +12,12 @@
     <script src="../../lib/ace/mode-ruby.js"></script>
     <script src="../../lib/ace/ext-beautify.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
 
     <script src="js/app.js"></script>
 
     <script src="js/editor/controller.js"></script>
+    <script src="js/task/task-controller.js"></script>
     <script src="js/ui-controller.js"></script>
 
     <script src="js/ui-service.js"></script>
@@ -44,14 +46,38 @@
 </head>
 
 <body ng-app="ruby-for-qa" ng-controller="uiController" ng-class="{'full-screen-editor' : ui.fullScreenEditor}">
-<div id="top-bar">
-    <div id="section-name">ruby for qa &gt; exercise-one</div>
-</div>
 
-<div class="editor-section" ng-controller="editorController">
-    <div id="editor"></div>
-    <div ng-include="'templates/console.html'"></div>
-</div>
+<article class="practice-task" ng-controller="taskController">
+    <div class="task-overview">
+        <div class="readme-text" ng-bind-html="task.readmeText">
+            <h1>Extracting Data From Pages</h1>
+            <p>You will learn :
+            <ul>
+                <li>extract substring</li>
+                <li>access values from hash object</li>
+                <li>returning values from methods</li>
+                <li>map array</li>
+            </ul>
+            </p>
+        </div>
+        <div class="readme-code">
+
+        </div>
+    </div>
+
+    <div class="task-editor">
+        <div id="top-bar">
+            <div id="section-name">ruby for qa &gt; exercise-one</div>
+        </div>
+
+        <div class="editor-section" ng-controller="editorController">
+            <div id="editor"></div>
+            <div ng-include="'templates/console.html'"></div>
+        </div>
+    </div>
+</article>
+
+
 
 <div id="splash" ng-hide="ui.ready">
     <h1>amoeba social</h1>
