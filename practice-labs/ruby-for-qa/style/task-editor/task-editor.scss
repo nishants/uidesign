@@ -1,14 +1,32 @@
 $editorBarHeight: 50px;
+$rightPaneWidth: 500px;
 
 .task-editor{
   position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 
+  .editor-section{
+    height: 100%;
+    #worksheet, .right-pane{
+      float: left;
+    }
+    #worksheet {
+      height: 100%;
+      width:  calc(100% - #{$rightPaneWidth + $padding});
+      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 
-  #worksheet {
-    /** Setting height is also important, otherwise editor wont showup**/
-    height: calc(100vh - #{$editorBarHeight + $padding});
-    width: 100%;
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+      .ace_gutter{
+        background: transparent;
+        border-right: 1px solid $lightBorderColor;
+        color : $lightBorderColor;
+      }
+    }
+    .right-pane{
+      height: 100%;
+      width: $rightPaneWidth;
+    }
   }
 
   .editor-bar{

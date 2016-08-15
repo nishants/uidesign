@@ -3,13 +3,8 @@ $titleHeight: 53px;
 $consoleWidth: 500px;
 
 .console{
-  position    : absolute;
-  z-index     : 10;
-  right       : 0;
-  top         : $topBarHeight;
-
-  height      : calc(100vh - #{$topBarHeight + 3 * $padding});
-  width       : $consoleWidth;
+  height      : 100%;
+  width       : 100%;
   overflow    : hidden;
   border      : 1px solid $lightBorderColor;
   background-color: white;

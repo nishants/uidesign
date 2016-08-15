@@ -25,12 +25,25 @@ body.full-screen-editor {
   overflow: hidden; }
 
 .task-editor {
-  position: relative; }
-  .task-editor #worksheet {
-    /** Setting height is also important, otherwise editor wont showup**/
-    height: calc(100vh - 60px);
-    width: 100%;
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; }
+  .task-editor .editor-section {
+    height: 100%; }
+    .task-editor .editor-section #worksheet, .task-editor .editor-section .right-pane {
+      float: left; }
+    .task-editor .editor-section #worksheet {
+      height: 100%;
+      width: calc(100% - 510px);
+      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
+      .task-editor .editor-section #worksheet .ace_gutter {
+        background: transparent;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        color: rgba(0, 0, 0, 0.1); }
+    .task-editor .editor-section .right-pane {
+      height: 100%;
+      width: 500px; }
   .task-editor .editor-bar {
     height: 50px;
     line-height: 50px;
@@ -70,12 +83,8 @@ body.full-screen-editor {
   max-height: 0px; }
 
 .console {
-  position: absolute;
-  z-index: 10;
-  right: 0;
-  top: 50px;
-  height: calc(100vh - 80px);
-  width: 500px;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: white;
