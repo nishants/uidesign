@@ -5,7 +5,7 @@
       content: null,
       autoRun: {
         pending: null,
-        interval: 1000,
+        interval: 500,
         execute: function(){
           editor.run();
         }
