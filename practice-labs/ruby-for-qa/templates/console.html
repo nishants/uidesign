@@ -13,12 +13,19 @@
         </div>
     </div>
 
-    <pre class="output">
+    <div class="output">
         <ul class="scenarios">
-            <li ng-repeat="scenario in editor.console.output.scenarios">
-                {{scenario.success ? "Success" : "Failed"}} | {{scenario.name}} | {{scenario.expected}} == {{scenario.actual}}
+            <li class="scenario"
+                ng-repeat="scenario in editor.console.output.scenarios"
+                ng-init="show_detail"
+                ng-class="{'success' : scenario.success}">
+                <div class="name"   ng-bind="scenario.name"></div>
+                <!--<p class="detail" ng-class="{'show' : show_detail}">-->
+                    <!--<span >Expected : {{scenario.expected}}</span>-->
+                    <!--<span >Actual   : {{scenario.actual}}</span>-->
+                <!--</p>-->
             </li>
         </ul>
 
-    </pre>
+    </div>
 </div>

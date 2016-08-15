@@ -1,22 +1,27 @@
 $runButtonWidth: 37px;
 $height : 30px;
+$titleHeight: 53px;
+$consoleWidth: 500px;
 
 .console{
-  position: absolute;
-  z-index: 10;
-  right: 0;
-  top: $topBarHeight;
+  position    : absolute;
+  z-index     : 10;
+  right       : 0;
+  top         : $topBarHeight;
 
-  height: calc(100vh - #{$topBarHeight + 3 * $padding});
-  width: 500px;
+  height      : calc(100vh - #{$topBarHeight + 3 * $padding});
+  width       : $consoleWidth;
+  overflow    : hidden;
+  border      : 1px solid $lightBorderColor;
+  background-color: white;
 
-  border: 1px solid $lightBorderColor;
   @include transition(all 250ms ease);
 
   .title{
     background-color: #EEE;
     padding         : $padding;
     border-bottom   : 1px solid $lightBorderColor;
+    height          : $titleHeight;
 
     @extend .resize-container;
     .run{
@@ -59,7 +64,7 @@ $height : 30px;
           opacity : 0.3;
           background-color: $playColor;
           @include transformOrigin(0 0);
-          @include transition(transform 500ms ease);
+          @include transition(transform $observableDuration ease);
         }
       }
       .counts{
@@ -73,11 +78,31 @@ $height : 30px;
   .output{
     display     : block;
     width       : 100%;
-    height      : 100%;
+    height      : calc(100% - #{$titleHeight});
     border-radius: 0px;
     border      : none;
+    padding     : 0px;
+    overflow    : auto;
+
     .scenarios {
       @extend .undo-list;
+      .scenario{
+        display: block;
+        border-bottom: 1px solid $lightBorderColor;
+        @include transition(all $observableDuration ease);
+        .name{
+          padding: $padding;
+        }
+      }
+      .scenario.success{
+        background: #5cb85c;
+        color: rgba(255, 255, 255, 0.76);
+      }
     }
   }
+}
+
+.console:not(.show){
+  opacity: 0;
+  @include transform(translateX(calc(100% + 100px)));
 }
