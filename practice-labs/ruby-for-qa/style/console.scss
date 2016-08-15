@@ -1,4 +1,5 @@
 $runButtonWidth: 37px;
+$height : 30px;
 
 .console{
   position: absolute;
@@ -13,20 +14,52 @@ $runButtonWidth: 37px;
   @include transition(all 250ms ease);
 
   .title{
-    line-height: 30px;
     background-color: #EEE;
     padding         : $padding;
-    border-bottom: 1px solid $lightBorderColor;
+    border-bottom   : 1px solid $lightBorderColor;
 
     @extend .resize-container;
     .run{
-      float: left;
-      width: $runButtonWidth
-      button{  width: 100%}
+      float     : left;
+      width     : $runButtonWidth;
+      text-align: center;
+      border    : 1px solid $lightBorderColor;
+      border-radius   : $borderRadius;
+
+      a{
+        width     : 100%;
+        display   : block;
+        color     : $playColor;
+        height    : $height;
+        line-height  : $height;
+        text-decoration: none;
+      }
     }
     .status{
-      float: right;
-      width: calc(100% - #{$runButtonWidth + 2 * $padding});
+      float   : right;
+      width   : calc(100% - #{$runButtonWidth + 2 * $padding});
+      position: relative;
+      height    : $height;
+      line-height  : $height;
+
+      .bar{
+        position: absolute;
+        top     : 0;
+        left    : 0;
+        display : block;
+        height  : 100%;
+        width   : 100%;
+        opacity : 0.3;
+
+        background-color: $playColor;
+        border-radius   : $borderRadius;
+      }
+      .counts{
+        position: relative;
+        float: left;
+        padding-left: $padding;
+        color: rgba(255, 255, 255, 0.8);
+      }
     }
   }
   .output{

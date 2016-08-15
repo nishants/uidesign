@@ -62,17 +62,43 @@ body {
   -o-transition: all 250ms ease;
   transition: all 250ms ease; }
   .console .title {
-    line-height: 30px;
     background-color: #EEE;
     padding: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
     .console .title .run {
       float: left;
-      width: 37px button;
-        width-width: 100%; }
+      width: 37px;
+      text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 4px; }
+      .console .title .run a {
+        width: 100%;
+        display: block;
+        color: #5cb85c;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none; }
     .console .title .status {
       float: right;
-      width: calc(100% - 57px); }
+      width: calc(100% - 57px);
+      position: relative;
+      height: 30px;
+      line-height: 30px; }
+      .console .title .status .bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        opacity: 0.3;
+        background-color: #5cb85c;
+        border-radius: 4px; }
+      .console .title .status .counts {
+        position: relative;
+        float: left;
+        padding-left: 10px;
+        color: rgba(255, 255, 255, 0.8); }
   .console .output {
     display: block;
     width: 100%;
