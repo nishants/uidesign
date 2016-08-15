@@ -1,0 +1,20 @@
+<div class="console"
+     ng-class="{'show' : editor.console.show}">
+    <div class="title">
+        <div class="status">
+            Success <span>{{editor.console.output.scenarios | passingCount}}/{{editor.console.output.scenarios.length}}</span>
+        </div>
+        <div class="run">
+            <a class="btn btn-success" ng-click="editor.run()">run</a>
+        </div>
+    </div>
+
+    <pre class="output">
+        <ul class="scenarios">
+            <li ng-repeat="scenario in editor.console.output.scenarios">
+                {{scenario.success ? "Success" : "Failed"}} | {{scenario.name}} | {{scenario.expected}} == {{scenario.actual}}
+            </li>
+        </ul>
+
+    </pre>
+</div>
