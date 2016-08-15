@@ -67,11 +67,11 @@ body {
     padding: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
     .console .title .run {
-      float: right; }
+      float: left; }
       .console .title .run a {
         width: 150px; }
     .console .title .status {
-      float: left; }
+      float: right; }
   .console .output {
     display: block;
     width: 100%;

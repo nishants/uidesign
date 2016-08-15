@@ -20,13 +20,13 @@ $runButtonWidth: 150px;
 
     @extend .resize-container;
     .run{
-      float: right;
+      float: left;
       a{
         width: $runButtonWidth
       }
     }
     .status{
-      float: left
+      float: right
     }
   }
   .output{

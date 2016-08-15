@@ -71,8 +71,6 @@
       editor.run();
     });
 
-//        editor.ace.setTheme("ace/theme/monokai");
-    editor.ace.getSession().setMode("ace/mode/ruby");
     editor.ace.getSession().setMode("ace/mode/ruby");
     editor.ace.getSession().on('change', function(e) {
       editor.autoRun.pending ? $timeout.cancel(editor.autoRun.pending) : "";
