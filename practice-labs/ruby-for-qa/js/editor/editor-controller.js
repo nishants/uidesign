@@ -56,6 +56,9 @@
 
     editor.ace.getSession().setMode("ace/mode/ruby");
     editor.ace.setShowPrintMargin(false);
+    editor.ace.getSession().setTabSize(2);
+    editor.ace.getSession().setUseSoftTabs(true);
+
 
     editor.ace.getSession().on('change', function(e) {
       editor.autoRun.pending ? $timeout.cancel(editor.autoRun.pending) : "";
