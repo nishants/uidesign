@@ -45,10 +45,18 @@ body.full-screen-editor {
       float: right; }
       .task-editor .editor-bar .editor-menu > li {
         display: inline;
-        float: left; }
+        float: left;
+        padding-right: 10px; }
         .task-editor .editor-bar .editor-menu > li button {
           border: 1px solid rgba(0, 0, 0, 0.1);
           background-color: transparent; }
+      .task-editor .editor-bar .editor-menu .run:hover {
+        opacity: 0.5; }
+        .task-editor .editor-bar .editor-menu .run:hover button {
+          color: #5cb85c; }
+      .task-editor .editor-bar .editor-menu .run.running-task {
+        opacity: 0.5;
+        cursor: not-allowed; }
 
 .task-overview {
   overflow: hidden;
@@ -80,31 +88,9 @@ body.full-screen-editor {
     padding: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     height: 53px; }
-    .console .title .run {
-      float: left;
-      width: 37px;
-      text-align: center;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-      -webkit-transition: all 250ms ease;
-      -moz-transition: all 250ms ease;
-      -o-transition: all 250ms ease;
-      transition: all 250ms ease; }
-      .console .title .run a {
-        width: 100%;
-        display: block;
-        color: #5cb85c;
-        height: 30px;
-        line-height: 30px;
-        text-decoration: none; }
-    .console .title .run:hover {
-      border: 1px solid rgba(0, 0, 0, 0.3); }
-    .console .title .run.running-task {
-      opacity: 0.5;
-      cursor: not-allowed; }
     .console .title .status {
       float: right;
-      width: calc(100% - 57px);
+      width: 100%;
       position: relative;
       height: 30px;
       line-height: 30px; }

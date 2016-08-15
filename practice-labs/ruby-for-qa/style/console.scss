@@ -1,4 +1,3 @@
-$runButtonWidth: 37px;
 $height : 30px;
 $titleHeight: 53px;
 $consoleWidth: 500px;
@@ -24,33 +23,9 @@ $consoleWidth: 500px;
     height          : $titleHeight;
 
     @extend .resize-container;
-    .run{
-      float     : left;
-      width     : $runButtonWidth;
-      text-align: center;
-      border    : 1px solid $lightBorderColor;
-      border-radius   : $borderRadius;
-
-      @include transition(all $quickDuration ease);
-      a{
-        width     : 100%;
-        display   : block;
-        color     : $playColor;
-        height    : $height;
-        line-height  : $height;
-        text-decoration: none;
-      }
-    }
-    .run:hover{
-      border    : 1px solid $darkBorderColor;
-    }
-    .run.running-task{
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
     .status{
       float   : right;
-      width   : calc(100% - #{$runButtonWidth + 2 * $padding});
+      width   : 100%;
       position: relative;
       height    : $height;
       line-height  : $height;

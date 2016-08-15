@@ -29,10 +29,21 @@ $editorBarHeight: 50px;
       > li {
         display: inline;
         float: left;
+        padding-right: $padding;
         button{
           border: 1px solid $lightBorderColor;
           background-color: transparent;
         }
+      }
+      .run:hover{
+        opacity: 0.5;
+        button{
+          color: $playColor;
+        }
+      }
+      .run.running-task{
+        opacity: 0.5;
+        cursor: not-allowed;
       }
     }
   }
