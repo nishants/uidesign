@@ -33,8 +33,12 @@
 <div class="console"
      ng-class="{'show' : editor.console.show}">
     <div class="title">Result</div>
-    <pre class="output"
-         ng-bind="editor.console.output">
+    <pre class="output">
+        <ul class="scenarios">
+            <li ng-repeat="scenario in editor.console.output.scenarios">
+                {{scenario.success ? "Success" : "Failed"}} | {{scenario.name}} | {{scenario.expected}} == {{scenario.actual}}
+            </li>
+        </ul>
 
     </pre>
 </div>

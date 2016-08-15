@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-ul.undo-list {
+ul.undo-list, .console .output ul.scenarios {
   list-style: none;
   margin: 0px;
   padding: 0px;
