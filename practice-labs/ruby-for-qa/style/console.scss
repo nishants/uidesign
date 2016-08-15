@@ -49,10 +49,18 @@ $height : 30px;
         display : block;
         height  : 100%;
         width   : 100%;
-        opacity : 0.3;
+        border  : 1px solid $lightBorderColor;
 
-        background-color: $playColor;
         border-radius   : $borderRadius;
+        .progress{
+          display: block;
+          width: 100%;
+          height: 100%;
+          opacity : 0.3;
+          background-color: $playColor;
+          @include transformOrigin(0 0);
+          @include transition(transform 500ms ease);
+        }
       }
       .counts{
         position: relative;
