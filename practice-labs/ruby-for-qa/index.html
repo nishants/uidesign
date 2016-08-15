@@ -29,6 +29,7 @@
     <title>amoeba social practice labs</title>
     <style>
         #splash{
+            display: none;
             position:  fixed;
             z-index : 9999;
             top     : 0px;
@@ -66,8 +67,15 @@
     </div>
 
     <div class="task-editor">
-        <div id="top-bar">
-            <div id="section-name">ruby for qa &gt; exercise-one</div>
+        <div class="editor-bar">
+            <div class="task-name">ruby for qa &gt; exercise-one</div>
+            <ul class="editor-menu">
+                <li class="full-screen">
+                    <button class="btn"
+                            ng-class="{'fa fa-square-o' : !ui.fullScreenEditor,'fa fa-minus' : ui.fullScreenEditor}"
+                            ng-click="ui.fullScreenEditor = !ui.fullScreenEditor"></button>
+                </li>
+            </ul>
         </div>
 
         <div class="editor-section" ng-controller="editorController">

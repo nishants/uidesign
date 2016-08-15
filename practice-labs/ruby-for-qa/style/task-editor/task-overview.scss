@@ -1,0 +1,14 @@
+.task-overview{
+  overflow: hidden;
+  @include transition(all $quickDuration ease);
+}
+
+
+.full-screen-editor{
+  .practice-task{
+    .task-overview{
+      height: 0px;
+      width: 0px;
+    }
+  }
+}

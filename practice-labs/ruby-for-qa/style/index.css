@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-ul.undo-list, .console .output ul.scenarios {
+ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scenarios {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -26,6 +26,40 @@ body.full-screen-editor {
 
 .task-editor {
   position: relative; }
+  .task-editor #editor {
+    /** Setting height is also important, otherwise editor wont showup**/
+    height: calc(100vh - 60px);
+    width: 100%;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
+  .task-editor .editor-bar {
+    height: 50px;
+    line-height: 50px;
+    padding: 0px 10px;
+    width: 100%;
+    background-color: #EEE;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+    .task-editor .editor-bar .task-name {
+      display: inline-block;
+      line-height: 30px; }
+    .task-editor .editor-bar .editor-menu {
+      float: right; }
+      .task-editor .editor-bar .editor-menu > li {
+        display: inline;
+        float: left; }
+        .task-editor .editor-bar .editor-menu > li button {
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          background-color: transparent; }
+
+.task-overview {
+  overflow: hidden;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease; }
+
+.full-screen-editor .practice-task .task-overview {
+  height: 0px;
+  width: 0px; }
 
 .console {
   position: absolute;
@@ -129,22 +163,5 @@ body.full-screen-editor {
   -ms-transform: translateX(calc(100% + 100px));
   -o-transform: translateX(calc(100% + 100px));
   transform: translateX(calc(100% + 100px)); }
-
-#editor {
-  /** Setting height is also important, otherwise editor wont showup**/
-  height: calc(100vh - 60px);
-  width: 100%;
-  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
-
-#top-bar {
-  height: 50px;
-  padding-left: 10px;
-  width: 100%;
-  background-color: #EEE;
-  border: 1px solid rgba(0, 0, 0, 0.1); }
-
-#section-name {
-  display: inline-block;
-  line-height: 30px; }
 
 /*# sourceMappingURL=index.css.map */

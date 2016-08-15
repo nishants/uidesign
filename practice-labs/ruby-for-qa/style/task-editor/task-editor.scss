@@ -1,3 +1,39 @@
+$editorBarHeight: 50px;
+
 .task-editor{
   position: relative;
+
+
+  #editor {
+    /** Setting height is also important, otherwise editor wont showup**/
+    height: calc(100vh - #{$editorBarHeight + $padding});
+    width: 100%;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  }
+
+  .editor-bar{
+    height: $topBarHeight;
+    line-height: $topBarHeight;
+
+    padding: 0px $padding;
+    width: 100%;
+    background-color: $editorDarkColor;
+    border: 1px solid $lightBorderColor;
+    .task-name{
+      display: inline-block;
+      line-height: 30px;
+    }
+    .editor-menu{
+      @extend .undo-list;
+      float: right;
+      > li {
+        display: inline;
+        float: left;
+        button{
+          border: 1px solid $lightBorderColor;
+          background-color: transparent;
+        }
+      }
+    }
+  }
 }
