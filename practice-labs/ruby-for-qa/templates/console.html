@@ -1,7 +1,7 @@
 <div class="console"
      ng-class="{'show' : editor.console.show}">
     <div class="title">
-        <div class="run">
+        <div class="run" ng-class="{'running-task' : ui.runningTask}">
             <a class="fa fa-play" ng-click="editor.run()"></a>
         </div>
 

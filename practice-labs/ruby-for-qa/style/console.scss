@@ -31,6 +31,7 @@ $consoleWidth: 500px;
       border    : 1px solid $lightBorderColor;
       border-radius   : $borderRadius;
 
+      @include transition(all $quickDuration ease);
       a{
         width     : 100%;
         display   : block;
@@ -39,6 +40,13 @@ $consoleWidth: 500px;
         line-height  : $height;
         text-decoration: none;
       }
+    }
+    .run:hover{
+      border    : 1px solid $darkBorderColor;
+    }
+    .run.running-task{
+      opacity: 0.5;
+      cursor: not-allowed;
     }
     .status{
       float   : right;

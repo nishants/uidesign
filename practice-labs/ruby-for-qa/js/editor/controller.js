@@ -1,6 +1,6 @@
 (function(){
   "use strict"
-  window.app.controller("editorController", ["$scope", "taskService", "$timeout", function($scope, taskService, $timeout){
+  window.app.controller("editorController", ["$scope", "taskService", "$timeout", "uiService", function($scope, taskService, $timeout, uiService){
     var editor = {
       content: null,
       autoRun: {
@@ -23,9 +23,11 @@
         console.log(action+ " : " + change)
       },
       run: function(){
+        uiService.runningTask = true;
         taskService.evaluateAssignment("exercise-one", editor.ace.getValue()).then(function(result){
           editor.console.output = result;
           editor.console.show = true;
+          uiService.runningTask = false;
         });
       }
     };
