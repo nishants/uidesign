@@ -59,16 +59,22 @@ $rightPaneWidth: 500px;
           color: $playColor;
         }
       }
-      .run.running-task{
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
       .full-screen{
         button{
           display: inline-block;
           @include transition(transform $quickDuration ease);
         }
       }
+    }
+    .editor-menu.running-task{
+      .refresh, .run{
+        opacity: 0.5;
+        cursor: not-allowed;
+        button{
+          pointer-events: none;
+        }
+      }
+
     }
   }
 }

@@ -2147,15 +2147,17 @@ body.full-screen-editor {
         opacity: 0.5; }
         .task-editor .editor-bar .editor-menu .run:hover button {
           color: #5cb85c; }
-      .task-editor .editor-bar .editor-menu .run.running-task {
-        opacity: 0.5;
-        cursor: not-allowed; }
       .task-editor .editor-bar .editor-menu .full-screen button {
         display: inline-block;
         -webkit-transition: transform 150ms ease;
         -moz-transition: transform 150ms ease;
         -o-transition: transform 150ms ease;
         transition: transform 150ms ease; }
+    .task-editor .editor-bar .editor-menu.running-task .refresh, .task-editor .editor-bar .editor-menu.running-task .run {
+      opacity: 0.5;
+      cursor: not-allowed; }
+      .task-editor .editor-bar .editor-menu.running-task .refresh button, .task-editor .editor-bar .editor-menu.running-task .run button {
+        pointer-events: none; }
 
 .task-overview {
   overflow: hidden;

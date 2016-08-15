@@ -35,6 +35,7 @@
             $localStorage[taskId].lastSaved = editor.ace.getValue();
           },
           refresh: function(){
+            uiService.runningTask = true;
             return taskService.getAssignment(taskId).then(function(worksheet){
               editor.ace.setValue(worksheet);
               editor.run();

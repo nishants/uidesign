@@ -70,17 +70,20 @@
     <div class="task-editor" ng-controller="editorController">
         <div class="editor-bar">
             <div class="task-name">ruby for qa &gt; exercise-one</div>
-            <ul class="editor-menu">
+            <ul class="editor-menu" ng-class="{'running-task' : ui.runningTask}">
+                <li class="refresh">
+                    <button class="btn fa fa-refresh"
+                            ng-click="editor.refresh()"> </button>
+                </li>
+                <li class="run">
+                    <button class="btn fa fa-play"
+                            ng-disabled="ui.runningTask"
+                            ng-click="editor.run()"></button>
+                </li>
                 <li class="full-screen">
                     <button class="btn fa"
                             ng-class="{'fa-square-o' : !ui.fullScreenEditor,'fa-minus' : ui.fullScreenEditor}"
                             ng-click="ui.fullScreenEditor = !ui.fullScreenEditor"></button>
-                </li>
-
-                <li class="run" ng-class="{'running-task' : ui.runningTask}">
-                    <button class="btn fa fa-play"
-                            ng-disabled="ui.runningTask"
-                            ng-click="editor.run()"></button>
                 </li>
             </ul>
         </div>
