@@ -2234,7 +2234,7 @@ body.full-screen-editor {
       .console .output .scenarios .scenario .overview .status, .console .output .scenarios .scenario .overview .name {
         float: left; }
       .console .output .scenarios .scenario .overview .status {
-        padding-left: 10px;
+        padding: 0px 5px;
         text-align: center;
         line-height: inherit; }
       .console .output .scenarios .scenario .overview .toggle {

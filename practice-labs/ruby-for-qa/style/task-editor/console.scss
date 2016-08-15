@@ -76,7 +76,7 @@ $consoleWidth: 500px;
             float: left;
           }
           .status{
-            padding-left: $padding;
+            padding: 0px $padding/2;
             text-align: center;
             line-height: inherit;
             @extend .fa;
