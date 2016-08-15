@@ -14,15 +14,35 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/editor/controller.js"></script>
+    <script src="js/ui-controller.js"></script>
     <script src="js/editor/task-service.js"></script>
     <script src="js/editor/task-bar-status.js"></script>
     <script src="js/editor/passing-count.js"></script>
 
     <meta charset="UTF-8">
-    <title>amoeba social labs</title>
+    <title>amoeba social practice labs</title>
+    <style>
+        #loader{
+            position:  fixed;
+            z-index : 9999;
+            top     : 0px;
+            left    : 0px;
+            height  : 100%;
+            width   : 100%;
+            background-color: white;
+        }
+        div#loader:after{
+            content     : "amoeba social...";
+            text-align  : center;
+            width       : 100%;
+            display     : block;
+            line-height : 60px;
+            font-size   : large;
+        }
+    </style>
 </head>
 
-<body ng-app="ruby-for-qa" >
+<body ng-app="ruby-for-qa" ng-controller="uiController">
 <div id="top-bar">
     <div id="section-name">ruby for qa &gt; exercise-one</div>
 </div>
@@ -32,6 +52,8 @@
     <div ng-include="'templates/console.html'"></div>
 </div>
 
+<div id="loader" ng-show="ui.loading">
 
+</div>
 </body>
 </html>
