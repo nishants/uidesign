@@ -78,6 +78,7 @@
 
                 <li class="run" ng-class="{'running-task' : ui.runningTask}">
                     <button class="btn fa fa-play"
+                            ng-disabled="ui.runningTask"
                             ng-click="editor.run()"></button>
                 </li>
             </ul>

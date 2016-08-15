@@ -3,7 +3,7 @@
   app.service("uiService", [function(){
     return {
       ready: true,
-      fullScreenEditor: true,
+      fullScreenEditor: false,
     };
   }]);
 

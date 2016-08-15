@@ -60,14 +60,14 @@ body.full-screen-editor {
 
 .task-overview {
   overflow: hidden;
+  max-height: 100vh;
   -webkit-transition: all 250ms ease;
   -moz-transition: all 250ms ease;
   -o-transition: all 250ms ease;
   transition: all 250ms ease; }
 
 .full-screen-editor .practice-task .task-overview {
-  height: 0px;
-  width: 0px; }
+  max-height: 0px; }
 
 .console {
   position: absolute;
