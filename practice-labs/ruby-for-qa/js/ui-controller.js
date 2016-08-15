@@ -1,11 +1,7 @@
 (function(){
   "use strict"
-  window.app.controller("uiController", ["$scope", "$timeout", function($scope, $timeout){
-    var ui = {
-      ready: true,
-    };
-
-    $scope.ui = ui;
+  window.app.controller("uiController", ["$scope", "uiService", function($scope, uiService){
+    $scope.ui = uiService;
   }]);
 
 }).call(this);
