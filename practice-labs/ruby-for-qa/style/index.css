@@ -2100,7 +2100,8 @@ button {
 
 body.full-screen-editor {
   height: 100vh;
-  overflow: hidden; }
+  overflow: hidden;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
   body.full-screen-editor .task-editor .editor-bar .editor-menu .full-screen button {
     opacity: 0.5; }
 
@@ -2170,6 +2171,8 @@ body.full-screen-editor {
   -moz-transition: all 150ms ease;
   -o-transition: all 150ms ease;
   transition: all 150ms ease; }
+  .task-overview .readme-text {
+    padding: 10px; }
 
 .full-screen-editor .practice-task .task-overview {
   max-height: 0px; }

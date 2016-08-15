@@ -1,9 +1,30 @@
-<h1>Extracting Data From Pages</h1>
-<p>You will learn :
-<ul>
-    <li>extract substring</li>
-    <li>access values from hash object</li>
-    <li>returning values from methods</li>
-    <li>map array</li>
-</ul>
+<h3>Extracting Data From Pages</h3>
+<p>This exercise introduces to
+    <ul>
+        <li>manipulating substring</li>
+        <li>accessing values from hash object</li>
+        <li>returning values from methods</li>
+        <li>mapping an array of values</li>
+    </ul>
 </p>
+
+<p>
+    In this exercise, you need to create methods that read an object and return values as needed.
+    Following is an example of the page object
+</p>
+
+<pre>
+
+page = {
+    :name         => "Dam",
+    :full_name    => "Dam Sam",
+    :age          => 32,
+    :address      => {:city => "Delhi", :from => {:day => 3, :month => 2, :year => 2014}},
+    :past_addresses => [
+        {:city => "Mumbai",    :from => {:day => 13, :month => 7, :year => 2012},   :to => {:day => 3, :month  => 2, :year => 2014}},
+        {:city => "Chennai",   :from => {:day => 17, :month => 3, :year => 2010},   :to => {:day => 13, :month => 7, :year => 2012}},
+        {:city => "Guwahati",  :from => {:day => 4,  :month => 2, :year => 2006},   :to => {:day => 17, :month => 3, :year => 2010}}
+    ]
+}
+
+</pre>
