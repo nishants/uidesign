@@ -2277,7 +2277,8 @@ body.full-screen-editor {
       .console .output .scenario.success .overview .status {
         color: #5cb85c; }
     .console .output .scenario:not(.success) .overview .status {
-      color: rgba(0, 0, 0, 0.1); }
+      color: #F44336;
+      opacity: 0.5; }
 
 .console:not(.show) {
   opacity: 0;

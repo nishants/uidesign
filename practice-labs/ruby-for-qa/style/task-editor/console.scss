@@ -137,7 +137,8 @@ $consoleWidth: 500px;
     .scenario:not(.success){
       .overview{
         .status{
-          color: $lightBorderColor;
+          color: $dangerColor;
+          opacity: 0.5;
           @extend .fa-exclamation;
         }
       }
