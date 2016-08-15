@@ -50,7 +50,7 @@
 
 <article class="practice-task" ng-controller="taskController">
     <div class="task-overview">
-        <div class="readme-text" ng-bind-html="task.readmeText">
+        <div class="readme-text" ng-include="task.readmeTemplate">
             <h1>Extracting Data From Pages</h1>
             <p>You will learn :
             <ul>

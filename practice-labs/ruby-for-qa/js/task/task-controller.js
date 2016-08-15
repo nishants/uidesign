@@ -2,7 +2,7 @@
   "use strict"
   window.app.controller("taskController", ["$scope", "uiService", function($scope, uiService){
     var task = {
-      readmeText : "<h1>The text readme</h1>",
+      readmeTemplate : "tasks/exercise-one/readme.html",
       scenarios: {}
     };
 
