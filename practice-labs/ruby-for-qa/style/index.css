@@ -141,13 +141,38 @@ body.full-screen-editor {
     .console .output .scenarios .scenario {
       display: block;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 10px;
       -webkit-transition: all 500ms ease;
       -moz-transition: all 500ms ease;
       -o-transition: all 500ms ease;
       transition: all 500ms ease; }
-      .console .output .scenarios .scenario .name {
-        padding: 10px; }
-    .console .output .scenarios .scenario.success {
+      .console .output .scenarios .scenario .overview .toggle {
+        float: right;
+        padding: 5px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        -webkit-transition: transform 250ms ease;
+        -moz-transition: transform 250ms ease;
+        -o-transition: transform 250ms ease;
+        transition: transform 250ms ease; }
+      .console .output .scenarios .scenario .detail {
+        display: block;
+        max-height: 0px;
+        overflow: hidden;
+        -webkit-transition: max-height 250ms ease;
+        -moz-transition: max-height 250ms ease;
+        -o-transition: max-height 250ms ease;
+        transition: max-height 250ms ease; }
+    .console .output .scenario.show-detail .overview .toggle {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg); }
+    .console .output .scenario.show-detail .detail {
+      max-height: 100vh; }
+    .console .output .scenario.success {
       background: #5cb85c;
       color: rgba(255, 255, 255, 0.76); }
 

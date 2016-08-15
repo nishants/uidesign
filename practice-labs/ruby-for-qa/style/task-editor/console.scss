@@ -67,9 +67,36 @@ $consoleWidth: 500px;
       .scenario{
         display: block;
         border-bottom: 1px solid $lightBorderColor;
+        padding: $padding;
         @include transition(all $observableDuration ease);
-        .name{
-          padding: $padding;
+
+        .overview{
+          .toggle{
+            float: right;
+            padding: 5px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            @include transition(transform $quickDuration ease);
+          }
+        }
+
+        .detail{
+          display   : block;
+          max-height: 0px;
+          overflow  : hidden;
+          @include transition(max-height $quickDuration ease);
+        }
+       }
+      }
+      .scenario.show-detail{
+        .overview{
+          .toggle{
+            @include transform(rotate(90deg));
+          }
+        }
+        .detail{
+          max-height: 100vh;
         }
       }
       .scenario.success{
@@ -77,7 +104,7 @@ $consoleWidth: 500px;
         color: rgba(255, 255, 255, 0.76);
       }
     }
-  }
+
 }
 
 .console:not(.show){

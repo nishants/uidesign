@@ -13,13 +13,17 @@
         <ul class="scenarios">
             <li class="scenario"
                 ng-repeat="scenario in editor.console.output.scenarios"
-                ng-init="show_detail"
-                ng-class="{'success' : scenario.success}">
-                <div class="name"   ng-bind="scenario.name"></div>
-                <!--<p class="detail" ng-class="{'show' : show_detail}">-->
-                    <!--<span >Expected : {{scenario.expected}}</span>-->
-                    <!--<span >Actual   : {{scenario.actual}}</span>-->
-                <!--</p>-->
+                ng-init="show_detail = !scenario.success"
+                ng-class="{'success' : scenario.success, 'show-detail' : show_detail}">
+                <div class="overview">
+                    <span class="name" ng-bind="scenario.name"></span>
+                    <button class="toggle fa fa-chevron-right"
+                            ng-click="show_detail = !show_detail"></button>
+                </div>
+                <div class="detail" ng-class="{'show' : show_detail}">
+                    <div >Expected : {{scenario.expected}}</div>
+                    <div >Actual   : {{scenario.actual}}</div>
+                </div>
             </li>
         </ul>
 
