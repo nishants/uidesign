@@ -4,7 +4,7 @@ $editorBarHeight: 50px;
   position: relative;
 
 
-  #editor {
+  #worksheet {
     /** Setting height is also important, otherwise editor wont showup**/
     height: calc(100vh - #{$editorBarHeight + $padding});
     width: 100%;

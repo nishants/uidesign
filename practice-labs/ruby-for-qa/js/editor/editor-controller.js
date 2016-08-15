@@ -16,7 +16,7 @@
           scenarios: []
         }
       },
-      ace: ace.edit("editor"),
+      ace: ace.edit("worksheet"),
       contentChanged: function(e){
         var action = e.action,
             change = e.lines
