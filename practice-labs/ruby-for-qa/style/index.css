@@ -2111,7 +2111,8 @@ body.full-screen-editor {
   width: 100%;
   overflow: hidden; }
   .task-editor .editor-section {
-    height: 100%; }
+    height: 100%;
+    padding: 10px; }
     .task-editor .editor-section #worksheet, .task-editor .editor-section .right-pane {
       float: left; }
     .task-editor .editor-section #worksheet {
@@ -2138,8 +2139,8 @@ body.full-screen-editor {
       top: -2px;
       width: 500px; }
   .task-editor .editor-bar {
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
     padding: 0px 10px;
     width: 100%;
     background-color: #EEE;
@@ -2177,7 +2178,6 @@ body.full-screen-editor {
         pointer-events: none; }
 
 .task-overview {
-  overflow: hidden;
   -webkit-transition: all 150ms ease;
   -moz-transition: all 150ms ease;
   -o-transition: all 150ms ease;

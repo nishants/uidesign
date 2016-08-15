@@ -9,6 +9,7 @@ $rightPaneWidth: 500px;
 
   .editor-section{
     height: 100%;
+    padding: $padding;
     #worksheet, .right-pane{
       float: left;
     }
@@ -45,8 +46,8 @@ $rightPaneWidth: 500px;
   }
 
   .editor-bar{
-    height: $topBarHeight;
-    line-height: $topBarHeight;
+    height      : $topBarHeight;
+    line-height : $topBarHeight;
 
     padding: 0px $padding;
     width: 100%;
