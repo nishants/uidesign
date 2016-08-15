@@ -16,6 +16,17 @@
             background-color: black;
             text-align: center;
             color   : rgba(255, 255, 255, 0.9);
+            -webkit-webkit-transition: opacity 500ms ease-in;
+            -moz-webkit-transition: opacity 500ms ease-in;
+            -ms-webkit-transition: opacity 500ms ease-in;
+            -o-webkit-transition: opacity 500ms ease-in;
+            webkit-transition: opacity 500ms ease-in;
+            transition: opacity 500ms ease-in;
+
+        }
+        .hide-spash{
+            opacity: 0;
+            pointer-events: none;
         }
     </style>
     <style>
@@ -77,7 +88,7 @@
     </div>
 </article>
 
-<div id="splash" ng-hide="!ui.splash">
+<div id="splash" ng-class="{'hide-spash' : !ui.splash}">
     <h1>amoeba social</h1>
     <div id="dot-loader">
         <div id="dot-loader_1" class="dot-loader"></div>
