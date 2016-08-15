@@ -2178,13 +2178,14 @@ body.full-screen-editor {
 
 .task-overview {
   overflow: hidden;
-  max-height: 100vh;
   -webkit-transition: all 150ms ease;
   -moz-transition: all 150ms ease;
   -o-transition: all 150ms ease;
   transition: all 150ms ease; }
   .task-overview .readme-text {
     padding: 10px; }
+    .task-overview .readme-text pre {
+      background-color: white; }
 
 .full-screen-editor .practice-task .task-overview {
   max-height: 0px; }

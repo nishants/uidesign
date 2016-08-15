@@ -1,8 +1,9 @@
 .task-overview{
-  overflow : hidden;
-  max-height: 100vh;
   .readme-text{
     padding: $padding;
+    pre{
+      background-color: white;
+    }
   }
   @include transition(all $quickDuration ease);
 }
