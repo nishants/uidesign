@@ -20,26 +20,12 @@ input {
 * {
   box-sizing: border-box; }
 
-body {
+body.full-screen-editor {
   height: 100vh;
   overflow: hidden; }
 
-#editor {
-  /** Setting height is also important, otherwise editor wont showup**/
-  height: calc(100vh - 60px);
-  width: 100%;
-  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
-
-#top-bar {
-  height: 50px;
-  padding-left: 10px;
-  width: 100%;
-  background-color: #EEE;
-  border: 1px solid rgba(0, 0, 0, 0.1); }
-
-#section-name {
-  display: inline-block;
-  line-height: 30px; }
+.task-editor {
+  position: relative; }
 
 .console {
   position: absolute;
@@ -143,5 +129,22 @@ body {
   -ms-transform: translateX(calc(100% + 100px));
   -o-transform: translateX(calc(100% + 100px));
   transform: translateX(calc(100% + 100px)); }
+
+#editor {
+  /** Setting height is also important, otherwise editor wont showup**/
+  height: calc(100vh - 60px);
+  width: 100%;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
+
+#top-bar {
+  height: 50px;
+  padding-left: 10px;
+  width: 100%;
+  background-color: #EEE;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+#section-name {
+  display: inline-block;
+  line-height: 30px; }
 
 /*# sourceMappingURL=index.css.map */

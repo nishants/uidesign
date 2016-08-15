@@ -15,28 +15,11 @@ $playColor: #5cb85c;
   box-sizing: border-box;
 }
 
-body{
+body.full-screen-editor{
   height: 100vh;
   overflow: hidden;
 }
-#editor {
-  /** Setting height is also important, otherwise editor wont showup**/
-  height: calc(100vh - 60px);
-  width: 100%;
-  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-}
 
-#top-bar{
-  height: $topBarHeight;
-  padding-left: 10px;
-  width: 100%;
-  background-color: $editorDarkColor;
-  border: 1px solid $lightBorderColor;
-}
-
-#section-name{
-  display: inline-block;
-  line-height: 30px;
-}
-
+@import "task-editor/task-editor";
 @import "console";
+@import "editor";
