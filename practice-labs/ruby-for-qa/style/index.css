@@ -20,9 +20,14 @@ input {
 * {
   box-sizing: border-box; }
 
+button {
+  outline: none !important; }
+
 body.full-screen-editor {
   height: 100vh;
   overflow: hidden; }
+  body.full-screen-editor .task-editor .editor-bar .editor-menu .full-screen button {
+    opacity: 0.5; }
 
 .task-editor {
   position: relative;
@@ -70,6 +75,12 @@ body.full-screen-editor {
       .task-editor .editor-bar .editor-menu .run.running-task {
         opacity: 0.5;
         cursor: not-allowed; }
+      .task-editor .editor-bar .editor-menu .full-screen button {
+        display: inline-block;
+        -webkit-transition: transform 250ms ease;
+        -moz-transition: transform 250ms ease;
+        -o-transition: transform 250ms ease;
+        transition: transform 250ms ease; }
 
 .task-overview {
   overflow: hidden;

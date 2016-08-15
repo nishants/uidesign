@@ -15,9 +15,25 @@ $playColor: #5cb85c;
   box-sizing: border-box;
 }
 
+button{
+  outline: none !important;
+}
+
 body.full-screen-editor{
   height: 100vh;
   overflow: hidden;
+  .task-editor{
+    .editor-bar{
+      .editor-menu{
+        .full-screen{
+          button{
+            opacity: 0.5;
+          }
+        }
+      }
+
+    }
+  }
 }
 
 @import "task-editor/task-editor";
