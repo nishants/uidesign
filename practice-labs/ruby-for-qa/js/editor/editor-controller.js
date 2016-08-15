@@ -38,6 +38,8 @@
     });
 
     editor.ace.getSession().setMode("ace/mode/ruby");
+    editor.ace.setShowPrintMargin(false);
+
     editor.ace.getSession().on('change', function(e) {
       editor.autoRun.pending ? $timeout.cancel(editor.autoRun.pending) : "";
       editor.autoRun.pending = $timeout(editor.autoRun.execute, editor.autoRun.interval);

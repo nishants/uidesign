@@ -4,7 +4,7 @@ $rightPaneWidth: 500px;
 .task-editor{
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 
   .editor-section{
@@ -14,7 +14,7 @@ $rightPaneWidth: 500px;
     }
     #worksheet {
       height: 100%;
-      width:  calc(100% - #{$rightPaneWidth + $padding});
+      width:  calc(100% - #{$rightPaneWidth});
       font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 
       .ace_gutter{

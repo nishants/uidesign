@@ -12,7 +12,6 @@ $consoleWidth: 500px;
   @include transition(all 250ms ease);
 
   .title{
-    background-color: #EEE;
     padding         : $padding;
     border-bottom   : 1px solid $lightBorderColor;
     height          : $titleHeight;
@@ -24,6 +23,7 @@ $consoleWidth: 500px;
       position: relative;
       height    : $height;
       line-height  : $height;
+      background-color: #EEE;
 
       .bar{
         position: absolute;
@@ -39,7 +39,6 @@ $consoleWidth: 500px;
           display: block;
           width: 100%;
           height: 100%;
-          opacity : 0.3;
           background-color: $playColor;
           @include transformOrigin(0 0);
           @include transition(transform $observableDuration ease);
@@ -49,7 +48,7 @@ $consoleWidth: 500px;
         position: relative;
         float: left;
         padding-left: $padding;
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(0, 0, 0, 0.5);
       }
     }
   }
@@ -127,10 +126,10 @@ $consoleWidth: 500px;
         }
       }
       .scenario.success{
-        background: $playColor;
-        color: rgba(255, 255, 255, 0.76);
         .overview{
+          color: rgba(0, 0, 0, 0.27);
           .status{
+            color: $playColor;
             @extend .fa-check;
           }
         }

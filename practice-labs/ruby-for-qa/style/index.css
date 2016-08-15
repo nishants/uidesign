@@ -2107,7 +2107,7 @@ body.full-screen-editor {
 .task-editor {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden; }
   .task-editor .editor-section {
     height: 100%; }
@@ -2115,7 +2115,7 @@ body.full-screen-editor {
       float: left; }
     .task-editor .editor-section #worksheet {
       height: 100%;
-      width: calc(100% - 510px);
+      width: calc(100% - 500px);
       font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
       .task-editor .editor-section #worksheet .ace_gutter {
         background: transparent;
@@ -2179,7 +2179,6 @@ body.full-screen-editor {
   -o-transition: all 250ms ease;
   transition: all 250ms ease; }
   .console .title {
-    background-color: #EEE;
     padding: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     height: 53px; }
@@ -2188,7 +2187,8 @@ body.full-screen-editor {
       width: 100%;
       position: relative;
       height: 30px;
-      line-height: 30px; }
+      line-height: 30px;
+      background-color: #EEE; }
       .console .title .status .bar {
         position: absolute;
         top: 0;
@@ -2202,7 +2202,6 @@ body.full-screen-editor {
           display: block;
           width: 100%;
           height: 100%;
-          opacity: 0.3;
           background-color: #5cb85c;
           -webkit-transform-origin: 0 0;
           -moz-transform-origin: 0 0;
@@ -2215,7 +2214,7 @@ body.full-screen-editor {
         position: relative;
         float: left;
         padding-left: 10px;
-        color: rgba(255, 255, 255, 0.8); }
+        color: rgba(0, 0, 0, 0.5); }
   .console .output {
     display: block;
     width: 100%;
@@ -2271,9 +2270,10 @@ body.full-screen-editor {
       transform: rotate(90deg); }
     .console .output .scenario.show-detail .detail {
       max-height: 100vh; }
-    .console .output .scenario.success {
-      background: #5cb85c;
-      color: rgba(255, 255, 255, 0.76); }
+    .console .output .scenario.success .overview {
+      color: rgba(0, 0, 0, 0.27); }
+      .console .output .scenario.success .overview .status {
+        color: #5cb85c; }
     .console .output .scenario:not(.success) .overview .status {
       color: rgba(0, 0, 0, 0.1); }
 
