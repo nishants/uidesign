@@ -19,18 +19,16 @@
 <style>
 
 </style>
-<body ng-app="ruby-for-qa" ng-controller="editorController">
-
+<body ng-app="ruby-for-qa" >
 <div id="top-bar">
     <div id="section-name">ruby for qa &gt; exercise-one</div>
 </div>
-<div class="main-container">
-    <div class="editor-view">
-        <div id="editor"></div>
-    </div>
+
+<div class="editor-section" ng-controller="editorController">
+    <div id="editor"></div>
+    <div ng-include="'templates/console.html'"></div>
 </div>
 
-<div ng-include="'templates/console.html'"></div>
 
 </body>
 </html>
