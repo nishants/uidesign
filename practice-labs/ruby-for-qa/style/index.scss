@@ -8,8 +8,10 @@ $observableDuration: 500ms;
 $quickDuration   : 250ms;
 
 $playColor: #5cb85c;
+$dangerColor: #F44336;
 
 @import "../../../lib/config.scss";
+@import "../../../lib/font-awesome-4.5.0/scss/font-awesome";
 
 *{
   box-sizing: border-box;

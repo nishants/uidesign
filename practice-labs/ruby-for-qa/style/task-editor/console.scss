@@ -71,6 +71,17 @@ $consoleWidth: 500px;
         @include transition(all $observableDuration ease);
 
         .overview{
+          @extend .resize-container;
+
+          .status, .name{
+            float: left;
+          }
+          .status{
+            padding-left: $padding;
+            text-align: center;
+            line-height: inherit;
+            @extend .fa;
+          }
           .toggle{
             float: right;
             padding: 5px;
@@ -100,9 +111,22 @@ $consoleWidth: 500px;
         }
       }
       .scenario.success{
-        background: #5cb85c;
+        background: $playColor;
         color: rgba(255, 255, 255, 0.76);
+        .overview{
+          .status{
+            @extend .fa-check;
+          }
+        }
       }
+    .scenario:not(.success){
+      .overview{
+        .status{
+          color: $lightBorderColor;
+          @extend .fa-exclamation;
+        }
+      }
+    }
     }
 
 }
