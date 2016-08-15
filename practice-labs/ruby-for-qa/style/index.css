@@ -2152,18 +2152,18 @@ body.full-screen-editor {
         cursor: not-allowed; }
       .task-editor .editor-bar .editor-menu .full-screen button {
         display: inline-block;
-        -webkit-transition: transform 250ms ease;
-        -moz-transition: transform 250ms ease;
-        -o-transition: transform 250ms ease;
-        transition: transform 250ms ease; }
+        -webkit-transition: transform 150ms ease;
+        -moz-transition: transform 150ms ease;
+        -o-transition: transform 150ms ease;
+        transition: transform 150ms ease; }
 
 .task-overview {
   overflow: hidden;
   max-height: 100vh;
-  -webkit-transition: all 250ms ease;
-  -moz-transition: all 250ms ease;
-  -o-transition: all 250ms ease;
-  transition: all 250ms ease; }
+  -webkit-transition: all 150ms ease;
+  -moz-transition: all 150ms ease;
+  -o-transition: all 150ms ease;
+  transition: all 150ms ease; }
 
 .full-screen-editor .practice-task .task-overview {
   max-height: 0px; }
@@ -2244,19 +2244,19 @@ body.full-screen-editor {
         background-color: transparent;
         outline: none;
         border: none;
-        -webkit-transition: transform 250ms ease;
-        -moz-transition: transform 250ms ease;
-        -o-transition: transform 250ms ease;
-        transition: transform 250ms ease; }
+        -webkit-transition: transform 150ms ease;
+        -moz-transition: transform 150ms ease;
+        -o-transition: transform 150ms ease;
+        transition: transform 150ms ease; }
       .console .output .scenarios .scenario .detail {
         max-height: 0px;
         overflow: hidden;
         color: rgba(0, 0, 0, 0.34);
         font-size: small;
-        -webkit-transition: max-height 250ms ease;
-        -moz-transition: max-height 250ms ease;
-        -o-transition: max-height 250ms ease;
-        transition: max-height 250ms ease; }
+        -webkit-transition: max-height 150ms ease;
+        -moz-transition: max-height 150ms ease;
+        -o-transition: max-height 150ms ease;
+        transition: max-height 150ms ease; }
         .console .output .scenarios .scenario .detail .value, .console .output .scenarios .scenario .detail label {
           float: left; }
         .console .output .scenarios .scenario .detail .value {
