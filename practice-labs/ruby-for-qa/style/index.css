@@ -1,12 +1,12 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scenarios {
+ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scenarios, .console .output .scenarios .scenario ul.detail {
   list-style: none;
   margin: 0px;
   padding: 0px;
   display: block; }
 
-.resize-container:after, .console .title:after, .console .output .scenarios .scenario .overview:after {
+.resize-container:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after {
   content: "";
   display: table;
   clear: both; }
@@ -2249,13 +2249,20 @@ body.full-screen-editor {
         -o-transition: transform 250ms ease;
         transition: transform 250ms ease; }
       .console .output .scenarios .scenario .detail {
-        display: block;
         max-height: 0px;
         overflow: hidden;
+        color: rgba(0, 0, 0, 0.34);
+        font-size: small;
         -webkit-transition: max-height 250ms ease;
         -moz-transition: max-height 250ms ease;
         -o-transition: max-height 250ms ease;
         transition: max-height 250ms ease; }
+        .console .output .scenarios .scenario .detail .value, .console .output .scenarios .scenario .detail label {
+          float: left; }
+        .console .output .scenarios .scenario .detail .value {
+          width: calc(100% - 74px); }
+        .console .output .scenarios .scenario .detail label {
+          width: 70px; }
     .console .output .scenario.show-detail .overview .toggle {
       -webkit-transform: rotate(90deg);
       -moz-transform: rotate(90deg);

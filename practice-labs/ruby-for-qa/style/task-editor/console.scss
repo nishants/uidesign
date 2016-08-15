@@ -93,9 +93,25 @@ $consoleWidth: 500px;
         }
 
         .detail{
-          display   : block;
+          @extend .undo-list;
           max-height: 0px;
           overflow  : hidden;
+          color     : rgba(0,0,0,0.34);
+          font-size: small;
+          $labelWidth: 70px;
+          > li{
+            @extend .resize-container;
+          }
+
+          .value, label{
+            float: left;
+          }
+          .value{
+            width: calc(100% - #{$labelWidth + 4px});;
+          }
+          label{
+            width: $labelWidth;
+          }
           @include transition(max-height $quickDuration ease);
         }
        }

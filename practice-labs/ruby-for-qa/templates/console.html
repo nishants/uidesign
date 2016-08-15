@@ -21,10 +21,10 @@
                     <button class="toggle fa fa-chevron-right"
                             ng-click="show_detail = !show_detail"></button>
                 </div>
-                <div class="detail">
-                    <div >Expected : {{scenario.expected}}</div>
-                    <div >Actual   : {{scenario.actual}}</div>
-                </div>
+                <ul class="detail">
+                    <li><label>Expected</label><span class="value" >{{scenario.expected}}</span></li>
+                    <div><label>Actual  </label><span class="value">{{scenario.actual}}</span></div>
+                </ul>
             </li>
         </ul>
 
