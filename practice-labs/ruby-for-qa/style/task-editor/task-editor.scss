@@ -10,6 +10,7 @@ $rightPaneWidth: 500px;
   .editor-section{
     height: 100%;
     padding: $padding;
+    background-color: $lightBgColor;
     #worksheet, .right-pane{
       float: left;
     }
@@ -49,9 +50,13 @@ $rightPaneWidth: 500px;
     height      : $topBarHeight;
     line-height : $topBarHeight;
 
+    border-top-left-radius: $borderRadius/2;
+    border-top-right-radius: $borderRadius/2;
+
     padding: 0px $padding;
     width: 100%;
-    background-color: $editorDarkColor;
+    background-color: $editorBarColor;
+    color   : $editorBarFontColor;
     border: 1px solid $lightBorderColor;
     .task-name{
       display: inline-block;
@@ -70,12 +75,12 @@ $rightPaneWidth: 500px;
         float: left;
         padding-right: $padding;
         button{
+          color : $editorBarFontColor;
           border: 1px solid $lightBorderColor;
           background-color: transparent;
         }
       }
-      .run:hover{
-        opacity: 0.5;
+      > li:hover{
         button{
           color: $playColor;
         }

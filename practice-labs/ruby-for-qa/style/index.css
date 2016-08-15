@@ -2112,7 +2112,8 @@ body.full-screen-editor {
   overflow: hidden; }
   .task-editor .editor-section {
     height: 100%;
-    padding: 10px; }
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05); }
     .task-editor .editor-section #worksheet, .task-editor .editor-section .right-pane {
       float: left; }
     .task-editor .editor-section #worksheet {
@@ -2141,9 +2142,12 @@ body.full-screen-editor {
   .task-editor .editor-bar {
     height: 40px;
     line-height: 40px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
     padding: 0px 10px;
     width: 100%;
-    background-color: #EEE;
+    background-color: #0c0c0c;
+    color: rgba(255, 255, 255, 0.77);
     border: 1px solid rgba(0, 0, 0, 0.1); }
     .task-editor .editor-bar .task-name {
       display: inline-block;
@@ -2159,12 +2163,11 @@ body.full-screen-editor {
         float: left;
         padding-right: 10px; }
         .task-editor .editor-bar .editor-menu > li button {
+          color: rgba(255, 255, 255, 0.77);
           border: 1px solid rgba(0, 0, 0, 0.1);
           background-color: transparent; }
-      .task-editor .editor-bar .editor-menu .run:hover {
-        opacity: 0.5; }
-        .task-editor .editor-bar .editor-menu .run:hover button {
-          color: #5cb85c; }
+      .task-editor .editor-bar .editor-menu > li:hover button {
+        color: #5cb85c; }
       .task-editor .editor-bar .editor-menu .full-screen button {
         display: inline-block;
         -webkit-transition: transform 150ms ease;
@@ -2178,6 +2181,7 @@ body.full-screen-editor {
         pointer-events: none; }
 
 .task-overview {
+  background-color: rgba(0, 0, 0, 0.05);
   -webkit-transition: all 150ms ease;
   -moz-transition: all 150ms ease;
   -o-transition: all 150ms ease;
