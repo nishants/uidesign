@@ -48,6 +48,7 @@
               editor.console.show = true;
               editor.save();
               uiService.runningTask = false;
+              $scope.ui.splash = false;
             });
           }
         };

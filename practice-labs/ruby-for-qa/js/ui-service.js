@@ -2,7 +2,7 @@
   "use strict"
   app.service("uiService", [function(){
     return {
-      ready: true,
+      splash: true,
       fullScreenEditor: false,
     };
   }]);
