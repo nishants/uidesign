@@ -2,7 +2,7 @@
   "use strict"
   window.app.controller("uiController", ["$scope", "$timeout", function($scope, $timeout){
     var ui = {
-      loading: false,
+      ready: true,
     };
 
     $scope.ui = ui;
