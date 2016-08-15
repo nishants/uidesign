@@ -22,7 +22,6 @@
 
 <div id="top-bar">
     <div id="section-name">ruby for qa &gt; exercise-one</div>
-    <div id="run-button"><a class="btn btn-default" ng-click="editor.run()">run</a></div>
 </div>
 <div class="main-container">
     <div class="editor-view">
@@ -32,7 +31,15 @@
 
 <div class="console"
      ng-class="{'show' : editor.console.show}">
-    <div class="title">Result</div>
+    <div class="title">
+        <div class="status">
+            Success <span>{{editor.console.output.scenarios | passingCount}}/{{editor.console.output.scenarios.length}}</span>
+        </div>
+        <div class="run">
+            <a class="btn btn-success" ng-click="editor.run()">run</a>
+        </div>
+    </div>
+
     <pre class="output">
         <ul class="scenarios">
             <li ng-repeat="scenario in editor.console.output.scenarios">
@@ -63,6 +70,13 @@
         $httpProvider.defaults.headers.options = {};
     });
 
+    app.filter("passingCount", [ function(){
+        return function(scenarios){
+            return !scenarios ? 0 : scenarios.filter(function(scenario){
+                return scenario.success;
+            }).length;
+        };
+    }]);
     app.service("taskService", ["$http", "compileServers", function($http, compileServers){
         var remote = compileServers[0];
 
@@ -96,9 +110,10 @@
 
         taskService.getAssignment("exercise-one").then(function(worksheet){
             editor.ace.setValue(worksheet);
+            editor.run();
         });
 
-        editor.ace.setTheme("ace/theme/monokai");
+//        editor.ace.setTheme("ace/theme/monokai");
         editor.ace.getSession().setMode("ace/mode/ruby");
         editor.ace.getSession().setMode("ace/mode/ruby");
         $scope.editor = editor;
