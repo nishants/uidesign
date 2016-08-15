@@ -40,6 +40,11 @@ $rightPaneWidth: 500px;
     .task-name{
       display: inline-block;
       line-height: 30px;
+      .error{
+        padding-left: $padding;
+        color: $dangerColor;
+        opacity: 0.5;
+      }
     }
     .editor-menu{
       @extend .undo-list;

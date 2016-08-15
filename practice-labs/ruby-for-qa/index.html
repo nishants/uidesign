@@ -69,7 +69,13 @@
 
     <div class="task-editor" ng-controller="editorController">
         <div class="editor-bar">
-            <div class="task-name">ruby for qa &gt; exercise-one</div>
+            <div class="task-name">
+                ruby for qa &gt; exercise-one
+                <span class="error" ng-show="editor.console.output.error">
+                    <span class="fa fa-exclamation"></span>
+                    <span ng-bind="editor.console.output.error"></span>
+                </span>
+            </div>
             <ul class="editor-menu" ng-class="{'running-task' : ui.runningTask}">
                 <li class="refresh">
                     <button class="btn fa fa-refresh"

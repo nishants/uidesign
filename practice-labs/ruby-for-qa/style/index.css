@@ -2134,6 +2134,10 @@ body.full-screen-editor {
     .task-editor .editor-bar .task-name {
       display: inline-block;
       line-height: 30px; }
+      .task-editor .editor-bar .task-name .error {
+        padding-left: 10px;
+        color: #F44336;
+        opacity: 0.5; }
     .task-editor .editor-bar .editor-menu {
       float: right; }
       .task-editor .editor-bar .editor-menu > li {
@@ -2189,8 +2193,7 @@ body.full-screen-editor {
       width: 100%;
       position: relative;
       height: 30px;
-      line-height: 30px;
-      background-color: #EEE; }
+      line-height: 30px; }
       .console .title .status .bar {
         position: absolute;
         top: 0;
