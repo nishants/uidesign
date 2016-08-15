@@ -24,8 +24,10 @@ $rightPaneWidth: 500px;
       }
     }
     .right-pane{
-      height: 100%;
-      width: $rightPaneWidth;
+      height  : 100%;
+      position: relative;
+      top     : -2px;
+      width   : $rightPaneWidth;
     }
   }
 

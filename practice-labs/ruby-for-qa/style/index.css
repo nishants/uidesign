@@ -2124,6 +2124,8 @@ body.full-screen-editor {
         color: rgba(0, 0, 0, 0.1); }
     .task-editor .editor-section .right-pane {
       height: 100%;
+      position: relative;
+      top: -2px;
       width: 500px; }
   .task-editor .editor-bar {
     height: 50px;
