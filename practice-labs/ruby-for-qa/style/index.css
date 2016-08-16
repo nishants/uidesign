@@ -2294,6 +2294,10 @@ body.full-screen-editor {
           float: left; }
         .console .output .scenarios .scenario .detail .value {
           width: calc(100% - 74px); }
+          .console .output .scenarios .scenario .detail .value .white-space:after {
+            content: " ";
+            letter-spacing: 5px;
+            background-color: rgba(3, 169, 244, 0.29); }
         .console .output .scenarios .scenario .detail label {
           width: 70px; }
     .console .output .scenario.show-detail .overview .toggle {

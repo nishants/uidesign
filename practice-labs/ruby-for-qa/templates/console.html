@@ -21,15 +21,15 @@
                     <button class="toggle fa fa-chevron-right"
                             ng-click="show_detail = !show_detail"></button>
                 </div>
-                <ul class="detail">
+                <ul class="detail" white-space-diff="scenario">
                     <li>
                         <div class="resize-container">
                             <label>Expected</label>
-                            <span class="value" >{{scenario.expected}}</span>
+                            <div class="value" ng-bind-html="whiteSpaceDiff.expected"></div>
                         </div>
                         <div class="resize-container">
                             <label>Actual  </label>
-                            <span class="value">{{scenario.actual}}</span>
+                            <div class="value" ng-bind-html="whiteSpaceDiff.actual"></div>
                         </div>
                     </li>
                 </ul>

@@ -110,7 +110,12 @@ $titleHeight: 53px;
             float: left;
           }
           .value{
-            width: calc(100% - #{$labelWidth + 4px});;
+            width: calc(100% - #{$labelWidth + 4px});
+            .white-space:after{
+              content: " ";
+              letter-spacing: 5px;
+              background-color: rgba(3, 169, 244, 0.29);
+            }
           }
           label{
             width: $labelWidth;
