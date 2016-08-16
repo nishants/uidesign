@@ -1,4 +1,4 @@
-$editorBarHeight: 50px;
+$editorBarHeight: $topBarHeight;
 $rightPaneWidth: 500px;
 
 .task-editor{
@@ -8,7 +8,7 @@ $rightPaneWidth: 500px;
   overflow: hidden;
 
   .editor-section{
-    height: 100%;
+    height: calc(100% - #{$editorBarHeight});
     padding: $padding;
     background-color: $lightBgColor;
     #worksheet, .right-pane{
@@ -49,8 +49,8 @@ $rightPaneWidth: 500px;
   }
 
   .editor-bar{
-    height      : $topBarHeight;
-    line-height : $topBarHeight;
+    height      : $editorBarHeight;
+    line-height : $editorBarHeight;
 
     border-top-left-radius: $borderRadius/2;
     border-top-right-radius: $borderRadius/2;
