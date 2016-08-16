@@ -2117,6 +2117,7 @@ body.full-screen-editor {
     .task-editor .editor-section #worksheet, .task-editor .editor-section .right-pane {
       float: left; }
     .task-editor .editor-section #worksheet {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
       height: 100%;
       width: calc(100% - 400px);
       font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
@@ -2138,8 +2139,6 @@ body.full-screen-editor {
         color: rgba(0, 0, 0, 0.1); }
     .task-editor .editor-section .right-pane {
       height: 100%;
-      position: relative;
-      top: -2px;
       margin-left: 10px;
       width: 390px; }
   .task-editor .editor-bar {
@@ -2149,9 +2148,10 @@ body.full-screen-editor {
     border-top-right-radius: 2px;
     padding: 0px 10px;
     width: 100%;
-    background-color: #0c0c0c;
+    background-color: rgba(12, 12, 12, 0.88);
     color: rgba(255, 255, 255, 0.77);
-    border: 1px solid rgba(0, 0, 0, 0.1); }
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0px 5px 5px rgba(0, 0, 0, 0.15); }
     .task-editor .editor-bar .task-name {
       display: inline-block;
       line-height: 30px; }
