@@ -2107,9 +2107,7 @@ body.full-screen-editor {
   margin: 20px;
   width: calc(100% - 40px);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  max-height: calc(100vh - 2 * 20px);
-  overflow: auto; }
+  border-radius: 4px; }
 
 .task-overview {
   background-color: rgba(0, 0, 0, 0.05); }
@@ -2226,6 +2224,12 @@ body.full-screen-editor {
 
 .readme-text {
   padding: 10px; }
+  .readme-text h1, .readme-text h2, .readme-text h3, .readme-text h4, .readme-text h5 {
+    margin: 0px; }
+  .readme-text .page-heading {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
   .readme-text pre {
     background-color: white; }
 
@@ -2382,7 +2386,8 @@ section.hints {
   -o-transition: height 500ms ease;
   transition: height 500ms ease;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1); }
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px; }
   section.hints > .title {
     display: block;
     margin: 0px;
@@ -2393,22 +2398,16 @@ section.hints {
     font-size: 1.5em; }
   section.hints ul.hints > li {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0px 10px;
+    padding: 0px 15px;
     background-color: white; }
     section.hints ul.hints > li .heading {
       height: 40px;
       line-height: 40px;
       padding-left: 10px; }
     section.hints ul.hints > li .hint {
-      max-height: 0px;
-      overflow: hidden;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      -webkit-transition: height 500ms ease;
-      -moz-transition: height 500ms ease;
-      -o-transition: height 500ms ease;
-      transition: height 500ms ease; }
-  section.hints ul.hints > li:hover .hint {
-    max-height: initial; }
+      pointer-events: none;
+      padding-bottom: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
 section.hints:hover {
   max-height: initial; }

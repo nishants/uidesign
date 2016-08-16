@@ -40,8 +40,6 @@ body.full-screen-editor{
   width: calc(100% - #{4 * $padding});
   border: 1px solid $lightBorderColor;
   border-radius : $borderRadius;
-  max-height: $calcMaxPageHeight;
-  overflow: auto;
 }
 
 .task-overview{
@@ -74,7 +72,6 @@ body.full-screen-editor{
             }
           }
         }
-
       }
     }
   }

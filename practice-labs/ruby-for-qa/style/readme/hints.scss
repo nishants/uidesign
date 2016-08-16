@@ -5,6 +5,7 @@ section.hints{
   @include transition(height $observableDuration $transition);
   overflow: hidden;
   border     : 1px solid $lightBorderColor;
+  border-radius: $borderRadius;
 
   > .title{
     display    : block;
@@ -19,25 +20,17 @@ section.hints{
     @extend .undo-list;
     > li {
       border-top  : 1px solid $lightBorderColor;
-      padding    : 0px $padding;
+      padding    : 0px $padding * 1.5;
       background-color: $white;
-
       .heading{
         height     : $rowHeight;
         line-height: $rowHeight;
         padding-left: $padding;
       }
       .hint{
-        max-height: 0px;
-        overflow: hidden;
+        pointer-events: none;
+        padding-bottom: $padding;
         border-top  : 1px solid $lightBorderColor;
-        @include transition(height $observableDuration $transition);
-      }
-    }
-
-    > li:hover{
-      .hint{
-        max-height: initial;
       }
     }
   }
