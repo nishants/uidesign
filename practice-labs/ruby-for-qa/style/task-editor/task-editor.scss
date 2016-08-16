@@ -41,6 +41,7 @@ $rightPaneWidth: 350px;
     }
     .right-pane{
       height  : 100%;
+      overflow: auto;
       margin-left: $padding;
       width   : $rightPaneWidth - $padding;
     }

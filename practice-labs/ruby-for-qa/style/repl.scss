@@ -1,0 +1,37 @@
+$rowHeight : 30px;
+
+.repl-window {
+  width           : 100%;
+  border          : 1px solid $lightBorderColor;
+  background-color: white;
+  border-radius   : $borderRadius;
+  .title-bar{
+    padding      : $padding;
+    border-bottom: 1px solid $lightBorderColor;
+    @extend .resize-container;
+    label{
+      float: left;
+    }
+    button.run{
+      float     : right;
+      color     : $playColor;
+      border    : 1px solid $lightBorderColor;
+      background-color: transparent;
+    }
+    label,button.run{
+      height      : $rowHeight;
+      line-height : $rowHeight;
+      padding     :  0px $padding;
+      border-radius: $borderRadius;
+    }
+  }
+
+  #repl-editor{
+    min-height: 200px;
+    width: 100%;
+    .ace_gutter{
+      display: none;
+    }
+  }
+  @include transition(all 250ms ease);
+}

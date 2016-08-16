@@ -1,6 +1,6 @@
 (function(){
   "use strict"
-  window.app.controller("editorController", ["$scope", "taskService", "$timeout", "uiService", "$localStorage", function($scope, taskService, $timeout, uiService, $localStorage){
+  window.app.controller("editorController", ["$scope", "taskService", "$timeout", "uiService", "$localStorage","aceEditor", function($scope, taskService, $timeout, uiService, $localStorage, aceEditor){
     window.storage = $localStorage;
     var taskId = "exercise-one",
         editor = {
@@ -19,7 +19,7 @@
               scenarios: []
             }
           },
-          ace: ace.edit("worksheet"),
+          ace: aceEditor.create("worksheet"),
           lastSaved : function(taskId){
             var task = $localStorage[taskId];
             return task && task.lastSaved;
@@ -55,14 +55,6 @@
             });
           }
         };
-
-
-
-    editor.ace.getSession().setMode("ace/mode/ruby");
-    editor.ace.setShowPrintMargin(false);
-    editor.ace.getSession().setTabSize(2);
-    editor.ace.getSession().setUseSoftTabs(true);
-
 
     editor.ace.getSession().on('change', function(e) {
       editor.autoRun.pending ? $timeout.cancel(editor.autoRun.pending) : "";
