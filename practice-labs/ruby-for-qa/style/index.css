@@ -1,12 +1,12 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scenarios, .console .output .scenarios .scenario ul.detail {
+ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scenarios, .console .output .scenarios .scenario ul.detail, ul.bread-crumb {
   list-style: none;
   margin: 0px;
   padding: 0px;
   display: block; }
 
-.resize-container:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after {
+.resize-container:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after, ul.bread-crumb:after {
   content: "";
   display: table;
   clear: both; }
@@ -2157,8 +2157,7 @@ body.full-screen-editor {
       line-height: 30px; }
       .task-editor .editor-bar .task-name .error {
         padding-left: 10px;
-        color: #F44336;
-        opacity: 0.5; }
+        color: rgba(255, 87, 34, 0.87); }
     .task-editor .editor-bar .editor-menu {
       float: right; }
       .task-editor .editor-bar .editor-menu > li {
@@ -2311,8 +2310,7 @@ body.full-screen-editor {
       .console .output .scenario.success .overview .status {
         color: #5cb85c; }
     .console .output .scenario:not(.success) .overview .status {
-      color: #F44336;
-      opacity: 0.5; }
+      color: rgba(255, 87, 34, 0.87); }
 
 .console:not(.show) {
   opacity: 0;
@@ -2321,5 +2319,22 @@ body.full-screen-editor {
   -ms-transform: translateX(calc(100% + 100px));
   -o-transform: translateX(calc(100% + 100px));
   transform: translateX(calc(100% + 100px)); }
+
+ul.bread-crumb {
+  overflow: hidden; }
+  ul.bread-crumb > li {
+    display: inline-block;
+    position: relative;
+    float: left; }
+  ul.bread-crumb > li:first-child:before {
+    content: ">";
+    opacity: 0.5;
+    padding: 0px 5px;
+    font-weight: bold; }
+  ul.bread-crumb > li:not(:last-child):after {
+    content: "/";
+    opacity: 0.5;
+    padding: 0px 5px;
+    font-weight: bold; }
 
 /*# sourceMappingURL=index.css.map */

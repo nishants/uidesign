@@ -20,11 +20,6 @@
             }
           },
           ace: ace.edit("worksheet"),
-          contentChanged: function(e){
-            var action = e.action,
-                change = e.lines
-            console.log(action+ " : " + change)
-          },
           lastSaved : function(taskId){
             var task = $localStorage[taskId];
             return task && task.lastSaved;

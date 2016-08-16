@@ -57,11 +57,14 @@
     <div class="task-editor" ng-controller="editorController">
         <div class="editor-bar">
             <div class="task-name">
-                ruby for qa &gt; exercise-one
-                <span class="error" ng-show="editor.console.output.error">
-                    <span class="fa fa-exclamation"></span>
-                    <span ng-bind="editor.console.output.error"></span>
-                </span>
+                <ul class="bread-crumb">
+                    <li>Ruby For QAs</li>
+                    <li>Exercise One</li>
+                    <li class="error" ng-show="editor.console.output.error">
+                        <span class="fa fa-exclamation"></span>
+                        <span ng-bind="editor.console.output.error"></span>
+                    </li>
+                </ul>
             </div>
             <ul class="editor-menu" ng-class="{'running-task' : ui.runningTask}">
                 <li class="refresh">

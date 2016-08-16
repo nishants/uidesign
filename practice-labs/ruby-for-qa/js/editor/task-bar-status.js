@@ -10,8 +10,9 @@
           var done = !scenarios ? 0 : scenarios.filter(function (scenario) {
             return scenario.success;
           }).length;
-          var todo = scope.editor.console.output.scenarios.length;
-          element.css("transform","scaleX(:progress)".replace(":progress", done/todo))
+          var todo = scope.editor.console.output.scenarios.length,
+              status = done == 0 ? 0  : done/todo;
+          element.css("transform","scaleX(:progress)".replace(":progress", status));
         });
       }
     };

@@ -11,7 +11,7 @@ $editorBarColor  : #0c0c0c;
 $editorBarFontColor: rgba(255, 255, 255, 0.77);
 
 $playColor: #5cb85c;
-$dangerColor: #F44336;
+$dangerColor: rgba(255, 87, 34, 0.87);
 
 @import "../../../lib/config.scss";
 @import "../../../lib/font-awesome-4.5.0/scss/font-awesome";
@@ -46,3 +46,4 @@ body.full-screen-editor{
 @import "task-editor/task-editor";
 @import "task-editor/task-overview";
 @import "task-editor/console";
+@import "task-editor/breadcrumb";
