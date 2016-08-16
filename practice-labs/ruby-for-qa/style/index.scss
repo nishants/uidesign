@@ -45,6 +45,11 @@ body.full-screen-editor{
   }
 }
 
+.task-editor, .task-overview{
+  padding : 2 * $padding;
+}
+
+@import "top-bar";
 @import "task-editor/task-editor";
 @import "task-editor/task-overview";
 @import "task-editor/readme";

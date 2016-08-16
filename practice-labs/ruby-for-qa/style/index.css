@@ -6,7 +6,7 @@ ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scena
   padding: 0px;
   display: block; }
 
-.resize-container:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after, ul.bread-crumb:after {
+.resize-container:after, .top-bar .trade-mark:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after, ul.bread-crumb:after {
   content: "";
   display: table;
   clear: both; }
@@ -2104,6 +2104,27 @@ body.full-screen-editor {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
   body.full-screen-editor .task-editor .editor-bar .editor-menu .full-screen button {
     opacity: 0.5; }
+
+.task-editor, .task-overview {
+  padding: 20px; }
+
+.top-bar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); }
+  .top-bar .trade-mark {
+    padding: 10px; }
+    .top-bar .trade-mark .practice-labs, .top-bar .trade-mark .studio {
+      float: left;
+      padding: 0px 20px;
+      height: 40px;
+      line-height: 40px; }
+    .top-bar .trade-mark .practice-labs {
+      font-size: 22px;
+      border-right: 1px solid rgba(0, 0, 0, 0.1); }
+    .top-bar .trade-mark .studio {
+      font-size: 18px;
+      opacity: 0.5;
+      font-weight: bold; }
 
 .task-editor {
   position: relative;
