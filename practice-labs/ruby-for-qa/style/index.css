@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scenarios, .console .output .scenarios .scenario ul.detail, ul.bread-crumb {
+ul.undo-list, .task-editor .editor-bar ul.editor-menu, .readme-text ul.hints, .console .output ul.scenarios, .console .output .scenarios .scenario ul.detail, ul.bread-crumb {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -2189,13 +2189,23 @@ body.full-screen-editor {
   -moz-transition: all 150ms ease;
   -o-transition: all 150ms ease;
   transition: all 150ms ease; }
-  .task-overview .readme-text {
-    padding: 10px; }
-    .task-overview .readme-text pre {
-      background-color: white; }
 
 .full-screen-editor .practice-task .task-overview {
   max-height: 0px; }
+
+.readme-text {
+  padding: 10px; }
+  .readme-text pre {
+    background-color: white; }
+  .readme-text ul.hints > li .hint {
+    max-height: 0px;
+    overflow: hidden;
+    -webkit-transition: height 500ms ease;
+    -moz-transition: height 500ms ease;
+    -o-transition: height 500ms ease;
+    transition: height 500ms ease; }
+  .readme-text ul.hints > li:hover .hint {
+    max-height: initial; }
 
 .console {
   height: 100%;

@@ -1,0 +1,23 @@
+.readme-text{
+  padding: $padding;
+  pre{
+    background-color: white;
+  }
+
+  ul.hints{
+    @extend .undo-list;
+    > li {
+      .hint{
+        max-height: 0px;
+        overflow: hidden;
+        @include transition(height $observableDuration ease);
+      }
+    }
+
+    > li:hover{
+      .hint{
+        max-height: initial;
+      }
+    }
+  }
+}
