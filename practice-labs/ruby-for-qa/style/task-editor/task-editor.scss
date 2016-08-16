@@ -2,7 +2,7 @@ $rightPaneWidth: 350px;
 
 .task-editor{
   position: relative;
-  height: calc(100vh - 2 * #{$pagePadding});
+  height: $calcMaxPageHeight;
   overflow: hidden;
 
   .editor-section{

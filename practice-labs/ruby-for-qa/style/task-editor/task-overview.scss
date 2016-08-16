@@ -1,5 +1,4 @@
 .task-overview{
-  overflow: hidden;
   background-color: $lightBgColor;
   @include transition(all $quickDuration ease);
 }
@@ -9,6 +8,7 @@
   .practice-task{
     .task-overview{
       max-height: 0px;
+      overflow: hidden;
     }
   }
 }

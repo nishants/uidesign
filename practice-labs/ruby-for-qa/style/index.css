@@ -2109,7 +2109,9 @@ body.full-screen-editor {
   margin: 20px;
   width: calc(100% - 40px);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px; }
+  border-radius: 4px;
+  max-height: calc(100vh - 2 * 20px);
+  overflow: auto; }
 
 .top-bar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -2204,7 +2206,6 @@ body.full-screen-editor {
         pointer-events: none; }
 
 .task-overview {
-  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.05);
   -webkit-transition: all 150ms ease;
   -moz-transition: all 150ms ease;
@@ -2212,7 +2213,8 @@ body.full-screen-editor {
   transition: all 150ms ease; }
 
 .full-screen-editor .practice-task .task-overview {
-  max-height: 0px; }
+  max-height: 0px;
+  overflow: hidden; }
 
 .readme-text {
   padding: 10px; }
