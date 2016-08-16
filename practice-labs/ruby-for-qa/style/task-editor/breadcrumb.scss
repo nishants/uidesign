@@ -11,7 +11,7 @@ ul.bread-crumb{
   }
 
   >li:first-child:before{
-    content: ">";
+    content: "$";
     opacity: 0.5;
     padding: 0px $padding/2;
     font-weight: bold;

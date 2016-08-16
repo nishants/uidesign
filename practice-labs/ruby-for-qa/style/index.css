@@ -2165,14 +2165,13 @@ body.full-screen-editor {
   .task-editor .editor-bar {
     height: 40px;
     line-height: 40px;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    border-radius: 2px;
     padding: 0px 10px;
     width: 100%;
     background-color: rgba(12, 12, 12, 0.88);
     color: rgba(255, 255, 255, 0.77);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 2px 0px 5px 5px rgba(0, 0, 0, 0.15); }
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); }
     .task-editor .editor-bar .task-name {
       display: inline-block;
       line-height: 30px; }
@@ -2353,7 +2352,7 @@ ul.bread-crumb {
     position: relative;
     float: left; }
   ul.bread-crumb > li:first-child:before {
-    content: ">";
+    content: "$";
     opacity: 0.5;
     padding: 0px 5px;
     font-weight: bold; }

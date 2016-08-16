@@ -52,15 +52,14 @@ $rightPaneWidth: 350px;
     height      : $editorBarHeight;
     line-height : $editorBarHeight;
 
-    border-top-left-radius: $borderRadius/2;
-    border-top-right-radius: $borderRadius/2;
+    border-radius: $borderRadius/2;
 
     padding     : 0px $padding;
     width       : 100%;
     background-color: $editorBarColor;
     color       : $editorBarFontColor;
     border      : 1px solid $lightBorderColor;
-    box-shadow: 2px 0px 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow  : 0px 5px 10px rgba(0, 0, 0, 0.2);
 
   .task-name{
       display: inline-block;
