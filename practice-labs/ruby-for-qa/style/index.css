@@ -2119,7 +2119,7 @@ body.full-screen-editor {
     .task-editor .editor-section #worksheet {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       height: 100%;
-      width: calc(100% - 400px);
+      width: calc(100% - 350px);
       font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
       border-radius: 4px;
       font-size: 1em; }
@@ -2140,7 +2140,7 @@ body.full-screen-editor {
     .task-editor .editor-section .right-pane {
       height: 100%;
       margin-left: 10px;
-      width: 390px; }
+      width: 340px; }
   .task-editor .editor-bar {
     height: 40px;
     line-height: 40px;
