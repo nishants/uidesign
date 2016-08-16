@@ -1,0 +1,48 @@
+$rowHeight : $topBarHeight;
+
+section.hints{
+  max-height: $rowHeight;
+  @include transition(height $observableDuration $transition);
+  overflow: hidden;
+  border     : 1px solid $lightBorderColor;
+
+  > .title{
+    display    : block;
+    margin     : 0px;
+    height     : $rowHeight;
+    line-height: $rowHeight;
+    text-align : center;
+    width      : 100%;
+    font-size  : 1.5em;
+  }
+  ul.hints{
+    @extend .undo-list;
+    > li {
+      border-top  : 1px solid $lightBorderColor;
+      padding    : 0px $padding;
+      background-color: $white;
+
+      .heading{
+        height     : $rowHeight;
+        line-height: $rowHeight;
+        padding-left: $padding;
+      }
+      .hint{
+        max-height: 0px;
+        overflow: hidden;
+        border-top  : 1px solid $lightBorderColor;
+        @include transition(height $observableDuration $transition);
+      }
+    }
+
+    > li:hover{
+      .hint{
+        max-height: initial;
+      }
+    }
+  }
+}
+
+section.hints:hover{
+  max-height: initial;
+}

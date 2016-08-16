@@ -9,9 +9,11 @@ $observableDuration: 500ms;
 $quickDuration   : 150ms;
 $editorBarColor  : rgba(12, 12, 12, 0.88);
 $editorBarFontColor: rgba(255, 255, 255, 0.77);
-
+$white : white;
 $playColor: #5cb85c;
 $dangerColor: rgba(255, 87, 34, 0.87);
+
+$transition: ease;
 
 @import "../../../lib/config.scss";
 @import "../../../lib/font-awesome-4.5.0/scss/font-awesome";
@@ -48,3 +50,4 @@ body.full-screen-editor{
 @import "task-editor/readme";
 @import "task-editor/console";
 @import "task-editor/breadcrumb";
+@import "readme/hints";

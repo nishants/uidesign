@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-ul.undo-list, .task-editor .editor-bar ul.editor-menu, .readme-text ul.hints, .console .output ul.scenarios, .console .output .scenarios .scenario ul.detail, ul.bread-crumb {
+ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scenarios, .console .output .scenarios .scenario ul.detail, ul.bread-crumb, section.hints ul.hints {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -2197,15 +2197,6 @@ body.full-screen-editor {
   padding: 10px; }
   .readme-text pre {
     background-color: white; }
-  .readme-text ul.hints > li .hint {
-    max-height: 0px;
-    overflow: hidden;
-    -webkit-transition: height 500ms ease;
-    -moz-transition: height 500ms ease;
-    -o-transition: height 500ms ease;
-    transition: height 500ms ease; }
-  .readme-text ul.hints > li:hover .hint {
-    max-height: initial; }
 
 .console {
   height: 100%;
@@ -2350,5 +2341,43 @@ ul.bread-crumb {
     opacity: 0.5;
     padding: 0px 5px;
     font-weight: bold; }
+
+section.hints {
+  max-height: 40px;
+  -webkit-transition: height 500ms ease;
+  -moz-transition: height 500ms ease;
+  -o-transition: height 500ms ease;
+  transition: height 500ms ease;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  section.hints > .title {
+    display: block;
+    margin: 0px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    font-size: 1.5em; }
+  section.hints ul.hints > li {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0px 10px;
+    background-color: white; }
+    section.hints ul.hints > li .heading {
+      height: 40px;
+      line-height: 40px;
+      padding-left: 10px; }
+    section.hints ul.hints > li .hint {
+      max-height: 0px;
+      overflow: hidden;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      -webkit-transition: height 500ms ease;
+      -moz-transition: height 500ms ease;
+      -o-transition: height 500ms ease;
+      transition: height 500ms ease; }
+  section.hints ul.hints > li:hover .hint {
+    max-height: initial; }
+
+section.hints:hover {
+  max-height: initial; }
 
 /*# sourceMappingURL=index.css.map */
