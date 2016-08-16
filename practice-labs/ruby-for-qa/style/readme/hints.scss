@@ -2,7 +2,7 @@ $rowHeight : $topBarHeight;
 
 section.hints{
   max-height: $rowHeight;
-  @include transition(height $observableDuration $transition);
+  @include transition(max-height $slowDuration);
   overflow: hidden;
   border     : 1px solid $lightBorderColor;
   border-radius: $borderRadius;
@@ -37,5 +37,6 @@ section.hints{
 }
 
 section.hints:hover{
-  max-height: initial;
+  @include transition(max-height $slowDuration ease);
+  max-height: 5000vh;
 }

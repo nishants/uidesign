@@ -2381,10 +2381,10 @@ ul.bread-crumb {
 
 section.hints {
   max-height: 40px;
-  -webkit-transition: height 500ms ease;
-  -moz-transition: height 500ms ease;
-  -o-transition: height 500ms ease;
-  transition: height 500ms ease;
+  -webkit-transition: max-height 1500ms;
+  -moz-transition: max-height 1500ms;
+  -o-transition: max-height 1500ms;
+  transition: max-height 1500ms;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px; }
@@ -2410,6 +2410,10 @@ section.hints {
       border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
 section.hints:hover {
-  max-height: initial; }
+  -webkit-transition: max-height 1500ms ease;
+  -moz-transition: max-height 1500ms ease;
+  -o-transition: max-height 1500ms ease;
+  transition: max-height 1500ms ease;
+  max-height: 5000vh; }
 
 /*# sourceMappingURL=index.css.map */
