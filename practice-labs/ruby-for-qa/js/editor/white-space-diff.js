@@ -2,12 +2,12 @@
   "use strict"
   app.directive("whiteSpaceDiff", [function(){
 
-    var formatWhiteSpace = function(value){
-          return "<span>" + JSON.stringify(value).split(" ").join('</span><span class="white-space"></span><span>') + "</span>"
+    var formatWhiteSpace = function(json){
+          return "<span>" + json.split(" ").join('</span><span class="white-space"></span><span>') + "</span>"
         },
-        noWhiteSpace = function(value){
-          return JSON.stringify(value).split(" ").join("");
-        };
+        noWhiteSpace = function(json){
+          return json.split(" ").join("");
+    };
 
     return {
       restrict: "A",
@@ -17,8 +17,8 @@
         scope.$watch(attrs.whiteSpaceDiff, function(scenario){
           if(!scenario) return;
           var diffFound      = !scenario.success,
-              expected       = scenario.expected,
-              actual         = scenario.actual,
+              expected       = JSON.stringify(scenario.expected),
+              actual         = JSON.stringify(scenario.actual),
               whiteDiffFound = diffFound && (noWhiteSpace(expected) === noWhiteSpace(actual));
 
           if(whiteDiffFound){

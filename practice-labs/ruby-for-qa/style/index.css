@@ -2297,7 +2297,7 @@ body.full-screen-editor {
           .console .output .scenarios .scenario .detail .value .white-space:after {
             content: " ";
             letter-spacing: 5px;
-            background-color: rgba(3, 169, 244, 0.29); }
+            background-color: #d3f0fd; }
         .console .output .scenarios .scenario .detail label {
           width: 70px; }
     .console .output .scenario.show-detail .overview .toggle {
