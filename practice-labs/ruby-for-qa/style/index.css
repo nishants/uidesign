@@ -2106,7 +2106,10 @@ body.full-screen-editor {
     opacity: 0.5; }
 
 .task-editor, .task-overview {
-  padding: 20px; }
+  margin: 20px;
+  width: calc(100% - 40px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px; }
 
 .top-bar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -2128,8 +2131,7 @@ body.full-screen-editor {
 
 .task-editor {
   position: relative;
-  height: 100vh;
-  width: 100%;
+  height: calc(100vh - 2 * 20px);
   overflow: hidden; }
   .task-editor .editor-section {
     height: calc(100% - 40px);
@@ -2165,7 +2167,6 @@ body.full-screen-editor {
   .task-editor .editor-bar {
     height: 40px;
     line-height: 40px;
-    border-radius: 2px;
     padding: 0px 10px;
     width: 100%;
     background-color: rgba(12, 12, 12, 0.88);
@@ -2350,7 +2351,9 @@ ul.bread-crumb {
   ul.bread-crumb > li {
     display: inline-block;
     position: relative;
-    float: left; }
+    float: left;
+    line-height: 40px;
+    height: 40px; }
   ul.bread-crumb > li:first-child:before {
     content: "$";
     opacity: 0.5;

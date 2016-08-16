@@ -12,7 +12,8 @@ $editorBarFontColor: rgba(255, 255, 255, 0.77);
 $white : white;
 $playColor: #5cb85c;
 $dangerColor: rgba(255, 87, 34, 0.87);
-
+$editorBarHeight: $topBarHeight;
+$pagePadding : 2*$padding;
 $transition: ease;
 
 @import "../../../lib/config.scss";
@@ -46,7 +47,10 @@ body.full-screen-editor{
 }
 
 .task-editor, .task-overview{
-  padding : 2 * $padding;
+  margin : $pagePadding;
+  width: calc(100% - #{4 * $padding});
+  border: 1px solid $lightBorderColor;
+  border-radius : $borderRadius;
 }
 
 @import "top-bar";

@@ -5,9 +5,11 @@ ul.bread-crumb{
   overflow: hidden;
 
   >li{
-    display: inline-block;
-    position: relative;
-    float: left;
+    display    : inline-block;
+    position   : relative;
+    float      : left;
+    line-height: $editorBarHeight;
+    height     : $editorBarHeight;
   }
 
   >li:first-child:before{

@@ -1,10 +1,8 @@
-$editorBarHeight: $topBarHeight;
 $rightPaneWidth: 350px;
 
 .task-editor{
   position: relative;
-  height: 100vh;
-  width: 100%;
+  height: calc(100vh - 2 * #{$pagePadding});
   overflow: hidden;
 
   .editor-section{
@@ -51,8 +49,6 @@ $rightPaneWidth: 350px;
   .editor-bar{
     height      : $editorBarHeight;
     line-height : $editorBarHeight;
-
-    border-radius: $borderRadius/2;
 
     padding     : 0px $padding;
     width       : 100%;
