@@ -2183,6 +2183,7 @@ body.full-screen-editor {
         pointer-events: none; }
 
 .task-overview {
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.05);
   -webkit-transition: all 150ms ease;
   -moz-transition: all 150ms ease;
