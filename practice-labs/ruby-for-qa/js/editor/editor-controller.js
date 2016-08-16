@@ -14,6 +14,7 @@
           },
           console  : {
             show: false,
+            firstFailingIndex : 99999999,
             output : {
               scenarios: []
             }
@@ -49,6 +50,13 @@
               editor.save();
               uiService.runningTask = false;
               $scope.ui.splash = false;
+              editor.console.firstFailingIndex = editor.console.output.scenarios.length;
+              editor.console.output.scenarios.forEach(function(scenario, index){
+                var hasFailed       = !scenario.success,
+                    lowestIndex     = editor.console.firstFailingIndex,
+                    isFirstFailed   = hasFailed && (lowestIndex > index);
+                editor.console.firstFailingIndex = isFirstFailed ? index : lowestIndex;
+              });
             });
           }
         };

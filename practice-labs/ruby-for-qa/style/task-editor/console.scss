@@ -65,12 +65,12 @@ $consoleWidth: 500px;
       @extend .undo-list;
       .scenario{
         display: block;
-        border-bottom: 1px solid $lightBorderColor;
-        padding: $padding;
         @include transition(all $observableDuration ease);
 
         .overview{
           @extend .resize-container;
+          padding: $padding;
+          border-bottom: 1px solid $lightBorderColor;
 
           .status, .name{
             float: left;
@@ -97,9 +97,14 @@ $consoleWidth: 500px;
           overflow  : hidden;
           color     : rgba(0,0,0,0.34);
           font-size: small;
+          border-bottom: 1px solid $lightBorderColor;
+          opacity   : 0;
+          @include transition(#{max-height $quickDuration ease, opacity $quickDuration ease});
+
           $labelWidth: 70px;
           > li{
             @extend .resize-container;
+            padding: $padding $padding $padding $padding*2;
           }
 
           .value, label{
@@ -111,7 +116,6 @@ $consoleWidth: 500px;
           label{
             width: $labelWidth;
           }
-          @include transition(max-height $quickDuration ease);
         }
        }
       }
@@ -123,6 +127,7 @@ $consoleWidth: 500px;
         }
         .detail{
           max-height: 100vh;
+          opacity   : 1;
         }
       }
       .scenario.success{
