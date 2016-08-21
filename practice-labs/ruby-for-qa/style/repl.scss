@@ -12,11 +12,14 @@ $rowHeight : 30px;
     label{
       float: left;
     }
+    button.run:hover{
+      border    : 1px solid $lightBorderColor;
+    }
     button.run{
       float     : right;
       color     : $playColor;
-      border    : 1px solid $lightBorderColor;
       background-color: transparent;
+      border    : 1px solid transparent;
     }
     label,button.run{
       height      : $rowHeight;
@@ -26,12 +29,20 @@ $rowHeight : 30px;
     }
   }
 
-  #repl-editor{
-    min-height: 200px;
-    width: 100%;
-    .ace_gutter{
-      display: none;
-    }
+  .repl-editor{
+    height    :  2*$rowHeight;
+    width     : 100%;
+    border    : none;
+    padding   : $padding;
+    outline   : none;
+  }
+  .repl-output:before{
+    content: "out >";
+    padding-right: $padding;
+  }
+  .repl-output{
+    padding         : $padding;
+    border-bottom   : 1px solid $lightBorderColor;
   }
   @include transition(all 250ms ease);
 }

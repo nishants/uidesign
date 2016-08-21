@@ -9,6 +9,11 @@
           return response.data;
         })
       },
+      evaluate: function(expression){
+        return $http.put(remote.url+"/evaluate", expression).then(function(response){
+          return response.data;
+        })
+      },
       evaluateAssignment : function(taskId, solutionText){
         return $http.put(remote.url+"/tasks/:id/evaluate".replace(":id", taskId), solutionText).then(function(response){
           return response.data;

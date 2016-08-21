@@ -1,13 +1,20 @@
 (function(){
   "use strict"
-  window.app.controller("replController", ["$scope", "aceEditor", function($scope, aceEditor){
+  window.app.controller("replController", ["$scope", "aceEditor", "taskService", function($scope, aceEditor, taskService){
 
     var repl = {
-      editor: aceEditor.create("repl-editor")
+      output    : "",
+      input     : "",
+      run       : function () {
+        return taskService.evaluate(repl.input).then(function (result) {
+          repl.output = JSON.stringify(result);
+        });
+      }
     };
 
 
-    $scope.ui.repl = repl
+    $scope.repl = repl
   }]);
 
 }).call(this);
+
