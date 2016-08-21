@@ -14,8 +14,8 @@
       scene: {
         subject : "default",
         show : function(subjectId){
-          $state.go({});
-          ui.scene.subject = sceneSubjects[subjectId].name;
+          var subject = sceneSubjects[subjectId];
+          $state.go("scene.subject", {subject: subject.name});
         }
       }
     };

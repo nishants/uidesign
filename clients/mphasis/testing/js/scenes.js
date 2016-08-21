@@ -7,5 +7,9 @@
       url: "/scenes/:scene",
     });
 
+    $stateProvider.state("scene.subject", {
+      url: "/subjects/:subject",
+    });
+
   }])
 }).call(this);
