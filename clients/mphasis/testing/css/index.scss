@@ -19,10 +19,7 @@ body{
   width   : 100vw;
   overflow: auto;
   padding :$padding;
-  canvas{
-    svg{
-      display: block;
-      width : 100%;
-    }
+  .canvas{
+    @import 'svg';
   }
 }

@@ -1,0 +1,11 @@
+$textColor: #0d0d0d;
+$white    : #ffffff;
+
+svg{
+  * {
+    fill: $white;
+  }
+  text, tspan{
+    fill: $textColor;
+  }
+}

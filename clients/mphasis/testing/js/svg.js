@@ -6,7 +6,7 @@
       scope     : false,
       transclude: false,
       link      : function(scope, element, attrs){
-        element.attr("width", "100%")
+        element.attr("width", "100%");
       }
     };
   }]);
