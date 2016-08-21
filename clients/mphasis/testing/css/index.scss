@@ -1,0 +1,28 @@
+@import '../../../../lib/config';
+
+$diskHeight  : 60px;
+$borderWidth : 5px;
+$borderColor : rgba(0, 0, 0, 0.1);
+$padding     : 10px;
+
+
+*{
+  box-sizing: border-box;
+}
+body{
+  height  : 100vh;
+  width   : 100vw;
+  overflow-y: hidden;
+}
+.scene{
+  height  : 100vh;
+  width   : 100vw;
+  overflow: auto;
+  padding :$padding;
+  canvas{
+    svg{
+      display: block;
+      width : 100%;
+    }
+  }
+}
