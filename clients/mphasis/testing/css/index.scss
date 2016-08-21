@@ -10,16 +10,17 @@ $padding     : 10px;
   box-sizing: border-box;
 }
 body{
-  height  : 100vh;
-  width   : 100vw;
-  overflow-y: hidden;
+  margin  :0px;
 }
+
 .scene{
-  height  : 100vh;
-  width   : 100vw;
+  height  : 100%;
+  width   : 100%;
   overflow: auto;
-  padding :$padding;
+  padding : 0px $padding $padding $padding;
   .canvas{
     @import 'svg';
   }
 }
+
+@import 'scenes/show-app-flow';
