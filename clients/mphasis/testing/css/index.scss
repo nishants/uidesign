@@ -18,10 +18,11 @@ body{
   width   : 100%;
   overflow: auto;
   padding : 0px $padding $padding $padding;
-  .canvas{
+  .subject{
     @import 'svg';
   }
 }
 
-@import 'scenes/show-app-flow';
-@import 'scenes/blackbox-tester-view';
+@import 'scenes/blackbox';
+@import 'scenes/blackbox-tester';
+@import 'scenes/subjects';
