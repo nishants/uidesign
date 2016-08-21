@@ -5,11 +5,13 @@
     <title>Testing@Mphasis</title>
     <link href="css/index.css" rel="stylesheet" >
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/scenes.js"></script>
     <script src="js/svg.js"></script>
 </head>
-<body ng-app="presenter">
-    <div class="scene show-app-flow">
+<body ng-app="presenter" ng-controller="uiController">
+    <div class="scene {{ui.state.current.name}}" ng-class="">
         <div class="canvas" ng-include="'images/canvas.svg'"></div>
     </div>
 </body>

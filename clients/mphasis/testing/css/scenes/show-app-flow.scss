@@ -1,7 +1,7 @@
 .scene.show-app-flow{
   svg{
     g#Ruby-Env, g#Test-Data, g#Stub, g#Feature-Files{
-      display: none;
+      opacity: 0;
     }
   }
 }
