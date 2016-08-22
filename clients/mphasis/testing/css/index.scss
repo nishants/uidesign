@@ -4,7 +4,7 @@ $diskHeight  : 60px;
 $borderWidth : 5px;
 $borderColor : rgba(0, 0, 0, 0.1);
 $padding     : 10px;
-
+$transition  : ease;
 
 *{
   box-sizing: border-box;
@@ -15,7 +15,6 @@ body{
 
 .scene{
   height  : 100%;
-  width   : 100%;
   overflow: auto;
   padding : 0px $padding $padding $padding;
   .subject{

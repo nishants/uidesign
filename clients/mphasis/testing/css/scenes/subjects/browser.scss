@@ -3,5 +3,10 @@
     g#Canvas > g:not(#Browser){
       opacity: 0;
     }
+    g#Browser{
+      g#action{
+        opacity: 0;
+      }
+    }
   }
 }
