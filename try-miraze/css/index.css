@@ -2,7 +2,7 @@
 label {
   cursor: inherit; }
 
-ul.undo-list, .editor ul.tabs, ul.files-explorer, ul.files-explorer .directory ul.files, .request-editor .target .url ul.url-param, .headers > ul {
+ul.undo-list, .editor ul.tabs, ul.files-explorer, ul.files-explorer .directory ul.files, .headers > ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -15,7 +15,7 @@ input {
   box-sizing: border-box;
   border: none; }
 
-.resize-container:after, .editor ul.tabs:after, .request-editor .target:after, .request-editor .target .url:after, .request-editor .target .url .url-param:after, .request-editor .target .url .url-param > li:after, .headers > ul .header:after {
+.resize-container:after, .editor ul.tabs:after, .request-editor .target:after, .request-editor .target .url:after, .headers > ul .header:after {
   content: "";
   display: table;
   clear: both; }
@@ -32,7 +32,7 @@ input {
   src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-.fa, .tabs .tab .tab-head .close, ul.files-explorer .directory .icon, ul.files-explorer .directory > label:before, ul.files-explorer .directory .files .file:before {
+.fa, .tabs .tab .tab-head .close, ul.files-explorer .directory .icon, ul.files-explorer .directory > label:before, ul.files-explorer .directory .files .file:before, .headers > ul .header .remove {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -89,9 +89,9 @@ input {
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left, .tabs .tab .tab-head .fa-pull-left.close, ul.files-explorer .directory .fa-pull-left.icon, ul.files-explorer .directory > label.fa-pull-left:before, ul.files-explorer .directory .files .fa-pull-left.file:before {
+.fa.fa-pull-left, .tabs .tab .tab-head .fa-pull-left.close, ul.files-explorer .directory .fa-pull-left.icon, ul.files-explorer .directory > label.fa-pull-left:before, ul.files-explorer .directory .files .fa-pull-left.file:before, .headers > ul .header .fa-pull-left.remove {
   margin-right: .3em; }
-.fa.fa-pull-right, .tabs .tab .tab-head .fa-pull-right.close, ul.files-explorer .directory .fa-pull-right.icon, ul.files-explorer .directory > label.fa-pull-right:before, ul.files-explorer .directory .files .fa-pull-right.file:before {
+.fa.fa-pull-right, .tabs .tab .tab-head .fa-pull-right.close, ul.files-explorer .directory .fa-pull-right.icon, ul.files-explorer .directory > label.fa-pull-right:before, ul.files-explorer .directory .files .fa-pull-right.file:before, .headers > ul .header .fa-pull-right.remove {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -101,9 +101,9 @@ input {
 .pull-left {
   float: left; }
 
-.fa.pull-left, .tabs .tab .tab-head .pull-left.close, ul.files-explorer .directory .pull-left.icon, ul.files-explorer .directory > label.pull-left:before, ul.files-explorer .directory .files .pull-left.file:before {
+.fa.pull-left, .tabs .tab .tab-head .pull-left.close, ul.files-explorer .directory .pull-left.icon, ul.files-explorer .directory > label.pull-left:before, ul.files-explorer .directory .files .pull-left.file:before, .headers > ul .header .pull-left.remove {
   margin-right: .3em; }
-.fa.pull-right, .tabs .tab .tab-head .pull-right.close, ul.files-explorer .directory .pull-right.icon, ul.files-explorer .directory > label.pull-right:before, ul.files-explorer .directory .files .pull-right.file:before {
+.fa.pull-right, .tabs .tab .tab-head .pull-right.close, ul.files-explorer .directory .pull-right.icon, ul.files-explorer .directory > label.pull-right:before, ul.files-explorer .directory .files .pull-right.file:before, .headers > ul .header .pull-right.remove {
   margin-left: .3em; }
 
 .fa-spin {
@@ -232,6 +232,7 @@ input {
 .fa-remove:before,
 .fa-close:before,
 .tabs .tab .tab-head .close:before,
+.headers > ul .header .remove:before,
 .fa-times:before {
   content: ""; }
 
@@ -2232,28 +2233,10 @@ ul.files-explorer {
       padding: 0px 10px;
       border: 1px solid #F8F8F8; }
       .request-editor .target .url .method, .request-editor .target .url .url-base, .request-editor .target .url .url-param {
-        float: left; }
-      .request-editor .target .url .url-param > li {
-        float: left; }
-        .request-editor .target .url .url-param > li .name, .request-editor .target .url .url-param > li .value {
-          float: left;
-          height: 35px;
-          line-height: 35px;
-          overflow: hidden; }
-        .request-editor .target .url .url-param > li .name:after {
-          content: "="; }
-        .request-editor .target .url .url-param > li .name {
-          padding-right: 5px;
-          text-align: center; }
-        .request-editor .target .url .url-param > li .value {
-          max-width: 50px;
-          padding: 0px;
-          border: 1px solid #F8F8F8;
-          text-align: center; }
-      .request-editor .target .url .url-param > li:first-child > .name:before {
-        content: "?"; }
-      .request-editor .target .url .url-param > li:not(:last-child) > :after {
-        content: "&"; }
+        float: left;
+        height: 35px;
+        line-height: 35px;
+        padding: 0px 10px; }
   .request-editor .jsoneditor.jsoneditor-mode-code,
   .request-editor .jsoneditor-outer,
   .request-editor div.jsoneditor-tree,
@@ -2269,11 +2252,20 @@ ul.files-explorer {
 .headers > ul .header {
   display: block;
   border-bottom: 1px solid #F8F8F8; }
-  .headers > ul .header .name, .headers > ul .header .value {
+  .headers > ul .header .name, .headers > ul .header .value, .headers > ul .header .remove {
     float: left;
-    width: 50%; }
+    height: 35px;
+    line-height: 35px; }
+  .headers > ul .header .name, .headers > ul .header .value {
+    width: calc(50% - 25px); }
   .headers > ul .header .name:after {
     content: ":"; }
+  .headers > ul .header .remove {
+    width: 50px;
+    opacity: 0.5;
+    text-align: center;
+    font-size: large;
+    color: #ff3748; }
 .headers button.add {
   height: 35px;
   line-height: 35px;

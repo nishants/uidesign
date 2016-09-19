@@ -5,12 +5,7 @@
         <div class="url">
             <span class="method">POST</span>
             <span class="url-base">/users</span>
-            <ul class="url-param">
-                <li  ng-repeat="param in request.url.params">
-                    <label class="name"  ng-bind="param.name"></label>
-                    <input class="value" ng-model="param.value">
-                </li>
-            </ul>
+            <input class="url-param" placeholder="?" ng-show="request.query">
         </div>
     </div>
 
@@ -21,13 +16,13 @@
                 <input class="name"  value="Content-Type"  disabled="disabled">
                 <input class="value" value="application/json"  disabled="disabled">
             </li>
-            <li class="header">
-                <input class="name"   placeholder="header" >
-
-                <input class="value"  placeholder="value" >
+            <li class="header custom" ng-repeat="header in request.headers">
+                <input class="name"   placeholder="header" ng-model="header.name">
+                <input class="value"  placeholder="value" ng-model="header.value">
+                <span class="remove"  ng-click="request.headers.splice($index, 1)"></span>
             </li>
             <li>
-                <button class="add">Add</button>
+                <button class="add" ng-click="request.headers.push({name: null, value: null})">Add</button>
             </li>
         </ul>
     </div>

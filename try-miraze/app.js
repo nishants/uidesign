@@ -88,9 +88,9 @@
     $scope.requestBody = requestBody
 
     $scope.request = {
-      url : {
-        params : [{name: "field-one", value: "one"},{name: "field-two", value: "two"}]
-      }
+      query : null,
+      headers: [],
+      url : {}
     }
   })
 }).call(this);

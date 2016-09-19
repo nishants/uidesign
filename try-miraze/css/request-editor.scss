@@ -31,40 +31,9 @@ $requestBodyMinHeight : 300px;
       @extend .resize-container;
       .method,.url-base, .url-param{
         float: left;
-      }
-      .url-param{
-        @extend .undo-list;
-        @extend .resize-container;
-        > li {
-          float: left;
-          @extend .resize-container;
-          .name, .value {
-            float: left;
-            height: $rowHeight;
-            line-height: $rowHeight;
-            overflow: hidden;
-          }
-          .name:after{
-            content: "=";
-          }
-          .name{
-            padding-right: $padding/2;
-            text-align: center;
-          }
-          .value{
-            max-width: 50px ;
-            padding: 0px;
-            border: 1px solid $solidColor;
-            text-align: center;
-          }
-        }
-        >li:first-child > .name:before{
-          content: "?";
-        }
-        >li:not(:last-child) >:after{
-          content: "&";
-        }
-
+        height: $rowHeight;
+        line-height: $rowHeight;
+        padding : 0px $padding;
       }
 
     }

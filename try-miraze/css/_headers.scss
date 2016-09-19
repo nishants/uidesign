@@ -1,3 +1,5 @@
+$deleteHeaderWidth : 50px;
+
 .headers{
   label , > ul > li > input{
     display: block;
@@ -12,12 +14,25 @@
       display: block;
       border-bottom: 1px solid $solidColor;
       @extend .resize-container;
-      .name, .value{
+      .name, .value, .remove{
         float: left;
-        width: 50%;
+        height: $rowHeight;
+        line-height: $rowHeight;
+      }
+      .name, .value{
+        width: calc(50% - #{$deleteHeaderWidth/2});
       }
       .name:after{
         content: ":"
+      }
+      .remove{
+        width: $deleteHeaderWidth;
+        opacity: 0.5;
+        text-align: center;
+        font-size: large;
+        color: $dangerColor;
+        @extend .fa;
+        @extend .fa-close;
       }
     }
   }
