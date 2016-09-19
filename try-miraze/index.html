@@ -6,10 +6,20 @@
           content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="css/index.css">
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+
+    <script src="lib/lodash-4.13.1.min.js"></script>
+    <script src="lib/jsoneditor.min.js"></script>
+    <script src="lib/ng-jsoneditor.min.js"></script>
+    <link rel="stylesheet" href="lib/jsoneditor.css">
+
+    <script src="lib/ace-1.1.8.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+
 </head>
 
-<body ng-app>
+<body ng-app="miraze-play" ng-controller="ui-controller">
     <div class="miraze-play" ng-init="tabs = {current: 2}">
         <div class="root-dir">
             <h3>--root-dir</h3>
@@ -75,6 +85,11 @@
                                 </ul>
                             </div>
 
+                            <div class="request-body-editor">
+                                <div ng-jsoneditor  ="requestBody.onLoad"
+                                     ng-model       ="requestBody.content"
+                                     options        ="requestBody.options"></div>
+                            </div>
 <pre>
 "soundtrack": {
   "mode"   : 0,
@@ -83,6 +98,8 @@
 "slideWidth"  : 1024,
 "slideHeight" : 768,
 </pre>
+
+
 
                         </div>
                     </div>
