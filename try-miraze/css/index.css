@@ -48,17 +48,40 @@ body {
     display: block;
     height: 100%;
     width: 100%; }
-    .editor ul.tabs > li .tab-head {
-      position: relative;
-      width: 300px;
-      height: 35px;
-      text-align: center;
-      background-color: #F8F8F8; }
   .editor ul.tabs > li:nth-child(2) > .tab-head {
     left: 300px; }
   .editor ul.tabs > li:nth-child(3) > .tab-head {
     left: 600px; }
   .editor ul.tabs > li:nth-child(4) > .tab-head {
     left: 900px; }
+
+.tabs {
+  position: relative; }
+  .tabs .tab .tab-head {
+    position: relative;
+    top: 1px;
+    width: 300px;
+    height: 35px;
+    border: 1px solid #3b3b3b;
+    padding: 0px 10px;
+    line-height: 35px;
+    background-color: #F8F8F8; }
+    .tabs .tab .tab-head .close {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      display: block;
+      height: 100%;
+      padding: 0px 10px;
+      line-height: inherit; }
+  .tabs .tab .tab-body {
+    height: calc(100% - 35px);
+    border: 1px solid #3b3b3b;
+    background-color: white; }
+  .tabs .tab.selected .tab-head {
+    border-bottom: 0px;
+    background-color: white; }
+  .tabs .tab-head:hover {
+    background-color: green; }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,46 @@
+$contentColor: white;
+$borderWidth : 1px;
+
+.tabs{
+  position: relative;
+
+   .tab {
+     .tab-head{
+       position    : relative;
+       top         : $borderWidth;
+       width       : $tabHeadWidth;
+       height      : $rowHeight;
+       border      : 1px solid $borderColor;
+       padding     : 0px $padding;
+       line-height :$rowHeight ;
+       background-color: $solidColor;
+
+       .close{
+         position: absolute;
+         top     : 0px;
+         right   : 0px;
+         display : block;
+         height  : 100%;
+         padding : 0px $padding;
+         line-height  : inherit;
+       }
+     }
+
+     .tab-body{
+       height   : calc(100% - #{$rowHeight});
+       border   : 1px solid $borderColor;
+       background-color: $contentColor;
+     }
+   }
+
+  .tab.selected{
+    .tab-head{
+      border-bottom: 0px;
+      background-color: $contentColor;
+    }
+  }
+
+  .tab-head:hover{
+    background-color: green;
+  }
+ }

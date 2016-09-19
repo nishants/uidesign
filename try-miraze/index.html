@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="miraze-play">
+<html ng-app>
 
 <head>
     <meta name="viewport"
@@ -30,19 +30,20 @@
             </ul>
         </div>
         <div class="editor">
-            <ul class="tabs">
-                <li>
-                    <div class="tab-head">--files/expressions.json</div>
+            <ul class="tabs" ng-init="showTab = 2">
+                <li class="tab" ng-click="showTab = 0" ng-class="{'selected' : showTab == 0}">
+                    <div class="tab-head">--files/expressions.json<i class="close fa fa-close"></i></div>
                     <div class="tab-body"></div>
                 </li>
-                <li>
-                    <div class="tab-head">mappings/expressions.json</div>
+                <li class="tab" ng-click="showTab = 1" ng-class="{'selected' : showTab == 1}">
+                    <div class="tab-head">mappings/expressions.json<i class="close fa fa-close"></i></div>
                     <div class="tab-body"></div>
                 </li>
-                <li>
-                    <div class="tab-head">Run</div>
+                <li class="tab selected" ng-click="showTab = 2" ng-class="{'selected' : showTab == 2}">
+                    <div class="tab-head">Run<i class="close fa fa-close"></i></div>
                     <div class="tab-body"></div>
                 </li>
+                <li class="tab-body-border"></li>
             </ul>
         </div>
 

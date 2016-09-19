@@ -16,14 +16,6 @@ $tabHeadWidth: 300px;
       display : block;
       height  : 100%;
       width   : 100%;
-
-      .tab-head{
-        position    : relative;
-        width       : $tabHeadWidth;
-        height      : $rowHeight;
-        text-align  : center;
-        background-color: $solidColor;
-      }
     }
 
     >li:nth-child(2) > .tab-head{
