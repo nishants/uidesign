@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300);
-ul.undo-list {
+ul.undo-list, .editor ul.tabs {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -13,7 +13,7 @@ input {
   box-sizing: border-box;
   border: none; }
 
-.resize-container:after, .editor .tabs:after {
+.resize-container:after, .editor ul.tabs:after {
   content: "";
   display: table;
   clear: both; }
@@ -36,16 +36,29 @@ body {
   background-color: #F8F8F8;
   width: 300px; }
 
-.editor .tabs {
+.editor ul.tabs {
   position: relative;
   height: 100%;
-  width: 100%; }
-  .editor .tabs > li {
+  width: 100%;
+  padding: 10px; }
+  .editor ul.tabs > li {
     position: absolute;
     left: 0px;
     top: 0px;
     display: block;
     height: 100%;
     width: 100%; }
+    .editor ul.tabs > li .tab-head {
+      position: relative;
+      width: 300px;
+      height: 35px;
+      text-align: center;
+      background-color: #F8F8F8; }
+  .editor ul.tabs > li:nth-child(2) > .tab-head {
+    left: 300px; }
+  .editor ul.tabs > li:nth-child(3) > .tab-head {
+    left: 600px; }
+  .editor ul.tabs > li:nth-child(4) > .tab-head {
+    left: 900px; }
 
 /*# sourceMappingURL=index.css.map */
