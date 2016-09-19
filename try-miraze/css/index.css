@@ -2270,4 +2270,12 @@ ul.files-explorer {
   .mapping-editor.json-editor .ace_editor.ace-jsoneditor {
     min-height: 100vh; }
 
+.template-editor.json-editor {
+  height: 100%; }
+  .template-editor.json-editor .jsoneditor,
+  .template-editor.json-editor .jsoneditor-outer,
+  .template-editor.json-editor .ace_scroller,
+  .template-editor.json-editor .ace_editor.ace-jsoneditor {
+    min-height: 100vh; }
+
 /*# sourceMappingURL=index.css.map */

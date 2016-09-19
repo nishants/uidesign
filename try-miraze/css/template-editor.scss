@@ -1,0 +1,10 @@
+.template-editor.json-editor{
+
+  height: 100%;
+  .jsoneditor,
+  .jsoneditor-outer,
+  .ace_scroller,
+  .ace_editor.ace-jsoneditor{
+    min-height: 100vh;
+  }
+}

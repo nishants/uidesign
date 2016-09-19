@@ -42,7 +42,7 @@
             <ul class="tabs">
                 <li class="tab" ng-click="tabs.current = 0" ng-class="{'selected' : tabs.current == 0}">
                     <div class="tab-head">--files/expressions.json<i class="close"></i></div>
-                    <div class="tab-body">tab1</div>
+                    <div class="tab-body" ng-include="'templates/template-editor.html'"></div>
                 </li>
                 <li class="tab mapping-editor" ng-click="tabs.current = 1" ng-class="{'selected' : tabs.current == 1}">
                     <div class="tab-head">mappings/expressions.json<i class="close"></i></div>
