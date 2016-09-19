@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../lib/normalize-3.0.2.css">
     <link rel="stylesheet" href="css/index.css">
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angular-1.4.3.js"></script>
 
     <script src="lib/lodash-4.13.1.min.js"></script>
     <script src="lib/jsoneditor.min.js"></script>
@@ -44,54 +44,13 @@
                     <div class="tab-head">--files/expressions.json<i class="close"></i></div>
                     <div class="tab-body">tab1</div>
                 </li>
-                <li class="tab" ng-click="tabs.current = 1" ng-class="{'selected' : tabs.current == 1}">
+                <li class="tab mapping-editor" ng-click="tabs.current = 1" ng-class="{'selected' : tabs.current == 1}">
                     <div class="tab-head">mappings/expressions.json<i class="close"></i></div>
-                    <div class="tab-body">tab2</div>
+                    <div class="tab-body" ng-include="'templates/mapping-editor.html'"></div>
                 </li>
                 <li class="tab runner selected" ng-click="tabs.current = 2" ng-class="{'selected' : tabs.current == 2}">
                     <div class="tab-head">Runner<i class="close"></i></div>
-                    <div class="tab-body">
-                        <div class="request-editor">
-
-                            <div class="target">
-                                <div class="url">
-                                    <span class="method">POST</span>
-                                    <span class="url-base">/users</span>
-                                    <ul class="url-param">
-                                        <li class="name">?field-one=</li>
-                                        <li class="value">one</li>
-                                        <li class="name">&field-two=</li>
-                                        <li class="value">two</li>
-                                    </ul>
-                                </div>
-                                <button class="send">Send</button>
-                            </div>
-
-                            <div class="headers">
-                                <label>Request Headers</label>
-                                <ul>
-                                    <li class="header">
-                                        <input class="name"  value="Content-Type"  disabled="disabled">
-                                        <input class="value" value="application/json"  disabled="disabled">
-                                    </li>
-                                    <li class="header">
-                                        <input class="name"   placeholder="header" >
-
-                                        <input class="value"  placeholder="value" >
-                                    </li>
-                                    <li>
-                                        <button class="add">Add</button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="request-body-editor json-editor">
-                                <div ng-jsoneditor  ="requestBody.onLoad"
-                                     ng-model       ="requestBody.content"
-                                     options        ="requestBody.options"></div>
-                            </div>
-
-                        </div>
+                    <div class="tab-body" ng-include="'templates/runner.html'">
                     </div>
                 </li>
             </ul>

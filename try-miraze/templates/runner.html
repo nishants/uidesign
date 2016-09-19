@@ -1,0 +1,41 @@
+<div class="request-editor">
+
+    <div class="target">
+        <div class="url">
+            <span class="method">POST</span>
+            <span class="url-base">/users</span>
+            <ul class="url-param">
+                <li class="name">?field-one=</li>
+                <li class="value">one</li>
+                <li class="name">&field-two=</li>
+                <li class="value">two</li>
+            </ul>
+        </div>
+        <button class="send">Send</button>
+    </div>
+
+    <div class="headers">
+        <label>Request Headers</label>
+        <ul>
+            <li class="header">
+                <input class="name"  value="Content-Type"  disabled="disabled">
+                <input class="value" value="application/json"  disabled="disabled">
+            </li>
+            <li class="header">
+                <input class="name"   placeholder="header" >
+
+                <input class="value"  placeholder="value" >
+            </li>
+            <li>
+                <button class="add">Add</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="request-body-editor json-editor">
+        <div ng-jsoneditor  ="requestBody.onLoad"
+             ng-model       ="requestBody.content"
+             options        ="requestBody.options"></div>
+    </div>
+
+</div>
