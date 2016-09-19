@@ -15,7 +15,7 @@ input {
   box-sizing: border-box;
   border: none; }
 
-.resize-container:after, .editor ul.tabs:after, .request-editor .target:after, .request-editor .target .url:after, .request-editor .target .url .url-param:after, .headers > ul .header:after {
+.resize-container:after, .editor ul.tabs:after, .request-editor .target:after, .request-editor .target .url:after, .request-editor .target .url .url-param:after, .request-editor .target .url .url-param > li:after, .headers > ul .header:after {
   content: "";
   display: table;
   clear: both; }
@@ -2212,7 +2212,7 @@ ul.files-explorer {
         opacity: 0.8; }
 
 .request-editor {
-  width: 500px;
+  width: 100%;
   border: 1px solid #c5c5c5;
   padding: 10px;
   border-radius: 5px; }
@@ -2227,11 +2227,33 @@ ul.files-explorer {
     .request-editor .target .send {
       width: 100px; }
     .request-editor .target .url {
-      width: calc(100% - 100px); }
+      width: calc(100% - 120px);
+      margin-left: 20px;
+      padding: 0px 10px;
+      border: 1px solid #F8F8F8; }
       .request-editor .target .url .method, .request-editor .target .url .url-base, .request-editor .target .url .url-param {
         float: left; }
       .request-editor .target .url .url-param > li {
         float: left; }
+        .request-editor .target .url .url-param > li .name, .request-editor .target .url .url-param > li .value {
+          float: left;
+          height: 35px;
+          line-height: 35px;
+          overflow: hidden; }
+        .request-editor .target .url .url-param > li .name:after {
+          content: "="; }
+        .request-editor .target .url .url-param > li .name {
+          padding-right: 5px;
+          text-align: center; }
+        .request-editor .target .url .url-param > li .value {
+          max-width: 50px;
+          padding: 0px;
+          border: 1px solid #F8F8F8;
+          text-align: center; }
+      .request-editor .target .url .url-param > li:first-child > .name:before {
+        content: "?"; }
+      .request-editor .target .url .url-param > li:not(:last-child) > :after {
+        content: "&"; }
   .request-editor .jsoneditor.jsoneditor-mode-code,
   .request-editor .jsoneditor-outer,
   .request-editor div.jsoneditor-tree,

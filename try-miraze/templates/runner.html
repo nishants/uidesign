@@ -1,17 +1,17 @@
 <div class="request-editor">
 
     <div class="target">
+        <button class="send">Send</button>
         <div class="url">
             <span class="method">POST</span>
             <span class="url-base">/users</span>
             <ul class="url-param">
-                <li class="name">?field-one=</li>
-                <li class="value">one</li>
-                <li class="name">&field-two=</li>
-                <li class="value">two</li>
+                <li  ng-repeat="param in request.url.params">
+                    <label class="name"  ng-bind="param.name"></label>
+                    <input class="value" ng-model="param.value">
+                </li>
             </ul>
         </div>
-        <button class="send">Send</button>
     </div>
 
     <div class="headers">
