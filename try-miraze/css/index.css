@@ -41,10 +41,10 @@ body {
   height: 100%;
   width: 100%;
   padding: 10px; }
-  .editor ul.tabs > li {
+  .editor ul.tabs .tab {
     position: absolute;
     left: 0px;
-    top: 0px;
+    top: 35px;
     display: block;
     height: 100%;
     width: 100%; }
@@ -59,13 +59,14 @@ body {
   position: relative; }
   .tabs .tab .tab-head {
     position: relative;
-    top: 1px;
+    top: -34px;
     width: 300px;
     height: 35px;
-    border: 1px solid #3b3b3b;
+    border: 1px solid #c5c5c5;
     padding: 0px 10px;
     line-height: 35px;
-    background-color: #F8F8F8; }
+    background-color: #F8F8F8;
+    z-index: 1; }
     .tabs .tab .tab-head .close {
       position: absolute;
       top: 0px;
@@ -75,13 +76,20 @@ body {
       padding: 0px 10px;
       line-height: inherit; }
   .tabs .tab .tab-body {
+    position: relative;
+    top: -35px;
     height: calc(100% - 35px);
-    border: 1px solid #3b3b3b;
-    background-color: white; }
+    border: 1px solid #c5c5c5;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none; }
   .tabs .tab.selected .tab-head {
-    border-bottom: 0px;
+    border-bottom: 1px solid transparent;
     background-color: white; }
-  .tabs .tab-head:hover {
+  .tabs .tab.selected .tab-body {
+    opacity: 1;
+    pointer-events: all; }
+  .tabs .tab .tab-head:hover {
     background-color: green; }
 
 /*# sourceMappingURL=index.css.map */

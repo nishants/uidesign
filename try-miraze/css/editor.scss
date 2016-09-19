@@ -9,10 +9,10 @@ $tabHeadWidth: 300px;
     width   : 100%;
     padding : $padding;
 
-    >li{
+    .tab{
       position: absolute;
       left    : 0px;
-      top     : 0px;
+      top     : $rowHeight;
       display : block;
       height  : 100%;
       width   : 100%;

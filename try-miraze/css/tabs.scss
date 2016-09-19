@@ -7,13 +7,14 @@ $borderWidth : 1px;
    .tab {
      .tab-head{
        position    : relative;
-       top         : $borderWidth;
+       top         : $borderWidth - $rowHeight;
        width       : $tabHeadWidth;
        height      : $rowHeight;
-       border      : 1px solid $borderColor;
+       border      : 1px solid $voidColor;
        padding     : 0px $padding;
        line-height :$rowHeight ;
        background-color: $solidColor;
+       z-index      : 1;
 
        .close{
          position: absolute;
@@ -27,20 +28,29 @@ $borderWidth : 1px;
      }
 
      .tab-body{
+       position: relative;
+       top: -$rowHeight;
        height   : calc(100% - #{$rowHeight});
-       border   : 1px solid $borderColor;
+       border   : 1px solid $voidColor;
        background-color: $contentColor;
+       opacity      : 0;
+       pointer-events : none;
      }
    }
 
   .tab.selected{
     .tab-head{
-      border-bottom: 0px;
+      border-bottom: 1px solid transparent;
       background-color: $contentColor;
     }
+    .tab-body{
+      opacity      : 1;
+      pointer-events : all;
+    }
+
   }
 
-  .tab-head:hover{
+  .tab  .tab-head:hover{
     background-color: green;
   }
  }
