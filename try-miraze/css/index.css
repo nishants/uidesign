@@ -2248,4 +2248,18 @@ ul.files-explorer {
   padding: 0px 50px;
   margin: 5px; }
 
+.json-editor .jsoneditor-menu {
+  display: none; }
+.json-editor .jsoneditor {
+  border: 1px solid transparent; }
+.json-editor .jsoneditor.jsoneditor-mode-code,
+.json-editor .jsoneditor-outer,
+.json-editor div.jsoneditor-tree,
+.json-editor .ace_scroller,
+.json-editor .ace_editor.ace-jsoneditor {
+  min-height: 300px; }
+.json-editor .ace_gutter, .json-editor .ace_gutter-cell {
+  background: white !important;
+  opacity: 1; }
+
 /*# sourceMappingURL=index.css.map */

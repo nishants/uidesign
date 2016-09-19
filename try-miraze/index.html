@@ -71,13 +71,13 @@
                                 <label>Request Headers</label>
                                 <ul>
                                     <li class="header">
-                                        <input class="name"  value="Content-Type" placeholder="name" disabled="disabled">
-                                        <input class="value" value="application/json" placeholder="name" disabled="disabled">
+                                        <input class="name"  value="Content-Type"  disabled="disabled">
+                                        <input class="value" value="application/json"  disabled="disabled">
                                     </li>
                                     <li class="header">
-                                        <input class="name"   placeholder="name" >
+                                        <input class="name"   placeholder="header" >
 
-                                        <input class="value"  placeholder="name" >
+                                        <input class="value"  placeholder="value" >
                                     </li>
                                     <li>
                                         <button class="add">Add</button>
@@ -85,21 +85,11 @@
                                 </ul>
                             </div>
 
-                            <div class="request-body-editor">
+                            <div class="request-body-editor json-editor">
                                 <div ng-jsoneditor  ="requestBody.onLoad"
                                      ng-model       ="requestBody.content"
                                      options        ="requestBody.options"></div>
                             </div>
-<pre>
-"soundtrack": {
-  "mode"   : 0,
-  "volume" : 1
-},
-"slideWidth"  : 1024,
-"slideHeight" : 768,
-</pre>
-
-
 
                         </div>
                     </div>

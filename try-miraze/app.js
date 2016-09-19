@@ -17,7 +17,12 @@
       },
       content: {
         "data": {
-          "message": "Hello World"
+          "soundtrack": {
+            "mode"   : 0,
+            "volume" : 1
+          },
+          "slideWidth"  : 1024,
+          "slideHeight" : 768,
         },
 
       },
