@@ -13,7 +13,7 @@ input {
   box-sizing: border-box;
   border: none; }
 
-.resize-container:after {
+.resize-container:after, .editor .tabs:after {
   content: "";
   display: table;
   clear: both; }
@@ -35,5 +35,17 @@ body {
 .miraze-play .root-dir {
   background-color: #F8F8F8;
   width: 300px; }
+
+.editor .tabs {
+  position: relative;
+  height: 100%;
+  width: 100%; }
+  .editor .tabs > li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: block;
+    height: 100%;
+    width: 100%; }
 
 /*# sourceMappingURL=index.css.map */
