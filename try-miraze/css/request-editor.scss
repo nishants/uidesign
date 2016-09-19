@@ -1,4 +1,6 @@
 $requestEditorWidth : 500px;
+$requestBodyMinHeight : 300px;
+
 .request-editor{
   width: $requestEditorWidth;
   border: 1px solid $voidColor;
@@ -37,5 +39,13 @@ $requestEditorWidth : 500px;
 
     }
 
+  }
+
+  .jsoneditor.jsoneditor-mode-code,
+  .jsoneditor-outer,
+  div.jsoneditor-tree,
+  .ace_scroller,
+  .ace_editor.ace-jsoneditor{
+    min-height: $requestBodyMinHeight;
   }
 }

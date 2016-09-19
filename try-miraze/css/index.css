@@ -2228,6 +2228,12 @@ ul.files-explorer {
         float: left; }
       .request-editor .target .url .url-param > li {
         float: left; }
+  .request-editor .jsoneditor.jsoneditor-mode-code,
+  .request-editor .jsoneditor-outer,
+  .request-editor div.jsoneditor-tree,
+  .request-editor .ace_scroller,
+  .request-editor .ace_editor.ace-jsoneditor {
+    min-height: 300px; }
 
 .headers label, .headers > ul > li > input {
   display: block;
@@ -2252,14 +2258,16 @@ ul.files-explorer {
   display: none; }
 .json-editor .jsoneditor {
   border: 1px solid transparent; }
-.json-editor .jsoneditor.jsoneditor-mode-code,
-.json-editor .jsoneditor-outer,
-.json-editor div.jsoneditor-tree,
-.json-editor .ace_scroller,
-.json-editor .ace_editor.ace-jsoneditor {
-  min-height: 300px; }
 .json-editor .ace_gutter, .json-editor .ace_gutter-cell {
   background: white !important;
   opacity: 1; }
+
+.mapping-editor.json-editor {
+  height: 100%; }
+  .mapping-editor.json-editor .jsoneditor,
+  .mapping-editor.json-editor .jsoneditor-outer,
+  .mapping-editor.json-editor .ace_scroller,
+  .mapping-editor.json-editor .ace_editor.ace-jsoneditor {
+    min-height: 100vh; }
 
 /*# sourceMappingURL=index.css.map */

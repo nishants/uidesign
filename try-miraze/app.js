@@ -30,6 +30,34 @@
         console.log("loaded");
       }
     };
+    var mappingFile = {
+      options: {
+        mode: 'code',
+        change: function(){
+          console.log("code changed");
+        },
+        onLoad: function (instance) {
+          requestBody.editor = instance;
+          instance.expandAll();
+        }
+      },
+      content: {
+        "data": {
+          "soundtrack": {
+            "mode"   : 0,
+            "volume" : 1
+          },
+          "slideWidth"  : 1024,
+          "slideHeight" : 768,
+        },
+
+      },
+      onLoad: function () {
+        console.log("loaded");
+      }
+    };
+
+    $scope.mappingFile = mappingFile
     $scope.requestBody = requestBody
   })
 }).call(this);

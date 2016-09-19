@@ -1,4 +1,3 @@
-$requestBodyMinHeight : 300px;
 
 .json-editor{
   .jsoneditor-menu{
@@ -8,13 +7,6 @@ $requestBodyMinHeight : 300px;
     border : 1px solid transparent;
   }
 
-  .jsoneditor.jsoneditor-mode-code,
-  .jsoneditor-outer,
-  div.jsoneditor-tree,
-  .ace_scroller,
-  .ace_editor.ace-jsoneditor{
-    min-height: $requestBodyMinHeight;
-  }
   .ace_gutter, .ace_gutter-cell {
     background: white !important;
     opacity: 1;
