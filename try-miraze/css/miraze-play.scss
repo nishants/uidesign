@@ -10,6 +10,7 @@ $fileExplorerWidth: 300px;
   }
 
   .root-dir{
+    padding: $padding;
     background-color: $solidColor;
     width: $fileExplorerWidth;
   }

@@ -1,6 +1,4 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300);
 ul.undo-list, .editor ul.tabs, ul.files-explorer, ul.files-explorer .directory ul.files {
   list-style: none;
   margin: 0px;
@@ -31,7 +29,7 @@ input {
   src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-.fa, .tabs .tab .tab-head .close, ul.files-explorer .directory .icon, ul.files-explorer .directory > label:before {
+.fa, .tabs .tab .tab-head .close, ul.files-explorer .directory .icon, ul.files-explorer .directory > label:before, ul.files-explorer .directory .files .file:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -88,9 +86,9 @@ input {
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left, .tabs .tab .tab-head .fa-pull-left.close, ul.files-explorer .directory .fa-pull-left.icon, ul.files-explorer .directory > label.fa-pull-left:before {
+.fa.fa-pull-left, .tabs .tab .tab-head .fa-pull-left.close, ul.files-explorer .directory .fa-pull-left.icon, ul.files-explorer .directory > label.fa-pull-left:before, ul.files-explorer .directory .files .fa-pull-left.file:before {
   margin-right: .3em; }
-.fa.fa-pull-right, .tabs .tab .tab-head .fa-pull-right.close, ul.files-explorer .directory .fa-pull-right.icon, ul.files-explorer .directory > label.fa-pull-right:before {
+.fa.fa-pull-right, .tabs .tab .tab-head .fa-pull-right.close, ul.files-explorer .directory .fa-pull-right.icon, ul.files-explorer .directory > label.fa-pull-right:before, ul.files-explorer .directory .files .fa-pull-right.file:before {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -100,9 +98,9 @@ input {
 .pull-left {
   float: left; }
 
-.fa.pull-left, .tabs .tab .tab-head .pull-left.close, ul.files-explorer .directory .pull-left.icon, ul.files-explorer .directory > label.pull-left:before {
+.fa.pull-left, .tabs .tab .tab-head .pull-left.close, ul.files-explorer .directory .pull-left.icon, ul.files-explorer .directory > label.pull-left:before, ul.files-explorer .directory .files .pull-left.file:before {
   margin-right: .3em; }
-.fa.pull-right, .tabs .tab .tab-head .pull-right.close, ul.files-explorer .directory .pull-right.icon, ul.files-explorer .directory > label.pull-right:before {
+.fa.pull-right, .tabs .tab .tab-head .pull-right.close, ul.files-explorer .directory .pull-right.icon, ul.files-explorer .directory > label.pull-right:before, ul.files-explorer .directory .files .pull-right.file:before {
   margin-left: .3em; }
 
 .fa-spin {
@@ -1177,7 +1175,7 @@ input {
 .fa-file:before {
   content: ""; }
 
-.fa-file-text:before {
+.fa-file-text:before, ul.files-explorer .directory .files .file:before {
   content: ""; }
 
 .fa-sort-alpha-asc:before {
@@ -2095,7 +2093,6 @@ input {
   content: ""; }
 
 body {
-  font-family: 'Roboto', sans-serif;
   overflow: hidden; }
   body h1 {
     margin: 0px auto; }
@@ -2109,6 +2106,7 @@ body {
   width: calc(100% - 300px);
   background-color: #c5c5c5; }
 .miraze-play .root-dir {
+  padding: 10px;
   background-color: #F8F8F8;
   width: 300px; }
 
@@ -2162,7 +2160,8 @@ body {
     border: 1px solid #c5c5c5;
     background-color: white;
     opacity: 0;
-    pointer-events: none; }
+    pointer-events: none;
+    padding: 10px; }
   .tabs .tab .tab-head:hover {
     background-color: #8b8b8b; }
   .tabs .tab.selected .tab-head {
@@ -2175,30 +2174,37 @@ body {
     opacity: 1;
     pointer-events: all; }
 
-ul.files-explorer .directory {
-  position: relative; }
-  ul.files-explorer .directory .icon, ul.files-explorer .directory > label:before {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    margin-left: 10px;
-    height: 35px;
-    line-height: 35px; }
-  ul.files-explorer .directory > label {
-    display: block;
-    height: 35px;
-    line-height: 35px;
-    padding-left: 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
-  ul.files-explorer .directory .files {
-    height: 35px;
-    line-height: 35px;
-    padding: 0px 20px; }
-    ul.files-explorer .directory .files .file {
-      padding: 0px 10px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      cursor: pointer; }
-    ul.files-explorer .directory .files .file:hover {
-      opacity: 0.8; }
+ul.files-explorer {
+  font-size: smaller; }
+  ul.files-explorer .directory {
+    position: relative; }
+    ul.files-explorer .directory .icon, ul.files-explorer .directory > label:before, ul.files-explorer .directory .files .file:before {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      font-size: small;
+      opacity: 0.8;
+      margin-left: 10px;
+      height: 35px;
+      line-height: 35px; }
+    ul.files-explorer .directory > label {
+      display: block;
+      height: 35px;
+      line-height: 35px;
+      padding-left: 30px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+    ul.files-explorer .directory .files {
+      height: 35px;
+      line-height: 35px;
+      padding: 0px 20px; }
+      ul.files-explorer .directory .files .file {
+        position: relative;
+        padding-left: 50px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        cursor: pointer; }
+      ul.files-explorer .directory .files .file:before {
+        margin-left: 30px; }
+      ul.files-explorer .directory .files .file:hover {
+        opacity: 0.8; }
 
 /*# sourceMappingURL=index.css.map */

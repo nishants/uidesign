@@ -42,6 +42,7 @@ $borderRadius : 2px;
        background-color: $contentColor;
        opacity      : 0;
        pointer-events : none;
+       padding: $padding;
      }
    }
 

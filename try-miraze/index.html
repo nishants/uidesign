@@ -14,16 +14,16 @@
         <div class="root-dir">
             <h3>--root-dir</h3>
             <ul class="files-explorer">
-                <li class="--files directory">
-                    <label>files</label>
+                <li class="--files directory" ng-click="tabs.current = 0">
+                    <label>--files</label>
                     <ul class="files">
-                        <li class="file" ng-click="tabs.current = 0" ng-class="{'selected' : tabs.current == 0}"><label>expressions.json</label></li>
+                        <li class="file"  ng-class="{'selected' : tabs.current == 0}"><label>expressions.json</label></li>
                     </ul>
                 </li>
-                <li class="mappings directory" >
+                <li class="mappings directory" ng-click="tabs.current = 1">
                     <label>mappings</label>
                     <ul class="files">
-                        <li class="file" ng-click="tabs.current = 1" ng-class="{'selected' : tabs.current == 1}"><label>expressions.json</label></li>
+                        <li class="file"  ng-class="{'selected' : tabs.current == 1}"><label>expressions.json</label></li>
                     </ul>
                 </li>
             </ul>
@@ -41,7 +41,7 @@
                 <li class="tab selected" ng-click="tabs.current = 2" ng-class="{'selected' : tabs.current == 2}">
                     <div class="tab-head">Run<i class="close"></i></div>
                     <div class="tab-body">
-                        {{showTab}}
+                        {{tabs.current}}
 
                     </div>
                 </li>

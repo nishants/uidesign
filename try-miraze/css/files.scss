@@ -3,6 +3,7 @@ $borderColor : rgba(0,0,0,0.05);
 ul.files-explorer{
   @extend .undo-list;
 
+  font-size: smaller;
   .directory{
     position: relative;
     .icon{
@@ -11,7 +12,9 @@ ul.files-explorer{
       position: absolute;
       left    : 0px;
       top     : 0px;
-      margin-left: $padding;
+      font-size   : small;
+      opacity     : 0.8;
+      margin-left : $padding;
       height      : $rowHeight;
       line-height : $rowHeight;
     }
@@ -36,9 +39,15 @@ ul.files-explorer{
       padding     : 0px 2 * $padding;
 
       .file{
-        padding      : 0px $padding;
+        position: relative;
+        padding-left : 5 * $padding;
         border-bottom: 1px solid $borderColor;
         cursor       : pointer;
+      }
+      .file:before{
+        @extend .icon;
+        @extend .fa-file-text;
+        margin-left : 3 * $padding;
       }
       .file:hover{
         opacity: 0.8;

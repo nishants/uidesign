@@ -1,12 +1,7 @@
 @import 'config';
 @import '../../lib/font-awesome-4.5.0/scss/font-awesome';
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300);
-
 body{
-  font-family: 'Roboto', sans-serif;
-
   overflow: hidden;
   h1{margin: 0px auto;}
   *{box-sizing: border-box;};
