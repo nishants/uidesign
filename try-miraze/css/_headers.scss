@@ -1,0 +1,30 @@
+.headers{
+  label , > ul > li > input{
+    display: block;
+    min-height: $rowHeight;
+    line-height: $rowHeight;
+    padding: 0 $padding;
+  }
+
+  > ul{
+    @extend .undo-list;
+    .header{
+      display: block;
+      border-bottom: 1px solid $solidColor;
+      @extend .resize-container;
+      .name, .value{
+        float: left;
+        width: 50%;
+      }
+      .name:after{
+        content: ":"
+      }
+    }
+  }
+  button.add{
+    height: $rowHeight;
+    line-height: $rowHeight;
+    padding: 0px 5 * $padding;
+    margin :5px;
+  }
+}

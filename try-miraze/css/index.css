@@ -1,5 +1,5 @@
 @charset "UTF-8";
-ul.undo-list, .editor ul.tabs, ul.files-explorer, ul.files-explorer .directory ul.files, .request-editor .target .url ul.url-param {
+ul.undo-list, .editor ul.tabs, ul.files-explorer, ul.files-explorer .directory ul.files, .request-editor .target .url ul.url-param, .headers > ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -12,7 +12,7 @@ input {
   box-sizing: border-box;
   border: none; }
 
-.resize-container:after, .editor ul.tabs:after, .request-editor .target:after, .request-editor .target .url:after, .request-editor .target .url .url-param:after {
+.resize-container:after, .editor ul.tabs:after, .request-editor .target:after, .request-editor .target .url:after, .request-editor .target .url .url-param:after, .headers > ul .header:after {
   content: "";
   display: table;
   clear: both; }
@@ -2208,18 +2208,44 @@ ul.files-explorer {
         opacity: 0.8; }
 
 .request-editor {
-  width: 500px; }
-  .request-editor .target .url, .request-editor .target .send {
+  width: 500px;
+  border: 1px solid #c5c5c5;
+  padding: 10px;
+  border-radius: 5px; }
+  .request-editor .target {
+    padding: 10px;
+    border-bottom: 1px solid #F8F8F8;
+    margin-bottom: 10px; }
+    .request-editor .target .url, .request-editor .target .send {
+      float: left;
+      line-height: 35px;
+      height: 35px; }
+    .request-editor .target .send {
+      width: 100px; }
+    .request-editor .target .url {
+      width: calc(100% - 100px); }
+      .request-editor .target .url .method, .request-editor .target .url .url-base, .request-editor .target .url .url-param {
+        float: left; }
+      .request-editor .target .url .url-param > li {
+        float: left; }
+
+.headers label, .headers > ul > li > input {
+  display: block;
+  min-height: 35px;
+  line-height: 35px;
+  padding: 0 10px; }
+.headers > ul .header {
+  display: block;
+  border-bottom: 1px solid #F8F8F8; }
+  .headers > ul .header .name, .headers > ul .header .value {
     float: left;
-    line-height: 35px;
-    height: 35px; }
-  .request-editor .target .send {
-    width: 100px; }
-  .request-editor .target .url {
-    width: calc(100% - 100px); }
-    .request-editor .target .url .method, .request-editor .target .url .url-base, .request-editor .target .url .url-param {
-      float: left; }
-    .request-editor .target .url .url-param > li {
-      float: left; }
+    width: 50%; }
+  .headers > ul .header .name:after {
+    content: ":"; }
+.headers button.add {
+  height: 35px;
+  line-height: 35px;
+  padding: 0px 50px;
+  margin: 5px; }
 
 /*# sourceMappingURL=index.css.map */
