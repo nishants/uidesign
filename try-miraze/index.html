@@ -5,42 +5,41 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../lib/normalize-3.0.2.css">
-    <link rel="stylesheet" href="../lib/font-awesome-4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 </head>
 
 <body ng-app>
-    <div class="miraze-play">
+    <div class="miraze-play" ng-init="tabs = {current: 2}">
         <div class="root-dir">
             <h3>--root-dir</h3>
             <ul class="files-explorer">
-                <li class="--files">
+                <li class="--files directory">
                     <label>files</label>
                     <ul class="files">
-                        <li><label>expressions.json</label></li>
+                        <li class="file" ng-click="tabs.current = 0" ng-class="{'selected' : tabs.current == 0}"><label>expressions.json</label></li>
                     </ul>
                 </li>
-                <li class="mappings">
+                <li class="mappings directory" >
                     <label>mappings</label>
                     <ul class="files">
-                        <li><label>expressions.json</label></li>
+                        <li class="file" ng-click="tabs.current = 1" ng-class="{'selected' : tabs.current == 1}"><label>expressions.json</label></li>
                     </ul>
                 </li>
             </ul>
         </div>
         <div class="editor">
-            <ul class="tabs" ng-init="showTab = 2">
-                <li class="tab" ng-click="showTab = 0" ng-class="{'selected' : showTab == 0}">
-                    <div class="tab-head">--files/expressions.json<i class="close fa fa-close"></i></div>
+            <ul class="tabs">
+                <li class="tab" ng-click="tabs.current = 0" ng-class="{'selected' : tabs.current == 0}">
+                    <div class="tab-head">--files/expressions.json<i class="close"></i></div>
                     <div class="tab-body">tab1</div>
                 </li>
-                <li class="tab" ng-click="showTab = 1" ng-class="{'selected' : showTab == 1}">
-                    <div class="tab-head">mappings/expressions.json<i class="close fa fa-close"></i></div>
+                <li class="tab" ng-click="tabs.current = 1" ng-class="{'selected' : tabs.current == 1}">
+                    <div class="tab-head">mappings/expressions.json<i class="close"></i></div>
                     <div class="tab-body">tab2</div>
                 </li>
-                <li class="tab selected" ng-click="showTab = 2" ng-class="{'selected' : showTab == 2}">
-                    <div class="tab-head">Run<i class="close fa fa-close"></i></div>
+                <li class="tab selected" ng-click="tabs.current = 2" ng-class="{'selected' : tabs.current == 2}">
+                    <div class="tab-head">Run<i class="close"></i></div>
                     <div class="tab-body">
                         {{showTab}}
 
