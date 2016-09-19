@@ -1,4 +1,7 @@
 @charset "UTF-8";
+label {
+  cursor: inherit; }
+
 ul.undo-list, .editor ul.tabs, ul.files-explorer, ul.files-explorer .directory ul.files, .request-editor .target .url ul.url-param, .headers > ul {
   list-style: none;
   margin: 0px;
@@ -2143,7 +2146,8 @@ body {
     z-index: 1;
     opacity: 0.5;
     border-top-left-radius: 2px;
-    border-top-right-radius: 2px; }
+    border-top-right-radius: 2px;
+    cursor: pointer; }
     .tabs .tab .tab-head .close {
       position: absolute;
       top: 0px;

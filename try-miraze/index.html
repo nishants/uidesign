@@ -25,7 +25,7 @@
             <h3>--root-dir</h3>
             <ul class="files-explorer">
                 <li class="--files directory" ng-click="tabs.current = 0">
-                    <label>--files</label>
+                    <label>__files</label>
                     <ul class="files">
                         <li class="file"  ng-class="{'selected' : tabs.current == 0}"><label>expressions.json</label></li>
                     </ul>
@@ -41,7 +41,7 @@
         <div class="editor">
             <ul class="tabs">
                 <li class="tab" ng-click="tabs.current = 0" ng-class="{'selected' : tabs.current == 0}">
-                    <div class="tab-head">--files/expressions.json<i class="close"></i></div>
+                    <div class="tab-head">__files/expressions.json<i class="close"></i></div>
                     <div class="tab-body" ng-include="'templates/template-editor.html'"></div>
                 </li>
                 <li class="tab mapping-editor" ng-click="tabs.current = 1" ng-class="{'selected' : tabs.current == 1}">

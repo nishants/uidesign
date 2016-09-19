@@ -19,6 +19,8 @@ $borderRadius : 2px;
        opacity: 0.5;
        border-top-left-radius: $borderRadius;
        border-top-right-radius: $borderRadius;
+       cursor  : pointer;
+
        .close{
          @extend .fa;
          @extend .fa-close;
