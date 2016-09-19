@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300);
+ul.undo-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: block; }
+
+input {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  box-sizing: border-box;
+  border: none; }
+
+.resize-container:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden; }
+  body h1 {
+    margin: 0px auto; }
+  body * {
+    box-sizing: border-box; }
+
+.miraze-play .root-dir, .miraze-play .editor {
+  float: left;
+  height: 100vh; }
+.miraze-play .editor {
+  width: calc(100% - 300px);
+  background-color: #c5c5c5; }
+.miraze-play .root-dir {
+  background-color: #F8F8F8;
+  width: 300px; }
+
+/*# sourceMappingURL=index.css.map */

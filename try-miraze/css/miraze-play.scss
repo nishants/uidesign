@@ -1,0 +1,16 @@
+$fileExplorerWidth: 300px;
+.miraze-play{
+  .root-dir, .editor{
+    float: left;
+    height: 100vh;
+  }
+  .editor{
+    width: calc(100% - #{$fileExplorerWidth});
+    background-color: $voidColor;
+  }
+
+  .root-dir{
+    background-color: $solidColor;
+    width: $fileExplorerWidth;
+  }
+}
