@@ -1,0 +1,34 @@
+$requestEditorWidth : 500px;
+.request-editor{
+  width: $requestEditorWidth;
+
+  .target{
+    $sendButtonWidth : 100px;
+    @extend .resize-container;
+
+    .url, .send{
+      float: left;
+      line-height: $rowHeight;
+      height: $rowHeight;
+    }
+    .send{
+      width: $sendButtonWidth;
+    }
+    .url{
+      width: calc(100% - #{$sendButtonWidth});
+      @extend .resize-container;
+      .method,.url-base, .url-param{
+        float: left;
+      }
+      .url-param{
+        @extend .undo-list;
+        @extend .resize-container;
+        > li {
+          float: left;
+        }
+      }
+
+    }
+
+  }
+}

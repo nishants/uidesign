@@ -1,5 +1,5 @@
 @charset "UTF-8";
-ul.undo-list, .editor ul.tabs, ul.files-explorer, ul.files-explorer .directory ul.files {
+ul.undo-list, .editor ul.tabs, ul.files-explorer, ul.files-explorer .directory ul.files, .request-editor .target .url ul.url-param {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -12,7 +12,7 @@ input {
   box-sizing: border-box;
   border: none; }
 
-.resize-container:after, .editor ul.tabs:after {
+.resize-container:after, .editor ul.tabs:after, .request-editor .target:after, .request-editor .target .url:after, .request-editor .target .url .url-param:after {
   content: "";
   display: table;
   clear: both; }
@@ -2206,5 +2206,20 @@ ul.files-explorer {
         margin-left: 30px; }
       ul.files-explorer .directory .files .file:hover {
         opacity: 0.8; }
+
+.request-editor {
+  width: 500px; }
+  .request-editor .target .url, .request-editor .target .send {
+    float: left;
+    line-height: 35px;
+    height: 35px; }
+  .request-editor .target .send {
+    width: 100px; }
+  .request-editor .target .url {
+    width: calc(100% - 100px); }
+    .request-editor .target .url .method, .request-editor .target .url .url-base, .request-editor .target .url .url-param {
+      float: left; }
+    .request-editor .target .url .url-param > li {
+      float: left; }
 
 /*# sourceMappingURL=index.css.map */
