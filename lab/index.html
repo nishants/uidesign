@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Design and Craft</title>
+    <script src="../lib/angular-1.4.3.js"></script>
+</head>
+<body class="lab page" ng-app>
+    <div class="page-heading">
+        <h1>Lab</h1>
+    </div>
+    <div class="page-content">
+        <ul class="projects" ng-init="projects=[{name: 'miaze-java', source: 'github/nishants/miraze', target: 'npm/modules/miraze', desc:'a wrapper over wiremock.'}]">
+            <li class="project" ng-repeat="project in projects">
+                <a class="card">
+                    <h3 ng-bind="project.name" href="{{project.target}}"></h3>
+                    <p ng-bind="project.desc"></p>
+                    <a href="{{project.source}}">View Source</a>
+                    <a href="{{project.desc}}">Open</a>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
