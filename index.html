@@ -4,28 +4,17 @@
     <meta charset="UTF-8">
     <title>creatively simplified</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <style>
-        .intro{
-            text-align: center;
-            font-family: 'Raleway', sans-serif;
-            letter-spacing: 1px;
-        }
-        .logo{
-            margin: 0px;
-            font-size: 80px;
-            line-height: 200px;
-        }
-        .lab, .blog{
-            font-size: 40px;
-            line-height: 50px;
-            display: inline-block;
-            width :200px;
-        }
-    </style>
+    <script src="lib/angular-1.4.3.js"></script>
+    <link href="style/index.css" rel="stylesheet">
 </head>
-<body class="intro">
+<body  ng-app>
+<div class="home page">
     <h1 class="logo">amoeba.social</h1>
-    <a class="lab" href="lab/index.html">Lab</a>
-    <a class="blog" href="blog">Blog</a>
+    <ul class="navigation" ng-init="homepage = {navigation: [{id: 'lab', name: 'Lab', link: 'lab/index.html'}, {id: 'blog', name: 'Blog', link: 'blog/index.html'}]}">
+        <li ng-repeat="navigation in homepage.navigation">
+            <a class="{{navigation.id}}" href="{{navigation.link}}" ng-bind="navigation.name"></a>
+        </li>
+    </ul>
+</div>
 </body>
 </html>
