@@ -3,14 +3,6 @@
 
 body * { box-sizing: border-box;  }
 
-[ng-repeat]{
-  @include transition(all 500ms $defaultTransitionFunction);
-}
-
-[ng-repeat]:not(.display-element){
-  opacity: 0;
-}
-
 label{
   cursor: inherit;
 }
@@ -90,4 +82,12 @@ ul.inline-list{
   > li {
     float: left;
   }
+}
+
+[ng-repeat]{
+  @include transition(all 500ms $defaultTransitionFunction);
+}
+
+[ng-repeat]:not(.display-element){
+  opacity: 0;
 }
