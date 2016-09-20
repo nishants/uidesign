@@ -11,11 +11,11 @@
   .navigation{
     @extend .inline-list;
 
-    .lab, .blog{
+    .link{
       font-size   : 40px;
       line-height : 50px;
       display     : inline-block;
-      width       :200px;
+      min-width       :200px;
     }
   }
 }

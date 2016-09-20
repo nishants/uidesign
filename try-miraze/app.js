@@ -3,6 +3,18 @@
 
   window.app = angular.module("miraze-play", ["ng.jsoneditor"]);
 
+  app.directive("ngRepeat", function($timeout){
+    return {
+      scope: false,
+      transclude: false,
+      link : function(scope, element){
+        $timeout(function(){
+          element.addClass("display-element");
+        });
+      }
+    };
+  });
+
   app.controller("ui-controller", function($scope){
     var requestBody = {
       options: {

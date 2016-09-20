@@ -7,6 +7,7 @@ $rowHeight : 35px;
 $padding   : 10px;
 
 $defaultTransitionFunction : cubic-bezier(0.45, 0.515, 0.36, 0.88);
+
 label{
   cursor: inherit;
 }
@@ -72,4 +73,12 @@ input{
   -moz-transition:    $value;
   -o-transition:      $value;
   transition:         $value;
+}
+
+[ng-repeat]{
+  @include transition(all 500ms $defaultTransitionFunction);
+}
+
+[ng-repeat]:not(.display-element){
+  opacity: 0;
 }

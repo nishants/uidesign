@@ -10,9 +10,9 @@
 <body  ng-app>
 <div class="home page">
     <h1 class="logo">amoeba.social</h1>
-    <ul class="navigation" ng-init="homepage = {navigation: [{id: 'lab', name: 'Lab', link: 'lab/index.html'}, {id: 'blog', name: 'Blog', link: 'blog/index.html'}]}">
+    <ul class="navigation" ng-init="homepage = {navigation: [{id: 'lab', name: 'Lab', link: 'lab/index.html'}, {id: 'blog', name: 'Blog', link: 'blog/index.html'}, {id: 'practice-labs', name: 'Apps', link: 'practice-labs/index.html'}]}">
         <li ng-repeat="navigation in homepage.navigation">
-            <a class="{{navigation.id}}" href="{{navigation.link}}" ng-bind="navigation.name"></a>
+            <a class="link {{navigation.id}}" href="{{navigation.link}}" ng-bind="navigation.name"></a>
         </li>
     </ul>
 </div>

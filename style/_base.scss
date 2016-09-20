@@ -1,16 +1,19 @@
-$solidColor: #F8F8F8;
-$voidColor : #c5c5c5;
-$borderColor : #3b3b3b;
-$dangerColor : #ff3748;
+@import "vars";
+@import "typography";
 
-$rowHeight : 35px;
-$padding   : 10px;
+body * { box-sizing: border-box;  }
 
-$defaultTransitionFunction : cubic-bezier(0.45, 0.515, 0.36, 0.88);
+[ng-repeat]{
+  @include transition(all 500ms $defaultTransitionFunction);
+}
+
+[ng-repeat]:not(.display-element){
+  opacity: 0;
+}
+
 label{
   cursor: inherit;
 }
-
 
 input{
   padding: 0px;
