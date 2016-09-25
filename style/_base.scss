@@ -84,10 +84,10 @@ ul.inline-list{
   }
 }
 
-[ng-repeat]{
-  @include transition(all 500ms $defaultTransitionFunction);
-}
-
-[ng-repeat]:not(.display-element){
-  opacity: 0;
-}
+//[ng-repeat]{
+//  @include transition(all 500ms $defaultTransitionFunction);
+//}
+//
+//[ng-repeat]:not(.display-element){
+//  opacity: 0;
+//}
