@@ -1,6 +1,40 @@
-#editor-container{
-  height: 500px;
+$rowHeight: 40px;
+$padding: 10px;
+
+@import "../../../style/base";
+*{
+  box-sizing: border-box;
+}
+h1.head{
+  text-align: center;
+  padding-bottom: 1.5*$padding;
+  margin-bottom : 1.5*$padding;
+  border-bottom : 1px solid rgba(0, 0, 0, 0.1);
+  width : calc(100% - #{6 * $padding});
+  margin-left :   3 * $padding;
+  margin-right : 3 * $padding;
+}
+#play-area{
   width: 500px;
-  .ace_gutter{
+  margin: auto;
+
+  #editor-container{
+    height: 300px;
+    width: 100%;
+    .ace_gutter{
+    }
+  }
+
+  button.run{
+    margin: $padding 0px;
+    width: 100%;
+    height: $rowHeight  ;
+    line-height: $rowHeight;
+    font-size: large;
+  }
+
+  ul.console{
+    @extend .undo-list;
+
   }
 }

@@ -23,19 +23,23 @@
     var editor = {
           ace: aceEditor.create("editor-container"),
           run: function(){
+            console.running = true;
             aceEditor.run(editor.ace.getValue()).then(function(response){
-              console.errors = response.data
+              console.errors  = response.data;
+              console.running = false;
             }, function(){
-              alert("Unknown error!")
+              alert("Unknown error!");
             })
           }
         },
         console = {
-          errors: ["some error"]
+          running: false,
+          errors: []
         };
     editor.ace.setValue('expect("one.two.xyz").to look_like("email") \nexpect("one.two.com").to look_like("email") \nexpect("one@two.xyz").to look_like("email")')
     $scope.editor = editor;
     $scope.console = console;
+    editor.run();
   }])
 
 }).call(this);

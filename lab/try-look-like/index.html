@@ -36,16 +36,30 @@
 
 <body ng-app="try-look-like" ng-controller="editorController">
 
-    <div id="editor-container" >
-    </div>
+    <h1 class="head">
+        Try Look Loke Matchers
+    </h1>
+    <div id="play-area">
+        <div id="editor-container" >
+        </div>
 
-    <button ng-click="editor.run()">Run</button>
-    <div>
-        <ul class="errors">
-            <li ng-repeat="error in console.errors" >
-                <span ng-bind="error"></span>
-            </li>
-        </ul>
+        <button class="run" ng-click="editor.run()" ng-disabled="console.running">
+            <span ng-show="!console.running">Run</span>
+            <i ng-show="console.running" class="fa fa-spin fa-spinner"></i>
+        </button>
+
+        <div>
+
+            <ul class="console">
+
+                <li ng-show="console.errors.length == 0">
+                    All assertions passed.
+                </li>
+                <li ng-repeat="error in console.errors" >
+                    <span ng-bind="error"></span>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div id="splash" ng-class="{'hide-spash' : true}">
