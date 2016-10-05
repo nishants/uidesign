@@ -10,9 +10,9 @@ h1.head{
   padding-bottom: 1.5*$padding;
   margin-bottom : 1.5*$padding;
   border-bottom : 1px solid rgba(0, 0, 0, 0.1);
-  width : calc(100% - #{6 * $padding});
-  margin-left :   3 * $padding;
-  margin-right : 3 * $padding;
+  width : calc(100% - #{3 * $padding});
+  margin-left :   1.5 * $padding;
+  margin-right : 1.5 * $padding;
 }
 #play-area{
   width: 500px;
