@@ -1,6 +1,6 @@
 (function () {
   "use strict"
-  var app = angular.module("try-look-like", []);
+  var app = angular.module("try-look-like", ["ngRoute"]);
   app.service("aceEditor", ["$http", function ($http) {
     var createSample = function(config){
       return {
@@ -35,7 +35,7 @@
     };
   }]);
 
-  app.controller("editorController", ["$scope", "aceEditor", function ($scope, aceEditor) {
+  app.controller("editorController", ["$scope", "aceEditor", "$route", function ($scope, aceEditor, $route) {
     var editor = {
           ace: aceEditor.create("editor-container"),
           run: function(){
@@ -47,7 +47,13 @@
               alert("Unknown error!");
             })
           },
-          samples: []
+          samples: [],
+          loadUrl : function(newUrl){
+            window.console.log(newUrl);
+          },
+          updateSample: function(arg){
+            window.console.log(arg);q
+          }
         },
         console = {
           running: false,
@@ -59,13 +65,16 @@
     $scope.console = console;
     editor.run();
 
-    $scope.$on('$routeChangeStart', function(next, current) {
-      console.log("hello");
-    });
-
     aceEditor.getAllSamples().then(function(samples){
       editor.samples = samples;
     });
+
+    $(window).on("hashchange", function () {
+      var url = window.location.hash.length ? window.location.hash : "#/";
+      editor.loadUrl(decodeURI(url.split("/")[1]))
+    });
+
+    $(window).trigger("hashchange");
   }])
 
 }).call(this);
