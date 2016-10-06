@@ -1,6 +1,19 @@
 (function () {
   "use strict"
   var app = angular.module("try-look-like", ["ngRoute"]);
+  app.config(function($httpProvider) {
+    //Enable cross domain calls
+    $httpProvider.defaults.useXDomain = true;
+
+    //Remove the header containing XMLHttpRequest used to identify ajax call
+    //that would prevent CORS from working
+    $httpProvider.defaults.headers.common = {};
+    $httpProvider.defaults.headers.post = {};
+    $httpProvider.defaults.headers.put = {};
+    $httpProvider.defaults.headers.patch = {};
+    $httpProvider.defaults.headers.options = {};
+  });
+
   app.service("aceEditor", ["$http", function ($http) {
     var createSample = function(config){
       return {
@@ -10,7 +23,11 @@
     };
     return {
       run : function(script){
-        return $http.put("https://amoeba-social-look-like-server.herokuapp.com/assertion/evaluate", unescape(script));
+        return $http.put("https://amoeba-social-look-like-server.herokuapp.com/assertion/evaluate", unescape(script)).then(function(response){
+          return response.data.split("<---->").filter(function(result){
+            return result.length  > 0;
+          });
+        });
       },
       create: function (elment) {
         var aceEditor = ace.edit(elment);
@@ -40,8 +57,8 @@
           ace: aceEditor.create("editor-container"),
           run: function(){
             console.running = true;
-            aceEditor.run(editor.ace.getValue()).then(function(response){
-              console.errors  = response.data;
+            aceEditor.run(editor.ace.getValue()).then(function(result){
+              console.errors  = result;
               console.running = false;
             }, function(){
               alert("Unknown error!");
