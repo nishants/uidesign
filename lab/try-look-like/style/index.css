@@ -68,7 +68,8 @@ h1.head {
   margin: auto; }
   #play-area #editor-container {
     height: 300px;
-    width: 100%; }
+    width: 100%;
+    font-size: 13px; }
   #play-area button.run {
     margin: 10px 0px;
     width: 100%;
