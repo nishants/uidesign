@@ -48,11 +48,11 @@
             })
           },
           samples: [],
-          loadUrl : function(newUrl){
-            window.console.log(newUrl);
-          },
-          updateSample: function(arg){
-            window.console.log(arg);q
+          setSample: function(name){
+            var sample = editor.samples.filter(function (sample) {
+              return sample.name === name;
+            })[0];
+            editor.ace.setValue(sample.snippet.join("\n"));
           }
         },
         console = {
@@ -67,14 +67,14 @@
 
     aceEditor.getAllSamples().then(function(samples){
       editor.samples = samples;
+      $(window).trigger("hashchange");
     });
 
     $(window).on("hashchange", function () {
       var url = window.location.hash.length ? window.location.hash : "#/";
-      editor.loadUrl(decodeURI(url.split("/")[1]))
+      editor.setSample(decodeURI(url.split("/")[1]))
     });
 
-    $(window).trigger("hashchange");
-  }])
+  }]);
 
 }).call(this);
