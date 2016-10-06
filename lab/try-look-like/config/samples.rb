@@ -12,7 +12,8 @@ expect("₹23,1.00").to look_like("₹100.12")
 #Enums
 expect("one").to look_like("one/two/three")
 expect("four").not_to look_like("one/two/three")
-Regex
+
+#Regex
 expect("i have  test").to look_like("/test/")
 expect("i have  tess").not_to look_like("/test/")
 

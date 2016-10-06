@@ -35,6 +35,14 @@ h1.head{
 
   ul.console{
     @extend .undo-list;
-
+    padding     : $padding;
+    margin-top  : $padding;
+    border      : 1px solid rgba(0, 0, 0, 0.1);
+    li.success{
+      color: green;
+    }
+    li.error{
+      color: red;
+    }
   }
 }

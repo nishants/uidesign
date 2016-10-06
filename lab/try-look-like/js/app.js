@@ -53,6 +53,7 @@
               return sample.name === name;
             })[0];
             editor.ace.setValue(sample.snippet.join("\n"));
+            editor.run();
           }
         },
         console = {
@@ -60,10 +61,8 @@
           errors: []
         };
 
-    editor.ace.setValue('expect("one.two.xyz").to look_like("email") \nexpect("one.two.com").to look_like("email") \nexpect("one@two.xyz").to look_like("email")')
     $scope.editor = editor;
     $scope.console = console;
-    editor.run();
 
     aceEditor.getAllSamples().then(function(samples){
       editor.samples = samples;
