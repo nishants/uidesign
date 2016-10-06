@@ -10,7 +10,7 @@
     };
     return {
       run : function(script){
-        return $http.put("https://amoeba-social-look-like-server.herokuapp.com/assertion/evaluate", script);
+        return $http.put("https://amoeba-social-look-like-server.herokuapp.com/assertion/evaluate", unescape(script));
       },
       create: function (elment) {
         var aceEditor = ace.edit(elment);
@@ -22,7 +22,7 @@
         return aceEditor;
       },
       getAllSamples : function(){
-        return $http.get("config/samples.rb").then(function(response){
+        return $http.get("config/samples.txt").then(function(response){
           return response.data.split("#").map(function(sample){
             return sample.split("\n");
           }).filter(function(sample){
@@ -49,7 +49,7 @@
           },
           samples: [],
           setSample: function(name){
-            var sample = editor.samples.filter(function (sample) {
+            var sample = name.length == 0 ? editor.samples[0] :   editor.samples.filter(function (sample) {
               return sample.name === name;
             })[0];
             editor.ace.setValue(sample.snippet.join("\n"));
