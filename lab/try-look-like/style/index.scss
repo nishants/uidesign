@@ -1,10 +1,15 @@
+@import "../../../style/base";
+
 $rowHeight: 40px;
 $padding: 10px;
+$selectionColor: #03A9F4;
+$gutterWidth: 42px;
 
-@import "../../../style/base";
+
 *{
   box-sizing: border-box;
 }
+
 h1.head{
   text-align: center;
   padding-bottom: 1.5*$padding;
@@ -14,6 +19,7 @@ h1.head{
   margin-left :   1.5 * $padding;
   margin-right : 1.5 * $padding;
 }
+
 #play-area{
   margin: auto;
   padding: 0px $padding * 5;
@@ -23,6 +29,9 @@ h1.head{
     width: 100%;
     font-size: 13px;
     .ace_gutter{
+      width: $gutterWidth;
+      background-color: transparent;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
     }
   }
 
@@ -32,15 +41,24 @@ h1.head{
     height: $rowHeight  ;
     line-height: $rowHeight;
     font-size: large;
+
+
+    background : $selectionColor;
+    border     : 1px solid rgba(73, 75, 76, 0.22);
+    color      : rgba(255, 255, 255, 0.95);
+    box-shadow : 3px 3px 10px rgba(74, 75, 76, 0.27);
+
   }
 
   ul.console{
     @extend .undo-list;
-    padding     : $padding;
     margin-top  : $padding;
-    border      : 1px solid rgba(0, 0, 0, 0.1);
+    border-top      : 1px solid rgba(0, 0, 0, 0.1);
+    padding: $padding $padding $padding $gutterWidth+$padding;
+
     li.success{
-      color: green;
+      color: #c5c5c5;
+      font-weight: 100;
     }
     li.error{
       color: red;
