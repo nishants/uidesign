@@ -8,6 +8,7 @@ $editorHeight: 300px;
 
 *{
   box-sizing: border-box;
+  @include transition(all 150ms cubic-bezier(0.64, 0.57, 0.67, 1.53));
 }
 
 .top-bar{
@@ -59,8 +60,9 @@ $editorHeight: 300px;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
       box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.28);
     }
-    .ace_cursor{
-      //@include transition(all 150ms cubic-bezier(0.64, 0.57, 0.67, 1.53));
+    .ace_cursor,
+    .ace_text-input{
+      @include transition(all 0s);
     }
   }
 
@@ -69,9 +71,8 @@ $editorHeight: 300px;
     height: $rowHeight  ;
     line-height: $rowHeight;
     margin-left: $gutterWidth;
-    padding: 0px 100px;
+    width: 250px;
     font-size: large;
-
 
     background : $selectionColor;
     border     : 1px solid rgba(73, 75, 76, 0.22);
