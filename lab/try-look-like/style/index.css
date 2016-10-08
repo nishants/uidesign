@@ -80,7 +80,7 @@ h1.head {
     height: 40px;
     line-height: 40px;
     font-size: large;
-    background: #03A9F4;
+    background: #0365C0;
     border: 1px solid rgba(73, 75, 76, 0.22);
     color: rgba(255, 255, 255, 0.95);
     box-shadow: 3px 3px 10px rgba(74, 75, 76, 0.27); }
@@ -100,6 +100,10 @@ h1.head {
       display: block;
       height: 100%;
       width: 100%; }
+  #play-area ul.samples > li:hover {
+    background: #0365C0; }
+    #play-area ul.samples > li:hover a {
+      color: white; }
 
 .main-container {
   padding: 0px 50px; }
@@ -118,6 +122,10 @@ h1.head {
   padding: 10px;
   text-align: right; }
   .status .source {
-    padding: 0px 10px; }
+    padding: 0px 10px;
+    font-size: 13px;
+    line-height: 16px; }
+    .status .source i {
+      font-size: 16px; }
 
 /*# sourceMappingURL=index.css.map */

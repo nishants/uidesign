@@ -2,7 +2,7 @@
 
 $rowHeight: 40px;
 $padding: 10px;
-$selectionColor: #03A9F4;
+$selectionColor: #0365C0;
 $gutterWidth: 42px;
 
 
@@ -76,6 +76,12 @@ h1.head{
         width: 100%;
       }
     }
+    > li:hover {
+      background : $selectionColor;
+      a{
+        color: white;
+      }
+    }
   }
 }
 
@@ -100,5 +106,10 @@ $leftPaneWidth: 200px;
   text-align: right;
   .source{
     padding: 0px $padding;
+    font-size: 13px;
+    line-height: 16px;
+    i{
+      font-size: 16px;
+    }
   }
 }
