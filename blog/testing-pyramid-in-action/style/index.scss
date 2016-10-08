@@ -1,0 +1,13 @@
+@import "../../../style/base";
+
+$layerColor: #F5D328;
+
+.funnel{
+  svg{
+    .layer-body{
+      fill: $layerColor;
+    }
+  }
+}
+
+
