@@ -18,6 +18,10 @@ h1.head{
   width : calc(100% - #{3 * $padding});
   margin-left :   1.5 * $padding;
   margin-right : 1.5 * $padding;
+  font-family: 'Raleway', sans-serif;
+  i{
+    color: #e9573f;
+  }
 }
 
 #play-area{
@@ -37,9 +41,10 @@ h1.head{
 
   button.run{
     margin: $padding 0px;
-    width: 100%;
     height: $rowHeight  ;
     line-height: $rowHeight;
+    margin-left: $gutterWidth;
+    padding: 0px 100px;
     font-size: large;
 
 

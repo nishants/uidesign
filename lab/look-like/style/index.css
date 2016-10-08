@@ -61,7 +61,10 @@ h1.head {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   width: calc(100% - 30px);
   margin-left: 15px;
-  margin-right: 15px; }
+  margin-right: 15px;
+  font-family: 'Raleway', sans-serif; }
+  h1.head i {
+    color: #e9573f; }
 
 #play-area {
   margin: auto;
@@ -76,9 +79,10 @@ h1.head {
       border-right: 1px solid rgba(0, 0, 0, 0.1); }
   #play-area button.run {
     margin: 10px 0px;
-    width: 100%;
     height: 40px;
     line-height: 40px;
+    margin-left: 42px;
+    padding: 0px 100px;
     font-size: large;
     background: #0365C0;
     border: 1px solid rgba(73, 75, 76, 0.22);
