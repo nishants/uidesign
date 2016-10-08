@@ -54,22 +54,35 @@ ul.inline-list {
 * {
   box-sizing: border-box; }
 
-h1.head {
-  text-align: center;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  width: calc(100% - 30px);
-  margin-left: 15px;
-  margin-right: 15px;
-  font-family: 'Raleway', sans-serif; }
-  h1.head i {
-    color: #e9573f; }
+.top-bar {
+  box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
+  padding: 0px 50px; }
+  .top-bar h1.head {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: 'Raleway', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.39);
+    color: rgba(0, 0, 0, 0.69); }
+    .top-bar h1.head i {
+      color: #e9573f; }
+  .top-bar .status {
+    padding: 10px;
+    text-align: right; }
+    .top-bar .status .source {
+      padding: 0px 10px;
+      font-size: 13px;
+      line-height: 16px; }
+      .top-bar .status .source i {
+        font-size: 16px; }
 
 #play-area {
-  margin: auto;
-  padding: 0px 50px; }
+  margin: auto; }
   #play-area #editor-container {
+    padding: 0px 50px;
     height: 300px;
     width: 100%;
     font-size: 13px;
@@ -77,7 +90,8 @@ h1.head {
     #play-area #editor-container .ace_gutter {
       width: 42px;
       background-color: transparent;
-      border-right: 1px solid rgba(0, 0, 0, 0.1); }
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.28); }
   #play-area button.run {
     margin: 10px 0px;
     height: 40px;
@@ -100,7 +114,9 @@ h1.head {
       color: red; }
   #play-area ul.samples {
     font-weight: 500;
-    font-size: 16px; }
+    font-size: 16px;
+    box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.28);
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.31); }
     #play-area ul.samples > li {
       padding: 10px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
@@ -125,15 +141,5 @@ h1.head {
 .content-pane, .left-pane {
   padding: 10px;
   float: left; }
-
-.status {
-  padding: 10px;
-  text-align: right; }
-  .status .source {
-    padding: 0px 10px;
-    font-size: 13px;
-    line-height: 16px; }
-    .status .source i {
-      font-size: 16px; }
 
 /*# sourceMappingURL=index.css.map */

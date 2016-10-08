@@ -10,25 +10,45 @@ $editorHeight: 300px;
   box-sizing: border-box;
 }
 
-h1.head{
-  text-align: center;
-  padding-bottom: 1.5*$padding;
-  margin-bottom : 1.5*$padding;
-  border-bottom : 1px solid rgba(0, 0, 0, 0.1);
-  width : calc(100% - #{3 * $padding});
-  margin-left :   1.5 * $padding;
-  margin-right : 1.5 * $padding;
-  font-family: 'Raleway', sans-serif;
-  i{
-    color: #e9573f;
+.top-bar{
+  box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
+  padding: 0px $padding * 5;
+  h1.head{
+    text-align: center;
+    padding-bottom: 1.5*$padding;
+    margin-bottom : 1.5*$padding;
+    width : calc(100% - #{3 * $padding});
+    margin-left :   1.5 * $padding;
+    margin-right : 1.5 * $padding;
+    font-family: 'Raleway', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.39);
+    color: rgba(0, 0, 0, 0.69);
+
+    i{
+      color: #e9573f;
+    }
+  }
+  .status{
+    padding: $padding;
+    text-align: right;
+
+    .source{
+      padding: 0px $padding;
+      font-size: 13px;
+      line-height: 16px;
+      i{
+        font-size: 16px;
+      }
+    }
   }
 }
 
+
 #play-area{
   margin: auto;
-  padding: 0px $padding * 5;
 
   #editor-container{
+    padding: 0px $padding * 5;
     height: $editorHeight;
     width: 100%;
     font-size: 13px;
@@ -37,6 +57,7 @@ h1.head{
       width: $gutterWidth;
       background-color: transparent;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.28);
     }
     .ace_cursor{
       //@include transition(all 150ms cubic-bezier(0.64, 0.57, 0.67, 1.53));
@@ -78,6 +99,8 @@ h1.head{
     @extend .undo-list;
     font-weight: 500;
     font-size: 16px;
+    box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.28);
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.31);
 
     > li {
       padding       : $padding;
@@ -111,17 +134,4 @@ $leftPaneWidth: 250px;
 .content-pane, .left-pane{
   padding     : $padding;
   float: left;
-}
-
-.status{
-  padding: $padding;
-  text-align: right;
-  .source{
-    padding: 0px $padding;
-    font-size: 13px;
-    line-height: 16px;
-    i{
-      font-size: 16px;
-    }
-  }
 }
