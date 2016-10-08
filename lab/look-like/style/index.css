@@ -70,7 +70,8 @@ ul.inline-list {
     margin-right: 15px;
     font-family: 'Raleway', sans-serif;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.39);
-    color: rgba(0, 0, 0, 0.69); }
+    color: rgba(0, 0, 0, 0.69);
+    font-size: 50px; }
     .top-bar h1.head i {
       color: #e9573f; }
   .top-bar .status {
