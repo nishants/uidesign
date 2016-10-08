@@ -104,9 +104,9 @@ $editorHeight: 300px;
     text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.31);
 
     > li {
-      padding       : $padding;
       border-bottom  : 1px solid rgba(0, 0, 0, 0.1);
       a{
+        padding       : $padding;
         display: block;
         height: 100%;
         width: 100%;
