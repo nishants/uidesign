@@ -23,11 +23,20 @@
     };
     return {
       run : function(script){
-        return $http.put("https://amoeba-social-look-like-server.herokuapp.com/assertion/evaluate", unescape(script)).then(function(response){
+        return $http({
+          method: 'PUT',
+          url   : "https://amoeba-social-look-like-server.herokuapp.com/assertion/evaluate",
+          data  : unescape(script),
+          headers: {'Content-Type': 'text/plain'},
+          transformResponse: [function (data) {
+            return decodeURI(data);
+          }]
+        }).then(function(response){
           return response.data.split("<---->").filter(function(result){
             return result.length  > 0;
           });
         });
+
       },
       create: function (elment) {
         var aceEditor = ace.edit(elment);
