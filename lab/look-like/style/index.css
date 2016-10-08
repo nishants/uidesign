@@ -117,10 +117,10 @@ h1.head {
   padding: 0px 50px; }
 
 .content-pane {
-  width: calc(100% - 200px); }
+  width: calc(100% - 250px); }
 
 .left-pane {
-  width: 200px; }
+  width: 250px; }
 
 .content-pane, .left-pane {
   padding: 10px;
