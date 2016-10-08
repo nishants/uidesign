@@ -19,6 +19,7 @@ expect("$3.67").to look_like("/\\$(?<dollars>\\d+)\\.(?<cents>\\d+)/")
 expect("$367").not_to look_like("/\\$(?<dollars>\\d+)\\.(?<cents>\\d+)/")
 
 #URL
+expect("google.com").to look_like("url")
 expect("google.com").to look_like("http://google.com")
 expect("http://google.com").to look_like("http://google.com")
 expect("google-com").not_to look_like("http://google.com")

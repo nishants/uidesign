@@ -37,7 +37,7 @@ input {
   display: table;
   clear: both; }
 
-ul.undo-list, ul.inline-list, #play-area ul.console {
+ul.undo-list, ul.inline-list, #play-area ul.console, #play-area ul.samples {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -64,8 +64,8 @@ h1.head {
   margin-right: 15px; }
 
 #play-area {
-  width: 700px;
-  margin: auto; }
+  margin: auto;
+  padding: 0px 50px; }
   #play-area #editor-container {
     height: 300px;
     width: 100%;
@@ -84,5 +84,31 @@ h1.head {
       color: green; }
     #play-area ul.console li.error {
       color: red; }
+  #play-area ul.samples > li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    #play-area ul.samples > li a {
+      display: block;
+      height: 100%;
+      width: 100%; }
+
+.main-container {
+  padding: 0px 50px; }
+
+.content-pane {
+  width: calc(100% - 200px); }
+
+.left-pane {
+  width: 200px; }
+
+.content-pane, .left-pane {
+  padding: 10px;
+  float: left; }
+
+.status {
+  padding: 10px;
+  text-align: right; }
+  .status .source {
+    padding: 0px 10px; }
 
 /*# sourceMappingURL=index.css.map */

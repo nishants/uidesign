@@ -37,40 +37,47 @@
 <body ng-app="try-look-like" ng-controller="editorController">
 
     <div id="play-area">
+        <div class="status">
+            <a class="source" href="https://github.com/nishants/look_like">source</a>
+            <img src="https://travis-ci.org/nishants/look_like.svg?branch=master">
+            <a href='https://coveralls.io/github/nishants/look_like?branch=master'><img src='https://coveralls.io/repos/github/nishants/look_like/badge.svg?branch=master' alt='Coverage Status' /></a>
+            <a href="https://badge.fury.io/rb/look_like"><img src="https://badge.fury.io/rb/look_like.svg" alt="Gem Version" height="18"></a>
+        </div>
+
         <h1 class="head">
-            Try Look Like Matchers
+            Look Like Matchers
         </h1>
 
-        <div id="editor-container" >
-        </div>
+       <div class="main-container">
+           <div class="left-pane">
+               <ul class="samples">
+                   <li ng-repeat="sample in editor.samples" track by $index>
+                       <a ng-bind="sample.name" href="#{{sample.name}}"></a>
+                   </li>
+               </ul>
+           </div>
 
-        <div>
-            <ul class="console">
+           <div class="content-pane">
+               <div id="editor-container" >
+               </div>
+               <div>
+                   <ul class="console">
 
-                <li class="success" ng-show="console.errors.length == 0">
-                    All assertions passed.
-                </li>
-                <li class="error" ng-repeat="error in console.errors" >
-                    <span ng-bind="error"></span>
-                </li>
-            </ul>
-        </div>
+                       <li class="success" ng-show="console.errors.length == 0">
+                           All assertions passed.
+                       </li>
+                       <li class="error" ng-repeat="error in console.errors" >
+                           <span ng-bind="error"></span>
+                       </li>
+                   </ul>
+               </div>
+               <button class="run" ng-click="editor.run()" ng-disabled="console.running">
+                   <span ng-show="!console.running">Run</span>
+                   <i ng-show="console.running" class="fa fa-spin fa-spinner"></i>
+               </button>
+           </div>
+       </div>
 
-        <button class="run" ng-click="editor.run()" ng-disabled="console.running">
-            <span ng-show="!console.running">Run</span>
-            <i ng-show="console.running" class="fa fa-spin fa-spinner"></i>
-        </button>
-
-
-
-        <div>
-            <h3>Examples</h3>
-            <ul class="samples">
-                <li ng-repeat="sample in editor.samples" track by $index>
-                    <a ng-bind="sample.name" href="#{{sample.name}}"></a>
-                </li>
-            </ul>
-        </div>
     </div>
 
     <div id="splash" ng-class="{'hide-spash' : true}">
