@@ -18,7 +18,7 @@
     var createSample = function(config){
       return {
         name: config[0],
-        snippet : config.slice(1)
+        snippet : config.slice(1).filter(function(line){ return line.length > 0;})
       }
     };
     return {
@@ -79,6 +79,7 @@
               return sample.name === name;
             })[0];
             editor.ace.setValue(sample.snippet.join("\n"));
+            editor.ace.gotoLine(editor.ace.session.getLength(), 0, true);
             editor.run();
           }
         },
@@ -100,6 +101,7 @@
       editor.setSample(decodeURI(url.split("/")[1]))
     });
 
+    window.editor = editor;
   }]);
 
 }).call(this);

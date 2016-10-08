@@ -4,7 +4,7 @@ $rowHeight: 40px;
 $padding: 10px;
 $selectionColor: #0365C0;
 $gutterWidth: 42px;
-
+$editorHeight: 300px;
 
 *{
   box-sizing: border-box;
@@ -29,13 +29,17 @@ h1.head{
   padding: 0px $padding * 5;
 
   #editor-container{
-    height: 300px;
+    height: $editorHeight;
     width: 100%;
     font-size: 13px;
+    line-height: 30px;
     .ace_gutter{
       width: $gutterWidth;
       background-color: transparent;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .ace_cursor{
+      //@include transition(all 150ms cubic-bezier(0.64, 0.57, 0.67, 1.53));
     }
   }
 
@@ -72,6 +76,9 @@ h1.head{
 
   ul.samples{
     @extend .undo-list;
+    font-weight: 500;
+    font-size: 16px;
+
     > li {
       padding       : $padding;
       border-bottom  : 1px solid rgba(0, 0, 0, 0.1);

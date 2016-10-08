@@ -72,7 +72,8 @@ h1.head {
   #play-area #editor-container {
     height: 300px;
     width: 100%;
-    font-size: 13px; }
+    font-size: 13px;
+    line-height: 30px; }
     #play-area #editor-container .ace_gutter {
       width: 42px;
       background-color: transparent;
@@ -97,17 +98,20 @@ h1.head {
       font-weight: 100; }
     #play-area ul.console li.error {
       color: red; }
-  #play-area ul.samples > li {
-    padding: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-    #play-area ul.samples > li a {
-      display: block;
-      height: 100%;
-      width: 100%; }
-  #play-area ul.samples > li:hover {
-    background: #0365C0; }
-    #play-area ul.samples > li:hover a {
-      color: white; }
+  #play-area ul.samples {
+    font-weight: 500;
+    font-size: 16px; }
+    #play-area ul.samples > li {
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      #play-area ul.samples > li a {
+        display: block;
+        height: 100%;
+        width: 100%; }
+    #play-area ul.samples > li:hover {
+      background: #0365C0; }
+      #play-area ul.samples > li:hover a {
+        color: white; }
 
 .main-container {
   padding: 0px 50px; }
