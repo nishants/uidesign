@@ -23,14 +23,20 @@
             webkit-transition: opacity 500ms ease-in;
             transition: opacity 500ms ease-in;
 
+            line-height: 45px;
         }
         .hide-spash{
             opacity: 0;
             pointer-events: none;
         }
+
     </style>
     <style>
-        #dot-loader{position:relative;width:234px;height:21px;margin:auto}.dot-loader{position:absolute;top:0;background-color:#000;width:21px;height:21px;animation-name:bounce_dot-loader;-o-animation-name:bounce_dot-loader;-ms-animation-name:bounce_dot-loader;-webkit-animation-name:bounce_dot-loader;-moz-animation-name:bounce_dot-loader;animation-duration:1.5s;-o-animation-duration:1.5s;-ms-animation-duration:1.5s;-webkit-animation-duration:1.5s;-moz-animation-duration:1.5s;animation-iteration-count:infinite;-o-animation-iteration-count:infinite;-ms-animation-iteration-count:infinite;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;animation-direction:normal;-o-animation-direction:normal;-ms-animation-direction:normal;-webkit-animation-direction:normal;-moz-animation-direction:normal;transform:scale(.3);-o-transform:scale(.3);-ms-transform:scale(.3);-webkit-transform:scale(.3);-moz-transform:scale(.3);border-radius:19px;-o-border-radius:19px;-ms-border-radius:19px;-webkit-border-radius:19px;-moz-border-radius:19px}#dot-loader_1{left:0;animation-delay:.6s;-o-animation-delay:.6s;-ms-animation-delay:.6s;-webkit-animation-delay:.6s;-moz-animation-delay:.6s}#dot-loader_2{left:29px;animation-delay:.75s;-o-animation-delay:.75s;-ms-animation-delay:.75s;-webkit-animation-delay:.75s;-moz-animation-delay:.75s}#dot-loader_3{left:58px;animation-delay:.9s;-o-animation-delay:.9s;-ms-animation-delay:.9s;-webkit-animation-delay:.9s;-moz-animation-delay:.9s}#dot-loader_4{left:88px;animation-delay:1.05s;-o-animation-delay:1.05s;-ms-animation-delay:1.05s;-webkit-animation-delay:1.05s;-moz-animation-delay:1.05s}#dot-loader_5{left:117px;animation-delay:1.2s;-o-animation-delay:1.2s;-ms-animation-delay:1.2s;-webkit-animation-delay:1.2s;-moz-animation-delay:1.2s}#dot-loader_6{left:146px;animation-delay:1.35s;-o-animation-delay:1.35s;-ms-animation-delay:1.35s;-webkit-animation-delay:1.35s;-moz-animation-delay:1.35s}#dot-loader_7{left:175px;animation-delay:1.5s;-o-animation-delay:1.5s;-ms-animation-delay:1.5s;-webkit-animation-delay:1.5s;-moz-animation-delay:1.5s}#dot-loader_8{left:205px;animation-delay:1.64s;-o-animation-delay:1.64s;-ms-animation-delay:1.64s;-webkit-animation-delay:1.64s;-moz-animation-delay:1.64s}@keyframes bounce_dot-loader{0%{transform:scale(1);background-color:#000}100%{transform:scale(.3);background-color:#fff}}@-o-keyframes bounce_dot-loader{0%{-o-transform:scale(1);background-color:#000}100%{-o-transform:scale(.3);background-color:#fff}}@-ms-keyframes bounce_dot-loader{0%{-ms-transform:scale(1);background-color:#000}100%{-ms-transform:scale(.3);background-color:#fff}}@-webkit-keyframes bounce_dot-loader{0%{-webkit-transform:scale(1);background-color:#000}100%{-webkit-transform:scale(.3);background-color:#fff}}@-moz-keyframes bounce_dot-loader{0%{-moz-transform:scale(1);background-color:#000}100%{-moz-transform:scale(.3);background-color:#fff}}
+        .spinner{width:50px;height:40px;text-align:center;font-size:10px}.spinner>div{background-color:#333;height:100%;width:6px;display:inline-block;-webkit-animation:sk-stretchdelay 1.2s infinite ease-in-out;animation:sk-stretchdelay 1.2s infinite ease-in-out}.spinner .rect2{-webkit-animation-delay:-1.1s;animation-delay:-1.1s}.spinner .rect3{-webkit-animation-delay:-1s;animation-delay:-1s}.spinner .rect4{-webkit-animation-delay:-.9s;animation-delay:-.9s}.spinner .rect5{-webkit-animation-delay:-.8s;animation-delay:-.8s}@-webkit-keyframes sk-stretchdelay{0%,100%,40%{-webkit-transform:scaleY(.4)}20%{-webkit-transform:scaleY(1)}}@keyframes sk-stretchdelay{0%,100%,40%{transform:scaleY(.4);-webkit-transform:scaleY(.4)}20%{transform:scaleY(1);-webkit-transform:scaleY(1)}}
+        .loader-title,
+        .spinner{
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -84,17 +90,16 @@
     </div>
 
     <div id="splash" ng-class="{'hide-spash' : true}">
-        <h1>amoeba social</h1>
-        <div id="dot-loader">
-            <div id="dot-loader_1" class="dot-loader"></div>
-            <div id="dot-loader_2" class="dot-loader"></div>
-            <div id="dot-loader_3" class="dot-loader"></div>
-            <div id="dot-loader_4" class="dot-loader"></div>
-            <div id="dot-loader_5" class="dot-loader"></div>
-            <div id="dot-loader_6" class="dot-loader"></div>
-            <div id="dot-loader_7" class="dot-loader"></div>
-            <div id="dot-loader_8" class="dot-loader"></div>
-        </div>
+        <h1>
+            <span class="loader-title">amoeba social</span>
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </h1>
     </div>
 <div>
     <link href="style/index.css" rel="stylesheet" >
