@@ -153,29 +153,34 @@ ul.inline-list {
   padding: 10px;
   float: left; }
 
-.cucumber-view .html-table {
-  padding: 10px; }
-.cucumber-view button.run {
-  margin-left: 10px !important; }
-.cucumber-view .cucumber.console {
-  padding-left: 10px !important; }
-.cucumber-view #step-editor, .cucumber-view #gherkin-editor {
-  padding: 0px 50px;
-  height: 150px;
-  width: 100%;
-  font-size: 13px;
-  line-height: 30px; }
-  .cucumber-view #step-editor .ace_marker-layer .ace_selection, .cucumber-view #gherkin-editor .ace_marker-layer .ace_selection {
-    background: transparent; }
-  .cucumber-view #step-editor .ace_gutter, .cucumber-view #gherkin-editor .ace_gutter {
-    display: none; }
-  .cucumber-view #step-editor .ace_cursor,
-  .cucumber-view #step-editor .ace_text-input, .cucumber-view #gherkin-editor .ace_cursor,
-  .cucumber-view #gherkin-editor .ace_text-input {
-    -webkit-transition: all 0s;
-    -moz-transition: all 0s;
-    -o-transition: all 0s;
-    transition: all 0s; }
+.cucumber-view {
+  padding-left: 42px; }
+  .cucumber-view .heading {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .cucumber-view .html-table {
+    padding: 10px; }
+  .cucumber-view button.run {
+    margin-left: 10px !important; }
+  .cucumber-view .cucumber.console {
+    padding-left: 10px !important; }
+  .cucumber-view #step-editor, .cucumber-view #gherkin-editor {
+    padding: 0px 50px;
+    height: 150px;
+    width: 100%;
+    font-size: 13px;
+    line-height: 30px; }
+    .cucumber-view #step-editor .ace_marker-layer .ace_selection, .cucumber-view #gherkin-editor .ace_marker-layer .ace_selection {
+      background: transparent; }
+    .cucumber-view #step-editor .ace_gutter, .cucumber-view #gherkin-editor .ace_gutter {
+      display: none; }
+    .cucumber-view #step-editor .ace_cursor,
+    .cucumber-view #step-editor .ace_text-input, .cucumber-view #gherkin-editor .ace_cursor,
+    .cucumber-view #gherkin-editor .ace_text-input {
+      -webkit-transition: all 0s;
+      -moz-transition: all 0s;
+      -o-transition: all 0s;
+      transition: all 0s; }
 
 .html-table {
   border-collapse: collapse;

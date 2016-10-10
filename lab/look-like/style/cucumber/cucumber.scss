@@ -1,6 +1,12 @@
 $editorHeight: 150px;
 
 .cucumber-view{
+  padding-left:  $gutterWidth;
+
+  .heading{
+    padding-bottom: $padding;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
   .html-table{
     padding:  $padding;
   }

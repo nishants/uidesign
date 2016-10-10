@@ -27,6 +27,7 @@
       },
       create: function (elment) {
         var aceEditor = ace.edit(elment);
+        aceEditor.setOption("highlightActiveLine", false)
         aceEditor.getSession().setMode("ace/mode/ruby");
         aceEditor.setShowPrintMargin(false);
         aceEditor.getSession().setTabSize(2);
