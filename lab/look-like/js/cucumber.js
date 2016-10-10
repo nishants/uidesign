@@ -5,12 +5,35 @@
     var cucumber = {
       showing: false,
       sampleName: "Cucumber",
+      running: false,
+      errors: [],
+      table : {
+        rows: [
+            {name: "User One"  , email: "user1@abc.com", amount: "$5,008.00", accept: "yes" , url: "https://www.facebook.com/profile.php?id=76273"},
+            {name: "User Two"  , email: "user2@abc.com", amount: "$208.00"  , accept: "no"  , url: "https://www.facebook.com/profile.php?id=76273"},
+            {name: "User Three", email: "user3@abc.com", amount: "$0.00"    , accept: "yes" , url: ""}
+        ],
+        values: function(){
+          return cucumber.table.rows.map(function(row){
+            return [row.name, row.email, row.amount, row.accept, row.url];
+          });
+        },
+      },
       editors : {
-        steps: aceEditor.create("step-editor"),
+        steps:  aceEditor.create("step-editor"),
         features : aceEditor.create("gherkin-editor"),
       },
       run: function(){
+        cucumber.running = true;
+        var table_rows = cucumber.table.values(),
+            snippet = 'expect(' + JSON.stringify(table_rows)+ ').to look_like([["name", "email", "$amount", "yes/no", "url*"]])';
 
+        aceEditor.run(snippet).then(function(result){
+          cucumber.errors  = result;
+          cucumber.running = false;
+        }, function(){
+          alert("Unknown error!");
+        });
       }
     };
 
@@ -23,9 +46,9 @@
       var url = window.location.hash.length ? window.location.hash : "#/",
           sampleName = decodeURI(url.split("/")[1]);
       cucumber.showing = (sampleName == cucumber.sampleName);
-      cucumber.showing ? $scope.editor.disable(): $scope.editor.enable();
     });
 
+    cucumber.run();
     $scope.cucumber = cucumber;
   }]);
 

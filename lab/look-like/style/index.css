@@ -155,6 +155,10 @@ ul.inline-list {
 
 .cucumber-view .html-table {
   padding: 10px; }
+.cucumber-view button.run {
+  margin-left: 10px !important; }
+.cucumber-view .cucumber.console {
+  padding-left: 10px !important; }
 .cucumber-view #step-editor, .cucumber-view #gherkin-editor {
   padding: 0px 50px;
   height: 150px;
