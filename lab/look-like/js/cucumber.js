@@ -37,8 +37,8 @@
       }
     };
 
-    cucumber.editors.steps.setValue("Then(/^I should see employees table like$/) do |definition| \n\trows = homepage.open.employee_table_rows \n\texpect(rows).to look_like(definition.rows)\nend");
-    cucumber.editors.features.setValue("Scenario: View employees detail table\n\tGiven I am an admin \n\tThen  I should see employees table like \n\t\t|name      |email     |  $amount  | yes/no | url* |");
+    cucumber.editors.steps.setValue("Then(/^I should see employees table like$/) do |definition| \n\trows = homepage.open.employee_table_rows \n\texpect(rows).to look_like(definition.rows)\nend\n");
+    cucumber.editors.features.setValue("Scenario: View employees detail table\n\tGiven I am an admin \n\tThen  I should see employees table like \n\t\t|name      |email     |  $amount  | yes/no | url* |\n");
     cucumber.editors.steps.setReadOnly(true);
     cucumber.editors.features.setReadOnly(true);
 

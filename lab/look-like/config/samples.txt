@@ -6,8 +6,7 @@ expect("one@two.xyz").to look_like("a@b.com")
 expect("$53,23,1").to look_like("$amount")
 expect("₹23,1.00").to look_like("₹amount")
 
-expect("$53,23,1").to look_like("$12.21")
-expect("₹23,1.00").to look_like("₹100.12")
+expect("£23,1.00").not_to look_like("$amount")
 
 #Enums
 expect("one").to look_like("one/two/three")
@@ -20,9 +19,10 @@ expect("$367").not_to look_like("/\\$(?<dollars>\\d+)\\.(?<cents>\\d+)/")
 
 #URL
 expect("google.com").to look_like("url")
+expect("google-com").not_to look_like("url")
+
 expect("google.com").to look_like("http://google.com")
 expect("http://google.com").to look_like("http://google.com")
-expect("google-com").not_to look_like("http://google.com")
 
 #Wildcard
 expect("").to look_like("email*")
