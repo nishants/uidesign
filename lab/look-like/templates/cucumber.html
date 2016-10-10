@@ -1,0 +1,66 @@
+
+<div ng-controller="cucumberController" ng-if="!editor.showing">
+
+    <div>
+        <div>
+            <h5>table.feature</h5>
+            <div id="gherkin-editor"></div>
+        </div>
+
+        <div>
+            <h5>step.rb</h5>
+            <div id="step-editor"></div>
+        </div>
+
+        <div>
+            <h5>html table</h5>
+            <table class="html-table">
+                <tr>
+                    <th class="tg-yw4l">Name</th>
+                    <th class="tg-yw4l">Email</th>
+                    <th class="tg-yw4l">Commission</th>
+                    <th class="tg-yw4l">Enrolled</th>
+                    <th class="tg-yw4l">HomePage</th>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l">User One</td>
+                    <td class="tg-yw4l">user1@abc.com</td>
+                    <td class="tg-yw4l">$5,008.00</td>
+                    <td class="tg-yw4l">yes</td>
+                    <td class="tg-yw4l">https://www.facebook.com/profile.php?id=76273</td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l">User Two</td>
+                    <td class="tg-yw4l">user2@abc.com</td>
+                    <td class="tg-yw4l">$493.00</td>
+                    <td class="tg-yw4l">no</td>
+                    <td class="tg-yw4l">https://www.facebook.com/profile.php?id=76273</td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l">User Three</td>
+                    <td class="tg-yw4l">user3@abc.com</td>
+                    <td class="tg-yw4l">$8.00</td>
+                    <td class="tg-yw4l"></td>
+                    <td class="tg-yw4l">https://www.facebook.com/profile.php?id=76273</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <ul class="console">
+
+                <li class="success" ng-show="console.errors.length == 0">
+                    No errors.
+                </li>
+                <li class="error" ng-repeat="error in console.errors" >
+                    <span ng-bind="error"></span>
+                </li>
+            </ul>
+        </div>
+        <button class="run" ng-click="editor.run()" ng-disabled="console.running">
+            <span ng-show="!console.running">Run</span>
+            <i ng-show="console.running" class="fa fa-spin fa-spinner"></i>
+        </button>
+
+    </div>
+
+</div>

@@ -1,0 +1,28 @@
+$editorHeight: 150px;
+
+.cucumber-view{
+  .html-table{
+    padding:  $padding;
+  }
+  #step-editor, #gherkin-editor{
+    padding: 0px $padding * 5;
+    height: $editorHeight;
+    width: 100%;
+    font-size: 13px;
+    line-height: 30px;
+    .ace_marker-layer .ace_selection {
+      background: transparent;
+    }
+
+    .ace_gutter{
+      display: none;
+    }
+    .ace_cursor,
+    .ace_text-input{
+      @include transition(all 0s);
+    }
+  }
+ }
+
+
+@import "table";
