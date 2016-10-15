@@ -6,7 +6,7 @@ ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scena
   padding: 0px;
   display: block; }
 
-.resize-container:after, .top-bar .trade-mark:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after, ul.bread-crumb:after, .repl-window .title-bar:after {
+.resize-container:after, .top-bar .trade-mark:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after, ul.bread-crumb:after, .repl-window .title-bar:after, .page .field:after {
   content: "";
   display: table;
   clear: both; }
@@ -2452,5 +2452,29 @@ section.hints:hover {
   .repl-window .repl-output {
     padding: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
+.page {
+  padding: 10px; }
+  .page .field {
+    padding: 10px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    .page .field > label {
+      width: 100px;
+      float: left; }
+    .page .field > span {
+      float: left;
+      width: calc(100% - 100px); }
+  .page .past-addresses.field,
+  .page .address.field {
+    border-bottom: 1px solid transparent; }
+    .page .past-addresses.field > label,
+    .page .address.field > label {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .page .date .day:after,
+  .page .date .month:after {
+    content: "/";
+    padding: 0px 2px; }
 
 /*# sourceMappingURL=index.css.map */

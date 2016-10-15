@@ -1,0 +1,53 @@
+
+
+<div>
+    <div  class="name field">
+        <label>Name</label>
+        <span >Dam</span>
+    </div>
+    <div class="full-name field">
+        <label>Full Name</label>
+        <span >Dam Sam</span>
+    </div>
+    <div class="age field">
+        <label>Age</label>
+        <span >32</span>
+    </div>
+    <div class="address field">
+        <label>Address</label>
+        <span>
+            <span class="city" ng-bind="page.address.city">Delhi</span>
+            <ul class="from date">
+                <li>
+                    <span class="day" ng-bind="page.address.from.day"></span>
+                    <span class="month" ng-bind="page.address.from.month"></span>
+                    <span class="year" ng-bind="page.address.from.year"></span>
+                </li>
+            </ul>
+        </span>
+    </div>
+    <div class="past-addresses field">
+        <label>Past Addresses</label>
+        <span>
+            <span class="address" ng-repeat="address in page.past_addresses">
+                <span class="city" ng-bind="address.city">Delhi</span>
+                <ul class="from date">
+                    <li>
+                        <span class="day" ng-bind="address.from.day"></span>
+                        <span class="month" ng-bind="address.from.month"></span>
+                        <span class="year" ng-bind="address.from.year"></span>
+                    </li>
+                </ul>
+
+                <ul class="to date">
+                    <li>
+                        <span class="day">3</span>
+                        <span class="month">2</span>
+                        <span class="year">2014</span>
+                    </li>
+                </ul>
+                </span>
+        </span>
+    </div>
+
+</div>

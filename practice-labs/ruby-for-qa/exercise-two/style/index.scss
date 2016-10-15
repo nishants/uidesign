@@ -86,3 +86,8 @@ body.full-screen-editor{
 @import "task-editor/breadcrumb";
 @import "readme/hints";
 @import "repl";
+
+.page{
+  padding: $padding;
+  @import "../task/page";
+}
