@@ -30,12 +30,17 @@ viewBox="0 0 26887 26628"
   <style type="text/css">
    #duality.one > .one.outer {
        opacity: 0;
+       transform: scale(0) rotate(180deg);
+       transform-origin: 30% 80%;
    }
 
    #duality.one > .one.inner {
        fill: #070707
    }
 
+   .inner{
+       transition: background 500ms ease;
+   }
    .fil2 {
        fill: #FEFEFE
    }
