@@ -18,8 +18,8 @@ $pagePadding : 2*$padding;
 $transition: ease;
 $calcMaxPageHeight: calc(100vh - 2 * #{$pagePadding});
 
-@import "../../../lib/config.scss";
-@import "../../../lib/font-awesome-4.5.0/scss/font-awesome";
+@import "../../../../lib/config.scss";
+@import "../../../../lib/font-awesome-4.5.0/scss/font-awesome";
 
 *{
   box-sizing: border-box;
