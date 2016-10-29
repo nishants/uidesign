@@ -26,9 +26,7 @@
       clear     : function(){
         repl.history = [];
       },
-      script: [
-        ""
-      ],
+      script: [],
       historyPointer : 1,
       history   : [
         {
@@ -40,12 +38,19 @@
         if(repl.input.length == 0){
           return;
         }
-        return taskService.evaluate(repl.input).then(function (result) {
+
+        var expression = repl.script.join(";") + ";" +repl.input;
+
+        return taskService.evaluate(expression).then(function (evaluated) {
+          if(!evaluated.error){
+            repl.script.push(repl.input);
+          }
+
           repl.history.push(        {
                 input  : repl.input,
-                output : JSON.stringify(result)
-              }
-          );
+                output : JSON.stringify(evaluated.result || evaluated.error)
+          });
+
           repl.input = "";
           repl.historyPointer = repl.history.length;
         });
