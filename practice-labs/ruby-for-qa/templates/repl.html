@@ -1,0 +1,13 @@
+<div class="repl-window" ng-controller="replController">
+    <div class="title-bar">
+        <label>REPL</label>
+        <button class="run fa fa-play" ng-click="repl.run()"></button>
+    </div>
+    <p class="repl-output"
+       ng-show="repl.output"
+       ng-bind="repl.output"></p>
+    <textarea ng-model="repl.input"
+              placeholder="Type ruby code and click run"
+              class="repl-editor"></textarea>
+</div>
+
