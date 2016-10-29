@@ -4,7 +4,7 @@
   var app = angular.module("ruby-for-qa", ["ngSanitize", "ngStorage"]);
   app.value("compileServers",[{
     name: "default",
-    url: "http://amoeba-social-rubylab.herokuapp.com"
+    url: "http://localhost:4567"
   }]);
   app.config(function($httpProvider) {
     //Enable cross domain calls

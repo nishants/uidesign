@@ -1,48 +1,72 @@
 $rowHeight : 30px;
 
-.repl-window {
-  width           : 100%;
-  border          : 1px solid $lightBorderColor;
-  background-color: white;
-  border-radius   : $borderRadius;
-  .title-bar{
-    padding      : $padding;
-    border-bottom: 1px solid $lightBorderColor;
-    @extend .resize-container;
-    label{
-      float: left;
-    }
-    button.run:hover{
-      border    : 1px solid $lightBorderColor;
-    }
-    button.run{
-      float     : right;
-      color     : $playColor;
-      background-color: transparent;
-      border    : 1px solid transparent;
-    }
-    label,button.run{
-      height      : $rowHeight;
-      line-height : $rowHeight;
-      padding     :  0px $padding;
-      border-radius: $borderRadius;
+.repl {
+  margin: 2*$padding;
+
+  .cli{
+    @extend .undo-list;
+
+    .input{
+      $iconWidth: 30px;
+      @extend .resize-container;
+
+      .irb-icon{
+        text-align: center;
+        width: $iconWidth;
+        color: #2196F3;
+      }
+      .repl-editor{
+        width: calc(100% - #{$iconWidth});
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .irb-icon,.repl-editor{
+        float: left;
+        display: block;
+      }
     }
   }
 
-  .repl-editor{
-    height    :  2*$rowHeight;
-    width     : 100%;
-    border    : none;
-    padding   : $padding;
-    outline   : none;
+  .repl-window {
+    width           : 100%;
+    border          : 1px solid $lightBorderColor;
+    margin-top      : $padding;
+    background-color: white;
+    border-radius   : $borderRadius;
+    .title-bar{
+      border-bottom: 1px solid $lightBorderColor;
+      @extend .resize-container;
+      label{
+        float: left;
+      }
+      button.run:hover{
+        border    : 1px solid $lightBorderColor;
+      }
+      button.run{
+        float     : right;
+        color     : $playColor;
+        background-color: transparent;
+        border    : 1px solid transparent;
+      }
+      label,button.run{
+        height      : $rowHeight;
+        line-height : $rowHeight;
+        padding     :  0px $padding;
+        border-radius: $borderRadius;
+      }
+    }
+
+    .repl-editor{
+      height    :  2*$rowHeight;
+      width     : 100%;
+      border    : none;
+      outline   : none;
+    }
+    .repl-output:before{
+      content: "out >";
+      padding-right: $padding;
+    }
+    @include transition(all 250ms ease);
   }
-  .repl-output:before{
-    content: "out >";
-    padding-right: $padding;
-  }
-  .repl-output{
-    padding         : $padding;
-    border-bottom   : 1px solid $lightBorderColor;
-  }
-  @include transition(all 250ms ease);
 }

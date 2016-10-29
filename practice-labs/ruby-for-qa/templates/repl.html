@@ -1,13 +1,23 @@
 <div class="repl-window" ng-controller="replController">
     <div class="title-bar">
-        <label>REPL</label>
-        <button class="run fa fa-play" ng-click="repl.run()"></button>
+        <label>Interactive Ruby Shell</label>
     </div>
-    <p class="repl-output"
-       ng-show="repl.output"
-       ng-bind="repl.output"></p>
-    <textarea ng-model="repl.input"
-              placeholder="Type ruby code and click run"
-              class="repl-editor"></textarea>
+
+    <ul class="cli">
+        <li class="output"
+            ng-repeat="output in repl.history">
+            <span ng-bind="output"></span>
+        </li>
+
+        <li class="input">
+            <label class="irb-icon">&gt;</label>
+            <textarea class="repl-editor"
+                      ng-model="repl.input"
+                      placeholder="Type ruby code and press enter">
+            </textarea>
+        </li>
+
+    </ul>
+
 </div>
 
