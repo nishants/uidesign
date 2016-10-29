@@ -6,7 +6,8 @@
     <ul class="cli">
         <li class="output"
             ng-repeat="output in repl.history track by $index">
-            <span ng-bind="output"></span>
+            <label class="irb-icon">&gt;</label>
+            <span class="log" ng-bind="output"></span>
         </li>
 
         <li class="input">

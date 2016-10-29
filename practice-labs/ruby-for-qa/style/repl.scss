@@ -6,7 +6,7 @@ $rowHeight : 30px;
   .cli{
     @extend .undo-list;
 
-    .input{
+    .input, .output{
       $iconWidth: 30px;
       @extend .resize-container;
 
@@ -15,15 +15,23 @@ $rowHeight : 30px;
         width: $iconWidth;
         color: #2196F3;
       }
-      .repl-editor{
+      .repl-editor, .log{
         width: calc(100% - #{$iconWidth});
+      }
+
+      .repl-editor{
         resize: vertical;
         min-height: 100px;
       }
 
-      .irb-icon,.repl-editor{
+      .irb-icon,.repl-editor, .log{
         float: left;
         display: block;
+      }
+    }
+    .output{
+      .irb-icon{
+        color: $lightBorderColor;
       }
     }
   }

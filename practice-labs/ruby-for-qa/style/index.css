@@ -6,7 +6,7 @@ ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scena
   padding: 0px;
   display: block; }
 
-.resize-container:after, .top-bar .trade-mark:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after, ul.bread-crumb:after, .repl .cli .input:after, .repl .repl-window .title-bar:after {
+.resize-container:after, .top-bar .trade-mark:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after, ul.bread-crumb:after, .repl .cli .input:after, .repl .cli .output:after, .repl .repl-window .title-bar:after {
   content: "";
   display: table;
   clear: both; }
@@ -2416,17 +2416,20 @@ section.hints:hover {
 
 .repl {
   margin: 20px; }
-  .repl .cli .input .irb-icon {
+  .repl .cli .input .irb-icon, .repl .cli .output .irb-icon {
     text-align: center;
     width: 30px;
     color: #2196F3; }
-  .repl .cli .input .repl-editor {
-    width: calc(100% - 30px);
+  .repl .cli .input .repl-editor, .repl .cli .input .log, .repl .cli .output .repl-editor, .repl .cli .output .log {
+    width: calc(100% - 30px); }
+  .repl .cli .input .repl-editor, .repl .cli .output .repl-editor {
     resize: vertical;
     min-height: 100px; }
-  .repl .cli .input .irb-icon, .repl .cli .input .repl-editor {
+  .repl .cli .input .irb-icon, .repl .cli .input .repl-editor, .repl .cli .input .log, .repl .cli .output .irb-icon, .repl .cli .output .repl-editor, .repl .cli .output .log {
     float: left;
     display: block; }
+  .repl .cli .output .irb-icon {
+    color: rgba(0, 0, 0, 0.1); }
   .repl .repl-window {
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.1);
