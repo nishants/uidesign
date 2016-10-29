@@ -5,9 +5,14 @@
     var repl = {
       output    : "",
       input     : "",
+      history   : [],
+      enter     : function(event){
+        event.code == "Enter" && repl.run() ;
+      },
       run       : function () {
         return taskService.evaluate(repl.input).then(function (result) {
-          repl.output = JSON.stringify(result);
+          repl.input = "";
+          repl.history.push(JSON.stringify(result));
         });
       }
     };

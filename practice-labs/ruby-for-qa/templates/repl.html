@@ -5,7 +5,7 @@
 
     <ul class="cli">
         <li class="output"
-            ng-repeat="output in repl.history">
+            ng-repeat="output in repl.history track by $index">
             <span ng-bind="output"></span>
         </li>
 
@@ -13,6 +13,7 @@
             <label class="irb-icon">&gt;</label>
             <textarea class="repl-editor"
                       ng-model="repl.input"
+                      ng-keypress="repl.enter($event)"
                       placeholder="Type ruby code and press enter">
             </textarea>
         </li>
