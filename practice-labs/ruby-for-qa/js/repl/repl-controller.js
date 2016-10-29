@@ -7,10 +7,12 @@
       input     : "",
       hotkeys   : {
         "ArrowUp"   : function(){
-          console.log("last");
+          repl.historyPointer = (repl.historyPointer - 1) % (repl.history.length);
+          repl.input = repl.history[repl.historyPointer].input;
         },
         "ArrowDown" : function(){
-          console.log("next");
+          repl.historyPointer = (repl.historyPointer + 1) % (repl.history.length);
+          repl.input = repl.history[repl.historyPointer].input;
         },
         "Ctrlk"     : function(){
           repl.clear();
@@ -25,6 +27,7 @@
       script: [
         ""
       ],
+      historyPointer : 1,
       history   : [
         {
           input  : "puts 'hello'",
@@ -42,6 +45,7 @@
               }
           );
           repl.input = "";
+          repl.historyPointer = repl.history.length;
         });
       }
     };
