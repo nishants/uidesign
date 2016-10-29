@@ -22,6 +22,9 @@
       clear     : function(){
         repl.history = [];
       },
+      script: [
+        ""
+      ],
       history   : [
         {
           input  : "puts 'hello'",
@@ -29,6 +32,9 @@
         }
       ],
       run       : function () {
+        if(repl.input.length == 0){
+          return;
+        }
         return taskService.evaluate(repl.input).then(function (result) {
           repl.history.push(        {
                 input  : repl.input,
