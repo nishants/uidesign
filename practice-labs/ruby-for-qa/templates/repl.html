@@ -1,21 +1,27 @@
 <div class="repl-window" ng-controller="replController">
     <div class="title-bar">
         <label>Interactive Ruby Shell</label>
+        <button class="clear fa fa-trash" ng-click="repl.clear()"></button>
     </div>
 
     <ul class="cli">
-        <li class="output"
-            ng-repeat="output in repl.history track by $index">
-            <label class="irb-icon">&gt;</label>
-            <span class="log" ng-bind="output"></span>
+        <li class="history"
+            ng-repeat="history in repl.history track by $index">
+            <div class="input">
+                <label class="irb-icon">&gt;</label>
+                <span class="log" ng-bind="history.input"></span>
+            </div>
+            <div class="output">
+                <label class="irb-icon">&lt;</label>
+                <span class="log" ng-bind="history.output"></span>
+            </div>
         </li>
 
-        <li class="input">
+        <li class="current">
             <label class="irb-icon">&gt;</label>
             <textarea class="repl-editor"
                       ng-model="repl.input"
-                      ng-keypress="repl.enter($event)"
-                      placeholder="Type ruby code and press enter">
+                      ng-keypress="repl.enter($event)">
             </textarea>
         </li>
 

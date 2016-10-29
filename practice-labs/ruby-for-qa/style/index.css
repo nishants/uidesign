@@ -6,7 +6,7 @@ ul.undo-list, .task-editor .editor-bar ul.editor-menu, .console .output ul.scena
   padding: 0px;
   display: block; }
 
-.resize-container:after, .top-bar .trade-mark:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after, ul.bread-crumb:after, .repl .cli .input:after, .repl .cli .output:after, .repl .repl-window .title-bar:after {
+.resize-container:after, .top-bar .trade-mark:after, .console .title:after, .console .output .scenarios .scenario .overview:after, .console .output .scenarios .scenario .detail > li:after, ul.bread-crumb:after, .repl .cli .current:after, .repl .cli .history:after, .repl .cli .history .input:after, .repl .cli .history .output:after, .repl .repl-window .title-bar:after {
   content: "";
   display: table;
   clear: both; }
@@ -2416,20 +2416,24 @@ section.hints:hover {
 
 .repl {
   margin: 20px; }
-  .repl .cli .input .irb-icon, .repl .cli .output .irb-icon {
+  .repl .cli .current .irb-icon, .repl .cli .history .irb-icon {
     text-align: center;
     width: 30px;
     color: #2196F3; }
-  .repl .cli .input .repl-editor, .repl .cli .input .log, .repl .cli .output .repl-editor, .repl .cli .output .log {
+  .repl .cli .current .repl-editor, .repl .cli .current .log, .repl .cli .history .repl-editor, .repl .cli .history .log {
     width: calc(100% - 30px); }
-  .repl .cli .input .repl-editor, .repl .cli .output .repl-editor {
+  .repl .cli .current .repl-editor, .repl .cli .history .repl-editor {
     resize: vertical;
     min-height: 100px; }
-  .repl .cli .input .irb-icon, .repl .cli .input .repl-editor, .repl .cli .input .log, .repl .cli .output .irb-icon, .repl .cli .output .repl-editor, .repl .cli .output .log {
+  .repl .cli .current .irb-icon, .repl .cli .current .repl-editor, .repl .cli .current .log, .repl .cli .history .irb-icon, .repl .cli .history .repl-editor, .repl .cli .history .log {
     float: left;
     display: block; }
-  .repl .cli .output .irb-icon {
-    color: rgba(0, 0, 0, 0.1); }
+  .repl .cli .history {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+    .repl .cli .history .input, .repl .cli .history .output {
+      color: rgba(0, 0, 0, 0.3); }
+    .repl .cli .history .irb-icon {
+      color: rgba(0, 0, 0, 0.1); }
   .repl .repl-window {
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -2444,14 +2448,14 @@ section.hints:hover {
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
       .repl .repl-window .title-bar label {
         float: left; }
-      .repl .repl-window .title-bar button.run:hover {
+      .repl .repl-window .title-bar button.clear:hover {
         border: 1px solid rgba(0, 0, 0, 0.1); }
-      .repl .repl-window .title-bar button.run {
+      .repl .repl-window .title-bar button.clear {
         float: right;
-        color: #5cb85c;
+        color: rgba(0, 0, 0, 0.1);
         background-color: transparent;
         border: 1px solid transparent; }
-      .repl .repl-window .title-bar label, .repl .repl-window .title-bar button.run {
+      .repl .repl-window .title-bar label, .repl .repl-window .title-bar button.clear {
         height: 30px;
         line-height: 30px;
         padding: 0px 10px;

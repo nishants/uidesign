@@ -5,11 +5,10 @@ $rowHeight : 30px;
 
   .cli{
     @extend .undo-list;
+    $iconWidth: 30px;
 
-    .input, .output{
-      $iconWidth: 30px;
+    .current, .history{
       @extend .resize-container;
-
       .irb-icon{
         text-align: center;
         width: $iconWidth;
@@ -29,7 +28,13 @@ $rowHeight : 30px;
         display: block;
       }
     }
-    .output{
+
+    .history{
+      border-bottom: 1px solid $lightBgColor;
+      .input, .output{
+        @extend .resize-container;
+        color: rgba(0, 0, 0, 0.3);
+      }
       .irb-icon{
         color: $lightBorderColor;
       }
@@ -48,16 +53,16 @@ $rowHeight : 30px;
       label{
         float: left;
       }
-      button.run:hover{
+      button.clear:hover{
         border    : 1px solid $lightBorderColor;
       }
-      button.run{
+      button.clear{
         float     : right;
-        color     : $playColor;
+        color     : $lightBorderColor;
         background-color: transparent;
         border    : 1px solid transparent;
       }
-      label,button.run{
+      label,button.clear{
         height      : $rowHeight;
         line-height : $rowHeight;
         padding     :  0px $padding;
