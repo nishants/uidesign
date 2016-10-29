@@ -61,45 +61,47 @@
         </div>
     </div>
 
-    <div class="task-editor" ng-controller="editorController">
-        <div class="editor-bar">
-            <div class="task-name">
-                <ul class="bread-crumb">
-                    <li>Editor</li>
-                    <li>Ruby For QAs</li>
-                    <li>Exercise One</li>
-                    <li class="error" ng-show="editor.console.output.error">
-                        <span class="fa fa-exclamation"></span>
-                        <span ng-bind="editor.console.output.error"></span>
-                    </li>
-                </ul>
-            </div>
-            <ul class="editor-menu" ng-class="{'running-task' : ui.runningTask}">
-                <li class="refresh">
-                    <button class="btn fa fa-refresh"
-                            ng-click="editor.refresh()"> </button>
-                </li>
-                <li class="run">
-                    <button class="btn fa fa-play"
-                            ng-disabled="ui.runningTask"
-                            ng-click="editor.run()"></button>
-                </li>
-                <li class="full-screen">
-                    <button class="btn fa"
-                            ng-class="{'fa-square-o' : !ui.fullScreenEditor,'fa-minus' : ui.fullScreenEditor}"
-                            ng-click="ui.fullScreenEditor = !ui.fullScreenEditor"></button>
-                </li>
-            </ul>
-        </div>
+   <div ng-controller="editorController">
+       <div class="task-editor">
+           <div class="editor-bar">
+               <div class="task-name">
+                   <ul class="bread-crumb">
+                       <li>Editor</li>
+                       <li>Ruby For QAs</li>
+                       <li>Exercise One</li>
+                       <li class="error" ng-show="editor.console.output.error">
+                           <span class="fa fa-exclamation"></span>
+                           <span ng-bind="editor.console.output.error"></span>
+                       </li>
+                   </ul>
+               </div>
+               <ul class="editor-menu" ng-class="{'running-task' : ui.runningTask}">
+                   <li class="refresh">
+                       <button class="btn fa fa-refresh"
+                               ng-click="editor.refresh()"> </button>
+                   </li>
+                   <li class="run">
+                       <button class="btn fa fa-play"
+                               ng-disabled="ui.runningTask"
+                               ng-click="editor.run()"></button>
+                   </li>
+                   <li class="full-screen">
+                       <button class="btn fa"
+                               ng-class="{'fa-square-o' : !ui.fullScreenEditor,'fa-minus' : ui.fullScreenEditor}"
+                               ng-click="ui.fullScreenEditor = !ui.fullScreenEditor"></button>
+                   </li>
+               </ul>
+           </div>
 
-        <div class="editor-section" >
-            <div id="worksheet"></div>
-            <div class="right-pane">
-                <div ng-include="'templates/console.html'"></div>
-            </div>
-        </div>
-    </div>
-    <div class="repl" ng-include="'templates/repl.html'"></div>
+           <div class="editor-section" >
+               <div id="worksheet"></div>
+               <div class="right-pane">
+                   <div ng-include="'templates/console.html'"></div>
+               </div>
+           </div>
+       </div>
+       <div class="repl" ng-include="'templates/repl.html'"></div>
+   </div>
 </article>
 
 <div id="splash" ng-class="{'hide-spash' : !ui.splash}">
@@ -139,7 +141,7 @@
     <script src="js/ui-controller.js"></script>
     <script src="js/ace-editor.js"></script>
 
-    <script src="js/repl/repl-controller.js"></script>
+    <script src="js/repl/repl-service.js"></script>
     <script src="js/ui-service.js"></script>
     <script src="js/editor/task-service.js"></script>
     <script src="js/editor/task-bar-status.js"></script>

@@ -1,6 +1,6 @@
 (function(){
   "use strict"
-  window.app.controller("editorController", ["$scope", "taskService", "$timeout", "uiService", "$localStorage","aceEditor", function($scope, taskService, $timeout, uiService, $localStorage, aceEditor){
+  window.app.controller("editorController", ["$scope", "taskService", "$timeout", "uiService", "$localStorage","aceEditor", "replService", function($scope, taskService, $timeout, uiService, $localStorage, aceEditor, replService){
     window.storage = $localStorage;
     var taskId = "exercise-one",
         editor = {
@@ -73,6 +73,7 @@
     }
 
     $scope.editor = editor;
+    $scope.repl = replService.create();
   }]);
 
 }).call(this);
