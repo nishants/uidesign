@@ -6,7 +6,9 @@
     return {
       getAssignment : function(id){
         return $http.get(remote.url+"/tasks/:id/worksheet".replace(":id", id)).then(function(response){
-          return response.data;
+          return {
+            worksheet: response.data
+          };
         })
       },
       evaluate: function(expression){

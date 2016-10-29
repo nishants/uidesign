@@ -32,8 +32,8 @@
           },
           refresh: function(){
             uiService.runningTask = true;
-            return taskService.getAssignment(taskId).then(function(worksheet){
-              editor.ace.setValue(worksheet);
+            return taskService.getAssignment(taskId).then(function(task){
+              editor.ace.setValue(task.worksheet);
               editor.run();
             });
           },
