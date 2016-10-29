@@ -73,7 +73,9 @@
     }
 
     if(lastSaved){
-      editor.createRepl($localStorage[taskId].repl);
+      taskService.getAssignment(taskId).then(function(task){
+        $scope.repl = replService.create(task.replScope);
+      });
       editor.ace.setValue(lastSaved);
       editor.run();
     }
