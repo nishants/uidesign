@@ -8,11 +8,13 @@
       hotkeys   : {
         "ArrowUp"   : function(){
           repl.historyPointer = (repl.historyPointer - 1) % (repl.history.length);
-          repl.input = repl.history[repl.historyPointer].input;
+          var history = repl.history[repl.historyPointer];
+          history && (repl.input = history.input);
         },
         "ArrowDown" : function(){
           repl.historyPointer = (repl.historyPointer + 1) % (repl.history.length);
-          repl.input = repl.history[repl.historyPointer].input;
+          var history = repl.history[repl.historyPointer];
+          history && (repl.input = history.input);
         },
         "Ctrlk"     : function(){
           repl.clear();
