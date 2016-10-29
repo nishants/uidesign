@@ -5,6 +5,20 @@
     var repl = {
       output    : "",
       input     : "",
+      hotkeys   : {
+        "ArrowUp"   : function(){
+          console.log("last");
+        },
+        "ArrowDown" : function(){
+          console.log("next");
+        },
+        "Ctrlk"     : function(){
+          repl.clear();
+        },
+        "Enter"     : function(){
+          repl.run();
+        },
+      },
       clear     : function(){
         repl.history = [];
       },
@@ -14,9 +28,6 @@
           output : "hello"
         }
       ],
-      enter     : function(event){
-        event.code == "Enter" && repl.run() ;
-      },
       run       : function () {
         return taskService.evaluate(repl.input).then(function (result) {
           repl.history.push(        {

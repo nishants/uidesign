@@ -19,9 +19,9 @@
 
         <li class="current">
             <label class="irb-icon">&gt;</label>
-            <textarea class="repl-editor bind-keys"
-                      ng-model="repl.input"
-                      ng-keypress="repl.enter($event)">
+            <textarea class="repl-editor"
+                      bind-keys="repl.hotkeys"
+                      ng-model="repl.input">
             </textarea>
         </li>
 
