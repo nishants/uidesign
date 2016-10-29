@@ -3,7 +3,7 @@
   window.app.service("replService", ["taskService", function(taskService){
 
     return {
-      create : function(){
+      create : function(script){
         var repl = {
           output    : "",
           input     : "",
@@ -58,6 +58,8 @@
             });
           }
         };
+
+        repl.script.push(script);
         return repl;
       }
     };

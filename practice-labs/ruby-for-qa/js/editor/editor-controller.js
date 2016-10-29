@@ -26,13 +26,18 @@
           },
           save : function(){
             if(!$localStorage[taskId]){
-              $localStorage[taskId] = {lastSaved : null}
+              $localStorage[taskId] = {lastSaved : null, repl: {script : null}}
             }
-            $localStorage[taskId].lastSaved = editor.ace.getValue();
+            $localStorage[taskId].lastSaved   = editor.ace.getValue();
+            $localStorage[taskId].repl.script = $scope.repl.script;
+          },
+          createRepl: function(script){
+            $scope.repl = replService.create(script);
           },
           refresh: function(){
             uiService.runningTask = true;
             return taskService.getAssignment(taskId).then(function(task){
+              $scope.repl = replService.create(task.replScope);
               editor.ace.setValue(task.worksheet);
               editor.run();
             });
@@ -68,12 +73,12 @@
     }
 
     if(lastSaved){
+      editor.createRepl($localStorage[taskId].repl);
       editor.ace.setValue(lastSaved);
       editor.run();
     }
 
     $scope.editor = editor;
-    $scope.repl = replService.create();
   }]);
 
 }).call(this);
