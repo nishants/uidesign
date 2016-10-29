@@ -18,7 +18,7 @@ $rightPaneWidth: 350px;
       width:  calc(100% - #{$rightPaneWidth});
       font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
       border-radius: $borderRadius;
-      font-size: 1em;
+      //font-size: 1em;
 
       .ace_search.right{
         margin: 2*$padding;

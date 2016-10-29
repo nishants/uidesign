@@ -2095,13 +2095,15 @@ input {
 * {
   box-sizing: border-box; }
 
+[ng-click] {
+  cursor: pointer; }
+
 button {
   outline: none !important; }
 
 body.full-screen-editor {
   height: 100vh;
-  overflow: hidden;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  overflow: hidden; }
 
 .task-editor, .task-overview {
   margin: 20px;
@@ -2163,8 +2165,7 @@ body.full-screen-editor {
       height: 100%;
       width: calc(100% - 350px);
       font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-      border-radius: 4px;
-      font-size: 1em; }
+      border-radius: 4px; }
       .task-editor .editor-section #worksheet .ace_search.right {
         margin: 20px;
         color: white;
