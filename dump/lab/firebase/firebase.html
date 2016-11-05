@@ -12,6 +12,12 @@
     <button ng-click="login.form.submit()">Sign In</button>
     <button ng-click="session.user.signOut()">Sign Out</button>
 </form>
+
+<form ng-show="session.user.id">
+    <input type="text" ng-model="form.name">
+    <input type="text" ng-model="form.picture">
+    <button ng-click="session.user.updateProfile(form.name, form.picture)">Save</button>
+</form>
 <!--<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>-->
 <script src="firebase.js"></script>
 <script src="../../lib/angular-1.4.3.js"></script>
@@ -65,11 +71,10 @@
                                 console.error(errorMessage);
                             });
                 },
-                writeUserData = function (userId, name, email, imageUrl) {
+                writeUserData = function (userId, name, picture) {
                     return app.database().ref('users/' + userId+"/profile").set({
-                        username: name,
-                        email: email,
-                        profile_picture: imageUrl
+                        name: name,
+                        picture: picture
                     });
                 };
 
@@ -91,6 +96,13 @@
                     picture: null,
                     signOut: function () {
                         signOut();
+                    },
+                    updateProfile: function(name, picture){
+                        return writeUserData(session.user.id, name, picture)
+                                .then(function () {
+                                    session.user.name = name;
+                                    session.user.picture = picture;
+                                });
                     }
                 },
                 active: function(){
@@ -127,8 +139,21 @@
             }
         };
 
+        var profile = {
+            form: {
+                name: null,
+                picture: null,
+            },
+            save: function(){
+                remoteService
+            }
+
+        };
+
         $scope.login = login;
+        $scope.profile = profile;
         $scope.session = remoteService.session;
+
         window.session = remoteService.session;
     }]);
 
