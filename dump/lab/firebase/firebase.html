@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body ng-app="fired-up">
+<body ng-app="fired-up" ng-controller="LoginController">
+
 <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
 <script src="../../lib/angular-1.4.3.js"></script>
 <script>
 
-    var credentials = {},
-            app = angular.module("fired-up", []);
+    var  app = angular.module("fired-up", []);
 
-    app.value("credentials", credentials)
+    app.value("credentials", {
+        apiKey: "AIzaSyAt3rD67xE5KvwyAk645-tRrKDAG3KH_jY",
+        authDomain: "programmers-4d280.firebaseapp.com",
+        databaseURL: "https://programmers-4d280.firebaseio.com",
+        storageBucket: "programmers-4d280.appspot.com",
+        messagingSenderId: "188124641306"
+    })
 
-    app.run(function (credentials) {
-        var config = {
-            apiKey: "AIzaSyAt3rD67xE5KvwyAk645-tRrKDAG3KH_jY",
-            authDomain: "programmers-4d280.firebaseapp.com",
-            databaseURL: "https://programmers-4d280.firebaseio.com",
-            storageBucket: "programmers-4d280.appspot.com",
-            messagingSenderId: "188124641306"
-        };
-        var app = firebase.initializeApp(config);
-
-
+    app.service("firebaseService", function (credentials) {
+        var app = firebase.initializeApp(credentials);
         app.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
@@ -35,60 +32,68 @@
         });
 
         var
+                signIn = function (userEmail, userPassword) {
+                    return app.auth().signInWithEmailAndPassword(userEmail, userPassword)
+                            .catch(function (error) {
+                                console.error(error.message);
+                            });
+                },
+                signOut = function (userEmail, userPassword) {
+                    return app.auth().signOut()
+                            .catch(function (error) {
+                                console.error(error.message);
+                            });
+                },
+                createAccount = function (userEmail, userPassword) {
+                    app.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+                            .then(function (user) {
+                                console.log("user created successfully.")
+                            })
+                            .catch(function (error) {
+                                var errorCode = error.code;
+                                var errorMessage = error.message;
+                                if (errorCode == 'auth/weak-password') {
+                                    console.error('The password is too weak.');
+                                }
+                                console.error(errorMessage);
+                            });
+                },
+                writeUserData = function (userId, name, email, imageUrl) {
+                    return app.database().ref('users/' + userId).set({
+                        username: name,
+                        email: email,
+                        profile_picture: imageUrl
+                    });
+                };
+
+        return {
+            signIn: signIn,
+            signOut: signOut,
+            createAccount: createAccount,
+            setUserDetails: writeUserData
+        }
+    });
+
+    app.controller("LoginController", ["$scope", "firebaseService", function ($scope, firebaseService) {
+        var
                 userEmail = "nishants.singh87@gmaisl.com",
                 userPassword = "123456";
 
-        var signIn = function (userEmail, userPassword) {
-            return app.auth().signInWithEmailAndPassword(userEmail, userPassword)
-                    .catch(function (error) {
-                        console.error(error.message);
-                    });
-        };
-        var signOut = function (userEmail, userPassword) {
-            return app.auth().signOut()
-                    .catch(function (error) {
-                        console.error(error.message);
-                    });
-        };
-        var createAccount = function (userEmail, userPassword) {
-            app.auth().createUserWithEmailAndPassword(userEmail, userPassword)
-                    .then(function (user) {
-                        console.log("user created successfully.")
-                    })
-                    .catch(function (error) {
-                        var errorCode = error.code;
-                        var errorMessage = error.message;
-                        if (errorCode == 'auth/weak-password') {
-                            console.error('The password is too weak.');
-                        }
-                        console.error(errorMessage);
-                    });
-        };
-
-
-        var writeUserData = function (userId, name, email, imageUrl) {
-            return app.database().ref('users/' + userId).set({
-                username: name,
-                email: email,
-                profile_picture: imageUrl
-            });
-        }
-
-        signIn(userEmail, userPassword).then(function (user) {
+        firebaseService.signIn(userEmail, userPassword).then(function (user) {
             console.log("user logged in \n" + JSON.stringify(user));
             var imageUrl = "https://lh6.googleusercontent.com/-msg4gMx00kw/AAAAAAAAAAI/AAAAAAAAAAA/y41H3Y0p2oY/W96-H96/photo.jpg?sz=64",
                     email = "nomail@void.com",
                     name = "Nishant";
 
-            writeUserData(user.uid, name, email, imageUrl)
+            firebaseService.setUserDetails(user.uid, name, email, imageUrl)
                     .then(function () {
-                        signOut().then(function () {
+                        firebaseService.signOut().then(function () {
                             console.log("signed out user....");
                         });
                     });
         });
-    });
 
+    }]);
 
 </script>
 </body>
