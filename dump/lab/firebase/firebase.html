@@ -12,7 +12,8 @@
     <button ng-click="login.form.submit()">Sign In</button>
     <button ng-click="session.user.signOut()">Sign Out</button>
 </form>
-<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>-->
+<script src="firebase.js"></script>
 <script src="../../lib/angular-1.4.3.js"></script>
 <script>
 
@@ -72,34 +73,43 @@
                     });
                 };
 
-        return {
-            signIn: signIn,
-            signOut: signOut,
+        var service = {
+            signIn: function(userEmail, userPassword){
+                return signIn(userEmail, userPassword).then(function(user){
+                    service.session.user.id = user.uid;
+                    service.session.user.name = user.displayName;
+                    return user;
+                });
+            },
             createAccount: createAccount,
-            setUserDetails: writeUserData
-        }
+            setUserDetails: writeUserData,
+            session: {
+                user: {
+                    id: null,
+                    name: null,
+                    email: null,
+                    picture: null,
+                    signOut: function () {
+                        signOut();
+                    }
+                },
+                active: function(){
+                    return !!service.session.user.id;
+                }
+
+            }
+        };
+        return service
     });
 
-    app.controller("LoginController", ["$scope", "remoteService", function ($scope, firebaseService) {
-        var session = {
-            user: {
-                id: null,
-                name: null,
-                email: null,
-                picture: null,
-                signOut: function(){
-                    firebaseService.signOut();
-                }
-            },
-
-        };
+    app.controller("LoginController", ["$scope", "remoteService", function ($scope, remoteService) {
 
         var login = {
             form: {
                 email:     "nishants.singh87@gmaisl.com",
                 password: "123456",
                 submit: function(){
-                    firebaseService.signIn(login.form.email, login.form.password).then(function (user) {
+                    remoteService.signIn(login.form.email, login.form.password).then(function (user) {
                         console.log("user logged in \n" + JSON.stringify(user));
 
                         var imageUrl = "https://lh6.googleusercontent.com/-msg4gMx00kw/AAAAAAAAAAI/AAAAAAAAAAA/y41H3Y0p2oY/W96-H96/photo.jpg?sz=64",
@@ -118,7 +128,8 @@
         };
 
         $scope.login = login;
-        $scope.session = session;
+        $scope.session = remoteService.session;
+        window.session = remoteService.session;
     }]);
 
 </script>
