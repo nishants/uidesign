@@ -14,6 +14,7 @@
 </form>
 
 <form>
+    <div ng-bind="signup.form.error" ng-show="signup.form.error"></div>
     <input type="email"     ng-model="signup.form.email">
     <input type="password"  ng-model="signup.form.password">
     <input type="password"  ng-model="confirm_password" ng-init="confirm_password = signup.form.password">
@@ -43,7 +44,7 @@
         messagingSenderId: "188124641306"
     })
 
-    app.service("RemoteService", function (credentials) {
+    app.service("RemoteService", ["credentials", function (credentials) {
         var app = firebase.initializeApp(credentials);
         app.auth().onAuthStateChanged(function (user) {
             if (user) {
@@ -68,19 +69,7 @@
                             });
                 },
                 createAccount = function (userEmail, userPassword) {
-                    return app.auth().createUserWithEmailAndPassword(userEmail, userPassword)
-                            .then(function (user) {
-                                console.log("user created successfully.");
-                                return user;
-                            })
-                            .catch(function (error) {
-                                var errorCode = error.code;
-                                var errorMessage = error.message;
-                                if (errorCode == 'auth/weak-password') {
-                                    console.error('The password is too weak.');
-                                }
-                                console.error(errorMessage);
-                            });
+                    return app.auth().createUserWithEmailAndPassword(userEmail, userPassword);
                 },
                 writeUserData = function (userId, name, picture) {
                     return app.database().ref('users/' + userId+"/profile").set({
@@ -95,7 +84,7 @@
             createAccount   : createAccount,
             writeUserData   : writeUserData
         };
-    });
+    }]);
 
     app.service("UserService", ["RemoteService", function (remoteService) {
        return {
@@ -115,7 +104,7 @@
                return remoteService.signOut();
            },
            signUp: function(userEmail, userPassword){
-               return remoteService.createAccount();
+               return remoteService.createAccount(userEmail, userPassword);
            },
            updateProfile: function(name, picture){
                return remoteService.writeUserData(user.id, name, picture)
@@ -127,9 +116,16 @@
        };
     }]);
 
-    app.controller("LoginController", ["$scope", "RemoteService", "UserService", function ($scope, remoteService, user) {
+    app.controller("LoginController", ["$scope", "RemoteService", "UserService", "$timeout", function ($scope, remoteService, user, $timeout) {
 
 
+        var timeout = function(callback, time){
+            return function(){
+                $timeout(function(){
+                    callback();
+                })
+            }
+        };
         var loginForm = {
             email: "nishants.singh87@gmaisl.com",
             password: "123456",
@@ -140,8 +136,20 @@
         var signupForm = {
             email   : "nishants.singh87@gmaisl.com",
             password: "123456",
+            error   : null,
+            onSignUpError:function(error){
+                $timeout(function () {
+                    signupForm.error = error.message;
+                    console.error(JSON.stringify(error.message));
+                });
+            } ,
+            onSuccess: function () {
+                console.log("created : " + JSON.stringify(user));
+            },
             submit: function () {
-                user.signUp(loginForm.email, loginForm.password);
+                user.signUp(loginForm.email, loginForm.password)
+                    .then(signupForm.onSuccess)
+                    .catch(signupForm.onSignUpError);
             }
         };
         $scope.login = {
