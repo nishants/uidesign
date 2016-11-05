@@ -9,14 +9,14 @@
 <form>
     <input type="email"     ng-model="login.form.email">
     <input type="password"  ng-model="login.form.password">
-    <button ng-click="login.form.submit()">Sign In</button>
-    <button ng-click="session.user.signOut()">Sign Out</button>
+    <button ng-click="user.signIn(login.form.email, login.form.password)">Sign In</button>
+    <button ng-click="user.signOut()">Sign Out</button>
 </form>
 
-<form ng-show="session.user.id">
+<form ng-show="user.id">
     <input type="text" ng-model="form.name">
     <input type="text" ng-model="form.picture">
-    <button ng-click="session.user.updateProfile(form.name, form.picture)">Save</button>
+    <button ng-click="user.updateProfile(form.name, form.picture)">Save</button>
 </form>
 <!--<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>-->
 <script src="firebase.js"></script>
@@ -33,12 +33,12 @@
         messagingSenderId: "188124641306"
     })
 
-    app.service("remoteService", function (credentials) {
+    app.service("RemoteService", function (credentials) {
         var app = firebase.initializeApp(credentials);
         app.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
-                console.log(user + " is signed in.")
+                console.log("Signed In : " + JSON.stringify(user))
             } else {
                 console.log("Not logged in")
             }
@@ -79,6 +79,8 @@
                 };
 
         var service = {
+            signOut: signOut,
+            writeUserData: writeUserData,
             signIn: function(userEmail, userPassword){
                 return signIn(userEmail, userPassword).then(function(user){
                     service.session.user.id = user.uid;
@@ -95,8 +97,9 @@
                     email: null,
                     picture: null,
                     signOut: function () {
-                        signOut();
+                        return signOut();
                     },
+                    signIn: signIn,
                     updateProfile: function(name, picture){
                         return writeUserData(session.user.id, name, picture)
                                 .then(function () {
@@ -114,7 +117,36 @@
         return service
     });
 
-    app.controller("LoginController", ["$scope", "remoteService", function ($scope, remoteService) {
+    app.service("UserService", ["RemoteService", function (remoteService) {
+       return {
+           user: {
+               id: null,
+               name: null,
+               email: null,
+               picture: null,
+               signIn: function(userEmail, userPassword){
+                   return remoteService.signIn(userEmail, userPassword).then(function(user){
+                       user.id    = user.uid;
+                       user.name  = user.displayName;
+                       user.email = userEmail;
+                       return user;
+                   });
+               },
+               signOut: function () {
+                   return remoteService.signOut();
+               },
+               updateProfile: function(name, picture){
+                   return remoteService.writeUserData(user.id, name, picture)
+                           .then(function () {
+                               user.name = name;
+                               user.picture = picture;
+                           });
+               }
+           }
+       };
+    }]);
+
+    app.controller("LoginController", ["$scope", "RemoteService", "UserService", function ($scope, remoteService, userService) {
 
         var login = {
             form: {
@@ -129,7 +161,7 @@
         };
 
         $scope.login = login;
-        $scope.session = remoteService.session;
+        $scope.user = userService.user;
     }]);
 
 </script>
