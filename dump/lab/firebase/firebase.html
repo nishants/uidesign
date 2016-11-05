@@ -9,7 +9,7 @@
 <form>
     <input type="email"     ng-model="login.form.email">
     <input type="password"  ng-model="login.form.password">
-    <button ng-click="user.signIn(login.form.email, login.form.password)">Sign In</button>
+    <button ng-click="login.form.submit()">Sign In</button>
     <button ng-click="user.signOut()">Sign Out</button>
 </form>
 
@@ -78,90 +78,55 @@
                     });
                 };
 
-        var service = {
-            signOut: signOut,
-            writeUserData: writeUserData,
-            signIn: function(userEmail, userPassword){
-                return signIn(userEmail, userPassword).then(function(user){
-                    service.session.user.id = user.uid;
-                    service.session.user.name = user.displayName;
-                    return user;
-                });
-            },
-            createAccount: createAccount,
-            setUserDetails: writeUserData,
-            session: {
-                user: {
-                    id: null,
-                    name: null,
-                    email: null,
-                    picture: null,
-                    signOut: function () {
-                        return signOut();
-                    },
-                    signIn: signIn,
-                    updateProfile: function(name, picture){
-                        return writeUserData(session.user.id, name, picture)
-                                .then(function () {
-                                    session.user.name = name;
-                                    session.user.picture = picture;
-                                });
-                    }
-                },
-                active: function(){
-                    return !!service.session.user.id;
-                }
-
-            }
+        return {
+            signIn          : signIn,
+            signOut         : signOut,
+            createAccount   : createAccount,
+            writeUserData   : writeUserData
         };
-        return service
     });
 
     app.service("UserService", ["RemoteService", function (remoteService) {
        return {
-           user: {
-               id: null,
-               name: null,
-               email: null,
-               picture: null,
-               signIn: function(userEmail, userPassword){
-                   return remoteService.signIn(userEmail, userPassword).then(function(user){
-                       user.id    = user.uid;
-                       user.name  = user.displayName;
-                       user.email = userEmail;
-                       return user;
-                   });
-               },
-               signOut: function () {
-                   return remoteService.signOut();
-               },
-               updateProfile: function(name, picture){
-                   return remoteService.writeUserData(user.id, name, picture)
-                           .then(function () {
-                               user.name = name;
-                               user.picture = picture;
-                           });
-               }
+           id: null,
+           name: null,
+           email: null,
+           picture: null,
+           signIn: function(userEmail, userPassword){
+               return remoteService.signIn(userEmail, userPassword).then(function(user){
+                   user.id    = user.uid;
+                   user.name  = user.displayName;
+                   user.email = userEmail;
+                   return user;
+               });
+           },
+           signOut: function () {
+               return remoteService.signOut();
+           },
+           updateProfile: function(name, picture){
+               return remoteService.writeUserData(user.id, name, picture)
+                       .then(function () {
+                           user.name = name;
+                           user.picture = picture;
+                       });
            }
        };
     }]);
 
-    app.controller("LoginController", ["$scope", "RemoteService", "UserService", function ($scope, remoteService, userService) {
+    app.controller("LoginController", ["$scope", "RemoteService", "UserService", function ($scope, remoteService, user) {
 
-        var login = {
-            form: {
-                email:     "nishants.singh87@gmaisl.com",
-                password: "123456",
-                submit: function(){
-                    remoteService.signIn(login.form.email, login.form.password).then(function (user) {
-                        console.log("user logged in \n" + JSON.stringify(user));
-                    });
-                }
+
+        var form = {
+            email: "nishants.singh87@gmaisl.com",
+            password: "123456",
+            submit: function () {
+                user.signIn(form.email, form.password)
             }
         };
-
-        $scope.login = login;
-        $scope.user = userService.user;
+        $scope.login = {
+            form: form
+        };
+        $scope.user = user;
     }]);
 
 </script>
