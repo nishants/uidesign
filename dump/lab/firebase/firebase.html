@@ -123,38 +123,13 @@
                 submit: function(){
                     remoteService.signIn(login.form.email, login.form.password).then(function (user) {
                         console.log("user logged in \n" + JSON.stringify(user));
-
-                        var imageUrl = "https://lh6.googleusercontent.com/-msg4gMx00kw/AAAAAAAAAAI/AAAAAAAAAAA/y41H3Y0p2oY/W96-H96/photo.jpg?sz=64",
-                                email    = "nomail@void.com",
-                                name     = "Nishant";
-
-//                        firebaseService.setUserDetails(user.uid, name, email, imageUrl)
-//                                .then(function () {
-//                                    firebaseService.signOut().then(function () {
-//                                        console.log("signed out user....");
-//                                    });
-//                                });
                     });
                 }
             }
         };
 
-        var profile = {
-            form: {
-                name: null,
-                picture: null,
-            },
-            save: function(){
-                remoteService
-            }
-
-        };
-
         $scope.login = login;
-        $scope.profile = profile;
         $scope.session = remoteService.session;
-
-        window.session = remoteService.session;
     }]);
 
 </script>
