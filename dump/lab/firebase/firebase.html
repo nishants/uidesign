@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAt3rD67xE5KvwyAk645-tRrKDAG3KH_jY",
+        authDomain: "programmers-4d280.firebaseapp.com",
+        databaseURL: "https://programmers-4d280.firebaseio.com",
+        storageBucket: "programmers-4d280.appspot.com",
+        messagingSenderId: "188124641306"
+    };
+    var firebase = firebase.initializeApp(config);
+//    firebase.database().ref("app-name").set("Hula");
+
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in.
+            console.log(user + " is signed in.")
+        } else {
+            console.error("User Not found.")
+        }
+    });
+
+    var
+            userEmail    = "nishants.singh87@gmaisl.com",
+            userPassword = "123456";
+
+    var createAccount = function(userEmail, userPassword){
+        firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+                .then(function(user){
+                    console.log("user created successfully.")
+                })
+                .catch(function(error) {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    if (errorCode == 'auth/weak-password') {
+                        console.error('The password is too weak.');
+                    }
+                    console.error(errorMessage);
+                });
+    };
+
+    createAccount(userEmail, userPassword);
+
+    window.firebase = firebase;
+
+</script>
+</body>
+</html>
