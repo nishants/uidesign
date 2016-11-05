@@ -6,6 +6,12 @@
 </head>
 <body ng-app="fired-up" ng-controller="LoginController">
 
+<div>
+    <span ng-if="!user.id"> No User </span>
+    <span ng-if="user.id && user.inactive"> Need Verification</span>
+    <span ng-if="user.id && !user.inactive"> Logged In </span>
+</div>
+
 <form>
     <input type="email"     ng-model="login.form.email">
     <input type="password"  ng-model="login.form.password">
@@ -87,33 +93,39 @@
     }]);
 
     app.service("UserService", ["RemoteService", function (remoteService) {
-       return {
-           id: null,
-           name: null,
-           email: null,
-           picture: null,
-           signIn: function(userEmail, userPassword){
-               return remoteService.signIn(userEmail, userPassword).then(function(user){
-                   user.id    = user.uid;
-                   user.name  = user.displayName;
-                   user.email = userEmail;
-                   return user;
-               });
-           },
-           signOut: function () {
-               return remoteService.signOut();
-           },
-           signUp: function(userEmail, userPassword){
-               return remoteService.createAccount(userEmail, userPassword);
-           },
-           updateProfile: function(name, picture){
-               return remoteService.writeUserData(user.id, name, picture)
-                       .then(function () {
-                           user.name = name;
-                           user.picture = picture;
-                       });
-           }
-       };
+        var service = {
+            id: null,
+            name: null,
+            email: null,
+            picture: null,
+            signIn: function (userEmail, userPassword) {
+                return remoteService.signIn(userEmail, userPassword).then(function (user) {
+                    service.id = user.uid;
+                    service.name = user.displayName;
+                    service.email = userEmail;
+                    return user;
+                });
+            },
+            signOut: function () {
+                return remoteService.signOut().then(function(response){
+                    service.id      = null;
+                    service.name    = null;
+                    service.email   = null;
+                    return response;
+                });
+            },
+            signUp: function (userEmail, userPassword) {
+                return remoteService.createAccount(userEmail, userPassword);
+            },
+            updateProfile: function (name, picture) {
+                return remoteService.writeUserData(user.id, name, picture)
+                        .then(function () {
+                            user.name = name;
+                            user.picture = picture;
+                        });
+            }
+        };
+        return service;
     }]);
 
     app.controller("LoginController", ["$scope", "RemoteService", "UserService", "$timeout", function ($scope, remoteService, user, $timeout) {
@@ -129,8 +141,13 @@
         var loginForm = {
             email: "nishants.singh87@gmaisl.com",
             password: "123456",
+            onSuccess: function(user){
+                $timeout(function () {
+                    console.log("logged in"+JSON.stringify(user));
+                });
+            },
             submit: function () {
-                user.signIn(loginForm.email, loginForm.password);
+                user.signIn(loginForm.email, loginForm.password).then(loginForm.onSuccess);
             }
         };
         var signupForm = {
@@ -143,8 +160,10 @@
                     console.error(JSON.stringify(error.message));
                 });
             } ,
-            onSuccess: function () {
-                console.log("created : " + JSON.stringify(user));
+            onSuccess: function (user) {
+                $timeout(function () {
+                    console.log("created : " + JSON.stringify(user));
+                });
             },
             submit: function () {
                 user.signUp(loginForm.email, loginForm.password)
