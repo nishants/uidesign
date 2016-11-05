@@ -6,6 +6,12 @@
 </head>
 <body ng-app="fired-up" ng-controller="LoginController">
 
+<form>
+    <input type="email"     ng-model="login.form.email">
+    <input type="password"  ng-model="login.form.password">
+    <button ng-click="login.form.submit()">Sign In</button>
+    <button ng-click="session.user.signOut()">Sign Out</button>
+</form>
 <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
 <script src="../../lib/angular-1.4.3.js"></script>
 <script>
@@ -20,7 +26,7 @@
         messagingSenderId: "188124641306"
     })
 
-    app.service("firebaseService", function (credentials) {
+    app.service("remoteService", function (credentials) {
         var app = firebase.initializeApp(credentials);
         app.auth().onAuthStateChanged(function (user) {
             if (user) {
@@ -59,7 +65,7 @@
                             });
                 },
                 writeUserData = function (userId, name, email, imageUrl) {
-                    return app.database().ref('users/' + userId).set({
+                    return app.database().ref('users/' + userId+"/profile").set({
                         username: name,
                         email: email,
                         profile_picture: imageUrl
@@ -74,25 +80,45 @@
         }
     });
 
-    app.controller("LoginController", ["$scope", "firebaseService", function ($scope, firebaseService) {
-        var
-                userEmail = "nishants.singh87@gmaisl.com",
-                userPassword = "123456";
+    app.controller("LoginController", ["$scope", "remoteService", function ($scope, firebaseService) {
+        var session = {
+            user: {
+                id: null,
+                name: null,
+                email: null,
+                picture: null,
+                signOut: function(){
+                    firebaseService.signOut();
+                }
+            },
 
-        firebaseService.signIn(userEmail, userPassword).then(function (user) {
-            console.log("user logged in \n" + JSON.stringify(user));
-            var imageUrl = "https://lh6.googleusercontent.com/-msg4gMx00kw/AAAAAAAAAAI/AAAAAAAAAAA/y41H3Y0p2oY/W96-H96/photo.jpg?sz=64",
-                    email = "nomail@void.com",
-                    name = "Nishant";
+        };
 
-            firebaseService.setUserDetails(user.uid, name, email, imageUrl)
-                    .then(function () {
-                        firebaseService.signOut().then(function () {
-                            console.log("signed out user....");
-                        });
+        var login = {
+            form: {
+                email:     "nishants.singh87@gmaisl.com",
+                password: "123456",
+                submit: function(){
+                    firebaseService.signIn(login.form.email, login.form.password).then(function (user) {
+                        console.log("user logged in \n" + JSON.stringify(user));
+
+                        var imageUrl = "https://lh6.googleusercontent.com/-msg4gMx00kw/AAAAAAAAAAI/AAAAAAAAAAA/y41H3Y0p2oY/W96-H96/photo.jpg?sz=64",
+                                email    = "nomail@void.com",
+                                name     = "Nishant";
+
+//                        firebaseService.setUserDetails(user.uid, name, email, imageUrl)
+//                                .then(function () {
+//                                    firebaseService.signOut().then(function () {
+//                                        console.log("signed out user....");
+//                                    });
+//                                });
                     });
-        });
+                }
+            }
+        };
 
+        $scope.login = login;
+        $scope.session = session;
     }]);
 
 </script>
