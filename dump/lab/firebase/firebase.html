@@ -13,6 +13,16 @@
     <button ng-click="user.signOut()">Sign Out</button>
 </form>
 
+<form>
+    <input type="email"     ng-model="signup.form.email">
+    <input type="password"  ng-model="signup.form.password">
+    <input type="password"  ng-model="confirm_password" ng-init="confirm_password = signup.form.password">
+    <button ng-click="signup.form.submit()"
+            ng-disabled="confirm_password != signup.form.password">
+        Sign Up
+    </button>
+</form>
+
 <form ng-show="user.id">
     <input type="text" ng-model="form.name">
     <input type="text" ng-model="form.picture">
@@ -58,9 +68,10 @@
                             });
                 },
                 createAccount = function (userEmail, userPassword) {
-                    app.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+                    return app.auth().createUserWithEmailAndPassword(userEmail, userPassword)
                             .then(function (user) {
-                                console.log("user created successfully.")
+                                console.log("user created successfully.");
+                                return user;
                             })
                             .catch(function (error) {
                                 var errorCode = error.code;
@@ -103,6 +114,9 @@
            signOut: function () {
                return remoteService.signOut();
            },
+           signUp: function(userEmail, userPassword){
+               return remoteService.createAccount();
+           },
            updateProfile: function(name, picture){
                return remoteService.writeUserData(user.id, name, picture)
                        .then(function () {
@@ -116,16 +130,27 @@
     app.controller("LoginController", ["$scope", "RemoteService", "UserService", function ($scope, remoteService, user) {
 
 
-        var form = {
+        var loginForm = {
             email: "nishants.singh87@gmaisl.com",
             password: "123456",
             submit: function () {
-                user.signIn(form.email, form.password)
+                user.signIn(loginForm.email, loginForm.password);
+            }
+        };
+        var signupForm = {
+            email   : "nishants.singh87@gmaisl.com",
+            password: "123456",
+            submit: function () {
+                user.signUp(loginForm.email, loginForm.password);
             }
         };
         $scope.login = {
-            form: form
+            form: loginForm
         };
+        $scope.signup = {
+            form: signupForm
+        };
+
         $scope.user = user;
     }]);
 
