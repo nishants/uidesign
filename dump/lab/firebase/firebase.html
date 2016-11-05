@@ -24,7 +24,7 @@
             // User is signed in.
             console.log(user + " is signed in.")
         } else {
-            console.error("User Not found.")
+            console.log("Not logged in")
         }
     });
 
@@ -32,6 +32,18 @@
             userEmail    = "nishants.singh87@gmaisl.com",
             userPassword = "123456";
 
+    var signIn = function(userEmail, userPassword){
+        return firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
+                .catch(function(error) {
+                    console.error(error.message);
+                });
+    };
+    var signOut = function(userEmail, userPassword){
+        return firebase.auth().signOut()
+                .catch(function(error) {
+                    console.error(error.message);
+                });
+    };
     var createAccount = function(userEmail, userPassword){
         firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
                 .then(function(user){
@@ -47,7 +59,13 @@
                 });
     };
 
-    createAccount(userEmail, userPassword);
+    signIn(userEmail, userPassword).then(function(user){
+        console.log("user logged in \n" + JSON.stringify(user));
+        signOut().then(function(){
+            console.log("signed out user....");
+        });
+
+    });
 
     window.firebase = firebase;
 
