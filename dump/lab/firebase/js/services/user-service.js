@@ -35,10 +35,10 @@ app.service("UserService", ["RemoteService", "$timeout", function (remoteService
       return remoteService.createAccount(userEmail, userPassword).then(service.setUser);
     },
     updateProfile: function (name, picture) {
-      return remoteService.writeUserData(user.id, name, picture)
+      return remoteService.writeUserData(service.id, name, picture)
           .then(function () {
-            user.name = name;
-            user.picture = picture;
+            service.name = name;
+            service.picture = picture;
           });
     }
   };

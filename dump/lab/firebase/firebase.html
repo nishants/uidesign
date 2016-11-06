@@ -7,16 +7,14 @@
 <body ng-app="fired-up" ng-controller="UIController">
 
 
-
-
 <div ng-include="'js/templates/session.html'"></div>
 <div ng-include="'js/templates/login.html'"></div>
 <div ng-include="'js/templates/signup.html'"></div>
 
 <form ng-show="user.id">
-    <input type="text" ng-model="form.name">
-    <input type="text" ng-model="form.picture">
-    <button ng-click="user.updateProfile(form.name, form.picture)">Save</button>
+    <input type="text" ng-model="user.name">
+    <input type="text" ng-model="user.picture">
+    <button ng-click="user.updateProfile(user.name, user.picture)">Save</button>
 </form>
 
 <!--<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>-->
