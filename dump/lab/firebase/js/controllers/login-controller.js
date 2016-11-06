@@ -1,12 +1,4 @@
 app.controller("LoginController", ["$scope", "RemoteService", "UserService", "$timeout", function ($scope, remoteService, userService, $timeout) {
-
-  remoteService.onAuth(function (user) {
-    $timeout(function () {
-      user    && userService.setUser(user);
-      !user   && userService.reset(user);
-    });
-  });
-
   var loginForm = {
     email: "nishant.singh87@gmail.com",
     password: "123456",

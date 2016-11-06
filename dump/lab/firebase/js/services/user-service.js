@@ -1,4 +1,4 @@
-app.service("UserService", ["RemoteService", function (remoteService) {
+app.service("UserService", ["RemoteService", "$timeout", function (remoteService, $timeout) {
   var service = {
     id: null,
     name: null,
@@ -42,5 +42,13 @@ app.service("UserService", ["RemoteService", function (remoteService) {
           });
     }
   };
+
+  remoteService.onAuth(function (user) {
+    $timeout(function () {
+      user    && service.setUser(user);
+      !user   && service.reset(user);
+    });
+  });
+
   return service;
 }]);
