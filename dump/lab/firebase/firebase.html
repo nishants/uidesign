@@ -8,8 +8,8 @@
 
 <div>
     <span ng-if="!user.id"> No User </span>
-    <span ng-if="user.id && user.inactive"> Need Verification</span>
-    <span ng-if="user.id && !user.inactive"> Logged In </span>
+    <span ng-if="user.id && !user.emailVerified"> Need Verification</span>
+    <span ng-if="user.id && user.emailVerified"> Logged In </span>
 </div>
 
 <form>
@@ -55,7 +55,15 @@
         app.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
-                console.log("Signed In : " + JSON.stringify(user))
+                if (!user.emailVerified) {
+                    console.error('Verify mail first');
+                    console.log(user)
+                    user.sendEmailVerification();
+                }
+                else {
+                    console.log("Signed In : ")
+                    console.log(user)
+                }
             } else {
                 console.log("Not logged in")
             }
@@ -98,11 +106,13 @@
             name: null,
             email: null,
             picture: null,
+            emailVerified: false,
             signIn: function (userEmail, userPassword) {
                 return remoteService.signIn(userEmail, userPassword).then(function (user) {
                     service.id = user.uid;
                     service.name = user.displayName;
                     service.email = userEmail;
+                    service.emailVerified = user.emailVerified;
                     return user;
                 });
             },
@@ -139,7 +149,7 @@
             }
         };
         var loginForm = {
-            email: "nishants.singh87@gmaisl.com",
+            email: "nishant.singh87@gmail.com",
             password: "123456",
             onSuccess: function(user){
                 $timeout(function () {
@@ -151,9 +161,16 @@
             }
         };
         var signupForm = {
-            email   : "nishants.singh87@gmaisl.com",
+            email   : "nishant.singh87@gmail.com",
             password: "123456",
             error   : null,
+            sendVerificationTo: function(user){
+                return user.sendEmailVerification().then(function(respone) {
+                    console.log("Verify Email : " + JSON.stringify(respone))
+                }, function(error) {
+                    console.error("Verify Email Failed: " + JSON.stringify(respone))
+                });
+            },
             onSignUpError:function(error){
                 $timeout(function () {
                     signupForm.error = error.message;
@@ -164,6 +181,7 @@
                 $timeout(function () {
                     console.log("created : " + JSON.stringify(user));
                 });
+                return signupForm.sendVerificationTo(user);
             },
             submit: function () {
                 user.signUp(loginForm.email, loginForm.password)
