@@ -113,16 +113,19 @@
                 service.emailVerified = user.emailVerified;
                 return user;
             },
+            reset : function(user){
+                service.id      = null;
+                service.name    = null;
+                service.email   = null;
+                service.picture = null;
+                service.emailVerified = false;
+                return user;
+            },
             signIn: function (userEmail, userPassword) {
                 return remoteService.signIn(userEmail, userPassword).then(service.setUser);
             },
             signOut: function () {
-                return remoteService.signOut().then(function(response){
-                    service.id      = null;
-                    service.name    = null;
-                    service.email   = null;
-                    return response;
-                });
+                return remoteService.signOut().then(service.reset);
             },
             signUp: function (userEmail, userPassword) {
                 return remoteService.createAccount(userEmail, userPassword).then(service.setUser);
