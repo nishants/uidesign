@@ -125,7 +125,7 @@
                 });
             },
             signUp: function (userEmail, userPassword) {
-                return remoteService.createAccount(userEmail, userPassword);
+                return remoteService.createAccount(userEmail, userPassword).then(service.setUser);
             },
             updateProfile: function (name, picture) {
                 return remoteService.writeUserData(user.id, name, picture)
@@ -184,7 +184,7 @@
                 return signupForm.sendVerificationTo(user);
             },
             submit: function () {
-                user.signUp(loginForm.email, loginForm.password)
+                user.signUp(signupForm.email, signupForm.password)
                     .then(signupForm.onSuccess)
                     .catch(signupForm.onSignUpError);
             }
