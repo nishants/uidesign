@@ -9,7 +9,7 @@
 <div>
     <span ng-if="!user.id"> No User </span>
     <span ng-if="user.id && !user.emailVerified"> Need Verification</span>
-    <span ng-if="user.id && user.emailVerified"> Logged In </span>
+    <span ng-if="user.emailVerified"> Logged In </span>
 </div>
 
 <form>
@@ -58,7 +58,6 @@
                 if (!user.emailVerified) {
                     console.error('Verify mail first');
                     console.log(user)
-                    user.sendEmailVerification();
                 }
                 else {
                     console.log("Signed In : ")
