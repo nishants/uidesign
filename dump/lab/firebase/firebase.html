@@ -6,20 +6,23 @@
 </head>
 <body ng-app="fired-up" ng-controller="LoginController">
 
-<div>
+<div class="session-info">
     <span ng-if="!user.id"> No User </span>
-    <span ng-if="user.id && !user.emailVerified"> Need Verification</span>
+    <span ng-if="user.id && !user.emailVerified">
+        Need Verification
+        <a ng-click="user.sendVerificationMail()">Resend</a>
+    </span>
     <span ng-if="user.emailVerified"> Logged In </span>
 </div>
 
-<form>
+<form class="login-form">
     <input type="email" ng-model="login.form.email">
     <input type="password" ng-model="login.form.password">
     <button ng-click="login.form.submit()">Sign In</button>
     <button ng-click="user.signOut()">Sign Out</button>
 </form>
 
-<form>
+<form class="signup-form">
     <div ng-bind="signup.form.error" ng-show="signup.form.error"></div>
     <input type="email" ng-model="signup.form.email">
     <input type="password" ng-model="signup.form.password">
@@ -83,6 +86,9 @@
                         name: name,
                         picture: picture
                     });
+                },
+                currentUser = function(){
+                    return app.auth().currentUser;
                 };
 
         return {
@@ -91,6 +97,7 @@
             createAccount: createAccount,
             writeUserData: writeUserData,
             onAuth: setAuthCallback,
+            currentUser: currentUser,
         };
     }]);
 
@@ -102,19 +109,24 @@
             picture: null,
             emailVerified: false,
             setUser: function (user) {
-                service.id = user.uid;
-                service.name = user.displayName;
-                service.email = user.email;
+                service.id      = user.uid;
+                service.name    = user.displayName;
+                service.email   = user.email;
+
                 service.emailVerified = user.emailVerified;
                 return user;
             },
             reset: function (user) {
-                service.id = null;
-                service.name = null;
-                service.email = null;
+                service.id      = null;
+                service.name    = null;
+                service.email   = null;
                 service.picture = null;
+
                 service.emailVerified = false;
                 return user;
+            },
+            sendVerificationMail: function(){
+                return remoteService.currentUser().sendEmailVerification();
             },
             signIn: function (userEmail, userPassword) {
                 return remoteService.signIn(userEmail, userPassword).then(service.setUser);
@@ -161,13 +173,6 @@
             email: "nishant.singh87@gmail.com",
             password: "123456",
             error: null,
-            sendVerificationTo: function (user) {
-                return user.sendEmailVerification().then(function (respone) {
-                    console.log("Verify Email : " + JSON.stringify(respone))
-                }, function (error) {
-                    console.error("Verify Email Failed: " + JSON.stringify(respone))
-                });
-            },
             onSignUpError: function (error) {
                 $timeout(function () {
                     signupForm.error = error.message;
@@ -176,12 +181,12 @@
             },
             onSuccess: function (user) {
                 $timeout(function () {
-                    console.log("created : " + JSON.stringify(user));
+                    console.log("Registered User : " + JSON.stringify(user));
                 });
-                return signupForm.sendVerificationTo(user);
             },
             submit: function () {
                 userService.signUp(signupForm.email, signupForm.password)
+                        .then(userService.sendVerificationMail)
                         .then(signupForm.onSuccess)
                         .catch(signupForm.onSignUpError);
             }
