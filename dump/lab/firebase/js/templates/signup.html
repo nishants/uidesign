@@ -1,0 +1,10 @@
+<form class="signup-form" ng-controller="SignUpController">
+    <div ng-bind="signup.form.error" ng-show="signup.form.error"></div>
+    <input type="email" ng-model="signup.form.email">
+    <input type="password" ng-model="signup.form.password">
+    <input type="password" ng-model="confirm_password" ng-init="confirm_password = signup.form.password">
+    <button ng-click="signup.form.submit()"
+            ng-disabled="confirm_password != signup.form.password">
+        Sign Up
+    </button>
+</form>

@@ -6,38 +6,19 @@
 </head>
 <body ng-app="fired-up" ng-controller="UIController">
 
-<div class="session-info">
-    <span ng-if="!user.id"> No User </span>
-    <span ng-if="user.id && !user.emailVerified">
-        Need Verification
-        <a ng-click="user.sendVerificationMail()">Resend</a>
-    </span>
-    <span ng-if="user.emailVerified"> Logged In </span>
-</div>
 
-<form class="login-form" ng-controller="LoginController">
-    <input type="email" ng-model="login.form.email">
-    <input type="password" ng-model="login.form.password">
-    <button ng-click="login.form.submit()">Sign In</button>
-    <button ng-click="user.signOut()">Sign Out</button>
-</form>
 
-<form class="signup-form" ng-controller="SignUpController">
-    <div ng-bind="signup.form.error" ng-show="signup.form.error"></div>
-    <input type="email" ng-model="signup.form.email">
-    <input type="password" ng-model="signup.form.password">
-    <input type="password" ng-model="confirm_password" ng-init="confirm_password = signup.form.password">
-    <button ng-click="signup.form.submit()"
-            ng-disabled="confirm_password != signup.form.password">
-        Sign Up
-    </button>
-</form>
+
+<div ng-include="'js/templates/session.html'"></div>
+<div ng-include="'js/templates/login.html'"></div>
+<div ng-include="'js/templates/signup.html'"></div>
 
 <form ng-show="user.id">
     <input type="text" ng-model="form.name">
     <input type="text" ng-model="form.picture">
     <button ng-click="user.updateProfile(form.name, form.picture)">Save</button>
 </form>
+
 <!--<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>-->
 <script src="firebase.js"></script>
 <script src="../../lib/angular-1.4.3.js"></script>

@@ -1,0 +1,8 @@
+<div class="session-info">
+    <span ng-if="!user.id"> No User </span>
+    <span ng-if="user.id && !user.emailVerified">
+        Need Verification
+        <a ng-click="user.sendVerificationMail()">Resend</a>
+    </span>
+    <span ng-if="user.emailVerified"> Logged In </span>
+</div>
