@@ -13,17 +13,17 @@
 </div>
 
 <form>
-    <input type="email"     ng-model="login.form.email">
-    <input type="password"  ng-model="login.form.password">
+    <input type="email" ng-model="login.form.email">
+    <input type="password" ng-model="login.form.password">
     <button ng-click="login.form.submit()">Sign In</button>
     <button ng-click="user.signOut()">Sign Out</button>
 </form>
 
 <form>
     <div ng-bind="signup.form.error" ng-show="signup.form.error"></div>
-    <input type="email"     ng-model="signup.form.email">
-    <input type="password"  ng-model="signup.form.password">
-    <input type="password"  ng-model="confirm_password" ng-init="confirm_password = signup.form.password">
+    <input type="email" ng-model="signup.form.email">
+    <input type="password" ng-model="signup.form.password">
+    <input type="password" ng-model="confirm_password" ng-init="confirm_password = signup.form.password">
     <button ng-click="signup.form.submit()"
             ng-disabled="confirm_password != signup.form.password">
         Sign Up
@@ -40,7 +40,7 @@
 <script src="../../lib/angular-1.4.3.js"></script>
 <script>
 
-    var  app = angular.module("fired-up", []);
+    var app = angular.module("fired-up", []);
 
     app.value("credentials", {
         apiKey: "AIzaSyAt3rD67xE5KvwyAk645-tRrKDAG3KH_jY",
@@ -51,21 +51,15 @@
     })
 
     app.service("RemoteService", ["credentials", function (credentials) {
-        var app = firebase.initializeApp(credentials);
+        var app = firebase.initializeApp(credentials),
+                onAuth = function () {
+                },
+                setAuthCallback = function (callback) {
+                    onAuth = callback;
+                };
+
         app.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                // User is signed in.
-                if (!user.emailVerified) {
-                    console.error('Verify mail first');
-                    console.log(user)
-                }
-                else {
-                    console.log("Signed In : ")
-                    console.log(user)
-                }
-            } else {
-                console.log("Not logged in")
-            }
+            onAuth(user)
         });
 
         var
@@ -85,17 +79,18 @@
                     return app.auth().createUserWithEmailAndPassword(userEmail, userPassword);
                 },
                 writeUserData = function (userId, name, picture) {
-                    return app.database().ref('users/' + userId+"/profile").set({
+                    return app.database().ref('users/' + userId + "/profile").set({
                         name: name,
                         picture: picture
                     });
                 };
 
         return {
-            signIn          : signIn,
-            signOut         : signOut,
-            createAccount   : createAccount,
-            writeUserData   : writeUserData
+            signIn: signIn,
+            signOut: signOut,
+            createAccount: createAccount,
+            writeUserData: writeUserData,
+            onAuth: setAuthCallback,
         };
     }]);
 
@@ -106,17 +101,17 @@
             email: null,
             picture: null,
             emailVerified: false,
-            setUser : function(user){
+            setUser: function (user) {
                 service.id = user.uid;
                 service.name = user.displayName;
                 service.email = user.email;
                 service.emailVerified = user.emailVerified;
                 return user;
             },
-            reset : function(user){
-                service.id      = null;
-                service.name    = null;
-                service.email   = null;
+            reset: function (user) {
+                service.id = null;
+                service.name = null;
+                service.email = null;
                 service.picture = null;
                 service.emailVerified = false;
                 return user;
@@ -141,45 +136,44 @@
         return service;
     }]);
 
-    app.controller("LoginController", ["$scope", "RemoteService", "UserService", "$timeout", function ($scope, remoteService, user, $timeout) {
+    app.controller("LoginController", ["$scope", "RemoteService", "UserService", "$timeout", function ($scope, remoteService, userService, $timeout) {
 
+        remoteService.onAuth(function (user) {
+            $timeout(function () {
+                user    && userService.setUser(user);
+                !user   && userService.reset(user);
+            });
+        });
 
-        var timeout = function(callback, time){
-            return function(){
-                $timeout(function(){
-                    callback();
-                })
-            }
-        };
         var loginForm = {
             email: "nishant.singh87@gmail.com",
             password: "123456",
-            onSuccess: function(user){
+            onSuccess: function (user) {
                 $timeout(function () {
-                    console.log("logged in"+JSON.stringify(user));
+                    console.log("logged in" + JSON.stringify(user));
                 });
             },
             submit: function () {
-                user.signIn(loginForm.email, loginForm.password).then(loginForm.onSuccess);
+                userService.signIn(loginForm.email, loginForm.password).then(loginForm.onSuccess);
             }
         };
         var signupForm = {
-            email   : "nishant.singh87@gmail.com",
+            email: "nishant.singh87@gmail.com",
             password: "123456",
-            error   : null,
-            sendVerificationTo: function(user){
-                return user.sendEmailVerification().then(function(respone) {
+            error: null,
+            sendVerificationTo: function (user) {
+                return user.sendEmailVerification().then(function (respone) {
                     console.log("Verify Email : " + JSON.stringify(respone))
-                }, function(error) {
+                }, function (error) {
                     console.error("Verify Email Failed: " + JSON.stringify(respone))
                 });
             },
-            onSignUpError:function(error){
+            onSignUpError: function (error) {
                 $timeout(function () {
                     signupForm.error = error.message;
                     console.error(JSON.stringify(error.message));
                 });
-            } ,
+            },
             onSuccess: function (user) {
                 $timeout(function () {
                     console.log("created : " + JSON.stringify(user));
@@ -187,9 +181,9 @@
                 return signupForm.sendVerificationTo(user);
             },
             submit: function () {
-                user.signUp(signupForm.email, signupForm.password)
-                    .then(signupForm.onSuccess)
-                    .catch(signupForm.onSignUpError);
+                userService.signUp(signupForm.email, signupForm.password)
+                        .then(signupForm.onSuccess)
+                        .catch(signupForm.onSignUpError);
             }
         };
         $scope.login = {
@@ -199,7 +193,7 @@
             form: signupForm
         };
 
-        $scope.user = user;
+        $scope.user = userService;
     }]);
 
 </script>
