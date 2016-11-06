@@ -106,14 +106,15 @@
             email: null,
             picture: null,
             emailVerified: false,
+            setUser : function(user){
+                service.id = user.uid;
+                service.name = user.displayName;
+                service.email = user.email;
+                service.emailVerified = user.emailVerified;
+                return user;
+            },
             signIn: function (userEmail, userPassword) {
-                return remoteService.signIn(userEmail, userPassword).then(function (user) {
-                    service.id = user.uid;
-                    service.name = user.displayName;
-                    service.email = userEmail;
-                    service.emailVerified = user.emailVerified;
-                    return user;
-                });
+                return remoteService.signIn(userEmail, userPassword).then(service.setUser);
             },
             signOut: function () {
                 return remoteService.signOut().then(function(response){
