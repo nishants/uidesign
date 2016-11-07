@@ -4,5 +4,11 @@
         Need Verification
         <a ng-click="user.sendVerificationMail()">Resend</a>
     </span>
-    <span ng-if="user.emailVerified"> Logged In </span>
+    <span ng-if="user.emailVerified">
+        Logged In
+    </span>
+    <div>
+        <label ng-bind="user.profile.name"> </label>
+        <img ng-src="{{user.profile.picture}}">
+    </div>
 </div>

@@ -1,7 +1,6 @@
 app.service("RemoteService", ["credentials", function (credentials) {
   var app = firebase.initializeApp(credentials),
-      onAuth = function () {
-      },
+      onAuth = function () {},
       setAuthCallback = function (callback) {
         onAuth = callback;
       };
@@ -37,11 +36,12 @@ app.service("RemoteService", ["credentials", function (credentials) {
       };
 
   return {
+    firebase: app,
     signIn: signIn,
     signOut: signOut,
     createAccount: createAccount,
     writeUserData: writeUserData,
     onAuth: setAuthCallback,
-    currentUser: currentUser,
+    currentUser: currentUser
   };
 }]);

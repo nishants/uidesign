@@ -11,10 +11,10 @@
 <div ng-include="'js/templates/login.html'"></div>
 <div ng-include="'js/templates/signup.html'"></div>
 
-<form ng-show="user.id">
-    <input type="text" ng-model="user.name">
-    <input type="text" ng-model="user.picture">
-    <button ng-click="user.updateProfile(user.name, user.picture)">Save</button>
+<form >
+    <input type="text" ng-model="user.profile.name">
+    <input type="text" ng-model="user.profile.picture">
+    <button ng-click="user.updateProfile(user.profile.name, user.profile.picture)">Save</button>
 </form>
 
 <!--<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>-->

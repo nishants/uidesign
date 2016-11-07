@@ -5,13 +5,21 @@ app.service("UserService", ["RemoteService", "$timeout", function (remoteService
     email: null,
     picture: null,
     emailVerified: false,
+    profile: null,
     setUser: function (user) {
       service.id      = user.uid;
       service.name    = user.displayName;
       service.email   = user.email;
 
       service.emailVerified = user.emailVerified;
+      remoteService.firebase.database().ref('/users/' + user.uid +'/profile').on('value', function (snapshot) {
+        var profile = snapshot.val();
+            $timeout(function () {
+              service.profile = profile;
+            });
+      });
       return user;
+
     },
     reset: function (user) {
       service.id      = null;
