@@ -11,7 +11,11 @@
 <div ng-include="'js/templates/login.html'"></div>
 <div ng-include="'js/templates/signup.html'"></div>
 
-<form >
+<form ng-show="user.profile">
+    <div>
+        <button ng-click="user.resetPassword()">Reset Password</button>
+
+    </div>
     <input type="text" ng-model="user.profile.name">
     <input type="text" ng-model="user.profile.picture">
     <button ng-click="user.updateProfile(user.profile.name, user.profile.picture)">Save</button>

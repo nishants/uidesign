@@ -42,6 +42,9 @@ app.service("RemoteService", ["credentials", function (credentials) {
     createAccount: createAccount,
     writeUserData: writeUserData,
     onAuth: setAuthCallback,
-    currentUser: currentUser
+    currentUser: currentUser,
+    resetPassword: function(emailAddress){
+      return app.auth().sendPasswordResetEmail(emailAddress);
+    }
   };
 }]);

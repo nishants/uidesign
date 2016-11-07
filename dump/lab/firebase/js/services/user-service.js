@@ -56,7 +56,7 @@ app.service("UserService", ["RemoteService", "$timeout", function (remoteService
           });
     },
     resetPassword: function(){
-      return remoteService.resetPassword().then(function() {
+      return remoteService.resetPassword(service.email).then(function() {
         console.log("password reset mail sent")
       }, function(error) {
         console.error("password reset failed"+ error)
