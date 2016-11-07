@@ -30,8 +30,7 @@ app.service("UserService", ["RemoteService", "$timeout", function (remoteService
     reset: function (user) {
       service.id      = null;
       service.name    = null;
-      service.email   = null;
-      service.picture = null;
+      service.profile   = null;
 
       service.emailVerified = false;
       return user;
@@ -40,13 +39,13 @@ app.service("UserService", ["RemoteService", "$timeout", function (remoteService
       return remoteService.currentUser().sendEmailVerification();
     },
     signIn: function (userEmail, userPassword) {
-      return remoteService.signIn(userEmail, userPassword).then(service.setUser);
+      return remoteService.signIn(userEmail, userPassword);
     },
     signOut: function () {
-      return remoteService.signOut().then(service.reset);
+      return remoteService.signOut();
     },
     signUp: function (userEmail, userPassword) {
-      return remoteService.createAccount(userEmail, userPassword).then(service.setUser);
+      return remoteService.createAccount(userEmail, userPassword);
     },
     updateProfile: function (name, picture) {
       return remoteService.writeUserData(service.id, name, picture)
@@ -64,12 +63,8 @@ app.service("UserService", ["RemoteService", "$timeout", function (remoteService
     }
   };
 
-  remoteService.onAuth(function (user) {
-    $timeout(function () {
-      user    && service.setUser(user);
-      !user   && service.reset(user);
-    });
-  });
+  remoteService.onSignIn(service.setUser);
+  remoteService.onSignOut(service.reset);
 
   return service;
 }]);

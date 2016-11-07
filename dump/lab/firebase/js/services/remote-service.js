@@ -1,13 +1,7 @@
-app.service("RemoteService", ["credentials", function (credentials) {
+app.service("RemoteService", ["$timeout", "credentials", function ($timeout, credentials) {
   var app = firebase.initializeApp(credentials),
-      onAuth = function () {},
-      setAuthCallback = function (callback) {
-        onAuth = callback;
-      };
-
-  app.auth().onAuthStateChanged(function (user) {
-    onAuth(user)
-  });
+      onSignIn = function () {},
+      onSignOut = function () {};
 
   var
       signIn = function (userEmail, userPassword) {
@@ -35,14 +29,25 @@ app.service("RemoteService", ["credentials", function (credentials) {
         return app.auth().currentUser;
       };
 
+  app.auth().onAuthStateChanged(function (user) {
+    $timeout(function () {
+      user ?  onSignIn(user) : onSignOut(user);
+    });
+  });
+
   return {
     firebase: app,
     signIn: signIn,
     signOut: signOut,
     createAccount: createAccount,
     writeUserData: writeUserData,
-    onAuth: setAuthCallback,
     currentUser: currentUser,
+    onSignIn: function(callback){
+      onSignIn = callback;
+    },
+    onSignOut: function(callback){
+      onSignOut = callback;
+    },
     resetPassword: function(emailAddress){
       return app.auth().sendPasswordResetEmail(emailAddress);
     }
