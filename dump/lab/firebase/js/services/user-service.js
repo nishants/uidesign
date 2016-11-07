@@ -12,12 +12,18 @@ app.service("UserService", ["RemoteService", "$timeout", function (remoteService
       service.email   = user.email;
 
       service.emailVerified = user.emailVerified;
-      remoteService.firebase.database().ref('/users/' + user.uid +'/profile').on('value', function (snapshot) {
+      remoteService.firebase.database().ref('/users/' + user.uid +'/profile').once('value').then(function (snapshot) {
         var profile = snapshot.val();
             $timeout(function () {
               service.profile = profile;
             });
       });
+      //remoteService.firebase.database().ref('/users/' + user.uid +'/profile').on('value', function (snapshot) {
+      //  var profile = snapshot.val();
+      //      $timeout(function () {
+      //        service.profile = profile;
+      //      });
+      //});
       return user;
 
     },
@@ -48,6 +54,13 @@ app.service("UserService", ["RemoteService", "$timeout", function (remoteService
             service.name = name;
             service.picture = picture;
           });
+    },
+    resetPassword: function(){
+      return remoteService.resetPassword().then(function() {
+        console.log("password reset mail sent")
+      }, function(error) {
+        console.error("password reset failed"+ error)
+      })
     }
   };
 
