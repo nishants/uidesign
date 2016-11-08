@@ -2,7 +2,9 @@ app.controller("SignUpController", ["$scope", "RemoteService", "UserService", "$
   var signupForm = {
     email: "",
     password: "",
+    cpassword: "",
     error: null,
+    errors: {},
     onSignUpError: function (error) {
       $timeout(function () {
         signupForm.error = error.message;
@@ -20,6 +22,11 @@ app.controller("SignUpController", ["$scope", "RemoteService", "UserService", "$
           .then(userService.sendVerificationMail)
           .then(signupForm.onSuccess)
           .catch(signupForm.onSignUpError);
+    },
+    validate: function(){
+      signupForm.errors = {
+        passwordMismatch: (signupForm.cpassword != signupForm.password)  && !$scope.signUpForm.cpassword.$pristine,
+      };
     }
   };
 
