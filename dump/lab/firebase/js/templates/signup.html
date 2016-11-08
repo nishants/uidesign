@@ -1,5 +1,4 @@
 <form class="signup-form" ng-controller="SignUpController">
-    <div ng-bind="signup.form.error" ng-show="signup.form.error"></div>
 
     <div class="field">
         <label>Email</label>
@@ -12,6 +11,10 @@
     <div class="field">
         <label>Confirm Password</label>
         <input type="password" ng-model="confirm_password" ng-init="confirm_password = signup.form.password">
+    </div>
+
+    <div class="error" ng-show="signup.form.error">
+        <label ng-bind="signup.form.error"></label>
     </div>
 
     <div class="action">

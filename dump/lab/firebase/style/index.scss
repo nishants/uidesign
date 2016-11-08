@@ -31,6 +31,10 @@ form{
       border: 1px solid $lightBorder;
     }
   }
+  .error{
+    padding: $padding $padding * 2;
+    color: #ff3748;
+  }
   .action{
     padding: 2 * $padding $padding;
 
