@@ -6,15 +6,16 @@ app.controller("SignUpController", ["$scope", "RemoteService", "UserService", "$
     onSignUpError: function (error) {
       $timeout(function () {
         signupForm.error = error.message;
-        console.error(JSON.stringify(error.message));
+        //console.error(JSON.stringify(error.message));
       });
     },
     onSuccess: function (user) {
       $timeout(function () {
-        console.log("Registered User : " + JSON.stringify(user));
+        //console.log("Registered User : " + JSON.stringify(user));
       });
     },
     submit: function () {
+      signupForm.error = "";
       userService.signUp(signupForm.email, signupForm.password)
           .then(userService.sendVerificationMail)
           .then(signupForm.onSuccess)
