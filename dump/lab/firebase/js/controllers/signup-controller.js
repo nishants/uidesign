@@ -1,7 +1,7 @@
 app.controller("SignUpController", ["$scope", "RemoteService", "UserService", "$timeout", function ($scope, remoteService, userService, $timeout) {
   var signupForm = {
-    email: "nishant.singh87@gmail.com",
-    password: "123456",
+    email: "",
+    password: "",
     error: null,
     onSignUpError: function (error) {
       $timeout(function () {
