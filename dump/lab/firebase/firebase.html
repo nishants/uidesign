@@ -7,7 +7,7 @@
 </head>
 <body ng-app="fired-up" ng-controller="UIController">
 
-<div class="authentication" ng-show="!user.id"      ng-init="auth = {user_exists : true}">
+<div class="authentication" ng-show="!user.id"      ng-init="auth = {user_exists : false}">
     <div ng-include="'js/templates/login.html'"     ng-show="auth.user_exists"></div>
     <div ng-include="'js/templates/signup.html'"    ng-show="!auth.user_exists"></div>
 </div>
