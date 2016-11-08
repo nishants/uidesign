@@ -8,8 +8,10 @@
         <input name="password" type="password" ng-model="login.form.password">
     </div>
 
+    <div class="error">
+        <div ng-bind="login.form.error"></div>
+    </div>
     <div class="action">
         <button class="primary" ng-click="login.form.submit()">Sign In</button>
-
     </div>
 </form>

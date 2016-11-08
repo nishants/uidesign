@@ -5,10 +5,7 @@ app.service("RemoteService", ["$timeout", "credentials", function ($timeout, cre
 
   var
       signIn = function (userEmail, userPassword) {
-        return app.auth().signInWithEmailAndPassword(userEmail, userPassword)
-            .catch(function (error) {
-              console.error(error.message);
-            });
+        return app.auth().signInWithEmailAndPassword(userEmail, userPassword);
       },
       signOut = function (userEmail, userPassword) {
         return app.auth().signOut()
