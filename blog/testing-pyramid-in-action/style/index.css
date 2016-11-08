@@ -1,57 +1,78 @@
-p {
-  margin-bottom: 1em; }
+/*
+Error: Invalid CSS after "...sitionFunction ": expected selector or at-rule, was ": cubic-bezier(..."
+        on line 32 of ../../../style/_vars.scss
+        from line 1 of ../../../style/_base.scss
+        from line 1 of index.scss
 
-.heading {
-  margin-bottom: 0.618em; }
-  .heading.-large, h1 {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 30px; }
-  .heading.-medium, h2 {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 20px; }
-  .heading.-small, h3 {
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 13.33333px; }
-  .heading.-smallest {
-    font-size: 10px;
-    font-weight: bold; }
+27: $padding   : 10px;
+28: 
+29: $primaryBlue: #3B99FC;
+30: $white: rgb(246, 238, 230)
+31: 
+32: $defaultTransitionFunction : cubic-bezier(0.64, 0.57, 0.67, 1.53);
 
-body * {
-  box-sizing: border-box; }
-
-label {
-  cursor: inherit; }
-
-input {
-  padding: 0px;
-  margin: 0px;
-  display: block;
-  box-sizing: border-box;
-  border: none; }
-
-.resize-container:after, ul.inline-list:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-ul.undo-list, ul.inline-list {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-  display: block; }
-
-ul.inline-list {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-  display: inline-block; }
-  ul.inline-list > li {
-    float: left; }
-
-.funnel svg .layer-body {
-  fill: #F5D328; }
-
-/*# sourceMappingURL=index.css.map */
+Backtrace:
+../../../style/_vars.scss:32
+../../../style/_base.scss:1
+index.scss:1
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:42:in `parse'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:312:in `to_tree'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/bin/scss:13:in `<top (required)>'
+/usr/local/bin/scss:23:in `load'
+/usr/local/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...sitionFunction \": expected selector or at-rule, was \": cubic-bezier(...\"\A         on line 32 of ../../../style/_vars.scss\A         from line 1 of ../../../style/_base.scss\A         from line 1 of index.scss\A \A 27: $padding   : 10px;\A 28: \A 29: $primaryBlue: #3B99FC;\A 30: $white: rgb(246, 238, 230)\A 31: \A 32: $defaultTransitionFunction : cubic-bezier(0.64, 0.57, 0.67, 1.53);"; }

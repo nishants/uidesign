@@ -18,12 +18,6 @@ app.service("UserService", ["RemoteService", "$timeout", function (remoteService
               service.profile = profile;
             });
       });
-      //remoteService.firebase.database().ref('/users/' + user.uid +'/profile').on('value', function (snapshot) {
-      //  var profile = snapshot.val();
-      //      $timeout(function () {
-      //        service.profile = profile;
-      //      });
-      //});
       return user;
 
     },
