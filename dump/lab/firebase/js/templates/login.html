@@ -14,4 +14,7 @@
     <div class="action">
         <button class="primary" ng-click="login.form.submit()">Sign In</button>
     </div>
+
+    <span ng-bind="auth.user_exists"></span>
+    <a ng-click="auth.user_exists = false">New User ?</a>
 </form>

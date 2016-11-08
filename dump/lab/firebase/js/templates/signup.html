@@ -1,11 +1,11 @@
 <form class="signup-form" ng-controller="SignUpController">
 
     <div class="field">
-        <label>Email</label>
+        <label>Enter Email</label>
         <input name="email" type="email" ng-model="signup.form.email">
     </div>
     <div class="field">
-        <label>Password</label>
+        <label>Choose Password</label>
         <input name="password" type="password" ng-model="signup.form.password">
     </div>
     <div class="field">
@@ -13,8 +13,9 @@
         <input name="password" type="password" ng-model="confirm_password" ng-init="confirm_password = signup.form.password">
     </div>
 
-    <div class="error" ng-show="signup.form.error">
-        <label ng-bind="signup.form.error"></label>
+    <div class="error" >
+        <div ng-show="confirm_password != signup.form.password">Passwords don't match.</div>
+        <div ng-show="signup.form.error" ng-bind="signup.form.error"></div>
     </div>
 
     <div class="action">
