@@ -49,6 +49,10 @@ form{
       border: 1px solid $lightBorder;
     }
 
+    button[disabled]{
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
     button.primary{
       background-color: $primaryBlue;
       color: $white;
