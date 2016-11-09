@@ -1,4 +1,4 @@
-var auth = angular.module("fired-up", []);
+var auth = angular.module("fire-auth", []);
 auth.value("credentials", {
   apiKey: "AIzaSyAt3rD67xE5KvwyAk645-tRrKDAG3KH_jY",
   authDomain: "programmers-4d280.firebaseapp.com",

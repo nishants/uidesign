@@ -4,61 +4,75 @@ $lineHeight: $rowHeight;
 $borderRadius: 2px;
 $lightBorder: rgba(0,0,0,0.1);
 
-form{
-  padding: $padding;
-  max-width: 500px;
-  border: 1px solid $lightBorder;
+.auth{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.79);
+  z-index: 9;
+  padding-top: 5 * $padding;
 
-  .field{
+  form{
+    max-width: 500px;
+    margin: auto;
     padding: $padding;
+    background: white;
+    border: 1px solid $lightBorder;
+    border-radius: $borderRadius;
 
-    label{
-      width: 100%;
-      font-size: small;
-      display: block;
-      padding-bottom: $padding/2;
-      color: $lightBorder;
-    }
-    input{
-      display: block;
-      font-size: medium;
-      width: 100%;
+    .field{
+      padding: $padding;
 
-      height: $lineHeight;
-      line-height: $lineHeight;
-      padding: 0px $padding;
-      border-radius: $borderRadius;
-      border: 1px solid $lightBorder;
+      label{
+        width: 100%;
+        font-size: small;
+        display: block;
+        padding-bottom: $padding/2;
+        color: $lightBorder;
+      }
+      input{
+        display: block;
+        font-size: medium;
+        width: 100%;
+
+        height: $lineHeight;
+        line-height: $lineHeight;
+        padding: 0px $padding;
+        border-radius: $borderRadius;
+        border: 1px solid $lightBorder;
+      }
     }
+    .error{
+      padding: $padding $padding * 2;
+      color: #ff3748;
+    }
+    .action{
+      padding: 2 * $padding $padding;
+
+      button{
+        display: block;
+        font-size: medium;
+        width: 100%;
+        height: $lineHeight;
+        line-height: $lineHeight;
+        padding: 0px $padding;
+        border-radius: $borderRadius;
+        border: 1px solid $lightBorder;
+      }
+
+      button[disabled]{
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      button.primary{
+        background-color: $primaryBlue;
+        color: $white;
+      }
+    }
+
   }
-  .error{
-    padding: $padding $padding * 2;
-    color: #ff3748;
-  }
-  .action{
-    padding: 2 * $padding $padding;
-
-    button{
-      display: block;
-      font-size: medium;
-      width: 100%;
-      height: $lineHeight;
-      line-height: $lineHeight;
-      padding: 0px $padding;
-      border-radius: $borderRadius;
-      border: 1px solid $lightBorder;
-    }
-
-    button[disabled]{
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-    button.primary{
-      background-color: $primaryBlue;
-      color: $white;
-    }
-  }
-
 }
 
 @import 'authentication';

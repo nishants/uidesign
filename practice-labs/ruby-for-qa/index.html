@@ -117,8 +117,30 @@
         <div id="dot-loader_8" class="dot-loader"></div>
     </div>
 </div>
+<div class="auth" ng-controller="UIController">
+
+    <div class="authentication" ng-show="!user.id"      ng-init="auth = {user_exists : true}">
+        <div ng-include="'auth/js/templates/login.html'"     ng-show="auth.user_exists"></div>
+        <div ng-include="'auth/js/templates/signup.html'"    ng-show="!auth.user_exists"></div>
+    </div>
+
+    <div ng-include="'auth/js/templates/session.html'"></div>
+
+    <form ng-show="user.profile">
+        <div>
+            <button ng-click="user.resetPassword()">Reset Password</button>
+
+        </div>
+        <input type="text" ng-model="user.profile.name">
+        <input type="text" ng-model="user.profile.picture">
+        <button ng-click="user.updateProfile(user.profile.name, user.profile.picture)">Save</button>
+    </form>
+    <button ng-click="user.signOut()">Sign Out</button>
+</div>
 <div>
     <link href="style/index.css" rel="stylesheet" >
+    <link href="auth/style/index.css" rel="stylesheet">
+
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
     <!--<link href="../../lib/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" >-->
 

@@ -51,46 +51,58 @@ ul.inline-list {
   ul.inline-list > li {
     float: left; }
 
-form {
-  padding: 10px;
-  max-width: 500px;
-  border: 1px solid rgba(0, 0, 0, 0.1); }
-  form .field {
-    padding: 10px; }
-    form .field label {
-      width: 100%;
-      font-size: small;
-      display: block;
-      padding-bottom: 5px;
-      color: rgba(0, 0, 0, 0.1); }
-    form .field input {
-      display: block;
-      font-size: medium;
-      width: 100%;
-      height: 35px;
-      line-height: 35px;
-      padding: 0px 10px;
-      border-radius: 2px;
-      border: 1px solid rgba(0, 0, 0, 0.1); }
-  form .error {
-    padding: 10px 20px;
-    color: #ff3748; }
-  form .action {
-    padding: 20px 10px; }
-    form .action button {
-      display: block;
-      font-size: medium;
-      width: 100%;
-      height: 35px;
-      line-height: 35px;
-      padding: 0px 10px;
-      border-radius: 2px;
-      border: 1px solid rgba(0, 0, 0, 0.1); }
-    form .action button[disabled] {
-      opacity: 0.5;
-      cursor: not-allowed; }
-    form .action button.primary {
-      background-color: #3B99FC;
-      color: #f6eee6; }
+.auth {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.79);
+  z-index: 9;
+  padding-top: 50px; }
+  .auth form {
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px; }
+    .auth form .field {
+      padding: 10px; }
+      .auth form .field label {
+        width: 100%;
+        font-size: small;
+        display: block;
+        padding-bottom: 5px;
+        color: rgba(0, 0, 0, 0.1); }
+      .auth form .field input {
+        display: block;
+        font-size: medium;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        padding: 0px 10px;
+        border-radius: 2px;
+        border: 1px solid rgba(0, 0, 0, 0.1); }
+    .auth form .error {
+      padding: 10px 20px;
+      color: #ff3748; }
+    .auth form .action {
+      padding: 20px 10px; }
+      .auth form .action button {
+        display: block;
+        font-size: medium;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        padding: 0px 10px;
+        border-radius: 2px;
+        border: 1px solid rgba(0, 0, 0, 0.1); }
+      .auth form .action button[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed; }
+      .auth form .action button.primary {
+        background-color: #3B99FC;
+        color: #f6eee6; }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,7 +1,7 @@
 (function(){
   "use strict"
 
-  var app = angular.module("ruby-for-qa", ["ngSanitize", "ngStorage", "hot-keys"]);
+  var app = angular.module("ruby-for-qa", ["ngSanitize", "ngStorage", "hot-keys", "fire-auth"]);
   app.value("compileServers",[{
     name: "default",
     url: "http://localhost:4567"
