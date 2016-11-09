@@ -117,7 +117,7 @@
         <div id="dot-loader_8" class="dot-loader"></div>
     </div>
 </div>
-<div class="auth" ng-controller="AuthController" ng-if="!ui.splash" ng-show="!user.id">
+<div class="auth" ng-if="!ui.splash" ng-show="!user.id">
 
     <div class="authentication" ng-show="!user.id"      ng-init="auth = {user_exists : true}">
         <div ng-include="'auth/js/templates/login.html'"     ng-show="auth.user_exists"></div>
@@ -188,7 +188,6 @@
     <script src="auth/js/services/user-service.js"></script>
     <script src="auth/js/controllers/login-controller.js"></script>
     <script src="auth/js/controllers/signup-controller.js"></script>
-    <script src="auth/js/controllers/auth-controller.js"></script>
 
 </div>
 
