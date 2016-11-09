@@ -42,11 +42,16 @@ auth.service("UserService", ["RemoteService", "$timeout", function (remoteServic
       return remoteService.createAccount(userEmail, userPassword);
     },
     updateProfile: function (name, picture) {
-      return remoteService.writeUserData(service.id, name, picture)
-          .then(function () {
-            service.name = name;
-            service.picture = picture;
-          });
+      return remoteService.writeUserData('users/' + service.id + "/profile", {
+        name: name,
+        picture: picture
+      }).then(function () {
+        service.name = name;
+        service.picture = picture;
+      });
+    },
+    saveTask: function (taskId, value) {
+      return remoteService.writeUserData('users/' + service.id + "/tasks/" + taskId, value);
     },
     resetPassword: function(){
       return remoteService.resetPassword(service.email).then(function() {

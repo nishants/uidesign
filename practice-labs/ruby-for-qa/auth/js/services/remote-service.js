@@ -16,11 +16,8 @@ auth.service("RemoteService", ["$timeout", "credentials", function ($timeout, cr
       createAccount = function (userEmail, userPassword) {
         return app.auth().createUserWithEmailAndPassword(userEmail, userPassword);
       },
-      writeUserData = function (userId, name, picture) {
-        return app.database().ref('users/' + userId + "/profile").set({
-          name: name,
-          picture: picture
-        });
+      writeUserData = function (reference, value) {
+        return app.database().ref(reference).set(value);
       },
       currentUser = function(){
         return app.auth().currentUser;

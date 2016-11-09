@@ -1,6 +1,6 @@
 (function(){
   "use strict"
-  window.app.controller("editorController", ["$scope", "taskService", "$timeout", "uiService", "$localStorage","aceEditor", "replService", function($scope, taskService, $timeout, uiService, $localStorage, aceEditor, replService){
+  window.app.controller("editorController", ["$scope", "taskService", "$timeout", "uiService", "$localStorage","aceEditor", "replService", "UserService", function($scope, taskService, $timeout, uiService, $localStorage, aceEditor, replService, userService){
     window.storage = $localStorage;
     var taskId = "exercise-one",
         editor = {
@@ -30,6 +30,11 @@
             }
             $localStorage[taskId].lastSaved   = editor.ace.getValue();
             $localStorage[taskId].repl.script = $scope.repl.script;
+            return userService.saveTask(taskId, {
+              lastSaved: editor.ace.getValue(),
+              repl: editor.ace.getValue(),
+            });
+
           },
           createRepl: function(script){
             $scope.repl = replService.create(script);
