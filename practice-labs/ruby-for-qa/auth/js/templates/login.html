@@ -15,7 +15,11 @@
     <div class="action">
         <button class="primary" ng-click="login.form.submit()">Sign In</button>
     </div>
+    <div class="options">
+        <div class="next link" ng-click="auth.user_exists = false">
+            <a >Create Account
+                <i class="fa fa-chevron-right"></i></a>
 
-    <span ng-bind="auth.user_exists"></span>
-    <a ng-click="auth.user_exists = false">New User ?</a>
+        </div>
+    </div>
 </form>

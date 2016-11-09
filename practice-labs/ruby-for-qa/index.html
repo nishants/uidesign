@@ -40,6 +40,7 @@
     <div class="trade-mark">
         <div class="practice-labs">Practice Labs</div>
         <div class="studio">Ruby For QA's</div>
+        <button ng-click="user.signOut()">Sign Out</button>
     </div>
 </div>
 
@@ -135,13 +136,12 @@
         <input type="text" ng-model="user.profile.picture">
         <button ng-click="user.updateProfile(user.profile.name, user.profile.picture)">Save</button>
     </form>
-    <button ng-click="user.signOut()">Sign Out</button>
 </div>
 <div>
     <link href="style/index.css" rel="stylesheet" >
     <link href="auth/style/index.css" rel="stylesheet">
 
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" >
 
     <script src="../../lib/ace/ace.js"></script>

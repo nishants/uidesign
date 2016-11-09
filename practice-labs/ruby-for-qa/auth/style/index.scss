@@ -1,4 +1,5 @@
 @import '../../../../style/base';
+@import "../../../../lib/font-awesome-4.5.0/scss/font-awesome";
 
 $lineHeight: $rowHeight;
 $borderRadius: 2px;
@@ -72,6 +73,19 @@ $lightBorder: rgba(0,0,0,0.1);
       }
     }
 
+    .options{
+      text-align: right;
+      .link.next{
+        a{
+          padding-right: $padding;
+        }
+      }
+      .link.previous{
+        a{
+          padding-left: $padding;
+        }
+      }
+    }
   }
 }
 
