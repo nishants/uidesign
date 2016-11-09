@@ -41,7 +41,12 @@ auth.service("UserService", ["RemoteService", "$timeout", "uiService", function 
       return remoteService.signOut();
     },
     signUp: function (userEmail, userPassword) {
-      return remoteService.createAccount(userEmail, userPassword);
+      return remoteService.createAccount(userEmail, userPassword).then(function(user){
+            remoteService.writeUserData('users/' + user.uid + "/profile", {
+              email: userEmail
+            });
+          return user;
+      });
     },
     updateProfile: function (name, picture) {
       return remoteService.writeUserData('users/' + service.id + "/profile", {
