@@ -32,7 +32,7 @@
             //$localStorage[taskId].repl.script = $scope.repl.script;
             return userService.saveTask(taskId, {
               lastSaved: editor.ace.getValue(),
-              repl: editor.ace.getValue(),
+              repl: $scope.repl.script,
             });
 
           },
@@ -76,8 +76,8 @@
         editor.refresh();
       } else{
         editor.ace.setValue(savedTask.lastSaved);
-        replService.create(savedTask.repl);
         editor.run();
+        $scope.repl = replService.create(savedTask.repl);
       }
     });
 
