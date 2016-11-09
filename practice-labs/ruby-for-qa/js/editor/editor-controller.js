@@ -25,11 +25,11 @@
             return task && task.lastSaved;
           },
           save : function(){
-            if(!$localStorage[taskId]){
-              $localStorage[taskId] = {lastSaved : null, repl: {script : null}}
-            }
-            $localStorage[taskId].lastSaved   = editor.ace.getValue();
-            $localStorage[taskId].repl.script = $scope.repl.script;
+            //if(!$localStorage[taskId]){
+            //  $localStorage[taskId] = {lastSaved : null, repl: {script : null}}
+            //}
+            //$localStorage[taskId].lastSaved   = editor.ace.getValue();
+            //$localStorage[taskId].repl.script = $scope.repl.script;
             return userService.saveTask(taskId, {
               lastSaved: editor.ace.getValue(),
               repl: editor.ace.getValue(),
@@ -71,19 +71,15 @@
       editor.autoRun.pending = $timeout(editor.autoRun.execute, editor.autoRun.interval);
     });
 
-    var lastSaved = editor.lastSaved(taskId);
-
-    if(!lastSaved){
-      editor.refresh();
-    }
-
-    if(lastSaved){
-      taskService.getAssignment(taskId).then(function(task){
-        $scope.repl = replService.create(task.replScope);
-      });
-      editor.ace.setValue(lastSaved);
-      editor.run();
-    }
+    userService.getTask(taskId).then(function(savedTask){
+      if(!savedTask){
+        editor.refresh();
+      } else{
+        editor.ace.setValue(savedTask.lastSaved);
+        replService.create(savedTask.repl);
+        editor.run();
+      }
+    });
 
     $scope.editor = editor;
   }]);

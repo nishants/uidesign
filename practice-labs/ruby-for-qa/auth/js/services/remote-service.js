@@ -44,6 +44,9 @@ auth.service("RemoteService", ["$timeout", "credentials", function ($timeout, cr
     },
     resetPassword: function(emailAddress){
       return app.auth().sendPasswordResetEmail(emailAddress);
+    },
+    readUserData: function(reference){
+        return app.database().ref(reference).once("value");
     }
   };
 }]);

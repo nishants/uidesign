@@ -1,4 +1,4 @@
-auth.service("UserService", ["RemoteService", "$timeout", function (remoteService, $timeout) {
+auth.service("UserService", ["RemoteService", "$timeout", "uiService", function (remoteService, $timeout, uiService) {
   var service = {
     id: null,
     name: null,
@@ -18,6 +18,7 @@ auth.service("UserService", ["RemoteService", "$timeout", function (remoteServic
               service.profile = profile;
             });
       });
+      uiService.splash = false;
       return user;
 
     },
@@ -27,6 +28,7 @@ auth.service("UserService", ["RemoteService", "$timeout", function (remoteServic
       service.profile   = null;
 
       service.emailVerified = false;
+      uiService.splash = false;
       return user;
     },
     sendVerificationMail: function(){
@@ -52,6 +54,11 @@ auth.service("UserService", ["RemoteService", "$timeout", function (remoteServic
     },
     saveTask: function (taskId, value) {
       return remoteService.writeUserData('users/' + service.id + "/tasks/" + taskId, value);
+    },
+    getTask: function (taskId) {
+      return remoteService.readUserData('users/' + service.id + "/tasks/" + taskId).then(function(snapshot){
+        return snapshot.val();
+      });
     },
     resetPassword: function(){
       return remoteService.resetPassword(service.email).then(function() {
