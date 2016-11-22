@@ -55,13 +55,11 @@ $connectorWidth: 150px;
   .arrow{
     font-size: $arrowSize;
     i{
-      color: $darkFontColor;
       @include transform(scaleX(2));
     }
   }
   > label{
     top: $arrowSize/3;
-    color: $darkFontColor !important;
     background-color: transparent !important;
   }
 }

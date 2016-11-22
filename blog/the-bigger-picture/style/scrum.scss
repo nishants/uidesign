@@ -92,4 +92,12 @@ $scrumPadding: $padding/2;
     color: $stackFontColor;
   }
 
+  .card.connector{
+    .arrow{
+      color: $scrumCardColor;
+    }
+    >label{
+      color: $darkFontColor;
+    }
+  }
 }
