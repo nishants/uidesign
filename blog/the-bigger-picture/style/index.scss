@@ -1,6 +1,6 @@
 @import '../../../style/base';
 @import "../../../lib/font-awesome-4.5.0/scss/font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600');
 
 $rowHeight: 25px;
 $darkTint: rgba(0, 0, 0, 0.2);
@@ -13,12 +13,24 @@ $cardHeight: 190px;
 $cardWidth: 273px;
 
 $normalFontSize: 18px;
+$smallFontSize: 13px;
+
 $slideHeight: 100vh;
 $minHeight: 528px;
 
 article{
   font-family: 'Raleway', sans-serif;
   overflow: auto;
+}
+
+.subject-title{
+  > label{
+    font-weight: 600;
+  }
+  > span{
+    opacity: 0.5;
+    font-size: $smallFontSize;
+  }
 }
 
 .card{
