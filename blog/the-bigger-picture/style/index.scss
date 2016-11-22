@@ -1,0 +1,43 @@
+@import '../../../style/base';
+@import "../../../lib/font-awesome-4.5.0/scss/font-awesome";
+
+$rowHeight: 25px;
+$darkTint: rgba(0, 0, 0, 0.2);
+
+$lineHeight: $rowHeight;
+$borderRadius: 2px;
+$lightBorder: rgba(0,0,0,0.1);
+
+$cardHeight: 190px;
+$cardWidth: 273px;
+
+$normalFontSize: 18px;
+
+.card{
+  position: relative;
+  height: $cardHeight;
+  width: $cardWidth;
+
+  > label{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: $rowHeight;
+    text-align: center;
+  }
+}
+
+.stack{
+  @extend .undo-list;
+  padding: $padding !important;
+
+  li{
+    display: block;
+    margin: $padding;
+    width: calc(100% - #{2 * $padding});
+    height: $rowHeight;
+  }
+}
+
+@import "scrum";

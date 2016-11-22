@@ -1,0 +1,32 @@
+$scrumCardColor: #DE6A10;
+$scrumLabelColor: #DE6A10;
+
+$stackOuterColor: #DE6A10;
+$stackInnerColor: #ee8510;
+$stackFontColor: rgba(255, 255, 255, 0.93);
+
+.scrum{
+  @extend .undo-list;
+
+  > li{
+    float: left;
+    margin: $padding;
+  }
+
+
+  ul.stack{
+    background-color: $stackOuterColor;
+    > li{
+      background-color: $stackInnerColor;
+    }
+  }
+
+  .card{
+    background-color: $scrumCardColor;
+    > label{
+      background-color: $scrumLabelColor;
+      color: $stackFontColor;
+      font-size: $normalFontSize;
+    }
+  }
+}
