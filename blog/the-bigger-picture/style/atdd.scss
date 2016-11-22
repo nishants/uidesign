@@ -11,7 +11,7 @@ $atddWidth : 800px;
   position   : relative;
 
   min-width  : $atddWidth - 2*$padding;
-  min-height : $slideHeight;
+  min-height : calc(#{$slideHeight} - #{6* $padding});
   border     : $padding solid $atddCardColor ;
 
   > li{
