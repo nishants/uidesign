@@ -17,7 +17,6 @@ $atddWidth : 800px;
     height    : auto;
     width     : calc(100% -  #{2 * $padding});
     min-height: $collapseRowHeight;
-    background-color: $atddCardColor;
     margin : $padding;
 
     > label{
@@ -25,6 +24,17 @@ $atddWidth : 800px;
       color           : $atddFontColor;
       background-color: $atddCardColor;
       text-align      : left;
+      background-color: $atddCardColor;
+    }
+  }
+
+  .development{
+    > .card{
+      height: auto;
+      > label{
+        display:  block;
+        position: relative;
+      }
     }
   }
 
