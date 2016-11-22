@@ -4,52 +4,54 @@
     <meta charset="UTF-8">
     <title></title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-    <link href="style/index.css" rel="stylesheet" >
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style/index.css" rel="stylesheet">
 </head>
 <body>
 
 <article>
-    <ul class="scrum">
-        <li class="backlog ">
-            <div class="card">
-                <ul class="stack">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+    <div class="scrum">
+        <div class="planning-and-retro">
+            <div class="planning">
 
-                <label>Backlog</label>
+                <div class="backlog card">
+                    <ul class="stack">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                    <label>Backlog</label>
+                </div>
+
+
+                <div class="sprint-plan card">
+                    <ul class="stack">
+                        <li style="opacity: 0"></li>
+                        <li style="opacity: 0"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                    <label>Sprint Plan</label>
+                </div>
+
             </div>
-        </li>
+            <div class="plan-space-retro">
 
-        <li class="sprint-plan">
-            <div class="card">
-                <ul class="stack">
-                    <li style="opacity: 0"></li>
-                    <li style="opacity: 0"></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-
-                <label>Sprint Plan</label>
             </div>
-        </li>
+            <div class="retro">
+                <div class="feedback-summary card">
+                        <label>Sprint Summary and Feedback</label>
+                </div>
 
-        <li class="feedback-summary">
-            <div class="card">
-                <label>Sprint Summary and Feedback</label>
+                <div class="retrospective card">
+                        <label>Restrospective and Feedback analysis</label>
+                </div>
             </div>
-        </li>
-
-        <li class="retrospective">
-            <div class="card">
-                <label>Restrospective  and Feedback analysis</label>
-            </div>
-        </li>
-
-        <li class="sprint card">
+        </div>
+        <div class="sprint">
             <ul class="atdd">
                 <li class="analysis ">
                     <div class="card">
@@ -69,9 +71,9 @@
                     </div>
                 </li>
             </ul>
-        </li>
+        </div>
+    </div>
 
-    </ul>
 </article>
 </body>
 </html>

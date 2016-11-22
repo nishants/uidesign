@@ -5,54 +5,44 @@ $stackOuterColor: #DE6A10;
 $stackInnerColor: #ee8510;
 $stackFontColor : rgba(255, 255, 255, 0.93);
 $sprintWidth : 800px;
-
+$planningAndRetroWidth: 600px;
+$planningAndRetroHeight: 210px;
+$planningAndRetroSpace: 100px;
+$planningHeight: 210px;
 .scrum{
   @extend .resize-container;
-  @extend .undo-list;
-
-  min-width  : $sprintWidth + 2 * $cardWidth + 8 * $padding;
-  overflow   : auto;
-  position   : relative;
-  min-height : $slideHeight;
   border     : $padding solid #DE6A10 ;
+  padding    : $padding;
+  width: $planningAndRetroWidth + $sprintWidth + 4*$padding ;
 
-  > li{
+  .planning-and-retro, .sprint{
     float: left;
-    position: absolute;
-    margin: $padding;
+    width: $planningAndRetroWidth;
   }
 
-  > li > .card{
-    background-color: $scrumCardColor;
-    > label{
-      color           : $stackFontColor;
-      background-color: $scrumLabelColor;
+  .planning, .retro{
+    @extend .resize-container;
+
+    > .card{
+      float: left;
+      background-color: $scrumCardColor;
+      margin: $padding;
+      > label{
+        color           : $stackFontColor;
+        background-color: $scrumLabelColor;
+      }
     }
   }
 
-  .sprint-plan, .backlog{
-    top: 0;
+  .plan-space-retro{
+    height: calc(100vh - #{2 * $planningAndRetroHeight + 4 * $padding});
+    width: 50px;
   }
 
-  .retrospective, .feedback-summary{
-    bottom: 0;
-  }
-
-  .backlog, .feedback-summary{
-    left: 0;
-  }
-  .sprint-plan, .retrospective{
-    left: $cardWidth + 2 *$padding;
-  }
 
   .sprint{
-    right : 0;
-    top   : 0;
-    height: calc(100% - #{2 * $padding});
-    width : $sprintWidth;
-    overflow: auto;
-    border: $padding solid $scrumCardColor;
-    background-color: transparent;
+    width   : $sprintWidth;
+    border  : $padding solid $scrumCardColor;
   }
 
   ul.stack{
