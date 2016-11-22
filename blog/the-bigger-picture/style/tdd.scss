@@ -7,7 +7,6 @@ $tddFontColor : rgba(255, 255, 255, 0.88);
   > .card{
     border: $padding solid $tddColor;
     margin: $padding ;
-    background-color: $emptyBackgroundColor;
 
     > ul {
       @extend .undo-list;

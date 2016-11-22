@@ -52,6 +52,8 @@ $scrumPadding: $padding/2;
     height  : calc(#{$scrumHeight} - #{6 * $padding});
     width   : $sprintWidth - 2 *$padding;
     border  : $padding solid $scrumCardColor;
+    background-color: $scrumLabelColor;
+
     .sprint-overview, .atdd{
       float: left
     }

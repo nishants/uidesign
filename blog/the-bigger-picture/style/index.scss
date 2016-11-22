@@ -21,6 +21,7 @@ $minHeight: 528px;
 article{
   font-family: 'Raleway', sans-serif;
   overflow: auto;
+  background: rgb(230, 230, 230);
 }
 
 .subject-title{
@@ -71,3 +72,5 @@ article{
 @import "scrum";
 @import "atdd";
 @import "tdd";
+
+@import "states/scrum-only";

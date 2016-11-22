@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<article>
+<article id="state">
     <div class="scrum">
         <div class="resize-container">
             <div class="planning-and-retro">
@@ -82,7 +82,7 @@
                                         <li>3. Refactor</li>
                                     </ul>
                                     <label class="subject-title">
-                                        <label><a href="#/tdd">TDD</a> </label>
+                                        <label><a href="#/tdd-only">TDD</a> </label>
                                         <span>(How we write code, includes writing unit tests)</span>
                                     </label>
                                 </div>
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <label class="atdd-title subject-title">
-                        <label><a href="#/atdd">ATDD</a></label>
+                        <label><a href="#/atdd-only">ATDD</a></label>
                         <span>(How we build software from requirements. Includes analysis, development and quality assurance)</span>
                     </label>
                 </div>
@@ -104,7 +104,7 @@
         </div>
 
         <label class="scrum-title subject-title">
-            <label><a href="#/scrum">Scrum</a></label>
+            <label><a href="#/scrum-only">Scrum</a></label>
             <span>(How we mange work and coordinate team; Includes, planning, estimating, prioritizing)       </span>
         </label>
     </div>
@@ -118,7 +118,10 @@
         var
                 states = {
                     load: function(name){
-                        console.log(name);
+                        $("#state").removeClass();
+                        setTimeout(function(){
+                            $("#state").addClass(name);
+                        })
                     }
                 },
                 stateFrom = function (url) {
