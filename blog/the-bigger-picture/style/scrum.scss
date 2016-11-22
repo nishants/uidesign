@@ -22,6 +22,14 @@ $sprintWidth : 800px;
     margin: $padding;
   }
 
+  .card{
+    background-color: $scrumCardColor;
+    > label{
+      color           : $stackFontColor;
+      background-color: $scrumLabelColor;
+    }
+  }
+
   .sprint-plan, .backlog{
     top: 0;
   }
@@ -40,9 +48,11 @@ $sprintWidth : 800px;
   .sprint{
     right : 0;
     top   : 0;
-    background-color: $scrumCardColor;
     height: calc(100% - #{2 * $padding});
     width : $sprintWidth;
+    overflow: auto;
+    border: $padding solid $scrumCardColor;
+    background-color: transparent;
   }
 
   ul.stack{
@@ -52,12 +62,5 @@ $sprintWidth : 800px;
     }
   }
 
-  .card{
-    background-color: $scrumCardColor;
-    > label{
-      color           : $stackFontColor;
-      font-size       : $normalFontSize;
-      background-color: $scrumLabelColor;
-    }
-  }
+
 }

@@ -24,6 +24,7 @@ $slideHeight: 100vh;
     bottom: 0;
     left: 0;
     width: 100%;
+    font-size       : $normalFontSize;
 
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 
@@ -47,3 +48,4 @@ $slideHeight: 100vh;
 }
 
 @import "scrum";
+@import "atdd";

@@ -1,0 +1,30 @@
+$atddCardColor : #DCBD23;
+$atddLabelColor: #DCBD23;
+
+$atddFontColor : rgba(0, 0, 0, 0.91);
+$atddWidth : 800px;
+
+.atdd{
+  @extend .resize-container;
+  @extend .undo-list;
+
+  position   : relative;
+
+  min-width  : $atddWidth - 2*$padding;
+  min-height : $slideHeight;
+  border     : $padding solid $atddCardColor ;
+
+  > li{
+    float: left;
+    position: absolute;
+    margin: $padding;
+  }
+  .card{
+    background-color: $atddCardColor;
+    > label{
+      color           : $atddFontColor;
+      background-color: $atddCardColor;
+    }
+  }
+
+}
