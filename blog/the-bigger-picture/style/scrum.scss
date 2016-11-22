@@ -6,11 +6,30 @@ $stackInnerColor: #ee8510;
 $stackFontColor: rgba(255, 255, 255, 0.93);
 
 .scrum{
+  @extend .resize-container;
   @extend .undo-list;
+  position: relative;
+  min-height: calc(#{$slideHeight} - #{4*$padding});
 
   > li{
     float: left;
+    position: absolute;
     margin: $padding;
+  }
+
+  .sprint-plan, .backlog{
+    top: 0;
+  }
+
+  .retrospective, .feedback-summary{
+    bottom: 0;
+  }
+
+  .backlog, .feedback-summary{
+    left: 0;
+  }
+  .sprint-plan, .retrospective{
+    left: $cardWidth + 2 *$padding;
   }
 
 

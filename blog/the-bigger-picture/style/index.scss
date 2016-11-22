@@ -12,6 +12,11 @@ $cardHeight: 190px;
 $cardWidth: 273px;
 
 $normalFontSize: 18px;
+$slideHeight: 100vh;
+
+article{
+  min-height: $slideHeight;
+}
 
 .card{
   position: relative;
