@@ -1,15 +1,20 @@
-$scrumCardColor: #DE6A10;
+$scrumCardColor : #DE6A10;
 $scrumLabelColor: #DE6A10;
 
 $stackOuterColor: #DE6A10;
 $stackInnerColor: #ee8510;
-$stackFontColor: rgba(255, 255, 255, 0.93);
+$stackFontColor : rgba(255, 255, 255, 0.93);
+$sprintWidth : 800px;
 
 .scrum{
   @extend .resize-container;
   @extend .undo-list;
-  position: relative;
-  min-height: calc(#{$slideHeight} - #{4*$padding});
+
+  min-width  : $sprintWidth + 2 * $cardWidth + 8 * $padding;
+  overflow   : auto;
+  position   : relative;
+  min-height : $slideHeight;
+  border     : $padding solid #DE6A10 ;
 
   > li{
     float: left;
@@ -32,6 +37,13 @@ $stackFontColor: rgba(255, 255, 255, 0.93);
     left: $cardWidth + 2 *$padding;
   }
 
+  .sprint{
+    right : 0;
+    top   : 0;
+    background-color: $scrumCardColor;
+    height: calc(100% - #{2 * $padding});
+    width : $sprintWidth;
+  }
 
   ul.stack{
     background-color: $stackOuterColor;
@@ -43,9 +55,9 @@ $stackFontColor: rgba(255, 255, 255, 0.93);
   .card{
     background-color: $scrumCardColor;
     > label{
+      color           : $stackFontColor;
+      font-size       : $normalFontSize;
       background-color: $scrumLabelColor;
-      color: $stackFontColor;
-      font-size: $normalFontSize;
     }
   }
 }
