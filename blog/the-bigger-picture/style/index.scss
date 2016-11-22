@@ -27,6 +27,9 @@ article{
   > label{
     font-weight: 600;
     padding-right: $padding/2;
+    > a{
+      color: inherit;
+    }
   }
   > span{
     opacity: 0.5;
