@@ -16,7 +16,7 @@ $scrumPadding: $padding/2;
 .scrum{
   @extend .resize-container;
   min-height: $minHeight;
-  overflow: auto;
+  position: relative;
 
   border     : $padding solid #DE6A10 ;
   width: $planningAndRetroWidth + $sprintWidth + 4*$padding ;
@@ -49,7 +49,7 @@ $scrumPadding: $padding/2;
   .sprint{
     margin  : $scrumPadding;
     height  : calc(#{$scrumHeight} - #{6 * $padding});
-    width   : $sprintWidth;
+    width   : $sprintWidth - 2 *$padding;
     border  : $padding solid $scrumCardColor;
   }
 
@@ -60,5 +60,12 @@ $scrumPadding: $padding/2;
     }
   }
 
+  .scrum-title{
+    display     : block;
+    height      : 2 * $padding + $rowHeight;
+    line-height : $rowHeight;
+    padding     : $padding ;
+    background-color: $scrumCardColor;
+  }
 
 }

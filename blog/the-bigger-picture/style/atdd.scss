@@ -12,6 +12,14 @@ $minDevHeight : 300px;
 
   border     : $padding solid $atddCardColor ;
   padding   :  0px;
+  .atdd-title{
+    height      : 2 * $padding + $rowHeight;
+    line-height : $rowHeight;
+    padding     : $padding ;
+    background-color: $atddCardColor;
+    display: block;
+    position: relative;
+  }
 
   .card{
     height    : auto;
@@ -29,7 +37,7 @@ $minDevHeight : 300px;
   }
 
   .development{
-    height: calc(100% - #{3 * $collapseRowHeight + 5 * $padding / 2});
+    height: calc(100% - #{4 * $collapseRowHeight + 5 * $padding / 2});
     min-height: $minDevHeight;
 
     > .card{
