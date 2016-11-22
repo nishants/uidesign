@@ -18,6 +18,10 @@ $smallFontSize: 13px;
 $slideHeight: 100vh;
 $minHeight: 528px;
 
+$atddCardColor : #DCBD23;
+$tddColor : #00882B;
+$tddFontColor : rgba(255, 255, 255, 0.88);
+
 article{
   font-family: 'Raleway', sans-serif;
   overflow: auto;
@@ -74,3 +78,4 @@ article{
 @import "tdd";
 
 @import "states/scrum-only";
+@import "states/overview-only";
