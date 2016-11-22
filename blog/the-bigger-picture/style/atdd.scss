@@ -6,24 +6,19 @@ $atddFontColor : rgba(0, 0, 0, 0.91);
 $atddWidth : 800px;
 
 .atdd{
-  @extend .resize-container;
-  @extend .undo-list;
-
   position   : relative;
+  height     : 100%;
 
-  min-width  : $atddWidth - 2*$padding;
   min-height : calc(#{$slideHeight} - #{6* $padding});
   border     : $padding solid $atddCardColor ;
+  padding: $padding;
 
-  > li{
-    padding: $padding;
-  }
-
-  > li > .card{
+  .card{
     height    : auto;
-    width     : 100%;
+    width     : calc(100% -  #{2 * $padding});
     min-height: $collapseRowHeight;
     background-color: $atddCardColor;
+    margin : $padding;
 
     > label{
       padding-left    : $padding * 2;
@@ -33,13 +28,4 @@ $atddWidth : 800px;
     }
   }
 
-  > .development{
-
-    > .card{
-      height: calc(#{$slideHeight} - #{2 * $collapseRowHeight} - #{14 * $padding});
-      >label{
-        top: 0;
-      }
-    }
-  }
 }
