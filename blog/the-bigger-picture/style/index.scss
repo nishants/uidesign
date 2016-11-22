@@ -1,5 +1,6 @@
 @import '../../../style/base';
 @import "../../../lib/font-awesome-4.5.0/scss/font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 $rowHeight: 25px;
 $darkTint: rgba(0, 0, 0, 0.2);
@@ -13,6 +14,12 @@ $cardWidth: 273px;
 
 $normalFontSize: 18px;
 $slideHeight: 100vh;
+$minHeight: 528px;
+
+article{
+  font-family: 'Raleway', sans-serif;
+  overflow: auto;
+}
 
 .card{
   position: relative;
