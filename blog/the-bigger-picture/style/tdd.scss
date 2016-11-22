@@ -1,22 +1,29 @@
 $tddColor : #00882B;
+$tddFontColor : rgba(255, 255, 255, 0.88);
 
 .tdd{
+  color: $tddFontColor;
+
   > .card{
     border: $padding solid $tddColor;
-    margin: $padding 0px $padding $padding * 2;
+    margin: $padding ;
+    background-color: $emptyBackgroundColor;
 
     > ul {
       @extend .undo-list;
       > li {
         background-color: $tddColor;
-        margin: $padding;
+        margin: $padding /2;
         line-height: $rowHeight;
         padding: $padding;
       }
     }
+
     > label{
       display:  block;
       position: relative;
+      padding-left: 0px;
+      color: $tddFontColor;
       background-color: $tddColor;
     }
   }

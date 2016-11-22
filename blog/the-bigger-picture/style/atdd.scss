@@ -31,12 +31,14 @@ $atddWidth : 800px;
   .development{
     > .card{
       height: auto;
+      border: $padding solid $atddCardColor;
       background-color: $atddCardColor;
-      padding: 0px $padding $padding;
 
       > label{
         display:  block;
         position: relative;
+        padding-left: $padding;
+        top: -$padding;
       }
     }
   }
