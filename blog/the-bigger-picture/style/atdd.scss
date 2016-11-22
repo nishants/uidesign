@@ -15,11 +15,11 @@ $atddWidth : 800px;
   border     : $padding solid $atddCardColor ;
 
   > li{
-    float: left;
-    position: absolute;
-    margin: $padding;
+    padding: $padding;
   }
+
   .card{
+    height: auto;
     background-color: $atddCardColor;
     > label{
       color           : $atddFontColor;

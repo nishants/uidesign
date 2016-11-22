@@ -22,7 +22,7 @@ $sprintWidth : 800px;
     margin: $padding;
   }
 
-  .card{
+  > li > .card{
     background-color: $scrumCardColor;
     > label{
       color           : $stackFontColor;
