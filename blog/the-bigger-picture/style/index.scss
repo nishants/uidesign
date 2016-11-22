@@ -23,6 +23,7 @@ $tddColor : #00882B;
 $tddFontColor : rgba(255, 255, 255, 0.88);
 $transitionFunction :  cubic-bezier(0.64, 0.57, 0.67, 1.53);
 $shortTransitionTime : 100ms;
+$darkFontColor: rgba(0, 0, 0, 0.92);
 
 article{
   font-family: 'Raleway', sans-serif;
@@ -30,6 +31,38 @@ article{
   background: rgb(230, 230, 230);
   *{
     @include transition(all $shortTransitionTime ease);
+  }
+}
+
+$arrowSize: 50px;
+$connectorWidth: 150px;
+.card.connector{
+  position  : relative;
+  z-index   : 1;
+  overflow  : visible;
+  background: transparent !important;
+  width     : $connectorWidth !important;
+
+  .arrow, > label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $cardHeight;
+    width: 100%;
+    line-height: $cardHeight;
+    text-align: center;
+  }
+  .arrow{
+    font-size: $arrowSize;
+    i{
+      color: $darkFontColor;
+      @include transform(scaleX(2));
+    }
+  }
+  > label{
+    top: $arrowSize/3;
+    color: $darkFontColor !important;
+    background-color: transparent !important;
   }
 }
 
