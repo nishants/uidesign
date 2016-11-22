@@ -1,5 +1,6 @@
 $atddCardColor : #DCBD23;
 $atddLabelColor: #DCBD23;
+$collapseRowHeight: $rowHeight + 2 * $padding;
 
 $atddFontColor : rgba(0, 0, 0, 0.91);
 $atddWidth : 800px;
@@ -18,13 +19,27 @@ $atddWidth : 800px;
     padding: $padding;
   }
 
-  .card{
-    height: auto;
+  > li > .card{
+    height    : auto;
+    width     : 100%;
+    min-height: $collapseRowHeight;
     background-color: $atddCardColor;
+
     > label{
+      padding-left    : $padding * 2;
       color           : $atddFontColor;
       background-color: $atddCardColor;
+      text-align      : left;
     }
   }
 
+  > .development{
+
+    > .card{
+      height: calc(#{$slideHeight} - #{2 * $collapseRowHeight} - #{14 * $padding});
+      >label{
+        top: 0;
+      }
+    }
+  }
 }
