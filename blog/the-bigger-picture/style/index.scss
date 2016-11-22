@@ -21,11 +21,16 @@ $minHeight: 528px;
 $atddCardColor : #DCBD23;
 $tddColor : #00882B;
 $tddFontColor : rgba(255, 255, 255, 0.88);
+$transitionFunction :  cubic-bezier(0.64, 0.57, 0.67, 1.53);
+$shortTransitionTime : 100ms;
 
 article{
   font-family: 'Raleway', sans-serif;
   overflow: auto;
   background: rgb(230, 230, 230);
+  *{
+    @include transition(all $shortTransitionTime ease);
+  }
 }
 
 .subject-title{
