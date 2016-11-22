@@ -4,13 +4,14 @@ $scrumLabelColor: #DE6A10;
 $stackOuterColor: #DE6A10;
 $stackInnerColor: #ee8510;
 $stackFontColor : rgba(255, 255, 255, 0.93);
-$sprintWidth : 800px;
+
 $planningAndRetroWidth: 600px;
 $planningAndRetroHeight: 210px;
 $planningAndRetroSpace: 100px;
 $planningHeight: 210px;
 $scrumHeight : 100vh;
-
+$sprintOverViewWidth: 80px;
+$sprintWidth : 800px + $sprintOverViewWidth;
 $scrumPadding: $padding/2;
 
 .scrum{
@@ -51,6 +52,26 @@ $scrumPadding: $padding/2;
     height  : calc(#{$scrumHeight} - #{6 * $padding});
     width   : $sprintWidth - 2 *$padding;
     border  : $padding solid $scrumCardColor;
+    .sprint-overview, .atdd{
+      float: left
+    }
+    .sprint-overview{
+      width: $sprintOverViewWidth;
+      overflow: hidden;
+      height: 100%;
+      color: $stackFontColor;
+
+      >label{
+        display     : block;
+        line-height : $slideHeight;
+        background  : $scrumCardColor;
+        font-size   : $normalFontSize;
+        text-align  : center;
+      }
+    }
+    .atdd{
+      width: calc(100% - #{$sprintOverViewWidth});
+    }
   }
 
   ul.stack{
@@ -66,6 +87,7 @@ $scrumPadding: $padding/2;
     line-height : $rowHeight;
     padding     : $padding ;
     background-color: $scrumCardColor;
+    color: $stackFontColor;
   }
 
 }
