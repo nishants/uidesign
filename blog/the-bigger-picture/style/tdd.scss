@@ -1,5 +1,23 @@
+$tddColor : #00882B;
+
 .tdd{
-  > ul {
-    @extend .undo-list;
+  > .card{
+    border: $padding solid $tddColor;
+    margin: $padding 0px $padding $padding * 2;
+
+    > ul {
+      @extend .undo-list;
+      > li {
+        background-color: $tddColor;
+        margin: $padding;
+        line-height: $rowHeight;
+        padding: $padding;
+      }
+    }
+    > label{
+      display:  block;
+      position: relative;
+      background-color: $tddColor;
+    }
   }
 }
