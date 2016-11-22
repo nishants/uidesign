@@ -40,12 +40,9 @@ $scrumPadding: $padding/2;
       }
     }
   }
-
-  .plan-space-retro{
-    height: calc(#{$scrumHeight} - #{2 * $planningAndRetroHeight + 3 * $padding + $scrumPadding});
-    width: 50px;
+  .retro{
+    float: right;
   }
-
 
   .sprint{
     margin  : $scrumPadding;
@@ -98,6 +95,26 @@ $scrumPadding: $padding/2;
     }
     >label{
       color: $darkFontColor;
+    }
+  }
+
+  .plan-space-retro{
+    height: calc(#{$scrumHeight} - #{2 * $planningAndRetroHeight + 3 * $padding + $scrumPadding});
+    padding-right: 0.5 * $cardWidth + $connectorWidth;
+    .card.connector{
+      @include transform(rotate(45deg));
+
+      display: block;
+      float: right;
+      .arrow{
+        color: $scrumCardColor;
+        i{
+          @include transform(scaleX(3));
+        }
+      }
+      >label{
+        color: $darkFontColor;
+      }
     }
   }
 }
