@@ -8,6 +8,8 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/index.css">
+    <script src="../lib/jquery-2.1.4.min.js"></script>
+
 </head>
 
 <body>
@@ -55,5 +57,19 @@
     <h1>Footer</h1>
 </p>
 
+<script>
+
+    $(document).on("scroll", function(e){
+        var
+                element    = $(".body")[0],
+                container  = element.getBoundingClientRect(),
+                showTopBar = container.top < 0;
+                app = $("#nishants-site");
+
+        console.log(container.top);
+
+        showTopBar ? app.addClass("show-top-bar") : app.removeClass("show-top-bar");
+    });
+</script>
 </body>
 </html>
