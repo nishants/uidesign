@@ -8,6 +8,8 @@ $picture_radius  : 25px;
 $from_color: $background;
 $to_color  : rgba(255,255,255,0);
 
+$top_bar_index: 99;
+
 .invert-gradience{
   @include gradient(#{bottom, rgba(0, 0, 0, 1) 0%, transparent 100%});
 
@@ -74,4 +76,16 @@ $to_color  : rgba(255,255,255,0);
       border-radius: $picture_radius;
     }
   }
+}
+
+.top-bar{
+  position: fixed;
+  z-index: $top_bar_index;
+  top: 0px;
+  margin: 0px $side_padding;
+
+  height: $profile_pic_size/2;
+  width: calc(100% - #{2 * $side_padding});
+
+  background: white;
 }

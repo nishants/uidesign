@@ -1,7 +1,14 @@
 @import "vars";
 @import "typography";
 
-body * { box-sizing: border-box;  }
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+body * {
+  box-sizing: border-box;
+}
 
 label{
   cursor: inherit;
