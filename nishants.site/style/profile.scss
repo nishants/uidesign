@@ -48,10 +48,6 @@ $to_color  : rgba(255,255,255,0);
       background: black;
     }
   }
-  .cover-padding{
-    height: $image_height;
-    opacity: 0;
-  }
 
   >.body{
     margin: 0px $side_padding;
@@ -64,12 +60,14 @@ $to_color  : rgba(255,255,255,0);
 
 .overview{
   margin: 0px $side_padding;
+  padding-top: $image_height + 2 * $padding;
 
   .profile-image{
+    position  : relative;
+    top       : $profile_pic_size/2;
+
     img{
       display      : block;
-      position     : relative;
-      top          : $profile_pic_size/2;
       margin       : auto;
       height       : $profile_pic_size;
       border       : $padding solid white;
