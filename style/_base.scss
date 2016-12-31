@@ -64,6 +64,11 @@ input{
   transition:         $value;
 }
 
+@mixin gradient($value){
+  background: -moz-linear-gradient($value); /* FF3.6-15 */
+  background: -webkit-linear-gradient($value); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient($value); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
 
 ul.undo-list{
   list-style: none;

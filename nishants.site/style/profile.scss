@@ -5,6 +5,17 @@ $gradience_to  : 90%;
 
 $profile_pic_size: 200px;
 $picture_radius  : 25px;
+$from_color: $background;
+$to_color  : rgba(255,255,255,0);
+
+.invert-gradience{
+  @include gradient(#{bottom, rgba(0, 0, 0, 1) 0%, transparent 100%});
+
+}
+.gradience{
+  @include gradient(#{top, $from_color $gradience_from, $to_color $gradience_to});
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
 
 .profile{
   position: relative;
@@ -34,10 +45,7 @@ $picture_radius  : 25px;
     .gradience{
       width     : 100%;
       height    : 100vh;
-      background: -moz-linear-gradient(top,  $background $gradience_from, rgba(255,255,255,0) $gradience_to); /* FF3.6-15 */
-      background: -webkit-linear-gradient(top,  $background $gradience_from,rgba(255,255,255,0) $gradience_to); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom,  $background $gradience_from,rgba(255,255,255,0) $gradience_to); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+      background: black;
     }
   }
   .cover-padding{
@@ -55,6 +63,8 @@ $picture_radius  : 25px;
 
 
 .overview{
+  margin: 0px $side_padding;
+
   .profile-image{
     img{
       display      : block;
