@@ -22,13 +22,6 @@ $top_bar_index: 99;
 .profile{
   position: relative;
   height: 100%;
-
-  >.body{
-    margin: 0px $side_padding;
-    background: white;
-    padding: $profile_pic_size/2 $padding * 2;
-
-  }
 }
 
 

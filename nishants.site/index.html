@@ -49,7 +49,7 @@
                 <img src="images/profile.jpg">
             </div>
         </div>
-        <div class="body">
+        <div class="introduction">
             <div class="name"><span>Nishant Singh</span></div>
             <div class="title">
                 <ul class="designation">
@@ -61,7 +61,9 @@
             <div class="contact">
                 <button class="btn btn-outline-primary fa fa-envelope"> Contact</button>
             </div>
+        </div>
 
+        <div class="page">
             <h1>
                 Parallax
             </h1>
@@ -107,10 +109,10 @@
             };
 
     $(document).on("scroll", function(e){
-        showTopBar(isGone($(".body")[0]));
-        showNameInTopBar(isUnderTitleBar($(".body > .name")[0]));
-        showTitleInTopBar(isUnderTitleBar($(".body > .title > .designation")[0]));
-        showContactInTopBar(isUnderTitleBar($(".body > .contact")[0]), 50);
+        showTopBar(isGone($(".introduction")[0]));
+        showNameInTopBar(isUnderTitleBar($(".introduction > .name")[0]));
+        showTitleInTopBar(isUnderTitleBar($(".introduction > .title > .designation")[0]));
+        showContactInTopBar(isUnderTitleBar($(".introduction > .contact")[0]), 50);
     });
 
 </script>

@@ -1,4 +1,7 @@
-.body{
+.introduction{
+  margin: 0px $side_padding;
+  background: white;
+  padding: $profile_pic_size/2 $padding * 2 $padding $padding * 2;
   color: rgba(0, 0, 0, 0.91);
   .name{
     text-align: center;
