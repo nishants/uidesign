@@ -1,8 +1,16 @@
-.introduction{
-  margin: 0px $side_padding;
+.page{
+  margin: $padding/2 $side_padding;
   background: white;
   padding: $profile_pic_size/2 $padding * 2 $padding $padding * 2;
   color: rgba(0, 0, 0, 0.91);
+  border-radius: $border_radius;
+}
+
+.introduction{
+  margin: 0px $side_padding;
+  border-top-left-radius: $picture_radius;
+  border-top-right-radius: $picture_radius;
+
   .name{
     text-align: center;
     font-weight: $super_bold_text;
@@ -17,6 +25,3 @@
     }
   }
 }
-
-
-
