@@ -43,13 +43,10 @@ $topBarHeight: $profile_pic_size/2;
     }
   }
   .contact{
+    position: relative;
+    top: -$topBarHeight/2;
     text-align: right;
-    padding: $padding;
-    position: fixed;
-    top: 5px;
-    right: 0;
-    z-index: 100;
-    margin: 10px 35px;
+    padding: 0px $padding;
     @extend .top-bar-transition;
     > a{
       font-size: large;
