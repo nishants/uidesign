@@ -51,8 +51,8 @@ $topBarHeight: $profile_pic_size/2;
     z-index: 100;
     margin: 10px 35px;
     @extend .top-bar-transition;
-    > button{
-      font-size: small;
+    > a{
+      font-size: large;
       @extend .top-bar-transition;
     }
   }
