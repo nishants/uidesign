@@ -57,9 +57,13 @@ $top_bar_index: 99;
   .contact{
     text-align: right;
     padding: $padding;
+    .twitter, .linkedin{
+      float: left;
+      margin-left: $padding;
+      font-size: large;
+    }
     > button{
       @extend .top-bar-transition;
-      border: 1px solid transparent;
     }
   }
 }

@@ -123,8 +123,10 @@ body {
   .introduction .contact {
     text-align: right;
     padding: 10px; }
-    .introduction .contact > button {
-      border: 1px solid transparent; }
+    .introduction .contact .twitter, .introduction .contact .linkedin {
+      float: left;
+      margin-left: 10px;
+      font-size: large; }
 
 .top-bar {
   box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
@@ -158,8 +160,9 @@ body {
     right: 10px;
     text-align: right;
     padding: 0px 10px; }
-    .top-bar .contact > a {
-      line-height: 25px; }
+    .top-bar .contact .link {
+      float: left;
+      margin-left: 10px; }
 
 #nishants-site:not(.show-top-bar) .top-bar {
   pointer-events: none;

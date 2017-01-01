@@ -51,8 +51,11 @@ $topBarHeight: $profile_pic_size/2;
     text-align: right;
     padding: 0px $padding;
     @extend .top-bar-transition;
+    .link{
+      float: left;
+      margin-left: $padding;
+    }
     > a{
-      line-height: $rowHeight - $padding;
       @extend .small-bold-text;
       @extend .top-bar-transition;
     }
