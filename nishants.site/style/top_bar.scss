@@ -17,6 +17,9 @@ $topBarHeight: $profile_pic_size/2;
   overflow: hidden;
 
   @extend .top-bar-transition;
+  .heading{
+    position: relative;
+  }
   .name{
     text-align: center;
     font-size: small;
@@ -43,8 +46,9 @@ $topBarHeight: $profile_pic_size/2;
     }
   }
   .contact{
-    position: relative;
-    top: -$topBarHeight/2;
+    position: absolute;
+    bottom: $padding*2;
+    right : $padding;
     text-align: right;
     padding: 0px $padding;
     @extend .top-bar-transition;

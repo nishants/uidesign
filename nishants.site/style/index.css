@@ -132,6 +132,8 @@ body {
   width: calc(100% - 40px);
   background: white;
   overflow: hidden; }
+  .top-bar .heading {
+    position: relative; }
   .top-bar .name {
     text-align: center;
     font-size: small;
@@ -149,8 +151,9 @@ body {
       height: 35px;
       border-radius: 2px; }
   .top-bar .contact {
-    position: relative;
-    top: -50px;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
     text-align: right;
     padding: 0px 10px; }
     .top-bar .contact > a {
