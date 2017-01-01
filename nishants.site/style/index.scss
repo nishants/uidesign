@@ -27,8 +27,7 @@ body{
   @include transition(all $top_bar_duration  ease);
 }
 
-@import "profile";
-@import "top_bar";
 @import "intro";
+@import "top_bar";
 @import "cover";
 @import "profile/title";
