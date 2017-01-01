@@ -169,7 +169,7 @@ body {
       float: left;
       margin-left: 10px; }
     .top-bar .contact > .link {
-      border: 1px solid transparent; }
+      border: 1px solid transparent !important; }
 
 #nishants-site:not(.show-top-bar) .top-bar {
   pointer-events: none;
@@ -255,5 +255,41 @@ body {
 .footer.page {
   text-align: center;
   padding: 10px; }
+
+.social.contact .mailto:hover {
+  color: white;
+  background-color: #1a84bc;
+  border: 1px solid #1a84bc; }
+.social.contact .mailto {
+  color: #1a84bc;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+.social.contact .twitter:hover {
+  color: white;
+  background-color: #1da1f2;
+  border: 1px solid #1da1f2; }
+.social.contact .twitter {
+  color: #1da1f2;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+.social.contact .stack-overflow:hover {
+  color: white;
+  background-color: #f48024;
+  border: 1px solid #f48024; }
+.social.contact .stack-overflow {
+  color: #f48024;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+.social.contact .linkedin:hover {
+  color: white;
+  background-color: #1a84bc;
+  border: 1px solid #1a84bc; }
+.social.contact .linkedin {
+  color: #1a84bc;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+.social.contact .github:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.65); }
+.social.contact .github {
+  color: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.2); }
 
 /*# sourceMappingURL=index.css.map */

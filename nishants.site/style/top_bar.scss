@@ -61,7 +61,7 @@ $topBarHeight: $profile_pic_size/2;
       margin-left: $padding;
     }
     > .link{
-      border: 1px solid transparent;
+      border: 1px solid transparent !important;
       @extend .small-bold-text;
       @extend .top-bar-transition;
     }
