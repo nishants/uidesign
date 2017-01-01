@@ -62,7 +62,7 @@ body {
 #placeholder-screen {
   width: 100%; }
 
-.top-bar-transition, .introduction .contact a, .top-bar, .top-bar .name, .top-bar .title, .top-bar .image > img, .top-bar .contact, .top-bar .contact > a, #nishants-site .overview, #nishants-site .overview .profile-image img {
+.top-bar-transition, .introduction .contact a, .top-bar, .top-bar .name, .top-bar .title, .top-bar .image > img, .top-bar .contact, .top-bar .contact > .link, #nishants-site .overview, #nishants-site .overview .profile-image img {
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   -o-transition: all 300ms ease;
@@ -72,7 +72,7 @@ body {
   font-weight: 700;
   color: rgba(0, 0, 0, 0.7); }
 
-.small-bold-text, .top-bar .name, .top-bar .contact > a {
+.small-bold-text, .top-bar .name, .top-bar .contact > .link {
   font-size: small;
   font-weight: 500; }
 
@@ -160,10 +160,16 @@ body {
     bottom: 15px;
     right: 10px;
     text-align: right;
-    padding: 0px 10px; }
-    .top-bar .contact .link {
+    padding: 0px 10px;
+    width: 100%; }
+    .top-bar .contact .twitter.link, .top-bar .contact .github.link, .top-bar .contact .linkedin.link {
+      float: right;
+      margin-right: 10px; }
+    .top-bar .contact .stack-overflow.link, .top-bar .contact .mailto.link {
       float: left;
       margin-left: 10px; }
+    .top-bar .contact > .link {
+      border: 1px solid transparent; }
 
 #nishants-site:not(.show-top-bar) .top-bar {
   pointer-events: none;

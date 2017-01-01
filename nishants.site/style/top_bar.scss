@@ -50,12 +50,18 @@ $topBarHeight: $profile_pic_size/2;
     right : $padding;
     text-align: right;
     padding: 0px $padding;
+    width: 100%;
     @extend .top-bar-transition;
-    .link{
+    .twitter.link, .github.link, .linkedin.link{
+      float: right;
+      margin-right: $padding;
+    }
+    .stack-overflow.link, .mailto.link{
       float: left;
       margin-left: $padding;
     }
-    > a{
+    > .link{
+      border: 1px solid transparent;
       @extend .small-bold-text;
       @extend .top-bar-transition;
     }
