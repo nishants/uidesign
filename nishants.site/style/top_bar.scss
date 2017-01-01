@@ -1,13 +1,27 @@
-$top_bar_duration: 300ms;
 
-.top-bar-transition {
-  @include transition(all $top_bar_duration  ease);
-}
+$small_image_size: $rowHeight;
 
-.top-bar {
+
+.top-bar{
   box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
+  position: fixed;
+  z-index: $top_bar_index;
+  top: 0px;
+  margin: 0px $side_padding;
+
+  height: $profile_pic_size/2;
+  width: calc(100% - #{2 * $side_padding});
+
+  background: white;
   @extend .top-bar-transition;
+  .image{
+    display: block;
+    margin: auto;
+    height: $small_image_size;
+  }
 }
+
+
 
 #nishants-site:not(.show-top-bar) {
   .top-bar {

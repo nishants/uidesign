@@ -50,14 +50,3 @@ $top_bar_index: 99;
   }
 }
 
-.top-bar{
-  position: fixed;
-  z-index: $top_bar_index;
-  top: 0px;
-  margin: 0px $side_padding;
-
-  height: $profile_pic_size/2;
-  width: calc(100% - #{2 * $side_padding});
-
-  background: white;
-}

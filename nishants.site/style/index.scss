@@ -8,6 +8,9 @@ $dark_text: rgba(0, 0, 0, 0.7);
 
 $bold_text: 600;
 $super_bold_text: 700;
+
+$top_bar_duration: 300ms;
+
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,600,700');
 
 body{
@@ -16,6 +19,9 @@ body{
 
 #placeholder-screen {
   width: 100%;
+}
+.top-bar-transition {
+  @include transition(all $top_bar_duration  ease);
 }
 
 @import "profile";
