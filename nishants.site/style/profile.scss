@@ -23,34 +23,6 @@ $top_bar_index: 99;
   position: relative;
   height: 100%;
 
-  > .cover{
-    margin   : auto;
-    display  : block;
-    position : fixed;
-    top      : 0;
-    left     : 0;
-    width    : 100%;
-    z-index  : -1;
-    //background: $background;
-    padding-bottom: 100vh;
-
-    .bg-wrapper{
-      background: $background;
-      padding: 0px $side_padding;
-
-      > img.bg{
-        display  : block;
-        margin   : auto;
-        width    : calc(100% - 2 * #{$side_padding});
-      }
-    }
-    .gradience{
-      width     : 100%;
-      height    : 100vh;
-      background: black;
-    }
-  }
-
   >.body{
     margin: 0px $side_padding;
     background: white;
