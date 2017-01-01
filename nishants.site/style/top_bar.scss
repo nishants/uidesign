@@ -1,4 +1,4 @@
-$top_bar_duration: 500ms;
+$top_bar_duration: 300ms;
 
 .top-bar-transition {
   @include transition(all $top_bar_duration  ease);
@@ -30,7 +30,6 @@ $top_bar_duration: 500ms;
 
 #nishants-site.show-top-bar {
   .overview {
-    background: white;
     .profile-image > img{
       opacity: 0;
       @include transform(translateY(-100%));

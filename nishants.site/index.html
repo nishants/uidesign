@@ -15,7 +15,9 @@
 <body>
 
 <article id="nishants-site">
-    <div class="top-bar"></div>
+    <div class="top-bar">
+
+    </div>
 
     <div class="profile">
         <div class="cover">
@@ -32,8 +34,7 @@
             </div>
         </div>
         <div class="body">
-
-            <div class="introduce">
+            <div class="contact me">
                 <ul class="designation">
                     <li>Designer</li>
                     <li>Craftsman</li>
@@ -61,7 +62,7 @@
 
     $(document).on("scroll", function(e){
         var
-                element    = $(".body")[0],
+                element    = $(".profile-image")[0],
                 container  = element.getBoundingClientRect(),
                 showTopBar = container.top < 0;
                 app = $("#nishants-site");
