@@ -1,0 +1,34 @@
+.body{
+  color: rgba(0, 0, 0, 0.91);
+  .name{
+    text-align: center;
+    font-weight: $super_bold_text;
+    color: $dark_text;
+  }
+  .contact.me{
+    margin: auto;
+    text-align: center;
+    line-height: $rowHeight;
+
+
+    .designation{
+      @extend .resize-container;
+      @extend .undo-list;
+      display: inline-block !important;
+      font-weight: $bold_text;
+      color: $light_text;
+
+      > li{
+        float: left;
+      }
+      > li:not(:last-child):after{
+        display   : inline-block;
+        content   : "|";
+        width     : $half-space;
+        text-align: center;
+        font-size : larger;
+      }
+    }
+
+  }
+}
