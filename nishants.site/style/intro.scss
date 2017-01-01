@@ -52,8 +52,7 @@ $top_bar_index: 99;
 
   .name{
     text-align: center;
-    font-weight: $super_bold_text;
-    color: $dark_text;
+    @extend .bold-text;
   }
   .contact{
     text-align: right;

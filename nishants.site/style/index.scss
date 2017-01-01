@@ -11,7 +11,7 @@ $medium_bold_text: 500;
 $super_bold_text: 700;
 
 $top_bar_duration: 300ms;
-$border_radius: 10px;
+$border_radius:3px;
 $picture_radius  : 25px;
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,600,500,700');
@@ -27,7 +27,13 @@ body{
   @include transition(all $top_bar_duration  ease);
 }
 
+.bold-text{
+  font-weight: $super_bold_text;
+  color: $dark_text;
+}
+
 @import "intro";
 @import "top_bar";
 @import "cover";
 @import "profile/title";
+@import "footer";
