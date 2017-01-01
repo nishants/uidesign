@@ -1,3 +1,4 @@
+$border_radius : 2px;
 
 $small_image_size: $rowHeight;
 $topBarHeight: $profile_pic_size/2;
@@ -32,10 +33,14 @@ $topBarHeight: $profile_pic_size/2;
     }
   }
   .image{
-    display: block;
-    margin: auto;
-    height: $small_image_size;
-    @extend .top-bar-transition;
+    padding: $padding/2;
+    > img{
+      display: block;
+      margin: auto;
+      height: $small_image_size;
+      border-radius: $border_radius;
+      @extend .top-bar-transition;
+    }
   }
 }
 
@@ -45,6 +50,12 @@ $topBarHeight: $profile_pic_size/2;
     pointer-events: none;
     opacity: 0;
     @include transform(translateY(-100%));
+    .image{
+      > img{
+        opacity: 0;
+        @include transform(translateY($topBarHeight));
+      }
+    }
   }
 }
 
