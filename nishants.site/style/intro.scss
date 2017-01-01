@@ -55,14 +55,13 @@ $top_bar_index: 99;
     @extend .bold-text;
   }
   .contact{
-    text-align: right;
     padding: $padding;
-    .twitter, .linkedin{
-      float: left;
-      margin-left: $padding;
+    text-align: center;
+    a{
+      display: inline-block;
+      margin: $padding $padding/4;
+      min-width: 100px;
       font-size: large;
-    }
-    > button{
       @extend .top-bar-transition;
     }
   }

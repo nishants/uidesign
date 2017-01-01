@@ -62,7 +62,7 @@ body {
 #placeholder-screen {
   width: 100%; }
 
-.top-bar-transition, .introduction .contact > button, .top-bar, .top-bar .name, .top-bar .title, .top-bar .image > img, .top-bar .contact, .top-bar .contact > a, #nishants-site .overview, #nishants-site .overview .profile-image img {
+.top-bar-transition, .introduction .contact a, .top-bar, .top-bar .name, .top-bar .title, .top-bar .image > img, .top-bar .contact, .top-bar .contact > a, #nishants-site .overview, #nishants-site .overview .profile-image img {
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   -o-transition: all 300ms ease;
@@ -121,11 +121,12 @@ body {
   .introduction .name {
     text-align: center; }
   .introduction .contact {
-    text-align: right;
-    padding: 10px; }
-    .introduction .contact .twitter, .introduction .contact .linkedin {
-      float: left;
-      margin-left: 10px;
+    padding: 10px;
+    text-align: center; }
+    .introduction .contact a {
+      display: inline-block;
+      margin: 10px 2.5px;
+      min-width: 100px;
       font-size: large; }
 
 .top-bar {
