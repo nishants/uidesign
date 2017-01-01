@@ -23,19 +23,19 @@ $topBarHeight: $profile_pic_size/2;
     line-height: $rowHeight - $padding;
     @extend .top-bar-transition;
   }
+  .title{
+    @extend .top-bar-transition;
+    .designation{
+      font-size: small;
+      font-weight: $medium_bold_text;
+      line-height: $rowHeight - $padding;
+    }
+  }
   .image{
     display: block;
     margin: auto;
     height: $small_image_size;
     @extend .top-bar-transition;
-  }
-}
-
-.top-bar{
-  .title > .designation{
-    font-size: small;
-    font-weight: $medium_bold_text;
-    line-height: $rowHeight - $padding;
   }
 }
 
@@ -51,6 +51,15 @@ $topBarHeight: $profile_pic_size/2;
 #nishants-site:not(.show-top-bar-name) {
   .top-bar {
     .name{
+      opacity: 0;
+      @include transform(translateY($topBarHeight));
+    }
+  }
+}
+
+#nishants-site:not(.show-top-bar-title) {
+  .top-bar {
+    .title{
       opacity: 0;
       @include transform(translateY($topBarHeight));
     }

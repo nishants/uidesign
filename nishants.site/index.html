@@ -69,24 +69,33 @@
 
 <script>
 
-    var showTopBar = function (show) {
-                var app = $("#nishants-site");
-                show ? app.addClass("show-top-bar") : app.removeClass("show-top-bar");
+    var
+            rowHeight = function(){
+                return 20;
+            },
+            app = function(){
+                return $("#nishants-site");
+            },
+            showTopBar = function (show) {
+                show ? app().addClass("show-top-bar") : app().removeClass("show-top-bar");
             },
             showNameInTopBar = function (show) {
-                var app = $("#nishants-site");
-                show ? app.addClass("show-top-bar-name") : app.removeClass("show-top-bar-name");
+                show ? app().addClass("show-top-bar-name") : app().removeClass("show-top-bar-name");
+            },
+            showTitleInTopBar = function (show) {
+                show ? app().addClass("show-top-bar-title") : app().removeClass("show-top-bar-title");
             },
             isGone = function (element) {
                 return element.getBoundingClientRect().top < 0;
             },
             isUnderTitleBar = function (element) {
-                return element.getBoundingClientRect().top < $(".top-bar").height();
+                return element.getBoundingClientRect().top < $(".top-bar").height() - rowHeight();
             };
 
     $(document).on("scroll", function(e){
         showTopBar(isGone($(".profile-image")[0]));
         showNameInTopBar(isUnderTitleBar($(".body > .name")[0]));
+        showTitleInTopBar(isUnderTitleBar($(".body > .title > .designation")[0]));
     });
 
 </script>
