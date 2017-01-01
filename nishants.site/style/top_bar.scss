@@ -42,6 +42,20 @@ $topBarHeight: $profile_pic_size/2;
       @extend .top-bar-transition;
     }
   }
+  .contact{
+    text-align: right;
+    padding: $padding;
+    position: fixed;
+    top: 5px;
+    right: 0;
+    z-index: 100;
+    margin: 10px 35px;
+    @extend .top-bar-transition;
+    > button{
+      font-size: small;
+      @extend .top-bar-transition;
+    }
+  }
 }
 
 
@@ -71,6 +85,15 @@ $topBarHeight: $profile_pic_size/2;
 #nishants-site:not(.show-top-bar-title) {
   .top-bar {
     .title{
+      opacity: 0;
+      @include transform(translateY($topBarHeight));
+    }
+  }
+}
+
+#nishants-site:not(.show-top-bar-contact) {
+  .top-bar {
+    .contact{
       opacity: 0;
       @include transform(translateY($topBarHeight));
     }

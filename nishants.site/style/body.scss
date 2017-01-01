@@ -5,6 +5,14 @@
     font-weight: $super_bold_text;
     color: $dark_text;
   }
+  .contact{
+    text-align: right;
+    padding: $padding;
+    > button{
+      @extend .top-bar-transition;
+      border: 1px solid transparent;
+    }
+  }
 }
 
 
