@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,600,500,700");
+p {
+  margin-bottom: 1em; }
+
+.heading {
+  margin-bottom: 0.618em; }
+  .heading.-large, h1 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px; }
+  .heading.-medium, h2 {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px; }
+  .heading.-small, h3 {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 13.33333px; }
+  .heading.-smallest {
+    font-size: 10px;
+    font-weight: bold; }
+
+body {
+  margin: 0px;
+  padding: 0px; }
+
+body * {
+  box-sizing: border-box; }
+
+label {
+  cursor: inherit; }
+
+input {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  box-sizing: border-box;
+  border: none; }
+
+.resize-container:after, ul.inline-list:after, .title ul.designation:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+ul.undo-list, ul.inline-list, .title ul.designation {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: block; }
+
+ul.inline-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: inline-block; }
+  ul.inline-list > li {
+    float: left; }
+
+body {
+  font-family: 'Raleway', sans-serif; }
+
+#placeholder-screen {
+  width: 100%; }
+
+.top-bar-transition, .top-bar, .top-bar .name, .top-bar .title, .top-bar .image > img, .top-bar .contact, .top-bar .contact > a, #nishants-site .overview, #nishants-site .overview .profile-image img, .introduction .contact > button {
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease; }
+
+.invert-gradience {
+  background: -moz-linear-gradient(bottom, black 0%, transparent 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(bottom, black 0%, transparent 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(bottom, black 0%, transparent 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+
+.gradience {
+  background: -moz-linear-gradient(top, #000000 10%, rgba(255, 255, 255, 0) 90%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #000000 10%, rgba(255, 255, 255, 0) 90%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(top, #000000 10%, rgba(255, 255, 255, 0) 90%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=0 );
+  /* IE6-9 */ }
+
+.profile {
+  position: relative;
+  height: 100%; }
+
+.overview {
+  margin: 0px 20px;
+  padding-top: 215px; }
+  .overview .profile-image {
+    position: relative;
+    top: 100px; }
+    .overview .profile-image img {
+      display: block;
+      margin: auto;
+      height: 200px;
+      border: 10px solid white;
+      border-radius: 25px; }
+
+.top-bar {
+  box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
+  position: fixed;
+  z-index: 99;
+  top: 0px;
+  margin: 0px 20px;
+  height: 100px;
+  width: calc(100% - 40px);
+  background: white;
+  overflow: hidden; }
+  .top-bar .name {
+    text-align: center;
+    font-size: small;
+    font-weight: 500;
+    line-height: 25px; }
+  .top-bar .title .designaddation {
+    font-size: small;
+    font-weight: 500;
+    line-height: 25px; }
+  .top-bar .image {
+    padding: 5px; }
+    .top-bar .image > img {
+      display: block;
+      margin: auto;
+      height: 35px;
+      border-radius: 2px; }
+  .top-bar .contact {
+    position: relative;
+    top: -50px;
+    text-align: right;
+    padding: 0px 10px; }
+    .top-bar .contact > a {
+      font-size: large; }
+
+#nishants-site:not(.show-top-bar) .top-bar {
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%); }
+  #nishants-site:not(.show-top-bar) .top-bar .image > img {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    -o-transform: translateY(100px);
+    transform: translateY(100px); }
+
+#nishants-site:not(.show-top-bar-name) .top-bar .name {
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  -o-transform: translateY(100px);
+  transform: translateY(100px); }
+
+#nishants-site:not(.show-top-bar-title) .top-bar .title {
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  -o-transform: translateY(100px);
+  transform: translateY(100px); }
+
+#nishants-site:not(.show-top-bar-contact) .top-bar .contact {
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  -o-transform: translateY(100px);
+  transform: translateY(100px); }
+
+#nishants-site.show-top-bar .overview .profile-image > img {
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%); }
+
+.page {
+  margin: 5px 20px;
+  background: white;
+  padding: 100px 20px 10px 20px;
+  color: rgba(0, 0, 0, 0.91);
+  border-radius: 2px; }
+
+.introduction {
+  margin: 0px 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px; }
+  .introduction .name {
+    text-align: center;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.7); }
+  .introduction .contact {
+    text-align: right;
+    padding: 10px; }
+    .introduction .contact > button {
+      border: 1px solid transparent; }
+
+.cover {
+  margin: auto;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  padding-bottom: 100vh; }
+  .cover .bg-wrapper {
+    background: #000000;
+    padding: 0px 20px; }
+    .cover .bg-wrapper > img.bg {
+      display: block;
+      margin: auto;
+      width: calc(100% - 2 * 20px); }
+  .cover .gradience {
+    width: 100%;
+    height: 100vh;
+    background: black; }
+
+.title {
+  margin: auto;
+  text-align: center;
+  line-height: 35px; }
+  .title ul.designation {
+    display: inline-block !important;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5); }
+    .title ul.designation > li {
+      float: left; }
+    .title ul.designation > li:not(:last-child):after {
+      display: inline-block;
+      content: "|";
+      width: 20px;
+      text-align: center;
+      font-size: larger; }
+
+/*# sourceMappingURL=index.css.map */
