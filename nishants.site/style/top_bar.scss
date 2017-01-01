@@ -22,9 +22,8 @@ $topBarHeight: $profile_pic_size/2;
   }
   .name{
     text-align: center;
-    font-size: small;
-    font-weight: $medium_bold_text;
     line-height: $rowHeight - $padding;
+    @extend .small-bold-text;
     @extend .top-bar-transition;
   }
   .title{
@@ -47,13 +46,14 @@ $topBarHeight: $profile_pic_size/2;
   }
   .contact{
     position: absolute;
-    bottom: $padding*2;
+    bottom: $padding * 1.5;
     right : $padding;
     text-align: right;
     padding: 0px $padding;
     @extend .top-bar-transition;
     > a{
-      font-size: large;
+      line-height: $rowHeight - $padding;
+      @extend .small-bold-text;
       @extend .top-bar-transition;
     }
   }

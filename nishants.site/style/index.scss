@@ -32,6 +32,11 @@ body{
   color: $dark_text;
 }
 
+.small-bold-text{
+  font-size: small;
+  font-weight: $medium_bold_text;
+}
+
 @import "intro";
 @import "top_bar";
 @import "cover";

@@ -72,6 +72,10 @@ body {
   font-weight: 700;
   color: rgba(0, 0, 0, 0.7); }
 
+.small-bold-text, .top-bar .name, .top-bar .contact > a {
+  font-size: small;
+  font-weight: 500; }
+
 .invert-gradience {
   background: -moz-linear-gradient(bottom, black 0%, transparent 100%);
   /* FF3.6-15 */
@@ -136,8 +140,6 @@ body {
     position: relative; }
   .top-bar .name {
     text-align: center;
-    font-size: small;
-    font-weight: 500;
     line-height: 25px; }
   .top-bar .title .designation {
     font-size: small;
@@ -152,12 +154,12 @@ body {
       border-radius: 2px; }
   .top-bar .contact {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     right: 10px;
     text-align: right;
     padding: 0px 10px; }
     .top-bar .contact > a {
-      font-size: large; }
+      line-height: 25px; }
 
 #nishants-site:not(.show-top-bar) .top-bar {
   pointer-events: none;
