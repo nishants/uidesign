@@ -1,6 +1,6 @@
 
 $small_image_size: $rowHeight;
-
+$topBarHeight: $profile_pic_size/2;
 
 .top-bar{
   box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
@@ -9,21 +9,25 @@ $small_image_size: $rowHeight;
   top: 0px;
   margin: 0px $side_padding;
 
-  height: $profile_pic_size/2;
+  height: $topBarHeight;
   width: calc(100% - #{2 * $side_padding});
 
   background: white;
+  overflow: hidden;
+
   @extend .top-bar-transition;
   .name{
     text-align: center;
     font-size: small;
     font-weight: $medium_bold_text;
     line-height: $rowHeight - $padding;
+    @extend .top-bar-transition;
   }
   .image{
     display: block;
     margin: auto;
     height: $small_image_size;
+    @extend .top-bar-transition;
   }
 }
 
@@ -43,6 +47,16 @@ $small_image_size: $rowHeight;
     @include transform(translateY(-100%));
   }
 }
+
+#nishants-site:not(.show-top-bar-name) {
+  .top-bar {
+    .name{
+      opacity: 0;
+      @include transform(translateY($topBarHeight));
+    }
+  }
+}
+
 
 #nishants-site {
   .overview {

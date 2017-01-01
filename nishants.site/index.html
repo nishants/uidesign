@@ -73,12 +73,20 @@
                 var app = $("#nishants-site");
                 show ? app.addClass("show-top-bar") : app.removeClass("show-top-bar");
             },
+            showNameInTopBar = function (show) {
+                var app = $("#nishants-site");
+                show ? app.addClass("show-top-bar-name") : app.removeClass("show-top-bar-name");
+            },
             isGone = function (element) {
                 return element.getBoundingClientRect().top < 0;
+            },
+            isUnderTitleBar = function (element) {
+                return element.getBoundingClientRect().top < $(".top-bar").height();
             };
 
     $(document).on("scroll", function(e){
         showTopBar(isGone($(".profile-image")[0]));
+        showNameInTopBar(isUnderTitleBar($(".body > .name")[0]));
     });
 
 </script>
