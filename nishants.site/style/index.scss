@@ -7,11 +7,12 @@ $light_text: rgba(0, 0, 0, 0.5);
 $dark_text: rgba(0, 0, 0, 0.7);
 
 $bold_text: 600;
+$medium_bold_text: 500;
 $super_bold_text: 700;
 
 $top_bar_duration: 300ms;
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,600,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,600,500,700');
 
 body{
   font-family: 'Raleway', sans-serif;
@@ -28,3 +29,4 @@ body{
 @import "top_bar";
 @import "body";
 @import "cover";
+@import "profile/title";
