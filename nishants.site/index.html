@@ -69,17 +69,18 @@
 
 <script>
 
+    var showTopBar = function (show) {
+                var app = $("#nishants-site");
+                show ? app.addClass("show-top-bar") : app.removeClass("show-top-bar");
+            },
+            isGone = function (element) {
+                return element.getBoundingClientRect().top < 0;
+            };
+
     $(document).on("scroll", function(e){
-        var
-                element    = $(".profile-image")[0],
-                container  = element.getBoundingClientRect(),
-                showTopBar = container.top < 0;
-                app = $("#nishants-site");
-
-        console.log(container.top);
-
-        showTopBar ? app.addClass("show-top-bar") : app.removeClass("show-top-bar");
+        showTopBar(isGone($(".profile-image")[0]));
     });
+
 </script>
 </body>
 </html>
