@@ -64,7 +64,6 @@ $topBarHeight: $profile_pic_size/2;
     .image{
       > img{
         opacity: 0;
-        @include transform(translateY($topBarHeight));
       }
     }
   }

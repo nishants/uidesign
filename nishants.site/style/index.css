@@ -165,12 +165,7 @@ body {
   -o-transform: translateY(-100%);
   transform: translateY(-100%); }
   #nishants-site:not(.show-top-bar) .top-bar .image > img {
-    opacity: 0;
-    -webkit-transform: translateY(100px);
-    -moz-transform: translateY(100px);
-    -ms-transform: translateY(100px);
-    -o-transform: translateY(100px);
-    transform: translateY(100px); }
+    opacity: 0; }
 
 #nishants-site:not(.show-top-bar-name) .top-bar .name {
   opacity: 0;
