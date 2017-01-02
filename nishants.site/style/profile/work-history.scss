@@ -1,6 +1,6 @@
 $item_height : 60px;
 
-.experience.page{
+.page{
 
   ul.work-history{
     //@extend .undo-list;
@@ -25,15 +25,16 @@ $item_height : 60px;
 
       .detail{
         float: left;
-        line-height: $item_height/3;
-        .designation, .company, .period{
+        > label{
+          line-height: $item_height/3;
+          text-align: left;
           display: block;
           padding: 0px $padding;
           @extend .bold-text;
           font-size: small;
           margin: 0px;
         }
-        .company, .period{
+        > label:not(.title){
           font-size: small;
           color: $light_text;
         }
