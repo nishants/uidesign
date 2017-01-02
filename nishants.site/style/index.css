@@ -56,6 +56,10 @@ ul.inline-list {
   ul.inline-list > li {
     float: left; }
 
+.ruby-gem {
+  color: #e9573f;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.39); }
+
 body {
   font-family: 'Raleway', sans-serif; }
 
@@ -316,12 +320,18 @@ body {
     width: 60px;
     height: 60px;
     overflow: hidden; }
-    .page ul.work-history > li .logo img {
+    .page ul.work-history > li .logo img, .page ul.work-history > li .logo .img {
       display: inline-block;
       max-height: 100%;
       max-width: 100%; }
+    .page ul.work-history > li .logo .img {
+      font-size: 30px;
+      line-height: 60px;
+      display: block;
+      text-align: center; }
   .page ul.work-history > li .detail {
-    float: left; }
+    float: left;
+    max-width: calc(100% - 80px); }
     .page ul.work-history > li .detail > label {
       line-height: 20px;
       text-align: left;
@@ -332,5 +342,7 @@ body {
     .page ul.work-history > li .detail > label:not(.title) {
       font-size: small;
       color: rgba(0, 0, 0, 0.5); }
+    .page ul.work-history > li .detail .link {
+      color: #bda6e0; }
 
 /*# sourceMappingURL=index.css.map */

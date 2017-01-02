@@ -18,15 +18,22 @@ $item_height : 60px;
         width : $item_height;
         height: $item_height;
         overflow: hidden;
-        img{
+        img, .img{
           display: inline-block;
           max-height: 100%;
           max-width: 100%;
+        }
+        .img{
+          font-size: $item_height/2;
+          line-height: $item_height;
+          display: block;
+          text-align: center;
         }
       }
 
       .detail{
         float: left;
+        max-width: calc(100% - #{$item_height + 2 * $padding});
         > label{
           line-height: $item_height/3;
           text-align: left;
@@ -39,6 +46,9 @@ $item_height : 60px;
         > label:not(.title){
           font-size: small;
           color: $light_text;
+        }
+        .link{
+          color: $link_color;
         }
       }
 

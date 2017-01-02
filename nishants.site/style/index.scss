@@ -6,6 +6,7 @@ $row_height : $rowHeight;
 $border_light: rgba(0, 0, 0, 0.1);
 $light_text: rgba(0, 0, 0, 0.5);
 $dark_text: rgba(0, 0, 0, 0.7);
+$link_color: #bda6e0;
 
 $bold_text: 600;
 $medium_bold_text: 500;
@@ -15,6 +16,11 @@ $super_bold_text: 700;
 $top_bar_duration: 300ms;
 $border_radius:3px;
 $picture_radius  : 25px;
+
+.ruby-gem{
+  color: #e9573f;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.39);
+}
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,600,500,700');
 
