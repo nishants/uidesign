@@ -9,6 +9,7 @@ $dark_text: rgba(0, 0, 0, 0.7);
 
 $bold_text: 600;
 $medium_bold_text: 500;
+$medium_light_text: 300;
 $super_bold_text: 700;
 
 $top_bar_duration: 300ms;
@@ -31,6 +32,12 @@ body{
 .bold-text{
   font-weight: $super_bold_text;
   color: $dark_text;
+}
+
+.small-light-text{
+  font-size: small;
+  color: $light_text;
+  font-weight: $medium_light_text;
 }
 
 .small-bold-text{

@@ -72,6 +72,11 @@ body {
   font-weight: 700;
   color: rgba(0, 0, 0, 0.7); }
 
+.small-light-text {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 300; }
+
 .small-bold-text, .top-bar .name, .top-bar .contact > .link {
   font-size: small;
   font-weight: 500; }
@@ -162,11 +167,11 @@ body {
     text-align: right;
     padding: 0px 10px;
     width: 100%; }
-    .top-bar .contact .twitter.link, .top-bar .contact .github.link, .top-bar .contact .linkedin.link {
-      float: right;
-      margin-right: 10px; }
-    .top-bar .contact .stack-overflow.link, .top-bar .contact .mailto.link {
+    .top-bar .contact .twitter.link, .top-bar .contact .linkedin.link {
       float: left;
+      margin-right: 10px; }
+    .top-bar .contact .stack-overflow.link, .top-bar .contact .mailto.link, .top-bar .contact .github.link {
+      float: right;
       margin-left: 10px; }
     .top-bar .contact > .link {
       border: 1px solid transparent !important; }

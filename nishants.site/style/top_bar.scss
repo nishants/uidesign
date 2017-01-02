@@ -52,12 +52,12 @@ $topBarHeight: $profile_pic_size/2;
     padding: 0px $padding;
     width: 100%;
     @extend .top-bar-transition;
-    .twitter.link, .github.link, .linkedin.link{
-      float: right;
+    .twitter.link, .linkedin.link{
+      float: left;
       margin-right: $padding;
     }
-    .stack-overflow.link, .mailto.link{
-      float: left;
+    .stack-overflow.link, .mailto.link, .github.link{
+      float: right;
       margin-left: $padding;
     }
     > .link{
