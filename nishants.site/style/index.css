@@ -131,8 +131,19 @@ body {
     .introduction .contact a {
       display: inline-block;
       margin: 10px 2.5px;
-      min-width: 100px;
-      font-size: large; }
+      font-size: large;
+      border-radius: 3px;
+      padding: 10px 50px;
+      border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.about-me {
+  display: none;
+  padding-top: 10px; }
+  .about-me .text {
+    padding: 10px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 300; }
 
 .top-bar {
   box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
@@ -268,36 +279,31 @@ body {
   background-color: #1a84bc;
   border: 1px solid #1a84bc; }
 .social.contact .mailto {
-  color: #1a84bc;
-  border: 1px solid rgba(0, 0, 0, 0.2); }
+  color: #1a84bc; }
 .social.contact .twitter:hover {
   color: white;
   background-color: #1da1f2;
   border: 1px solid #1da1f2; }
 .social.contact .twitter {
-  color: #1da1f2;
-  border: 1px solid rgba(0, 0, 0, 0.2); }
+  color: #1da1f2; }
 .social.contact .stack-overflow:hover {
   color: white;
   background-color: #f48024;
   border: 1px solid #f48024; }
 .social.contact .stack-overflow {
-  color: #f48024;
-  border: 1px solid rgba(0, 0, 0, 0.2); }
+  color: #f48024; }
 .social.contact .linkedin:hover {
   color: white;
   background-color: #1a84bc;
   border: 1px solid #1a84bc; }
 .social.contact .linkedin {
-  color: #1a84bc;
-  border: 1px solid rgba(0, 0, 0, 0.2); }
+  color: #1a84bc; }
 .social.contact .github:hover {
   color: white;
   background-color: rgba(0, 0, 0, 0.65);
   border: 1px solid rgba(0, 0, 0, 0.65); }
 .social.contact .github {
-  color: rgba(0, 0, 0, 0.65);
-  border: 1px solid rgba(0, 0, 0, 0.2); }
+  color: rgba(0, 0, 0, 0.65); }
 
 .page ul.work-history > li {
   display: block;

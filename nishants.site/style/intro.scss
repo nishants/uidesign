@@ -60,9 +60,24 @@ $top_bar_index: 99;
     a{
       display: inline-block;
       margin: $padding $padding/4;
-      min-width: 100px;
+      //min-width: 100px;
       font-size: large;
+      border-radius: $border_radius;
+      padding: $padding $padding*5;
+      border: 1px solid $border_light;
+
       @extend .top-bar-transition;
     }
+  }
+}
+
+.about-me{
+  display: none;
+  padding-top: $padding;
+  .text{
+    padding: $padding;
+    text-align: center;
+    color: $light_text;
+    font-weight: $medium_light_text;
   }
 }
