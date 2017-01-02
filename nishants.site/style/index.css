@@ -307,7 +307,9 @@ body {
   line-height: 60px; }
   .page ul.work-history > li .logo {
     float: left;
-    width: 60px; }
+    width: 60px;
+    height: 60px;
+    overflow: hidden; }
     .page ul.work-history > li .logo img {
       display: inline-block;
       height: 100%;

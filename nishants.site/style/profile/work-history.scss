@@ -16,6 +16,8 @@ $item_height : 60px;
       .logo{
         float: left;
         width : $item_height;
+        height: $item_height;
+        overflow: hidden;
         img{
           display: inline-block;
           height: 100%;
