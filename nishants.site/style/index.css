@@ -57,8 +57,9 @@ ul.inline-list {
     float: left; }
 
 .ruby-gem {
-  color: #e9573f;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.39); }
+  color: rgba(255, 255, 255, 0.8);
+  background: #e9573f;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.39); }
 
 body {
   font-family: 'Raleway', sans-serif; }
