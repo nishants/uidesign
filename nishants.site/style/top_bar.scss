@@ -122,6 +122,13 @@ $topBarHeight: $profile_pic_size/2;
 }
 
 #nishants-site.show-top-bar {
+  .cover{
+    .bg-wrapper{
+      img.bg{
+        opacity: 0;
+      }
+    }
+  }
   .overview {
     .profile-image > img{
       opacity: 0;

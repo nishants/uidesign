@@ -62,7 +62,7 @@ body {
 #placeholder-screen {
   width: 100%; }
 
-.top-bar-transition, .introduction .contact a, .top-bar, .top-bar .name, .top-bar .title, .top-bar .image > img, .top-bar .contact, .top-bar .contact > .link, #nishants-site .overview, #nishants-site .overview .profile-image img {
+.top-bar-transition, .introduction .contact a, .top-bar, .top-bar .name, .top-bar .title, .top-bar .image > img, .top-bar .contact, .top-bar .contact > .link, #nishants-site .overview, #nishants-site .overview .profile-image img, .cover .bg-wrapper > img.bg {
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   -o-transition: all 300ms ease;
@@ -206,6 +206,8 @@ body {
   -o-transform: translateY(100px);
   transform: translateY(100px); }
 
+#nishants-site.show-top-bar .cover .bg-wrapper img.bg {
+  opacity: 0; }
 #nishants-site.show-top-bar .overview .profile-image > img {
   opacity: 0;
   -webkit-transform: translateY(-100%);

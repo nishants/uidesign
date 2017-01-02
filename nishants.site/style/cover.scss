@@ -17,6 +17,7 @@
       display  : block;
       margin   : auto;
       width    : calc(100% - 2 * #{$side_padding});
+      @extend .top-bar-transition;
     }
   }
   .gradience{
