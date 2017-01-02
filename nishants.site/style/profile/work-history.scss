@@ -1,0 +1,44 @@
+$item_height : 60px;
+
+.experience.page{
+
+  ul.work-history{
+    //@extend .undo-list;
+
+    > li{
+      display: block;
+      padding: $padding;
+      border : 1px solid $border_light;
+      margin-bottom: $padding;
+      line-height: $item_height;
+
+      @extend .resize-container;
+      .logo{
+        float: left;
+        width : $item_height;
+        img{
+          display: inline-block;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .detail{
+        float: left;
+        line-height: $item_height/3;
+        .designation, .company, .period{
+          display: block;
+          padding: 0px $padding;
+          @extend .bold-text;
+          font-size: small;
+          margin: 0px;
+        }
+        .company, .period{
+          font-size: small;
+          color: $light_text;
+        }
+      }
+
+    }
+  }
+}
