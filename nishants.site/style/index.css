@@ -163,9 +163,9 @@ body {
   .top-bar .contact {
     position: absolute;
     bottom: 15px;
-    right: 10px;
+    right: 0px;
     text-align: right;
-    padding: 0px 10px;
+    padding: 0px 20px;
     width: 100%; }
     .top-bar .contact .twitter.link, .top-bar .contact .linkedin.link {
       float: left;
