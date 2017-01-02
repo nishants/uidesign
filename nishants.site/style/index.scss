@@ -52,6 +52,16 @@ body{
   font-weight: $medium_bold_text;
 }
 
+.page{
+  h1.head{
+    padding: $padding;
+    margin-left: $padding;
+    margin-bottom: $side_padding;
+  }
+  .work-history{
+  }
+}
+
 @import "intro";
 @import "top_bar";
 @import "cover";

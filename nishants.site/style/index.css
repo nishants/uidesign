@@ -42,7 +42,7 @@ input {
   display: table;
   clear: both; }
 
-ul.undo-list, ul.inline-list, .title ul.designation {
+ul.undo-list, ul.inline-list, .title ul.designation, .page ul.work-history {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -86,6 +86,11 @@ body {
   font-size: small;
   font-weight: 500; }
 
+.page h1.head {
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px; }
+
 .invert-gradience {
   background: -moz-linear-gradient(bottom, black 0%, transparent 100%);
   /* FF3.6-15 */
@@ -120,14 +125,15 @@ body {
 .page {
   margin: 5px 20px;
   background: white;
-  padding: 100px 20px 10px 20px;
+  padding: 100px 20px 100px 20px;
   color: rgba(0, 0, 0, 0.91);
   border-radius: 3px; }
 
 .introduction {
   margin: 0px 20px;
   border-top-left-radius: 25px;
-  border-top-right-radius: 25px; }
+  border-top-right-radius: 25px;
+  padding-bottom: 10px; }
   .introduction .name {
     text-align: center; }
   .introduction .contact {
@@ -310,40 +316,42 @@ body {
 .social.contact .github {
   color: rgba(0, 0, 0, 0.65); }
 
-.page ul.work-history > li {
-  display: block;
-  padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-  line-height: 60px; }
-  .page ul.work-history > li .logo {
-    float: left;
-    width: 60px;
-    height: 60px;
-    overflow: hidden; }
-    .page ul.work-history > li .logo img, .page ul.work-history > li .logo .img {
-      display: inline-block;
-      max-height: 100%;
-      max-width: 100%; }
-    .page ul.work-history > li .logo .img {
-      font-size: 30px;
-      line-height: 60px;
-      display: block;
-      text-align: center; }
-  .page ul.work-history > li .detail {
-    float: left;
-    max-width: calc(100% - 80px); }
-    .page ul.work-history > li .detail > label {
-      line-height: 20px;
-      text-align: left;
-      display: block;
-      padding: 0px 10px;
-      font-size: small;
-      margin: 0px; }
-    .page ul.work-history > li .detail > label:not(.title) {
-      font-size: small;
-      color: rgba(0, 0, 0, 0.5); }
-    .page ul.work-history > li .detail .link {
-      color: #bda6e0; }
+.page ul.work-history {
+  margin-left: 40px; }
+  .page ul.work-history > li {
+    display: block;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    line-height: 60px; }
+    .page ul.work-history > li .logo {
+      float: left;
+      width: 60px;
+      height: 60px;
+      overflow: hidden; }
+      .page ul.work-history > li .logo img, .page ul.work-history > li .logo .img {
+        display: inline-block;
+        max-height: 100%;
+        max-width: 100%; }
+      .page ul.work-history > li .logo .img {
+        font-size: 30px;
+        line-height: 60px;
+        display: block;
+        text-align: center; }
+    .page ul.work-history > li .detail {
+      float: left;
+      max-width: calc(100% - 80px); }
+      .page ul.work-history > li .detail > label {
+        line-height: 20px;
+        text-align: left;
+        display: block;
+        padding: 0px 10px;
+        font-size: small;
+        margin: 0px; }
+      .page ul.work-history > li .detail > label:not(.title) {
+        font-size: small;
+        color: rgba(0, 0, 0, 0.5); }
+      .page ul.work-history > li .detail .link {
+        color: #bda6e0; }
 
 /*# sourceMappingURL=index.css.map */

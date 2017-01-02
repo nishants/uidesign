@@ -3,7 +3,9 @@ $item_height : 60px;
 .page{
 
   ul.work-history{
-    //@extend .undo-list;
+    @extend .undo-list;
+    margin-left: $side_padding * 2;
+
 
     > li{
       display: block;
