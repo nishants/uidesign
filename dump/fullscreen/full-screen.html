@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 class="on-fullscreen">
+    <button id="exit" onclick="exitFullscreen()">Exit</button>
+</h1>
+<h1 class="no-fullscreen">
+    <button id="full-screen" onclick="fullScreen()">Full screen</button>
+</h1>
+
+
+<script>
+    function exitFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+    function fullScreen(){
+        var i = document.getElementsByTagName("body")[0];
+        if (i.requestFullscreen) {
+            i.requestFullscreen();
+        } else if (i.webkitRequestFullscreen) {
+            i.webkitRequestFullscreen();
+        } else if (i.mozRequestFullScreen) {
+            i.mozRequestFullScreen();
+        } else if (i.msRequestFullscreen) {
+            i.msRequestFullscreen();
+        }
+    }
+</script>
+
+<style>
+    body{
+        background: red;
+    }
+</style>
+
+</body>
+</html>
