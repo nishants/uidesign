@@ -1,15 +1,26 @@
-describe('myService', function() {
+describe('Testing Services', function() {
   var service,
+      ServiceTwo,
       $httpBackend;
 
-  beforeEach(module('my-app'));
+  beforeEach(function() {
+    module('my-app');
+    module(function($provide) {
+      $provide.value('ServiceTwo', ServiceTwo);
+    });
 
-  beforeEach(inject(function (_myService_, $injector) {
-    service       = _myService_;
-    $httpBackend  = $injector.get('$httpBackend');
-  }));
+    ServiceTwo = {
+      get: function() { return 'foobar'; }
+    };
 
-  it("http backend", function () {
+    inject(function (_myService_, $injector) {
+      service       = _myService_;
+      $httpBackend  = $injector.get('$httpBackend');
+    });
+
+  });
+
+  it("1. HTTP backend", function () {
     var data     = {id: "1"};
     $httpBackend.when('GET', '/api').respond(data);
 
@@ -17,6 +28,10 @@ describe('myService', function() {
     $httpBackend.flush();
 
     expect(service.data).toEqual(data);
+  });
+
+  it("2. Dependent Services", function () {
+    expect(service.get()).toEqual("foobar");
   });
 
   afterEach(function () {
