@@ -72,6 +72,7 @@ Free fall with css3 : http://localhost:3001/2.0/dump/lab/free-fall.html
 circular loader : http://localhost:3001/2.0/dump/circular-loader.html
 table wiht divs : http://localhost:3001/2.0/dump/div-table.html
 Menu with jquery css : http://localhost:3001/2.0/dump/expanding%20menu.html
+Custom router with jquery : /Users/dawn/Documents/projects/uidesign/dump/concepts/kitkat/app/router.js
 
 
 Lesson:
