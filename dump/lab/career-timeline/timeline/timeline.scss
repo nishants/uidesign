@@ -11,44 +11,61 @@ $position_color_one : green;
 $position_color_two : blue;
 $position_color_three : red;
 $labels_height : 40px;
+$box_shadow : 10px 1px 5px $black_border;
 
-ul.period-list{
-  @extend .undo-list;
-  > li {
-    .position, .projects{
-      display: block;
-    }
-    .period{
-      position: absolute;
-      top     : $top_offset;
-      left    : calc(50% - #{$line_width});
-      width   : $line_width;
-      height  : calc(100% - #{$top_offset});
-    }
+.timeline{
+  margin: auto;
+  height: 100%;
+  position: relative;
+
+  .timeline-header{
+    height: $labels_height;
+    box-shadow: $box_shadow;
+
   }
-  > li:nth-child(3n) {
-    .period{
-      background: $position_color_one;
-    }
+  .timeline-body{
+    height: calc(100% - #{$labels_height});
+    overflow: auto;
   }
-  > li:nth-child(3n+2) {
-    .period{
-      background: $position_color_two;
-    }
+  .card{
+    padding: $padding;
   }
-  > li:nth-child(3n+1) {
-    .period{
-      background: $position_color_three;
+  ul.period-list{
+    border: $border;
+    padding-top: $padding;
+
+    @extend .undo-list;
+    > li {
+      .position, .projects{
+        display: block;
+      }
+      .period{
+        position: absolute;
+        top     : $top_offset;
+        left    : calc(50% - #{$line_width});
+        width   : $line_width;
+        height  : calc(100% - #{$top_offset});
+      }
+    }
+    > li:nth-child(3n) {
+      .period{
+        background: $position_color_one;
+      }
+    }
+    > li:nth-child(3n+2) {
+      .period{
+        background: $position_color_two;
+      }
+    }
+    > li:nth-child(3n+1) {
+      .period{
+        background: $position_color_three;
+      }
     }
   }
 }
 
-ul.period-list {
-  border: $border;
-  height: calc(100% - #{$labels_height});
-  overflow: auto;
-}
 
-@import 'position';
-@import 'project';
+@import 'scrollable/position';
+@import 'scrollable/project';
 @import 'header/header';

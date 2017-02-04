@@ -6,6 +6,7 @@ ul.period-list > li {
       width: 50%;
       float: right;
       clear: right;
+      padding-bottom: $padding;
       > .card{
         width: calc(100% - #{$padding * 2});
         margin: auto;

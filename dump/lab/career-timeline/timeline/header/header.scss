@@ -1,13 +1,13 @@
 .timeline{
-  position: relative;
   .timeline-header{
     .labels.bar{
-      height: $labels_height;
+      width: 100%;
       .position,  .project{
         width: 50%;
         float: left;
         height: $labels_height;
         line-height: $labels_height;
+        text-align: center;
       }
     }
   }
