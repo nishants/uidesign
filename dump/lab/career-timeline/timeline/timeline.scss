@@ -10,8 +10,9 @@ $line_color : $black_border;
 $position_color_one : green;
 $position_color_two : blue;
 $position_color_three : red;
+$labels_height : 40px;
 
-ul.timeline{
+ul.period-list{
   @extend .undo-list;
   > li {
     .position, .projects{
@@ -42,8 +43,12 @@ ul.timeline{
   }
 }
 
-ul.timeline {
+ul.period-list {
   border: $border;
+  height: calc(100% - #{$labels_height});
+  overflow: auto;
 }
+
 @import 'position';
 @import 'project';
+@import 'header/header';

@@ -1,0 +1,14 @@
+.timeline{
+  position: relative;
+  .timeline-header{
+    .labels.bar{
+      height: $labels_height;
+      .position,  .project{
+        width: 50%;
+        float: left;
+        height: $labels_height;
+        line-height: $labels_height;
+      }
+    }
+  }
+}

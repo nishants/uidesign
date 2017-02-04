@@ -1,4 +1,4 @@
-ul.timeline > li {
+ul.period-list > li {
   ul.projects{
     @extend .undo-list;
     @extend .resize-container;

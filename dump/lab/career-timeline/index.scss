@@ -1,8 +1,10 @@
 @import '../../lib/config';
 
-#timeline{
+.timeline{
   min-width: 500px;
   max-width: 100%;
+  height: 90vh;
+  overflow: hidden;
   margin: auto;
 }
 
