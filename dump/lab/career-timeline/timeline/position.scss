@@ -1,0 +1,12 @@
+
+
+ul.timeline > li {
+  position: relative;
+  .position {
+    padding-left: $padding;
+    > .card {
+      width: calc(50% - #{$padding * 2});
+      background: red;
+    }
+  }
+}

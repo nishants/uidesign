@@ -1,0 +1,16 @@
+ul.timeline > li {
+  ul.projects{
+    @extend .undo-list;
+    @extend .resize-container;
+    > li {
+      width: 50%;
+      float: right;
+      clear: right;
+      > .card{
+        width: calc(100% - #{$padding * 2});
+        margin: auto;
+        background: green;
+      }
+    }
+  }
+}
