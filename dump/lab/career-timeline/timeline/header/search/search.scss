@@ -1,0 +1,21 @@
+$icon_width: 50px;
+$search_width: 100%;
+$max_search_width: 300px;
+
+.search.bar{
+  .search-widget{
+    max-width: $max_search_width;
+    border: $border;
+    margin: auto;
+    .icon, input.query{
+      float: left;
+      height: $search_height;
+    }
+    .icon{
+      width: $icon_width;
+    }
+    input.query{
+      width: calc(100% - #{$icon_width});
+    }
+  }
+}

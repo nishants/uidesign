@@ -10,7 +10,11 @@ $line_color : $black_border;
 $position_color_one : green;
 $position_color_two : blue;
 $position_color_three : red;
+
 $labels_height : 40px;
+$search_height : 40px;
+$header_height : $labels_height +  $search_height;
+
 $box_shadow : 10px 1px 5px $black_border;
 
 .timeline{
@@ -19,12 +23,12 @@ $box_shadow : 10px 1px 5px $black_border;
   position: relative;
 
   .timeline-header{
-    height: $labels_height;
+    height: $header_height;
     box-shadow: $box_shadow;
 
   }
   .timeline-body{
-    height: calc(100% - #{$labels_height});
+    height: calc(100% - #{$header_height});
     overflow: auto;
   }
   .card{
@@ -69,3 +73,4 @@ $box_shadow : 10px 1px 5px $black_border;
 @import 'scrollable/position';
 @import 'scrollable/project';
 @import 'header/header';
+@import 'header/search/search';
