@@ -93,7 +93,6 @@ input {
       float: left;
       display: block;
       height: 50px;
-      width: 175px;
       will-change: transform;
       -webkit-transition: transform 250ms ease;
       -moz-transition: transform 250ms ease;

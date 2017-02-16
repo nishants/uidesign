@@ -39,7 +39,6 @@ $minNavigationWidth:  740px;
       float: left;
       display: block;
       height: $collapseLogoHeight;
-      width:  $collapseLogoWidth;
       will-change: transform;
       @include transition(transform, $transitionTime, ease);
       @include transformOrigin(0 0);
