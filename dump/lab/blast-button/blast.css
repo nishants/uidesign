@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,100,700);
+ul.undo-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: block; }
+
+.resize-container:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+input {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  box-sizing: border-box;
+  border: none; }
+
+.ripple, .blast-animate:after, .blast.animate:after {
+  position: absolute;
+  z-index: -1;
+  left: -5px;
+  top: -5px;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border: 5px solid;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  animation: blast-away-frames 0.5s;
+  -webkit-animation: blast-away-frames 0.5s;
+  -moz-animation: blast-away-frames 0.5s;
+  -o-animation: blast-away-frames 0.5s;
+  -ms-animation: blast-away-frames 0.5s;
+  -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-animation-delay: 0;
+  -moz-animation-delay: 0;
+  -o-animation-delay: 0;
+  animation-delay: 0; }
+
+.blast-animate, .blast.animate {
+  position: relative;
+  overflow: visible;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  animation: blast-frames 0.25s;
+  -webkit-animation: blast-frames 0.25s;
+  -moz-animation: blast-frames 0.25s;
+  -o-animation: blast-frames 0.25s;
+  -ms-animation: blast-frames 0.25s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s; }
+
+.blast-animate:after, .blast.animate:after {
+  content: " "; }
+
+@keyframes blast-frames {
+  0% {
+    transform: scaleX(1) scaleY(1); }
+  25% {
+    transform: scaleX(0.95) scaleY(0.95); }
+  50% {
+    transform: scaleX(1.5) scaleY(1.5); }
+  100% {
+    transform: scaleX(1) scaleY(1); } }
+@-moz-keyframes blast-frames {
+  0% {
+    -moz-transform: scaleX(1) scaleY(1); }
+  25% {
+    -moz-transform: scaleX(0.95) scaleY(0.95); }
+  50% {
+    -moz-transform: scaleX(1.5) scaleY(1.5); }
+  100% {
+    -moz-transform: scaleX(1) scaleY(1); } }
+@-webkit-keyframes blast-frames {
+  0% {
+    -webkit-transform: scaleX(1) scaleY(1); }
+  25% {
+    -webkit-transform: scaleX(0.95) scaleY(0.95); }
+  50% {
+    -webkit-transform: scaleX(1.5) scaleY(1.5); }
+  100% {
+    -webkit-transform: scaleX(1) scaleY(1); } }
+@-o-keyframes blast-frames {
+  0% {
+    -o-transform: scaleX(1) scaleY(1); }
+  25% {
+    -o-transform: scaleX(0.95) scaleY(0.95); }
+  50% {
+    -o-transform: scaleX(1.5) scaleY(1.5); }
+  100% {
+    -o-transform: scaleX(1) scaleY(1); } }
+@-ms-keyframes blast-frames {
+  0% {
+    -ms-transform: scaleX(1) scaleY(1); }
+  25% {
+    -ms-transform: scaleX(0.95) scaleY(0.95); }
+  50% {
+    -ms-transform: scaleX(1.5) scaleY(1.5); }
+  100% {
+    -ms-transform: scaleX(1) scaleY(1); } }
+@keyframes blast-away-frames {
+  0% {
+    opacity: 0.1;
+    transform: scaleX(1.5) scaleY(1.5); }
+  100% {
+    opacity: 0;
+    transform: scaleX(10) scaleY(10); } }
+
+/*# sourceMappingURL=blast.css.map */
