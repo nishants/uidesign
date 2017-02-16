@@ -2,7 +2,7 @@ angular.module("search-box-example", ['uiGmapgoogle-maps'])
 
     .config(['uiGmapGoogleMapApiProvider', function (GoogleMapApi) {
       GoogleMapApi.configure({
-        key: 'AIzaSyDnRA9bsV_CtLr-f0NnFdf7dXZPPMvsEoU',
+        key: 'AIzaSyA3Ovffq6p7lCssXlP245X19eYeUCHT7nw',
         v: '3.21',
         libraries: 'places'
       });

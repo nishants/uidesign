@@ -1,0 +1,56 @@
+$surface_color : white;
+$height: 50px;
+$width: 50px;
+
+$color_font: rgba(0, 0, 0, 0.50);
+
+body{
+  padding: 200px;
+  text-align: center;
+  button{
+    margin: 10px;
+  }
+}
+
+button{
+  position: relative;
+  overflow: visible;
+  height : $height;
+  line-height : $height;
+  width  : $width;
+  color  : $color_font;
+  background: $surface_color;
+  outline: none;
+  border : 1px solid transparent;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: -1px -1px 1px 1px rgba(255, 255, 255, 1);
+}
+
+button:after,button:before, {
+  content : " ";
+  position: absolute;
+  top     : 0;
+  left    : 0;
+  height  : 100%;
+  width   : 100%;
+}
+
+button:before{
+  box-shadow: -2px -2px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+button:after{
+  box-shadow: -2px -2px 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+button.round, button.round:after, button.round:before{
+  border-radius: 50%;
+}
+
+button.round.on{
+  border-left: 1px solid transparent;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+button.round.on:after{
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
