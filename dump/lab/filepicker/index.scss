@@ -1,1 +1,46 @@
 @import '../../../style/base';
+
+$image_size: 200px;
+$remove-size: 50px;
+
+$dead_bg : #EEE;
+$black_tint: rgba(0, 0, 0, 0.8);
+$danger_color: #ff5722;
+
+form{
+  ul.images{
+    @extend .undo-list;
+    @extend .resize-container;
+    background: $dead_bg;
+    padding-bottom: $padding;
+    > li {
+      position: relative;
+      float: left;
+      margin-left: $padding;
+      margin-top : $padding;
+      > img{
+        display: block;
+        height: $image_size;
+      }
+      > .remove{
+        position: absolute;
+        height  : $remove_size;
+        width   : $remove_size;
+        top     : $padding;
+        right   : $padding;
+        border  : 1px solid;
+        background: $black_tint;
+        color   : $danger_color;
+        text-align: center;
+        line-height: $remove_size;
+        font-size  : $remove_size/2;
+        opacity    : 0;
+      }
+    }
+    > li:hover{
+      .remove{
+        opacity: 1;
+      }
+    }
+  }
+}
