@@ -35,6 +35,7 @@ News papaer theme: http://localhost:3001/2.0/dump/dawn.html
 File editor ui : http://localhost:3001/2.0/try-miraze/index.html
 
 Exercise
+filpicker with angular : lab/filepicker
 Calendar with js : http://localhost:3001/2.0/dump/lessons/calendar/index.html
 Timer with js : http://localhost:3001/2.0/dump/lessons/carousel/timer.html
 Carousel With jquery : http://localhost:3001/2.0/dump/lessons/carousel/jquery-carousel.html
