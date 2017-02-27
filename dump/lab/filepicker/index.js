@@ -8,22 +8,7 @@ app.constant("FILEPICKER", {
 	}
 });
 
-app.service("FileUploadService", [function(){
-	var service = {
-		uploads: [],
-		addUpload: function (file) {
-			service.uploads.push({
-				name: file.filename,
-				url : file.url
-			});
-		}
-	};
-	return service;
-}]);
 
-app.controller("FormController" ,[ "$scope", "FileUploadService", function($scope, FileUploadService){
-
-}]);
 app.directive("imagepicker", ["FILEPICKER", "$timeout", function(FILEPICKER, $timeout){
 	return{
 		restrict: "A",
