@@ -13,17 +13,17 @@ html
     link(rel='stylesheet', href='index.css')
     script(src='index.js')
   body(ng-app='imagepicker')
-    .container
-      form.form-horizontal(ng-init='form = {images: [{name: "one", url:"https://cdn.filestackcontent.com/FV8pOUsxRpiA56uC7306"}, {name: "one", url:"https://cdn.filestackcontent.com/azOXY2iASm6clQ3YVTDg"}, {name: "one", url:"https://cdn.filestackcontent.com/FV8pOUsxRpiA56uC7306"}, {name: "one", url:"https://cdn.filestackcontent.com/azOXY2iASm6clQ3YVTDg"}]}')
+    .container(ng-controller="FormController")
+      fieldset.form-horizontal(ng-disabled="form.saving")
         .form-group
           label.control-label Title
-          input(name="Title").form-control
+          input(name="Title", ng-model="form.title").form-control
         .form-group
           label.control-label Name
-          input(name="name").form-control
+          input(name="name", ng-model="form.name").form-control
         .form-group
           label.control-label Description
-          textarea(name="description").form-control
+          textarea(name="description", ng-model="form.description").form-control
 
         .form-group
           button.form-control.btn.btn-default.form-control(imagepicker, type="button", on-upload='form.images.push(lastUploaded)') Upload Image
@@ -36,5 +36,8 @@ html
                 .fa.fa-close
               .set-cover(ng-click='form.images.unshift(form.images.splice($index, 1)[0]);')
                 .fa.fa-thumb-tack
+
+        .form-group
+            button.form-control.btn.btn-primary(ng-click='form.save()') Save
 
 
