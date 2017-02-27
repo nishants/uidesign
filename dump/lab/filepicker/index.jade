@@ -26,7 +26,7 @@ html
           textarea(name="description", ng-model="form.description").form-control
 
         .form-group
-          button.form-control.btn.btn-default.form-control(imagepicker, type="button", on-upload='form.images.push(lastUploaded)') Upload Image
+          button.form-control.btn.btn-default.form-control(imagepicker, type="button", on-upload='form.images = form.images.concat(lastUploaded)') Upload Image
 
         .form-group
           ul.images.undo-list

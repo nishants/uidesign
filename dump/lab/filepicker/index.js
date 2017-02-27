@@ -9,7 +9,7 @@ app.constant("FILEPICKER", {
 });
 
 app.value("Remote", {
-	url: "https://fireapp-web-service.herokuapp.com/items"
+	url: "http://localhost:5000/items"
 });
 
 app.controller("FormController", ["$scope", "$http", "Remote", function($scope, $http, Remote){
@@ -59,13 +59,15 @@ app.directive("imagepicker", ["FILEPICKER", "$timeout", function(FILEPICKER, $ti
 		link : function(scope, element, attrs){
 			filepicker.setKey(FILEPICKER.key);
 			element.on("click", function(){
-				filepicker.pick(
+				filepicker.pickMultiple(
 						FILEPICKER.options,
-						function(file){
-							scope.lastUploaded = {
-								name: file.filename,
-								url : file.url
-							};
+						function(files){
+							scope.lastUploaded = files.map(function(file){
+								return {
+									name: file.filename,
+									url : file.url
+								};
+							});
 							$timeout(function(){
 								scope.$eval(attrs.onUpload);
 							});
