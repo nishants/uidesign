@@ -6,6 +6,7 @@ $remove-size: 50px;
 $dead_bg : #EEE;
 $black_tint: rgba(0, 0, 0, 0.8);
 $danger_color: #ff5722;
+$good_color: #4caf50;
 
 form{
   ul.images{
@@ -22,23 +23,34 @@ form{
         display: block;
         height: $image_size;
       }
-      > .remove{
+      > .remove, > .set-cover{
         position: absolute;
         height  : $remove_size;
         width   : $remove_size;
         top     : $padding;
-        right   : $padding;
         border  : 1px solid;
-        background: $black_tint;
-        color   : $danger_color;
         text-align: center;
+        background: $black_tint;
         line-height: $remove_size;
         font-size  : $remove_size/2;
         opacity    : 0;
       }
+      > .remove{
+        right   : $padding;
+        color   : $danger_color;
+      }
+      > .set-cover{
+        left    : $padding;
+        color   : $good_color;
+      }
     }
     > li:hover{
-      .remove{
+      .remove, .set-cover{
+        opacity: 1;
+      }
+    }
+    > li:first-child{
+      .set-cover{
         opacity: 1;
       }
     }

@@ -14,7 +14,7 @@ html
     script(src='index.js')
   body(ng-app='imagepicker')
     .container
-      form.form-horizontal(ng-init='form.images = [{name: "one", url:"https://cdn.filestackcontent.com/FV8pOUsxRpiA56uC7306"}, {name: "one", url:"https://cdn.filestackcontent.com/azOXY2iASm6clQ3YVTDg"}, {name: "one", url:"https://cdn.filestackcontent.com/FV8pOUsxRpiA56uC7306"}, {name: "one", url:"https://cdn.filestackcontent.com/azOXY2iASm6clQ3YVTDg"}]')
+      form.form-horizontal(ng-init='form = {images: [{name: "one", url:"https://cdn.filestackcontent.com/FV8pOUsxRpiA56uC7306"}, {name: "one", url:"https://cdn.filestackcontent.com/azOXY2iASm6clQ3YVTDg"}, {name: "one", url:"https://cdn.filestackcontent.com/FV8pOUsxRpiA56uC7306"}, {name: "one", url:"https://cdn.filestackcontent.com/azOXY2iASm6clQ3YVTDg"}]}')
         .form-group
           label.control-label Title
           input(name="Title").form-control
@@ -34,5 +34,7 @@ html
               img(ng-src="{{image.url}}")
               .remove(ng-click='form.images.splice($index, 1)')
                 .fa.fa-close
+              .set-cover(ng-click='form.images.unshift(form.images.splice($index, 1)[0]);')
+                .fa.fa-thumb-tack
 
 
