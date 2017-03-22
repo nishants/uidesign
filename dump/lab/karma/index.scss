@@ -19,3 +19,16 @@ $punch_font_size    : 36px;
 
   }
 }
+
+.player.not-passion{
+  .buildup{
+    > li {
+      @include transform(translateY(-$line_height));
+    }
+  }
+  .punch{
+    > li {
+      @include transform(translateY(-$line_height));
+    }
+  }
+}
