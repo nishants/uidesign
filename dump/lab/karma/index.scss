@@ -1,0 +1,21 @@
+@import '../../../style/base';
+
+$line_height        : 40px;
+$buildup_font_size  : 21px;
+$punch_font_size    : 36px;
+.player{
+  line-height: $line_height;
+  ul.buildup, ul.punch{
+    height: $line_height;
+    overflow: hidden;
+  }
+  .buildup{
+    font-size: $buildup_font_size;
+  }
+  .punch{
+    font-size: $punch_font_size;
+  }
+  ul.buildup > li {
+
+  }
+}
