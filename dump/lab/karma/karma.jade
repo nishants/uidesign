@@ -11,9 +11,9 @@ html
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     link(rel='stylesheet', href='index.css')
     script(src='index.js')
-  body
+  body(ng-app, ng-init='player.state = "not-passion"')
     .container
-      .player.not-passion
+      .player(ng-class='player.state')
         ul.buildup.undo-list
           li I AM
           li BUTS ITS NOT ABOUT
@@ -26,3 +26,8 @@ html
           li AMBITION
           li WORD
           li WORD DONE
+
+    ul.undo-list.buttons(style='padding-top: 50px;')
+      li
+        button(ng-click="player.state=''") Passion ?
+        button(ng-click="player.state='not-passion'") Not passion
