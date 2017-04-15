@@ -1,0 +1,28 @@
+/* app css stylesheet */
+
+
+.wrapper {
+  margin: 50px auto;
+}
+.containerVertical {
+  width: 40%;
+  margin: 0 5%;
+  float:left;
+  background: #efefef;
+  min-height: 50px;
+}
+
+.containerVertical div {
+  margin: 5px 0;
+}
+
+.tableRow {
+  clear:both;
+}
+
+pre {
+  font-size:13px;
+  margin-top: 50px;
+  color: #555;
+  border-top: 1px solid #999;
+}
