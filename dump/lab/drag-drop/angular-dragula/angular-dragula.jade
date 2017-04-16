@@ -6,6 +6,8 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
     link(rel='stylesheet prefetch', href='https://cdnjs.cloudflare.com/ajax/libs/angular-dragula/1.2.6/dragula.min.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-dragula/1.2.6/angular-dragula.min.js')
     link(rel='stylesheet', href='css/style.css')
   body
     div(ng-app='myApp')
@@ -16,6 +18,4 @@ html
           #cart.containerVertical(dragula='"bag-one"', dragula-model='cartModel')
             .cursorDefault(ng-repeat='item in cartModel', dragula-scope='$parent')
               | {{item.content}}
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-dragula/1.2.6/angular-dragula.min.js')
-    script(src='js/index.js')
+    script(src='index.js')
