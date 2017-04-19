@@ -6,17 +6,26 @@ app.controller("CrosswordController", ["$scope", function($scope){
 		cellsPerRow : 10,
 		crosswordLayout:{
 			cells : [
-				true , true , true , true , true , true , true , true , true , true ,
-				false, true , true , true , true , true , true , true , true , true , 
-				false, true , true , true , true , true , true , true , true , true , 
-				false, false, false, false, false, false, false, false, false, false,
-				false, true , true , true , true , true , true , true , true , true , 
-				false, true , true , true , true , true , true , true , true , true , 
-				false, true , true , true , true , true , true , true , true , true , 
-				false, true , true , true , true , true , true , true , true , true , 
-				false, true , true , true , true , true , true , true , true , true , 
+				{value: "", solid: false},  {value: "", solid: false}, {value: "", solid: false}, {value: "", solid: false}, {value: "", solid: false}, {value: "", solid: false}, {value: "", solid: false}, {value: "", solid: false}, {value: "", solid: false}, {value: "", solid: false},
+				{value: "", solid: true },  {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true },
+				{value: "", solid: true },  {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true },
+				{value: "", solid: true },  {value: "", solid: true },  {value: "", solid: true },  {value: "", solid: true },  {value: "", solid: true },  {value: "", solid: true },  {value: "", solid: true },  {value: "", solid: true },  {value: "", solid: true },  {value: "", solid: true },
+				{value: "", solid: true },  {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true },
+				{value: "", solid: true },  {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true },
+				{value: "", solid: true },  {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true },
+				{value: "", solid: true },  {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true },
+				{value: "", solid: true },  {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true }, {value: "", solid: true },
 			]
 		},
-		inputLayout: {}
+		inputLayout: {
+			inputs: [
+				{
+					value: "abcdefghij",
+					index: 0,
+					length: 10,
+					vertical: false,
+				}
+			]
+		}
 	}
 }]);

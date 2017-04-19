@@ -11,6 +11,10 @@ html
     link(rel='stylesheet', href='crossword.css')
     script(src='crossword.js')
   body(ng-app='crossword')
-    .crossword(ng-controller='CrosswordController')
-      ul.crossword-layout(style='width: {{crossword.cellWidth*crossword.cellsPerRow}}px')
-        li.cell(ng-repeat='cell in crossword.crosswordLayout.cells track by $index',ng-class='{"empty" : cell}' style="height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")
+    .crossword(ng-controller='CrosswordController', style='width: {{crossword.cellWidth*crossword.cellsPerRow}}px')
+      ul.crossword-layout
+        li.cell(ng-repeat='cell in crossword.crosswordLayout.cells track by $index',ng-class='{"solid" : cell.solid}' style="height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")
+          span {{cell.value}}
+      ul.input-layout
+        li.input(ng-repeat="input in crossword.inputLayout.inputs")
+          input(ng-model='input.value',style='width: {{crossword.cellWidth*input.length}}px; line-height: {{crossword.cellHeight}}px; letter-spacing: {{crossword.cellWidth - input.length/2}}px', maxlength="{{input.length}}")

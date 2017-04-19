@@ -2,12 +2,14 @@
 
 $border_color: rgba(0, 0, 0, 0.1);
 $empty_cell_color : black;
- 
+
 .crossword{
+  position: relative;
   margin: 10px;
   ul.crossword-layout{
     @extend .undo-list;
     @extend .resize-container;
+    width: 100%;
     border-top: 1px solid $border_color;
     border-left: 1px solid $border_color;
     box-sizing: content-box;
@@ -17,8 +19,20 @@ $empty_cell_color : black;
       border-bottom: 1px solid $border_color;
       box-sizing: border-box;
     }
-    > li:not(.empty){
+    > li.solid{
       background-color: $empty_cell_color;
+    }
+  }
+  ul.input-layout{
+    @extend .undo-list;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    input{
+      background-color: transparent;
+      border: none;
     }
   }
 }
