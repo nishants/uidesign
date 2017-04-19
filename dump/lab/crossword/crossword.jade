@@ -13,4 +13,4 @@ html
   body(ng-app='crossword')
     .crossword(ng-controller='CrosswordController')
       ul.crossword-layout(style='width: {{crossword.cellWidth*crossword.cellsPerRow}}px')
-        li.cell(ng-repeat='row in crossword.crosswordLayout.cells track by $index', style="height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")
+        li.cell(ng-repeat='cell in crossword.crosswordLayout.cells track by $index',ng-class='{"empty" : cell}' style="height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")

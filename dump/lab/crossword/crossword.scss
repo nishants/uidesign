@@ -1,6 +1,8 @@
 @import '../../../style/base';
 
 $border_color: rgba(0, 0, 0, 0.1);
+$empty_cell_color : black;
+ 
 .crossword{
   margin: 10px;
   ul.crossword-layout{
@@ -14,6 +16,9 @@ $border_color: rgba(0, 0, 0, 0.1);
       border-right: 1px solid $border_color;
       border-bottom: 1px solid $border_color;
       box-sizing: border-box;
+    }
+    > li:not(.empty){
+      background-color: $empty_cell_color;
     }
   }
 }
