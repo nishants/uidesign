@@ -32,11 +32,34 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 				select: function(cellIndex){
 					crossword.focus = cellIndex;
 				},
+				_goToPreviousOf: function(index){
+					var
+							topIndex  = index - crossword.cellsPerRow,
+							leftIndex = index - 1,
+							hasTop   = topIndex > 0,
+							hasLeft  = leftIndex % crossword.cellsPerRow != (crossword.cellsPerRow -1),
+							previousIndex = hasTop ? topIndex : (hasLeft ? leftIndex : -1);
+
+					crossword.focus = previousIndex;
+				},
+				_goToNextOf: function(){},
 				input: function(index, event){
 					isNextChar(event.keyCode) ? console.log("going to next"): "";
-					isBackChar(event.keyCode) ? console.log("going to previous"): "";
+					isBackChar(event.keyCode) ? crossword._goToPreviousOf(index): "";
 					console.log(event.keyCode);
 				}
 			};
 	$scope.crossword = crossword
 }]);
+
+app.directive("focusIf", [function(){
+	return {
+		link: function(scope, element, atts){
+			scope.$watch(atts.focusIf, function(focusOn){
+				if(focusOn){
+					element[0].focus();
+				}
+			});
+		}
+	};
+}])
