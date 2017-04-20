@@ -6,6 +6,8 @@ $empty_cell_color : black;
 $mono_space_font: "'Inconsolata', monospace";
 $input_font_size : 12px;
 $focus_color: rgba(81, 167, 249, 0.3);
+$label_font_size: 10px;
+$label_color: rgba(0, 0, 0, 0.3);
 
 .crossword{
   position: relative;
@@ -23,6 +25,16 @@ $focus_color: rgba(81, 167, 249, 0.3);
       border-bottom: 1px solid $border_color;
       box-sizing: border-box;
       text-align: center;
+      label {
+        font-size: $label_font_size;
+        vertical-align: super;
+        color: $label_color;
+        display: block;
+        padding: 5px;
+        pointer-events: none;
+        line-height: 15px;
+        text-align: left;
+      }
     }
     > li.solid{
       background-color: $empty_cell_color;
