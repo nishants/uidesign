@@ -4,6 +4,7 @@ app.controller("CrosswordController", ["$scope", function($scope){
 		cellWidth 	: 30,
 		cellHeight  : 30,
 		cellsPerRow : 10,
+		fontSize    : 12,
 		update: function(input){
 			var fromIndex = input.index,
 					cells = crossword.crosswordLayout.cells;
@@ -19,6 +20,36 @@ app.controller("CrosswordController", ["$scope", function($scope){
 				}
 			}
 
+		},
+		focus: function(input){
+			var fromIndex = input.index,
+					cells = crossword.crosswordLayout.cells;
+			if(!input.vertical){
+				for(var i = 0; i< input.length; i++){
+					cells[i + fromIndex].focus = true;
+				}
+			}
+
+			if(input.vertical){
+				for(var i = 0; i< input.length; i++){
+					cells[i*crossword.cellsPerRow + fromIndex].focus = true;
+				}
+			}
+		},
+		blur: function(input){
+			var fromIndex = input.index,
+					cells = crossword.crosswordLayout.cells;
+			if(!input.vertical){
+				for(var i = 0; i< input.length; i++){
+					cells[i + fromIndex].focus = false;
+				}
+			}
+
+			if(input.vertical){
+				for(var i = 0; i< input.length; i++){
+					cells[i*crossword.cellsPerRow + fromIndex].focus = false;
+				}
+			}
 		},
 		crosswordLayout:{
 			cells : [

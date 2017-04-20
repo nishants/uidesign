@@ -5,6 +5,7 @@ $empty_cell_color : black;
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 $mono_space_font: "'Inconsolata', monospace";
 $input_font_size : 12px;
+$focus_color: rgba(81, 167, 249, 0.3);
 
 .crossword{
   position: relative;
@@ -26,6 +27,9 @@ $input_font_size : 12px;
     > li.solid{
       background-color: $empty_cell_color;
     }
+    > li.focus{
+      background-color: $focus_color;
+    }
   }
   ul.input-layout{
     @extend .undo-list;
@@ -34,12 +38,16 @@ $input_font_size : 12px;
     left: 0;
     height: 100%;
     width: 100%;
-    input{
-      background-color: transparent;
-      font-family: $mono_space_font;
-      font-size: $input_font_size;
-      border: none;
-      color: transparent;
+    textarea{
+      opacity: 0;
+      padding: 0;
+      margin: 0;
+      resize: none;
+      background-color: white;
+      overflow: hidden;
+    }
+    textarea:focus{
+      opacity: 1;
     }
   }
 }
