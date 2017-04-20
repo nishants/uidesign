@@ -1,14 +1,24 @@
 var app = angular.module("crossword", []);
 app.controller("CrosswordController", ["$scope", function ($scope) {
 
+	var KEY_CODES = {
+		LEFT	: 37,
+		UP	  : 38,
+		RIGHT : 39,
+		DOWN	: 40,
+		BACKSPACE 	: 8,
+	};
+
 	var isNextChar = function(keyCode){
 				var isUppercase = keyCode > 64 && keyCode < 91,
-						isLowercase = keyCode > 96 && keyCode < 123;
-				return isUppercase || isLowercase;
+						isLowercase = keyCode > 96 && keyCode < 123,
+						isInput    = isUppercase || isLowercase,
+						isSkip     = [KEY_CODES.RIGHT, KEY_CODES.DOWN].indexOf(keyCode) != -1;
+				return isInput || isSkip;
 			},
 
 			isBackChar = function(keyCode){
-				return keyCode == 8;
+				return [KEY_CODES.BACKSPACE, KEY_CODES.UP, KEY_CODES.LEFT].indexOf(keyCode) != -1;
 			},
 			createCell = function(param){
 				return {
