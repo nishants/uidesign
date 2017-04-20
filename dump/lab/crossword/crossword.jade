@@ -14,5 +14,5 @@ html
     .crossword(ng-controller='CrosswordController', style='width: {{crossword.cellWidth*crossword.cellsPerRow}}px')
       ul.crossword-layout
         li.cell(ng-repeat='cell in crossword.cells track by $index',ng-click='crossword.select($index)', ng-class='{"solid" : cell.solid, "focus" : crossword.focus == $index}' style="height: {{crossword.cellHeight}}px;line-height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")
-          input(ng-bind='cell.value', ng-keypress='crossword.input($event)', maxlength=1)
+          input(ng-bind='cell.value', ng-keydown='crossword.input($index, $event)', maxlength=1)
           label {{cell.label}}
