@@ -36,15 +36,24 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 					var
 							topIndex  = index - crossword.cellsPerRow,
 							leftIndex = index - 1,
-							hasTop   = topIndex > 0,
+							hasTop   = topIndex > -1,
 							hasLeft  = leftIndex % crossword.cellsPerRow != (crossword.cellsPerRow -1),
 							previousIndex = hasLeft  ? leftIndex  : (hasTop ? topIndex : -1);
 
 					crossword.focus = previousIndex;
 				},
-				_goToNextOf: function(){},
+				_goToNextOf: function(index){
+					var
+							bottomIndex  = index + crossword.cellsPerRow,
+							rightIndex   = index + 1,
+							hasBottom    = bottomIndex < crossword.cells.length && !crossword.cells[bottomIndex].solid,
+							hasRight     = rightIndex % crossword.cellsPerRow != 0 && !crossword.cells[rightIndex].solid,
+							nextIndex    = hasRight  ? rightIndex  : (hasBottom ? bottomIndex : -1);
+
+					crossword.focus = nextIndex;
+				},
 				input: function(index, event){
-					isNextChar(event.keyCode) ? console.log("going to next"): "";
+					isNextChar(event.keyCode) ? crossword._goToNextOf(index): "";
 					isBackChar(event.keyCode) ? crossword._goToPreviousOf(index): "";
 					console.log(event.keyCode);
 				}
