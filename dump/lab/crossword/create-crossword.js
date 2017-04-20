@@ -25,12 +25,8 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 		},
 		crossRelations: function(){
 			var crosses = matrix.word.split("").map(function(){return null;}),
-					positions = [];
-			positions.push({
-				index : 0,
-				word  : matrix.word,
-				vertical: false
-			});
+					positions = [],
+					unrelated = [];
 
 			matrix.relatives.forEach(function(relative, relativeIndex){
 				var occupied = [],
@@ -40,14 +36,32 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 						}).sort(),
 						index = even ? crosses[crosses.length -1] : crosses[0];
 
-				occupied.push(index);
-				positions.push({
-					index : index,
-					word  : relative.word,
-					vertical: true
-				});
+				if(index){
+					occupied.push(index);
+					positions.push({
+						index : index,
+						word  : relative.word,
+						vertical: true
+					});
+				} else{
+					unrelated.push({word  : relative.word});
+				}
 			});
 
+			return  {
+				stem: {
+					index : 0,
+					word  : matrix.word,
+					vertical: false
+				},
+				relatives: positions,
+				unrelated: unrelated
+			};
+		},
+		calculateGrid: function(positions){
+			var grid = {
+				cells: positions
+			};
 			return positions;
 		}
 	};
@@ -56,7 +70,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 	matrix.addRelative("monday");
 	matrix.addRelative("daring");
 	matrix.addRelative("cot");
-	$scope.layout = JSON.stringify(matrix.crossRelations());
+	$scope.layout = JSON.stringify(matrix.calculateGrid(matrix.crossRelations()));
 
 	$scope.matrix = matrix;
 }]);
