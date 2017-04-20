@@ -10,15 +10,15 @@ html
     script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js')
     link(rel='stylesheet', href='crossword.css')
     script(src='create-crossword.js')
-  body(ng-app='create-crossword')
-    table(ng-controller='MatrixController')
+  body(ng-app='create-crossword', ng-controller='MatrixController')
+    table
       tr
         td {{matrix.word}}
         th(ng-repeat='letter in matrix.word track by $index') {{letter}}
       tr(ng-repeat='relative in matrix.relatives')
         td {{relative.word}}
         td(ng-repeat='crossIndex in relative.relations track by $index') {{crossIndex}}
-
+    h1 {{layout}}
   style.
     td, th{
       padding: 10px;
