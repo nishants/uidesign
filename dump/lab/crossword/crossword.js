@@ -1,22 +1,5 @@
 var app = angular.module("crossword", []);
-var createCell = function(param){
-	return {
-		label: param.label,
-		value: null,
-		solid: param.solid
-	};
-}
-
-app.value("crosswordLayout", {
-	cells: [
-		createCell({label: 1}), createCell({}), createCell({}), createCell({}), createCell({}),
-		createCell({}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}),
-		createCell({}), createCell({}), createCell({}), createCell({}), createCell({}),
-		createCell({}), createCell({}), createCell({}), createCell({}), createCell({}),
-	]
-});
-
-app.controller("CrosswordController", ["$scope", "crosswordLayout", function ($scope, crosswordLayout) {
+app.controller("CrosswordController", ["$scope", function ($scope) {
 
 	var KEY_CODES = {
 		LEFT	: 37,
@@ -37,12 +20,24 @@ app.controller("CrosswordController", ["$scope", "crosswordLayout", function ($s
 			isBackChar = function(keyCode){
 				return [KEY_CODES.BACKSPACE, KEY_CODES.UP, KEY_CODES.LEFT].indexOf(keyCode) != -1;
 			},
+			createCell = function(param){
+				return {
+					label: param.label,
+					value: null,
+					solid: param.solid
+				};
+			},
 			crossword = {
 				cellHeight: 50,
 				cellWidth: 50,
 				cellsPerRow: 5,
 				_goingDown: false,
-				cells: crosswordLayout.cells,
+				cells: [
+					createCell({label: 1}), createCell({}), createCell({}), createCell({}), createCell({}),
+					createCell({}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}),
+					createCell({}), createCell({}), createCell({}), createCell({}), createCell({}),
+					createCell({}), createCell({}), createCell({}), createCell({}), createCell({}),
+				],
 				select: function(cellIndex){
 					crossword.focusOn(cellIndex);
 				},
