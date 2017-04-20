@@ -13,5 +13,10 @@ html
   body(ng-app='crossword')
     .crossword(ng-controller='CrosswordController', style='width: {{crossword.cellWidth*crossword.cellsPerRow}}px')
       ul.crossword-layout
-        li.cell(ng-repeat='cell in crossword.cells track by $index',ng-class='{"solid" : cell.solid, "focus" : cell.focus}' style="height: {{crossword.cellHeight}}px;line-height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")
+        li.cell(ng-repeat='cell in crossword.crosswordLayout.cells track by $index',ng-class='{"solid" : cell.solid, "focus" : cell.focus}' style="height: {{crossword.cellHeight}}px;line-height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")
           span {{cell.value}}
+      ul.input-layout
+        li.input(ng-repeat="input in crossword.inputLayout.inputs")
+          textarea(ng-if='!input.vertical', ng-focus='crossword.focus(input)',ng-blur='crossword.blur(input)', ng-model='input.value',ng-change='crossword.update(input)',style='width: {{crossword.cellWidth*input.length}}px; line-height: {{crossword.cellHeight}}px; height: {{crossword.cellHeight}}px; letter-spacing: {{crossword.cellWidth - 8}}px; padding-left: 5px;', maxlength="{{input.length}} cols={{input.length}} rows=1")
+          textarea(ng-if='input.vertical',  ng-focus='crossword.focus(input)',ng-blur='crossword.blur(input)',ng-model='input.value',ng-change='crossword.update(input)',style='width: {{crossword.cellWidth}}px; height: {{crossword.cellHeight * input.length}}px; line-height: {{crossword.cellHeight}}px;letter-spacing: {{crossword.cellWidth - crossword.fontSize - 5}}px; padding-left: 5px;', maxlength="{{input.length}}")
+      h1 input : {{crossword.inputLayout.inputs[0].value}}

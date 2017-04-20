@@ -31,4 +31,27 @@ $focus_color: rgba(81, 167, 249, 0.3);
       background-color: $focus_color;
     }
   }
+  ul.input-layout{
+    @extend .undo-list;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    textarea{
+      opacity: 0;
+      padding: 0;
+      margin: 0;
+      resize: none;
+      background-color: white;
+      overflow: hidden;
+      outline: none;
+      border: 2px solid transparent; 
+      @include transition(all 300ms ease);
+    }
+    textarea:focus{
+      opacity: 1;
+      border: 2px solid $focus_color;
+    }
+  }
 }
