@@ -45,9 +45,13 @@ $focus_color: rgba(81, 167, 249, 0.3);
       resize: none;
       background-color: white;
       overflow: hidden;
+      outline: none;
+      border: 2px solid transparent; 
+      @include transition(all 300ms ease);
     }
     textarea:focus{
       opacity: 1;
+      border: 2px solid $focus_color;
     }
   }
 }
