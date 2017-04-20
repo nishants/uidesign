@@ -21,6 +21,7 @@ $label_color: rgba(0, 0, 0, 0.3);
     box-sizing: content-box;
     > li {
       float: left;
+      position: relative;
       border-right: 1px solid $border_color;
       border-bottom: 1px solid $border_color;
       box-sizing: border-box;
@@ -34,13 +35,15 @@ $label_color: rgba(0, 0, 0, 0.3);
         box-sizing: border-box;
       }
       label {
+        position: absolute;
+        top: $padding/2;
+        left: $padding/2;
+
         font-size: $label_font_size;
+        line-height: $label_font_size;
         vertical-align: super;
         color: $label_color;
-        display: block;
-        padding: 5px;
         pointer-events: none;
-        line-height: 15px;
         text-align: left;
       }
     }
