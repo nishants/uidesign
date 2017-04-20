@@ -38,7 +38,7 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 							leftIndex = index - 1,
 							hasTop   = topIndex > 0,
 							hasLeft  = leftIndex % crossword.cellsPerRow != (crossword.cellsPerRow -1),
-							previousIndex = hasTop ? topIndex : (hasLeft ? leftIndex : -1);
+							previousIndex = hasLeft  ? leftIndex  : (hasTop ? topIndex : -1);
 
 					crossword.focus = previousIndex;
 				},
