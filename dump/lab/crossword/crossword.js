@@ -5,7 +5,6 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 				return {
 					label: param.label,
 					value: null,
-					focus: false,
 					solid: param.solid
 				};
 			},
@@ -13,12 +12,17 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 				cellHeight: 50,
 				cellWidth: 50,
 				cellsPerRow: 5,
+				_goingDown: false,
+				focus : -1,
 				cells: [
 					createCell({label: 1}), createCell({}), createCell({}), createCell({}), createCell({}),
 					createCell({}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}),
 					createCell({}), createCell({}), createCell({}), createCell({}), createCell({}),
 					createCell({}), createCell({}), createCell({}), createCell({}), createCell({}),
-				]
+				],
+				select: function(cellIndex){
+					crossword.focus = cellIndex;
+				}
 			};
 	$scope.crossword = crossword
 }]);
