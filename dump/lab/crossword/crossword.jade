@@ -17,5 +17,6 @@ html
           span {{cell.value}}
       ul.input-layout
         li.input(ng-repeat="input in crossword.inputLayout.inputs")
-          input(ng-model='input.value',ng-change='crossword.update(input)',style='width: {{crossword.cellWidth*input.length}}px; line-height: {{crossword.cellHeight}}px; letter-spacing: {{crossword.cellWidth - input.length/2}}px', maxlength="{{input.length}}")
+          input(ng-if='!input.vertical', ng-model='input.value',ng-change='crossword.update(input)',style='width: {{crossword.cellWidth*input.length}}px; line-height: {{crossword.cellHeight}}px;', maxlength="{{input.length}}")
+          input(ng-if='input.vertical',  ng-model='input.value',ng-change='crossword.update(input)',style='width: {{crossword.cellWidth}}px; line-height: {{crossword.cellHeight * input.length}}px;', maxlength="{{input.length}}")
       h1 input : {{crossword.inputLayout.inputs[0].value}}
