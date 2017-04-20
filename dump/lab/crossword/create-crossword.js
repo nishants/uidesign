@@ -16,11 +16,25 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 		getLayout: function(){
 			var crosses = matrix.word.split("").map(function(){return null;}),
 					positions = [];
+			positions.push({
+				index : 0,
+				word  : matrix.word,
+				vertical: false
+			});
 
-			matrix.relatives.forEach(function(relative){
+			matrix.relatives.forEach(function(relative, relativeIndex){
+				var occupied = [],
+						even = relativeIndex%2 == 0,
+						crosses = relative.relations.filter(function (cross) {
+							return cross > -1 && occupied.indexOf(cross) == -1;
+						}),
+						index = even ? crosses[crosses.length -1] : crosses[0];
+
+				occupied.push(index);
 				positions.push({
-					index: 0,
-					length: relative.word.length
+					index : index,
+					word  : relative.word,
+					vertical: true
 				});
 			});
 
