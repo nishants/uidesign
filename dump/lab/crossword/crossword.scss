@@ -21,6 +21,7 @@ $input_font_size : 12px;
       border-right: 1px solid $border_color;
       border-bottom: 1px solid $border_color;
       box-sizing: border-box;
+      text-align: center;
     }
     > li.solid{
       background-color: $empty_cell_color;
@@ -38,6 +39,7 @@ $input_font_size : 12px;
       font-family: $mono_space_font;
       font-size: $input_font_size;
       border: none;
+      color: transparent;
     }
   }
 }
