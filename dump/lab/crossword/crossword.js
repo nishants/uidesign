@@ -32,7 +32,6 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 				cellWidth: 50,
 				cellsPerRow: 5,
 				_goingDown: false,
-				focus : -1,
 				cells: [
 					createCell({label: 1}), createCell({}), createCell({}), createCell({}), createCell({}),
 					createCell({}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}),
@@ -40,7 +39,7 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 					createCell({}), createCell({}), createCell({}), createCell({}), createCell({}),
 				],
 				select: function(cellIndex){
-					crossword.focus = cellIndex;
+					crossword.focusOn(cellIndex);
 				},
 				_goToPreviousOf: function(index){
 					var
@@ -50,7 +49,8 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 							hasLeft  = leftIndex % crossword.cellsPerRow != (crossword.cellsPerRow -1),
 							previousIndex = hasLeft  ? leftIndex  : (hasTop ? topIndex : -1);
 
-					crossword.focus = previousIndex;
+
+					crossword.focusOn(previousIndex);
 				},
 				_goToNextOf: function(index){
 
@@ -63,27 +63,24 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 							nextIndex    = goDown ? bottomIndex : hasRight ? rightIndex : -1 ;
 
 					crossword._goingDown = goDown;
-					crossword.focus = nextIndex;
+					crossword.focusOn(nextIndex);
 				},
 				input: function(index, event){
 					isNextChar(event.keyCode) ? crossword._goToNextOf(index): "";
 					isBackChar(event.keyCode) ? crossword._goToPreviousOf(index): "";
-					console.log(event.keyCode);
+				},
+				focusOn : function(index){
+					var cell   = angular.element(document.querySelector(".crossword li.cell:nth-child(:index)".replace(":index", index+1))),
+							cells  = angular.element(document.querySelectorAll(".crossword li.cell")),
+							input  = cell.find("input")[0];
+					cells.removeClass("focus");
+
+					if(index > -1){
+						input.select();
+						cell.addClass("focus");
+						input.focus();
+					}
 				}
 			};
 	$scope.crossword = crossword
-}]);
-
-app.directive("focusIf", [function(){
-	return {
-		link: function(scope, element, atts){
-			var cell = element[0];
-			scope.$watch(atts.focusIf, function(focusOn){
-				if(focusOn){
-					cell.select();
-					cell.focus();
-				}
-			});
-		}
-	};
 }]);
