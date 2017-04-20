@@ -10,7 +10,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 		addRelative: function(word){
 			matrix.relatives.push({
 				word: word,
-				relations: [1,2,3,4,5]
+				relations: matrix.word.split("").map(function(char){return word.indexOf(char);})
 			});
 		}
 	};
