@@ -77,11 +77,13 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 app.directive("focusIf", [function(){
 	return {
 		link: function(scope, element, atts){
+			var cell = element[0];
 			scope.$watch(atts.focusIf, function(focusOn){
 				if(focusOn){
-					element[0].focus();
+					cell.select();
+					cell.focus();
 				}
 			});
 		}
 	};
-}])
+}]);
