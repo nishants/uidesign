@@ -5,7 +5,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 		word: null,
 		relatives: [],
 		setRoot: function(word){
-			matrix.word = "india";
+			matrix.word = word;
 		},
 		addRelative: function(word){
 			var rootWordLetters = matrix.word.split(""),
@@ -58,11 +58,43 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 				unrelated: unrelated
 			};
 		},
-		calculateGrid: function(positions){
-			var grid = {
+		calculateGrid: function(structure){
+			var columns		= 0,
+					rows 			= 0,
+					maxAboveStem = 0,
+					maxBelowStem = 0,
+					gridHeight   = 0,
+					gridWidth   = 0,
+					positions = [];
+			structure.relatives.forEach(function(relative){
+				var aboveStem = relative.index.indexInStem,
+						belowStem = relative.word.length - relative.index.indexInWord -1;
+				maxAboveStem = Math.max(maxAboveStem, aboveStem);
+				maxBelowStem = Math.max(maxBelowStem, belowStem);
+				positions.push({
+					word: relative.word,
+					col: relative.index.indexInStem,
+					row: relative.index.indexInWord,
+				});
+			});
+			gridWidth = structure.stem.word.length;
+			gridHeight = maxBelowStem + maxAboveStem +1;
+			positions.push({
+				word: structure.stem.word,
+				col: 0,
+				row: 0
+			});
+
+			positions = positions.map(function(position){
+				position.row = maxAboveStem - position.row;
+				return position;
+			});
+
+			return {
+				rows  : gridWidth,
+				height: gridHeight,
 				cells: positions
 			};
-			return positions;
 		}
 	};
 
@@ -70,6 +102,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 	matrix.addRelative("monday");
 	matrix.addRelative("daring");
 	matrix.addRelative("cot");
+	matrix.addRelative("col");
 	$scope.layout = JSON.stringify(matrix.calculateGrid(matrix.crossRelations()));
 
 	$scope.matrix = matrix;
