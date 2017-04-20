@@ -17,7 +17,7 @@ html
         th(ng-repeat='letter in matrix.word track by $index') {{letter}}
       tr(ng-repeat='relative in matrix.relatives')
         td {{relative.word}}
-        td(ng-repeat='crossIndex in relative.relations track by $index') {{crossIndex}}
+        td(ng-repeat='cross in relative.crosses track by $index') {{cross.indexInWord}}
     h1 {{layout}}
   style.
     td, th{

@@ -8,12 +8,22 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 			matrix.word = "india";
 		},
 		addRelative: function(word){
+			var rootWordLetters = matrix.word.split(""),
+					crosses = [];
+
+			rootWordLetters.forEach(function(letter, index){
+				crosses.push({
+					indexInStem : index,
+					indexInWord : word.indexOf(letter),
+				});
+			});
+
 			matrix.relatives.push({
 				word: word,
-				relations: matrix.word.split("").map(function(char){return word.indexOf(char);})
+				crosses: crosses
 			});
 		},
-		getLayout: function(){
+		crossRelations: function(){
 			var crosses = matrix.word.split("").map(function(){return null;}),
 					positions = [];
 			positions.push({
@@ -25,9 +35,9 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 			matrix.relatives.forEach(function(relative, relativeIndex){
 				var occupied = [],
 						even = relativeIndex%2 == 0,
-						crosses = relative.relations.filter(function (cross) {
-							return cross > -1 && occupied.indexOf(cross) == -1;
-						}),
+						crosses = relative.crosses.filter(function (cross) {
+							return cross.indexInWord > -1 && occupied.indexOf(cross.indexInWord) == -1;
+						}).sort(),
 						index = even ? crosses[crosses.length -1] : crosses[0];
 
 				occupied.push(index);
@@ -46,7 +56,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 	matrix.addRelative("monday");
 	matrix.addRelative("daring");
 	matrix.addRelative("cot");
-	$scope.layout = JSON.stringify(matrix.getLayout());
+	$scope.layout = JSON.stringify(matrix.crossRelations());
 
 	$scope.matrix = matrix;
 }]);
