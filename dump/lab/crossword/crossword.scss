@@ -2,6 +2,9 @@
 
 $border_color: rgba(0, 0, 0, 0.1);
 $empty_cell_color : black;
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+$mono_space_font: "'Inconsolata', monospace";
+$input_font_size : 12px;
 
 .crossword{
   position: relative;
@@ -32,6 +35,8 @@ $empty_cell_color : black;
     width: 100%;
     input{
       background-color: transparent;
+      font-family: $mono_space_font;
+      font-size: $input_font_size;
       border: none;
     }
   }
