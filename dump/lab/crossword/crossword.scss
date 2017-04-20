@@ -25,6 +25,14 @@ $label_color: rgba(0, 0, 0, 0.3);
       border-bottom: 1px solid $border_color;
       box-sizing: border-box;
       text-align: center;
+      overflow: hidden;
+      input{
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+      }
       label {
         font-size: $label_font_size;
         vertical-align: super;
@@ -38,9 +46,14 @@ $label_color: rgba(0, 0, 0, 0.3);
     }
     > li.solid{
       background-color: $empty_cell_color;
+      input{
+        display: none;
+      }
     }
     > li.focus{
-      background-color: $focus_color;
+      input{
+        background-color: $focus_color;
+      }
     }
   }
 }

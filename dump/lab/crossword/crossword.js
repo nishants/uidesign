@@ -22,6 +22,9 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 				],
 				select: function(cellIndex){
 					crossword.focus = cellIndex;
+				},
+				input: function(event){
+					console.log(event.keyCode);
 				}
 			};
 	$scope.crossword = crossword
