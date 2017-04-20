@@ -90,6 +90,29 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 				return position;
 			});
 
+			var appendToRight = function(unreleated){
+						gridWidth += 2;
+						return {
+							word: unreleated.word,
+							col : gridWidth -1,
+							row :0,
+						};
+					},
+					appendToBottom = function(unreleated){
+						gridHeight += 2;
+						return {
+							word: unreleated.word,
+							col : 0,
+							row : gridHeight -1,
+						};
+					};
+
+			structure.unrelated.forEach(function(unrelated, unrelatedIndex){
+				var even 		 = unrelatedIndex%2 == 0,
+						position = even ? appendToRight(unrelated) : appendToBottom(unrelated);
+				positions.push(position);
+			});
+
 			return {
 				rows  : gridWidth,
 				height: gridHeight,
