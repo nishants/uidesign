@@ -43,13 +43,16 @@ app.controller("CrosswordController", ["$scope", function ($scope) {
 					crossword.focus = previousIndex;
 				},
 				_goToNextOf: function(index){
+
 					var
 							bottomIndex  = index + crossword.cellsPerRow,
 							rightIndex   = index + 1,
 							hasBottom    = bottomIndex < crossword.cells.length && !crossword.cells[bottomIndex].solid,
 							hasRight     = rightIndex % crossword.cellsPerRow != 0 && !crossword.cells[rightIndex].solid,
-							nextIndex    = hasRight  ? rightIndex  : (hasBottom ? bottomIndex : -1);
+							goDown       = hasBottom && ( !hasRight || crossword._goingDown),
+							nextIndex    = goDown ? bottomIndex : hasRight ? rightIndex : -1 ;
 
+					crossword._goingDown = goDown;
 					crossword.focus = nextIndex;
 				},
 				input: function(index, event){
