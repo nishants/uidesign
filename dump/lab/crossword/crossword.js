@@ -4,7 +4,9 @@ app.controller("CrosswordController", ["$scope", "Matrix", function ($scope, Mat
 	var form = {
 				words: "demanding monday daring india magician intensity electrical magnificent",
 				create: function(){
-					var words = form.words.split(" ").map(function(word){return word.trim();}),
+					var trimmed = function (word) {return word.trim();},
+							nonEmpty = function(word){ return word.length > 0;};
+					var words = form.words.split(" ").map(trimmed).filter(nonEmpty),
 							matrix = Matrix.create();
 					matrix.setRoot(words[0]);
 					words.slice(1).forEach(function(word){
