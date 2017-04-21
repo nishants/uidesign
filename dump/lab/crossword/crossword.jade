@@ -17,9 +17,4 @@ html
       ul.crossword-layout
         li.cell(ng-repeat='cell in crossword.cells track by $index',ng-click='crossword.select($index)', ng-class='{"solid" : cell.solid, "focus" : crossword.focus == $index}' style="height: {{crossword.cellHeight}}px;line-height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")
           label {{cell.label}}
-          input(ng-model='cell.value', ng-keyup='crossword.input($index, $event)', maxlength=1)
-
-      ul.crossword-layout(style="width: {{matrix.columns * 50}}px;")
-        li.cell(ng-repeat='cell in matrix.cells track by $index', ng-class='{"solid" : cell.solid}', style='height: 50px;line-height: 50px; width: 50px;' )
-          label {{cell.label}}
-          input(ng-model='cell.expected')
+          input(ng-model='cell.value', ng-keyup='crossword.input($index, $event)', maxlength=1, placeholder='{{cell.expected}}')

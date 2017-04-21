@@ -7,7 +7,7 @@ angular.module("crossword").directive("crossword", [function () {
 		BACKSPACE 	: 8,
 	};
 
-	var createCrossword = function(){
+	var createCrossword = function(matrix){
 
 		var isNextChar = function(keyCode){
 					var isUppercase = keyCode > 64 && keyCode < 91,
@@ -30,14 +30,10 @@ angular.module("crossword").directive("crossword", [function () {
 				crossword = {
 					cellHeight: 50,
 					cellWidth: 50,
-					cellsPerRow: 5,
+					cellsPerRow: matrix.columns,
 					_goingDown: false,
-					cells: [
-						createCell({label: 1}), createCell({}), createCell({}), createCell({}), createCell({}),
-						createCell({}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}), createCell({solid: true}),
-						createCell({}), createCell({}), createCell({}), createCell({}), createCell({}),
-						createCell({}), createCell({}), createCell({}), createCell({}), createCell({}),
-					],
+
+					cells: matrix.cells,
 					select: function(cellIndex){
 						crossword.focusOn(cellIndex);
 					},
@@ -88,7 +84,9 @@ angular.module("crossword").directive("crossword", [function () {
 		restrict: "C",
 		scope: true,
 		link: function(scope, element){
-			scope.crossword = createCrossword();
+			if(scope.matrix ){
+				scope.crossword = createCrossword(scope.matrix);
+			}
 		}
 	};
 }]);
