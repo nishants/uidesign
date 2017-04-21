@@ -130,7 +130,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 				if(!word.vertical){
 					var wordBeginCell = grid.columns * word.row + word.col;
 					cells[wordBeginCell] = {
-							label:  index,
+							label:  index + 1,
 							solid: false,
 							expected: word.word[0]
 					};
@@ -145,7 +145,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 				if(word.vertical){
 					var wordBeginCell = grid.columns * word.row + word.col;
 					cells[wordBeginCell] = {
-						label:  index,
+						label:  index + 1,
 						solid: false,
 						expected: word.word[0]
 					};
@@ -171,8 +171,8 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 	matrix.setRoot("india");
 	matrix.addRelative("monday");
 	matrix.addRelative("daring");
-	matrix.addRelative("cot");
-	matrix.addRelative("col");
+	matrix.addRelative("demanding");
+	matrix.addRelative("magician");
 	$scope.layout = matrix.createCells(matrix.calculateGrid(matrix.crossRelations()));
 
 	$scope.matrix = matrix;
