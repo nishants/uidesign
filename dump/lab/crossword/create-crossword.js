@@ -26,18 +26,19 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 		crossRelations: function(){
 			var crosses = matrix.word.split("").map(function(){return null;}),
 					positions = [],
-					unrelated = [];
+					unrelated = [],
+					occupied = [];
 
 			matrix.relatives.forEach(function(relative, relativeIndex){
-				var occupied = [],
+				var
 						even = relativeIndex%2 == 0,
 						crosses = relative.crosses.filter(function (cross) {
-							return cross.indexInWord > -1 && occupied.indexOf(cross.indexInWord) == -1;
+							return cross.indexInWord > -1 && occupied.indexOf(cross.indexInStem) == -1;
 						}).sort(),
 						index = even ? crosses[crosses.length -1] : crosses[0];
 
 				if(index){
-					occupied.push(index);
+					occupied.push(index.indexInStem);
 					positions.push({
 						index : index,
 						word  : relative.word,
