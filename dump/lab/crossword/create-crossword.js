@@ -67,7 +67,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 					gridWidth   = 0,
 					positions = [];
 			structure.relatives.forEach(function(relative){
-				var aboveStem = relative.index.indexInStem,
+				var aboveStem = relative.index.indexInWord,
 						belowStem = relative.word.length - relative.index.indexInWord -1;
 				maxAboveStem = Math.max(maxAboveStem, aboveStem);
 				maxBelowStem = Math.max(maxBelowStem, belowStem);
