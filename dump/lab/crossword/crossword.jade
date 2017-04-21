@@ -12,8 +12,11 @@ html
     script(src='crossword.js')
     script(src='create-crossword.js')
     script(src='crossword-directive.js')
-  body(ng-app='crossword')
-    .crossword(ng-controller='CrosswordController', style='width: {{crossword.cellWidth*crossword.cellsPerRow}}px')
+  body(ng-app='crossword', ng-controller='CrosswordController', style="padding: 20px;")
+    form.create-cross-word(style="margin-bottom: 20px;")
+      textarea(rows=5 style="width: 100%;", ng-model='form.words')
+      button(ng-click='form.create()') Render Crossword
+    .crossword(style='width: {{crossword.cellWidth*crossword.cellsPerRow}}px')
       ul.crossword-layout
         li.cell(ng-repeat='cell in crossword.cells track by $index',ng-click='crossword.select($index)', ng-class='{"solid" : cell.solid, "focus" : crossword.focus == $index}' style="height: {{crossword.cellHeight}}px;line-height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")
           label {{cell.label}}

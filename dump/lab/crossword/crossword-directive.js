@@ -84,9 +84,11 @@ angular.module("crossword").directive("crossword", [function () {
 		restrict: "C",
 		scope: true,
 		link: function(scope, element){
-			if(scope.matrix ){
-				scope.crossword = createCrossword(scope.matrix);
-			}
+			scope.$watch("matrix", function(matrix){
+				if(matrix ){
+					scope.crossword = createCrossword(matrix);
+				}
+			})
 		}
 	};
 }]);
