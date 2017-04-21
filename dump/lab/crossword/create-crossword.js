@@ -132,14 +132,32 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 					cells[wordBeginCell] = {
 							label:  index,
 							solid: false,
+							expected: word.word[0]
 					};
 
 					for(var i = 1; i < word.word.length; i++){
 						cells[wordBeginCell+i] = {
 							solid: false,
+							expected: word.word[i]
 						}
 					}
 				}
+				if(word.vertical){
+					var wordBeginCell = grid.columns * word.row + word.col;
+					cells[wordBeginCell] = {
+						label:  index,
+						solid: false,
+						expected: word.word[0]
+					};
+
+					for(var i = 1; i < word.word.length; i++){
+						cells[wordBeginCell+i*grid.columns] = {
+							solid: false,
+							expected: word.word[i]
+						}
+					}
+				}
+
 			});
 
 			return {

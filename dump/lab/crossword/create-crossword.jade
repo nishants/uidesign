@@ -22,6 +22,7 @@ html
       ul.crossword-layout(style="width: {{layout.columns * 50}}px")
         li.cell(ng-repeat='cell in layout.cells track by $index', ng-class='{"solid" : cell.solid}' )
           label {{cell.label}}
+          span {{cell.expected}}
 
   style.
     td, th{
