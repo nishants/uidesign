@@ -139,7 +139,8 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 					for(var i = 1; i < word.word.length; i++){
 						cells[wordBeginCell+i] = {
 							solid: false,
-							expected: word.word[i]
+							expected: word.word[i],
+							label: cells[wordBeginCell+i].label
 						}
 					}
 				}
@@ -169,11 +170,16 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 		}
 	};
 
-	matrix.setRoot("india");
+	matrix.setRoot("demanding");
 	matrix.addRelative("monday");
 	matrix.addRelative("daring");
-	matrix.addRelative("demanding");
+	matrix.addRelative("india");
+	matrix.addRelative("tuberculosis");
 	matrix.addRelative("magician");
+	matrix.addRelative("fabrication");
+	matrix.addRelative("intensity");
+	matrix.addRelative("electrical");
+	matrix.addRelative("magnificent");
 	$scope.layout = matrix.createCells(matrix.calculateGrid(matrix.crossRelations()));
 
 	$scope.matrix = matrix;
