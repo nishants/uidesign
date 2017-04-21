@@ -96,6 +96,7 @@ app.service("Matrix", [function () {
 
 					var appendToRight = function(unreleated){
 								gridWidth += 2;
+								gridHeight = Math.max(gridHeight, unreleated.word.length)
 								return {
 									word: unreleated.word,
 									col : gridWidth -1,
@@ -105,6 +106,7 @@ app.service("Matrix", [function () {
 							},
 							appendToBottom = function(unreleated){
 								gridHeight += 2;
+								gridWidth = Math.max(gridWidth, unreleated.word.length)
 								return {
 									word: unreleated.word,
 									col : 0,
