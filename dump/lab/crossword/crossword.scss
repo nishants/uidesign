@@ -1,7 +1,7 @@
 @import '../../../style/base';
 
 $border_color: rgba(0, 0, 0, 0.1);
-$empty_cell_color : black;
+$empty_cell_color : rgba(0, 0, 0, 0.85);
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 $mono_space_font: "'Inconsolata', monospace";
 $input_font_size : 12px;
@@ -49,6 +49,7 @@ $label_color: rgba(0, 0, 0, 0.3);
     }
     > li.solid{
       background-color: $empty_cell_color;
+      border-color: rgba(255, 255, 255, 0.47);
       input{
         display: none;
       }
