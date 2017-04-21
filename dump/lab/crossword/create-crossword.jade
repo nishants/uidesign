@@ -22,7 +22,6 @@ html
       ul.crossword-layout(style="width: {{layout.columns * 50}}px")
         li.cell(ng-repeat='cell in layout.cells track by $index', ng-class='{"solid" : cell.solid}' )
           label {{cell.label}}
-          input(ng-model='cell.value', ng-keyup='crossword.input($index, $event)', maxlength=1)
 
   style.
     td, th{

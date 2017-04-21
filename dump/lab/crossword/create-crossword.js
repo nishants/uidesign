@@ -120,18 +120,24 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 			return {
 				columns  : gridWidth,
 				rows : gridHeight,
-				cells: positions
+				words: positions
 			};
 		},
 		createCells: function(grid){
-			var cells = new Array(grid.columns * grid.rows).fill(false);
+			var cells = new Array(grid.columns * grid.rows).fill({solid: true});
 
-			grid.cells.forEach(function(cell){
-				if(!cell.vertical){
-					var cellIndex = grid.columns * cell.row + cell.col;
+			grid.words.forEach(function(word, index){
+				if(!word.vertical){
+					var wordBeginCell = grid.columns * word.row + word.col;
+					cells[wordBeginCell] = {
+							label:  index,
+							solid: false,
+					};
 
-					for(var i = 0; i < cell.word.length; i++){
-						cells[cellIndex+i] = true;
+					for(var i = 1; i < word.word.length; i++){
+						cells[wordBeginCell+i] = {
+							solid: false,
+						}
 					}
 				}
 			});
