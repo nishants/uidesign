@@ -10,9 +10,16 @@ html
     script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js')
     link(rel='stylesheet', href='crossword.css')
     script(src='crossword.js')
+    script(src='create-crossword.js')
+    script(src='crossword-directive.js')
   body(ng-app='crossword')
     .crossword(ng-controller='CrosswordController', style='width: {{crossword.cellWidth*crossword.cellsPerRow}}px')
       ul.crossword-layout
         li.cell(ng-repeat='cell in crossword.cells track by $index',ng-click='crossword.select($index)', ng-class='{"solid" : cell.solid, "focus" : crossword.focus == $index}' style="height: {{crossword.cellHeight}}px;line-height: {{crossword.cellHeight}}px; width: {{crossword.cellWidth}}px")
           label {{cell.label}}
           input(ng-model='cell.value', ng-keyup='crossword.input($index, $event)', maxlength=1)
+
+      ul.crossword-layout(style="width: {{matrix.columns * 50}}px;")
+        li.cell(ng-repeat='cell in matrix.cells track by $index', ng-class='{"solid" : cell.solid}', style='height: 50px;line-height: 50px; width: 50px;' )
+          label {{cell.label}}
+          input(ng-model='cell.expected')
