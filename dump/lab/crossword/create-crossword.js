@@ -75,6 +75,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 					word: relative.word,
 					col: relative.index.indexInStem,
 					row: relative.index.indexInWord,
+					vertical: true,
 				});
 			});
 			gridWidth = structure.stem.word.length;
@@ -82,7 +83,8 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 			positions.push({
 				word: structure.stem.word,
 				col: 0,
-				row: 0
+				row: 0,
+				vertical: false,
 			});
 
 			positions = positions.map(function(position){
@@ -96,6 +98,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 							word: unreleated.word,
 							col : gridWidth -1,
 							row :0,
+							vertical: true,
 						};
 					},
 					appendToBottom = function(unreleated){
@@ -104,6 +107,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 							word: unreleated.word,
 							col : 0,
 							row : gridHeight -1,
+							vertical: false,
 						};
 					};
 
@@ -114,9 +118,28 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 			});
 
 			return {
-				rows  : gridWidth,
-				height: gridHeight,
+				columns  : gridWidth,
+				rows : gridHeight,
 				cells: positions
+			};
+		},
+		createCells: function(grid){
+			var cells = new Array(grid.columns * grid.rows).fill(false);
+
+			grid.cells.forEach(function(cell){
+				if(!cell.vertical){
+					var cellIndex = grid.columns * cell.row + cell.col;
+
+					for(var i = 0; i < cell.word.length; i++){
+						cells[cellIndex+i] = true;
+					}
+				}
+			});
+
+			return {
+				cells: cells,
+				rows  : grid.rows,
+				columns: grid.columns,
 			};
 		}
 	};
@@ -126,7 +149,7 @@ app.controller("MatrixController", ["$scope", function ($scope) {
 	matrix.addRelative("daring");
 	matrix.addRelative("cot");
 	matrix.addRelative("col");
-	$scope.layout = JSON.stringify(matrix.calculateGrid(matrix.crossRelations()));
+	$scope.layout = matrix.createCells(matrix.calculateGrid(matrix.crossRelations()));
 
 	$scope.matrix = matrix;
 }]);
