@@ -1,0 +1,22 @@
+@import '../../../style/base';
+
+$font_size: 36px;
+$letter_size: 80px;
+
+.rearrange-words{
+  >ul{
+    @extend .undo-list;
+    display: block;
+    > li {
+      display: inline-block;
+      padding: $padding;
+      > label {
+        font-size: $font_size;
+        background-color: #8db352;
+        width: $letter_size;
+        line-height: $letter_size;
+        text-align: center;
+      }
+    }
+  }
+}
