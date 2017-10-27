@@ -42,7 +42,7 @@ window.ChromeVoice = function(params){
                 return word.transcript;
               };
               
-              return toArray(text).map(words).join(" ") ;
+              return toArray(text).map(words) ;
             });
 
             ChromeVoice._onTextProcessed({text: textRecognised, isFinal : allFinal});
