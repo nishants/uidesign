@@ -30,14 +30,23 @@ window.ChromeVoice = function(params){
             };
 
 
-            var textRecognised = toArray(event.results).map(function (text) {
-              return toArray(text).map(function (word) {
-                // ignore word.confidence
-                return word.transcript;
-              }).join(" ");
+            var results  = toArray(event.results),
+                allFinal = true;
+            results.forEach(function(result){
+              allFinal = allFinal && result.isFinal;
             });
 
-            console.log(event);
+            var textRecognised = results.map(function (text) {
+              var words = function (word) {
+                // ignore word.confidence
+                return word.transcript;
+              };
+              
+              return toArray(text).map(words).join(" ") ;
+            });
+
+            ChromeVoice._onTextProcessed({text: textRecognised, isFinal : allFinal});
+            console.log(event.results.item(0).isFinal);
             console.log("You said : " + textRecognised);
           };
 

@@ -10,6 +10,10 @@ html(ng-app="ng-chrome-voice", ng-controller='ChromeVoiceDemoController')
     script(src='ng-chrome-voice.js')
 body
   button(ng-click='microphone.listen()') Listen
+  .message
+    label(ng-bind='microphone.input.text')
+    label ({{microphone.input.confidence}})
+    label ({{microphone.input.isFinal ? "Final" : "Fixing"}})
   .listener
     .processing(ng-show='microphone.listening')
       img(src='loader.gif')
