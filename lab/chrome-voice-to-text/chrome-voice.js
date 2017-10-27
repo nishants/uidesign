@@ -3,8 +3,12 @@ window.ChromeVoice = function(params){
       defaultLang          = "en-US",
       speechRecognizer     =  recognitionAvailable ? new webkitSpeechRecognition() : null,
       ChromeVoice = {
-        available    : recognitionAvailable,
-        listening    : false,
+        available         : recognitionAvailable,
+        listening         : false,
+        _onTextProcessed  : function(text, confidence){},
+        onTextProcessed   : function (callback) {
+          ChromeVoice._onTextProcessed = callback;
+        },
         start        : function(){
           // Listening ends after user stops speaking(even if user pauses)if set to false (default)
           speechRecognizer.continuous = true;

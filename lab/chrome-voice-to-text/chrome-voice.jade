@@ -9,3 +9,7 @@ html(ng-app="ng-chrome-voice", ng-controller='ChromeVoiceDemoController')
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js')
     script(src='ng-chrome-voice.js')
 body
+  button(ng-click='microphone.listen()') Listen
+  .listener
+    .processing(ng-show='microphone.listening')
+      img(src='loader.gif')
