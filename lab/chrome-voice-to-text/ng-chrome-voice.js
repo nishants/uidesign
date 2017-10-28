@@ -21,10 +21,10 @@ app.controller("ChromeVoiceDemoController", ["$scope","$timeout", function($scop
         $timeout(function(){
           if(result.isFinal){
             microphone.input.text && microphone.history.push(microphone.input.text);
-            microphone.input.text       = result.text[result.text.length -1];
+            microphone.input.text       = result.text[result.text.length -1].join(" ");
             microphone.input.confidence = result.confidence;
-            microphone.listening = false;
-            microphone.processing = false;
+            microphone.listening        = false;
+            microphone.processing       = false;
           } else{
             microphone.processing = true;
           }
