@@ -63,6 +63,9 @@ window.ChromeVoice = function(config){
         },
         stop: function(){
           speechRecognizer.stop();
+        },
+        abort: function(){
+          speechRecognizer.abort();
         }
       };
   return ChromeVoice;

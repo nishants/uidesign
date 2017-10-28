@@ -4,20 +4,20 @@ app.controller("ChromeVoiceDemoController", ["$scope","$timeout", function($scop
       indianEnglish = {name: "Indian English", code: "en-IN"},
       usEnglish = {name: "US English", code: "en-US"};
 
-  var languages =  [indianEnglish, hindi, usEnglish,],
-      chromeVoice = ChromeVoice({
-        continuous: false,
-        language  : hindi.code
-      });
+  var languages =  [indianEnglish, hindi, usEnglish,];
   var microphone = {
-    active    : false,
     listening : false,
     history   : [],
     input     : {text: "", confidence: 0, interimText: "", processing: false},
+    params    : {continuous: false, language  : hindi.code},
+    _chromeVoice: null,
+    createChromeVoice: function(){
+      microphone._chromeVoice = ChromeVoice(microphone.params);
+    },
     listen    : function () {
-      microphone.active = true;
-      chromeVoice.onTextProcessed(function (result, confidence) {
-        microphone.listening = true;
+      !microphone._chromeVoice && microphone.createChromeVoice();
+      microphone.listening = true;
+      microphone._chromeVoice.onTextProcessed(function (result, confidence) {
         $timeout(function(){
           if(result.isFinal){
             microphone.input.text && microphone.history.push(microphone.input.text);
@@ -30,10 +30,17 @@ app.controller("ChromeVoiceDemoController", ["$scope","$timeout", function($scop
           }
         });
       });
-      chromeVoice.start();
+      microphone._chromeVoice.start();
     },
     stop: function(){
-      chromeVoice.stop()
+      microphone.processing = false;
+      microphone.listening = false;
+      microphone._chromeVoice.stop();
+    },
+    abort: function(){
+      microphone.processing = false;
+      microphone.listening = false;
+      microphone._chromeVoice.abort();
     }
   };
   $scope.microphone = microphone
