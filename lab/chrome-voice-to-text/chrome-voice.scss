@@ -1,9 +1,13 @@
+@import "../../style/base";
+
 $listener_button_size: 60px;
 $listener_button_height: 60px;
 $listener_inactive_color: #eee;
 $listener_active_color: #8DB352;
+$listener_contrast_color: yellow;
 
 $shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+$full: 188.4;
 
 .listener-button{
   position : relative;
@@ -23,10 +27,23 @@ $shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     height: 100%;
     width : 100%;
   }
+
   label{
     background-color: inherit;
     color: inherit;
   }
+
+  svg.circleFill{
+    z-index: 1;
+    stroke-dasharray:  322;
+    stroke-dashoffset: 322;
+    @include transition(opacity 150ms);
+    @include transform(rotate(-90deg));
+    circle{
+      stroke : #eee;
+    }
+  }
+
 }
 
 .listener-button.listening{
@@ -36,6 +53,8 @@ $shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 .listener-button.processing{
-  color : white;
-  background-color: red;
+  svg.circleFill{
+    @include transition( all 3s);
+    stroke-dashoffset: $full/2
+  }
 }

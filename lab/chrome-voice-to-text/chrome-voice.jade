@@ -12,9 +12,7 @@ body
   .listener-button(ng-click='microphone.listen()', ng-class='{"listening" : microphone.listening, "processing" : microphone.processing}')
     label Listen
     svg(class="circleFill")
-      circle(cx="30" cy="30" r="30" stroke="#888888" stroke-width="6" fill="none")
-    svg(class="circleTrack")
-      circle(cx="30" cy="30" r="30" stroke="#cccccc" stroke-width="6" fill="none")
+      circle(cx="30" cy="30" r="30" stroke-width="6" fill="none")
 
   button(ng-click='microphone.stop()', ng-show='microphone.listening') Stop
   .listening(ng-show='microphone.listening')
@@ -25,7 +23,7 @@ body
     label(ng-bind='microphone.input.text')
     span(ng-show='microphone.input.processing') {{microphone.input.interimText}}
 
-  .listener
-    .processing(ng-show='microphone.listening')
-      img(src='loader.gif')
+  //.listener
+  //  .processing(ng-show='microphone.listening')
+  //    img(src='loader.gif')
   button(ng-click='microphone.abort()', ng-show='microphone.listening') Abort
