@@ -7,6 +7,7 @@ app.controller("ChromeVoiceDemoController", ["$scope","$timeout", function($scop
   var languages =  [indianEnglish, hindi, usEnglish,];
   var microphone = {
     listening : false,
+    processing : false,
     history   : [],
     input     : {text: "", confidence: 0, interimText: "", processing: false},
     params    : {continuous: false, language  : hindi.code},
