@@ -1,0 +1,41 @@
+$listener_button_size: 60px;
+$listener_button_height: 60px;
+$listener_inactive_color: #eee;
+$listener_active_color: #8DB352;
+
+$shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+
+.listener-button{
+  position : relative;
+  width : $listener_button_size;
+  height: $listener_button_size;
+  line-height: $listener_button_size;
+  border-radius: 50%;
+  background-color: $listener_inactive_color;
+  overflow: hidden;
+  text-align: center;
+  border: none;
+
+  svg, label{
+    position: absolute;
+    top   : 0;
+    left  : 0;
+    height: 100%;
+    width : 100%;
+  }
+  label{
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
+.listener-button.listening{
+  color : white;
+  background-color: $listener_active_color;
+  box-shadow: $shadow;
+}
+
+.listener-button.processing{
+  color : white;
+  background-color: red;
+}
