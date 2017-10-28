@@ -60,6 +60,9 @@ window.ChromeVoice = function(config){
 
           speechRecognizer.lang = defaultLang;
           speechRecognizer.start();
+        },
+        stop: function(){
+          speechRecognizer.stop();
         }
       };
   return ChromeVoice;

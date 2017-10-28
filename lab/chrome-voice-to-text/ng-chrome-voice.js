@@ -31,6 +31,9 @@ app.controller("ChromeVoiceDemoController", ["$scope","$timeout", function($scop
         });
       });
       chromeVoice.start();
+    },
+    stop: function(){
+      chromeVoice.stop()
     }
   };
   $scope.microphone = microphone
