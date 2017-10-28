@@ -15,8 +15,6 @@ body
       circle(cx="30" cy="30" r="30" stroke-width="6" fill="none")
 
   button(ng-click='microphone.stop()', ng-show='microphone.listening') Stop
-  .listening(ng-show='microphone.listening')
-    .circle listening
   .message
     ul
       li(ng-repeat='message in microphone.history') {{message}}
