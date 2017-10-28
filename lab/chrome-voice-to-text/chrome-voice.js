@@ -1,4 +1,4 @@
-window.ChromeVoice = function(params){
+window.ChromeVoice = function(config){
   var recognitionAvailable = !!webkitSpeechRecognition,
       defaultLang          = "en-US",
       speechRecognizer     =  recognitionAvailable ? new webkitSpeechRecognition() : null,
@@ -11,7 +11,7 @@ window.ChromeVoice = function(params){
         },
         start        : function(){
           // Listening ends after user stops speaking(even if user pauses)if set to false (default)
-          speechRecognizer.continuous = true;
+          speechRecognizer.continuous = config.continuous;
 
           // Results returned by the recognizer are final and will not change
           speechRecognizer.interimResults = true;
