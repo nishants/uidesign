@@ -11,6 +11,8 @@ html(ng-app="ng-chrome-voice", ng-controller='ChromeVoiceDemoController')
 body
   button(ng-click='microphone.listen()') Listen
   .message
+    ul
+      li(ng-repeat='message in microphone.history') {{message}}
     label(ng-bind='microphone.input.text')
     span(ng-show='microphone.input.processing') {{microphone.input.interimText}}
 

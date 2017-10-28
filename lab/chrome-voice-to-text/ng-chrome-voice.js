@@ -5,6 +5,7 @@ app.controller("ChromeVoiceDemoController", ["$scope","$timeout", function($scop
   var microphone = {
     active    : false,
     listening : false,
+    history   : [],
     input     : {text: "", confidence: 0, interimText: "", processing: false},
     listen    : function () {
       microphone.active = true;
@@ -12,6 +13,7 @@ app.controller("ChromeVoiceDemoController", ["$scope","$timeout", function($scop
         microphone.listening = true;
         $timeout(function(){
           if(result.isFinal){
+            microphone.input.text && microphone.history.push(microphone.input.text);
             microphone.input.text       = result.text[result.text.length -1];
             microphone.input.confidence = result.confidence;
             microphone.listening = false;
