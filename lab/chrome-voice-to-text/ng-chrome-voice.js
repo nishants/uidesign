@@ -9,7 +9,7 @@ app.service("Microphone", ["$timeout", function($timeout){
         processing : false,
         history   : [],
         input     : {text: "", confidence: 0, interimText: "", processing: false},
-        params    : {continuous: false, language  : usEnglish.code},
+        params    : {continuous: false, language  : hindi.code},
         _chromeVoice: null,
         createChromeVoice: function(){
           microphone._chromeVoice = ChromeVoice(microphone.params);
