@@ -4,31 +4,31 @@ import './index.css';
 
 class Square extends React.Component{
   render(){
-    return (<button className="square"></button>);
+    return (<button className="square">{this.props.squareIndex}</button>);
   }
 }
 
 class Board extends React.Component{
-  renderSquare(){
-    return (<Square/>);
+  renderSquare(index){
+    return (<Square squareIndex={index}/>);
   }
   render(){
     return (
         <div>
           <div className="board-row">
-            {this.renderSquare()}
-            {this.renderSquare()}
-            {this.renderSquare()}
+            {this.renderSquare(1)}
+            {this.renderSquare(2)}
+            {this.renderSquare(3)}
           </div>
           <div className="board-row">
-            {this.renderSquare()}
-            {this.renderSquare()}
-            {this.renderSquare()}
+            {this.renderSquare(4)}
+            {this.renderSquare(5)}
+            {this.renderSquare(6)}
           </div>
           <div className="board-row">
-            {this.renderSquare()}
-            {this.renderSquare()}
-            {this.renderSquare()}
+            {this.renderSquare(7)}
+            {this.renderSquare(8)}
+            {this.renderSquare(9)}
           </div>
         </div>
     );
