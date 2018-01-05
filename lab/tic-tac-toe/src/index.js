@@ -4,7 +4,12 @@ import './index.css';
 
 class Square extends React.Component{
   render(){
-    return (<button className="square">{this.props.squareIndex}</button>);
+    var onClickAction = function(){alert("you clicked me")};
+    return (
+        <button className="square" onClick={onClickAction}>
+          {this.props.squareIndex}
+        </button>
+    );
   }
 }
 
@@ -34,6 +39,7 @@ class Board extends React.Component{
     );
   }
 }
+
 
 class Game extends React.Component {
   render() {
