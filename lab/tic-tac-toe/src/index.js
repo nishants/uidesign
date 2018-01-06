@@ -3,25 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      squareIndex: props.squareIndex
-    }
-  }
   render(){
-    var onClickAction = ()=> this.setState({squareIndex: this.state.squareIndex+1});
     return (
-        <button className="square" onClick={onClickAction}>
-          {this.state.squareIndex}
+        <button className="square" onClick={() => this.props.clickAction(this.props.squareIndex)}>
+          {this.props.squareIndex}
         </button>
     );
   }
 }
 
 class Board extends React.Component{
+  handleClick(squareIndex){
+    alert("you clicked on " + squareIndex)
+  }
   renderSquare(index){
-    return (<Square squareIndex={index}/>);
+    return (<Square squareIndex={index} clickAction={this.handleClick}/>);
   }
   render(){
     return (
