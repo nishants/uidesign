@@ -25,11 +25,13 @@ class Board extends React.Component{
           var squares    = this.state.squares.slice(),
               fillSquare = this.state.nextMove,
               winner     = null,
-              gameEnded  = false;
+              gameEnded  = false,
+              nextMove = fillSquare === "O" ? "X" : "O";
           squares[squareIndex] = fillSquare;
           winner = this.state.getWinner(squares);
           gameEnded = winner || squares.indexOf(null) === -1;
-          this.setState({squares: squares, nextMove: fillSquare === "O" ? "X" : "O", gameEnded: gameEnded, winner: winner});
+          gameEnded ? this.props.onGameEnd(winner): this.props.onNextMove(nextMove);
+          this.setState({squares: squares, nextMove: nextMove, gameEnded: gameEnded, winner: winner});
         }
       },
       getWinner: (squares)=>{
@@ -50,11 +52,6 @@ class Board extends React.Component{
   }
 
   componentDidUpdate() {
-    if (this.state.winner) {
-      alert(this.state.winner + " has won");
-    } else if (this.state.gameEnded) {
-      alert("Game over !")
-    }
   }
   render(){
     return (
@@ -80,14 +77,28 @@ class Board extends React.Component{
 }
 
 class Game extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      status: null,
+      nextMove : (nextMove)=>{
+        this.setState({status: nextMove+ "'s turn"});
+      },
+      onGameEnd: (winner)=>{
+        this.setState({
+          status: winner ? winner +" won" : "Game over"
+        });
+      }
+    }
+  }
   render() {
     return (
         <div className="game">
           <div className="game-board">
-            <Board/>
+            <Board onNextMove={this.state.nextMove} onGameEnd={this.state.onGameEnd}/>
           </div>
           <div className="game-info">
-            <div>{/* status */}</div>
+            <div className="status">{this.state.status}</div>
             <ol>{/* TODO */}</ol>
           </div>
         </div>
