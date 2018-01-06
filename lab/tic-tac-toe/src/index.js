@@ -5,19 +5,33 @@ import './index.css';
 class Square extends React.Component{
   render(){
     return (
-        <button className="square" onClick={() => this.props.clickAction(this.props.squareIndex)}>
-          {this.props.squareIndex}
+        <button className="square"
+                onClick={this.props.clickAction}>
+          {this.props.squareValue}
         </button>
     );
   }
 }
 
 class Board extends React.Component{
-  handleClick(squareIndex){
-    alert("you clicked on " + squareIndex)
+  constructor(props){
+    super(props);
+    this.state = {
+      nextMove: "X",
+      squares: new Array(9).fill(null),
+      onClick: (squareIndex)=>{
+        if(!this.state.squares[squareIndex]){
+          var squares    = this.state.squares.slice(),
+              fillSquare = this.state.nextMove;
+          squares[squareIndex] = fillSquare;
+          this.setState({squares: squares, nextMove: fillSquare === "O" ? "X" : "O"})
+        }
+      }
+    }
   }
+
   renderSquare(index){
-    return (<Square squareIndex={index} clickAction={this.handleClick}/>);
+    return (<Square clickAction={()=> this.state.onClick(index)} squareValue={this.state.squares[index]}/>);
   }
   render(){
     return (
