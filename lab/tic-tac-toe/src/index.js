@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+
 import './index.css';
 
 class Board extends React.Component{
+  static propTypes = {
+    squares: PropTypes.array.isRequired,
+    selectSquare: PropTypes.func.isRequired,
+  };
   renderSquare(index){
     return <div key={index} className='square' onClick={()=> this.props.selectSquare(index)}>{this.props.squares[index]}</div>
   }
@@ -83,7 +89,7 @@ class Game extends React.Component{
         squares : squares,
         nextMove: this.state.nextMove === "X" ? "O" : "X",
         gameEnd : gameEnd
-      })
+      });
     }
   }
   render(){
