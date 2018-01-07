@@ -108,7 +108,7 @@ class Game extends React.Component {
   }
   getHistory(){
     return this.state.history.map((state, moveIndex)=> {
-      return <li><button onClick={()=>{this.state.restore(state)}}>move#{moveIndex}</button></li>;
+      return <li key={moveIndex}><button  onClick={()=>{this.state.restore(state)}}>move#{moveIndex}</button></li>;
     });
   }
   render() {
@@ -116,9 +116,7 @@ class Game extends React.Component {
         <div className="game">
           <div className="game-board">
             <Board squares={this.state.squares}
-                   onNextMove={this.state.onNextMove}
-                   addToHistory={this.state.addHistory}
-                   onGameEnd={this.state.onGameEnd}/>
+                   onNextMove={this.state.onNextMove}/>
           </div>
           <div className="game-info">
             <div className="status">{this.state.status}</div>
