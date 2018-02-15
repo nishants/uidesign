@@ -2,7 +2,7 @@
 
 $bulb-height: 168px;
 $bulb-width : 108px;
-$circle-size:$bulb-height + 50;
+$circle-size:$bulb-height + 70;
 $circle-scale-two : 2;
 $circle-scale-three: 5;
 
@@ -36,6 +36,9 @@ $one-transition-time: $transition-time;
     @include transition(transform $transition-time $transition-function);
     @include transform(scale(0))
   }
+  .bulb{
+    opacity: 0;
+  }
 }
 
 .scroller.one-sketch{
@@ -43,11 +46,23 @@ $one-transition-time: $transition-time;
   .circle{
     @include transform(scale(1));
   }
+  .bulb-outline{
+    opacity: 0;
+  }
+  .bulb{
+    opacity: 1;
+  }
 }
 .scroller.two-begin{
   background-color: #eee;
   .circle{
     @include transform(scale($circle-scale-two));
+  }
+  .bulb-outline{
+    opacity: 0;
+  }
+  .bulb{
+    opacity: 1;
   }
 }
 
@@ -56,10 +71,24 @@ $one-transition-time: $transition-time;
   .circle{
     @include transform(scale($circle-scale-three));
   }
+  .bulb-outline{
+    opacity: 0;
+  }
+  .bulb{
+    opacity: 1;
+  }
 }
 .scroller.four-fill{
   background-color: black;
-  @include transform(scale(calc(100vmax/#{$circle-size})));
+  .circle{
+    @include transform(scale(calc(100vmax/#{$circle-size})));
+  }
+  .bulb-outline{
+    opacity: 0;
+  }
+  .bulb{
+    opacity: 1;
+  }
 }
 
 form{

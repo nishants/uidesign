@@ -1,6 +1,7 @@
 app = angular.module("scroller", []);
 app.controller("ScrollerController",["$scope", function($scope){
   var states = [
+    {name: "zero"},
     {name: "one-sketch"},
     {name: "two-begin"},
     {name: "three-expand"},
