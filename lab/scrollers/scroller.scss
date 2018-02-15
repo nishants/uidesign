@@ -1,30 +1,65 @@
+@import "../../style/base";
+
 $bulb-height: 168px;
 $bulb-width : 108px;
+$circle-size:$bulb-height + 50;
+$circle-scale-two : 2;
+$circle-scale-three: 5;
+
+$transition-time   : 300ms;
+$transition-function   : ease;
+$one-transition-time: $transition-time;
 
 .scroller{
   position: fixed;
   height: 100vh;
   width: 100vw;
   background-color: white;
-  .bulb, .bulb-outline{
+  @include transition(background $transition-time $transition-function);
+
+.bulb, .bulb-outline{
     position: absolute;
     height  : $bulb-height;
     width   : $bulb-width;
     left    : calc(50% - #{$bulb-width/2});
     top     : calc(50% - #{$bulb-height/2});
+    @include transition(opacity $transition-time $transition-function);
+  }
+  .circle{
+    position: absolute;
+    height  : $circle-size;
+    width   : $circle-size;
+    left    : calc(50% - #{$circle-size/2});
+    top     : calc(50% - #{$circle-size/2});
+    background-color: black;
+    border-radius: 50%;
+    @include transition(transform $transition-time $transition-function);
+    @include transform(scale(0))
   }
 }
+
 .scroller.one-sketch{
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: #fbfbfb;
+  .circle{
+    @include transform(scale(1));
+  }
 }
 .scroller.two-begin{
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: #eee;
+  .circle{
+    @include transform(scale($circle-scale-two));
+  }
 }
+
 .scroller.three-expand{
   background-color: rgba(0, 0, 0, 0.62);
+  .circle{
+    @include transform(scale($circle-scale-three));
+  }
 }
 .scroller.four-fill{
   background-color: black;
+  @include transform(scale(calc(100vmax/#{$circle-size})));
 }
 
 form{
