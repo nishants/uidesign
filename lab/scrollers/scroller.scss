@@ -38,6 +38,7 @@ $one-transition-time: $transition-time;
   }
   .bulb{
     opacity: 0;
+    filter:grayscale(100%);
   }
 }
 
@@ -51,6 +52,7 @@ $one-transition-time: $transition-time;
   }
   .bulb{
     opacity: 1;
+    filter:grayscale(100%);
   }
 }
 .scroller.two-begin{
@@ -63,6 +65,7 @@ $one-transition-time: $transition-time;
   }
   .bulb{
     opacity: 1;
+    filter:grayscale(50%);
   }
 }
 
@@ -76,18 +79,20 @@ $one-transition-time: $transition-time;
   }
   .bulb{
     opacity: 1;
+    filter:grayscale(0%);
   }
 }
 .scroller.four-fill{
   background-color: black;
   .circle{
-    @include transform(scale(calc(100vmax/#{$circle-size})));
+    @include transform(scale(0));
   }
   .bulb-outline{
     opacity: 0;
   }
   .bulb{
     opacity: 1;
+    filter:grayscale(0%);
   }
 }
 
