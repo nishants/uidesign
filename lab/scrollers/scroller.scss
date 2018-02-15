@@ -1,11 +1,21 @@
+$bulb-height: 168px;
+$bulb-width : 108px;
+
 .scroller{
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: yellow;
+  background-color: white;
+  .bulb, .bulb-outline{
+    position: absolute;
+    height  : $bulb-height;
+    width   : $bulb-width;
+    left    : calc(50% - #{$bulb-width/2});
+    top     : calc(50% - #{$bulb-height/2});
+  }
 }
 .scroller.one-sketch{
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 .scroller.two-begin{
   background-color: rgba(0, 0, 0, 0.25);
@@ -15,4 +25,9 @@
 }
 .scroller.four-fill{
   background-color: black;
+}
+
+form{
+  position: fixed;
+  bottom: 0;
 }
