@@ -71,6 +71,12 @@ input{
   transition:         $value;
 }
 
+@mixin animation($value){
+  -webkit-animation: $value;
+  -o-animation: $value;
+  animation: $value;
+}
+
 @mixin gradient($value){
   background: -moz-linear-gradient($value); /* FF3.6-15 */
   background: -webkit-linear-gradient($value); /* Chrome10-25,Safari5.1-6 */

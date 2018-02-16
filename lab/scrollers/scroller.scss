@@ -6,16 +6,35 @@ $circle-size:$bulb-height + 70;
 $circle-scale-two : 2;
 $circle-scale-three: 5;
 
+$bulb-initial-blue : 5px;
+$two-bulb-blur   : 2px;
+
 $transition-time   : 300ms;
 $transition-function   : ease;
 $one-transition-time: $transition-time;
+
+$two-slide-offset  : 5vh;
+$three-slide-offset: 10vh;
+$four-slide-offset : 25vh;
+
+@keyframes float {
+  0% {
+    @include transform(translateY(0px));
+  }
+  50% {
+    @include transform(translateY(-10px));
+  }
+  100% {
+    @include transform(translateY(0px));
+  }
+}
 
 .scroller{
   position: fixed;
   height: 100vh;
   width: 100vw;
   background-color: white;
-  @include transition(background $transition-time $transition-function);
+  @include transition(#{background $transition-time $transition-function, transform $transition-time $transition-function});
 
 .bulb, .bulb-outline{
     position: absolute;
@@ -38,7 +57,7 @@ $one-transition-time: $transition-time;
   }
   .bulb{
     opacity: 0;
-    filter:grayscale(100%);
+    filter: blur($bulb-initial-blue) grayscale(100%);
   }
 }
 
@@ -52,11 +71,13 @@ $one-transition-time: $transition-time;
   }
   .bulb{
     opacity: 1;
-    filter:grayscale(100%);
+    filter: blur($bulb-initial-blue) grayscale(100%);
   }
 }
 .scroller.two-begin{
   background-color: #eee;
+  @include transform(translateY(-$two-slide-offset));
+
   .circle{
     @include transform(scale($circle-scale-two));
   }
@@ -65,12 +86,14 @@ $one-transition-time: $transition-time;
   }
   .bulb{
     opacity: 1;
-    filter:grayscale(50%);
+    filter:blur($two-bulb-blur) grayscale(50%);
   }
 }
 
 .scroller.three-expand{
   background-color: rgba(0, 0, 0, 0.62);
+  @include transform(translateY(-$three-slide-offset));
+
   .circle{
     @include transform(scale($circle-scale-three));
   }
@@ -79,12 +102,15 @@ $one-transition-time: $transition-time;
   }
   .bulb{
     opacity: 1;
-    filter:grayscale(0%);
+    filter: blur(0) grayscale(50%);
   }
 }
+
 .scroller.four-fill{
   background-color: black;
-  .circle{
+  @include transform(translateY(-$four-slide-offset));
+
+ .circle{
     @include transform(scale(0));
   }
   .bulb-outline{
@@ -92,7 +118,8 @@ $one-transition-time: $transition-time;
   }
   .bulb{
     opacity: 1;
-    filter:grayscale(0%);
+    filter: blur(0) grayscale(0%);
+    @include animation(float 6s ease-in-out infinite);
   }
 }
 
